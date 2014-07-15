@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0" DefaultTargets="Build">
+	<Target Name="MakeInstallPackage" Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<!-- Read package version from the manifest -->
+		<XmlRead Prefix="n" Namespace="http://schemas.microsoft.com/developer/msbuild/2003"
+			 XPath="/dotnetnuke/packages/package[1]/@version" XmlFileName="R7.Epsilon.dnn">
+			<Output TaskParameter="Value" PropertyName="Version" />
+		</XmlRead>
+		<ItemGroup>
+			<DefaultExclude Include="**\.git\**" />
+			<DefaultExclude Include="**\.svn\**" />
+			<DefaultExclude Include="**\bin\**" />
+			<DefaultExclude Include="**\obj\**" />
+			<DefaultExclude Include="**\Release\**" />
+			<DefaultExclude Include="**\Debug\**" />
+			<DefaultExclude Include="**\Test\**" />
+			<DefaultExclude Include="**\TestResults\**" />
+			<DefaultExclude Include="**\doc\**" />
+			<DefaultExclude Include="**\www\**" />
+			<DefaultExclude Include="**\*.user" />
+			<DefaultExclude Include="**\*.suo" />
+			<DefaultExclude Include="**\*.zip" />
+			<DefaultExclude Include="**\*.txt" />
+			<DefaultExclude Include="**\*.less" />
+			<DefaultExclude Include="**\*.psd" />
+			<DefaultExclude Include="**\*ReSharper.*\**" />
+		</ItemGroup>
+		<ItemGroup>
+			<InstallInclude Include="..\**\*.ascx" />
+			<InstallInclude Include="..\**\*.asmx" />
+			<InstallInclude Include="..\**\*.ashx" />
+			<InstallInclude Include="..\**\*.css" />
+			<InstallInclude Include="..\**\*.html" />
+			<InstallInclude Include="..\**\*.htm" />
+			<InstallInclude Include="..\**\*.resx" />
+			<InstallInclude Include="..\**\*.aspx" />
+			<InstallInclude Include="..\**\*.js" />
+			<InstallInclude Include="..\**\images\*.*" />
+			<InstallInclude Include="..\**\img\*.*" />
+			<InstallInclude Include="..\**\i\*.*" />
+		</ItemGroup>
+		
+		<!-- Declare manifest files -->
+		<CreateItem Include="R7.Epsilon.dnn;License.txt;ReleaseNotes.txt">
+			<Output TaskParameter="Include" ItemName="PackageManifestFiles" />
+		</CreateItem>
+			
+		<!-- Declare binaries -->
+		<CreateItem Include="$(MSBuildDnnBinPath)\R7.Epsilon*.dll">
+			<Output TaskParameter="Include" ItemName="BinaryFiles" />
+		</CreateItem>
+
+		<!-- Declare skins -->
+		<CreateItem Include="..\R7.Epsilon\Skins\**\*.*" Exclude="..\R7.Epsilon\Containers;..\R7.Epsilon\Menu">
+			<Output TaskParameter="Include" ItemName="SkinFiles" />
+		</CreateItem>
+
+		<!-- Declare containers -->
+		<CreateItem Include="..\R7.Epsilon\Containers\**\*.*" Exclude="..\R7.Epsilon\Skins;..\R7.Epsilon\Menu">
+			<Output TaskParameter="Include" ItemName="ContainerFiles" />
+		</CreateItem>
+
+		<!-- Declare menu -->
+		<CreateItem Include="..\R7.Epsilon\Menu\**\*.*" Exclude="..\R7.Epsilon\Skins;..\R7.Epsilon\Containers">
+			<Output TaskParameter="Include" ItemName="MenuFiles" />
+		</CreateItem>
+
+		<!-- Zip skins -->
+		<Copy SourceFiles="@(SkinFiles)" DestinationFolder="$(MSBuildProjectDirectory)\tmp_Skins\%(RecursiveDir)" />
+		<CreateItem Include="$(MSBuildProjectDirectory)\tmp_Skins\**\*.*">
+			<Output TaskParameter="Include" ItemName="SkinsContent" />
+		</CreateItem>
+		<Zip Files="@(SkinsContent)" WorkingDirectory="$(MSBuildProjectDirectory)\tmp_Skins"
+			 ZipFileName="Resources_Skins.$(PackageExtension)" />
+		
+		<!-- Zip containers -->
+		<Copy SourceFiles="@(ContainerFiles)" DestinationFolder="$(MSBuildProjectDirectory)\tmp_Containers\%(RecursiveDir)" />
+		<CreateItem Include="$(MSBuildProjectDirectory)\tmp_Containers\**\*.*">
+			<Output TaskParameter="Include" ItemName="ContainersContent" />
+		</CreateItem>
+		<Zip Files="@(ContainersContent)" WorkingDirectory="$(MSBuildProjectDirectory)\tmp_Containers"
+			 ZipFileName="Resources_Containers.$(PackageExtension)" />
+		
+
+		<!-- Zip menu -->
+		<Copy SourceFiles="@(MenuFiles)" DestinationFolder="$(MSBuildProjectDirectory)\tmp_Menu\%(RecursiveDir)" />
+		<CreateItem Include="$(MSBuildProjectDirectory)\tmp_Menu\**\*.*">
+			<Output TaskParameter="Include" ItemName="MenuContent" />
+		</CreateItem>
+		<Zip Files="@(MenuContent)" WorkingDirectory="$(MSBuildProjectDirectory)\tmp_Menu"
+			 ZipFileName="Resources_Menu.$(PackageExtension)" />
+		
+		<!-- Copy binaries -->
+		<Copy SourceFiles="@(BinaryFiles)" DestinationFolder="$(MSBuildProjectDirectory)\tmp_Package\bin" />
+
+		<!-- Copy manifest files -->
+		<Copy SourceFiles="@(PackageManifestFiles)" DestinationFolder="$(MSBuildProjectDirectory)\tmp_Package" />
+	
+		<!--- Copy Resources.zip to tmp_Package folder -->
+		<Copy SourceFiles="$(MSBuildProjectDirectory)\Resources_Skins.$(PackageExtension)"
+			 DestinationFolder="$(MSBuildProjectDirectory)\tmp_Package/" />
+		<Copy SourceFiles="$(MSBuildProjectDirectory)\Resources_Containers.$(PackageExtension)"
+			 DestinationFolder="$(MSBuildProjectDirectory)\tmp_Package/" />
+		<Copy SourceFiles="$(MSBuildProjectDirectory)\Resources_Menu.$(PackageExtension)"
+			 DestinationFolder="$(MSBuildProjectDirectory)\tmp_Package/" />
+
+		<!-- Declare tmp package folder -->
+		<CreateItem Include="$(MSBuildProjectDirectory)\tmp_Package\**\*.*">
+			<Output TaskParameter="Include" ItemName="OutputContent" />
+		</CreateItem>
+		<!-- Create the install package -->
+		<Zip Files="@(OutputContent)" WorkingDirectory="$(MSBuildProjectDirectory)\tmp_Package"
+			 ZipFileName="$(PackageName)-$(Version)-Install.$(PackageExtension)" />
+		<!-- Copy the install package to the output directory -->
+		<Copy SourceFiles="$(MSBuildProjectDirectory)\$(PackageName)-$(Version)-Install.$(PackageExtension)"
+			 DestinationFolder="$(PackageOutputPath)/" />
+		
+		<!-- Cleanup -->
+		<RemoveDir Directories="$(MSBuildProjectDirectory)\tmp_Skins" />
+		<RemoveDir Directories="$(MSBuildProjectDirectory)\tmp_Containers" />
+		<RemoveDir Directories="$(MSBuildProjectDirectory)\tmp_Menu" />
+		<RemoveDir Directories="$(MSBuildProjectDirectory)\tmp_Package" />
+		<Delete Files="$(MSBuildProjectDirectory)\Resources_Skins.$(PackageExtension)" />
+		<Delete Files="$(MSBuildProjectDirectory)\Resources_Containers.$(PackageExtension)" />
+		<Delete Files="$(MSBuildProjectDirectory)\Resources_Menu.$(PackageExtension)" />
+		<Delete Files="$(MSBuildProjectDirectory)\$(PackageName)-$(Version)-Install.$(PackageExtension)" />
+	</Target>
+</Project>
