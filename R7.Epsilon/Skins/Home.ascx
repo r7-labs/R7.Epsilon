@@ -1,5 +1,6 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Home.ascx.cs" Inherits="R7.Epsilon.Home" %>
+﻿﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Home.ascx.cs" Inherits="R7.Epsilon.Home" %>
 <%@ Register TagPrefix="dnn" TagName="LOGO" Src="~/Admin/Skins/Logo.ascx" %>
+<%@ Register TagPrefix="dnn" TagName="LANGUAGE" Src="~/Admin/Skins/Language.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="SEARCH" Src="~/Admin/Skins/Search.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="USER" Src="~/Admin/Skins/User.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="LOGIN" Src="~/Admin/Skins/Login.ascx" %>
@@ -9,6 +10,7 @@
 <%@ Register TagPrefix="dnn" TagName="JQUERY" Src="~/Admin/Skins/jQuery.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="META" Src="~/Admin/Skins/Meta.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="MENU" Src="~/DesktopModules/DDRMenu/Menu.ascx" %>
+<%@ Register TagPrefix="dnn" TagName="BANNER" Src="~/Admin/Skins/Banner.ascx" %>
 <%@ Register TagPrefix="dnn" Namespace="DotNetNuke.Web.Client.ClientResourceManagement" Assembly="DotNetNuke.Web.Client" %>
 
 <dnn:META ID="mobileScale" runat="server" Name="viewport" Content="width=device-width,initial-scale=1" />
@@ -18,6 +20,7 @@
 <dnn:DnnCssInclude ID="bootStrapCSS" runat="server" FilePath="css/bootstrap.css" PathNameAlias="SkinPath" Priority="14" />
 <dnn:DnnJsInclude ID="bluImpJS" runat="server" FilePath="js/jquery.blueimp-gallery.min.js" PathNameAlias="SkinPath" />
 
+<div class="age-rating">12+</div>
 
 <div class="navbar navbar-default" role="navigation">
     <div class="container">
@@ -31,36 +34,49 @@
             
         </div>
         <div class="navbar-collapse collapse">
-            <dnn:MENU MenuStyle="Mega2Epsilon" runat="server" />
-
+            
+             <dnn:MENU MenuStyle="Mega2Epsilon" runat="server" />
+           
+             <div class="navbar-brand">
+               <dnn:LOGO runat="server" id="dnnLOGO" />
+            </div>
+           
+            <div class="searchBox">
+                <dnn:Search id="dnnSearch" runat="server" showsite="false" showweb="false" cssclass="btn btn-success btn-xs" />
+            </div>
+            
             <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
+               <!-- <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <div class="searchBox">
-                                <dnn:Search id="dnnSearch" runat="server" showsite="false" showweb="false" cssclass="btn btn-success btn-xs" />
-                            </div>
+                            
                         </li>
                     </ul>
 
+                </li>-->
+                <li>
+                   <dnn:USER ID="dnnUser" runat="server" LegacyMode="false" />
                 </li>
                 <li>
-                    <dnn:LOGIN ID="dnnLogin" CssClass="LoginLink" runat="server" LegacyMode="false" />
-                </li>
-                <li>
-                    <dnn:USER ID="dnnUser" runat="server" LegacyMode="false" />
+                   <dnn:LOGIN ID="dnnLogin" CssClass="LoginLink" runat="server" LegacyMode="false" />
                 </li>
             </ul>
-    
             
+              <div class="navbar-buttons">
+                <dnn:BANNER id="dnnBanner1" runat="server" GroupName="HeaderButtons" BannerTypeId="4" BannerCount="4" Orientation="H" AllowNullBannerType="true" />    
+            </div>
+           
+             <div style="float:left">
+                <dnn:LANGUAGE runat="server" id="dnnLANGUAGE"  showMenu="False" showLinks="True" />
+            </div>        
+           
+         
         </div>
         <!--/.nav-collapse -->
-        <div class="navbar-brand">
-               <dnn:LOGO runat="server" id="dnnLOGO" />
-        </div>
+        
          <div class="navbar-collapse collapse">
-            <dnn:MENU MenuStyle="Mega2Epsilon" runat="server" />
+            <dnn:MENU MenuStyle="Mega2Epsilon" runat="server" NodeSelector="CurrentChildren" />
         </div>    
     </div>
 </div>
