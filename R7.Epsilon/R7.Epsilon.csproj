@@ -113,6 +113,8 @@
     <Content Include="Menu\Mega2Epsilon.js" />
     <Content Include="Skins\img\logo-template.png" />
     <Content Include="Skins\img\logo-template.svg" />
+    <Content Include="Skins\img\button_100x100.png" />
+    <Content Include="Skins\img\button_100x100.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
