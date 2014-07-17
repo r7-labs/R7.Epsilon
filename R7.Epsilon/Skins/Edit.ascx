@@ -33,7 +33,7 @@
             </div>
         </div>
         <div class="navbar-collapse collapse">
-            <dnn:MENU MenuStyle="BootStrapNav" runat="server"></dnn:MENU>
+            <dnn:MENU MenuStyle="Mega2Epsilon" runat="server"></dnn:MENU>
 
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">

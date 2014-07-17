@@ -53,8 +53,6 @@
     <None Include="Skins\App_LocalResources\R7.Epsilon.ascx.ru-RU.resx" />
     <None Include="Skins\App_LocalResources\SharedResources.resources" />
     <None Include="Skins\App_LocalResources\SharedResources.resx" />
-    <None Include="Skins\bootstrapNav\BootStrapNav.txt" />
-    <None Include="Skins\bootstrapNav\menudef.xml" />
     <None Include="Skins\i\icon_message.psd" />
     <None Include="Skins\i\icon_notification.psd" />
     <None Include="Menu\Mega2Epsilon.xslt" />
@@ -84,7 +82,6 @@
     <Content Include="Skins\Home.ascx" />
     <Content Include="Skins\PopupSkin.ascx" />
     <Content Include="Skins\skin.less" />
-    <Content Include="Skins\bootstrapNav\BootStrapNav.js" />
     <Content Include="Skins\css\bootstrap-theme.min.css" />
     <Content Include="Skins\css\bootstrap.min.css" />
     <Content Include="Skins\fonts\glyphicons-halflings-regular.eot" />
