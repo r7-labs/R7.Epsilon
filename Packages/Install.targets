@@ -6,123 +6,102 @@
 			 XPath="/dotnetnuke/packages/package[1]/@version" XmlFileName="R7.Epsilon.dnn">
 			<Output TaskParameter="Value" PropertyName="Version" />
 		</XmlRead>
+		
+		<!-- Declare skin files -->
 		<ItemGroup>
-			<DefaultExclude Include="**\.git\**" />
-			<DefaultExclude Include="**\.svn\**" />
-			<DefaultExclude Include="**\bin\**" />
-			<DefaultExclude Include="**\obj\**" />
-			<DefaultExclude Include="**\Release\**" />
-			<DefaultExclude Include="**\Debug\**" />
-			<DefaultExclude Include="**\Test\**" />
-			<DefaultExclude Include="**\TestResults\**" />
-			<DefaultExclude Include="**\doc\**" />
-			<DefaultExclude Include="**\www\**" />
-			<DefaultExclude Include="**\*.user" />
-			<DefaultExclude Include="**\*.suo" />
-			<DefaultExclude Include="**\*.zip" />
-			<DefaultExclude Include="**\*.txt" />
-			<DefaultExclude Include="**\*.less" />
-			<DefaultExclude Include="**\*.psd" />
-			<DefaultExclude Include="**\*ReSharper.*\**" />
+			<InstallSkinFiles Include="..\R7.Epsilon\Skins\**\*.ascx" />
+			<InstallSkinFiles Include="..\R7.Epsilon\Skins\**\*.xml" />
+			<InstallSkinFiles Include="..\R7.Epsilon\Skins\**\*.css" />
+			<InstallSkinFiles Include="..\R7.Epsilon\Skins\**\*.resx" />
+			<InstallSkinFiles Include="..\R7.Epsilon\Skins\**\*.js" />
+			<InstallSkinFiles Include="..\R7.Epsilon\Skins\**\*.jpg" />
+			<InstallSkinFiles Include="..\R7.Epsilon\Skins\**\*.png" />
+			<InstallSkinFiles Include="..\R7.Epsilon\Skins\**\*.gif" />
 		</ItemGroup>
+
+		<!-- Declare container files -->
 		<ItemGroup>
-			<InstallInclude Include="..\**\*.ascx" />
-			<InstallInclude Include="..\**\*.asmx" />
-			<InstallInclude Include="..\**\*.ashx" />
-			<InstallInclude Include="..\**\*.css" />
-			<InstallInclude Include="..\**\*.html" />
-			<InstallInclude Include="..\**\*.htm" />
-			<InstallInclude Include="..\**\*.resx" />
-			<InstallInclude Include="..\**\*.aspx" />
-			<InstallInclude Include="..\**\*.js" />
-			<InstallInclude Include="..\**\images\*.*" />
-			<InstallInclude Include="..\**\img\*.*" />
-			<InstallInclude Include="..\**\i\*.*" />
+			<InstallContainerFiles Include="..\R7.Epsilon\Containers\**\*.ascx" />
+			<InstallContainerFiles Include="..\R7.Epsilon\Containers\**\*.css" />
+			<InstallContainerFiles Include="..\R7.Epsilon\Containers\**\*.resx" />
+			<InstallContainerFiles Include="..\R7.Epsilon\Containers\**\*.js" />
+			<InstallContainerFiles Include="..\R7.Epsilon\Containers\**\*.jpg" />
+			<InstallContainerFiles Include="..\R7.Epsilon\Containers\**\*.png" />
+			<InstallContainerFiles Include="..\R7.Epsilon\Containers\**\*.gif" />
+		</ItemGroup>
+
+		<!-- Declare menu files -->
+		<ItemGroup>
+			<InstallMenuFiles Include="..\R7.Epsilon\Menu\**\*.css" />
+			<InstallMenuFiles Include="..\R7.Epsilon\Menu\**\*.js" />
+			<InstallMenuFiles Include="..\R7.Epsilon\Menu\**\*.xml" />
+			<InstallMenuFiles Include="..\R7.Epsilon\Menu\**\*.xslt" />
 		</ItemGroup>
 		
 		<!-- Declare manifest files -->
-		<CreateItem Include="R7.Epsilon.dnn;License.txt;ReleaseNotes.txt">
-			<Output TaskParameter="Include" ItemName="PackageManifestFiles" />
-		</CreateItem>
+		<ItemGroup>
+			<InstallManifestFiles Include="*.dnn" />
+			<InstallManifestFiles Include="*.txt" />
+		</ItemGroup>
 			
 		<!-- Declare binaries -->
-		<CreateItem Include="$(MSBuildDnnBinPath)\R7.Epsilon*.dll">
-			<Output TaskParameter="Include" ItemName="BinaryFiles" />
-		</CreateItem>
+		<ItemGroup>	
+			<InstallBinaryFiles Include="$(MSBuildDnnBinPath)\R7.Epsilon*.dll" />
+		</ItemGroup>
+	
+		<!-- Copy to tmp dir -->
+		<Copy SourceFiles="@(InstallSkinFiles)" DestinationFolder="$(MSBuildProjectDirectory)\tmp_Skins\%(RecursiveDir)" />
+		<Copy SourceFiles="@(InstallContainerFiles)" DestinationFolder="$(MSBuildProjectDirectory)\tmp_Containers\%(RecursiveDir)" />
+		<Copy SourceFiles="@(InstallMenuFiles)" DestinationFolder="$(MSBuildProjectDirectory)\tmp_Menu\%(RecursiveDir)" />
+	
+		<!-- Declare zipped files -->
+		<ItemGroup>
+			<InstallSkinZipFiles Include="$(MSBuildProjectDirectory)\tmp_Skins\**\*.*" />
+		</ItemGroup>
+	
+		<ItemGroup>
+			<InstallContainerZipFiles Include="$(MSBuildProjectDirectory)\tmp_Containers\**\*.*" />
+		</ItemGroup>
 
-		<!-- Declare skins -->
-		<CreateItem Include="..\R7.Epsilon\Skins\**\*.*" Exclude="..\R7.Epsilon\Containers;..\R7.Epsilon\Menu">
-			<Output TaskParameter="Include" ItemName="SkinFiles" />
-		</CreateItem>
-
-		<!-- Declare containers -->
-		<CreateItem Include="..\R7.Epsilon\Containers\**\*.*" Exclude="..\R7.Epsilon\Skins;..\R7.Epsilon\Menu">
-			<Output TaskParameter="Include" ItemName="ContainerFiles" />
-		</CreateItem>
-
-		<!-- Declare menu -->
-		<CreateItem Include="..\R7.Epsilon\Menu\**\*.*" Exclude="..\R7.Epsilon\Skins;..\R7.Epsilon\Containers">
-			<Output TaskParameter="Include" ItemName="MenuFiles" />
-		</CreateItem>
-
-		<!-- Zip skins -->
-		<Copy SourceFiles="@(SkinFiles)" DestinationFolder="$(MSBuildProjectDirectory)\tmp_Skins\%(RecursiveDir)" />
-		<CreateItem Include="$(MSBuildProjectDirectory)\tmp_Skins\**\*.*">
-			<Output TaskParameter="Include" ItemName="SkinsContent" />
-		</CreateItem>
-		<Zip Files="@(SkinsContent)" WorkingDirectory="$(MSBuildProjectDirectory)\tmp_Skins"
-			 ZipFileName="Resources_Skins.$(PackageExtension)" />
+		<ItemGroup>
+			<InstallMenuZipFiles Include="$(MSBuildProjectDirectory)\tmp_Menu\**\*.*" />
+		</ItemGroup>
 		
-		<!-- Zip containers -->
-		<Copy SourceFiles="@(ContainerFiles)" DestinationFolder="$(MSBuildProjectDirectory)\tmp_Containers\%(RecursiveDir)" />
-		<CreateItem Include="$(MSBuildProjectDirectory)\tmp_Containers\**\*.*">
-			<Output TaskParameter="Include" ItemName="ContainersContent" />
-		</CreateItem>
-		<Zip Files="@(ContainersContent)" WorkingDirectory="$(MSBuildProjectDirectory)\tmp_Containers"
-			 ZipFileName="Resources_Containers.$(PackageExtension)" />
-		
-
-		<!-- Zip menu -->
-		<Copy SourceFiles="@(MenuFiles)" DestinationFolder="$(MSBuildProjectDirectory)\tmp_Menu\%(RecursiveDir)" />
-		<CreateItem Include="$(MSBuildProjectDirectory)\tmp_Menu\**\*.*">
-			<Output TaskParameter="Include" ItemName="MenuContent" />
-		</CreateItem>
-		<Zip Files="@(MenuContent)" WorkingDirectory="$(MSBuildProjectDirectory)\tmp_Menu"
-			 ZipFileName="Resources_Menu.$(PackageExtension)" />
+		<!-- Create resource archives  -->
+		<Zip Files="@(InstallSkinZipFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\tmp_Skins" ZipFileName="Resources_Skins.$(PackageExtension)" />
+		<Zip Files="@(InstallContainerZipFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\tmp_Containers" ZipFileName="Resources_Containers.$(PackageExtension)" />
+		<Zip Files="@(InstallMenuZipFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\tmp_Menu" ZipFileName="Resources_Menu.$(PackageExtension)" />
 		
 		<!-- Copy binaries -->
-		<Copy SourceFiles="@(BinaryFiles)" DestinationFolder="$(MSBuildProjectDirectory)\tmp_Package\bin" />
+		<Copy SourceFiles="@(InstallBinaryFiles)" DestinationFolder="$(MSBuildProjectDirectory)\tmp_Package\bin" />
 
 		<!-- Copy manifest files -->
-		<Copy SourceFiles="@(PackageManifestFiles)" DestinationFolder="$(MSBuildProjectDirectory)\tmp_Package" />
+		<Copy SourceFiles="@(InstallManifestFiles)" DestinationFolder="$(MSBuildProjectDirectory)\tmp_Package" />
 	
-		<!--- Copy Resources.zip to tmp_Package folder -->
-		<Copy SourceFiles="$(MSBuildProjectDirectory)\Resources_Skins.$(PackageExtension)"
+		<!--- Move resource archives to tmp_Package folder -->
+		<Move SourceFiles="$(MSBuildProjectDirectory)\Resources_Skins.$(PackageExtension)"
 			 DestinationFolder="$(MSBuildProjectDirectory)\tmp_Package/" />
-		<Copy SourceFiles="$(MSBuildProjectDirectory)\Resources_Containers.$(PackageExtension)"
+		<Move SourceFiles="$(MSBuildProjectDirectory)\Resources_Containers.$(PackageExtension)"
 			 DestinationFolder="$(MSBuildProjectDirectory)\tmp_Package/" />
-		<Copy SourceFiles="$(MSBuildProjectDirectory)\Resources_Menu.$(PackageExtension)"
+		<Move SourceFiles="$(MSBuildProjectDirectory)\Resources_Menu.$(PackageExtension)"
 			 DestinationFolder="$(MSBuildProjectDirectory)\tmp_Package/" />
 
 		<!-- Declare tmp package folder -->
-		<CreateItem Include="$(MSBuildProjectDirectory)\tmp_Package\**\*.*">
-			<Output TaskParameter="Include" ItemName="OutputContent" />
-		</CreateItem>
+		<ItemGroup>
+			<InstallPackageFiles Include="$(MSBuildProjectDirectory)\tmp_Package\**\*.*" />
+		</ItemGroup>
+		
 		<!-- Create the install package -->
-		<Zip Files="@(OutputContent)" WorkingDirectory="$(MSBuildProjectDirectory)\tmp_Package"
-			 ZipFileName="$(PackageName)-$(Version)-Install.$(PackageExtension)" />
+		<Zip Files="@(InstallPackageFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\tmp_Package" ZipFileName="$(PackageName)-$(Version)-Install.$(PackageExtension)" />
+		
 		<!-- Copy the install package to the output directory -->
-		<Copy SourceFiles="$(MSBuildProjectDirectory)\$(PackageName)-$(Version)-Install.$(PackageExtension)"
-			 DestinationFolder="$(PackageOutputPath)/" />
+		<Move SourceFiles="$(MSBuildProjectDirectory)\$(PackageName)-$(Version)-Install.$(PackageExtension)" DestinationFolder="$(PackageOutputPath)/" />
 		
 		<!-- Cleanup -->
 		<RemoveDir Directories="$(MSBuildProjectDirectory)\tmp_Skins" />
 		<RemoveDir Directories="$(MSBuildProjectDirectory)\tmp_Containers" />
 		<RemoveDir Directories="$(MSBuildProjectDirectory)\tmp_Menu" />
 		<RemoveDir Directories="$(MSBuildProjectDirectory)\tmp_Package" />
-		<Delete Files="$(MSBuildProjectDirectory)\Resources_Skins.$(PackageExtension)" />
-		<Delete Files="$(MSBuildProjectDirectory)\Resources_Containers.$(PackageExtension)" />
-		<Delete Files="$(MSBuildProjectDirectory)\Resources_Menu.$(PackageExtension)" />
-		<Delete Files="$(MSBuildProjectDirectory)\$(PackageName)-$(Version)-Install.$(PackageExtension)" />
+
 	</Target>
 </Project>
