@@ -85,9 +85,7 @@
     <Content Include="Skins\PopupSkin.ascx" />
     <Content Include="Skins\skin.less" />
     <Content Include="Skins\bootstrapNav\BootStrapNav.js" />
-    <Content Include="Skins\css\bootstrap-theme.css" />
     <Content Include="Skins\css\bootstrap-theme.min.css" />
-    <Content Include="Skins\css\bootstrap.css" />
     <Content Include="Skins\css\bootstrap.min.css" />
     <Content Include="Skins\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Skins\fonts\glyphicons-halflings-regular.svg" />
@@ -105,7 +103,6 @@
     <Content Include="Skins\img\video-play.png" />
     <Content Include="Skins\img\video-play.svg" />
     <Content Include="Skins\js\bootstrap-image-gallery.min.js" />
-    <Content Include="Skins\js\bootstrap.js" />
     <Content Include="Skins\js\bootstrap.min.js" />
     <Content Include="Skins\js\jquery.blueimp-gallery.min.js" />
     <Content Include="Menu\hoverIntent.js" />
