@@ -49,9 +49,6 @@
   <ItemGroup>
     <None Include="Skins\Edit.doctype.xml" />
     <None Include="Skins\Home.doctype.xml" />
-    <None Include="Skins\App_LocalResources\R7.Epsilon.ascx.resx" />
-    <None Include="Skins\App_LocalResources\R7.Epsilon.ascx.ru-RU.resx" />
-    <None Include="Skins\App_LocalResources\SharedResources.resources" />
     <None Include="Skins\App_LocalResources\SharedResources.resx" />
     <None Include="Skins\i\icon_message.psd" />
     <None Include="Skins\i\icon_notification.psd" />
@@ -73,7 +70,6 @@
     <Compile Include="Skins\PopupSkin.ascx.cs">
       <DependentUpon>PopupSkin.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Skins\App_LocalResources\SharedResources.Designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Containers\Blank.ascx" />
