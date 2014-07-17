@@ -34,6 +34,9 @@ namespace R7.Epsilon
     /// -----------------------------------------------------------------------------
     public partial class Home : SkinBase
     {
-               
+		public Home()
+		{
+			
+		}    
     }
 }
