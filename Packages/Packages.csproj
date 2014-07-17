@@ -38,6 +38,7 @@
     <None Include="R7.Epsilon.dnn" />
     <None Include="License.txt" />
     <None Include="ReleaseNotes.txt" />
+    <None Include="LocalDeploy.targets" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets" />
@@ -47,7 +48,12 @@
     <PackageOutputPath>output</PackageOutputPath>
     <!-- <MSBuildDnnBinPath Condition="'$(MSBuildDnnBinPath)' == ''">..\..\..\bin</MSBuildDnnBinPath> -->
     <MSBuildDnnBinPath Condition="'$(MSBuildDnnBinPath)' == ''">..\R7.Epsilon\bin\$(Configuration)</MSBuildDnnBinPath>
+	<DnnInstallPath>..\..\..</DnnInstallPath>
+	<DnnSkinsPath>$(DnnInstallPath)\Portals\_default\Skins</DnnSkinsPath>
+	<DnnContainersPath>$(DnnInstallPath)\Portals\_default\Containers</DnnContainersPath>
+	<DnnMenusPath>$(DnnInstallPath)\DesktopModules\DDRMenu</DnnMenusPath>
   </PropertyGroup>
   <Import Project="Install.targets" />
-  <Target Name="AfterBuild" DependsOnTargets="MakeInstallPackage" />
+  <Import Project="LocalDeploy.targets" />
+  <Target Name="AfterBuild" DependsOnTargets="MakeInstallPackage;DoLocalDeploy" />
 </Project>
