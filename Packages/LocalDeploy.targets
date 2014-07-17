@@ -1,72 +1,68 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0" DefaultTargets="Build">
 	<Target Name="DoLocalDeploy" Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-		<!-- Read package version from the manifest -->
-		<ItemGroup>
-			<DefaultExclude Include="**\.git\**" />
-			<DefaultExclude Include="**\.svn\**" />
-			<DefaultExclude Include="**\bin\**" />
-			<DefaultExclude Include="**\obj\**" />
-			<DefaultExclude Include="**\Release\**" />
-			<DefaultExclude Include="**\Debug\**" />
-			<DefaultExclude Include="**\Test\**" />
-			<DefaultExclude Include="**\TestResults\**" />
-			<DefaultExclude Include="**\doc\**" />
-			<DefaultExclude Include="**\www\**" />
-			<DefaultExclude Include="**\*.user" />
-			<DefaultExclude Include="**\*.suo" />
-			<DefaultExclude Include="**\*.zip" />
-			<DefaultExclude Include="**\*.txt" />
-			<DefaultExclude Include="**\*.less" />
-			<DefaultExclude Include="**\*.psd" />
-			<DefaultExclude Include="**\*ReSharper.*\**" />
-		</ItemGroup>
-		<ItemGroup>
-			<InstallInclude Include="..\**\*.ascx" />
-			<InstallInclude Include="..\**\*.asmx" />
-			<InstallInclude Include="..\**\*.ashx" />
-			<InstallInclude Include="..\**\*.css" />
-			<InstallInclude Include="..\**\*.html" />
-			<InstallInclude Include="..\**\*.htm" />
-			<InstallInclude Include="..\**\*.resx" />
-			<InstallInclude Include="..\**\*.aspx" />
-			<InstallInclude Include="..\**\*.js" />
-			<InstallInclude Include="..\**\images\*.*" />
-			<InstallInclude Include="..\**\img\*.*" />
-			<InstallInclude Include="..\**\i\*.*" />
-		</ItemGroup>
-		
-		<!-- Declare binaries -->
-		<CreateItem Include="$(MSBuildDnnBinPath)\R7.Epsilon*.dll">
-			<Output TaskParameter="Include" ItemName="BinaryFiles" />
-		</CreateItem>
-
-		<!-- Declare skins -->
-		<CreateItem Include="..\R7.Epsilon\Skins\**\*.*" Exclude="..\R7.Epsilon\Containers;..\R7.Epsilon\Menu">
-			<Output TaskParameter="Include" ItemName="SkinFiles" />
-		</CreateItem>
-
-		<!-- Declare containers -->
-		<CreateItem Include="..\R7.Epsilon\Containers\**\*.*" Exclude="..\R7.Epsilon\Skins;..\R7.Epsilon\Menu">
-			<Output TaskParameter="Include" ItemName="ContainerFiles" />
-		</CreateItem>
-
-		<!-- Declare menu -->
-		<CreateItem Include="..\R7.Epsilon\Menu\**\*.*" Exclude="..\R7.Epsilon\Skins;..\R7.Epsilon\Containers">
-			<Output TaskParameter="Include" ItemName="MenuFiles" />
-		</CreateItem>
-
-		<!-- Copy skins -->
-		<Copy SourceFiles="@(SkinFiles)" DestinationFolder="$(DnnSkinsPath)\R7.Epsilon\%(RecursiveDir)" />
-		
-		<!-- Copy containers -->
-		<Copy SourceFiles="@(ContainerFiles)" DestinationFolder="$(DnnContainersPath)\R7.Epsilon\%(RecursiveDir)" />
 	
-		<!-- Copy menu -->
-		<Copy SourceFiles="@(MenuFiles)" DestinationFolder="$(DnnMenusPath)\Mega2Epsilon\%(RecursiveDir)" />
+		<!-- Declare skin files -->
+		<ItemGroup>
+			<DeploySkinFiles Include="..\R7.Epsilon\Skins\**\*.ascx" />
+			<DeploySkinFiles Include="..\R7.Epsilon\Skins\**\*.xml" />
+			<DeploySkinFiles Include="..\R7.Epsilon\Skins\**\*.css" />
+			<DeploySkinFiles Include="..\R7.Epsilon\Skins\**\*.resx" />
+			<DeploySkinFiles Include="..\R7.Epsilon\Skins\**\*.js" />
+			<DeploySkinFiles Include="..\R7.Epsilon\Skins\**\*.jpg" />
+			<DeploySkinFiles Include="..\R7.Epsilon\Skins\**\*.png" />
+			<DeploySkinFiles Include="..\R7.Epsilon\Skins\**\*.gif" />
+		</ItemGroup>
+
+		<!-- Declare container files -->
+		<ItemGroup>
+			<DeployContainerFiles Include="..\R7.Epsilon\Containers\**\*.ascx" />
+			<DeployContainerFiles Include="..\R7.Epsilon\Containers\**\*.css" />
+			<DeployContainerFiles Include="..\R7.Epsilon\Containers\**\*.resx" />
+			<DeployContainerFiles Include="..\R7.Epsilon\Containers\**\*.js" />
+			<DeployContainerFiles Include="..\R7.Epsilon\Containers\**\*.jpg" />
+			<DeployContainerFiles Include="..\R7.Epsilon\Containers\**\*.png" />
+			<DeployContainerFiles Include="..\R7.Epsilon\Containers\**\*.gif" />
+		</ItemGroup>
+
+		<!-- Declare menu files -->
+		<ItemGroup>
+			<DeployMenuFiles Include="..\R7.Epsilon\Menu\**\*.css" />
+			<DeployMenuFiles Include="..\R7.Epsilon\Menu\**\*.js" />
+			<DeployMenuFiles Include="..\R7.Epsilon\Menu\**\*.xml" />
+			<DeployMenuFiles Include="..\R7.Epsilon\Menu\**\*.xslt" />
+		</ItemGroup>
+
+		<!-- Copy files to tmp dirs -->
+		<Copy SourceFiles="@(DeploySkinFiles)" DestinationFolder="$(MSBuildProjectDirectory)\tmp_Skins\%(RecursiveDir)" />
+		<Copy SourceFiles="@(DeployContainerFiles)" DestinationFolder="$(MSBuildProjectDirectory)\tmp_Containers\%(RecursiveDir)" />
+		<Copy SourceFiles="@(DeployMenuFiles)" DestinationFolder="$(MSBuildProjectDirectory)\tmp_Menu\%(RecursiveDir)" />
 		
-		<!-- Copy binaries -->
-		<Copy SourceFiles="@(BinaryFiles)" DestinationFolder="$(DnnIntallPath)\bin" />
+		<!-- declare files to move -->
+		<ItemGroup>
+			<SkinMoveFiles Include="$(MSBuildProjectDirectory)\tmp_Skins\**\*.*" />	
+		</ItemGroup>
+	
+		<ItemGroup>	
+			<ContainerMoveFiles Include="$(MSBuildProjectDirectory)\tmp_Containers\**\*.*" />
+		</ItemGroup>
+	
+		<ItemGroup>
+			<MenuMoveFiles Include="$(MSBuildProjectDirectory)\tmp_Menu\**\*.*" />
+		</ItemGroup>
+
+		<!-- Deploy files -->
+		<Move SourceFiles="@(SkinMoveFiles)" DestinationFolder="$(DnnSkinsPath)\R7.Epsilon\%(RecursiveDir)" />
+		<Move SourceFiles="@(ContainerMoveFiles)" DestinationFolder="$(DnnContainersPath)\R7.Epsilon\%(RecursiveDir)" />
+		<Move SourceFiles="@(MenuMoveFiles)" DestinationFolder="$(DnnMenusPath)\Mega2Epsilon\%(RecursiveDir)" />
+
+		<!-- Copy binary -->
+		<Copy SourceFiles="$(MSBuildDnnBinPath)\R7.Epsilon.dll" DestinationFolder="$(DnnBinPath)" />
+
+		<!-- Cleanup -->
+		<RemoveDir Directories="$(MSBuildProjectDirectory)\tmp_Skins" />
+		<RemoveDir Directories="$(MSBuildProjectDirectory)\tmp_Containers" />
+		<RemoveDir Directories="$(MSBuildProjectDirectory)\tmp_Menu" />
 
 	</Target>
 </Project>
