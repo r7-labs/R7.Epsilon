@@ -131,7 +131,7 @@
 </div>
 
 <!-- gallery and carousel controls, hidden by default -->
-<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" data-use-bootstrap-modal="false">
     <div class="slides"></div>
     <h3 class="title"></h3>
     <a class="prev">‹</a>
