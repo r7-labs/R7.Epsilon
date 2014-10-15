@@ -48,11 +48,11 @@
     <PackageOutputPath>output</PackageOutputPath>
     <!-- <MSBuildDnnBinPath Condition="'$(MSBuildDnnBinPath)' == ''">..\..\..\bin</MSBuildDnnBinPath> -->
     <MSBuildDnnBinPath Condition="'$(MSBuildDnnBinPath)' == ''">..\R7.Epsilon\bin\$(Configuration)</MSBuildDnnBinPath>
-	<DnnInstallPath>..\..\..</DnnInstallPath>
-	<DnnBinPath>$(DnnInstallPath)\bin</DnnBinPath>
-	<DnnSkinsPath>$(DnnInstallPath)\Portals\_default\Skins</DnnSkinsPath>
-	<DnnContainersPath>$(DnnInstallPath)\Portals\_default\Containers</DnnContainersPath>
-	<DnnMenusPath>$(DnnInstallPath)\DesktopModules\DDRMenu</DnnMenusPath>
+    <DnnInstallPath>..\..\..</DnnInstallPath>
+    <DnnBinPath>$(DnnInstallPath)\bin</DnnBinPath>
+    <DnnSkinsPath>$(DnnInstallPath)\Portals\_default\Skins</DnnSkinsPath>
+    <DnnContainersPath>$(DnnInstallPath)\Portals\_default\Containers</DnnContainersPath>
+    <DnnMenusPath>$(DnnInstallPath)\DesktopModules\DDRMenu</DnnMenusPath>
   </PropertyGroup>
   <Import Project="Install.targets" />
   <Import Project="LocalDeploy.targets" />
