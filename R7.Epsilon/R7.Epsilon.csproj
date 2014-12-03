@@ -110,6 +110,7 @@
     <Content Include="Skins\img\button_100x100.svg" />
     <Content Include="Skins\Simple.ascx" />
     <Content Include="Skins\js\simple.js" />
+    <Content Include="Skins\js\npm.js" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
