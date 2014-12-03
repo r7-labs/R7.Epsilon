@@ -55,6 +55,7 @@
     <None Include="Menu\Mega2Epsilon.xslt" />
     <None Include="Menu\menudef.xml" />
     <None Include="Skins\Simple.doctype.xml" />
+    <None Include="Skins\App_LocalResources\SharedResources.ru-RU.resx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="lib\ControllerBase.cs" />
