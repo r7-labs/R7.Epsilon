@@ -54,6 +54,7 @@
     <None Include="Skins\i\icon_notification.psd" />
     <None Include="Menu\Mega2Epsilon.xslt" />
     <None Include="Menu\menudef.xml" />
+    <None Include="Skins\Simple.doctype.xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="lib\ControllerBase.cs" />
