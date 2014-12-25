@@ -6,10 +6,22 @@
   margin-top: 15px;
   text-align: center;
 }
+
+.navbar-collapse 
+{ 
+  padding-left:0; 
+  padding-right:0 
+}
+
+.navbar > .container .navbar-brand { margin-left:0; }
+
+.navbar-right { margin-right:0 }
+
+ /*
 .navbar {
   margin-bottom: 0 !important;
   border-radius: 0 !important;
-}
+}*/
 .carousel-inner > .active.left {
   float: none;
 }
@@ -18,11 +30,8 @@
 }
 .navbar-brand {
     padding: 0 !important;
-    float:left;
-    width:200px;
-    height:150px;
-    /*position:relative;    
-    left:15px;*/
+    width:350px;
+    height:75px;
     margin:5px;  
 }
 a.btn-info,
@@ -32,8 +41,7 @@ a.btn-primary:visited {
   color: #fff;
 }
 .searchBox {
-  width: 240px;
-  float:left;
+    margin-top:10px;
 }
 /*
 .searchBox .searchText {
@@ -55,6 +63,7 @@ a.btn-primary:visited {
 .searchBox #dnn_dnnSearch_txtSearch
 {
     width:20em;
+    margin:0;
 }
 
 .searchSkinObjectPreview
@@ -131,60 +140,59 @@ ul.dnnAdminTabNav {
   box-sizing: content-box !important;
   /* Opera/IE 8+ */
 }
-.navbar-buttons
+
+.buttonBox
 {
+    width:315px;
     float:right;
-    clear:right;
+    margin-top:5px;
+    border:1px solid red;
 }
 
-.navbar-buttons td
+.buttonBox td
 {
     padding-left:5px
 }
 
-
-/* .navbar { background-image: linear-gradient(#54EBB4, #2FE7A4 60%, #1DE59C) }*/
-
-.navbar-default .navbar-nav > li > div > ul > li > a,
-.navbar-default .LoginLink {
-  color: #ffffff;
+.languageBox 
+{
+    margin-top:17px
 }
-.navbar-default .navbar-nav > li > div > a:hover,
-.navbar-default .navbar-nav > li > div > a:focus,
-.navbar-default .navbar-nav > li > div > ul > li > a:hover,
-.navbar-default .navbar-nav > li > div > ul > li > a:focus {
-  color: #ffffff;
-  background-color: #17cc8a;
+
+.languageBox .language-object .Language
+{
+    margin-right:5px;
 }
-/*------------------------------------------------*/
+
+ /*------------------------------------------------*/
 /* LOGIN */
 /*------------------------------------------------*/
-.navbar-right {
-    margin-bottom:10px;
+.loginBox {
+    margin-top:10px;
 }
-.navbar-right .registerGroup,
-.navbar-right .registerGroup *,
-.navbar-right .loginGroup,
-.navbar-right .loginGroup * {
+.loginBox .registerGroup,
+.loginBox .registerGroup *,
+.loginBox .loginGroup,
+.loginBox .loginGroup * {
   display: inline;
 }
-.navbar-right .registerGroup,
-.navbar-right .loginGroup {
+.loginBox .registerGroup,
+.loginBox .loginGroup {
   float: right;
 }
-.navbar-right .registerGroup li:first-child:hover {
+.loginBox .registerGroup li:first-child:hover {
   border-left: #222;
 }
 /* Register Group Styles */
-.navbar-right .registerGroup li {
+.loginBox .registerGroup li {
   float: left;
 }
-.navbar-right .registerGroup .buttonGroup {
+.loginBox .registerGroup .buttonGroup {
   margin-right: 0;
 }
 
-.navbar-right .registerGroup a,
-.navbar-right .loginGroup a {
+.loginBox .registerGroup a,
+.loginBox .loginGroup a {
   display: block;
   position: relative;
  /* height: 50px; */
@@ -192,16 +200,16 @@ ul.dnnAdminTabNav {
   padding: 5px;
   vertical-align: middle;
 }
-.navbar-right .registerGroup a:active,
-.navbar-right .loginGroup a:active {
+.loginBox.registerGroup a:active,
+.loginBox .loginGroup a:active {
   text-shadow: 0 -1px 0 #ffffff;
 }
-.navbar-right .registerGroup a:hover,
-.navbar-right .loginGroup a:hover {
+.loginBox .registerGroup a:hover,
+.loginBox .loginGroup a:hover {
   text-decoration: none;
 }
-.navbar-right .registerGroup a strong,
-.navbar-right .loginGroup a strong {
+.loginBox .registerGroup a strong,
+.loginBox .loginGroup a strong {
   display: block;
   position: absolute;
   left: 0;
@@ -211,32 +219,32 @@ ul.dnnAdminTabNav {
   font-size: 0;
   text-indent: -9999px;
 }
-.navbar-right .userMessages,
-.navbar-right .userNotifications {
+.loginBox .userMessages,
+.loginBox .userNotifications {
   background-color: #2D4A74;
 }
-.navbar-right .userMessages a {
+.loginBox .userMessages a {
   height: 32px;
   background: url('i/icon_message.png') no-repeat center center;
 }
-.navbar-right .userNotifications a {
+.loginBox .userNotifications a {
   height: 32px;
   background: url('i/icon_notification.png') no-repeat center center;
 }
-.navbar-right .registerGroup a span {
+.loginBox .registerGroup a span {
   display: inline-block;
   min-width: 7px;
   margin-right: 3px;
   text-align: center;
 }
-.navbar-right .registerGroup .userProfileImg a {
+.loginBox .registerGroup .userProfileImg a {
  /* min-width: 50px;
   min-height: 50px;*/
   padding: 0;
 }
 
-.navbar-right #dnn_dnnUser_messageGroup,
-.navbar-right #dnn_dnnUser_notificationGroup
+.loginBox #dnn_dnnUser_messageGroup,
+.loginBox #dnn_dnnUser_notificationGroup
 {
     width:32px;
     height:32px;
@@ -244,21 +252,21 @@ ul.dnnAdminTabNav {
     padding-bottom:8px;*/
 }
 
-.navbar-right .registerGroup a img {
+.loginBox .registerGroup a img {
  /* height: 50px;
   width: 50px;*/
 }
 /* Login Group Styles */
 /* Number of message next to the message icon*/
-.navbar-right .userMessages a span,
-.navbar-right .userNotifications a span {
+.loginBox .userMessages a span,
+.loginBox .userNotifications a span {
   display: inline-block;
   margin-top: 0;
   margin-right: 0;
   background-color: transparent;
 }
-.navbar-right .userNotifications span,
-.navbar-right .userMessages span {
+.loginBox .userNotifications span,
+.loginBox .userMessages span {
   height: 100%;
   display: block;
   position: absolute;
@@ -270,12 +278,29 @@ ul.dnnAdminTabNav {
   text-indent: -9999px;
   z-index: 999;
 }
-.navbar-right .userNotifications span {
+.loginBox .userNotifications span {
   background: url('i/icon_notification_active.png') no-repeat center center;
 }
-.navbar-right .userMessages span {
+.loginBox .userMessages span {
   background: url('i/icon_message_active.png') no-repeat center center;
 }
+
+
+/* .navbar { background-image: linear-gradient(#54EBB4, #2FE7A4 60%, #1DE59C) }*/
+
+.navbar-default .navbar-nav > li > div > ul > li > a,
+/*.navbar-default .LoginLink {
+  color: #ffffff;
+}*/
+
+.navbar-default .navbar-nav > li > div > a:hover,
+.navbar-default .navbar-nav > li > div > a:focus,
+.navbar-default .navbar-nav > li > div > ul > li > a:hover,
+.navbar-default .navbar-nav > li > div > ul > li > a:focus {
+  color: #ffffff;
+  background-color: #17cc8a;
+}
+
 /* Content formatting */
 #Content,
 #TopContent {

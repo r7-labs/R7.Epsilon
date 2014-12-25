@@ -62,15 +62,18 @@ ul.megamenu .sub ul li a {
 
 /* --Modify for styling --*/
 ul.megamenu {
-	background-color:#A60101;
+	/* background-color:#aaa; */
 }
 ul.megamenu a {
-	color:White;font-weight:bold;
+	color:#000;
+    /*font-weight:bold;*/
 }
 ul.megamenu a {
-	padding:8px;
+	padding:4px;
 }
-ul.megamenu li a.level0:hover, .megahover, ul.megamenu .current {background-color:#2D4A74; }
+/*ul.megamenu li a.level0:hover, .megahover, ul.megamenu .current {background-color:#2D4A74; }*/
+
+ul.megamenu li a.level0:hover, .megahover, ul.megamenu .current { font-weight:bold }
 
 div.sub {
 padding:8px;

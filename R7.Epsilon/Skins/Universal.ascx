@@ -23,7 +23,26 @@
 
 <dnn:TEXT runat="server" CssClass="age-rating" resourcekey="AgeRating.Text" ReplaceTokens="false" />
 
-<div class="navbar navbar-default" role="navigation">
+<div class="navbar navbar-collapse">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1 languageBox">
+                <dnn:LANGUAGE runat="server" id="dnnLANGUAGE" ShowLinks="True" ShowMenu="False" />
+            </div>
+            <div class="col-md-3 dnnFormItem searchBox">
+                <dnn:Search id="dnnSearch" runat="server" ShowSite="false" ShowWeb="false" />
+            </div>
+            <div class="col-md-8 loginBox">
+                <dnn:USER ID="dnnUser" runat="server" LegacyMode="false" />
+                <dnn:LOGIN ID="dnnLogin" CssClass="LoginLink" runat="server" LegacyMode="false" />
+            </div>
+            <!--  CssClass="btn btn-success btn-xs" -->
+        </div>
+           
+    </div>
+</div>
+
+<nav class="navbar navbar-default" role="navigation">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -32,55 +51,42 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            
         </div>
         <div class="navbar-collapse collapse">
-            
-             <dnn:MENU MenuStyle="Mega2Epsilon" runat="server" />
-           
-             <div class="navbar-brand">
-               <dnn:LOGO runat="server" id="dnnLOGO" />
+            <dnn:MENU MenuStyle="Mega2Epsilon" runat="server" />
+            <div style="float:left">
+                <div class="navbar-brand">
+                    <dnn:LOGO runat="server" id="dnnLOGO" />
+                </div>  
+                <div class="buttonBox visible-lg">
+                    <dnn:BANNER id="dnnBanner1" runat="server" GroupName="HeaderButtons" BannerTypeId="4" BannerCount="3" Orientation="H" AllowNullBannerType="true" />    
+                </div>
             </div>
-           
-            <div class="searchBox">
-                <dnn:Search id="dnnSearch" runat="server" showsite="false" showweb="false" cssclass="btn btn-success btn-xs" />
+            <div class="nav navbar-nav navbar-right loginBox" style="background-color:#aaa">
+            <!-- <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li>
+                        
+                    </li>
+                </ul>
+            </li>-->
+                <span>
+                  
+                </span>
+                <span>
+                 
+                </span>
             </div>
-            
-            <ul class="nav navbar-nav navbar-right">
-               <!-- <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            
-                        </li>
-                    </ul>
-
-                </li>-->
-                <li>
-                   <dnn:USER ID="dnnUser" runat="server" LegacyMode="false" />
-                </li>
-                <li>
-                   <dnn:LOGIN ID="dnnLogin" CssClass="LoginLink" runat="server" LegacyMode="false" />
-                </li>
-            </ul>
-            
-              <div class="navbar-buttons">
-                <dnn:BANNER id="dnnBanner1" runat="server" GroupName="HeaderButtons" BannerTypeId="4" BannerCount="4" Orientation="H" AllowNullBannerType="true" />    
+          
+            <div style="width:300px">
+                <dnn:MENU MenuStyle="Mega2Epsilon" runat="server" NodeSelector="CurrentChildren" />     
             </div>
-           
-             <div style="float:left">
-                <dnn:LANGUAGE runat="server" id="dnnLANGUAGE"  showMenu="False" showLinks="True" />
-            </div>        
-           
-         
+        
         </div>
         <!--/.nav-collapse -->
-        
-         <div class="navbar-collapse collapse">
-            <dnn:MENU MenuStyle="Mega2Epsilon" runat="server" NodeSelector="CurrentChildren" />
-        </div>    
     </div>
-</div>
+</nav>
 
 <div id="CarouselPane" runat="server" class="carousel slide" containertype="G" containername="R7.Epsilon" containersrc="Blank.ascx" />
 
