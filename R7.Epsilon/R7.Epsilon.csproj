@@ -119,6 +119,10 @@
     <Content Include="Skins\js\npm.js" />
     <Content Include="Skins\Universal.ascx" />
     <Content Include="Containers\Default_H3.ascx" />
+    <Content Include="Containers\Message_Warning.ascx" />
+    <Content Include="Containers\Message_Info.ascx" />
+    <Content Include="Containers\Message_Success.ascx" />
+    <Content Include="Containers\Message_Danger.ascx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
