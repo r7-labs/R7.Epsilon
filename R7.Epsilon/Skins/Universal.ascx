@@ -92,6 +92,7 @@
 
     <div id="TopRow2" class="row">
         <div id="TopLeftPane" runat="server" class="col-md-7" />
+        <!-- REVIEW: Make TopRightPane of fixed width? -->
         <div id="TopRightPane" runat="server" class="col-md-5" />
     </div>
 
