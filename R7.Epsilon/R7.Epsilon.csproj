@@ -120,6 +120,7 @@
     <Content Include="Containers\Message_Info.ascx" />
     <Content Include="Containers\Message_Success.ascx" />
     <Content Include="Containers\Message_Danger.ascx" />
+    <Content Include="Containers\Callout_Info.ascx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
