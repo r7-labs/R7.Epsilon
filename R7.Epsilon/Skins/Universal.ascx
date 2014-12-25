@@ -108,43 +108,43 @@
     </div>
 
     <div id="ContentOddRow1" class="row">
-        <div id="ContentPane" runat="server" class="col-md-9" />
-        <div id="RightPane" runat="server" class="col-md-3" />
+        <div id="ContentPane" runat="server" class="col-md-9 col-sm-7" />
+        <div id="RightPane" runat="server" class="col-md-3 col-sm-5" />
     </div>
    
     <div id="ContentEvenRow1" class="row"> 
-        <div id="LeftPane" runat="server" class="col-md-3" />
-        <div id="ContentLeftPane" runat="server" class="col-md-9" />
+        <div id="LeftPane" runat="server" class="col-md-3 col-sm-5" />
+        <div id="ContentLeftPane" runat="server" class="col-md-9 col-sm-7" />
     </div>
 
     <div id="ContentOddRow2" class="row">
-        <div id="ContentPane2" runat="server" class="col-md-10" />
-        <div id="RightPane2" runat="server" class="col-md-2" />
+        <div id="ContentPane2" runat="server" class="col-md-9 col-sm-7" />
+        <div id="RightPane2" runat="server" class="col-md-3 col-sm-5" />
     </div>
 
     <div id="ContentEvenRow2" class="row"> 
-        <div id="LeftPane2" runat="server" class="col-md-3" />
-        <div id="ContentLeftPane2" runat="server" class="col-md-9" />
+        <div id="LeftPane2" runat="server" class="col-md-3 col-sm-5" />
+        <div id="ContentLeftPane2" runat="server" class="col-md-9 col-sm-7" />
     </div>
 
     <div id="ContentOddRow3" class="row">
-        <div id="ContentPane3" runat="server" class="col-md-10" />
-        <div id="RightPane3" runat="server" class="col-md-2" />
+        <div id="ContentPane3" runat="server" class="col-md-9 col-sm-7" />
+        <div id="RightPane3" runat="server" class="col-md-3 col-sm-5" />
     </div>
 
     <div id="ContentEvenRow3" class="row"> 
-        <div id="LeftPane3" runat="server" class="col-md-3" />
-        <div id="ContentLeftPane3" runat="server" class="col-md-9" />
+        <div id="LeftPane3" runat="server" class="col-md-3 col-sm-5" />
+        <div id="ContentLeftPane3" runat="server" class="col-md-9 col-sm-7" />
     </div>
 
     <div id="ContentOddRow4" class="row">
-        <div id="ContentPane4" runat="server" class="col-md-10" />
-        <div id="RightPane4" runat="server" class="col-md-2" />
+        <div id="ContentPane4" runat="server" class="col-md-9 col-sm-7" />
+        <div id="RightPane4" runat="server" class="col-md-3 col-sm-5" />
     </div>
 
     <div id="ContentEvenRow4" class="row"> 
-        <div id="LeftPane4" runat="server" class="col-md-3" />
-        <div id="ContentLeftPane4" runat="server" class="col-md-9" />
+        <div id="LeftPane4" runat="server" class="col-md-3 col-sm-5" />
+        <div id="ContentLeftPane4" runat="server" class="col-md-9 col-sm-7" />
     </div>
 
     <div id="BottonRow1" class="row">
