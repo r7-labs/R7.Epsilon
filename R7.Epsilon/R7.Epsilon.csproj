@@ -123,6 +123,8 @@
     <Content Include="Containers\Callout_Info.ascx" />
     <Content Include="Skins\img\logo-template-150x150.png" />
     <Content Include="Skins\img\logo-template-150x150.svg" />
+    <Content Include="Skins\img\logo-template-350x75.png" />
+    <Content Include="Skins\img\logo-template-350x75.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
