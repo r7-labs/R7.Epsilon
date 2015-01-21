@@ -14,6 +14,7 @@
 <%@ Register TagPrefix="dnn" TagName="TEXT" Src="~/Admin/Skins/Text.ascx" %>
 <%@ Register TagPrefix="dnn" Namespace="DotNetNuke.Web.Client.ClientResourceManagement" Assembly="DotNetNuke.Web.Client" %>
 <%@ Register TagPrefix="skin" TagName="GTRANSLATE" Src="~/Portals/_default/Skins/R7.Epsilon/controls/GTranslate.ascx" %>
+<%@ Register TagPrefix="skin" TagName="SOCIALGROUPS" Src="~/Portals/_default/Skins/R7.Epsilon/controls/SocialGroups.ascx" %>
 
 <dnn:META ID="mobileScale" runat="server" Name="viewport" Content="width=device-width,initial-scale=1" />
 
@@ -33,6 +34,9 @@
                     <skin:GTRANSLATE runat="server" />
                 </div>
             </div>  
+            <div class="socialgroups-wrapper">
+                <skin:SOCIALGROUPS runat="server" />
+            </div>
             <div class="search-box-wrapper">
                 <div class="dnnFormItem search-box">
                     <dnn:SEARCH id="dnnSearch" runat="server" ShowSite="false" ShowWeb="false" />

@@ -1,5 +1,5 @@
 ﻿//
-// GTranslate.cs
+// SocialGroups.ascx.cs
 //
 // Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
@@ -30,9 +30,9 @@ using System.Web.UI;
 
 namespace R7.Epsilon
 {
-    public class GTranslate: CustomSkinObjectBase
+    public class SocialGroups : CustomSkinObjectBase
     {
-        public GTranslate (): base ("GTranslate.ascx")
+        public SocialGroups (): base ("SocialGroups.ascx")
         {
         }
     }

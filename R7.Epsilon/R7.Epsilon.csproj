@@ -82,6 +82,9 @@
       <DependentUpon>GTranslate.ascx</DependentUpon>
     </Compile>
     <Compile Include="components\CustomSkinObjectBase.cs" />
+    <Compile Include="Skins\controls\SocialGroups.ascx.cs">
+      <DependentUpon>SocialGroups.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Containers\Blank.ascx" />
@@ -137,6 +140,9 @@
     <Content Include="Skins\img\gtranslate_27x18.svg" />
     <Content Include="Skins\img\logo_template_133x100.png" />
     <Content Include="Skins\img\logo_template_133x100.svg" />
+    <Content Include="Skins\img\social_32x32.png" />
+    <Content Include="Skins\img\social_32x32.svg" />
+    <Content Include="Skins\controls\SocialGroups.ascx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
