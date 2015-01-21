@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="27"
+   height="18"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="gtranslate_27x18.svg"
+   inkscape:export-filename="/home/redhound/Рабочий стол/Новый скин 2015/GTranslate/gtranslate_27x18.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs4">
+    <linearGradient
+       id="linearGradient3758">
+      <stop
+         style="stop-color:#999999;stop-opacity:1;"
+         offset="0"
+         id="stop3760" />
+      <stop
+         style="stop-color:#eae8de;stop-opacity:1"
+         offset="1"
+         id="stop3762" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3758"
+       id="linearGradient3764"
+       x1="27.161612"
+       y1="1052.1122"
+       x2="0"
+       y2="1034.3622"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="16"
+     inkscape:cx="9.3461749"
+     inkscape:cy="4.2724442"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1366"
+     inkscape:window-height="718"
+     inkscape:window-x="0"
+     inkscape:window-y="26"
+     inkscape:window-maximized="1"
+     inkscape:snap-page="true"
+     inkscape:snap-bbox="true"
+     inkscape:snap-global="true"
+     inkscape:object-paths="true"
+     inkscape:object-nodes="true"
+     inkscape:snap-smooth-nodes="true" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Background"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-1034.3622)">
+    <path
+       style="fill:#eae8de;fill-opacity:1;stroke:none"
+       d="m 0,1034.3622 27,0 0,18 -27,0 z"
+       id="rect2985"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#347af0;fill-opacity:1;stroke:none"
+       d="m 17.5,1034.3622 9.5,0 0,18 -17.5,0 z"
+       id="rect2985-6"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:none;stroke:url(#linearGradient3764);stroke-width:0.50000000000000000;stroke-miterlimit:4;stroke-dasharray:none;fill-opacity:1"
+       d="m 0.1616117,1034.1122 27.0000003,0 0,18 -27.0000003,0 z"
+       id="rect2989"
+       inkscape:connector-curvature="0" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Text">
+    <text
+       xml:space="preserve"
+       style="font-size:144px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Sans Bold"
+       x="14.78125"
+       y="14.832014"
+       id="text3016"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3018"
+         x="14.78125"
+         y="14.832014"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ffffff;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans">A</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:144px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#565552;fill-opacity:1;stroke:none;font-family:HanWangHeiHeavy;-inkscape-font-specification:HanWangHeiHeavy Bold"
+       x="0.37695312"
+       y="13.595703"
+       id="text3016-5"
+       sodipodi:linespacing="125%"
+       inkscape:transform-center-x="5.5195312"
+       inkscape:transform-center-y="-3.1819805"><tspan
+         sodipodi:role="line"
+         id="tspan3018-6"
+         x="0.37695312"
+         y="13.595703"
+         style="font-size:13px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#565552;fill-opacity:1;font-family:WenQuanYi Micro Hei;-inkscape-font-specification:WenQuanYi Micro Hei Bold">文</tspan></text>
+  </g>
+</svg>

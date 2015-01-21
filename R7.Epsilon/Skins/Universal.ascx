@@ -13,6 +13,7 @@
 <%@ Register TagPrefix="dnn" TagName="BANNER" Src="~/Admin/Skins/Banner.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="TEXT" Src="~/Admin/Skins/Text.ascx" %>
 <%@ Register TagPrefix="dnn" Namespace="DotNetNuke.Web.Client.ClientResourceManagement" Assembly="DotNetNuke.Web.Client" %>
+<%@ Register TagPrefix="skin" TagName="GTRANSLATE" Src="~/Portals/_default/Skins/R7.Epsilon/controls/GTranslate.ascx" %>
 
 <dnn:META ID="mobileScale" runat="server" Name="viewport" Content="width=device-width,initial-scale=1" />
 
@@ -20,19 +21,21 @@
 <dnn:DnnJsInclude ID="bootstrapJS" runat="server" FilePath="js/bootstrap.min.js" PathNameAlias="SkinPath" Priority="10" />
 <dnn:DnnCssInclude ID="bootStrapCSS" runat="server" FilePath="css/bootstrap.min.css" PathNameAlias="SkinPath" Priority="14" />
 <dnn:DnnJsInclude ID="bluImpJS" runat="server" FilePath="js/jquery.blueimp-gallery.min.js" PathNameAlias="SkinPath" />
+<dnn:DnnJsInclude ID="skinJS" runat="server" FilePath="js/skin.js" PathNameAlias="SkinPath" />
 
 <dnn:TEXT runat="server" CssClass="age-rating" resourcekey="AgeRating.Text" ReplaceTokens="false" />
 
 <div class="navbar navbar-collapse">
     <div class="container">
         <div class="row">
-            <div class="col-md-1 languageBox">
+            <div class="col-md-2 language-box">
                 <dnn:LANGUAGE runat="server" id="dnnLANGUAGE" ShowLinks="True" ShowMenu="False" />
+                <skin:GTRANSLATE runat="server" />
             </div>
             <div class="col-md-3 dnnFormItem searchBox">
                 <dnn:Search id="dnnSearch" runat="server" ShowSite="false" ShowWeb="false" />
             </div>
-            <div class="col-md-8 loginBox">
+            <div class="col-md-7 loginBox">
                 <dnn:USER ID="dnnUser" runat="server" LegacyMode="false" />
                 <dnn:LOGIN ID="dnnLogin" CssClass="LoginLink" runat="server" LegacyMode="false" />
             </div>
