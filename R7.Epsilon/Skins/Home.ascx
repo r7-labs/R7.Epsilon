@@ -42,8 +42,8 @@
                <dnn:LOGO runat="server" id="dnnLOGO" />
             </div>
            
-            <div class="searchBox">
-                <dnn:Search id="dnnSearch" runat="server" showsite="false" showweb="false" cssclass="btn btn-success btn-xs" />
+            <div class="search-box">
+                <dnn:SEARCH id="dnnSearch" runat="server" showsite="false" showweb="false" cssclass="btn btn-success btn-xs" />
             </div>
             
             <ul class="nav navbar-nav navbar-right">

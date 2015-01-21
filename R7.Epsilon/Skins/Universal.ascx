@@ -27,21 +27,17 @@
 
 <div class="navbar navbar-collapse">
     <div class="container">
-        <div class="row">
-            <div class="col-md-2 language-box">
-                <dnn:LANGUAGE runat="server" id="dnnLANGUAGE" ShowLinks="True" ShowMenu="False" />
-                <skin:GTRANSLATE runat="server" />
+            <div class="language-box-wrapper">
+                <div class="language-box">
+                    <dnn:LANGUAGE runat="server" id="dnnLANGUAGE" ShowLinks="True" ShowMenu="False" />
+                    <skin:GTRANSLATE runat="server" />
+                </div>
+            </div>  
+            <div class="search-box-wrapper">
+                <div class="dnnFormItem search-box">
+                    <dnn:SEARCH id="dnnSearch" runat="server" ShowSite="false" ShowWeb="false" />
+                </div>
             </div>
-            <div class="col-md-3 dnnFormItem searchBox">
-                <dnn:Search id="dnnSearch" runat="server" ShowSite="false" ShowWeb="false" />
-            </div>
-            <div class="col-md-7 loginBox">
-                <dnn:USER ID="dnnUser" runat="server" LegacyMode="false" />
-                <dnn:LOGIN ID="dnnLogin" CssClass="LoginLink" runat="server" LegacyMode="false" />
-            </div>
-            <!--  CssClass="btn btn-success btn-xs" -->
-        </div>
-           
     </div>
 </div>
 
@@ -90,6 +86,11 @@
         <!--/.nav-collapse -->
     </div>
 </nav>
+
+    <div class="loginBox">
+                <dnn:USER ID="dnnUser" runat="server" LegacyMode="false" />
+                <dnn:LOGIN ID="dnnLogin" CssClass="LoginLink" runat="server" LegacyMode="false" />
+            </div>
 
 <div id="CarouselPane" runat="server" class="carousel slide" containertype="G" containername="R7.Epsilon" containersrc="Blank.ascx" />
 

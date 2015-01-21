@@ -40,8 +40,8 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <div class="searchBox">
-                                <dnn:Search id="dnnSearch" runat="server" showsite="false" showweb="false" cssclass="btn btn-success btn-xs" />
+                            <div class="search-box">
+                                <dnn:SEARCH id="dnnSearch" runat="server" showsite="false" showweb="false" cssclass="btn btn-success btn-xs" />
                             </div>
                         </li>
                     </ul>

@@ -40,42 +40,7 @@ a.btn-primary,
 a.btn-primary:visited {
   color: #fff;
 }
-.searchBox {
-    margin-top:10px;
-}
-/*
-.searchBox .searchText {
-  color: #000;
 
-}*/
-
-.searchBox .dnnSearchBoxClearText
-{
-    /* fix clear button position */
-    position:relative;
-    top:-2px;
-}
-.searchBox #dnn_dnnSearch_cmdSearch
-{
-    display:none;
-}
-
-.searchBox #dnn_dnnSearch_txtSearch
-{
-    width:20em;
-    margin:0;
-}
-
-.searchSkinObjectPreview
-{
-    /* attach to the left inputbox border */
-    left:0;
-}
-/*
-.searchSkinObjectPreview_group {
-  display: none;
-}
-*/
 
 .age-rating
 {
@@ -151,9 +116,49 @@ ul.dnnAdminTabNav {
 
 .buttonBox td { padding-left:5px }
 
-.language-box { margin-top:17px }
+/* Row 1 */
 
-.language-box .language-object .Language { margin-right:5px; }
+.language-box-wrapper 
+{ 
+    float:left;
+    margin-top:17px 
+}
+
+.language-box 
+{
+    & > .language-object 
+    {
+        display:inline-block;
+        & > .Language { margin-right:5px; }
+    }
+}
+
+.search-box-wrapper
+{
+    float:right;
+    margin-top:11px;
+}
+
+.search-box 
+{
+    /* HACK: fix clear button position */
+    .dnnSearchBoxClearText
+    {
+        position:relative;
+        top:2px;
+    }
+    #dnn_dnnSearch_cmdSearch { display:none }
+    #dnn_dnnSearch_txtSearch
+    {
+        width:22em;
+        margin:0;
+    }
+    .searchSkinObjectPreview
+    {
+        /* attach to the right inputbox border */
+        right:0;
+    }
+}
 
  /*------------------------------------------------*/
 /* LOGIN */
@@ -530,4 +535,3 @@ body:last-child .blueimp-gallery-playing > .play-pause {
 .dnnCheckbox .mark { background:none; }
 
 
-.language-object { display:inline-block }
