@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="social_32px.svg"
+   sodipodi:docname="social_32x32.svg"
    inkscape:export-filename="/home/redhound/Рабочий стол/Новый скин 2015/Social/social_32px.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
@@ -603,7 +603,7 @@
      inkscape:cx="119.93053"
      inkscape:cy="9.0797368"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer2"
      showgrid="true"
      inkscape:window-width="1366"
      inkscape:window-height="718"
@@ -630,7 +630,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -698,7 +698,7 @@
        y="0" />
     <text
        xml:space="preserve"
-       style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#235987;fill-opacity:1;stroke:none;filter:url(#filter4228);font-family:Open Sans;-inkscape-font-specification:Open Sans"
+       style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#235987;fill-opacity:1;stroke:none;font-family:Open Sans;-inkscape-font-specification:Open Sans"
        x="7.4921875"
        y="24.566406"
        id="text3866"
@@ -707,10 +707,10 @@
          id="tspan3868"
          x="7.4921875"
          y="24.566406"
-         style="font-size:24px;font-weight:bold;fill:#235987;fill-opacity:1;-inkscape-font-specification:Open Sans Bold">B</tspan></text>
+         style="font-size:24px;font-weight:bold;fill:#235987;fill-opacity:1;-inkscape-font-specification:Open Sans Bold;">B</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;display:inline;filter:url(#filter4170);font-family:Open Sans;-inkscape-font-specification:Open Sans"
+       style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;display:inline;font-family:Open Sans;-inkscape-font-specification:Open Sans"
        x="42.574219"
        y="25.181641"
        id="text3866-5"
@@ -719,10 +719,10 @@
          id="tspan3868-3"
          x="42.574219"
          y="25.181641"
-         style="font-size:24px;font-weight:bold;fill:#ffffff;-inkscape-font-specification:Open Sans Bold">f</tspan></text>
+         style="font-size:24px;font-weight:bold;fill:#ffffff;-inkscape-font-specification:Open Sans Bold;">f</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;display:inline;filter:url(#filter4204);font-family:Open Sans;-inkscape-font-specification:Open Sans"
+       style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;display:inline;font-family:Open Sans;-inkscape-font-specification:Open Sans"
        x="69.047852"
        y="19.55957"
        id="text3866-5-3"
@@ -731,10 +731,10 @@
          id="tspan3868-3-0"
          x="69.047852"
          y="19.55957"
-         style="font-size:20px;font-weight:bold;fill:#ffffff;-inkscape-font-specification:Open Sans Bold">g+</tspan></text>
+         style="font-size:20px;font-weight:bold;fill:#ffffff;-inkscape-font-specification:Open Sans Bold;">g+</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#1486ca;fill-opacity:1;stroke:none;display:inline;filter:url(#filter4152);font-family:Open Sans;-inkscape-font-specification:Open Sans"
+       style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;display:inline;font-family:Open Sans;-inkscape-font-specification:Open Sans"
        x="106.90234"
        y="23.828125"
        id="text3866-5-3-8"
@@ -743,10 +743,10 @@
          id="tspan3868-3-0-0"
          x="106.90234"
          y="23.828125"
-         style="font-size:24px;font-weight:bold;fill:#1486ca;fill-opacity:1;-inkscape-font-specification:Open Sans Bold">t</tspan></text>
+         style="font-size:24px;font-weight:bold;fill:#ffffff;fill-opacity:1;-inkscape-font-specification:Open Sans Bold">t</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;display:inline;filter:url(#filter4140);font-family:Open Sans;-inkscape-font-specification:Open Sans"
+       style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;display:inline;font-family:Open Sans;-inkscape-font-specification:Open Sans"
        x="2.3286133"
        y="-137.56201"
        id="text3866-5-3-8-1"
@@ -756,10 +756,10 @@
          id="tspan3868-3-0-0-3"
          x="2.3286133"
          y="-137.56201"
-         style="font-size:16px;font-weight:bold;fill:#ffffff;-inkscape-font-specification:Open Sans Bold">OK</tspan></text>
+         style="font-size:16px;font-weight:bold;fill:#ffffff;-inkscape-font-specification:Open Sans Bold;">OK</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;display:inline;filter:url(#filter4128);font-family:Open Sans;-inkscape-font-specification:Open Sans"
+       style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;display:inline;font-family:Open Sans;-inkscape-font-specification:Open Sans"
        x="166.29785"
        y="20.21875"
        id="text3866-5-5"
@@ -768,7 +768,7 @@
          id="tspan3868-3-2"
          x="166.29785"
          y="20.21875"
-         style="font-size:20px;font-weight:bold;fill:#ffffff;-inkscape-font-specification:Open Sans Bold">yt</tspan></text>
+         style="font-size:20px;font-weight:bold;fill:#ffffff;-inkscape-font-specification:Open Sans Bold;">yt</tspan></text>
     <rect
        style="fill:#e6e6e6;fill-opacity:1;stroke:none;display:inline;opacity:0.5"
        id="rect3027-6"
@@ -813,7 +813,7 @@
        y="32" />
     <text
        xml:space="preserve"
-       style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#235987;fill-opacity:1;stroke:none;display:inline;filter:url(#filter4228-4);font-family:Open Sans;-inkscape-font-specification:Open Sans"
+       style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#235987;fill-opacity:1;stroke:none;display:inline;font-family:Open Sans;-inkscape-font-specification:Open Sans"
        x="7.4921875"
        y="56.566406"
        id="text3866-8"
@@ -822,10 +822,10 @@
          id="tspan3868-39"
          x="7.4921875"
          y="56.566406"
-         style="font-size:24px;font-weight:bold;fill:#235987;fill-opacity:1;-inkscape-font-specification:Open Sans Bold">B</tspan></text>
+         style="font-size:24px;font-weight:bold;fill:#235987;fill-opacity:1;-inkscape-font-specification:Open Sans Bold;">B</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;display:inline;filter:url(#filter4170-5);font-family:Open Sans;-inkscape-font-specification:Open Sans"
+       style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;display:inline;font-family:Open Sans;-inkscape-font-specification:Open Sans"
        x="42.574219"
        y="57.181641"
        id="text3866-5-8"
@@ -834,10 +834,10 @@
          id="tspan3868-3-7"
          x="42.574219"
          y="57.181641"
-         style="font-size:24px;font-weight:bold;fill:#ffffff;-inkscape-font-specification:Open Sans Bold">f</tspan></text>
+         style="font-size:24px;font-weight:bold;fill:#ffffff;-inkscape-font-specification:Open Sans Bold;">f</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;display:inline;filter:url(#filter4204-1);font-family:Open Sans;-inkscape-font-specification:Open Sans"
+       style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;display:inline;font-family:Open Sans;-inkscape-font-specification:Open Sans"
        x="69.047852"
        y="51.55957"
        id="text3866-5-3-85"
@@ -846,10 +846,10 @@
          id="tspan3868-3-0-4"
          x="69.047852"
          y="51.55957"
-         style="font-size:20px;font-weight:bold;fill:#ffffff;-inkscape-font-specification:Open Sans Bold">g+</tspan></text>
+         style="font-size:20px;font-weight:bold;fill:#ffffff;-inkscape-font-specification:Open Sans Bold;">g+</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#1486ca;fill-opacity:1;stroke:none;display:inline;filter:url(#filter4152-1);font-family:Open Sans;-inkscape-font-specification:Open Sans"
+       style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;display:inline;font-family:Open Sans;-inkscape-font-specification:Open Sans"
        x="106.90234"
        y="55.828125"
        id="text3866-5-3-8-2"
@@ -858,10 +858,10 @@
          id="tspan3868-3-0-0-8"
          x="106.90234"
          y="55.828125"
-         style="font-size:24px;font-weight:bold;fill:#1486ca;fill-opacity:1;-inkscape-font-specification:Open Sans Bold">t</tspan></text>
+         style="font-size:24px;font-weight:bold;fill:#ffffff;fill-opacity:1;-inkscape-font-specification:Open Sans Bold">t</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;display:inline;filter:url(#filter4140-2);font-family:Open Sans;-inkscape-font-specification:Open Sans"
+       style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;display:inline;font-family:Open Sans;-inkscape-font-specification:Open Sans"
        x="2.3286133"
        y="-137.56201"
        id="text3866-5-3-8-1-5"
@@ -871,10 +871,10 @@
          id="tspan3868-3-0-0-3-3"
          x="2.3286133"
          y="-137.56201"
-         style="font-size:16px;font-weight:bold;fill:#ffffff;-inkscape-font-specification:Open Sans Bold">OK</tspan></text>
+         style="font-size:16px;font-weight:bold;fill:#ffffff;-inkscape-font-specification:Open Sans Bold;">OK</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;display:inline;filter:url(#filter4128-5);font-family:Open Sans;-inkscape-font-specification:Open Sans"
+       style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;display:inline;font-family:Open Sans;-inkscape-font-specification:Open Sans"
        x="166.29785"
        y="52.21875"
        id="text3866-5-5-8"
@@ -883,6 +883,6 @@
          id="tspan3868-3-2-3"
          x="166.29785"
          y="52.21875"
-         style="font-size:20px;font-weight:bold;fill:#ffffff;-inkscape-font-specification:Open Sans Bold">yt</tspan></text>
+         style="font-size:20px;font-weight:bold;fill:#ffffff;-inkscape-font-specification:Open Sans Bold;">yt</tspan></text>
   </g>
 </svg>
