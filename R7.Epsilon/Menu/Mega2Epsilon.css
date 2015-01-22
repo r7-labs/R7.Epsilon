@@ -9,11 +9,13 @@ ul.megamenu, ul.megamenu li
 {
 list-style-type:none;
 }
+
 ul.megamenu li {
 	float: left;
 	margin: 0; padding: 0;
 	/* position: relative;*/
 }
+
 
 ul.megamenu ul
 {
@@ -96,4 +98,27 @@ ul.megamenu li .sub {
 }
 ul.megamenu .sub ul li h2 a {
 	color: #e8e000;
+}
+
+.secondary-menu ul.megamenu a {
+    color:#fff;
+}
+
+/* Vertical menu for extra small devices */ 
+@media only screen and (max-width : 480px) 
+{
+    .primary-menu ul.megamenu {   
+        width:240px;
+        background-color:#ccc;
+    }
+
+    .secondary-menu ul.megamenu {   
+        width:240px;
+        background-color:#555;
+    }
+
+    ul.megamenu li, ul.megamenu li a {
+        float:none;
+        display:block;
+    }
 }

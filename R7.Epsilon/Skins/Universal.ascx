@@ -46,16 +46,26 @@
 
     <nav class="navbar navbar-default" role="navigation">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-            <div class="navbar-collapse collapse">
+            <button type="button" class="navbar-toggle top-menu-toggle" data-toggle="collapse" data-target=".top-menu">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="navbar-collapse collapse top-menu primary-menu">
                 <dnn:MENU MenuStyle="Mega2Epsilon" runat="server" />
+            </div>
+            <div class="navbar-collapse collapse top-menu secondary-menu">
+                <dnn:MENU MenuStyle="Mega2Epsilon" runat="server" NodeSelector="CurrentChildren" />
+            </div>
+
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            
+            <div class="navbar-collapse collapse">
                 <div style="float:left">
                     <div class="navbar-brand">
                         <dnn:LOGO runat="server" id="dnnLOGO" />
@@ -81,9 +91,7 @@
                     </span>
                 </div>
               
-                <div style="width:300px">
-                    <dnn:MENU MenuStyle="Mega2Epsilon" runat="server" NodeSelector="CurrentChildren" />     
-                </div>
+               
             
             </div>
             <!--/.nav-collapse -->

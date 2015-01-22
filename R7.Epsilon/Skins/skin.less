@@ -172,8 +172,13 @@ ul.dnnAdminTabNav {
 ul.socialgroups 
 {
     margin:0;
+    list-style: none;
     list-style-type: none;
-    & > li { display:inline; }
+    & > li 
+    { 
+        display:inline; 
+        list-style-type: none; 
+    }
     .social-button
     {
         display:inline-block;
@@ -201,6 +206,11 @@ ul.socialgroups
         &.social-yt:hover { background-position:-160px -32px; }
     }
 }
+
+// to display vertical menu
+.navbar { position:relative }
+
+.top-menu-toggle { float:right }
 
  /*------------------------------------------------*/
 /* LOGIN */
