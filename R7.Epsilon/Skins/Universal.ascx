@@ -26,75 +26,75 @@
 
 <dnn:TEXT runat="server" CssClass="age-rating" resourcekey="AgeRating.Text" ReplaceTokens="false" />
 
-<div class="navbar navbar-collapse">
+<header>
     <div class="container">
-            <div class="language-wrapper">
-                <div class="language">
-                    <dnn:LANGUAGE runat="server" id="dnnLANGUAGE" ShowLinks="True" ShowMenu="False" />
-                    <skin:GTRANSLATE runat="server" />
-                </div>
-            </div>  
-            <div class="socialgroups-wrapper">
-                <skin:SOCIALGROUPS runat="server" />
+        <div class="language-wrapper">
+            <div class="language">
+                <dnn:LANGUAGE runat="server" id="dnnLANGUAGE" ShowLinks="True" ShowMenu="False" />
+                <skin:GTRANSLATE runat="server" />
             </div>
-            <div class="search-wrapper">
-                <div class="dnnFormItem search">
-                    <dnn:SEARCH id="dnnSearch" runat="server" ShowSite="false" ShowWeb="false" />
-                </div>
+        </div>  
+        <div class="socialgroups-wrapper">
+            <skin:SOCIALGROUPS runat="server" />
+        </div>
+        <div class="search-wrapper">
+            <div class="dnnFormItem search">
+                <dnn:SEARCH id="dnnSearch" runat="server" ShowSite="false" ShowWeb="false" />
             </div>
+        </div>
     </div>
-</div>
 
-<nav class="navbar navbar-default" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-        <div class="navbar-collapse collapse">
-            <dnn:MENU MenuStyle="Mega2Epsilon" runat="server" />
-            <div style="float:left">
-                <div class="navbar-brand">
-                    <dnn:LOGO runat="server" id="dnnLOGO" />
-                </div>  
-                <div class="buttonBox visible-lg">
-                    <dnn:BANNER id="dnnBanner1" runat="server" GroupName="HeaderButtons" BannerTypeId="4" BannerCount="3" Orientation="H" AllowNullBannerType="true" />    
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <dnn:MENU MenuStyle="Mega2Epsilon" runat="server" />
+                <div style="float:left">
+                    <div class="navbar-brand">
+                        <dnn:LOGO runat="server" id="dnnLOGO" />
+                    </div>  
+                    <div class="buttonBox visible-lg">
+                        <dnn:BANNER id="dnnBanner1" runat="server" GroupName="HeaderButtons" BannerTypeId="4" BannerCount="3" Orientation="H" AllowNullBannerType="true" />    
+                    </div>
                 </div>
+                <div class="nav navbar-nav navbar-right loginBox" style="background-color:#aaa">
+                <!-- <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            
+                        </li>
+                    </ul>
+                </li>-->
+                    <span>
+                      
+                    </span>
+                    <span>
+                     
+                    </span>
+                </div>
+              
+                <div style="width:300px">
+                    <dnn:MENU MenuStyle="Mega2Epsilon" runat="server" NodeSelector="CurrentChildren" />     
+                </div>
+            
             </div>
-            <div class="nav navbar-nav navbar-right loginBox" style="background-color:#aaa">
-            <!-- <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search<b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                    <li>
-                        
-                    </li>
-                </ul>
-            </li>-->
-                <span>
-                  
-                </span>
-                <span>
-                 
-                </span>
-            </div>
-          
-            <div style="width:300px">
-                <dnn:MENU MenuStyle="Mega2Epsilon" runat="server" NodeSelector="CurrentChildren" />     
-            </div>
-        
+            <!--/.nav-collapse -->
         </div>
-        <!--/.nav-collapse -->
-    </div>
-</nav>
+    </nav>
 
     <div class="loginBox">
-                <dnn:USER ID="dnnUser" runat="server" LegacyMode="false" />
-                <dnn:LOGIN ID="dnnLogin" CssClass="LoginLink" runat="server" LegacyMode="false" />
-            </div>
+        <dnn:USER ID="dnnUser" runat="server" LegacyMode="false" />
+        <dnn:LOGIN ID="dnnLogin" CssClass="LoginLink" runat="server" LegacyMode="false" />
+    </div>
+</header>
 
 <div id="CarouselPane" runat="server" class="carousel slide" containertype="G" containername="R7.Epsilon" containersrc="Blank.ascx" />
 
@@ -217,3 +217,5 @@
     <a class="play-pause"></a>
     <ol class="indicator"></ol>
 </div>
+
+<footer></footer>
