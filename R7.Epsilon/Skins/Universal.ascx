@@ -28,8 +28,8 @@
 
 <div class="navbar navbar-collapse">
     <div class="container">
-            <div class="language-box-wrapper">
-                <div class="language-box">
+            <div class="language-wrapper">
+                <div class="language">
                     <dnn:LANGUAGE runat="server" id="dnnLANGUAGE" ShowLinks="True" ShowMenu="False" />
                     <skin:GTRANSLATE runat="server" />
                 </div>
@@ -37,8 +37,8 @@
             <div class="socialgroups-wrapper">
                 <skin:SOCIALGROUPS runat="server" />
             </div>
-            <div class="search-box-wrapper">
-                <div class="dnnFormItem search-box">
+            <div class="search-wrapper">
+                <div class="dnnFormItem search">
                     <dnn:SEARCH id="dnnSearch" runat="server" ShowSite="false" ShowWeb="false" />
                 </div>
             </div>

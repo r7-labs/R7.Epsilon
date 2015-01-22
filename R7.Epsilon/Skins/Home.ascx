@@ -42,7 +42,7 @@
                <dnn:LOGO runat="server" id="dnnLOGO" />
             </div>
            
-            <div class="search-box">
+            <div class="search">
                 <dnn:SEARCH id="dnnSearch" runat="server" showsite="false" showweb="false" cssclass="btn btn-success btn-xs" />
             </div>
             

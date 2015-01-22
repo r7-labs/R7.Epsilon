@@ -118,13 +118,15 @@ ul.dnnAdminTabNav {
 
 /* Row 1 */
 
-.language-box-wrapper 
+.language-wrapper 
 { 
     float:left;
-    margin-top:17px 
+    margin-top:17px; 
+    margin-right:4px;
+    height:32px; // search carry fix
 }
 
-.language-box 
+.language
 {
     & > .language-object 
     {
@@ -133,15 +135,15 @@ ul.dnnAdminTabNav {
     }
 }
 
-.search-box-wrapper
+.search-wrapper
 {
     float:right;
     margin-top:11px;
 }
 
-.search-box 
+.search
 {
-    /* HACK: fix clear button position */
+    // HACK: fix clear button position
     .dnnSearchBoxClearText
     {
         position:relative;
