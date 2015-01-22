@@ -189,6 +189,9 @@
         <div id="UserProfileContent" runat="server" class="col-md-10" />
     </div> --%>
 
+</div>
+
+<footer class="container">
     <div id="FooterRow" class="row">
 
         <div id="FooterRowLeft" runat="server" class="col-md-4" />
@@ -205,7 +208,7 @@
             <a href="http://cjh.am/1mGBQby" target="_blank">Design: HammerFlex DNN Skin by Christoc.com</a>
         </div>
     </div>
-</div>
+</footer>
 
 <!-- gallery and carousel controls, hidden by default -->
 <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" data-use-bootstrap-modal="false">
@@ -217,5 +220,3 @@
     <a class="play-pause"></a>
     <ol class="indicator"></ol>
 </div>
-
-<footer></footer>
