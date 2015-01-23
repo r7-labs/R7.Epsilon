@@ -27,7 +27,7 @@
 <dnn:TEXT runat="server" CssClass="age-rating" resourcekey="AgeRating.Text" ReplaceTokens="false" />
 
 <header>
-    <div class="container">
+    <div class="container header-row-1">
         <div class="language-wrapper">
             <div class="language">
                 <dnn:LANGUAGE runat="server" id="dnnLANGUAGE" ShowLinks="True" ShowMenu="False" />
