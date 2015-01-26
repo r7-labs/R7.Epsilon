@@ -17,30 +17,19 @@
 
 .navbar-right { margin-right:0 }
 
- /*
-.navbar {
-  margin-bottom: 0 !important;
-  border-radius: 0 !important;
-}*/
 .carousel-inner > .active.left {
   float: none;
 }
 .carousel-caption h1 {
   color: #fff;
 }
-.navbar-brand {
-    padding: 0 !important;
-    width:350px;
-    height:75px;
-    margin:5px;  
-}
+
 a.btn-info,
 a.btn-info:visited,
 a.btn-primary,
 a.btn-primary:visited {
   color: #fff;
 }
-
 
 .age-rating
 {
@@ -55,7 +44,6 @@ a.btn-primary:visited {
     text-align:center;
     box-shadow: 1px 1px 2px rgba(0,0,0,0.33)
 }   
-
 
 ul.dnnAdminTabNav {
   height: 40px;
@@ -106,16 +94,6 @@ ul.dnnAdminTabNav {
   /* Opera/IE 8+ */
 }
 
-.buttonBox
-{
-    width:315px;
-    float:right;
-    margin-top:5px;
-    border:1px solid red;
-}
-
-.buttonBox td { padding-left:5px }
-
 /* Header Row 1 */
 .container.header-row-1
 {
@@ -156,7 +134,7 @@ ul.dnnAdminTabNav {
     #dnn_dnnSearch_cmdSearch { display:none }
     #dnn_dnnSearch_txtSearch
     {
-        width:22em;
+        width:16em;
         margin:0;
     }
     .searchSkinObjectPreview
@@ -211,136 +189,165 @@ ul.socialgroups
     }
 }
 
-/* Header Row 2 */
+/* Main Header */
+
+.navbar { margin-bottom:0 }
 
 .navbar-toggle { margin-right:inherit }
 
 // to display vertical menu
-.navbar { position:relative }
-
+/* .navbar { position:relative }*/
+.top-menu { }
+       
 .top-menu-toggle { float:right }
+
+.navbar-brand.navbar-brand-link 
+{
+    float:left;
+    padding-left:0;
+}
+
+.navbar-brand.navbar-brand-logo 
+{
+    // reset navbar-brand styles 
+    height:inherit;
+    padding:inherit;
+    margin-bottom:5px;
+    // navbar-brand-logo styles
+    float:left;
+}
+
+// for login positioning
+.navbar-main { position:relative; }
+
+.navbar-default { }
+
+.founders-wrapper
+{
+    float:left;
+    width:48px;
+    height:100px;
+    margin-right:5px;
+}
+
+.founder-link
+{
+    float:left;
+    width:48px;
+    height:48px;
+    background-color:#ccc;
+    &:first-child { margin-bottom:4px; }
+}
+
+/* Footer */
+
+.footer-buttons
+{
+    width:315px;
+    td { padding-left:5px }
+}
 
  /*------------------------------------------------*/
 /* LOGIN */
 /*------------------------------------------------*/
-.loginBox {
-    margin-top:10px;
-}
-.loginBox .registerGroup,
-.loginBox .registerGroup *,
-.loginBox .loginGroup,
-.loginBox .loginGroup * {
-  display: inline;
-}
-.loginBox .registerGroup,
-.loginBox .loginGroup {
-  float: right;
-}
-.loginBox .registerGroup li:first-child:hover {
-  border-left: #222;
-}
-/* Register Group Styles */
-.loginBox .registerGroup li {
-  float: left;
-}
-.loginBox .registerGroup .buttonGroup {
-  margin-right: 0;
+.login-full {
+    position:absolute;
+    right:0;
+    bottom:0;
+    .registerGroup, .registerGroup *, .loginGroup, .loginGroup * { display: inline; }
+    .registerGroup, .loginGroup { float: right; }
+    .registerGroup {
+        li:first-child:hover { border-left: #222; }
+        li { float: left; }
+        .buttonGroup { margin-right: 0; }
+    }
+    .registerGroup a, .loginGroup a {
+        display: block;
+        position: relative;
+        /* height: 50px; */
+        min-width: 12px;
+        padding: 5px;
+        vertical-align: middle;
+    }
+    .registerGroup a:active, .loginGroup a:active { text-shadow: 0 -1px 0 #ffffff; }
+    .registerGroup a:hover, .loginGroup a:hover { text-decoration: none; }
+    .registerGroup a strong, .loginGroup a strong {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        overflow: hidden;
+        font-size: 0;
+        text-indent: -9999px;
+    }
+    .userMessages, .userNotifications { background-color: #2D4A74; }
+    .userMessages a { 
+        height: 32px;
+        background: url('i/icon_message.png') no-repeat center center;
+    }
+    .userNotifications a {
+        height: 32px;
+        background: url('i/icon_notification.png') no-repeat center center;
+    }
+    .registerGroup a span {
+        display: inline-block;
+        min-width: 7px;
+        margin-right: 3px;
+        text-align: center;
+    }
+    .registerGroup .userProfileImg a {
+        /* min-width: 50px;
+        min-height: 50px;*/
+        padding: 0;
+    }
+
+    #dnn_dnnUser_messageGroup,
+    #dnn_dnnUser_notificationGroup
+    {
+        width:32px;
+        height:32px;
+        /* padding-top:8px;
+        padding-bottom:8px;*/
+    }
+
+    .registerGroup a img {
+     /* height: 50px;
+      width: 50px;*/
+    }
+
+    /* Login Group Styles */
+    /* Number of message next to the message icon*/
+    .userMessages a span,
+    .userNotifications a span {
+        display: inline-block;
+        margin-top: 0;
+        margin-right: 0;
+        background-color: transparent;
+    }
+    .userNotifications span,
+    .userMessages span {
+        height: 100%;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        overflow: hidden;
+        font-size: 0;
+        text-indent: -9999px;
+        z-index: 999;
+    }
+    .userNotifications span { background: url('i/icon_notification_active.png') no-repeat center center; }
+    .userMessages span { background: url('i/icon_message_active.png') no-repeat center center; }
 }
 
-.loginBox .registerGroup a,
-.loginBox .loginGroup a {
-  display: block;
-  position: relative;
- /* height: 50px; */
-  min-width: 12px;
-  padding: 5px;
-  vertical-align: middle;
-}
-.loginBox.registerGroup a:active,
-.loginBox .loginGroup a:active {
-  text-shadow: 0 -1px 0 #ffffff;
-}
-.loginBox .registerGroup a:hover,
-.loginBox .loginGroup a:hover {
-  text-decoration: none;
-}
-.loginBox .registerGroup a strong,
-.loginBox .loginGroup a strong {
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  overflow: hidden;
-  font-size: 0;
-  text-indent: -9999px;
-}
-.loginBox .userMessages,
-.loginBox .userNotifications {
-  background-color: #2D4A74;
-}
-.loginBox .userMessages a {
-  height: 32px;
-  background: url('i/icon_message.png') no-repeat center center;
-}
-.loginBox .userNotifications a {
-  height: 32px;
-  background: url('i/icon_notification.png') no-repeat center center;
-}
-.loginBox .registerGroup a span {
-  display: inline-block;
-  min-width: 7px;
-  margin-right: 3px;
-  text-align: center;
-}
-.loginBox .registerGroup .userProfileImg a {
- /* min-width: 50px;
-  min-height: 50px;*/
-  padding: 0;
-}
-
-.loginBox #dnn_dnnUser_messageGroup,
-.loginBox #dnn_dnnUser_notificationGroup
+.login-simple 
 {
-    width:32px;
-    height:32px;
-   /* padding-top:8px;
-    padding-bottom:8px;*/
+    float:right;
+    margin-right:10px;
+    margin-top:15px;
 }
-
-.loginBox .registerGroup a img {
- /* height: 50px;
-  width: 50px;*/
-}
-/* Login Group Styles */
-/* Number of message next to the message icon*/
-.loginBox .userMessages a span,
-.loginBox .userNotifications a span {
-  display: inline-block;
-  margin-top: 0;
-  margin-right: 0;
-  background-color: transparent;
-}
-.loginBox .userNotifications span,
-.loginBox .userMessages span {
-  height: 100%;
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  overflow: hidden;
-  font-size: 0;
-  text-indent: -9999px;
-  z-index: 999;
-}
-.loginBox .userNotifications span {
-  background: url('i/icon_notification_active.png') no-repeat center center;
-}
-.loginBox .userMessages span {
-  background: url('i/icon_message_active.png') no-repeat center center;
-}
-
 
 /* .navbar { background-image: linear-gradient(#54EBB4, #2FE7A4 60%, #1DE59C) }*/
 

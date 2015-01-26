@@ -27,6 +27,7 @@
 <dnn:TEXT runat="server" CssClass="age-rating" resourcekey="AgeRating.Text" ReplaceTokens="false" />
 
 <header>
+
     <div class="container header-row-1">
         <div class="language-wrapper">
             <div class="language">
@@ -46,62 +47,49 @@
 
     <nav class="navbar navbar-default" role="navigation">
         <div class="container">
+            <div class="navbar-brand navbar-brand-link visible-xs">
+                <a href="/<%= CultureInfo.CurrentCulture.Name.ToLowerInvariant() %>"><%= PortalSettings.PortalName %></a>
+            </div>
             <button type="button" class="navbar-toggle top-menu-toggle" data-toggle="collapse" data-target=".top-menu">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <div class="navbar-collapse collapse top-menu primary-menu">
-                <dnn:MENU MenuStyle="Mega2Epsilon" runat="server" />
+            <div class="login-simple visible-xs">
+                <dnn:LOGIN ID="dnnLoginSimple" runat="server" /> | <dnn:USER ID="dnnUserSimple" runat="server" />
             </div>
-            <div class="navbar-collapse collapse top-menu secondary-menu">
-                <dnn:MENU MenuStyle="Mega2Epsilon" runat="server" NodeSelector="CurrentChildren" />
+            <div class="navbar-collapse collapse dnnClear top-menu">
+                <div class="primary-menu">
+                    <dnn:MENU MenuStyle="Mega2Epsilon" runat="server" />
+                </div>
             </div>
-
+            <div class="navbar-collapse collapse navbar-main">
+                <div class="founders-wrapper">
+                    <div class="founder-link"></div>
+                    <div class="founder-link"></div>
+                </div>
+                <div class="navbar-brand navbar-brand-logo">
+                    <dnn:LOGO runat="server" id="dnnLOGO" />
+                </div>
+                <div class="login-full">
+                    <dnn:LOGIN ID="dnnLogin" CssClass="LoginLink" runat="server" LegacyMode="false" />
+                    <dnn:USER ID="dnnUser" runat="server" LegacyMode="false" />
+                </div>
+            </div>
         </div>
     </nav>
 
-    <nav class="navbar navbar-default" role="navigation">
+    <nav class="navbar" role="navigation">
         <div class="container">
-            
-            <div class="navbar-collapse collapse">
-                <div style="float:left">
-                    <div class="navbar-brand">
-                        <dnn:LOGO runat="server" id="dnnLOGO" />
-                    </div>  
-                    <div class="buttonBox visible-lg">
-                        <dnn:BANNER id="dnnBanner1" runat="server" GroupName="HeaderButtons" BannerTypeId="4" BannerCount="3" Orientation="H" AllowNullBannerType="true" />    
-                    </div>
-                </div>
-                <div class="nav navbar-nav navbar-right loginBox" style="background-color:#aaa">
-                <!-- <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            
-                        </li>
-                    </ul>
-                </li>-->
-                    <span>
-                      
-                    </span>
-                    <span>
-                     
-                    </span>
-                </div>
-              
-               
-            
+            <div class="navbar-collapse collapse dnnClear top-menu">
+                <div class="secondary-menu">
+                    <dnn:MENU MenuStyle="Mega2Epsilon" runat="server" NodeSelector="CurrentChildren" />
+                </div>    
             </div>
-            <!--/.nav-collapse -->
         </div>
     </nav>
 
-    <div class="loginBox">
-        <dnn:USER ID="dnnUser" runat="server" LegacyMode="false" />
-        <dnn:LOGIN ID="dnnLogin" CssClass="LoginLink" runat="server" LegacyMode="false" />
-    </div>
 </header>
 
 <div id="CarouselPane" runat="server" class="carousel slide" containertype="G" containername="R7.Epsilon" containersrc="Blank.ascx" />
@@ -200,13 +188,19 @@
 </div>
 
 <footer class="container">
-    <div id="FooterRow" class="row">
-
-        <div id="FooterRowLeft" runat="server" class="col-md-4" />
-        <div id="FooterRowMiddle" runat="server" class="col-md-4" />
-        <div id="FooterRowRight" runat="server" class="col-md-4" />
-
+    <div id="FooterRow1" class="row">
+        <div id="FooterRowLeft" class="col-md-6">
+            <div class="footer-buttons">
+                <dnn:BANNER id="dnnBanner1" runat="server" GroupName="HeaderButtons" BannerTypeId="4" BannerCount="3" Orientation="H" AllowNullBannerType="true" />    
+            </div>
+        </div>
+        <div id="FooterRow1Middle" runat="server" class="col-md-3" />
+        <div id="FooterRow1Right" runat="server" class="col-md-3" />
+    </div>
+    <div id="FooterRow2" class="row">
         <div id="FooterPane" runat="server" class="col-md-12" />
+    </div>
+    <div id="FooterRow3" class="row">
         <div id="CopyRightPane" class="SkinLink col-md-12 center">
             <div class="col-md-12">
                 <dnn:copyright ID="dnnCopyright" runat="server" />

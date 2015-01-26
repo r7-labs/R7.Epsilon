@@ -100,20 +100,31 @@ ul.megamenu .sub ul li h2 a {
 	color: #e8e000;
 }
 
+
 .secondary-menu ul.megamenu a {
-    color:#fff;
+    color:#222;
 }
 
 /* Vertical menu for extra small devices */ 
-@media only screen and (max-width : 480px) 
+@media only screen and (max-width : 767px) 
 {
+    .primary-menu, .secondary-menu {   
+        width:100%;
+        position:relative;
+        display:block;
+    }
+
+    .secondary-menu ul.megamenu {   
+       background-color:#555;
+    }
+
     .primary-menu ul.megamenu {   
-        width:240px;
+        width:100%;
         background-color:#ccc;
     }
 
     .secondary-menu ul.megamenu {   
-        width:240px;
+        width:100%;
         background-color:#555;
     }
 
