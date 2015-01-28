@@ -16,6 +16,7 @@
 <%@ Register TagPrefix="dnn" Namespace="DotNetNuke.Web.Client.ClientResourceManagement" Assembly="DotNetNuke.Web.Client" %>
 <%@ Register TagPrefix="skin" TagName="GTRANSLATE" Src="~/Portals/_default/Skins/R7.Epsilon/controls/GTranslate.ascx" %>
 <%@ Register TagPrefix="skin" TagName="SOCIALGROUPS" Src="~/Portals/_default/Skins/R7.Epsilon/controls/SocialGroups.ascx" %>
+<%@ Register TagPrefix="skin" TagName="PAGEHEADER" Src="~/Portals/_default/Skins/R7.Epsilon/controls/PageHeader.ascx" %>
 
 <dnn:META ID="mobileScale" runat="server" Name="viewport" Content="width=device-width,initial-scale=1" />
 
@@ -93,6 +94,9 @@
     <div class="container">
         <div class="breadcrumb">
             <dnn:BREADCRUMB id="dnnBREADCRUMB" runat="server" CssClass="breadcrumb-link" RootLevel="0" Separator="/" />
+        </div>
+        <div class="page-header">
+            <skin:PAGEHEADER runat="server" />
         </div>
     </div>
 </header>
