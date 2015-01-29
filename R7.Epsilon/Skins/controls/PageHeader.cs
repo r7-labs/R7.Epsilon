@@ -41,7 +41,8 @@ namespace R7.Epsilon
         }
 
         // REVIEW: Convert to control attribute?
-        private static char [] trimSeparators = {' ', '-', '.', ':', '/', '\\'};
+        // chars to trim, including en and em dashes
+        private static char [] trimSeparators = { ' ', '-', '\u2013', '\u2014',  '.', ':', '/', '\\' };
 
         protected string TagLine
         {
@@ -55,7 +56,7 @@ namespace R7.Epsilon
                 if (!string.IsNullOrWhiteSpace (activeTab.Title))
                 {
                     if (activeTab.Title.StartsWith (activeTab.TabName, StringComparison.InvariantCultureIgnoreCase))
-                        return activeTab.Title.Substring (activeTab.TabName.Length).Trim (trimSeparators);
+                        return activeTab.Title.Substring (activeTab.TabName.Length).TrimStart (trimSeparators);
 
                     return activeTab.Title;
                 }
