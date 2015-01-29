@@ -85,6 +85,12 @@
     <Compile Include="Skins\controls\PageHeader.cs">
       <DependentUpon>PageHeader.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Skins\controls\SocialShareScripts.cs">
+      <DependentUpon>SocialShareScripts.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\controls\SocialGroups.cs">
+      <DependentUpon>SocialGroups.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Containers\Blank.ascx" />
