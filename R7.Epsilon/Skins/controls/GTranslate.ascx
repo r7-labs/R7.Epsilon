@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="false" Inherits="R7.Epsilon.GTranslate" %>
+﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.GTranslate" %>
 
 <div class="language-object">
     <span class="Language" title="<%= LocalizeString ("GoogleTranslate.Title") %>">

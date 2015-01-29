@@ -48,7 +48,7 @@ namespace R7.Epsilon
         {
             get
             { 
-                // If Title starts with TabName, use varying Title part as tagline,
+                // if Title starts with TabName, use varying Title part as tagline,
                 // or use Title as tagline otherwise.
 
                 var activeTab = PortalSettings.ActiveTab;

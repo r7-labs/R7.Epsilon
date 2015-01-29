@@ -17,6 +17,7 @@
 <%@ Register TagPrefix="skin" TagName="GTRANSLATE" Src="~/Portals/_default/Skins/R7.Epsilon/controls/GTranslate.ascx" %>
 <%@ Register TagPrefix="skin" TagName="SOCIALGROUPS" Src="~/Portals/_default/Skins/R7.Epsilon/controls/SocialGroups.ascx" %>
 <%@ Register TagPrefix="skin" TagName="PAGEHEADER" Src="~/Portals/_default/Skins/R7.Epsilon/controls/PageHeader.ascx" %>
+<%@ Register TagPrefix="skin" TagName="SOCIALSHARESCRIPTS" Src="~/Portals/_default/Skins/R7.Epsilon/controls/SocialShareScripts.ascx" %>
 
 <dnn:META ID="mobileScale" runat="server" Name="viewport" Content="width=device-width,initial-scale=1" />
 
@@ -25,6 +26,8 @@
 <dnn:DnnCssInclude ID="bootStrapCSS" runat="server" FilePath="css/bootstrap.min.css" PathNameAlias="SkinPath" Priority="14" />
 <dnn:DnnJsInclude ID="bluImpJS" runat="server" FilePath="js/jquery.blueimp-gallery.min.js" PathNameAlias="SkinPath" />
 <dnn:DnnJsInclude ID="skinJS" runat="server" FilePath="js/skin.js" PathNameAlias="SkinPath" />
+
+<skin:SOCIALSHARESCRIPTS runat="server" />
 
 <dnn:TEXT runat="server" CssClass="age-rating" resourcekey="AgeRating.Text" ReplaceTokens="false" />
 
