@@ -105,6 +105,25 @@ ul.megamenu .sub ul li h2 a {
     color:#222;
 }
 
+.local-menu {
+    position:absolute;
+    top:3em;
+    z-index:1000;
+    ul.megamenu 
+    { 
+     
+        width:240px;
+        display:block; 
+        background-color:#ccc;
+    }
+
+    ul.megamenu li, 
+    ul.megamenu li a {
+        float:none;
+        display:block;
+    }
+}
+
 /* Vertical menu for extra small devices */ 
 @media only screen and (max-width : 767px) 
 {
@@ -112,6 +131,11 @@ ul.megamenu .sub ul li h2 a {
         width:100%;
         position:relative;
         display:block;
+    }
+
+    .local-menu { 
+        position:static;
+        width:100%;
     }
 
     .secondary-menu ul.megamenu {   
@@ -126,6 +150,10 @@ ul.megamenu .sub ul li h2 a {
     .secondary-menu ul.megamenu {   
         width:100%;
         background-color:#555;
+    }
+
+    .local-menu ul.megamenu {   
+        width:100%;
     }
 
     ul.megamenu li, ul.megamenu li a {

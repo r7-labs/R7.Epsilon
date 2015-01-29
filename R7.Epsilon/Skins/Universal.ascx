@@ -94,10 +94,21 @@
             </div>
         </div>
     </nav>
-    <div class="container">
+    <div class="container skin-local-menu-wrapper">
+        <button type="button" class="skin-local-menu-toggle" data-toggle="collapse" data-target=".local-menu">
+                <span class="sr-only">Toggle local navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+        </button>
         <div class="breadcrumb">
             <dnn:BREADCRUMB id="dnnBREADCRUMB" runat="server" CssClass="breadcrumb-link" RootLevel="0" Separator="/" />
         </div>
+        <div class="local-menu collapse">
+            <dnn:MENU MenuStyle="Mega2Epsilon" runat="server" NodeSelector="CurrentChildren" />
+        </div>
+    </div>
+    <div class="container">
         <div class="page-header">
             <skin:PAGEHEADER runat="server" />
         </div>
