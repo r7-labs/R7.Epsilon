@@ -127,7 +127,6 @@
     <Content Include="Skins\js\bootstrap-image-gallery.min.js" />
     <Content Include="Skins\js\bootstrap.min.js" />
     <Content Include="Skins\js\jquery.blueimp-gallery.min.js" />
-    <Content Include="Menu\hoverIntent.js" />
     <Content Include="Menu\Mega2Epsilon.js" />
     <Content Include="Skins\img\logo-template.png" />
     <Content Include="Skins\img\logo-template.svg" />

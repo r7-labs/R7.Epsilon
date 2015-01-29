@@ -2,8 +2,6 @@
 <manifest>
     <template>Mega2Epsilon.xslt</template>
     <scripts>
-        <script jsObject="jQuery" />
-        <script jsObject="jQuery.fn.hoverIntent">hoverIntent.js</script>
         <script>Mega2Epsilon.js</script>
     </scripts>
     <stylesheets>
