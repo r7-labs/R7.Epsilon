@@ -44,16 +44,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Skins\Edit.doctype.xml" />
-    <None Include="Skins\Home.doctype.xml" />
+    <None Include="Skins\Edit.doctype.xml">
+      <DependentUpon>Edit.ascx</DependentUpon>
+    </None>
+    <None Include="Skins\Home.doctype.xml">
+      <DependentUpon>Home.ascx</DependentUpon>
+    </None>
     <None Include="Skins\App_LocalResources\SharedResources.resx" />
     <None Include="Skins\i\icon_message.psd" />
     <None Include="Skins\i\icon_notification.psd" />
     <None Include="Menu\Mega2Epsilon.xslt" />
     <None Include="Menu\menudef.xml" />
-    <None Include="Skins\Simple.doctype.xml" />
+    <None Include="Skins\Simple.doctype.xml">
+      <DependentUpon>Simple.ascx</DependentUpon>
+    </None>
     <None Include="Skins\App_LocalResources\SharedResources.ru-RU.resx" />
-    <None Include="Skins\Universal.doctype.xml" />
+    <None Include="Skins\Universal.doctype.xml">
+      <DependentUpon>Universal.ascx</DependentUpon>
+    </None>
     <None Include="Skins\controls\App_LocalResources\SharedResources.resx" />
     <None Include="Skins\controls\App_LocalResources\SharedResources.ru-RU.resx" />
   </ItemGroup>
