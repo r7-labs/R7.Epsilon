@@ -24,6 +24,7 @@
 <div class="skin-page-info">
     <small><%: PublishedMessage %></small>
 
+    <% if (EnableSocialShare) { %>
     <%-- TODO: Add link@rel='canonical' --%>
     <div class="skin-page-share-buttons">
         <% if (vk_share_enabled) { %><div id="vk_like"></div><% } %>
@@ -31,4 +32,5 @@
         <a href="https://twitter.com/share" class="twitter-share-button" data-url="<%= PortalSettings.ActiveTab.FullUrl %>" data-lang="<%= CultureInfo.CurrentCulture.TwoLetterISOLanguageName %>" data-via="<%= tw_via %>">Tweet</a>
         <div class="g-plusone" data-size="medium"></div>
     </div>
+    <% } %>
 </div>

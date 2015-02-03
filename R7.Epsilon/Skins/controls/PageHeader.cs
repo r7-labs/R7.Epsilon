@@ -40,6 +40,8 @@ namespace R7.Epsilon
         {
         }
 
+        public bool EnableSocialShare { get; set; }
+
         // REVIEW: Convert to control attribute?
         // chars to trim, including en and em dashes
         private static char [] trimSeparators = { ' ', '-', '\u2013', '\u2014',  '.', ':', '/', '\\' };

@@ -109,7 +109,7 @@
         </div>
         <div class="container">
             <div class="page-header">
-                <skin:PAGEHEADER runat="server" />
+                <skin:PAGEHEADER runat="server" EnableSocialShare="true" />
             </div>
         </div>
     </nav>
