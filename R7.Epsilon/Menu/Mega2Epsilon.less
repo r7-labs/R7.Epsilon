@@ -1,58 +1,70 @@
-ul.megamenu {	
+ul.megamenu 
+{	
 	margin: 0; padding: 0;
 	float:left;
 	width: 100%;
 	list-style: none;
     position:relative;
 }
-ul.megamenu, ul.megamenu li
-{
-list-style-type:none;
-}
 
-ul.megamenu li {
+ul.megamenu, ul.megamenu li { list-style-type:none; }
+
+ul.megamenu li 
+{
 	float: left;
 	margin: 0; padding: 0;
 	/* position: relative;*/
 }
-
-
+    
 ul.megamenu ul
 {
-padding:0;margin:0;
+    padding:0;margin:0;
 }
-ul.megamenu li a {
+
+ul.megamenu li a 
+{
 	float: left; 
 	text-decoration:none;
 }
-ul.megamenu li .sub {
+
+ul.megamenu li .sub 
+{
     position: absolute;
-    width:100%!important;
     left: 0;
     float: left;
 	display: none;
     z-index:1000;
 }
+
 ul.megamenu li .row {clear: both; float: left; width: 100%; margin-bottom: 10px;}
-ul.megamenu li .sub ul{
+
+ul.megamenu li .sub ul 
+{
 	list-style: none;
 	margin: 0; padding: 0;
 	width: 150px;
 	float: left;
 }
-ul.megamenu .sub ul li {
+
+ul.megamenu .sub ul li 
+{
 	width: 100%;
 }
-ul.megamenu .sub ul li h2 {
+
+ul.megamenu .sub ul li h2 
+{
 	padding: 0;  margin: 0;
 	font-size: 11px;
 	font-weight: normal;
 }
-ul.megamenu .sub ul li h2 a {
+ul.megamenu .sub ul li h2 a 
+{
 	padding:0;
 	margin:0;
 }
-ul.megamenu .sub ul li a {
+
+ul.megamenu .sub ul li a 
+{
 	float: none; 
 	text-indent: 0; /*--Reset text indent--*/
 	display: block;
@@ -63,100 +75,145 @@ ul.megamenu .sub ul li a {
 }
 
 /* --Modify for styling --*/
-ul.megamenu {
+ul.megamenu 
+{
 	/* background-color:#aaa; */
 }
-ul.megamenu a {
+
+ul.megamenu a 
+{
 	color:#000;
     /*font-weight:bold;*/
 }
-ul.megamenu a {
+
+ul.megamenu a 
+{
 	padding:4px;
 }
+
 /*ul.megamenu li a.level0:hover, .megahover, ul.megamenu .current {background-color:#2D4A74; }*/
 
 ul.megamenu li a.level0:hover, .megahover, ul.megamenu .current { font-weight:bold }
 
-div.sub {
-padding:8px;
-/*-webkit-border-bottom-right-radius: 8px;
--webkit-border-bottom-left-radius: 8px;
--moz-border-radius-bottomright: 8px;
--moz-border-radius-bottomleft: 8px;
-border-bottom-right-radius: 8px;
-border-bottom-left-radius: 8px;*/
+div.sub 
+{
+    padding:8px;
+    /*-webkit-border-bottom-right-radius: 8px;
+    -webkit-border-bottom-left-radius: 8px;
+    -moz-border-radius-bottomright: 8px;
+    -moz-border-radius-bottomleft: 8px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;*/
  }
- dib.sub ul {
- margin-left:8px;
- }
-#megamenu li.subheader {}
-#megamenu li.sublink {margin-bottom:6px;}
-#megamenu li.subheader h2{margin-bottom:8px;}
 
-ul.megamenu li .sub {
+ dib.sub ul 
+ {
+    margin-left:8px;
+ }
+
+#megamenu li.subheader {}
+#megamenu li.sublink { margin-bottom:6px; }
+#megamenu li.subheader h2 { margin-bottom:8px; }
+
+ul.megamenu li .sub 
+{
 	background: #2D4A74;
 }
-ul.megamenu .sub ul li h2 a {
+
+ul.megamenu .sub ul li h2 a 
+{
 	color: #e8e000;
 }
 
-
-.secondary-menu ul.megamenu a {
+.secondary-menu ul.megamenu a 
+{
     color:#222;
 }
 
-.local-menu {
-    position:absolute;
-    top:3em;
-    z-index:1000;
-    ul.megamenu 
-    { 
-     
-        width:240px;
-        display:block; 
-        background-color:#ccc;
-    }
-
-    ul.megamenu li, 
-    ul.megamenu li a {
-        float:none;
-        display:block;
+.primary-menu, .secondary-menu
+{
+    ul.megamenu li > .sub 
+    {
+        width:100%!important; 
     }
 }
 
-/* Vertical menu for extra small devices */ 
+.local-menu 
+{
+    display:inline-block; 
+
+    ul.megamenu 
+    { 
+        display:block;
+        position:static;
+        background-color:transparent;
+
+        a.level0 
+        { 
+            color:transparent; // hide page title
+            font-size:14px;
+            vertical-align:baseline;
+            background-color:#F8F8F8;
+            border:1px solid #ddd;
+            border-radius:4px;
+            padding:2px 10px;
+            margin-right:0.5em;
+
+            .icon-bar 
+            { 
+                display:block;
+                background-color:#888;
+                width:22px;
+                height:2px;
+                border-radius:1px;
+                margin:4px 0;
+            }
+        }
+
+        li.level0 > .sub
+        {
+            position:absolute;
+            top:40px!important;
+            // width:320px!important; // couldn't override inline 450px twice!
+        }
+    }
+}
+
+
+/* Menus for extra small devices */ 
 @media only screen and (max-width : 767px) 
 {
-    .primary-menu, .secondary-menu {   
+    .primary-menu, .secondary-menu 
+    {   
         width:100%;
         position:relative;
         display:block;
     }
 
-    .local-menu { 
-        position:static;
-        width:100%;
+    .local-menu 
+    { 
+        li.level0 > .sub { width:100%!important; }
     }
 
-    .secondary-menu ul.megamenu {   
+    .secondary-menu ul.megamenu 
+    {   
        background-color:#555;
     }
 
-    .primary-menu ul.megamenu {   
+    .primary-menu ul.megamenu 
+    {   
         width:100%;
         background-color:#ccc;
     }
 
-    .secondary-menu ul.megamenu {   
+    .secondary-menu ul.megamenu 
+    {   
         width:100%;
         background-color:#555;
     }
 
-    .local-menu ul.megamenu {   
-        width:100%;
-    }
-
-    ul.megamenu li, ul.megamenu li a {
+    ul.megamenu li, ul.megamenu li a 
+    {
         float:none;
         display:block;
     }

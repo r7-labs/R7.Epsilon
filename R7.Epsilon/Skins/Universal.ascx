@@ -94,25 +94,25 @@
             </div>
         </div>
     </nav>
-    <div class="container skin-local-menu-wrapper">
-        <button type="button" class="skin-local-menu-toggle" data-toggle="collapse" data-target=".local-menu">
-                <span class="sr-only">Toggle local navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-        </button>
-        <div class="breadcrumb">
-            <dnn:BREADCRUMB id="dnnBREADCRUMB" runat="server" CssClass="breadcrumb-link" RootLevel="0" Separator="/" />
+    <nav class="navbar" role="navigation">
+        <div class="container">
+            <!-- <button type="button" class="skin-local-menu-toggle" data-toggle="collapse" data-target=".local-menu">
+                    <span class="sr-only">Toggle local navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+            </button> -->
+            <div class="breadcrumb">
+                <dnn:BREADCRUMB id="dnnBREADCRUMB" runat="server" CssClass="breadcrumb-link" RootLevel="0" Separator="/" />
+
+            </div>
         </div>
-        <div class="local-menu collapse">
-            <dnn:MENU MenuStyle="Mega2Epsilon" runat="server" NodeSelector="CurrentChildren" />
+        <div class="container">
+            <div class="page-header">
+                <skin:PAGEHEADER runat="server" />
+            </div>
         </div>
-    </div>
-    <div class="container">
-        <div class="page-header">
-            <skin:PAGEHEADER runat="server" />
-        </div>
-    </div>
+    </nav>
 </header>
 
 <div id="CarouselPane" runat="server" class="carousel slide" containertype="G" containername="R7.Epsilon" containersrc="Blank.ascx" />

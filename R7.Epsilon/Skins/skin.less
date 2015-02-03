@@ -239,20 +239,14 @@ ul.socialgroups
     &:first-child { margin-bottom:4px; }
 }
 
-.breadcrumb 
-{
-    display:inline-block;
-    .breadcrumb-link 
-    {
-        margin-right:5px;
-        margin-left:5px;
-        &:first-child { margin-left:inherit; }
-    }
-}
-
 .page-header 
 { 
-    margin-top:20px; 
+    margin-top:0; 
+    h1, h2 
+    { 
+        margin-top:0; 
+        position:relative; // for local menu positioning
+    }
     h1 small, h2 small { display:inline-block; }
 }
 
@@ -269,31 +263,14 @@ ul.socialgroups
     }
 }
 
-.skin-local-menu-wrapper 
-{ 
-    position:relative; 
-}
-
-.skin-local-menu-toggle 
+.breadcrumb 
 {
-    position:relative;
-    top:6px;
-    display:inline-block;
-    vertical-align:baseline;
-    background-color:#F8F8F8;
-    border:1px solid #ddd;
-    border-radius:4px;
-    padding:6px 10px;
-    margin-right:0.5em;
-
-    .icon-bar 
-    { 
-        display:block;
-        background-color:#888;
-        width:22px;
-        height:2px;
-        border-radius:1px;
-        margin:4px 0;
+    .breadcrumb-link 
+    {
+        margin-right:5px;
+        margin-left:5px;
+        &:first-child { margin-left:inherit; }
+        // &:last-child { display:none;visibility:hidden; }    
     }
 }
 
