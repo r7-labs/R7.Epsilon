@@ -18,6 +18,7 @@
 <%@ Register TagPrefix="skin" TagName="SOCIALGROUPS" Src="~/Portals/_default/Skins/R7.Epsilon/controls/SocialGroups.ascx" %>
 <%@ Register TagPrefix="skin" TagName="PAGEHEADER" Src="~/Portals/_default/Skins/R7.Epsilon/controls/PageHeader.ascx" %>
 <%@ Register TagPrefix="skin" TagName="SOCIALSHARESCRIPTS" Src="~/Portals/_default/Skins/R7.Epsilon/controls/SocialShareScripts.ascx" %>
+<%@ Register TagPrefix="skin" TagName="FOUNDERS" Src="~/Portals/_default/Skins/R7.Epsilon/controls/Founders.ascx" %>
 
 <dnn:META ID="mobileScale" runat="server" Name="viewport" Content="width=device-width,initial-scale=1" />
 
@@ -71,8 +72,7 @@
             </div>
             <div class="navbar-collapse collapse skin-navbar-main">
                 <div class="skin-founders-wrapper">
-                    <div class="founder-link"></div>
-                    <div class="founder-link"></div>
+                    <skin:FOUNDERS runat="server" Target="_blank" />
                 </div>
                 <div class="navbar-brand skin-navbar-brand-logo">
                     <dnn:LOGO runat="server" id="dnnLOGO" />

@@ -21,4 +21,10 @@
     <data name="PagePublishedMessage.Format" xml:space="preserve">
         <value>{0:MM/dd/yyyy} by {1}</value>
     </data>
+    <data name="FounderMcx.Alt" xml:space="preserve">
+        <value>Ministry of Agriculture</value>
+    </data>
+    <data name="FounderMob.Alt" xml:space="preserve">
+        <value>Ministry of Education</value>
+    </data>
 </root>

@@ -21,4 +21,10 @@
     <data name="PagePublishedMessage.Format" xml:space="preserve">
         <value>{0:dd.MM.yyyy}: {1}</value>
     </data>
+    <data name="FounderMcx.Alt" xml:space="preserve">
+        <value>Министерство сельского хозяйства</value>
+    </data>
+    <data name="FounderMob.Alt" xml:space="preserve">
+        <value>Министерство образования и науки</value>
+    </data>
 </root>

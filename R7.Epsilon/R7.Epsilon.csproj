@@ -99,6 +99,9 @@
     <Compile Include="Skins\controls\SocialGroups.cs">
       <DependentUpon>SocialGroups.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Skins\controls\Founders.cs">
+      <DependentUpon>Founders.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Containers\Blank.ascx" />
@@ -158,6 +161,7 @@
     <Content Include="Menu\Mega2Epsilon.less" />
     <Content Include="Skins\controls\PageHeader.ascx" />
     <Content Include="Skins\controls\SocialShareScripts.ascx" />
+    <Content Include="Skins\controls\Founders.ascx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
