@@ -34,17 +34,17 @@
 <header>
 
     <div class="container header-row-1">
-        <div class="language-wrapper">
-            <div class="language">
+        <div class="skin-language-wrapper">
+            <div class="skin-language">
                 <dnn:LANGUAGE runat="server" id="dnnLANGUAGE" ShowLinks="True" ShowMenu="False" />
                 <skin:GTRANSLATE runat="server" />
             </div>
         </div>  
-        <div class="socialgroups-wrapper">
+        <div class="skin-socialgroups-wrapper">
             <skin:SOCIALGROUPS runat="server" />
         </div>
-        <div class="search-wrapper">
-            <div class="dnnFormItem search">
+        <div class="skin-search-wrapper">
+            <div class="dnnFormItem skin-search">
                 <dnn:SEARCH id="dnnSearch" runat="server" ShowSite="false" ShowWeb="false" />
             </div>
         </div>
@@ -52,7 +52,7 @@
 
     <nav class="navbar navbar-default" role="navigation">
         <div class="container">
-            <div class="navbar-brand navbar-brand-link visible-xs">
+            <div class="navbar-brand skin-navbar-brand-link visible-xs">
                 <a href="/<%= CultureInfo.CurrentCulture.Name.ToLowerInvariant() %>"><%= PortalSettings.PortalName %></a>
             </div>
             <button type="button" class="navbar-toggle skin-top-menu-toggle" data-toggle="collapse" data-target=".skin-top-menu">
@@ -61,7 +61,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <div class="login-simple visible-xs">
+            <div class="skin-login-simple visible-xs">
                 <dnn:LOGIN ID="dnnLoginSimple" runat="server" /> | <dnn:USER ID="dnnUserSimple" runat="server" />
             </div>
             <div class="navbar-collapse collapse dnnClear skin-top-menu">
@@ -69,12 +69,12 @@
                     <dnn:MENU MenuStyle="Mega2Epsilon" runat="server" />
                 </div>
             </div>
-            <div class="navbar-collapse collapse navbar-main">
-                <div class="founders-wrapper">
+            <div class="navbar-collapse collapse skin-navbar-main">
+                <div class="skin-founders-wrapper">
                     <div class="founder-link"></div>
                     <div class="founder-link"></div>
                 </div>
-                <div class="navbar-brand navbar-brand-logo">
+                <div class="navbar-brand skin-navbar-brand-logo">
                     <dnn:LOGO runat="server" id="dnnLOGO" />
                 </div>
                 <div class="login-full">
@@ -96,15 +96,8 @@
     </nav>
     <nav class="navbar" role="navigation">
         <div class="container">
-            <!-- <button type="button" class="skin-local-menu-toggle" data-toggle="collapse" data-target=".local-menu">
-                    <span class="sr-only">Toggle local navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-            </button> -->
             <div class="breadcrumb">
-                <dnn:BREADCRUMB id="dnnBREADCRUMB" runat="server" CssClass="breadcrumb-link" RootLevel="0" Separator="/" />
-
+                <dnn:BREADCRUMB id="dnnBREADCRUMB" runat="server" CssClass="skin-breadcrumb-link" RootLevel="0" Separator="/" />
             </div>
         </div>
         <div class="container">
@@ -213,8 +206,8 @@
 <footer class="container">
     <div id="FooterRow1" class="row">
         <div id="FooterRowLeft" class="col-md-6">
-            <div class="footer-buttons">
-                <dnn:BANNER id="dnnBanner1" runat="server" GroupName="HeaderButtons" BannerTypeId="4" BannerCount="3" Orientation="H" AllowNullBannerType="true" />    
+            <div class="skin-footer-buttons">
+                <dnn:BANNER id="dnnBanner1" runat="server" GroupName="FooterButtons" BannerTypeId="4" BannerCount="3" Orientation="H" AllowNullBannerType="true" />    
             </div>
         </div>
         <div id="FooterRow1Middle" runat="server" class="col-md-3" />

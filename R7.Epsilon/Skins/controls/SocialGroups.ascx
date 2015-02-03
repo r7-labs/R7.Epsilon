@@ -13,23 +13,23 @@
     var yt_group = "UCYPMmQknVPxosuY4iPCfVDg";
 %>
 
-<ul class="socialgroups">
+<ul class="skin-socialgroups">
     <li>
-        <a class="social-button social-vk" href="http://vk.com/<%= vk_group %>" target="_blank" title="VKontakte"></a>
+        <a class="skin-social-button skin-social-vk" href="http://vk.com/<%= vk_group %>" target="_blank" title="VKontakte"></a>
     </li>
     <li class="hidden-xs">
-        <a class="social-button social-fb" href="http://www.facebook.com/<%= fb_group %>" rel="nofollow" target="_blank" title="Facebook"></a>
+        <a class="skin-social-button skin-social-fb" href="http://www.facebook.com/<%= fb_group %>" rel="nofollow" target="_blank" title="Facebook"></a>
     </li>
     <li class="hidden-xs">
-        <a class="social-button social-tw" href="http://twitter.com/<%= tw_group %>" rel="nofollow" target="_blank" title="Twitter"></a>
+        <a class="skin-social-button skin-social-tw" href="http://twitter.com/<%= tw_group %>" rel="nofollow" target="_blank" title="Twitter"></a>
     </li>
     <li class="hidden-xs">
-        <a class="social-button social-gp" href="http://plus.google.com/b/<%= gp_group %>" title="Google+" target="_blank"></a>
+        <a class="skin-social-button skin-social-gp" href="http://plus.google.com/b/<%= gp_group %>" title="Google+" target="_blank"></a>
     </li>
     <li class="hidden-xs">
-        <a class="social-button social-ok" href="http://www.odnoklassniki.ru/group/<%= ok_group %>" rel="nofollow" target="_blank" title="Odnoklassniki"></a>
+        <a class="skin-social-button skin-social-ok" href="http://www.odnoklassniki.ru/group/<%= ok_group %>" rel="nofollow" target="_blank" title="Odnoklassniki"></a>
     </li>
     <li class="hidden-xs">
-        <a class="social-button social-yt" href="http://www.youtube.com/channel/<%= yt_group %>" rel="nofollow" target="_blank" title="YouTube"></a>
+        <a class="skin-social-button skin-social-yt" href="http://www.youtube.com/channel/<%= yt_group %>" rel="nofollow" target="_blank" title="YouTube"></a>
     </li>
 </ul>
