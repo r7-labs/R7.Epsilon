@@ -62,8 +62,8 @@
     <None Include="Skins\Universal.doctype.xml">
       <DependentUpon>Universal.ascx</DependentUpon>
     </None>
-    <None Include="Skins\controls\App_LocalResources\SharedResources.resx" />
-    <None Include="Skins\controls\App_LocalResources\SharedResources.ru-RU.resx" />
+    <None Include="Skins\Controls\App_LocalResources\SharedResources.resx" />
+    <None Include="Skins\Controls\App_LocalResources\SharedResources.ru-RU.resx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="lib\ControllerBase.cs" />
@@ -86,20 +86,20 @@
     <Compile Include="Skins\Universal.ascx.cs">
       <DependentUpon>Universal.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Skins\controls\GTranslate.ascx.cs">
+    <Compile Include="Skins\Controls\GTranslate.ascx.cs">
       <DependentUpon>GTranslate.ascx</DependentUpon>
     </Compile>
     <Compile Include="components\CustomSkinObjectBase.cs" />
-    <Compile Include="Skins\controls\PageHeader.cs">
+    <Compile Include="Skins\Controls\PageHeader.cs">
       <DependentUpon>PageHeader.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Skins\controls\SocialShareScripts.cs">
+    <Compile Include="Skins\Controls\SocialShareScripts.cs">
       <DependentUpon>SocialShareScripts.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Skins\controls\SocialGroups.cs">
+    <Compile Include="Skins\Controls\SocialGroups.cs">
       <DependentUpon>SocialGroups.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Skins\controls\Founders.cs">
+    <Compile Include="Skins\Controls\Founders.cs">
       <DependentUpon>Founders.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -150,18 +150,18 @@
     <Content Include="Skins\img\logo-template-350x75.png" />
     <Content Include="Skins\img\logo-template-350x75.svg" />
     <Content Include="Skins\js\skin.js" />
-    <Content Include="Skins\controls\GTranslate.ascx" />
+    <Content Include="Skins\Controls\GTranslate.ascx" />
     <Content Include="Skins\img\gtranslate_27x18.png" />
     <Content Include="Skins\img\gtranslate_27x18.svg" />
     <Content Include="Skins\img\logo_template_133x100.png" />
     <Content Include="Skins\img\logo_template_133x100.svg" />
     <Content Include="Skins\img\social_32x32.png" />
     <Content Include="Skins\img\social_32x32.svg" />
-    <Content Include="Skins\controls\SocialGroups.ascx" />
+    <Content Include="Skins\Controls\SocialGroups.ascx" />
     <Content Include="Menu\Mega2Epsilon.less" />
-    <Content Include="Skins\controls\PageHeader.ascx" />
-    <Content Include="Skins\controls\SocialShareScripts.ascx" />
-    <Content Include="Skins\controls\Founders.ascx" />
+    <Content Include="Skins\Controls\PageHeader.ascx" />
+    <Content Include="Skins\Controls\SocialShareScripts.ascx" />
+    <Content Include="Skins\Controls\Founders.ascx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
@@ -174,7 +174,7 @@
   </ProjectExtensions>
   <ItemGroup>
     <Folder Include="Menu\" />
-    <Folder Include="Skins\controls\" />
-    <Folder Include="Skins\controls\App_LocalResources\" />
+    <Folder Include="Skins\Controls\" />
+    <Folder Include="Skins\Controls\App_LocalResources\" />
   </ItemGroup>
 </Project>

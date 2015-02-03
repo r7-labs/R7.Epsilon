@@ -14,11 +14,11 @@
 <%@ Register TagPrefix="dnn" TagName="TEXT" Src="~/Admin/Skins/Text.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="BREADCRUMB" Src="~/Admin/Skins/BreadCrumb.ascx" %>
 <%@ Register TagPrefix="dnn" Namespace="DotNetNuke.Web.Client.ClientResourceManagement" Assembly="DotNetNuke.Web.Client" %>
-<%@ Register TagPrefix="skin" TagName="GTRANSLATE" Src="~/Portals/_default/Skins/R7.Epsilon/controls/GTranslate.ascx" %>
-<%@ Register TagPrefix="skin" TagName="SOCIALGROUPS" Src="~/Portals/_default/Skins/R7.Epsilon/controls/SocialGroups.ascx" %>
-<%@ Register TagPrefix="skin" TagName="PAGEHEADER" Src="~/Portals/_default/Skins/R7.Epsilon/controls/PageHeader.ascx" %>
-<%@ Register TagPrefix="skin" TagName="SOCIALSHARESCRIPTS" Src="~/Portals/_default/Skins/R7.Epsilon/controls/SocialShareScripts.ascx" %>
-<%@ Register TagPrefix="skin" TagName="FOUNDERS" Src="~/Portals/_default/Skins/R7.Epsilon/controls/Founders.ascx" %>
+<%@ Register TagPrefix="skin" TagName="GTRANSLATE" Src="Controls/GTranslate.ascx" %>
+<%@ Register TagPrefix="skin" TagName="SOCIALGROUPS" Src="Controls/SocialGroups.ascx" %>
+<%@ Register TagPrefix="skin" TagName="PAGEHEADER" Src="Controls/PageHeader.ascx" %>
+<%@ Register TagPrefix="skin" TagName="SOCIALSHARESCRIPTS" Src="Controls/SocialShareScripts.ascx" %>
+<%@ Register TagPrefix="skin" TagName="FOUNDERS" Src="Controls/Founders.ascx" %>
 
 <dnn:META ID="mobileScale" runat="server" Name="viewport" Content="width=device-width,initial-scale=1" />
 
