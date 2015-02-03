@@ -55,7 +55,7 @@
             <div class="navbar-brand navbar-brand-link visible-xs">
                 <a href="/<%= CultureInfo.CurrentCulture.Name.ToLowerInvariant() %>"><%= PortalSettings.PortalName %></a>
             </div>
-            <button type="button" class="navbar-toggle top-menu-toggle" data-toggle="collapse" data-target=".top-menu">
+            <button type="button" class="navbar-toggle skin-top-menu-toggle" data-toggle="collapse" data-target=".skin-top-menu">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -64,8 +64,8 @@
             <div class="login-simple visible-xs">
                 <dnn:LOGIN ID="dnnLoginSimple" runat="server" /> | <dnn:USER ID="dnnUserSimple" runat="server" />
             </div>
-            <div class="navbar-collapse collapse dnnClear top-menu">
-                <div class="primary-menu">
+            <div class="navbar-collapse collapse dnnClear skin-top-menu">
+                <div class="skin-primary-menu">
                     <dnn:MENU MenuStyle="Mega2Epsilon" runat="server" />
                 </div>
             </div>
@@ -87,8 +87,8 @@
 
     <nav class="navbar" role="navigation">
         <div class="container">
-            <div class="navbar-collapse collapse dnnClear top-menu">
-                <div class="secondary-menu">
+            <div class="navbar-collapse collapse dnnClear skin-top-menu">
+                <div class="skin-secondary-menu">
                     <dnn:MENU MenuStyle="Mega2Epsilon" runat="server" NodeSelector="CurrentChildren" />
                 </div>    
             </div>

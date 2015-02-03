@@ -3,7 +3,7 @@
 }
 
 $(function() {
-    $(".local-menu a.level0").html ("<span class='sr-only'>Toggle navigation</span>" +
+    $(".skin-local-menu a.level0").html ("<span class='sr-only'>Toggle navigation</span>" +
         "<span class='icon-bar'></span>" +
         "<span class='icon-bar'></span>" +
         "<span class='icon-bar'></span>");
