@@ -1,142 +1,149 @@
-ul.megamenu 
-{	
-	margin: 0; padding: 0;
-	float:left;
-	width: 100%;
-	list-style: none;
-    position:relative;
+/* Variables */
+@menuFontSize:14px;
+@borderRadius:4px;
+
+/* Base menu styles */
+
+// reset list styles
+ul.megamenu, ul.megamenusubcontent
+{
+    padding:0;
+    margin:0;
+    list-style:none;
+    list-style-type:none;
+
+    li
+    {
+        padding:0;
+        margin:0;
+        list-style:none;
+        list-style-type:none;
+    }
 }
 
-ul.megamenu, ul.megamenu li { list-style-type:none; }
+// reset row class used by Bootstrap!
+ul.megamenu .row { margin:0; } 
 
-ul.megamenu li 
+ul.megamenu *
 {
-	float: left;
-	margin: 0; padding: 0;
-	/* position: relative;*/
+    font-size:@menuFontSize;
 }
-    
-ul.megamenu ul
+     
+// submenu (popup)
+ul.megamenu .sub
 {
-    padding:0;margin:0;
-}
-
-ul.megamenu li a 
-{
-	float: left; 
-	text-decoration:none;
-}
-
-ul.megamenu li .sub 
-{
-    position: absolute;
-    left: 0;
-    float: left;
-	display: none;
+    display:none;
+    position:absolute;
     z-index:1000;
+
+    li { display:block; }
 }
 
-ul.megamenu li .row {clear: both; float: left; width: 100%; margin-bottom: 10px;}
+/*
+ul.megamenu
+{ 
+    .current, li a:hover, .megahover  { text-decoration:underline; }
+}
+*/
 
-ul.megamenu li .sub ul 
-{
-	list-style: none;
-	margin: 0; padding: 0;
-	width: 150px;
-	float: left;
+// make headers look more like common text
+ul.megamenu li.subheader h2 
+{ 
+    font-size:@menuFontSize;
+    margin:0;
+    padding:0; 
 }
 
-ul.megamenu .sub ul li 
-{
-	width: 100%;
-}
+/* Shared menu styles */
 
-ul.megamenu .sub ul li h2 
-{
-	padding: 0;  margin: 0;
-	font-size: 11px;
-	font-weight: normal;
-}
-ul.megamenu .sub ul li h2 a 
-{
-	padding:0;
-	margin:0;
-}
-
-ul.megamenu .sub ul li a 
-{
-	float: none; 
-	text-indent: 0; /*--Reset text indent--*/
-	display: block;
-	text-decoration: none;
-	color: #fff;
-	padding:0;
-	margin:0;
-}
-
-/* --Modify for styling --*/
-ul.megamenu 
-{
-	/* background-color:#aaa; */
-}
-
-ul.megamenu a 
-{
-	color:#000;
-    /*font-weight:bold;*/
-}
-
-ul.megamenu a 
-{
-	padding:4px;
-}
-
-/*ul.megamenu li a.level0:hover, .megahover, ul.megamenu .current {background-color:#2D4A74; }*/
-
-ul.megamenu li a.level0:hover, .megahover, ul.megamenu .current { font-weight:bold }
-
-div.sub 
-{
-    padding:8px;
-    /*-webkit-border-bottom-right-radius: 8px;
-    -webkit-border-bottom-left-radius: 8px;
-    -moz-border-radius-bottomright: 8px;
-    -moz-border-radius-bottomleft: 8px;
-    border-bottom-right-radius: 8px;
-    border-bottom-left-radius: 8px;*/
- }
-
- dib.sub ul 
- {
-    margin-left:8px;
- }
-
-#megamenu li.subheader {}
-#megamenu li.sublink { margin-bottom:6px; }
-#megamenu li.subheader h2 { margin-bottom:8px; }
-
-ul.megamenu li .sub 
-{
-	background: #2D4A74;
-}
-
-ul.megamenu .sub ul li h2 a 
-{
-	color: #e8e000;
-}
-
-.skin-secondary-menu ul.megamenu a 
-{
-    color:#222;
-}
+// place submenu relative to menu wrappers
+.skin-primary-menu, .skin-secondary-menu, .skin-local-menu { position:relative; }
 
 .skin-primary-menu, .skin-secondary-menu
 {
-    ul.megamenu li > .sub 
-    {
+    // for horizontal menus
+    ul.megamenu li.level0 { display:inline; }
+
+    ul.megamenu .sub 
+    { 
+        top:24px!important; 
+
+        // fill all menu wrapper width
         width:100%!important; 
     }
+
+    // stack menu blocks horizontally
+    ul.megamenu .sub > .row { float:left; }
 }
+
+/* Development borders */
+
+ul.megamenusubcontent { border:1px solid green; }
+
+ul.megamenu .row { border:1px solid yellow; }
+
+ul.megamenu .sub 
+{ 
+    background-color:#ccc; 
+    li { border:1px solid red; }
+}
+
+/* Primary menu styles */
+
+.skin-primary-menu
+{
+    // menu positioning fixes
+    margin-top:2px;
+    margin-bottom:8px;
+
+    ul.megamenu
+    {
+        li.level0
+        {
+            padding:5px;
+            margin-right:5px;
+        
+            a { color:#fff; }
+
+            &.current, &:hover, &.megahover  
+            { 
+                background-color:#ccc;
+            }
+        }
+    }
+}
+
+/* Secondary menu styles */
+
+.skin-secondary-menu
+{
+    // menu positioning fixes
+    margin-top:1px;
+
+    ul.megamenu
+    {
+        .current, li a:hover, .megahover  
+        { 
+            color:#fff;
+        }  
+
+        li.level0
+        {
+            padding:5px;
+            margin-right:5px;
+            background-color:#ddd;
+            border-bottom-right-radius:@borderRadius;
+            border-bottom-left-radius:@borderRadius;
+         
+            &.current, &:hover, &.megahover  
+            { 
+                background-color:#ccc;
+            }
+        }
+    }
+}
+
+/* Local menu styles */
 
 .skin-local-menu 
 {
@@ -145,20 +152,21 @@ ul.megamenu .sub ul li h2 a
     ul.megamenu 
     { 
         display:block;
-        position:static;
         background-color:transparent;
 
         a.level0 
         { 
+            display:inline-block;
+
             color:transparent; // hide page title
-            font-size:14px;
-            vertical-align:baseline;
+
+            vertical-align:bottom;
+
+            // menu button look
             background-color:#F8F8F8;
             border:1px solid #ddd;
             border-radius:4px;
-            padding:2px 10px;
-            margin-right:0.5em;
-
+            padding:6px 10px;
             .icon-bar 
             { 
                 display:block;
@@ -168,19 +176,21 @@ ul.megamenu .sub ul li h2 a
                 border-radius:1px;
                 margin:4px 0;
             }
+
+            margin-right:0.5em;
         }
 
         li.level0 > .sub
         {
-            position:absolute;
             top:40px!important;
-            // width:320px!important; // couldn't override inline 450px twice!
+            width:320px!important; // couldn't override inline 450px twice!
         }
     }
 }
 
 
 /* Menus for extra small devices */ 
+ 
 @media only screen and (max-width : 767px) 
 {
     .skin-primary-menu, .skin-secondary-menu 
@@ -218,3 +228,4 @@ ul.megamenu .sub ul li h2 a
         display:block;
     }
 }
+
