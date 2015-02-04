@@ -194,10 +194,6 @@ ul.skin-socialgroups
 .navbar { margin-bottom:0 }
 
 .navbar-toggle { margin-right:inherit }
-
-// to display vertical menu
-/* .navbar { position:relative }*/
-.skin-top-menu { }
        
 .skin-top-menu-toggle { float:right }
 
@@ -219,8 +215,6 @@ ul.skin-socialgroups
 
 // for login positioning
 .skin-navbar-main { position:relative; }
-
-.navbar-default { }
 
 .skin-founders-wrapper
 {
@@ -246,8 +240,9 @@ ul.skin-socialgroups
     margin-top:0; 
     h1, h2 
     { 
-        margin-top:0; 
-        position:relative; // for local menu positioning
+        margin-top:0;
+        display:inline; // for local menu button positioning
+        position:relative; // for local submenu positioning
     }
     h1 small, h2 small { display:inline-block; }
 }

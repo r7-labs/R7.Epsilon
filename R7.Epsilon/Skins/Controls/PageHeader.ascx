@@ -14,10 +14,10 @@
     var yt_group = "UCYPMmQknVPxosuY4iPCfVDg";
 %>
 
+<div class="skin-local-menu">
+    <dnn:MENU MenuStyle="Mega2Epsilon" runat="server" NodeSelector="-1,0,2" IncludeNodes="<%# PortalSettings.ActiveTab.TabID %>" />
+</div>
 <h1>
-    <div class="skin-local-menu">
-        <dnn:MENU MenuStyle="Mega2Epsilon" runat="server" NodeSelector="-1,0,2" IncludeNodes="<%# PortalSettings.ActiveTab.TabID %>" />
-    </div>
     <a href="<%= PortalSettings.ActiveTab.FullUrl %>" alt="<%: PortalSettings.ActiveTab.Title %>" title="<%: PortalSettings.ActiveTab.Title %>"><%: PortalSettings.ActiveTab.TabName %></a>
     <small><%: TagLine %></small>
 </h1>
