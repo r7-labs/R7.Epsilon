@@ -63,7 +63,7 @@
                 <span class="icon-bar"></span>
             </button>
             <div class="skin-login-simple visible-xs">
-                <dnn:LOGIN ID="dnnLoginSimple" runat="server" /> | <dnn:USER ID="dnnUserSimple" runat="server" />
+                <dnn:LOGIN runat="server" /> | <dnn:USER runat="server" />
             </div>
             <div class="navbar-collapse collapse dnnClear skin-top-menu">
                 <div class="skin-primary-menu">
@@ -77,9 +77,9 @@
                 <div class="navbar-brand skin-navbar-brand-logo">
                     <dnn:LOGO runat="server" id="dnnLOGO" />
                 </div>
-                <div class="login-full">
-                    <dnn:LOGIN ID="dnnLogin" CssClass="LoginLink" runat="server" LegacyMode="false" />
-                    <dnn:USER ID="dnnUser" runat="server" LegacyMode="false" />
+                <div class="skin-login-full">
+                    <dnn:LOGIN CssClass="LoginLink" runat="server" LegacyMode="false" />
+                    <dnn:USER runat="server" LegacyMode="false" />
                 </div>
             </div>
         </div>
