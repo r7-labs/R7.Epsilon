@@ -227,10 +227,31 @@ ul.skin-socialgroups
     height:inherit;
     padding:inherit;
     margin-bottom:8px;
+    margin-top:12px;
    
     // navbar-brand-logo styles
     float:left;
     img { border-radius:4px; }
+}
+
+.skin-founders-wrapper
+{
+    float:left;
+    width:48px;
+    height:100px;
+    margin-right:8px;
+    margin-top:12px;
+}
+
+.skin-founder-link
+{
+    float:left;
+    width:48px;
+    height:48px;
+    &:first-child { margin-bottom:4px; }
+
+    &.skin-founder-mcx { background-color:#ccc; }
+    &.skin-founder-mob { background-color:#ddd; }
 }
 
 .navbar-default
@@ -254,25 +275,6 @@ ul.skin-socialgroups
 
 // for login positioning
 .skin-navbar-main { position:relative; }
-
-.skin-founders-wrapper
-{
-    float:left;
-    width:48px;
-    height:100px;
-    margin-right:8px;
-}
-
-.skin-founder-link
-{
-    float:left;
-    width:48px;
-    height:48px;
-    &:first-child { margin-bottom:4px; }
-
-    &.skin-founder-mcx { background-color:#ccc; }
-    &.skin-founder-mob { background-color:#ddd; }
-}
 
 .page-header 
 { 
@@ -321,16 +323,32 @@ ul.skin-socialgroups
  /*------------------------------------------------*/
 /* LOGIN */
 /*------------------------------------------------*/
-.login-full {
+.skin-login-full {
     position:absolute;
     right:0;
-    bottom:0;
+    top:4px; // temporary, must be 0
+
+    background-color:@yellowgreen0;
+    padding:4px;
+    border-bottom-left-radius:4px;
+    border-bottom-right-radius:4px;
+
+    .loginGroup 
+    {
+        .LoginLink
+        {
+            height:32px;
+            background-color:@yellowgreen1;
+            border-radius:4px;
+        }
+    }
+
     .registerGroup, .registerGroup *, .loginGroup, .loginGroup * { display: inline; }
     .registerGroup, .loginGroup { float: right; }
     .registerGroup {
         li:first-child:hover { border-left: #222; }
         li { float: left; }
-        .buttonGroup { margin-right: 0; }
+        .buttonGroup { margin-left:0; margin-right:5px; }
     }
     .registerGroup a, .loginGroup a {
         display: block;
@@ -352,7 +370,16 @@ ul.skin-socialgroups
         font-size: 0;
         text-indent: -9999px;
     }
-    .userMessages, .userNotifications { background-color: #2D4A74; }
+    .registerGroup .userDisplayName { margin-right:4px; }
+    .userMessages,
+    .userNotifications
+    {
+        width:32px;
+        height:32px;
+        margin-right:4px;
+        border-radius:3px;
+        background-color:@green3;
+    }
     .userMessages a { 
         height: 32px;
         background: url('i/icon_message.png') no-repeat center center;
@@ -371,15 +398,6 @@ ul.skin-socialgroups
         /* min-width: 50px;
         min-height: 50px;*/
         padding: 0;
-    }
-
-    #dnn_dnnUser_messageGroup,
-    #dnn_dnnUser_notificationGroup
-    {
-        width:32px;
-        height:32px;
-        /* padding-top:8px;
-        padding-bottom:8px;*/
     }
 
     .registerGroup a img {
