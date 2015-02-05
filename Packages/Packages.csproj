@@ -33,9 +33,6 @@
     <None Include="Install.targets" />
     <None Include="Source.targets" />
     <None Include="Packages.csproj" />
-    <None Include="R7.Epsilon.dnn" />
-    <None Include="License.txt" />
-    <None Include="ReleaseNotes.txt" />
     <None Include="LocalDeploy.targets" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

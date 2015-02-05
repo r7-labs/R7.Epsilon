@@ -65,6 +65,9 @@
     <None Include="Skins\Controls\App_LocalResources\SharedResources.ru-RU.resx" />
     <None Include="R7.Epsilon.csproj" />
     <None Include="Less.targets" />
+    <None Include="R7.Epsilon.dnn" />
+    <None Include="ReleaseNotes.txt" />
+    <None Include="License.txt" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="lib\ControllerBase.cs" />

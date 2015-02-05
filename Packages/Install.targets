@@ -3,7 +3,7 @@
 	<Target Name="MakeInstallPackage" Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
 		<!-- Read package version from the manifest -->
 		<XmlRead Prefix="n" Namespace="http://schemas.microsoft.com/developer/msbuild/2003"
-			 XPath="/dotnetnuke/packages/package[1]/@version" XmlFileName="R7.Epsilon.dnn">
+			 XPath="/dotnetnuke/packages/package[1]/@version" XmlFileName="..\R7.Epsilon\R7.Epsilon.dnn">
 			<Output TaskParameter="Value" PropertyName="Version" />
 		</XmlRead>
 		
@@ -40,8 +40,8 @@
 		
 		<!-- Declare manifest files -->
 		<ItemGroup>
-			<InstallManifestFiles Include="*.dnn" />
-			<InstallManifestFiles Include="*.txt" />
+			<InstallManifestFiles Include="..\R7.Epsilon\*.dnn" />
+			<InstallManifestFiles Include="..\R7.Epsilon\*.txt" />
 		</ItemGroup>
 			
 		<!-- Declare binaries -->
