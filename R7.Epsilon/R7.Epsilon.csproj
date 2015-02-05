@@ -165,6 +165,7 @@
     <Content Include="Skins\Controls\Founders.ascx" />
     <Content Include="Skins\img\header_bg.png" />
     <Content Include="Skins\img\header_bg.svg" />
+    <Content Include="Skins\variables.less" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
