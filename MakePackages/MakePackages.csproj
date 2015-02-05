@@ -31,7 +31,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Install.targets" />
-    <None Include="Source.targets" />
     <None Include="MakePackages.csproj" />
     <None Include="LocalDeploy.targets" />
   </ItemGroup>
