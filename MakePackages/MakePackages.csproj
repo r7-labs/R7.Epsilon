@@ -5,8 +5,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{C70839AB-26FA-473E-A5F8-5C13A07CAD66}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Packages</RootNamespace>
-    <AssemblyName>Packages</AssemblyName>
+    <RootNamespace>MakePackages</RootNamespace>
+    <AssemblyName>MakePackages</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -32,7 +32,7 @@
   <ItemGroup>
     <None Include="Install.targets" />
     <None Include="Source.targets" />
-    <None Include="Packages.csproj" />
+    <None Include="MakePackages.csproj" />
     <None Include="LocalDeploy.targets" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
