@@ -33,7 +33,6 @@
     <None Include="Readme.txt" />
     <None Include="Install.targets" />
     <None Include="Source.targets" />
-    <None Include="SkinPackage.targets" />
     <None Include="Packages.csproj" />
     <None Include="R7.Epsilon.dnn" />
     <None Include="License.txt" />
