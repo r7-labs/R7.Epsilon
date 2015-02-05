@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0" DefaultTargets="Less">
+    <!-- Declare Less files -->
+    <ItemGroup>
+        <LessFiles Include="Skins\skin.less" />
+        <LessFiles Include="Menu\Mega2Epsilon.less" />
+    </ItemGroup>
+    <!-- Preprocess Less files -->
+	<Target Name="Less">
+        <!-- Just compile -->
+        <Exec Command="lessc %(LessFiles.Identity) > %(RelativeDir)%(Filename).css" /> 
+        <!-- Compile and minify -->
+        <Exec Command="lessc --clean-css=&quot;--compatibility=ie8 --advanced&quot; %(LessFiles.Identity) > %(RelativeDir)%(Filename).min.css" />
+	</Target>
+</Project>
