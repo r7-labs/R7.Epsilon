@@ -89,8 +89,6 @@ ul.megamenu li.subheader h2
 
     ul.megamenu .sub 
     { 
-        top:23px!important; 
-
         // fill all menu wrapper width
         width:100%!important; 
     }
@@ -121,11 +119,13 @@ ul.megamenu .sub
 
 .skin-primary-menu
 {
-    // menu positioning fixes
-    margin-top:2px;
+    // background-color:@color-primary-4;
 
     ul.megamenu
     {
+        padding-top:3px; // fix li.level0 overflow
+        padding-bottom:3px;
+
         li.level0
         {
             padding:5px;
@@ -140,6 +140,7 @@ ul.megamenu .sub
         }
         .sub
         {
+            top:26px!important; 
             border-color:@color-complement-2;
             background-color:@color-primary-2;
             border-bottom-left-radius:@borderRadius;
@@ -190,6 +191,7 @@ ul.megamenu .sub
 
         .sub
         {
+            top:23px!important;
             border-color:@color-secondary-2-2;
             background-color:@color-secondary-1-2;
             border-bottom-left-radius:@borderRadius;
