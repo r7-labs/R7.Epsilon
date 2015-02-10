@@ -37,12 +37,10 @@ ul.megamenu .sub
     li { display:block; }
 }
 
-/*
 ul.megamenu
 { 
-    .current, li a:hover, .megahover  { text-decoration:underline; }
+    .current, li a:hover, .megahover  { text-decoration:none; }
 }
-*/
 
 // make headers look more like common text
 ul.megamenu li.subheader h2 
@@ -128,16 +126,16 @@ ul.megamenu .sub
 
             &.current, &:hover, &.megahover  
             { 
-                background-color:@color-secondary-2-2;
+                background-color:@color-complement-2;
             }
         }
         .sub
         {
-            border-color:@color-secondary-2-2;
+            border-color:@color-complement-2;
             background-color:@color-primary-2;
             border-bottom-left-radius:@borderRadius;
             border-bottom-right-radius:@borderRadius;
-            box-shadow:0 2px 3px @color-primary-3;
+            box-shadow:2px 2px 2px @color-primary-4;
 
             li 
             {
@@ -173,22 +171,22 @@ ul.megamenu .sub
 
             &.current, &:hover, &.megahover  
             { 
-                background-color:@color-secondary-1-1;
+                background-color:@color-secondary-2-2;
                 border-radius:0;
             }
         }
 
         .sub
         {
-            border-color:@color-secondary-1-2;
-            background-color:@color-secondary-1-1;
+            border-color:@color-secondary-2-2;
+            background-color:@color-secondary-1-2;
             border-bottom-left-radius:@borderRadius;
             border-bottom-right-radius:@borderRadius;
-            box-shadow:0 2px 3px @color-secondary-1-2;
+            box-shadow:2px 2px 2px @color-secondary-1-4;
 
             li 
             {
-                border-color:darken(@color-secondary-1-1, 5%);
+                border-color:darken(@color-secondary-1-2, 5%);
             }
         }
     }
