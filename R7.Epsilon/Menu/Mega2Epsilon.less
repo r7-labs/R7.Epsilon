@@ -67,12 +67,16 @@ ul.megamenu li.subheader h2
         .sub
         {
             border-top:4px solid;
+            padding-bottom:10px;
             li 
             { 
                 display:block; 
+                padding-right:5px;
+                padding-left:5px;
                 min-height:24px;
                 padding-top:4px; // for vertical align
                 border-bottom:1px solid;
+               
             }
         }
     }
@@ -92,7 +96,12 @@ ul.megamenu li.subheader h2
     }
 
     // stack menu blocks horizontally
-    ul.megamenu .sub > .row { float:left; margin-right:8px; }
+    ul.megamenu .sub > .row 
+    { 
+        float:left; 
+        margin-right:8px; 
+        width:33%;
+    }
 }
 
 /* Development borders */
@@ -140,6 +149,10 @@ ul.megamenu .sub
             li 
             {
                 border-color:darken(@color-primary-2, 5%);
+                &.current, &:hover, &.megahover  
+                { 
+                    background-color:@color-primary-1;
+                }
             }
         }
     }
@@ -186,6 +199,10 @@ ul.megamenu .sub
             li 
             {
                 border-color:darken(@color-secondary-1-2, 5%);
+                &.current, &:hover, &.megahover  
+                {
+                    background-color:@color-secondary-1-1;
+                }
             }
         }
     }
