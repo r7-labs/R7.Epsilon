@@ -3,10 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C70839AB-26FA-473E-A5F8-5C13A07CAD66}</ProjectGuid>
+    <ProjectGuid>{1FAE1B00-5E10-4B95-A656-423A8DBB08B9}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>MakePackages</RootNamespace>
-    <AssemblyName>MakePackages</AssemblyName>
+    <RootNamespace>Packaging</RootNamespace>
+    <AssemblyName>Packaging</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,7 +31,9 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="MakePackages.csproj" />
+    <None Include="LocalDeploy.targets" />
+    <None Include="Packaging.csproj" />
+    <None Include="Install.targets" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets" />
