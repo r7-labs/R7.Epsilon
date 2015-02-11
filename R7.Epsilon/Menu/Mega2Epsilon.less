@@ -289,11 +289,73 @@ ul.megamenu .sub
  
 @media only screen and (max-width : 767px) 
 {
-    .skin-primary-menu, .skin-secondary-menu 
-    {   
-        width:100%;
-        position:relative;
+    .skin-primary-menu, .skin-secondary-menu, .skin-local-menu
+    {
+        ul.megamenu 
+        {
+            li.level0 //, li a 
+            {
+                float:none;
+                display:block;
+                // position:relative;
+            }
+        }
+    }
+
+    .skin-primary-menu, .skin-secondary-menu
+    {
         display:block;
+        width:100%;
+
+        ul.megamenu 
+        {   
+            width:100%;
+           
+            .sub
+            {
+                top:0!important;
+                right:0;
+                max-width:240px;
+                height:100%;
+                border-top:none;
+                border-left:4px solid;
+                border-radius:0;
+
+                // stack menu blocks vertically
+                &> .row 
+                { 
+                    float:none; 
+                    display:block;
+                    margin-right:8px; 
+                }
+            }
+        }
+    }
+
+    .skin-primary-menu
+    {
+        ul.megamenu 
+        { 
+            background-color:@color-primary-2; 
+
+            .sub 
+            {
+                border-color:@color-complement-2;
+            }
+        }
+    }
+
+    .skin-secondary-menu
+    {
+        ul.megamenu 
+        { 
+            background-color:@color-secondary-1-2;
+
+            .sub 
+            {
+                border-color:@color-secondary-2-2;
+            }
+        }
     }
 
     .skin-local-menu 
@@ -301,27 +363,6 @@ ul.megamenu .sub
         li.level0 > .sub { width:100%!important; }
     }
 
-    .skin-secondary-menu ul.megamenu 
-    {   
-       background-color:#555;
-    }
 
-    .skin-primary-menu ul.megamenu 
-    {   
-        width:100%;
-        background-color:#ccc;
-    }
-
-    .skin-secondary-menu ul.megamenu 
-    {   
-        width:100%;
-        background-color:#555;
-    }
-
-    ul.megamenu li, ul.megamenu li a 
-    {
-        float:none;
-        display:block;
-    }
 }
 
