@@ -99,7 +99,8 @@ ul.megamenu li.subheader h2
             &> .row 
             { 
                 float:left; 
-                margin-right:8px; 
+                padding-right:8px; 
+                padding-left:4px;
                 width:33%;
             }
 
@@ -168,7 +169,7 @@ ul.megamenu .sub
 .skin-secondary-menu
 {
     // menu positioning fixes
-    margin-top:2px;
+    margin-top:3px;
 
     ul.megamenu
     {
@@ -289,7 +290,9 @@ ul.megamenu .sub
  
 @media only screen and (max-width : 767px) 
 {
-    .skin-primary-menu, .skin-secondary-menu, .skin-local-menu
+    // local menu do not [possibly] reqiure styling for xs screens
+     
+    .skin-primary-menu, .skin-secondary-menu
     {
         ul.megamenu 
         {
@@ -326,7 +329,7 @@ ul.megamenu .sub
                 { 
                     float:none; 
                     display:block;
-                    margin-right:8px; 
+                    width:100%;
                 }
             }
         }
@@ -359,12 +362,4 @@ ul.megamenu .sub
             }
         }
     }
-
-    .skin-local-menu 
-    { 
-        li.level0 > .sub { width:100%!important; }
-    }
-
-
 }
-
