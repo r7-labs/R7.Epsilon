@@ -136,11 +136,8 @@ ul.megamenu .sub
         {
             padding:5px;
             margin-right:5px;
-        
-            &.current, &:hover, &.megahover  
-            { 
-                background-color:@color-complement-2;
-            }
+            &.current { background-color:@color-primary-3; }
+            &:hover, &.megahover { background-color:@color-complement-2; }
         }
         .sub
         {
@@ -173,10 +170,7 @@ ul.megamenu .sub
 
     ul.megamenu
     {
-        .current, li a:hover, .megahover  
-        { 
-            color:#fff;
-        }  
+        .current, li a:hover, .megahover { color:#fff; }
 
         li.level0
         {
@@ -186,10 +180,8 @@ ul.megamenu .sub
             border-bottom-right-radius:@borderRadius;
             border-bottom-left-radius:@borderRadius;
          
-            &.current, &:hover, &.megahover  
-            { 
-                background-color:@color-secondary-2-2;
-            }
+            &.current { background-color:@color-secondary-1-3; }
+            &:hover, &.megahover { background-color:@color-secondary-2-2; }
         }
 
         .sub
@@ -291,26 +283,22 @@ ul.megamenu .sub
 @media only screen and (max-width : 767px) 
 {
     // local menu do not [possibly] reqiure styling for xs screens
-     
-    .skin-primary-menu, .skin-secondary-menu
-    {
-        ul.megamenu 
-        {
-            li.level0
-            {
-                float:none;
-                display:block;
-
-                // place submenus relative to menu items
-                position:relative; 
-            }
-        }
-    }
 
     .skin-primary-menu, .skin-secondary-menu
     {
         ul.megamenu 
         {   
+            li.level0
+            {
+                float:none;
+                display:block;
+
+
+
+                // place submenus relative to menu items
+                position:relative; 
+            }
+
             .sub
             {
                 top:0!important;
@@ -347,7 +335,10 @@ ul.megamenu .sub
         margin-top:0;
 
         ul.megamenu 
-        { 
+        {
+            // disable rounded borders
+            li.level0 { border-radius:0; }
+
             background-color:@color-secondary-1-2;
             .sub { border-color:@color-secondary-2-2; }
         }
