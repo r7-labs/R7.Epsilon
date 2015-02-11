@@ -282,7 +282,13 @@ ul.skin-socialgroups
 }
 
 // for login positioning
-.skin-navbar-main { position:relative; }
+.skin-primary-navbar-main { position:relative; }
+
+.skin-secondary-navbar 
+{ 
+    min-height:0; 
+    margin-bottom:10px;
+}
 
 .page-header 
 { 
@@ -312,6 +318,8 @@ ul.skin-socialgroups
 
 .breadcrumb 
 {
+    background-color:lighten(@color-complement-1, 20%);
+
     .skin-breadcrumb-link 
     {
         margin-right:5px;

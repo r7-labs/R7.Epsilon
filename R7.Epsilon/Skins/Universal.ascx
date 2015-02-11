@@ -51,7 +51,7 @@
         </div>
     </div>
 
-    <nav class="navbar navbar-default" role="navigation">
+    <nav class="navbar navbar-default skin-primary-navbar" role="navigation">
         <div class="container">
             <div class="navbar-brand skin-navbar-brand-link visible-xs">
                 <a href="/<%= CultureInfo.CurrentCulture.Name.ToLowerInvariant() %>"><%= PortalSettings.PortalName %></a>
@@ -70,7 +70,7 @@
                     <dnn:MENU MenuStyle="Mega2Epsilon" runat="server" />
                 </div>
             </div>
-            <div class="navbar-collapse collapse skin-navbar-main">
+            <div class="navbar-collapse collapse skin-primary-navbar-main">
                 <div class="skin-founders-wrapper">
                     <skin:FOUNDERS runat="server" Target="_blank" />
                 </div>
@@ -85,7 +85,7 @@
         </div>
     </nav>
 
-    <nav class="navbar" role="navigation">
+    <nav class="navbar skin-secondary-navbar" role="navigation">
         <div class="container">
             <div class="navbar-collapse collapse dnnClear skin-top-menu">
                 <div class="skin-secondary-menu">
@@ -94,7 +94,7 @@
             </div>
         </div>
     </nav>
-    <nav class="navbar" role="navigation">
+    <nav class="navbar skin-local-navbar" role="navigation">
         <div class="container">
             <div class="breadcrumb">
                 <dnn:BREADCRUMB id="dnnBREADCRUMB" runat="server" CssClass="skin-breadcrumb-link" RootLevel="0" Separator="/" />
