@@ -67,7 +67,7 @@
             </div>
             <div class="navbar-collapse collapse dnnClear skin-top-menu">
                 <div class="skin-primary-menu">
-                    <dnn:MENU MenuStyle="Mega2Epsilon" runat="server" />
+                    <dnn:MENU MenuStyle="Mega2Epsilon" runat="server" NodeSelector="*,0,2" />
                 </div>
             </div>
             <div class="navbar-collapse collapse skin-primary-navbar-main">
