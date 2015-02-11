@@ -75,16 +75,15 @@ ul.megamenu li.subheader h2
                 padding-left:5px;
                 min-height:24px;
                 padding-top:4px; // for vertical align
-                border-top:1px solid;
-               
             }
+
+            li.subheader { border-top:1px solid; }
         }
     }
 }
 
 .skin-primary-menu, .skin-secondary-menu
 {
-
     ul.megamenu 
     {
         li.level0 { display:inline; } // for horizontal menus
@@ -94,7 +93,8 @@ ul.megamenu li.subheader h2
             // fill all menu wrapper width
             width:100%!important; 
 
-            .row ul.megamenusubcontent:first-child li:first-child { border-top:none; }
+            // don't overline first menu items
+            .row ul.megamenusubcontent:first-child li.subheader:first-child { border-top:none; }
         
             // stack menu blocks horizontally
             &> .row 
@@ -103,6 +103,8 @@ ul.megamenu li.subheader h2
                 margin-right:8px; 
                 width:33%;
             }
+
+            li.sublink { padding-left:15px; }
         }
     }
 }
@@ -154,12 +156,13 @@ ul.megamenu .sub
 
             li 
             {
-                border-color:darken(@color-primary-2, 5%);
                 &.current, &:hover, &.megahover  
                 { 
                     background-color:@color-primary-1;
                 }
             }
+
+            li.subheader { border-color:darken(@color-primary-2, 5%); }
         }
     }
 }
@@ -205,12 +208,12 @@ ul.megamenu .sub
 
             li 
             {
-                border-color:darken(@color-secondary-1-2, 5%);
                 &.current, &:hover, &.megahover  
                 {
                     background-color:@color-secondary-1-1;
                 }
             }
+            li.subheader { border-color:darken(@color-secondary-1-2, 5%); }
         }
     }
 }

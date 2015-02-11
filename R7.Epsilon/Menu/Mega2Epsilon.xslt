@@ -4,7 +4,7 @@
 	<xsl:param name="ControlID" />
 	<xsl:param name="Options" />
 	<xsl:param name="subMenuColumns">3</xsl:param>
-	<xsl:param name="subpointer"><![CDATA[&#9654;&nbsp;]]></xsl:param>
+	<xsl:param name="subpointer"><![CDATA[]]></xsl:param>
 	<xsl:param name="pointer"><![CDATA[&nbsp;&#9662;]]></xsl:param>
 	<xsl:param name="startUl"><![CDATA[<ul>]]></xsl:param>
 	<xsl:param name="endUl"><![CDATA[</ul>]]></xsl:param>
