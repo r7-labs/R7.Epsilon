@@ -293,11 +293,10 @@ ul.megamenu .sub
     {
         ul.megamenu 
         {
-            li.level0 //, li a 
+            li.level0
             {
                 float:none;
                 display:block;
-                // position:relative;
             }
         }
     }
@@ -320,6 +319,7 @@ ul.megamenu .sub
                 border-top:none;
                 border-left:4px solid;
                 border-radius:0;
+                box-shadow:none;
 
                 // stack menu blocks vertically
                 &> .row 
@@ -347,6 +347,8 @@ ul.megamenu .sub
 
     .skin-secondary-menu
     {
+        margin-top:0;
+
         ul.megamenu 
         { 
             background-color:@color-secondary-1-2;
