@@ -52,17 +52,16 @@ ul.megamenu li.subheader h2
 
 /* Shared menu styles */
 
-// place submenu relative to menu wrappers
-.skin-primary-menu, .skin-secondary-menu, .skin-local-menu { position:relative; }
-
 .skin-primary-menu, .skin-secondary-menu, .skin-local-menu
 {
+    // place submenu relative to menu wrappers
+    position:relative;
+
     ul.megamenu 
     {
-        ul.megamenusubcontent
-        {
-            padding-left:8px;
-        }
+        ul.megamenusubcontent { padding-left:8px; }
+
+        li a { color:#fff; }
 
         .sub
         {
@@ -75,12 +74,15 @@ ul.megamenu li.subheader h2
                 padding-left:5px;
                 min-height:24px;
                 padding-top:4px; // for vertical align
-            }
 
-            li.subheader { border-top:1px solid; }
+                &.subheader { border-top:1px solid; }
+                &.sublink { padding-left:15px; }    
+            }
         }
     }
 }
+
+/* Shared horizontal menu styles */
 
 .skin-primary-menu, .skin-secondary-menu
 {
@@ -93,9 +95,6 @@ ul.megamenu li.subheader h2
             // fill all menu wrapper width
             width:100%!important; 
 
-            // don't overline first menu items
-            .row ul.megamenusubcontent:first-child li.subheader:first-child { border-top:none; }
-        
             // stack menu blocks horizontally
             &> .row 
             { 
@@ -104,7 +103,8 @@ ul.megamenu li.subheader h2
                 width:33%;
             }
 
-            li.sublink { padding-left:15px; }
+            // don't overline first menu items
+            .row ul.megamenusubcontent:first-child li.subheader:first-child { border-top:none; }
         }
     }
 }
@@ -126,8 +126,6 @@ ul.megamenu .sub
 
 .skin-primary-menu
 {
-    // background-color:@color-primary-4;
-
     ul.megamenu
     {
         padding-top:3px; // fix li.level0 overflow
@@ -138,8 +136,6 @@ ul.megamenu .sub
             padding:5px;
             margin-right:5px;
         
-            a { color:#fff; }
-
             &.current, &:hover, &.megahover  
             { 
                 background-color:@color-complement-2;
@@ -189,8 +185,6 @@ ul.megamenu .sub
             border-bottom-right-radius:@borderRadius;
             border-bottom-left-radius:@borderRadius;
          
-            a { color:#fff; }
-
             &.current, &:hover, &.megahover  
             { 
                 background-color:@color-secondary-2-2;
@@ -245,7 +239,12 @@ ul.megamenu .sub
             background-color:@color-secondary-1-2;
             padding:4px 10px;
 
-            &:hover { background-color:@color-secondary-2-2; }
+            &:hover, &.megahover
+            { 
+                background-color:@color-secondary-2-2; 
+                border-bottom-left-radius:0;
+                border-bottom-right-radius:0;
+            }
 
             .icon-bar 
             { 
@@ -260,8 +259,27 @@ ul.megamenu .sub
 
         li.level0 > .sub
         {
-            top:40px!important;
-            width:320px!important; // couldn't override inline 450px twice!
+            top:30px!important;
+            width:320px!important;
+
+            border-color:@color-secondary-2-2;
+            background-color:@color-secondary-1-2;
+            border-bottom-left-radius:@borderRadius;
+            border-bottom-right-radius:@borderRadius;
+            box-shadow:2px 2px 2px @color-secondary-1-4;
+
+            li 
+            {
+                &.current, &:hover, &.megahover  
+                {
+                    background-color:@color-secondary-1-1;
+                }
+            }
+
+            li.subheader { border-color:darken(@color-secondary-1-2, 5%); }
+
+            // don't overline first menu items
+            .row:first-child ul.megamenusubcontent:first-child li.subheader:first-child { border-top:none; }
         }
     }
 }
