@@ -287,7 +287,7 @@ ul.megamenu .sub
 
 
 /* Menus for extra small devices */ 
- 
+
 @media only screen and (max-width : 767px) 
 {
     // local menu do not [possibly] reqiure styling for xs screens
@@ -300,28 +300,26 @@ ul.megamenu .sub
             {
                 float:none;
                 display:block;
+
+                // place submenus relative to menu items
+                position:relative; 
             }
         }
     }
 
     .skin-primary-menu, .skin-secondary-menu
     {
-        display:block;
-        width:100%;
-
         ul.megamenu 
         {   
-            width:100%;
-           
             .sub
             {
                 top:0!important;
                 right:0;
                 max-width:240px;
-                height:100%;
                 border-top:none;
                 border-left:4px solid;
-                border-radius:0;
+                border-bottom:4px solid;
+                border-bottom-right-radius:0;
                 box-shadow:none;
 
                 // stack menu blocks vertically
@@ -340,11 +338,7 @@ ul.megamenu .sub
         ul.megamenu 
         { 
             background-color:@color-primary-2; 
-
-            .sub 
-            {
-                border-color:@color-complement-2;
-            }
+            .sub { border-color:@color-complement-2; }
         }
     }
 
@@ -355,11 +349,7 @@ ul.megamenu .sub
         ul.megamenu 
         { 
             background-color:@color-secondary-1-2;
-
-            .sub 
-            {
-                border-color:@color-secondary-2-2;
-            }
+            .sub { border-color:@color-secondary-2-2; }
         }
     }
 }
