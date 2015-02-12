@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <manifest>
     <template>Mega2Epsilon.xslt</template>
-    <scripts>
-        <script>Mega2Epsilon.js</script>
-    </scripts>
-    <stylesheets>
-        <stylesheet>Mega2Epsilon.css</stylesheet>
-    </stylesheets>
+    <scripts />
+    <stylesheets />
 </manifest>

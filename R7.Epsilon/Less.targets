@@ -3,7 +3,6 @@
     <!-- Declare Less files -->
     <ItemGroup>
         <LessFiles Include="Skins\skin.less" />
-        <LessFiles Include="Menu\Mega2Epsilon.less" />
     </ItemGroup>
     <!-- Preprocess Less files -->
 	<Target Name="Less">
