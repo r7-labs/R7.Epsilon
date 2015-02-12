@@ -230,9 +230,12 @@ ul.skin-socialgroups
     padding:inherit;
     margin-bottom:8px;
     margin-top:12px;
-   
+
     // navbar-brand-logo styles
     float:left;
+    position:relative;
+    left:24px;
+
     img 
     { 
         border-radius:4px;
@@ -245,8 +248,11 @@ ul.skin-socialgroups
     float:left;
     width:48px;
     height:100px;
-    margin-right:8px;
-    margin-top:12px;
+   
+    // cover logo
+    position:absolute;
+    top:11px;
+    z-index:10; 
 }
 
 .skin-founder-link
@@ -254,11 +260,23 @@ ul.skin-socialgroups
     float:left;
     width:48px;
     height:48px;
+    border-radius:24px;
 
-    &:first-child { margin-bottom:4px; }
+    &:first-child { margin-bottom:6px; }
 
-    &.skin-founder-mcx { background-color:#ccc; }
-    &.skin-founder-mob { background-color:#ddd; }
+    &.skin-founder-mcx 
+    { 
+        background-image:url('images/mcx_48x48.png'); 
+        // as .navbar-default bottom gradient point
+        box-shadow:2px 2px 2px @color-complement-2;
+    }
+
+    &.skin-founder-mob 
+    { 
+        background-image:url('images/minobr_48x48.png');
+        // as .navbar-default top gradient point
+        box-shadow:2px 2px 2px @color-primary-3; 
+    }
 }
 
 .navbar-default
