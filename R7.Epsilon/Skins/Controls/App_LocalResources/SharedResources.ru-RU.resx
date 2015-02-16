@@ -28,6 +28,12 @@
         <value>Министерство образования и науки</value>
     </data>
     <data name="LogoTitle_0.Text" xml:space="preserve">
-        <value>Волгоградский государственный аграрный университет</value>
+        <value>Волгоградский&#13;государственный аграрный университет</value>
+    </data>
+    <data name="LogoTitle_0.Motto" xml:space="preserve">
+        <value>на добрую землю...</value>
+    </data>
+    <data name="LogoTitle_Default.Motto" xml:space="preserve">
+        <value>Здесь должен быть девиз</value>
     </data>
 </root>

@@ -281,19 +281,31 @@ ul.skin-socialgroups
 
 .skin-logo-title-wrapper
 {
-    float:left;
-    margin-left:34px;
-    margin-top:10px;
+    display:inline-block;
+    margin-left:40px;
+    margin-top:40px;
 
     .skin-logo-title
     {
-        font-size:22px;
+        display:inline-block;
+        white-space:pre-wrap;
+        font-size:18px;
         font-style:italic;
         line-height:1.1em;
         color:#fff;
-        text-shadow:1px 1px 2px #000;
+        text-shadow:0 0 5px @color-complement-2;
 
-        &:hover { text-decoration:none; }
+        &:first-line { font-size:22px; }
+        &:hover, &:selected { text-decoration:none; }
+    }
+
+    .skin-logo-title-motto
+    {
+        color:@color-primary-4;
+        font-weight:bold;
+        font-style:italic;
+        text-align:right;
+        text-shadow:0 0 1px @color-complement-2;
     }
 }
 
@@ -307,7 +319,7 @@ ul.skin-socialgroups
     border-radius:0;
 
     background-color:@color-primary-3; // fallback
-    background: linear-gradient(to bottom, @color-primary-4 0%, @color-primary-4 25px, @color-primary-3 25px, @color-complement-2 100%);
+    background: linear-gradient(to bottom, @color-primary-4 0%, @color-primary-4 26px, @color-primary-3 26px, @color-complement-2 100%);
 
     .container {}
 }
@@ -385,7 +397,7 @@ ul.skin-socialgroups
 .skin-login-full {
     position:absolute;
     right:0;
-    top:4px; // temporary, must be 0
+    top:0;
 
     background-color:lighten(@color-complement-1, 10%);
     padding:4px;

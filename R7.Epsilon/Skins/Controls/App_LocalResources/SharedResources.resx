@@ -28,6 +28,12 @@
         <value>Ministry of Education and Science</value>
     </data>
     <data name="LogoTitle_0.Text" xml:space="preserve">
-        <value>Volgograd State&lt;br /&gt;Agricultural University</value>
+        <value>Volgograd&#13;State Agricultural University</value>
+    </data>
+    <data name="LogoTitle_0.Motto" xml:space="preserve">
+        <value>to the good ground...</value>
+    </data>
+    <data name="LogoTitle_Default.Motto" xml:space="preserve">
+        <value>Motto here</value>
     </data>
 </root>
