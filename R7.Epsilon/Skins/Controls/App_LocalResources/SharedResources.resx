@@ -27,4 +27,7 @@
     <data name="FounderMob.Alt" xml:space="preserve">
         <value>Ministry of Education and Science</value>
     </data>
+    <data name="LogoTitle_0.Text" xml:space="preserve">
+        <value>Volgograd State&lt;br /&gt;Agricultural University</value>
+    </data>
 </root>

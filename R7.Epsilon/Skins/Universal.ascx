@@ -19,6 +19,7 @@
 <%@ Register TagPrefix="skin" TagName="PAGEHEADER" Src="Controls/PageHeader.ascx" %>
 <%@ Register TagPrefix="skin" TagName="SOCIALSHARESCRIPTS" Src="Controls/SocialShareScripts.ascx" %>
 <%@ Register TagPrefix="skin" TagName="FOUNDERS" Src="Controls/Founders.ascx" %>
+<%@ Register TagPrefix="skin" TagName="LOGOTITLE" Src="Controls/LogoTitle.ascx" %>
 
 <dnn:META ID="mobileScale" runat="server" Name="viewport" Content="width=device-width,initial-scale=1" />
 
@@ -78,6 +79,9 @@
                 </div>
                 <div class="navbar-brand skin-navbar-brand-logo">
                     <dnn:LOGO runat="server" id="dnnLOGO" />
+                </div>
+                <div class="skin-logo-title-wrapper hidden-xs">
+                    <skin:LOGOTITLE runat="server" />
                 </div>
                 <div class="skin-login-full">
                     <dnn:LOGIN CssClass="LoginLink" runat="server" LegacyMode="false" />

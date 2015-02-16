@@ -27,4 +27,7 @@
     <data name="FounderMob.Alt" xml:space="preserve">
         <value>Министерство образования и науки</value>
     </data>
+    <data name="LogoTitle_0.Text" xml:space="preserve">
+        <value>Волгоградский государственный аграрный университет</value>
+    </data>
 </root>

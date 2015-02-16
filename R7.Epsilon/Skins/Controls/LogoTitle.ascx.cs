@@ -1,5 +1,5 @@
 ﻿//
-// CustomSkinObjectBase.cs
+// LogoTitle.ascx.cs
 //
 // Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
@@ -25,50 +25,21 @@
 // THE SOFTWARE.
 
 using System;
+using System.Web;
 using System.Web.UI;
-using DotNetNuke.UI.Skins;
-using DotNetNuke.Services.Localization;
+using DotNetNuke.Entities.Portals;
+using System.Web.UI.WebControls;
+using System.Web.Security;
+using DotNetNuke.UI.WebControls;
 
 namespace R7.Epsilon
 {
-    public class CustomSkinObjectBase: SkinObjectBase
+    public class LogoTitle : CustomSkinObjectBase
     {
-        protected CustomSkinObjectBase (string fileName)
+        public string Target { get; set; }
+
+        public LogoTitle (): base ("LogoTitle.ascx")
         {
-            this.fileName = fileName;
         }
-
-        private string fileName;
-
-        #region Localization
-
-        private string localResourceFile;
-
-        protected string LocalResourceFile 
-        {
-            get { return localResourceFile ?? (localResourceFile = Localization.GetResourceFile (this, fileName)); }
-        }
-
-        protected string LocalizeString (string value)
-        {
-            return Localization.GetString (value, LocalResourceFile);
-        }
-
-        protected string LocalizeString (string key, string defaultKey)
-        {
-            var localizedValue = LocalizeString (key);
-
-            return !string.IsNullOrWhiteSpace (localizedValue) ? localizedValue : LocalizeString(defaultKey);
-        }
-
-        protected string SafeLocalizeString (string key, string defaultValue)
-        {
-            var localizedValue = LocalizeString (key);
-
-            return !string.IsNullOrWhiteSpace (localizedValue) ? localizedValue : defaultValue;
-        }
-
-        #endregion
     }
 }
-
