@@ -109,6 +109,9 @@
     <Compile Include="Skins\Controls\LogoTitle.ascx.cs">
       <DependentUpon>LogoTitle.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Skins\Controls\BrowserCheck.ascx.cs">
+      <DependentUpon>BrowserCheck.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Containers\Blank.ascx" />
@@ -177,6 +180,7 @@
     <Content Include="Skins\images\minobr_logo.svg" />
     <Content Include="Skins\images\logo_template_178x100.xcf" />
     <Content Include="Skins\Controls\LogoTitle.ascx" />
+    <Content Include="Skins\Controls\BrowserCheck.ascx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

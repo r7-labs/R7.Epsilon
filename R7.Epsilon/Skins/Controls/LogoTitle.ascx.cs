@@ -36,8 +36,6 @@ namespace R7.Epsilon
 {
     public class LogoTitle : CustomSkinObjectBase
     {
-        public string Target { get; set; }
-
         public LogoTitle (): base ("LogoTitle.ascx")
         {
         }
