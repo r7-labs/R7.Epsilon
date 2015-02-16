@@ -37,6 +37,6 @@
         <value>Motto here</value>
     </data>
     <data name="BrowserCheck.Warning" xml:space="preserve">
-        <value><![CDATA[<strong>Warning!</strong><br />We have determined that you are using an outdated version of the browser, which doesn't provide proper support for the modern Internet standards. As a result, our website may be displayed incorrectly in your browser, and some of its features may not work properly or will not be available. Please update your browser!]]></value>
+        <value><![CDATA[<strong>Warning!</strong><br />We have determined that you are using an outdated version of the browser, which doesn't provide proper support for the modern Internet standards. As a result, the website may be displayed incorrectly, some of its features may not work properly or will not be available. Please update browser!]]></value>
     </data>
 </root>
