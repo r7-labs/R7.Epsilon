@@ -232,7 +232,7 @@
                 <dnn:terms id="dnnTerms" runat="server" />
                 <dnn:privacy id="dnnPrivacy" runat="server" />
             </div>
-            <a href="http://cjh.am/1mGBQby" target="_blank">Design: HammerFlex DNN Skin by Christoc.com</a>
+            <dnn:TEXT runat="server" CssClass="skin-copyright" resourcekey="SkinCopyright.Text" ReplaceTokens="true" />
         </div>
     </div>
 </footer>

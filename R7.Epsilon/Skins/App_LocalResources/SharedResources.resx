@@ -15,4 +15,7 @@
 	<data name="AgeRating.Text" xml:space="preserve">
     	<value>12+</value>
     </data>
+    <data name="SkinCopyright.Text" xml:space="preserve">
+        <value><![CDATA[<a href="https://github.com/roman-yagodin/R7.Epsilon" target="_blank">R7.Epsilon</a> skin by Roman M. Yagodin]]></value>
+    </data>
 </root>
