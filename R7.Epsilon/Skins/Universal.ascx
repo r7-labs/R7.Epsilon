@@ -212,31 +212,32 @@
 
 </div>
 
-<footer class="skin-footer-middle">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 hidden-xs">
-                <div class="skin-footer-buttons">
-                    <dnn:BANNER id="dnnBanner1" runat="server" GroupName="FooterButtons" BannerTypeId="4" BannerCount="3" Orientation="H" AllowNullBannerType="true" />    
+<footer class="footer skin-footer">
+    <div class="skin-footer-middle">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 hidden-xs">
+                    <div class="skin-footer-buttons">
+                        <dnn:BANNER id="dnnBanner1" runat="server" GroupName="FooterButtons" BannerTypeId="4" BannerCount="3" Orientation="H" AllowNullBannerType="true" />    
+                    </div>
                 </div>
+                <div id="FooterPane1" runat="server" class="col-md-2 col-sm-4 col-xs-12" containertype="G" containername="R7.Epsilon" containersrc="Blank.ascx"/>
+                <div id="FooterPane2" runat="server" class="col-md-2 col-sm-4 col-xs-12" containertype="G" containername="R7.Epsilon" containersrc="Blank.ascx" />
+                <div id="FooterPane3" runat="server" class="col-md-2 col-sm-4 col-xs-12" containertype="G" containername="R7.Epsilon" containersrc="Blank.ascx" />
             </div>
-            <div id="FooterPane1" runat="server" class="col-md-2 col-sm-4 col-xs-12" containertype="G" containername="R7.Epsilon" containersrc="Blank.ascx"/>
-            <div id="FooterPane2" runat="server" class="col-md-2 col-sm-4 col-xs-12" containertype="G" containername="R7.Epsilon" containersrc="Blank.ascx" />
-            <div id="FooterPane3" runat="server" class="col-md-2 col-sm-4 col-xs-12" containertype="G" containername="R7.Epsilon" containersrc="Blank.ascx" />
         </div>
     </div>
-</footer>
-
-<footer class="skin-footer-last">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-xs-12 skin-copyright">
-                <dnn:copyright ID="dnnCopyright" runat="server" /> |
-                <dnn:TEXT runat="server" CssClass="skin-copyright" resourcekey="SkinCopyright.Text" ReplaceTokens="true" />
-            </div>
-            <div class="col-md-6 col-xs-12 skin-terms">
-                <dnn:terms id="dnnTerms" runat="server" /> |
-                <dnn:privacy id="dnnPrivacy" runat="server" />
+    <div class="skin-footer-last">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-xs-12 skin-copyright">
+                    <dnn:copyright ID="dnnCopyright" runat="server" /> |
+                    <dnn:TEXT runat="server" CssClass="skin-copyright" resourcekey="SkinCopyright.Text" ReplaceTokens="true" />
+                </div>
+                <div class="col-md-6 col-xs-12 skin-terms">
+                    <dnn:terms id="dnnTerms" runat="server" /> |
+                    <dnn:privacy id="dnnPrivacy" runat="server" />
+                </div>
             </div>
         </div>
     </div>
