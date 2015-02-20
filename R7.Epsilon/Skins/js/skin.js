@@ -9,21 +9,30 @@ $(function() {
         "<span class='icon-bar'></span>");
 });
 
-// Up button
+// Up Button
 $(function() {
     var offset = 320;
     var duration = 500;
     jQuery(window).scroll(function() {
         if (jQuery(this).scrollTop() > offset) {
-            jQuery('#skin-button-up').fadeIn(duration);
+            jQuery('.skin-float-button-up').fadeIn(duration);
         } else {
-            jQuery('#skin-button-up').fadeOut(duration);
+            jQuery('.skin-float-button-up').fadeOut(duration);
         }
     });
     
-    jQuery('#skin-button-up').click(function(event) {
+    jQuery('.skin-float-button-up').click(function(event) {
         event.preventDefault();
         jQuery('html, body').animate({scrollTop: 0}, duration);
         return false;
     })
 });
+
+// Feedback Button
+function skin_feedback_button (obj, feedbackTabId, activeTabId) {
+    $(obj).attr ("href", "/Default.aspx?tabid=" + feedbackTabId + "&errortabid=" + activeTabId);
+    var errorContext = encodeURIComponent (rangy.getSelection ().toString ().replace (/(\n|\r)/gm," ").replace (/\s+/g, " ").replace (/\"/g, "").trim ().substring (0,100));
+    if (!!errorContext)
+        $(obj).attr ("href",  $(obj).attr ("href") + "&errorcontext=" + errorContext);
+    return true;
+}

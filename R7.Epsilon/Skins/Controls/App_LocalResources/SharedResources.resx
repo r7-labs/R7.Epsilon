@@ -39,4 +39,10 @@
     <data name="BrowserCheck.Warning" xml:space="preserve">
         <value><![CDATA[<strong>Warning!</strong><br />We have determined that you are using an outdated version of the browser, which doesn't provide proper support for the modern Internet standards. As a result, the website may be displayed incorrectly, some of its features may not work properly or will not be available. Please update browser!]]></value>
     </data>
+    <data xml:space="preserve" name="FeedBackButton.Text">
+        <value></value>
+    </data>
+    <data xml:space="preserve" name="FeedBackButton.Tooltip">
+        <value>Select error with mouse and click me to open feedback form</value>
+    </data>
 </root>

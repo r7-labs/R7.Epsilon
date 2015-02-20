@@ -39,4 +39,10 @@
     <data name="BrowserCheck.Warning" xml:space="preserve">
         <value><![CDATA[<strong>Внимание!</strong><br />Мы определили, что Вы используете устаревшую версию браузера, не поддерживающую в должной мере современные стандарты Интернет. Как следствие, сайт может отображаться неправильно, а отдельные его функции могут работать некорректно или будут недоступны. Пожалуйста, обновите браузер!]]></value>
     </data>
+    <data xml:space="preserve" name="FeedBackButton.Text">
+        <value></value>
+    </data>
+    <data xml:space="preserve" name="FeedBackButton.Tooltip">
+        <value>Выдели место ошибки мышкой и нажми меня, чтобы открыть форму обратной связи</value>
+    </data>
 </root>

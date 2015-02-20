@@ -21,6 +21,7 @@
 <%@ Register TagPrefix="skin" TagName="FOUNDERS" Src="Controls/Founders.ascx" %>
 <%@ Register TagPrefix="skin" TagName="LOGOTITLE" Src="Controls/LogoTitle.ascx" %>
 <%@ Register TagPrefix="skin" TagName="BROWSERCHECK" Src="Controls/BrowserCheck.ascx" %>
+<%@ Register TagPrefix="skin" TagName="FEEDBACKBUTTON" Src="Controls/FeedbackButton.ascx" %>
 
 <dnn:META ID="bootstrapIECompat" runat="server" Name="X-UA-Compatible" Content="IE=edge" />
 <dnn:META ID="mobileScale" runat="server" Name="viewport" Content="width=device-width,initial-scale=1" />
@@ -32,6 +33,7 @@
 <dnn:DnnJsInclude ID="menuJS" runat="server" FilePath="DesktopModules/DDRMenu/Mega2Epsilon/Mega2Epsilon.js" />
 <dnn:DnnJsInclude ID="skinJS" runat="server" FilePath="js/skin.js" PathNameAlias="SkinPath" />
 <dnn:DnnJsInclude ID="bluImpJS" runat="server" FilePath="js/jquery.blueimp-gallery.min.js" PathNameAlias="SkinPath" />
+<dnn:DnnJsInclude FilePath="rangy/rangy-core.js" runat="server" PathNameAlias="SharedScripts" />
 
 <skin:SOCIALSHARESCRIPTS runat="server" />
 
@@ -243,7 +245,10 @@
     </div>
 </footer>
 
-<a href="#" id="skin-button-up" title="<%: LocalizeString ("ButtonUp.Title") %>"></a>
+<div class="skin-float-button-wrapper">
+    <a href="#" class="skin-float-button skin-float-button-up" title="<%: LocalizeString ("ButtonUp.Title") %>" style="display:none"></a>
+    <skin:FEEDBACKBUTTON runat="server" Target="_blank" FeedbackTabId="100" />
+</div>
 
 <!-- gallery and carousel controls, hidden by default -->
 <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" data-use-bootstrap-modal="false">
