@@ -181,6 +181,8 @@
     <Content Include="Skins\images\logo_template_178x100.xcf" />
     <Content Include="Skins\Controls\LogoTitle.ascx" />
     <Content Include="Skins\Controls\BrowserCheck.ascx" />
+    <Content Include="Skins\images\up_48x48.png" />
+    <Content Include="Skins\images\up_48x48.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

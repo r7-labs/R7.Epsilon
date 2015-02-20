@@ -8,3 +8,22 @@ $(function() {
         "<span class='icon-bar'></span>" +
         "<span class='icon-bar'></span>");
 });
+
+// Up button
+$(function() {
+    var offset = 320;
+    var duration = 500;
+    jQuery(window).scroll(function() {
+        if (jQuery(this).scrollTop() > offset) {
+            jQuery('#skin-button-up').fadeIn(duration);
+        } else {
+            jQuery('#skin-button-up').fadeOut(duration);
+        }
+    });
+    
+    jQuery('#skin-button-up').click(function(event) {
+        event.preventDefault();
+        jQuery('html, body').animate({scrollTop: 0}, duration);
+        return false;
+    })
+});

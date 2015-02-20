@@ -243,6 +243,8 @@
     </div>
 </footer>
 
+<a href="#" id="skin-button-up" title="<%: LocalizeString ("ButtonUp.Title") %>"></a>
+
 <!-- gallery and carousel controls, hidden by default -->
 <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" data-use-bootstrap-modal="false">
     <div class="slides"></div>
