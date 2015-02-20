@@ -28,6 +28,20 @@ $(function() {
     })
 });
 
+/*
+$(function() {
+    $("body").mouseup (function(event) {
+        if (rangy.getSelection ().toString())
+        {
+            var duration = 500;
+            $(".skin-float-button-feedback").fadeIn(duration);
+        }
+        else
+            $(".skin-float-button-feedback").fadeOut(duration);
+    })
+});
+*/
+
 // Feedback Button
 function skin_feedback_button (obj, feedbackTabId, activeTabId) {
     $(obj).attr ("href", "/Default.aspx?tabid=" + feedbackTabId + "&errortabid=" + activeTabId);
