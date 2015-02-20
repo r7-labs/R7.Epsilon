@@ -33,20 +33,13 @@ namespace R7.Epsilon
 {
     public class CustomSkinObjectBase: SkinObjectBase
     {
-        protected CustomSkinObjectBase (string fileName)
-        {
-            this.fileName = fileName;
-        }
-
-        private string fileName;
-
         #region Localization
 
         private string localResourceFile;
 
         protected string LocalResourceFile 
         {
-            get { return localResourceFile ?? (localResourceFile = Localization.GetResourceFile (this, fileName)); }
+            get { return localResourceFile ?? (localResourceFile = Localization.GetResourceFile (this, GetType().Name)); }
         }
 
         protected string LocalizeString (string value)

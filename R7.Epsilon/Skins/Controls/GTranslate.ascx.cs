@@ -32,8 +32,5 @@ namespace R7.Epsilon
 {
     public class GTranslate: CustomSkinObjectBase
     {
-        public GTranslate (): base ("GTranslate.ascx")
-        {
-        }
     }
 }

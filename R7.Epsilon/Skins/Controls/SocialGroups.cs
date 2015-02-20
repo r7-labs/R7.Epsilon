@@ -36,8 +36,5 @@ namespace R7.Epsilon
 {
     public class SocialGroups : CustomSkinObjectBase
     {
-        public SocialGroups (): base ("SocialGroups.ascx")
-        {
-        }
     }
 }

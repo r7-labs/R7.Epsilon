@@ -37,9 +37,5 @@ namespace R7.Epsilon
     public class Founders : CustomSkinObjectBase
     {
         public string Target { get; set; }
-
-        public Founders (): base ("Founders.ascx")
-        {
-        }
     }
 }

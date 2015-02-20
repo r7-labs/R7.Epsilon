@@ -36,8 +36,5 @@ namespace R7.Epsilon
 {
     public class SocialShareScripts : CustomSkinObjectBase
     {
-        public SocialShareScripts (): base ("SocialShareScripts.ascx")
-        {
-        }
     }
 }

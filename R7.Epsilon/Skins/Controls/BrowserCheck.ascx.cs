@@ -60,10 +60,6 @@ namespace R7.Epsilon
 
         #endregion
 
-        public BrowserCheck (): base ("BrowserCheck.ascx")
-        {
-        }
-
         protected override void OnLoad (EventArgs e)
         {
             base.OnLoad (e);

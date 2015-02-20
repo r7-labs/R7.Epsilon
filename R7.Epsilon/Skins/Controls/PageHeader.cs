@@ -36,10 +36,6 @@ namespace R7.Epsilon
 {
     public class PageHeader : CustomSkinObjectBase
     {
-        public PageHeader (): base ("PageTitle.ascx")
-        {
-        }
-
         public bool EnableSocialShare { get; set; }
 
         // REVIEW: Convert to control attribute?
