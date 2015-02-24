@@ -86,10 +86,13 @@ ul.megamenu li.subheader h2
 {
     ul.megamenu 
     {
-        li.level0 { display:inline; } // for horizontal menus
+        li.level0 { display:inline-block; } // for horizontal menus
 
         .sub 
         { 
+            position:absolute;
+            left:0;
+
             // fill all menu wrapper width
             width:100%!important; 
 
@@ -127,13 +130,9 @@ ul.megamenu .sub
 {
     ul.megamenu
     {
-        padding-top:3px; // fix li.level0 overflow
-        padding-bottom:3px;
-
         li.level0
         {
             padding:5px;
-            margin-right:5px;
             &.current { background-color:@color-primary-3; }
             &:hover, &.megahover { background-color:@color-complement-2; }
         }
@@ -163,16 +162,12 @@ ul.megamenu .sub
 
 .skin-secondary-menu
 {
-    // menu positioning fixes
-    margin-top:3px;
-
     ul.megamenu
     {
         .current, li a:hover, .megahover { color:#fff; }
 
         li.level0
         {
-            margin-right:5px;
             padding:5px;
             padding-bottom:7px; // rounded border will be covered with sub
             background-color:@color-secondary-1-2;
