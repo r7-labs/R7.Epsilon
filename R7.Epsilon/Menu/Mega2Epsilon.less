@@ -287,16 +287,16 @@ ul.megamenu .sub
                 float:none;
                 display:block;
 
-
-
                 // place submenus relative to menu items
                 position:relative; 
             }
 
             .sub
             {
+                position:absolute;
                 top:0!important;
                 right:0;
+                left:inherit; // reset non-xs position
                 max-width:240px;
                 border-top:none;
                 border-left:4px solid;
