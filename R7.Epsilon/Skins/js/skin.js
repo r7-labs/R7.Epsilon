@@ -50,3 +50,8 @@ function skin_feedback_button (obj, feedbackTabId, activeTabId) {
         $(obj).attr ("href",  $(obj).attr ("href") + "&errorcontext=" + errorContext);
     return true;
 }
+
+// init tooltips
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
