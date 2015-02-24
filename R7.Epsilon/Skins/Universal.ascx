@@ -100,7 +100,7 @@
         <div class="container">
             <div class="navbar-collapse collapse dnnClear skin-top-menu">
                 <div class="skin-secondary-menu">
-                    <dnn:MENU MenuStyle="Mega2Epsilon" runat="server" NodeSelector="CurrentChildren" />
+                    <dnn:MENU MenuStyle="Mega2Epsilon" runat="server" NodeSelector="*,0,2" />
                 </div>    
             </div>
         </div>
