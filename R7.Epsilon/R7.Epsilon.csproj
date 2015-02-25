@@ -189,6 +189,8 @@
     <Content Include="Skins\css\skin.less" />
     <Content Include="Skins\css\menu.less" />
     <Content Include="Skins\css\default-palette.less" />
+    <Content Include="Skins\css\default-skin.less" />
+    <Content Include="Skins\css\default-layout.less" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
