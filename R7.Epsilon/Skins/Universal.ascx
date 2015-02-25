@@ -249,7 +249,7 @@
 </footer>
 
 <div class="skin-float-button-wrapper">
-    <a href="#" class="skin-float-button skin-float-button-up" title="<%: LocalizeString ("ButtonUp.Title") %>" style="display:none"></a>
+    <a href="#" class="skin-float-button skin-float-button-up" title="<%: LocalizeString ("ButtonUp.Title") %>" style="display:none" data-toggle="tooltip" data-placement="left" data-container="body"></a>
     <skin:FEEDBACKBUTTON runat="server" Target="_blank" FeedbackTabId="100" />
 </div>
 
