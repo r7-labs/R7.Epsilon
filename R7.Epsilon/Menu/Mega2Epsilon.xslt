@@ -59,20 +59,18 @@
 			<xsl:when test="$level=1">
 				<ul class="megamenusubcontent">
 					<li class="subheader">
-						<h2>
-							<a>
-								<xsl:choose>
-									<xsl:when test="@enabled = 1">
-										<xsl:attribute name="href"><xsl:value-of select="@url"/></xsl:attribute>
-									</xsl:when>
-									<xsl:otherwise>
-										<xsl:attribute name="href">#</xsl:attribute>
-										<xsl:attribute name="onclick">return false</xsl:attribute>
-									</xsl:otherwise>
-								</xsl:choose>
-								<xsl:value-of select="@text" />
-							</a>
-						</h2>
+						<a>
+							<xsl:choose>
+								<xsl:when test="@enabled = 1">
+									<xsl:attribute name="href"><xsl:value-of select="@url"/></xsl:attribute>
+								</xsl:when>
+								<xsl:otherwise>
+									<xsl:attribute name="href">#</xsl:attribute>
+									<xsl:attribute name="onclick">return false</xsl:attribute>
+								</xsl:otherwise>
+							</xsl:choose>
+							<xsl:value-of select="@text" />
+						</a>
 					</li>
 					<xsl:if test="node">
 						<xsl:apply-templates select="node">
