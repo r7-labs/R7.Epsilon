@@ -12,6 +12,10 @@
 			<DeploySkinFiles Include="..\R7.Epsilon\Skins\**\*.jpg" />
 			<DeploySkinFiles Include="..\R7.Epsilon\Skins\**\*.png" />
 			<DeploySkinFiles Include="..\R7.Epsilon\Skins\**\*.gif" />
+            <DeploySkinFiles Include="..\R7.Epsilon\Skins\**\fonts\*.eot" />
+            <DeploySkinFiles Include="..\R7.Epsilon\Skins\**\fonts\*.svg" />
+            <DeploySkinFiles Include="..\R7.Epsilon\Skins\**\fonts\*.ttf" />
+            <DeploySkinFiles Include="..\R7.Epsilon\Skins\**\fonts\*.woff" />
 		</ItemGroup>
 
 		<!-- Declare container files -->

@@ -17,6 +17,10 @@
 			<InstallSkinFiles Include="..\R7.Epsilon\Skins\**\*.jpg" />
 			<InstallSkinFiles Include="..\R7.Epsilon\Skins\**\*.png" />
 			<InstallSkinFiles Include="..\R7.Epsilon\Skins\**\*.gif" />
+            <InstallSkinFiles Include="..\R7.Epsilon\Skins\**\fonts\*.eot" />
+            <InstallSkinFiles Include="..\R7.Epsilon\Skins\**\fonts\*.svg" />
+            <InstallSkinFiles Include="..\R7.Epsilon\Skins\**\fonts\*.ttf" />
+            <InstallSkinFiles Include="..\R7.Epsilon\Skins\**\fonts\*.woff" />
 		</ItemGroup>
 
 		<!-- Declare container files -->
