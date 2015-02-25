@@ -17,7 +17,7 @@
 				splitSubMenu(<xsl:value-of select="$subMenuColumns"/>);
 			});
 		</script>
-		<ul class="megamenu" id="megamenu">
+		<ul class="megamenu">
 			<xsl:apply-templates select="node">
 				<xsl:with-param name="level" select="0"/>
 			</xsl:apply-templates>
