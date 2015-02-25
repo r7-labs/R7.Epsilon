@@ -6,7 +6,10 @@ $(function() {
     $(".skin-local-menu a.level0").html ("<span class='sr-only'>Toggle navigation</span>" +
         "<span class='icon-bar'></span>" +
         "<span class='icon-bar'></span>" +
-        "<span class='icon-bar'></span>");
+        "<span class='icon-bar'></span>")
+        .click (function (event) {
+            event.preventDefault (); 
+        });
 });
 
 // Up Button
