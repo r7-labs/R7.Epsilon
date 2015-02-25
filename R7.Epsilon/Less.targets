@@ -3,6 +3,7 @@
     <!-- Declare Less files -->
     <ItemGroup>
         <LessFiles Include="Skins\css\default-skin.less" />
+        <LessFiles Include="Skins\css\a11y-skin.less" />
     </ItemGroup>
     <!-- Preprocess Less files -->
 	<Target Name="Less">
