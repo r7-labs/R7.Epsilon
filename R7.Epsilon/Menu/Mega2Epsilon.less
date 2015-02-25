@@ -86,11 +86,16 @@ ul.megamenu li.subheader h2
 {
     ul.megamenu 
     {
-        li.level0 { display:inline-block; } // for horizontal menus
+        li.level0 
+        { 
+            display:inline-block; // for horizontal menus
+            padding:5px;
+        }
 
         .sub 
         { 
             position:absolute;
+            top:26px!important;
             left:0;
 
             // fill all menu wrapper width
@@ -132,13 +137,11 @@ ul.megamenu .sub
     {
         li.level0
         {
-            padding:5px;
             &.current { background-color:@color-primary-3; }
             &:hover, &.megahover { background-color:@color-complement-2; }
         }
         .sub
         {
-            top:26px!important; 
             border-color:@color-complement-2;
             background-color:@color-primary-2;
             border-bottom-left-radius:@borderRadius;
@@ -168,8 +171,6 @@ ul.megamenu .sub
 
         li.level0
         {
-            padding:5px;
-            padding-bottom:7px; // rounded border will be covered with sub
             background-color:@color-secondary-1-2;
             border-bottom-right-radius:@borderRadius;
             border-bottom-left-radius:@borderRadius;
@@ -180,7 +181,6 @@ ul.megamenu .sub
 
         .sub
         {
-            top:23px!important;
             border-color:@color-secondary-2-2;
             background-color:@color-secondary-1-2;
             border-bottom-left-radius:@borderRadius;
