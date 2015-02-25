@@ -1,5 +1,4 @@
 function splitSubMenu(columns) {
-
 	jQuery("div.sub").each(function (i) {
 		var items = jQuery(this).find('ul');
 		var blockCount = columns;
@@ -8,24 +7,24 @@ function splitSubMenu(columns) {
 			slice.wrapAll("<div class=\"row\"></div>");
 		}
 	});
-
 }
 
 jQuery(document).ready(function () {
-	//Calculate height of top level menu and set top style for menu placement
+
+	// calculate height of top level menu and set top style for menu placement
 	jQuery('ul.megamenu li .sub').css('top', jQuery('ul.megamenu > li').height());
 
 	// set hover class to parent item
 	jQuery('li.level0 div').mouseover(function () {
 		jQuery(this).closest('li.level0').find('a.level0').addClass("megahover")
 	}).mouseout(function () {
-		jQuery(this).closest('li.level0').find('a.level0').removeClass("megahover")
+	    jQuery(this).closest('li.level0').find('a.level0').removeClass("megahover")
 	});
 
 	function megaHoverOver() {
 		jQuery(this).find(".sub").stop().fadeTo('slow', 1).show();
 
-		//Calculate width of all ul's
+		// calculate width of all ul's
 		(function (jQuery) {
 			jQuery.fn.calcSubWidth = function () {
 				rowWidth = 0;
@@ -36,26 +35,26 @@ jQuery(document).ready(function () {
 			};
 		})(jQuery);
 
-		if (jQuery(this).find(".row").length > 0) { //If row exists...
+		if (jQuery(this).find(".row").length > 0) { 
+            // if row exists...
 			var biggestRow = 0;
-			//Calculate each row
+			// calculate each row
 			jQuery(this).find(".row").each(function () {
 				jQuery(this).calcSubWidth();
-				//Find biggest row
+				// find biggest row
 				if (rowWidth > biggestRow) {
 					biggestRow = rowWidth;
 				}
 			});
-			//Set width
+			// set width
 			jQuery(this).find(".sub").css({ 'width': biggestRow });
 			jQuery(this).find(".row:last").css({ 'margin': '0' });
-
-		} else { //If row does not exist...
-
+		} 
+        else { 
+            // if row does not exist...
 			jQuery(this).calcSubWidth();
-			//Set Width
+			// set width
 			jQuery(this).find(".sub").css({ 'width': rowWidth });
-
 		}
 	}
 
@@ -64,8 +63,7 @@ jQuery(document).ready(function () {
 			jQuery(this).hide();
 		});
 	}
-
-
+    
 	var config = {
 		sensitivity: 2, // number = sensitivity threshold (must be 1 or higher)    
 		interval: 100, // number = milliseconds for onMouseOver polling interval    
@@ -76,7 +74,4 @@ jQuery(document).ready(function () {
 
 	jQuery("ul.megamenu li .sub").css({ 'opacity': '0' });
 	jQuery("ul.megamenu li").hoverIntent(config);
-
 });
-
-

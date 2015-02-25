@@ -28,13 +28,9 @@
 		<xsl:choose>
 			<xsl:when test="$level=0">
 				<li>
-					<xsl:attribute name="class">
-						level0 <xsl:if test="@breadcrumb = 1">current</xsl:if>
-					</xsl:attribute>
+					<xsl:attribute name="class">level0<xsl:if test="@breadcrumb = 1"> current</xsl:if></xsl:attribute>
 					<a>
-						<xsl:attribute name="class">
-							level0 <xsl:if test="@breadcrumb = 1">current</xsl:if>
-						</xsl:attribute>
+						<xsl:attribute name="class">level0<xsl:if test="@breadcrumb = 1"> current</xsl:if></xsl:attribute>
 						<xsl:choose>
 							<xsl:when test="@enabled = 1">
 								<xsl:attribute name="href">
@@ -56,9 +52,7 @@
 							<xsl:apply-templates select="node">
 								<xsl:with-param name="level" select="$level + 1" />
 							</xsl:apply-templates>
-
 						</div>
-
 					</xsl:if>
 				</li>
 			</xsl:when>
@@ -69,9 +63,7 @@
 							<a>
 								<xsl:choose>
 									<xsl:when test="@enabled = 1">
-										<xsl:attribute name="href">
-											<xsl:value-of select="@url"/>
-										</xsl:attribute>
+										<xsl:attribute name="href"><xsl:value-of select="@url"/></xsl:attribute>
 									</xsl:when>
 									<xsl:otherwise>
 										<xsl:attribute name="href">#</xsl:attribute>
@@ -94,18 +86,14 @@
 					<a>
 						<xsl:choose>
 							<xsl:when test="@enabled = 1">
-								<xsl:attribute name="href">
-									<xsl:value-of select="@url"/>
-								</xsl:attribute>
+								<xsl:attribute name="href"><xsl:value-of select="@url"/></xsl:attribute>
 							</xsl:when>
 							<xsl:otherwise>
 								<xsl:attribute name="href">#</xsl:attribute>
 								<xsl:attribute name="onclick">return false</xsl:attribute>
 							</xsl:otherwise>
 						</xsl:choose>
-						<span>
-							<xsl:value-of select="$subpointer" disable-output-escaping="yes"/>
-						</span>
+						<span><xsl:value-of select="$subpointer" disable-output-escaping="yes"/></span>
 						<xsl:value-of select="@text" />
 					</a>
 				</li>
