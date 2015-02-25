@@ -1,9 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0" DefaultTargets="Less">
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0" DefaultTargets="Less;MinifyJS">
     <!-- Declare Less files -->
     <ItemGroup>
         <LessFiles Include="Skins\css\default-skin.less" />
         <LessFiles Include="Skins\css\a11y-skin.less" />
+    </ItemGroup>
+    <!-- Declare JS files -->
+    <ItemGroup>
+        <JsFiles Include="Menu\Mega2Epsilon.js" />
+        <JsFiles Include="Skins\js\skin.js" />
     </ItemGroup>
     <!-- Preprocess Less files -->
 	<Target Name="Less">
@@ -12,4 +17,8 @@
         <!-- Compile and minify -->
         <Exec Command="lessc --clean-css=&quot;--compatibility=ie8 --advanced&quot; %(LessFiles.Identity) > %(RelativeDir)%(Filename).min.css" />
 	</Target>
+    <!-- Minify JS files -->
+    <Target Name="MinifyJS">
+        <Exec Command="uglifyjs %(JsFiles.Identity) > %(RelativeDir)%(Filename).min.js" /> 
+    </Target>
 </Project>

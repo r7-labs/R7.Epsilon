@@ -209,5 +209,5 @@
     <Folder Include="Skins\Controls\App_LocalResources\" />
   </ItemGroup>
   <Import Project="Less.targets" />
-  <Target Name="BeforeBuild" DependsOnTargets="Less" />
+  <Target Name="BeforeBuild" DependsOnTargets="Less;MinifyJS" />
 </Project>
