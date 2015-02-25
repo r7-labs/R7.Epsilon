@@ -1,5 +1,5 @@
 function splitSubMenu(columns) {
-	jQuery("div.sub").each(function (i) {
+	jQuery("ul.megamenu div.sub").each(function (i) {
 		var items = jQuery(this).find('ul');
 		var blockCount = columns;
 		for (var i = 0; i < items.length; i += blockCount) {
