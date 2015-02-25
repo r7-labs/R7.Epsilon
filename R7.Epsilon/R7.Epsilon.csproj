@@ -122,7 +122,6 @@
     <Content Include="Skins\Edit.ascx" />
     <Content Include="Skins\Home.ascx" />
     <Content Include="Skins\PopupSkin.ascx" />
-    <Content Include="Skins\skin.less" />
     <Content Include="Skins\css\bootstrap-theme.min.css" />
     <Content Include="Skins\css\bootstrap.min.css" />
     <Content Include="Skins\fonts\glyphicons-halflings-regular.eot" />
@@ -171,13 +170,11 @@
     <Content Include="Skins\images\social_32x32.png" />
     <Content Include="Skins\images\social_32x32.svg" />
     <Content Include="Skins\Controls\SocialGroups.ascx" />
-    <Content Include="Menu\Mega2Epsilon.less" />
     <Content Include="Skins\Controls\PageHeader.ascx" />
     <Content Include="Skins\Controls\SocialShareScripts.ascx" />
     <Content Include="Skins\Controls\Founders.ascx" />
     <Content Include="Skins\images\header_bg.png" />
     <Content Include="Skins\images\header_bg.svg" />
-    <Content Include="Skins\variables.less" />
     <Content Include="Skins\images\mcx_48x48.png" />
     <Content Include="Skins\images\minobr_48x48.png" />
     <Content Include="Skins\images\minobr_logo.svg" />
@@ -189,6 +186,9 @@
     <Content Include="Skins\Controls\FeedbackButton.ascx" />
     <Content Include="Skins\images\feedback_48x48.png" />
     <Content Include="Skins\images\feedback_48x48.svg" />
+    <Content Include="Skins\css\skin.less" />
+    <Content Include="Skins\css\menu.less" />
+    <Content Include="Skins\css\default-palette.less" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
