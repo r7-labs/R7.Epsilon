@@ -4,7 +4,7 @@ function splitSubMenu(controlId, columns) {
 		var blockCount = columns;
 		for (var i = 0; i < items.length; i += blockCount) {
 			var slice = items.slice(i, i + blockCount);
-			slice.wrapAll("<div class=\"row\"></div>");
+			slice.wrapAll("<div class=\"megarow\"></div>");
 		}
 	});
 }
@@ -28,14 +28,14 @@ jQuery(document).ready(function () {
 		(function (jQuery) {
 			jQuery.fn.calcSubWidth = function () {
 				rowWidth = 0;
-				//Calculate row
+				// calculate row
 				$(this).find("ul").each(function () {
 					rowWidth += $(this).width();
 				});
 			};
 		})(jQuery);
 
-		if (jQuery(this).find(".row").length > 0) { 
+		if (jQuery(this).find(".megarow").length > 0) { 
             // if row exists...
 			var biggestRow = 0;
 			// calculate each row
@@ -48,7 +48,7 @@ jQuery(document).ready(function () {
 			});
 			// set width
 			jQuery(this).find(".sub").css({ 'width': biggestRow });
-			jQuery(this).find(".row:last").css({ 'margin': '0' });
+			jQuery(this).find(".megarow:last").css({ 'margin': '0' });
 		} 
         else { 
             // if row does not exist...

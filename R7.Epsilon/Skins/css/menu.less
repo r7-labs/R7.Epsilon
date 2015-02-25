@@ -17,9 +17,6 @@ ul.megamenu, ul.megamenusubcontent
     }
 }
 
-// reset row class used by Bootstrap!
-ul.megamenu .row { margin:0; } 
-
 ul.megamenu *
 {
     font-size:@menuFontSize;
@@ -94,7 +91,7 @@ ul.megamenu
             width:100%!important; 
 
             // stack menu blocks horizontally
-            &> .row 
+            &> .megarow 
             { 
                 float:left; 
                 padding-right:8px; 
@@ -103,7 +100,7 @@ ul.megamenu
             }
 
             // don't overline first menu items
-            .row ul.megamenusubcontent:first-child li.subheader:first-child { border-top:none; }
+            .megarow ul.megamenusubcontent:first-child li.subheader:first-child { border-top:none; }
         }
     }
 }
@@ -113,7 +110,7 @@ ul.megamenu
 /*
 ul.megamenusubcontent { border:1px solid green; }
 
-ul.megamenu .row { border:1px solid yellow; }
+ul.megamenu .megarow { border:1px solid yellow; }
 
 ul.megamenu .sub 
 { 
@@ -263,7 +260,7 @@ ul.megamenu .sub
             li.subheader { border-color:darken(@color-secondary-1-2, 5%); }
 
             // don't overline first menu items
-            .row:first-child ul.megamenusubcontent:first-child li.subheader:first-child { border-top:none; }
+            .megarow:first-child ul.megamenusubcontent:first-child li.subheader:first-child { border-top:none; }
         }
     }
 }
@@ -302,7 +299,7 @@ ul.megamenu .sub
                 box-shadow:none;
 
                 // stack menu blocks vertically
-                &> .row 
+                &> .megarow 
                 { 
                     float:none; 
                     display:block;
