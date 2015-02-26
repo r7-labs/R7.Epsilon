@@ -57,7 +57,7 @@
             </div>
         </div>
         <div class="skin-icons-wrapper">
-            <div class="skin-round-icon skin-icon-a11y" aria-label="<%: LocalizeString("A11y.Title") %>" data-toggle="tooltip" data-placement="bottom" title="<%: LocalizeString("A11y.Title") %>"><%= LocalizeString("A11y.Text") %></div>
+            <asp:LinkButton id="linkA11yButton" runat="server" CssClass="skin-round-icon skin-icon-a11y" OnClick="linkA11yButton_Click" data-toggle="tooltip" data-placement="bottom" />
             <div class="skin-round-icon skin-icon-age-rating" data-toggle="tooltip" data-placement="bottom" title="<%: LocalizeString("AgeRating.Title") %>"><%= LocalizeString("AgeRating.Text") %></div>
         </div>
     </div>

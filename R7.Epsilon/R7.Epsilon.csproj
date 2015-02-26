@@ -41,6 +41,12 @@
     <Reference Include="DotNetNuke.Web">
       <HintPath>..\..\..\bin\DotNetNuke.Web.dll</HintPath>
     </Reference>
+    <Reference Include="DotNetNuke.Web.Client">
+      <HintPath>..\..\..\bin\DotNetNuke.Web.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="ClientDependency.Core">
+      <HintPath>..\..\..\bin\ClientDependency.Core.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Skins\Edit.doctype.xml">
