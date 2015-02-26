@@ -1,5 +1,8 @@
 /* Base menu styles */
 
+// menu font size
+ul.megamenu * { font-size:@menuFontSize; }
+
 // reset list styles
 ul.megamenu, ul.megamenusubcontent
 {
@@ -17,11 +20,6 @@ ul.megamenu, ul.megamenusubcontent
     }
 }
 
-ul.megamenu *
-{
-    font-size:@menuFontSize;
-}
-     
 // submenu (popup)
 ul.megamenu .sub
 {
@@ -66,7 +64,12 @@ ul.megamenu
                 padding-top:4px; // for vertical align
 
                 &.subheader { border-top:1px solid; }
-                &.sublink { padding-left:15px; }    
+
+                &.sublink 
+                { 
+                    padding-left:15px; 
+                    a { font-size:@smallerMenuFontSize; }
+                }
             }
         }
     }
