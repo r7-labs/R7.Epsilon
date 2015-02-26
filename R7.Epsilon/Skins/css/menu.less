@@ -133,7 +133,11 @@ ul.megamenu .sub
         li.level0
         {
             &.current { background-color:@color-primary-3; }
-            &:hover, &.megahover { background-color:@color-complement-2; }
+            &:hover, &.megahover 
+            { 
+                a.level0 { color:@color-primary-4; }
+                background-color:@color-complement-2; 
+            }
         }
         .sub
         {
@@ -147,7 +151,8 @@ ul.megamenu .sub
             {
                 &.current, &:hover, &.megahover  
                 { 
-                    background-color:@color-primary-1;
+                    a { color:@color-primary-4; }
+                    background-color:@color-complement-1;
                 }
             }
 
@@ -171,7 +176,11 @@ ul.megamenu .sub
             border-bottom-left-radius:@borderRadius;
          
             &.current { background-color:@color-secondary-1-3; }
-            &:hover, &.megahover { background-color:@color-secondary-2-2; }
+            &:hover, &.megahover 
+            { 
+                a.level0 { color:@color-secondary-1-4; }
+                background-color:@color-secondary-2-2; 
+            }
         }
 
         .sub
@@ -186,7 +195,8 @@ ul.megamenu .sub
             {
                 &.current, &:hover, &.megahover  
                 {
-                    background-color:@color-secondary-1-1;
+                    a { color:@color-secondary-1-4; }
+                    background-color:@color-secondary-2-1;
                 }
             }
             li.subheader { border-color:darken(@color-secondary-1-2, 5%); }
@@ -226,13 +236,6 @@ ul.megamenu .sub
             background-color:@color-secondary-1-2;
             padding:4px 10px;
 
-            &:hover, &.megahover
-            { 
-                background-color:@color-secondary-2-2; 
-                border-bottom-left-radius:0;
-                border-bottom-right-radius:0;
-            }
-
             .icon-bar 
             { 
                 display:block;
@@ -241,6 +244,16 @@ ul.megamenu .sub
                 height:2px;
                 border-radius:1px;
                 margin:4px 0;
+            }
+
+            &:hover, &.megahover
+            { 
+                color:@color-secondary-1-4;
+                background-color:@color-secondary-2-2; 
+                border-bottom-left-radius:0;
+                border-bottom-right-radius:0;
+
+                .icon-bar { background-color:@color-secondary-1-4; }
             }
         }
 
@@ -259,7 +272,8 @@ ul.megamenu .sub
             {
                 &.current, &:hover, &.megahover  
                 {
-                    background-color:@color-secondary-1-1;
+                    a { color:@color-secondary-1-4; }
+                    background-color:@color-secondary-2-1;
                 }
             }
 
