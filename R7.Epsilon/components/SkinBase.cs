@@ -4,6 +4,7 @@ using DotNetNuke.Common;
 using DotNetNuke.Framework;
 using DotNetNuke.Services.Localization;
 using DotNetNuke.Web.Client.ClientResourceManagement;
+using DotNetNuke.Web.Client;
 
 namespace R7.Epsilon
 {
@@ -39,7 +40,12 @@ namespace R7.Epsilon
             RegisterJavaScript();
 
             if (skinCSS != null && A11yEnabled)
+            {
                 skinCSS.FilePath = "css/a11y-skin.min.css";
+
+                // load a11y script
+                ClientResourceManager.RegisterScript (Page, "/Portals/_default/Skins/R7.Epsilon/js/a11y.min.js", FileOrder.Js.DefaultPriority, "DnnFormBottomProvider");
+            }
 
             // A11y button localization
             // REVIEW: Move this to concrete skin?
@@ -50,8 +56,6 @@ namespace R7.Epsilon
         private void RegisterJavaScript()
         {
             jQuery.RequestRegistration();
-            //ClientResourceManager.RegisterScript(Page, "/portals/_default/skins/hammerflex/js/jquery.blueimp-gallery.min.js", FileOrder.Js.jQuery, "DnnFormBottomProvider"); // default priority and provider
-            //ClientResourceManager.RegisterScript(Page, "/portals/_default/skins/hammerflex/js/bootstrap-image-gallery.min.js", FileOrder.Js.jQuery, "DnnFormBottomProvider"); // default priority and provider           
         }
 
         #region Handlers
