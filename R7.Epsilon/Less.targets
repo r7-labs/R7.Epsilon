@@ -7,7 +7,7 @@
     </ItemGroup>
     <!-- Declare JS files -->
     <ItemGroup>
-        <JsFiles Include="Menu\Mega2Epsilon.js" />
+        <JsFiles Include="Skins\js\menu.js" />
         <JsFiles Include="Skins\js\skin.js" />
         <JsFiles Include="Skins\js\a11y.js" />
     </ItemGroup>
