@@ -8,7 +8,7 @@ using DotNetNuke.Web.Client;
 
 namespace R7.Epsilon
 {
-    public class SkinBase : DotNetNuke.UI.Skins.Skin
+    public class SkinBase : DotNetNuke.UI.Skins.Skin, ILocalizableControl
     {
         #region Controls
 
@@ -33,6 +33,17 @@ namespace R7.Epsilon
             }
         }
 
+        #region ILocalizableControl implementation
+
+        private ControlLocalizer localizer;
+
+        public ControlLocalizer Localizer
+        {
+            get { return localizer ?? (localizer = new ControlLocalizer (this)); } 
+        }
+
+        #endregion
+
         protected override void OnLoad (EventArgs e)
         {
             base.OnLoad (e);
@@ -49,8 +60,8 @@ namespace R7.Epsilon
 
             // A11y button localization
             // REVIEW: Move this to concrete skin?
-            linkA11yButton.Text = LocalizeString ("A11y.Text");
-            linkA11yButton.ToolTip = LocalizeString ("A11y.Title");
+            linkA11yButton.Text = Localizer.GetString ("A11y.Text");
+            linkA11yButton.ToolTip = Localizer.GetString ("A11y.Title");
         }
 
         private void RegisterJavaScript()
@@ -67,22 +78,6 @@ namespace R7.Epsilon
 
             // reload page
             Response.Redirect (Globals.NavigateURL ());
-        }
-
-        #endregion
-
-        #region Localization
-
-        private string localResourceFile;
-
-        protected string LocalResourceFile 
-        {
-            get { return localResourceFile ?? (localResourceFile = Localization.GetResourceFile (this, GetType().Name)); }
-        }
-
-        protected string LocalizeString (string key)
-        {
-            return Localization.GetString (key, LocalResourceFile);
         }
 
         #endregion

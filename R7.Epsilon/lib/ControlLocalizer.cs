@@ -1,5 +1,5 @@
 ﻿//
-// FeedbackButton.ascx.cs
+// ControlLocalizer.cs
 //
 // Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
@@ -25,40 +25,45 @@
 // THE SOFTWARE.
 
 using System;
-using System.Web;
 using System.Web.UI;
-using DotNetNuke.Entities.Portals;
-using System.Web.UI.WebControls;
-using System.Web.Security;
-using DotNetNuke.UI.WebControls;
+using DotNetNuke.Services.Localization;
 
 namespace R7.Epsilon
 {
-    public class FeedbackButton : CustomSkinObjectBase
+    public class ControlLocalizer
     {
-        #region Controls
-
-        protected HyperLink linkFeedbackButton;
-
-        #endregion
-
         #region Properties
 
-        public int FeedbackTabId { get; set; }
-
-        public string Target { get; set; }
+        protected string LocalResourceFile { get; private set; }
 
         #endregion
 
-        protected override void OnInit (EventArgs e)
+        public ControlLocalizer (Control control)
         {
-            base.OnInit (e);
-
-            linkFeedbackButton.Target = Target;
-            linkFeedbackButton.ToolTip = Localizer.GetString ("FeedBackButton.Tooltip");
-            linkFeedbackButton.Text = Localizer.GetString  ("FeedBackButton.Text");
-            linkFeedbackButton.Attributes.Add ("onclick", string.Format ("javascript:return skin_feedback_button(this, {0}, {1})", 
-                FeedbackTabId, PortalSettings.ActiveTab.TabID));
+            LocalResourceFile = Localization.GetResourceFile (control, control.GetType ().Name);
         }
+
+        #region Public methods
+
+        public string GetString (string key)
+        {
+            return Localization.GetString (key, LocalResourceFile);
+        }
+
+        public string GetString (string key, string defaultKey)
+        {
+            var localizedValue = GetString (key);
+
+            return !string.IsNullOrWhiteSpace (localizedValue) ? localizedValue : GetString(defaultKey);
+        }
+
+        public string SafeGetString (string key, string defaultValue)
+        {
+            var localizedValue = GetString (key);
+
+            return !string.IsNullOrWhiteSpace (localizedValue) ? localizedValue : defaultValue;
+        }
+
+        #endregion
     }
 }

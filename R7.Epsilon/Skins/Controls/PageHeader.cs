@@ -68,7 +68,7 @@ namespace R7.Epsilon
             get
             {
                 var activeTab = PortalSettings.ActiveTab;
-                return string.Format (LocalizeString ("PagePublishedMessage.Format"),  
+                return string.Format (Localizer.GetString ("PagePublishedMessage.Format"),  
                     activeTab.CreatedOnDate, 
                     activeTab.CreatedByUser (PortalSettings.PortalId).DisplayName); 
             }

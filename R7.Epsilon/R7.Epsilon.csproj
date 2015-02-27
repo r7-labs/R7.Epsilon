@@ -121,6 +121,8 @@
     <Compile Include="Skins\Controls\FeedbackButton.ascx.cs">
       <DependentUpon>FeedbackButton.ascx</DependentUpon>
     </Compile>
+    <Compile Include="lib\ILocalizableControl.cs" />
+    <Compile Include="lib\ControlLocalizer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Containers\Blank.ascx" />

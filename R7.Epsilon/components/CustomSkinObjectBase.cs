@@ -31,34 +31,15 @@ using DotNetNuke.Services.Localization;
 
 namespace R7.Epsilon
 {
-    public class CustomSkinObjectBase: SkinObjectBase
+    public class CustomSkinObjectBase: SkinObjectBase, ILocalizableControl
     {
-        #region Localization
+        #region ILocalizableControl implementation
 
-        private string localResourceFile;
+        private ControlLocalizer localizer;
 
-        protected string LocalResourceFile 
+        public ControlLocalizer Localizer
         {
-            get { return localResourceFile ?? (localResourceFile = Localization.GetResourceFile (this, GetType().Name)); }
-        }
-
-        protected string LocalizeString (string value)
-        {
-            return Localization.GetString (value, LocalResourceFile);
-        }
-
-        protected string LocalizeString (string key, string defaultKey)
-        {
-            var localizedValue = LocalizeString (key);
-
-            return !string.IsNullOrWhiteSpace (localizedValue) ? localizedValue : LocalizeString(defaultKey);
-        }
-
-        protected string SafeLocalizeString (string key, string defaultValue)
-        {
-            var localizedValue = LocalizeString (key);
-
-            return !string.IsNullOrWhiteSpace (localizedValue) ? localizedValue : defaultValue;
+            get { return localizer ?? (localizer = new ControlLocalizer (this)); } 
         }
 
         #endregion

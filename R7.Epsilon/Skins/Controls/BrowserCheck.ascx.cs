@@ -84,7 +84,7 @@ namespace R7.Epsilon
             {
                 literalBrowserCheck.Visible = true;
                 literalBrowserCheck.Text = string.Format ("<div class=\"dnnFormMessage dnnFormWarning\">{0}</div>",
-                    LocalizeString ("BrowserCheck.Warning")
+                    Localizer.GetString ("BrowserCheck.Warning")
                 );
             }
         }

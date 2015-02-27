@@ -1,5 +1,5 @@
 ﻿//
-// FeedbackButton.ascx.cs
+// ILocalizableControl.cs
 //
 // Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
@@ -24,41 +24,11 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using System;
-using System.Web;
-using System.Web.UI;
-using DotNetNuke.Entities.Portals;
-using System.Web.UI.WebControls;
-using System.Web.Security;
-using DotNetNuke.UI.WebControls;
-
 namespace R7.Epsilon
 {
-    public class FeedbackButton : CustomSkinObjectBase
+    public interface ILocalizableControl
     {
-        #region Controls
-
-        protected HyperLink linkFeedbackButton;
-
-        #endregion
-
-        #region Properties
-
-        public int FeedbackTabId { get; set; }
-
-        public string Target { get; set; }
-
-        #endregion
-
-        protected override void OnInit (EventArgs e)
-        {
-            base.OnInit (e);
-
-            linkFeedbackButton.Target = Target;
-            linkFeedbackButton.ToolTip = Localizer.GetString ("FeedBackButton.Tooltip");
-            linkFeedbackButton.Text = Localizer.GetString  ("FeedBackButton.Text");
-            linkFeedbackButton.Attributes.Add ("onclick", string.Format ("javascript:return skin_feedback_button(this, {0}, {1})", 
-                FeedbackTabId, PortalSettings.ActiveTab.TabID));
-        }
+        ControlLocalizer Localizer { get; }
     }
 }
+

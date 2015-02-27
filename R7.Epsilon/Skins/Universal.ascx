@@ -58,7 +58,7 @@
         </div>
         <div class="skin-icons-wrapper">
             <asp:LinkButton id="linkA11yButton" runat="server" CssClass="skin-round-icon skin-icon-a11y" OnClick="linkA11yButton_Click" data-toggle="tooltip" data-placement="bottom" />
-            <div class="skin-round-icon skin-icon-age-rating" data-toggle="tooltip" data-placement="bottom" title="<%: LocalizeString("AgeRating.Title") %>"><%= LocalizeString("AgeRating.Text") %></div>
+            <div class="skin-round-icon skin-icon-age-rating" data-toggle="tooltip" data-placement="bottom" title="<%: Localizer.GetString("AgeRating.Title") %>"><%= Localizer.GetString("AgeRating.Text") %></div>
         </div>
     </div>
 
@@ -249,7 +249,7 @@
 </footer>
 
 <div class="skin-float-button-wrapper">
-    <a href="#" class="skin-float-button skin-float-button-up" title="<%: LocalizeString ("ButtonUp.Title") %>" style="display:none" data-toggle="tooltip" data-placement="left" data-container="body"></a>
+    <a href="#" class="skin-float-button skin-float-button-up" title="<%: Localizer.GetString ("ButtonUp.Title") %>" style="display:none" data-toggle="tooltip" data-placement="left" data-container="body"></a>
     <skin:FEEDBACKBUTTON runat="server" Target="_blank" FeedbackTabId="100" />
 </div>
 
