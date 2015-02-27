@@ -32,7 +32,7 @@ namespace R7.Epsilon
     /// 
     /// </summary>
     /// -----------------------------------------------------------------------------
-    public partial class PopupSkin : SkinBase
+    public partial class PopupSkin : EpsilonSkinBase
     {
 		public PopupSkin()
 		{

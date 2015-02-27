@@ -32,7 +32,7 @@ namespace R7.Epsilon
     /// 
     /// </summary>
     /// -----------------------------------------------------------------------------
-    public partial class Edit : SkinBase
+    public partial class Edit : EpsilonSkinBase
     {
 		public Edit()
 		{

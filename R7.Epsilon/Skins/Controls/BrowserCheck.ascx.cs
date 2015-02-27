@@ -34,7 +34,7 @@ using DotNetNuke.UI.WebControls;
 
 namespace R7.Epsilon
 {
-    public class BrowserCheck : CustomSkinObjectBase
+    public class BrowserCheck : EpsilonSkinObjectBase
     {
         #region Properties
 

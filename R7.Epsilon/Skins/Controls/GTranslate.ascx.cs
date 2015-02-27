@@ -30,7 +30,7 @@ using System.Web.UI;
 
 namespace R7.Epsilon
 {
-    public class GTranslate: CustomSkinObjectBase
+    public class GTranslate: EpsilonSkinObjectBase
     {
     }
 }

@@ -34,7 +34,7 @@ using DotNetNuke.UI.WebControls;
 
 namespace R7.Epsilon
 {
-    public class PageHeader : CustomSkinObjectBase
+    public class PageHeader : EpsilonSkinObjectBase
     {
         public bool EnableSocialShare { get; set; }
 

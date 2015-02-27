@@ -34,7 +34,7 @@ using DotNetNuke.UI.WebControls;
 
 namespace R7.Epsilon
 {
-    public class Founders : CustomSkinObjectBase
+    public class Founders : EpsilonSkinObjectBase
     {
         public string Target { get; set; }
     }

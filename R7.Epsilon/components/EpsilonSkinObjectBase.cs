@@ -1,5 +1,5 @@
 ﻿//
-// CustomSkinObjectBase.cs
+// EpsilonSkinObjectBase.cs
 //
 // Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
@@ -27,11 +27,10 @@
 using System;
 using System.Web.UI;
 using DotNetNuke.UI.Skins;
-using DotNetNuke.Services.Localization;
 
 namespace R7.Epsilon
 {
-    public class CustomSkinObjectBase: SkinObjectBase, ILocalizableControl
+    public class EpsilonSkinObjectBase: SkinObjectBase, ILocalizableControl
     {
         #region ILocalizableControl implementation
 

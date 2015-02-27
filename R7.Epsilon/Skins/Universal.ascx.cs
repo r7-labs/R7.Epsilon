@@ -46,7 +46,7 @@ namespace R7.Epsilon
     /// 
     /// </summary>
     /// -----------------------------------------------------------------------------
-    public partial class Universal : SkinBase
+    public partial class Universal : EpsilonSkinBase
     {
         public Universal ()
 		{

@@ -32,7 +32,7 @@ namespace R7.Epsilon
     /// 
     /// </summary>
     /// -----------------------------------------------------------------------------
-    public partial class Simple : SkinBase
+    public partial class Simple : EpsilonSkinBase
     {
         public Simple ()
 		{

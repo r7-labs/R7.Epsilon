@@ -1,5 +1,5 @@
 ﻿//
-// SocialShareScripts.ascx.cs
+// EpsilonContainerBase.cs
 //
 // Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
@@ -25,16 +25,15 @@
 // THE SOFTWARE.
 
 using System;
-using System.Web;
-using System.Web.UI;
-using DotNetNuke.Entities.Portals;
-using System.Web.UI.WebControls;
-using System.Web.Security;
-using DotNetNuke.UI.WebControls;
+using DotNetNuke.UI.Containers;
 
 namespace R7.Epsilon
 {
-    public class SocialShareScripts : EpsilonSkinObjectBase
+    public class EpsilonContainerBase: Container
     {
+		protected override void OnLoad (EventArgs e)
+		{
+			base.OnLoad (e);
+		}
     }
 }

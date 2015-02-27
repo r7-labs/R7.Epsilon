@@ -34,7 +34,7 @@ using DotNetNuke.UI.WebControls;
 
 namespace R7.Epsilon
 {
-    public class FeedbackButton : CustomSkinObjectBase
+    public class FeedbackButton : EpsilonSkinObjectBase
     {
         #region Controls
 
