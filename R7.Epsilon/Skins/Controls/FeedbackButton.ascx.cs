@@ -48,6 +48,8 @@ namespace R7.Epsilon
 
         public string Target { get; set; }
 
+        public string CssClass { get; set; }
+
         #endregion
 
         protected override void OnInit (EventArgs e)
@@ -55,6 +57,7 @@ namespace R7.Epsilon
             base.OnInit (e);
 
             linkFeedbackButton.Target = Target;
+            linkFeedbackButton.CssClass = "unselectable " + CssClass;
             linkFeedbackButton.ToolTip = Localizer.GetString ("FeedBackButton.Tooltip");
             linkFeedbackButton.Text = Localizer.GetString  ("FeedBackButton.Text");
             linkFeedbackButton.Attributes.Add ("onclick", string.Format ("javascript:return skin_feedback_button(this, {0}, {1})", 
