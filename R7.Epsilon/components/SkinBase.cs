@@ -56,7 +56,7 @@ namespace R7.Epsilon
 
         #region Handlers
 
-        protected void linkA11yButton_Click (object sender, EventArgs e)
+        protected virtual void linkA11yButton_Click (object sender, EventArgs e)
         {
             // toggle accessibility
             A11yEnabled = !A11yEnabled;
