@@ -70,24 +70,33 @@ namespace R7.Epsilon
 
         #endregion
 
+        protected override void OnInit (EventArgs e)
+        {
+            base.OnInit (e);
+
+            // localize accessibility button
+            linkA11yButton.Text = Localizer.GetString ("A11y.Text");
+            linkA11yButton.ToolTip = Localizer.GetString ("A11y.Title");
+        }
+
         protected override void OnLoad (EventArgs e)
         {
             base.OnLoad (e);
 
-            RegisterJavaScript();
+            RegisterJavaScript ();
 
             if (skinCSS != null && A11yEnabled)
             {
+                // replace current skin
                 skinCSS.FilePath = "css/a11y-skin.min.css";
 
                 // load a11y script
                 ClientResourceManager.RegisterScript (Page, "/Portals/_default/Skins/R7.Epsilon/js/a11y.min.js", FileOrder.Js.DefaultPriority, "DnnFormBottomProvider");
+
+                // alter look of accessibility button
+                linkA11yButton.CssClass = linkA11yButton.CssClass + " enabled";
             }
 
-            // A11y button localization
-            // REVIEW: Move this to concrete skin?
-            linkA11yButton.Text = Localizer.GetString ("A11y.Text");
-            linkA11yButton.ToolTip = Localizer.GetString ("A11y.Title");
         }
 
         private void RegisterJavaScript()

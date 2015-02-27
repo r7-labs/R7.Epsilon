@@ -22,7 +22,7 @@
         <value><![CDATA[<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>]]></value>
     </data>
     <data name="A11y.Title" xml:space="preserve">
-        <value>Go to site version for the visually impaired</value>
+        <value>Toggle site features for the visually impaired</value>
     </data>
     <data name="SkinCopyright.Text" xml:space="preserve">
         <value><![CDATA[<a href="https://github.com/roman-yagodin/R7.Epsilon" target="_blank">R7.Epsilon Skin</a>]]></value>

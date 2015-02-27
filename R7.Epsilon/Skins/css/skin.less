@@ -195,6 +195,22 @@ ul.dnnAdminTabNav {
         font-size:20px;
         margin-right:5px;
         padding-top:3px;
+
+        &.enabled
+        {
+            // like .skin-round-icon:hover
+            border-bottom:3px solid #CCC;
+            background-color:#000;
+            color:#fff;
+
+            &:hover 
+            {
+                // like .skin-round-icon
+                border-bottom:3px solid #999;
+                background-color:#fff;
+                color:#000;
+            }
+        }
     }
 }
 
