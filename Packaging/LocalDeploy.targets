@@ -16,6 +16,7 @@
             <DeploySkinFiles Include="..\R7.Epsilon\Skins\**\fonts\*.svg" />
             <DeploySkinFiles Include="..\R7.Epsilon\Skins\**\fonts\*.ttf" />
             <DeploySkinFiles Include="..\R7.Epsilon\Skins\**\fonts\*.woff" />
+            <DeploySkinFiles Include="..\R7.Epsilon\Skins\**\fonts\*.woff2" />
 		</ItemGroup>
 
 		<!-- Declare container files -->

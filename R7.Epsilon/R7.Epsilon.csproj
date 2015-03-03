@@ -74,6 +74,7 @@
     <None Include="R7.Epsilon.dnn" />
     <None Include="ReleaseNotes.txt" />
     <None Include="License.txt" />
+    <None Include="Skins\fonts\glyphicons-halflings-regular.woff2" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="lib\ControllerBase.cs" />

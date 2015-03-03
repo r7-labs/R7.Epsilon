@@ -21,6 +21,7 @@
             <InstallSkinFiles Include="..\R7.Epsilon\Skins\**\fonts\*.svg" />
             <InstallSkinFiles Include="..\R7.Epsilon\Skins\**\fonts\*.ttf" />
             <InstallSkinFiles Include="..\R7.Epsilon\Skins\**\fonts\*.woff" />
+            <InstallSkinFiles Include="..\R7.Epsilon\Skins\**\fonts\*.woff2" />
 		</ItemGroup>
 
 		<!-- Declare container files -->
