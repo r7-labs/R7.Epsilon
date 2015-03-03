@@ -22,10 +22,10 @@
         <value>{0:dd.MM.yyyy}: {1}</value>
     </data>
     <data name="FounderMcx.Alt" xml:space="preserve">
-        <value>Министерство сельского хозяйства</value>
+        <value>Сайт Министерства сельского хозяйства</value>
     </data>
     <data name="FounderMob.Alt" xml:space="preserve">
-        <value>Министерство образования и науки</value>
+        <value>Сайт Министерства образования и науки</value>
     </data>
     <data name="LogoTitle_0.Text" xml:space="preserve">
         <value>Волгоградский&#13;государственный аграрный университет</value>
