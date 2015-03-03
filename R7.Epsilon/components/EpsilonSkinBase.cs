@@ -59,6 +59,13 @@ namespace R7.Epsilon
             }
         }
 
+        protected EpsilonConfig Config;
+
+        protected EpsilonSkinBase ()
+        {
+            Config = new EpsilonConfig (PortalSettings.PortalId);
+        }
+
         #region ILocalizableControl implementation
 
         private ControlLocalizer localizer;

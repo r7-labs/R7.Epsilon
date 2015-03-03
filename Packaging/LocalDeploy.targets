@@ -63,6 +63,7 @@
 
 		<!-- Copy binary -->
 		<Copy SourceFiles="$(MSBuildDnnBinPath)\R7.Epsilon.dll" DestinationFolder="$(DnnBinPath)" />
+        <Copy SourceFiles="$(MSBuildDnnBinPath)\Nini.dll" DestinationFolder="$(DnnBinPath)" />
 
 		<!-- Cleanup -->
 		<RemoveDir Directories="$(MSBuildProjectDirectory)\tmp_Skins" />

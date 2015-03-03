@@ -52,6 +52,7 @@
 		<!-- Declare binaries -->
 		<ItemGroup>	
 			<InstallBinaryFiles Include="$(MSBuildDnnBinPath)\R7.Epsilon*.dll" />
+            <InstallBinaryFiles Include="..\R7.Epsilon\lib\*.dll" />
 		</ItemGroup>
 	
 		<!-- Copy to tmp dir -->

@@ -223,7 +223,7 @@
             <div class="row">
                 <div class="col-md-6 hidden-xs">
                     <div class="skin-footer-buttons">
-                        <dnn:BANNER id="dnnBanner1" runat="server" GroupName="FooterButtons" BannerTypeId="4" BannerCount="3" Orientation="H" AllowNullBannerType="true" />    
+                        <dnn:BANNER id="dnnBanner1" runat="server" GroupName="<%# Config.FooterButtonsGroupName %>" BannerTypeId="4" BannerCount="3" Orientation="H" AllowNullBannerType="true" />    
                     </div>
                 </div>
                 <div id="FooterPane1" runat="server" class="col-md-2 col-sm-4 col-xs-12" containertype="G" containername="R7.Epsilon" containersrc="Blank.ascx"/>
@@ -250,7 +250,7 @@
 
 <div class="skin-float-button-wrapper">
     <a href="#" class="skin-float-button skin-float-button-up" title="<%: Localizer.GetString ("ButtonUp.Title") %>" style="display:none" data-toggle="tooltip" data-placement="left" data-container="body"></a>
-    <skin:FEEDBACKBUTTON runat="server" CssClass="skin-float-button skin-float-button-feedback" Target="_blank" FeedbackTabId="100" />
+    <skin:FEEDBACKBUTTON runat="server" CssClass="skin-float-button skin-float-button-feedback" Target="_blank" FeedbackTabId="<%# Config.FeedbackTabId %>" />
 </div>
 
 <!-- gallery and carousel controls, hidden by default -->

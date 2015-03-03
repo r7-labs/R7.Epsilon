@@ -47,6 +47,9 @@
     <Reference Include="ClientDependency.Core">
       <HintPath>..\..\..\bin\ClientDependency.Core.dll</HintPath>
     </Reference>
+    <Reference Include="Nini">
+      <HintPath>lib\Nini.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Skins\Edit.doctype.xml">
@@ -75,6 +78,7 @@
     <None Include="ReleaseNotes.txt" />
     <None Include="License.txt" />
     <None Include="Skins\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="lib\Nini.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="lib\ControllerBase.cs" />
@@ -124,6 +128,7 @@
     <Compile Include="components\EpsilonSkinBase.cs" />
     <Compile Include="components\EpsilonSkinObjectBase.cs" />
     <Compile Include="components\EpsilonContainerBase.cs" />
+    <Compile Include="lib\EpsilonConfig.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Containers\Blank.ascx" />
@@ -202,6 +207,7 @@
     <Content Include="Skins\css\a11y-skin.less" />
     <Content Include="Skins\js\a11y.js" />
     <Content Include="Skins\js\menu.js" />
+    <Content Include="R7.Epsilon_Portal.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
