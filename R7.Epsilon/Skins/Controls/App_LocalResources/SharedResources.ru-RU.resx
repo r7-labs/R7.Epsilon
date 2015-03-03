@@ -16,7 +16,7 @@
         <value>Перевести с Google</value>
     </data>
     <data name="GoogleTranslate.Alt" xml:space="preserve">
-        <value>Перевести с Google</value>
+        <value>Перевести с помощью Google</value>
     </data>
     <data name="PagePublishedMessage.Format" xml:space="preserve">
         <value>{0:dd.MM.yyyy}: {1}</value>
