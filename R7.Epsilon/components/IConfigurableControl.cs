@@ -1,5 +1,5 @@
 ﻿//
-// EpsilonSkinObjectBase.cs
+// IConfigurableControl.cs
 //
 // Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
@@ -25,34 +25,12 @@
 // THE SOFTWARE.
 
 using System;
-using System.Web.UI;
-using DotNetNuke.UI.Skins;
 
 namespace R7.Epsilon
 {
-    public class EpsilonSkinObjectBase: SkinObjectBase, ILocalizableControl, IConfigurableControl
+    public interface IConfigurableControl
     {
-        #region ILocalizableControl implementation
-
-        private ControlLocalizer localizer;
-
-        public ControlLocalizer Localizer
-        {
-            get { return localizer ?? (localizer = new ControlLocalizer (this)); } 
-        }
-
-        #endregion
-
-        #region IConfigurableControl implementation
-
-        protected EpsilonConfig config;
-
-        public EpsilonConfig Config 
-        {
-            get { return config ?? (config = EpsilonConfigManager.Instance.GetConfig (PortalSettings.PortalId)); }
-        }
-
-        #endregion
+        EpsilonConfig Config { get; }
     }
 }
 

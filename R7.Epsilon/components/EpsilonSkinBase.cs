@@ -34,7 +34,7 @@ using DotNetNuke.Web.Client.ClientResourceManagement;
 
 namespace R7.Epsilon
 {
-    public class EpsilonSkinBase: Skin, ILocalizableControl
+    public class EpsilonSkinBase: Skin, ILocalizableControl, IConfigurableControl
     {
         #region Controls
 
@@ -59,20 +59,24 @@ namespace R7.Epsilon
             }
         }
 
-        protected EpsilonConfig Config;
-
-        protected EpsilonSkinBase ()
-        {
-            Config = EpsilonConfigManager.Instance.GetConfig (PortalSettings.PortalId);
-        }
-
         #region ILocalizableControl implementation
 
-        private ControlLocalizer localizer;
+        protected ControlLocalizer localizer;
 
         public ControlLocalizer Localizer
         {
             get { return localizer ?? (localizer = new ControlLocalizer (this)); } 
+        }
+
+        #endregion
+
+        #region IConfigurableControl implementation
+
+        protected EpsilonConfig config;
+
+        public EpsilonConfig Config 
+        {
+            get { return config ?? (config = EpsilonConfigManager.Instance.GetConfig (PortalSettings.PortalId)); }
         }
 
         #endregion

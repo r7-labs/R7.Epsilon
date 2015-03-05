@@ -131,6 +131,7 @@
     <Compile Include="components\Utils.cs" />
     <Compile Include="components\EpsilonConfigBase.cs" />
     <Compile Include="components\EpsilonConfigManager.cs" />
+    <Compile Include="components\IConfigurableControl.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Containers\Blank.ascx" />
