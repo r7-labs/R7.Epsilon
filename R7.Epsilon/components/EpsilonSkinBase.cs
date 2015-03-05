@@ -29,8 +29,8 @@ using System.Web.UI.WebControls;
 using DotNetNuke.Common;
 using DotNetNuke.Framework;
 using DotNetNuke.UI.Skins;
-using DotNetNuke.Web.Client.ClientResourceManagement;
 using DotNetNuke.Web.Client;
+using DotNetNuke.Web.Client.ClientResourceManagement;
 
 namespace R7.Epsilon
 {
@@ -63,7 +63,7 @@ namespace R7.Epsilon
 
         protected EpsilonSkinBase ()
         {
-            Config = new EpsilonConfig (PortalSettings.PortalId);
+            Config = EpsilonConfigManager.Instance.GetConfig (PortalSettings.PortalId);
         }
 
         #region ILocalizableControl implementation
