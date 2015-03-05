@@ -1,5 +1,5 @@
 ﻿//
-// EpsilonSkinObjectBase.cs
+// EpsilonConfigBase.cs
 //
 // Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
@@ -25,34 +25,46 @@
 // THE SOFTWARE.
 
 using System;
-using System.Web.UI;
-using DotNetNuke.UI.Skins;
+using System.IO;
+using System.Reflection;
+using System.Configuration;
+using System.Collections.Specialized;
+using DotNetNuke.Entities.Portals;
+using DotNetNuke.Common;
+using Nini.Config;
 
 namespace R7.Epsilon
 {
-    public class EpsilonSkinObjectBase: SkinObjectBase, ILocalizableControl, IConfigurableControl
+    public abstract class EpsilonConfigBase
     {
-        #region ILocalizableControl implementation
+        #region Fields
 
-        private ControlLocalizer localizer;
+        protected IConfigSource PortalConfigSource;
 
-        public ControlLocalizer Localizer
-        {
-            get { return localizer ?? (localizer = new ControlLocalizer (this)); } 
-        }
+        protected IConfig PortalConfig;
 
         #endregion
 
-        #region IConfigurableControl implementation
-
-        protected EpsilonConfig config;
-
-        public EpsilonConfig Config 
+        protected EpsilonConfigBase (int portalId)
         {
-            get { return config ?? (config = EpsilonConfigManager.Instance.GetConfig (PortalSettings.PortalId)); }
-        }
+            var portalSettings = new PortalSettings (portalId);
 
-        #endregion
+            // portal config source
+            var portalConfigFile = Path.Combine (portalSettings.HomeDirectoryMapPath, "R7.Epsilon-portal.config");
+
+            if (!File.Exists (portalConfigFile))
+            {
+                // copy generic config file to portal folder
+                var genericConfigFile = Path.Combine (Globals.HostMapPath, "Skins\\R7.Epsilon\\portal.config");
+                File.Copy (genericConfigFile, portalConfigFile);
+            }
+
+            // get config source
+            PortalConfigSource = new DotNetConfigSource (portalConfigFile);
+
+            // get configs (config sections)
+            PortalConfig = PortalConfigSource.Configs ["Portal"];
+        }
     }
 }
 

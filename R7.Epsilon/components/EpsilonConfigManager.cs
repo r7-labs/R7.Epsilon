@@ -1,5 +1,5 @@
 ﻿//
-// EpsilonSkinObjectBase.cs
+// EpsilonConfigManager.cs
 //
 // Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
@@ -25,34 +25,52 @@
 // THE SOFTWARE.
 
 using System;
-using System.Web.UI;
-using DotNetNuke.UI.Skins;
+using System.Collections.Generic;
 
 namespace R7.Epsilon
 {
-    public class EpsilonSkinObjectBase: SkinObjectBase, ILocalizableControl, IConfigurableControl
+    public class EpsilonConfigManager
     {
-        #region ILocalizableControl implementation
+        #region Singleton implementation
 
-        private ControlLocalizer localizer;
+        private static EpsilonConfigManager instance;
+        private static object instanceLock = new object ();
 
-        public ControlLocalizer Localizer
+        public static EpsilonConfigManager Instance
         {
-            get { return localizer ?? (localizer = new ControlLocalizer (this)); } 
+            get 
+            {
+                if (instance == null)
+                {
+                    lock (instanceLock)
+                    {
+                        if (instance == null)
+                            instance = new EpsilonConfigManager ();
+                    }
+                }
+                return instance;
+            }
         }
 
         #endregion
 
-        #region IConfigurableControl implementation
+        private readonly Dictionary<int, EpsilonConfig> portalConfigs;
 
-        protected EpsilonConfig config;
-
-        public EpsilonConfig Config 
+        public EpsilonConfigManager ()
         {
-            get { return config ?? (config = EpsilonConfigManager.Instance.GetConfig (PortalSettings.PortalId)); }
+            portalConfigs = new Dictionary<int, EpsilonConfig> ();
         }
 
-        #endregion
+        public EpsilonConfig GetConfig (int portalId)
+        {
+            if (portalConfigs.ContainsKey (portalId))
+                return portalConfigs [portalId];
+            else
+            {
+                var portalConfig = new EpsilonConfig (portalId);
+                portalConfigs.Add (portalId, portalConfig);
+                return portalConfig;
+            }
+        }
     }
 }
-

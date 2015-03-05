@@ -29,12 +29,12 @@ using System.Web.UI.WebControls;
 using DotNetNuke.Common;
 using DotNetNuke.Framework;
 using DotNetNuke.UI.Skins;
-using DotNetNuke.Web.Client.ClientResourceManagement;
 using DotNetNuke.Web.Client;
+using DotNetNuke.Web.Client.ClientResourceManagement;
 
 namespace R7.Epsilon
 {
-    public class EpsilonSkinBase: Skin, ILocalizableControl
+    public class EpsilonSkinBase: Skin, ILocalizableControl, IConfigurableControl
     {
         #region Controls
 
@@ -61,11 +61,22 @@ namespace R7.Epsilon
 
         #region ILocalizableControl implementation
 
-        private ControlLocalizer localizer;
+        protected ControlLocalizer localizer;
 
         public ControlLocalizer Localizer
         {
             get { return localizer ?? (localizer = new ControlLocalizer (this)); } 
+        }
+
+        #endregion
+
+        #region IConfigurableControl implementation
+
+        protected EpsilonConfig config;
+
+        public EpsilonConfig Config 
+        {
+            get { return config ?? (config = EpsilonConfigManager.Instance.GetConfig (PortalSettings.PortalId)); }
         }
 
         #endregion
@@ -88,7 +99,7 @@ namespace R7.Epsilon
             if (skinCSS != null && A11yEnabled)
             {
                 // replace current skin
-                skinCSS.FilePath = "css/a11y-skin.min.css";
+                skinCSS.FilePath = Config.SkinA11yCss;
 
                 // load a11y script
                 ClientResourceManager.RegisterScript (Page, "/Portals/_default/Skins/R7.Epsilon/js/a11y.min.js", FileOrder.Js.DefaultPriority, "DnnFormBottomProvider");

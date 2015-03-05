@@ -12,6 +12,7 @@
 			<DeploySkinFiles Include="..\R7.Epsilon\Skins\**\*.jpg" />
 			<DeploySkinFiles Include="..\R7.Epsilon\Skins\**\*.png" />
 			<DeploySkinFiles Include="..\R7.Epsilon\Skins\**\*.gif" />
+            <DeploySkinFiles Include="..\R7.Epsilon\Skins\**\*.config" />
             <DeploySkinFiles Include="..\R7.Epsilon\Skins\**\fonts\*.eot" />
             <DeploySkinFiles Include="..\R7.Epsilon\Skins\**\fonts\*.svg" />
             <DeploySkinFiles Include="..\R7.Epsilon\Skins\**\fonts\*.ttf" />
@@ -63,6 +64,7 @@
 
 		<!-- Copy binary -->
 		<Copy SourceFiles="$(MSBuildDnnBinPath)\R7.Epsilon.dll" DestinationFolder="$(DnnBinPath)" />
+        <Copy SourceFiles="$(MSBuildDnnBinPath)\Nini.dll" DestinationFolder="$(DnnBinPath)" />
 
 		<!-- Cleanup -->
 		<RemoveDir Directories="$(MSBuildProjectDirectory)\tmp_Skins" />
