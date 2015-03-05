@@ -210,6 +210,7 @@
     <Content Include="Skins\js\a11y.js" />
     <Content Include="Skins\js\menu.js" />
     <Content Include="Skins\portal.config" />
+    <Content Include="Configs\volgau-portal.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
@@ -224,6 +225,7 @@
     <Folder Include="Menu\" />
     <Folder Include="Skins\Controls\" />
     <Folder Include="Skins\Controls\App_LocalResources\" />
+    <Folder Include="Configs\" />
   </ItemGroup>
   <Import Project="Less.targets" />
   <Target Name="BeforeBuild" DependsOnTargets="Less;MinifyJS" />
