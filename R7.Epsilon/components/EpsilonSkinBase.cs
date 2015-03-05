@@ -95,7 +95,7 @@ namespace R7.Epsilon
             if (skinCSS != null && A11yEnabled)
             {
                 // replace current skin
-                skinCSS.FilePath = "css/a11y-skin.min.css";
+                skinCSS.FilePath = Config.SkinA11yCss;
 
                 // load a11y script
                 ClientResourceManager.RegisterScript (Page, "/Portals/_default/Skins/R7.Epsilon/js/a11y.min.js", FileOrder.Js.DefaultPriority, "DnnFormBottomProvider");

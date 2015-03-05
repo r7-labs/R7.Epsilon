@@ -60,6 +60,18 @@ namespace R7.Epsilon
 
         #region Portal config properties
 
+        public string SkinCss
+        {
+            get { return PortalConfig.Get ("SkinCss", "default-skin.min.css"); }
+            set { PortalConfig.Set ("SkinCss", value); }
+        }
+
+        public string SkinA11yCss
+        {
+            get { return PortalConfig.Get ("SkinA11yCss", "a11y-skin.min.css"); }
+            set { PortalConfig.Set ("SkinA11yCss", value); }
+        }
+
         public int FeedbackTabId
         {
             get { return PortalConfig.GetInt ("FeedbackTabId", -1); }
