@@ -30,6 +30,7 @@ using System.Reflection;
 using System.Configuration;
 using System.Collections.Specialized;
 using DotNetNuke.Entities.Portals;
+using DotNetNuke.Common;
 using Nini.Config;
 
 namespace R7.Epsilon
@@ -49,7 +50,14 @@ namespace R7.Epsilon
             var portalSettings = new PortalSettings (portalId);
 
             // portal config source
-            var portalConfigFile = Path.Combine (portalSettings.HomeDirectoryMapPath, "R7.Epsilon_Portal.config");
+            var portalConfigFile = Path.Combine (portalSettings.HomeDirectoryMapPath, "R7.Epsilon-portal.config");
+
+            if (!File.Exists (portalConfigFile))
+            {
+                // copy generic config file to portal folder
+                var genericConfigFile = Path.Combine (Globals.HostMapPath, "Skins\\R7.Epsilon\\portal.config");
+                File.Copy (genericConfigFile, portalConfigFile);
+            }
 
             // get config source
             PortalConfigSource = new DotNetConfigSource (portalConfigFile);
