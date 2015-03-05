@@ -129,6 +129,7 @@
     <Compile Include="components\ILocalizableControl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="components\Utils.cs" />
+    <Compile Include="components\EpsilonConfigBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Containers\Blank.ascx" />

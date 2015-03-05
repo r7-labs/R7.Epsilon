@@ -1,5 +1,5 @@
 ﻿//
-// EpsilonConfig.cs
+// EpsilonConfigBase.cs
 //
 // Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
@@ -25,42 +25,46 @@
 // THE SOFTWARE.
 
 using System;
+using System.IO;
+using System.Reflection;
+using System.Configuration;
+using System.Collections.Specialized;
+using DotNetNuke.Entities.Portals;
+using DotNetNuke.Common;
+using Nini.Config;
 
 namespace R7.Epsilon
 {
-    public class EpsilonConfig: EpsilonConfigBase
+    public abstract class EpsilonConfigBase
     {
-        public EpsilonConfig (int portalId): base (portalId)
-        {
-        }
+        #region Fields
 
-        #region Portal config properties
+        protected IConfigSource PortalConfigSource;
 
-        public string SkinCss
-        {
-            get { return PortalConfig.Get ("SkinCss", "default-skin.min.css"); }
-            set { PortalConfig.Set ("SkinCss", value); }
-        }
-
-        public string SkinA11yCss
-        {
-            get { return PortalConfig.Get ("SkinA11yCss", "a11y-skin.min.css"); }
-            set { PortalConfig.Set ("SkinA11yCss", value); }
-        }
-
-        public int FeedbackTabId
-        {
-            get { return PortalConfig.GetInt ("FeedbackTabId", -1); }
-            set { PortalConfig.Set ("FeedbackTabId", value); }
-        }
-
-        public string FooterButtonsGroupName
-        {
-            get { return PortalConfig.Get ("FooterButtonsGroupName", "FooterButtons"); }
-            set { PortalConfig.Set ("FooterButtonsGroupName", value); }
-        }
+        protected IConfig PortalConfig;
 
         #endregion
+
+        protected EpsilonConfigBase (int portalId)
+        {
+            var portalSettings = new PortalSettings (portalId);
+
+            // portal config source
+            var portalConfigFile = Path.Combine (portalSettings.HomeDirectoryMapPath, "R7.Epsilon-portal.config");
+
+            if (!File.Exists (portalConfigFile))
+            {
+                // copy generic config file to portal folder
+                var genericConfigFile = Path.Combine (Globals.HostMapPath, "Skins\\R7.Epsilon\\portal.config");
+                File.Copy (genericConfigFile, portalConfigFile);
+            }
+
+            // get config source
+            PortalConfigSource = new DotNetConfigSource (portalConfigFile);
+
+            // get configs (config sections)
+            PortalConfig = PortalConfigSource.Configs ["Portal"];
+        }
     }
 }
 
