@@ -51,6 +51,26 @@ namespace R7.Epsilon
             get { return PortalConfig.GetInt ("FeedbackTabId", -1); }
         }
 
+        public string PrimaryMenuNodeSelector
+        {
+            get { return PortalConfig.Get ("PrimaryMenuNodeSelector", "*,0,2"); }
+        }
+
+        public string PrimaryMenuIncludeNodes
+        {
+            get { return PortalConfig.Get ("PrimaryMenuIncludeNodes", string.Empty); }
+        }
+
+        public string SecondaryMenuNodeSelector
+        {
+            get { return PortalConfig.Get ("SecondaryMenuNodeSelector", "*,0,2"); }
+        }
+
+        public string SecondaryMenuIncludeNodes
+        {
+            get { return PortalConfig.Get ("SecondaryMenuIncludeNodes", string.Empty); }
+        }
+
         public string FooterButtonsGroupName
         {
             get { return PortalConfig.Get ("FooterButtonsGroupName", "FooterButtons"); }

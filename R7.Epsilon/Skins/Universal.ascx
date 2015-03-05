@@ -78,7 +78,7 @@
             </div>
             <div class="navbar-collapse collapse dnnClear skin-top-menu">
                 <div class="skin-primary-menu">
-                    <dnn:MENU id="menuPrimary" runat="server" MenuStyle="Mega2Epsilon" NodeSelector="*,0,2" />
+                    <dnn:MENU id="menuPrimary" runat="server" MenuStyle="Mega2Epsilon" NodeSelector="<%# Config.PrimaryMenuNodeSelector %>" IncludeNodes="<%# Config.PrimaryMenuIncludeNodes %>" />
                 </div>
             </div>
             <div class="navbar-collapse collapse skin-primary-navbar-main">
@@ -103,7 +103,7 @@
         <div class="container">
             <div class="navbar-collapse collapse dnnClear skin-top-menu">
                 <div class="skin-secondary-menu">
-                    <dnn:MENU id="menuSecondary" runat="server" MenuStyle="Mega2Epsilon" NodeSelector="*,0,2" />
+                    <dnn:MENU id="menuSecondary" runat="server" MenuStyle="Mega2Epsilon" NodeSelector="<%# Config.SecondaryMenuNodeSelector %>" IncludeNodes="<%# Config.SecondaryMenuIncludeNodes %>" />
                 </div>    
             </div>
         </div>
