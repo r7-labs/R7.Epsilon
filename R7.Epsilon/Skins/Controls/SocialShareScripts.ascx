@@ -1,18 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.SocialShareScripts" %>
 
-<%-- TODO: Need to use some kind of skin config for this --%>
-<%
-    var vk_apiId = 4754730;
-    var vk_group = "volgau_com";
-    var vk_share_enabled = false;
-    var fb_group = "volgau";
-    var tw_via = "volgau_com";
-    var tw_group = "volgau_com";
-    var ok_group = "51992191172689";
-    var gp_group = "102055464309901341034/communities/113661705633931940712";
-    var yt_group = "UCYPMmQknVPxosuY4iPCfVDg";
-%>
-
 <%-- Facebook Like --%>
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -43,10 +30,10 @@ window.___gcfg = {
 <%-- VK.com Widget--%>
 
 <%-- TODO: OpenAPI link should be in the HEAD! --%>
-<% if (vk_share_enabled) { %>
+<% if (Config.VkShareEnabled) { %>
 <script type="text/javascript" src="//vk.com/js/api/openapi.js?116"></script>
 <script type="text/javascript">
-    VK.init({apiId: <%= vk_apiId %>, onlyWidgets: true});
+    VK.init({apiId: <%= Config.VkApiId %>, onlyWidgets: true});
     VK.Widgets.Like("vk_like", {type: "mini", height: 20});
 </script>
 <% } %>

@@ -39,25 +39,66 @@ namespace R7.Epsilon
         public string SkinCss
         {
             get { return PortalConfig.Get ("SkinCss", "default-skin.min.css"); }
-            set { PortalConfig.Set ("SkinCss", value); }
         }
 
         public string SkinA11yCss
         {
             get { return PortalConfig.Get ("SkinA11yCss", "a11y-skin.min.css"); }
-            set { PortalConfig.Set ("SkinA11yCss", value); }
         }
 
         public int FeedbackTabId
         {
             get { return PortalConfig.GetInt ("FeedbackTabId", -1); }
-            set { PortalConfig.Set ("FeedbackTabId", value); }
         }
 
         public string FooterButtonsGroupName
         {
             get { return PortalConfig.Get ("FooterButtonsGroupName", "FooterButtons"); }
-            set { PortalConfig.Set ("FooterButtonsGroupName", value); }
+        }
+
+        public bool VkShareEnabled 
+        {
+            get { return PortalConfig.GetBoolean ("VkShareEnabled", false); }
+        }
+
+        public string VkApiId
+        {
+            get { return PortalConfig.Get ("VkApiId", string.Empty); }
+        }
+
+        public string VkGroup
+        {
+            get { return PortalConfig.Get ("VkGroup", string.Empty); }
+        }
+
+        public string FacebookGroup
+        {
+            get { return PortalConfig.Get ("FacebookGroup", string.Empty); }
+        }
+
+        public string TwitterGroup
+        {
+            get { return PortalConfig.Get ("TwitterGroup", string.Empty); }
+        }
+
+        public string TwitterVia
+        {
+            get { return PortalConfig.Get ("TwitterVia", TwitterGroup); }
+        }
+
+        public string OkGroup
+        {
+            get { return PortalConfig.Get ("OkGroup", string.Empty); }
+        }
+
+        public string GoogleGroup
+        {
+            get { return PortalConfig.Get ("GoogleGroup", string.Empty); }
+        }
+
+        public string YoutubeGroup
+        {
+            get { return PortalConfig.Get ("YoutubeGroup", string.Empty); }
         }
 
         #endregion
