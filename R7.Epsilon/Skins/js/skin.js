@@ -6,11 +6,7 @@ $(function() {
     var localMenu = $(".skin-local-menu").first ();
     if (localMenu.find (".sub").length > 0)
     {
-        localMenu.find ("a.level0").html ("<span class='sr-only'>Toggle navigation</span>" +
-        "<span class='icon-bar'></span>" +
-        "<span class='icon-bar'></span>" +
-        "<span class='icon-bar'></span>")
-        .click (function (event) {
+        localMenu.find ("a.level0").click (function (event) {
             event.preventDefault (); 
         });
     }

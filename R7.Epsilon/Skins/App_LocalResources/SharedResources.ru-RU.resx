@@ -30,4 +30,7 @@
     <data name="ButtonUp.Title" xml:space="preserve">
         <value>Нажми меня, чтобы перейти наверх</value>
     </data>
+    <data name="ToggleNavigation.Text" xml:space="preserve">
+        <value>Включить/выключить навигационное меню</value>
+    </data>
 </root>

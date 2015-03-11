@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ddr="urn:ddrmenu">
 	<xsl:output method="html"/>
 	<xsl:param name="ControlID" />
 	<xsl:param name="Options" />
+    <xsl:param name="hamburgerMenu">0</xsl:param>
 	<xsl:param name="subMenuColumns">3</xsl:param>
 	<xsl:param name="subpointer"><![CDATA[&#8226;&nbsp;]]></xsl:param>
 	<xsl:param name="pointer"><![CDATA[&nbsp;&#9662;]]></xsl:param>
@@ -30,7 +31,7 @@
 			<xsl:when test="$level=0">
 				<li>
 					<xsl:attribute name="class">level0<xsl:if test="@breadcrumb = 1"> current</xsl:if></xsl:attribute>
-					<a>
+                    <a>
 						<xsl:attribute name="class">level0<xsl:if test="@breadcrumb = 1"> current</xsl:if></xsl:attribute>
 						<xsl:choose>
 							<xsl:when test="@enabled = 1">
@@ -43,10 +44,20 @@
 								<xsl:attribute name="onclick">return false</xsl:attribute>
 							</xsl:otherwise>
 						</xsl:choose>
-						<xsl:value-of select="@text" />
-						<xsl:if test="node">
-							<xsl:value-of select="$pointer" disable-output-escaping="yes"/>
-						</xsl:if>
+                        <xsl:choose>
+                            <xsl:when test="$hamburgerMenu = 1">
+                                <span class="sr-only"><xsl:value-of select="ddr:GetString('ToggleNavigation.Text','Portals/_default/Skins/R7.Epsilon/App_LocalResources/SharedResources.resx')" /></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:value-of select="@text" />
+						        <xsl:if test="node">
+							        <xsl:value-of select="$pointer" disable-output-escaping="yes"/>
+						        </xsl:if>
+                            </xsl:otherwise>
+                        </xsl:choose>
 					</a>
 					<xsl:if test="node">
 						<div class="sub">
