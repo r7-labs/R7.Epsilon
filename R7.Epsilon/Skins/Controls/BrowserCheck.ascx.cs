@@ -82,6 +82,7 @@ namespace R7.Epsilon
             // if check determines old browser, display message
             if (compLevel != CompLevel.OK)
             {
+                // REVIEW: Use Bootstrap styles and make alert dismissible
                 literalBrowserCheck.Visible = true;
                 literalBrowserCheck.Text = string.Format ("<div class=\"dnnFormMessage dnnFormWarning\">{0}</div>",
                     Localizer.GetString ("BrowserCheck.Warning")
