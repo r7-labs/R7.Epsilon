@@ -213,6 +213,9 @@
     <Content Include="Skins\portal.config" />
     <Content Include="Configs\volgau-portal.config" />
     <Content Include="Containers\Thumbnail.ascx" />
+    <Content Include="Skins\css\a11y-layout.less" />
+    <Content Include="Skins\images\social_mono_32x32.png" />
+    <Content Include="Skins\images\social_mono_32x32.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
