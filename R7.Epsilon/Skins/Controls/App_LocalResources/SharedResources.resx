@@ -21,11 +21,17 @@
     <data name="PagePublishedMessage.Format" xml:space="preserve">
         <value>{0:MM/dd/yyyy} by {1}</value>
     </data>
-    <data name="FounderMcx.Alt" xml:space="preserve">
+    <data name="Founder1.Title" xml:space="preserve">
+        <value>Ministry of Education and Science Website</value>
+    </data>
+    <data name="Founder1.Href" xml:space="preserve">
+        <value>http://минобрнауки.рф</value>
+    </data>
+    <data name="Founder2.Title" xml:space="preserve">
         <value>Ministry of Agriculture Website</value>
     </data>
-    <data name="FounderMob.Alt" xml:space="preserve">
-        <value>Ministry of Education and Science Website</value>
+    <data name="Founder2.Href" xml:space="preserve">
+        <value>http://www.mcx.ru</value>
     </data>
     <data name="LogoTitle_0.Text" xml:space="preserve">
         <value>Volgograd&#13;State Agricultural University</value>
