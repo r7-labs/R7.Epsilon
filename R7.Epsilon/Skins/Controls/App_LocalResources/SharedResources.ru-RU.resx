@@ -45,4 +45,22 @@
     <data xml:space="preserve" name="FeedBackButton.Tooltip">
         <value>Выдели место ошибки мышкой и нажми меня, чтобы открыть форму обратной связи</value>
     </data>
+    <data xml:space="preserve" name="VKontakte.Title">
+        <value>ВКонтакте</value>
+    </data>
+    <data xml:space="preserve" name="Facebook.Title">
+        <value>Facebook</value>
+    </data>
+    <data xml:space="preserve" name="Twitter.Title">
+        <value>Twitter</value>
+    </data>
+    <data xml:space="preserve" name="GooglePlus.Title">
+        <value>Google+</value>
+    </data>
+    <data xml:space="preserve" name="Odnoklassniki.Title">
+        <value>Одноклассники</value>
+    </data>    
+    <data xml:space="preserve" name="Youtube.Title">
+        <value>Youtube</value>
+    </data>
 </root>
