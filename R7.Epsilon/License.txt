@@ -1,2 +1,3 @@
 ﻿<p>This module is published under the terms of MIT/X11 License.</p>
 
+<p>Social icons based on Stephen Hutchings Typicons: http://typicons.com/, https://github.com/stephenhutchings/typicons.font</p>
