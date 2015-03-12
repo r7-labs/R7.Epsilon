@@ -34,7 +34,6 @@
 <dnn:DnnJsInclude ID="bootstrapJS" runat="server" FilePath="js/bootstrap.min.js" PathNameAlias="SkinPath" Priority="10" />
 <dnn:DnnJsInclude ID="menuJS" runat="server" FilePath="js/menu.min.js" PathNameAlias="SkinPath" />
 <dnn:DnnJsInclude ID="skinJS" runat="server" FilePath="js/skin.min.js" PathNameAlias="SkinPath" />
-<dnn:DnnJsInclude ID="bluImpJS" runat="server" FilePath="js/jquery.blueimp-gallery.min.js" PathNameAlias="SkinPath" />
 <dnn:DnnJsInclude FilePath="rangy/rangy-core.js" runat="server" PathNameAlias="SharedScripts" />
 
 <skin:SOCIALSHARESCRIPTS runat="server" />
@@ -209,13 +208,6 @@
     <div id="BottomRow4" class="row">
         <div id="BottomPane" runat="server" class="col-md-12" />
     </div>
-
-     <%--  
-    <div id="UserProfile" class="row">
-        <div id="UserProfileLeft" runat="server" class="col-md-2" />
-        <div id="UserProfileContent" runat="server" class="col-md-10" />
-    </div> --%>
-
 </div>
 
 <footer class="footer skin-footer">
@@ -252,15 +244,4 @@
 <div class="skin-float-button-wrapper">
     <a href="#" class="skin-float-button skin-float-button-up" title="<%: Localizer.GetString ("ButtonUp.Title") %>" style="display:none" data-toggle="tooltip" data-placement="left" data-container="body"></a>
     <skin:FEEDBACKBUTTON runat="server" CssClass="skin-float-button skin-float-button-feedback" Target="_blank" FeedbackTabId="<%# Config.FeedbackTabId %>" />
-</div>
-
-<!-- gallery and carousel controls, hidden by default -->
-<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" data-use-bootstrap-modal="false">
-    <div class="slides"></div>
-    <h3 class="title"></h3>
-    <a class="prev">‹</a>
-    <a class="next">›</a>
-    <a class="close">×</a>
-    <a class="play-pause"></a>
-    <ol class="indicator"></ol>
 </div>
