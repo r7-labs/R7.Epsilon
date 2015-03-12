@@ -33,4 +33,7 @@
     <data name="ToggleNavigation.Text" xml:space="preserve">
         <value>Toggle navigation</value>
     </data>
+    <data name="SkipToContent.Text" xml:space="preserve">
+        <value>Skip to main content</value>
+    </data>
 </root>

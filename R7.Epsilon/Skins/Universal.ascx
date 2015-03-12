@@ -39,26 +39,31 @@
 <skin:SOCIALSHARESCRIPTS runat="server" />
 
 <header>
-
-    <div class="container header-row-1">
-        <skin:BROWSERCHECK runat="server" />
-        <div class="skin-language-wrapper">
-            <div class="skin-language">
-                <dnn:LANGUAGE runat="server" id="dnnLANGUAGE" ShowLinks="True" ShowMenu="False" />
-                <skin:GTRANSLATE runat="server" />
-            </div>
-        </div>  
-        <div class="skin-socialgroups-wrapper">
-            <skin:SOCIALGROUPS runat="server" />
+    
+    <div class="container">
+        <div class="row">
+            <a href="#TopRow1" class="sr-only sr-only-focusable"><%: Localizer.GetString ("SkipToContent.Text") %></a>
+            <skin:BROWSERCHECK runat="server" />
         </div>
-        <div class="skin-search-wrapper">
-            <div class="dnnFormItem skin-search">
-                <dnn:SEARCH id="dnnSearch" runat="server" ShowSite="false" ShowWeb="false" />
+        <div class="row">
+            <div class="skin-language-wrapper">
+                <div class="skin-language">
+                    <dnn:LANGUAGE runat="server" id="dnnLANGUAGE" ShowLinks="True" ShowMenu="False" />
+                    <skin:GTRANSLATE runat="server" />
+                </div>
+            </div>  
+            <div class="skin-socialgroups-wrapper">
+                <skin:SOCIALGROUPS runat="server" />
             </div>
-        </div>
-        <div class="skin-icons-wrapper">
-            <asp:LinkButton id="linkA11yButton" runat="server" CssClass="skin-round-icon skin-icon-a11y" OnClick="linkA11yButton_Click" data-toggle="tooltip" data-placement="bottom" />
-            <div class="skin-round-icon skin-icon-age-rating" data-toggle="tooltip" data-placement="bottom" title="<%: Localizer.GetString("AgeRating.Title") %>"><%= Localizer.GetString("AgeRating.Text") %></div>
+            <div class="skin-search-wrapper">
+                <div class="dnnFormItem skin-search">
+                    <dnn:SEARCH id="dnnSearch" runat="server" ShowSite="false" ShowWeb="false" />
+                </div>
+            </div>
+            <div class="skin-icons-wrapper">
+                <asp:LinkButton id="linkA11yButton" runat="server" CssClass="skin-round-icon skin-icon-a11y" OnClick="linkA11yButton_Click" data-toggle="tooltip" data-placement="bottom" />
+                <div class="skin-round-icon skin-icon-age-rating" data-toggle="tooltip" data-placement="bottom" title="<%: Localizer.GetString("AgeRating.Title") %>"><%= Localizer.GetString("AgeRating.Text") %></div>
+            </div>
         </div>
     </div>
 

@@ -33,4 +33,7 @@
     <data name="ToggleNavigation.Text" xml:space="preserve">
         <value>Включить/выключить навигационное меню</value>
     </data>
+    <data name="SkipToContent.Text" xml:space="preserve">
+        <value>Перейти напрямую к содержимому</value>
+    </data>
 </root>
