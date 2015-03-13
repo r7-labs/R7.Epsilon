@@ -13,37 +13,52 @@
 		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
 	</resheader>
     <data xml:space="preserve" name="FooterPane1.Content">
-        <value><![CDATA[<p><strong>Приемная комиссия</strong><br />
-            <a href="#">+7 (8442) 411-778</a></li><br />
-            <a href="mailto:pricom@volgau.com">pricom@volgau.com</a>
-        </p>
-        <p><strong>Ректорат</strong><br />
-            <a href="#">+7 (8442) 411-784</a><br />
-            <a href="mailto:volgau@volgau.com">volgau@volgau.com</a>
-        </p>
-        <p><strong>Администратор сайта</strong><br />
-            <a href="#">+7 (927) 530-87-50</a><br />
-            <a href="mailto:webmaster@volgau.com">webmaster@volgau.com</a>
-        </p>
-        ]]></value>
+        <value><![CDATA[<div class="skin-footer-content-well">Сетевое издание &quot;На добрую землю&quot;, свидетельство о регистрации СМИ ЭЛ № ФС 77-56821</div>]]></value>
     </data>
     <data xml:space="preserve" name="FooterPane2.Content">
-        <value><![CDATA[<strong>Университет</strong>
-        <ul class="list-inline">
-            <li><a href="#">Контакты</a></li> |
-            <li><a href="#">Обратная связь</a></li> |
-            <li><a href="#">Карта сайта</a></li> |
-            <li><a href="#">Подразделения</a></li> |
-            <li><a href="#">Сотрудники</a></li>
-        </ul>]]></value>
+        <value><![CDATA[
+        <div class="skin-footer-content-element">
+            <strong>Университет</strong>
+            <ul class="list-inline">
+                <li><a href="#">Контакты</a></li>
+                <li><a href="#">Обратная связь</a></li>
+                <li><a href="#">Карта сайта</a></li>
+                <li><a href="#">Подразделения</a></li>
+                <li><a href="#">Сотрудники</a></li>
+            </ul>
+        </div>        
+        <div class="skin-footer-content-element">
+            <strong>Печатные издания</strong>
+            <ul class="list-inline">
+                <li><a href="#">Мичуринец</a></li>
+                <li><a href="#">Ундервуд</a></li>
+                <li><a href="#">Известия Нижневолжского АУК</a></li>
+            </ul>
+        </div>]]></value>
     </data>
     <data xml:space="preserve" name="FooterPane3.Content">
-        <value><![CDATA[<strong>Печатные издания</strong>
-        <ul class="list-inline">
-            <li><a href="#">Мичуринец</a></li> |
-            <li><a href="#">Ундервуд</a></li> |
-            <li><a href="#">Известия Нижневолжского АУК</a></li>
-        </ul>
-        <div class="skin-footer-content-well">Сетевое издание &quot;На добрую землю&quot;, свидетельство о регистрации СМИ ЭЛ № ФС 77-56821</div>]]></value>
+        <value><![CDATA[
+        <div class="skin-footer-content-element">
+            <strong>Приемная комиссия</strong>
+            <ul class="list-inline">
+                <li><a href="#">+7 (8442) 411-778</a></li>
+                <li><a href="mailto:pricom@volgau.com">pricom@volgau.com</a></li>
+            </ul>
+        </div>
+        <div class="skin-footer-content-element">
+            <strong>Ректорат</strong>
+            <ul class="list-inline">
+                <li><a href="#">+7 (8442) 411-784</a></li>
+                <li><a href="mailto:volgau@volgau.com">volgau@volgau.com</a></li>
+            </ul>
+        </div>
+        <div class="skin-footer-content-element">
+            <strong>Администратор сайта</strong>
+            <ul class="list-inline">
+                <li><a href="#">+7 (927) 530-87-50</a></li>
+                <li><a href="mailto:webmaster@volgau.com">webmaster@volgau.com</a></li>
+            </ul>
+        </div>
+        ]]></value>
     </data>
 </root>
