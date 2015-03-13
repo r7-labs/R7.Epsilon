@@ -13,6 +13,7 @@
 <%@ Register TagPrefix="dnn" TagName="BANNER" Src="~/Admin/Skins/Banner.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="BREADCRUMB" Src="~/Admin/Skins/BreadCrumb.ascx" %>
 <%@ Register TagPrefix="dnn" Namespace="DotNetNuke.Web.Client.ClientResourceManagement" Assembly="DotNetNuke.Web.Client" %>
+<%@ Register TagPrefix="skin" TagName="GADSENSE" Src="Controls/GAdsense.ascx" %>
 <%@ Register TagPrefix="skin" TagName="GTRANSLATE" Src="Controls/GTranslate.ascx" %>
 <%@ Register TagPrefix="skin" TagName="SOCIALGROUPS" Src="Controls/SocialGroups.ascx" %>
 <%@ Register TagPrefix="skin" TagName="PAGEHEADER" Src="Controls/PageHeader.ascx" %>
@@ -219,7 +220,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-md-10 col-sm-12">
-                    <div class="skin-banner-large hidden-xs"></div>
+                    <div class="skin-banner-large hidden-xs">
+                        <skin:GADSENSE runat="server" />
+                    </div>
                     <div class="skin-footer-buttons hidden-xs">
                         <dnn:BANNER id="dnnBanner1" runat="server" GroupName="<%# Config.FooterButtonsGroupName %>" BannerTypeId="4" BannerCount="4" Orientation="H" AllowNullBannerType="true" />    
                     </div>

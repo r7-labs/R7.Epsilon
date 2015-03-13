@@ -121,6 +121,16 @@ namespace R7.Epsilon
             get { return PortalConfig.Get ("YoutubeGroup", string.Empty); }
         }
 
+        public string AdsenseClient
+        {
+            get { return PortalConfig.Get ("AdsenseClient", string.Empty); }
+        }
+
+        public string AdsenseSlot
+        {
+            get { return PortalConfig.Get ("AdsenseSlot", string.Empty); }
+        }
+
         #endregion
     }
 }
