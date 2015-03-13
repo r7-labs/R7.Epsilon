@@ -109,9 +109,6 @@
     <Compile Include="Skins\Controls\SocialGroups.cs">
       <DependentUpon>SocialGroups.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Skins\Controls\Founders.cs">
-      <DependentUpon>Founders.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Skins\Controls\LogoTitle.ascx.cs">
       <DependentUpon>LogoTitle.ascx</DependentUpon>
     </Compile>
@@ -135,6 +132,9 @@
     <Compile Include="components\IConfigurableControl.cs" />
     <Compile Include="Skins\Controls\GAdsense.ascx.cs">
       <DependentUpon>GAdsense.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\Controls\Founders.ascx.cs">
+      <DependentUpon>Founders.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
