@@ -79,6 +79,7 @@
     <None Include="License.txt" />
     <None Include="Skins\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="lib\Nini.dll" />
+    <None Include="Skins\App_LocalResources\SharedResources.ru-RU.Portal-0.resx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Skins\Edit.ascx.cs">

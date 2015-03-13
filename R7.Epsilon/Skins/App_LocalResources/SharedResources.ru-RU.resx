@@ -35,5 +35,14 @@
     </data>
     <data name="SkipToContent.Text" xml:space="preserve">
         <value>Перейти напрямую к содержимому</value>
+    </data>    
+    <data xml:space="preserve" name="FooterPane1.Content">
+        <value>Используйте редактор локализации для изменения этого содержимого</value>
+    </data>
+    <data xml:space="preserve" name="FooterPane2.Content">
+        <value>Используйте редактор локализации для изменения этого содержимого</value>
+    </data>
+    <data xml:space="preserve" name="FooterPane3.Content">
+        <value>Используйте редактор локализации для изменения этого содержимого</value>
     </data>
 </root>

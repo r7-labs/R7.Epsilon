@@ -221,12 +221,14 @@
             <div class="row">
                 <div class="col-md-6 hidden-xs">
                     <div class="skin-footer-buttons">
-                        <dnn:BANNER id="dnnBanner1" runat="server" GroupName="<%# Config.FooterButtonsGroupName %>" BannerTypeId="4" BannerCount="3" Orientation="H" AllowNullBannerType="true" />    
+                        <dnn:BANNER id="dnnBanner1" runat="server" GroupName="<%# Config.FooterButtonsGroupName %>" BannerTypeId="4" BannerCount="4" Orientation="H" AllowNullBannerType="true" />    
                     </div>
                 </div>
-                <div id="FooterPane1" runat="server" class="col-md-2 col-sm-4 col-xs-12" containertype="G" containername="R7.Epsilon" containersrc="Blank.ascx"/>
-                <div id="FooterPane2" runat="server" class="col-md-2 col-sm-4 col-xs-12" containertype="G" containername="R7.Epsilon" containersrc="Blank.ascx" />
-                <div id="FooterPane3" runat="server" class="col-md-2 col-sm-4 col-xs-12" containertype="G" containername="R7.Epsilon" containersrc="Blank.ascx" />
+                <div class="skin-footer-content col-md-2 col-sm-4 col-xs-12"><%= Localizer.GetString ("FooterPane1.Content") %></div>
+                <div class="skin-footer-content col-md-4 col-sm-8 col-xs-12">
+                    <div><%= Localizer.GetString ("FooterPane2.Content") %></div>
+                    <div><%= Localizer.GetString ("FooterPane3.Content") %></div>
+                </div>
             </div>
         </div>
     </div>
@@ -235,7 +237,7 @@
             <div class="row">
                 <div class="col-md-6 col-xs-12 skin-copyright">
                     <dnn:copyright ID="dnnCopyright" runat="server" /> |
-                    <dnn:TEXT runat="server" CssClass="skin-copyright" resourcekey="SkinCopyright.Text" ReplaceTokens="true" />
+                    <span class="skin-copyright"><%= Localizer.GetString ("SkinCopyright.Text") %></span>
                 </div>
                 <div class="col-md-6 col-xs-12 skin-terms">
                     <dnn:terms id="dnnTerms" runat="server" /> |

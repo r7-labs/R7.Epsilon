@@ -36,4 +36,13 @@
     <data name="SkipToContent.Text" xml:space="preserve">
         <value>Skip to main content</value>
     </data>
+    <data xml:space="preserve" name="FooterPane1.Content">
+        <value>Use language editor to customize this content</value>
+    </data>
+    <data xml:space="preserve" name="FooterPane2.Content">
+        <value>Use language editor to customize this content</value>
+    </data>
+    <data xml:space="preserve" name="FooterPane3.Content">
+        <value>Use language editor to customize this content</value>
+    </data>
 </root>
