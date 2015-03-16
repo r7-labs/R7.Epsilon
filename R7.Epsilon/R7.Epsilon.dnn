@@ -43,6 +43,10 @@
 							<path>bin</path>
 							<name>R7.Epsilon.dll</name>
 						</assembly>
+						<assembly>
+							<path>bin</path>
+							<name>Nini.dll</name>
+						</assembly>
 					</assemblies>
 				</component>
 			</components>
