@@ -131,6 +131,16 @@ namespace R7.Epsilon
             get { return PortalConfig.Get ("AdsenseSlot", string.Empty); }
         }
 
+        public bool ShowTerms
+        {
+            get { return PortalConfig.GetBoolean ("ShowTerms", false); }
+        }
+
+        public bool ShowPrivacy
+        {
+            get { return PortalConfig.GetBoolean ("ShowPrivacy", false); }
+        }
+
         #endregion
     }
 }
