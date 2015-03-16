@@ -34,7 +34,8 @@
 <dnn:DnnJsInclude ID="menuJS" runat="server" FilePath="js/menu.min.js" PathNameAlias="SkinPath" ForceProvider="DnnFormBottomProvider" />
 <dnn:DnnJsInclude ID="skinJS" runat="server" FilePath="js/skin.min.js" PathNameAlias="SkinPath" ForceProvider="DnnFormBottomProvider" />
 <dnn:DnnJsInclude FilePath="rangy/rangy-core.js" runat="server" PathNameAlias="SharedScripts" ForceProvider="DnnFormBottomProvider" />
-<skin:SOCIALSHARESCRIPTS runat="server" />
+
+<div id="fb-root"></div>
 <header>
     <div class="container">
         <div class="row">
@@ -230,3 +231,4 @@
     <a href="#" class="skin-float-button skin-float-button-up" title="<%: Localizer.GetString ("ButtonUp.Title") %>" style="display:none" data-toggle="tooltip" data-placement="left" data-container="body"></a>
     <skin:FEEDBACKBUTTON runat="server" CssClass="skin-float-button skin-float-button-feedback" Target="_blank" FeedbackTabId="<%# Config.FeedbackTabId %>" />
 </div>
+<skin:SOCIALSHARESCRIPTS runat="server" />

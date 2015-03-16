@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.SocialShareScripts" %>
-<%-- Facebook Like --%><div id="fb-root"></div>
+<%-- Facebook Like --%>
 <script>(function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
@@ -20,7 +20,7 @@ window.___gcfg = {
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
 })();
 </script>
-<%-- VK.com Widget--%><%-- TODO: OpenAPI link should be in the HEAD! --%><% if (Config.VkShareEnabled) { %><script type="text/javascript" src="//vk.com/js/api/openapi.js?116"></script>
+<%-- VK.com Widget--%><% if (Config.VkShareEnabled) { %><script type="text/javascript" src="//vk.com/js/api/openapi.js?116"></script>
 <script type="text/javascript">
     VK.init({apiId: <%= Config.VkApiId %>, onlyWidgets: true});
     VK.Widgets.Like("vk_like", {type: "mini", height: 20});
