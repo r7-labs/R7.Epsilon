@@ -217,7 +217,7 @@
 </div>
 
 <footer class="footer skin-footer">
-    <div class="skin-footer-middle">
+    <div class="skin-footer-main">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-md-10 col-sm-12">
@@ -239,15 +239,13 @@
     </div>
     <div class="skin-footer-last">
         <div class="container">
-            <div class="skin-footer-80x31-buttons">
-                <skin:YCYCOUNTER runat="server" />
-            </div>
             <div class="row">
-                <div class="col-md-6 col-xs-12 skin-copyright">
-                    <dnn:copyright ID="dnnCopyright" runat="server" /> |
-                    <span class="skin-copyright"><%= Localizer.GetString ("SkinCopyright.Text") %></span>
+                <div class="col-md-2 col-xs-12 skin-footer-80x31-buttons">
+                    <skin:YCYCOUNTER runat="server" />
                 </div>
-                <div class="col-md-6 col-xs-12 skin-terms">
+                <div class="col-md-10 col-xs-12 skin-terms">
+                    <dnn:copyright ID="dnnCopyright" runat="server" /> |
+                    <span class="skin-copyright"><%= Localizer.GetString ("SkinCopyright.Text") %></span> |
                     <dnn:terms id="dnnTerms" runat="server" /> |
                     <dnn:privacy id="dnnPrivacy" runat="server" />
                 </div>

@@ -483,47 +483,37 @@ ul.skin-socialgroups
 }
 
 /* Footer */
+.skin-footer
+{
+    color:#fff;
+    a { color:#fff; }
+}
 
 .skin-footer-buttons
 {
     display:inline-block;
     vertical-align:top;
     margin-bottom:15px;
-    //margin-right:40px; // FooterPane1.Content positioning
 
     td { padding-right:10px }
 }
 
-.skin-footer-middle
+.skin-footer-main
 {
     padding-top:12px;
     padding-bottom:12px;
-    color:#fff;
-    .Normal { color:#fff; }
-    background: linear-gradient(to bottom, @color-secondary-1-1 0%, @color-secondary-1-4 100% );
+    background: linear-gradient(to bottom, @color-secondary-1-1 0%, @color-secondary-1-3 100% );
 }
 
-.skin-footer-last 
-{
-    padding-bottom:5px;
-    background-color:@color-secondary-1-4;
-    color:#fff;
-    .skin-copyright { text-align:left; }
-    .skin-terms { text-align:right; }
-}
+.skin-banner-large { margin-bottom:10px; }
 
 .skin-footer-content 
 {
     display:inline-block;
 
-    a { color:#fff; }
+    .skin-footer-content-element { margin-right:15px; }
 
-    .skin-footer-content-element 
-    {
-        margin-right:15px;
-    }
-
-    .skin-footer-content-well 
+    .skin-footer-content-well
     { 
         font-size:small;
         margin-bottom:10px;
@@ -535,9 +525,19 @@ ul.skin-socialgroups
     }
 }
 
-.skin-banner-large { margin-bottom:10px; }
+.skin-footer-last 
+{
+    padding:10px 0;
+    background-color:@color-secondary-1-4;
 
-.skin-footer-80x31-buttons { margin-bottom:5px; }
+    .skin-footer-80x31-buttons { }
+
+    .skin-terms 
+    { 
+        text-align:right;
+        padding-top:7px;
+    }
+}
 
  /*------------------------------------------------*/
 /* LOGIN */
