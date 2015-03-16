@@ -486,8 +486,12 @@ ul.skin-socialgroups
 
 .skin-footer-buttons
 {
+    display:inline-block;
+    vertical-align:top;
+    margin-bottom:15px;
+    //margin-right:40px; // FooterPane1.Content positioning
+
     td { padding-right:10px }
-    margin-bottom:10px;
 }
 
 .skin-footer-middle
@@ -510,27 +514,30 @@ ul.skin-socialgroups
 
 .skin-footer-content 
 {
+    display:inline-block;
+
     a { color:#fff; }
 
     .skin-footer-content-element 
     {
-        display:inline-block;
         margin-right:15px;
     }
 
     .skin-footer-content-well 
     { 
-        display:inline-block;
         font-size:small;
-        color:#000;
-        background-color:@color-complement-1;
-        padding:10px;
         margin-bottom:10px;
         border-radius:5px;
+        border-left:3px solid #fff;
+        padding-left:10px;
+
+        span { display:inline-block; }
     }
 }
 
 .skin-banner-large { margin-bottom:10px; }
+
+.skin-footer-80x31-buttons { margin-bottom:5px; }
 
  /*------------------------------------------------*/
 /* LOGIN */

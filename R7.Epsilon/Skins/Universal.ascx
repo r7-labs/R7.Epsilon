@@ -22,6 +22,7 @@
 <%@ Register TagPrefix="skin" TagName="LOGOTITLE" Src="Controls/LogoTitle.ascx" %>
 <%@ Register TagPrefix="skin" TagName="BROWSERCHECK" Src="Controls/BrowserCheck.ascx" %>
 <%@ Register TagPrefix="skin" TagName="FEEDBACKBUTTON" Src="Controls/FeedbackButton.ascx" %>
+<%@ Register TagPrefix="skin" TagName="YCycounter" Src="Controls/YCycounter.ascx" %>
 
 <dnn:META ID="bootstrapIECompat" runat="server" Name="X-UA-Compatible" Content="IE=edge" />
 <dnn:META ID="mobileScale" runat="server" Name="viewport" Content="width=device-width,initial-scale=1" />
@@ -223,10 +224,13 @@
                     <div class="skin-banner-large hidden-xs">
                         <skin:GADSENSE runat="server" />
                     </div>
-                    <div class="skin-footer-buttons hidden-xs">
-                        <dnn:BANNER id="dnnBanner1" runat="server" GroupName="<%# Config.FooterButtonsGroupName %>" BannerTypeId="4" BannerCount="4" Orientation="H" AllowNullBannerType="true" />    
+                    <div class="row">
+                        <div class="skin-footer-buttons col-sm-6 hidden-xs">
+                            <dnn:BANNER id="dnnBanner1" runat="server" GroupName="<%# Config.FooterButtonsGroupName %>" BannerTypeId="4" BannerCount="3" Orientation="H" AllowNullBannerType="true" />    
+                        </div>
+                        <div class="skin-footer-content col-sm-6"><%= Localizer.GetString ("FooterPane1.Content") %></div>
                     </div>
-                    <div class="skin-footer-content"><%= Localizer.GetString ("FooterPane1.Content") %></div>
+
                 </div>
                 <div class="col-lg-2 col-md-2 col-sm-6 skin-footer-content"><%= Localizer.GetString ("FooterPane2.Content") %></div>
                 <div class="col-lg-2 col-sm-6 skin-footer-content"><%= Localizer.GetString ("FooterPane3.Content") %></div>
@@ -235,6 +239,9 @@
     </div>
     <div class="skin-footer-last">
         <div class="container">
+            <div class="skin-footer-80x31-buttons">
+                <skin:YCYCOUNTER runat="server" />
+            </div>
             <div class="row">
                 <div class="col-md-6 col-xs-12 skin-copyright">
                     <dnn:copyright ID="dnnCopyright" runat="server" /> |

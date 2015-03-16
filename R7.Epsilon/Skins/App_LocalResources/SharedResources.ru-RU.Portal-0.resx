@@ -13,7 +13,7 @@
 		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
 	</resheader>
     <data xml:space="preserve" name="FooterPane1.Content">
-        <value><![CDATA[<div class="skin-footer-content-well">Сетевое издание &quot;На добрую землю&quot;, свидетельство о регистрации СМИ ЭЛ № ФС 77-56821</div>]]></value>
+        <value><![CDATA[<div class="skin-footer-content-well"><span>Сетевое издание &quot;На добрую землю&quot;,</span> <span>свидетельство о регистрации СМИ</span> <span>ЭЛ № ФС 77-56821</span></div>]]></value>
     </data>
     <data xml:space="preserve" name="FooterPane2.Content">
         <value><![CDATA[
