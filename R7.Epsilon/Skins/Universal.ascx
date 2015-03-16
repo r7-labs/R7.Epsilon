@@ -26,21 +26,16 @@
 
 <dnn:META ID="bootstrapIECompat" runat="server" Name="X-UA-Compatible" Content="IE=edge" />
 <dnn:META ID="mobileScale" runat="server" Name="viewport" Content="width=device-width,initial-scale=1" />
-
 <dnn:DnnCssInclude ID="bootStrapCSS" runat="server" FilePath="css/bootstrap.min.css" PathNameAlias="SkinPath" Priority="14" />
 <dnn:DnnCssInclude ID="bootStrapThemeCSS" runat="server" FilePath="css/bootstrap-theme.min.css" PathNameAlias="SkinPath" Priority="14" />
 <dnn:DnnCssInclude id="skinCSS" runat="server" FilePath="<%# Config.SkinCss %>" PathNameAlias="SkinPath" />
-
 <dnn:JQUERY ID="dnnjQuery" runat="server" jQueryHoverIntent="true" />
 <dnn:DnnJsInclude ID="bootstrapJS" runat="server" FilePath="js/bootstrap.min.js" PathNameAlias="SkinPath" Priority="10" ForceProvider="DnnFormBottomProvider" />
 <dnn:DnnJsInclude ID="menuJS" runat="server" FilePath="js/menu.min.js" PathNameAlias="SkinPath" ForceProvider="DnnFormBottomProvider" />
 <dnn:DnnJsInclude ID="skinJS" runat="server" FilePath="js/skin.min.js" PathNameAlias="SkinPath" ForceProvider="DnnFormBottomProvider" />
 <dnn:DnnJsInclude FilePath="rangy/rangy-core.js" runat="server" PathNameAlias="SharedScripts" ForceProvider="DnnFormBottomProvider" />
-
 <skin:SOCIALSHARESCRIPTS runat="server" />
-
 <header>
-    
     <div class="container">
         <div class="row">
             <a href="#TopRow1" class="sr-only sr-only-focusable"><%: Localizer.GetString ("SkipToContent.Text") %></a>
@@ -67,7 +62,6 @@
             </div>
         </div>
     </div>
-
     <nav class="navbar navbar-default skin-primary-navbar" role="navigation">
         <div class="container">
             <div class="navbar-brand skin-navbar-brand-link visible-xs">
@@ -104,7 +98,6 @@
             </div>
         </div>
     </nav>
-
     <nav class="navbar skin-secondary-navbar" role="navigation">
         <div class="container">
             <div class="navbar-collapse collapse dnnClear skin-top-menu">
@@ -127,95 +120,76 @@
         </div>
     </nav>
 </header>
-
 <div id="CarouselPane" runat="server" class="carousel slide" containertype="G" containername="R7.Epsilon" containersrc="Blank.ascx" />
-
 <div class="container">
-
     <div id="TopRow1" class="row">
         <div id="TopPane" runat="server" class="col-md-12" />
     </div>
-
     <div id="TopRow2" class="row">
         <div id="TopLeftPane" runat="server" class="col-md-7" />
         <!-- REVIEW: Make TopRightPane of fixed width? -->
         <div id="TopRightPane" runat="server" class="col-md-5" />
     </div>
-
     <div id="TopRow3" class="row">
         <div id="TopPane11" runat="server" class="col-md-4" />
         <div id="TopPane12" runat="server" class="col-md-4" />
         <div id="TopPane13" runat="server" class="col-md-4" />
     </div>
-
     <div id="TopRow4" class="row">
         <div id="TopPane21" runat="server" class="col-md-4" />
         <div id="TopPane22" runat="server" class="col-md-4" />
         <div id="TopPane23" runat="server" class="col-md-4" />
     </div>
-
     <div id="ContentOddRow1" class="row">
         <div id="ContentPane" runat="server" class="col-md-9 col-sm-7" />
         <div id="RightPane" runat="server" class="col-md-3 col-sm-5" />
     </div>
-   
     <div id="ContentEvenRow1" class="row"> 
         <div id="LeftPane" runat="server" class="col-md-3 col-sm-5" />
         <div id="ContentLeftPane" runat="server" class="col-md-9 col-sm-7" />
     </div>
-
     <div id="ContentOddRow2" class="row">
         <div id="ContentPane2" runat="server" class="col-md-9 col-sm-7" />
         <div id="RightPane2" runat="server" class="col-md-3 col-sm-5" />
     </div>
-
     <div id="ContentEvenRow2" class="row"> 
         <div id="LeftPane2" runat="server" class="col-md-3 col-sm-5" />
         <div id="ContentLeftPane2" runat="server" class="col-md-9 col-sm-7" />
     </div>
-
     <div id="ContentOddRow3" class="row">
         <div id="ContentPane3" runat="server" class="col-md-9 col-sm-7" />
         <div id="RightPane3" runat="server" class="col-md-3 col-sm-5" />
     </div>
-
     <div id="ContentEvenRow3" class="row"> 
         <div id="LeftPane3" runat="server" class="col-md-3 col-sm-5" />
         <div id="ContentLeftPane3" runat="server" class="col-md-9 col-sm-7" />
     </div>
-
     <div id="ContentOddRow4" class="row">
         <div id="ContentPane4" runat="server" class="col-md-9 col-sm-7" />
         <div id="RightPane4" runat="server" class="col-md-3 col-sm-5" />
     </div>
-
     <div id="ContentEvenRow4" class="row"> 
         <div id="LeftPane4" runat="server" class="col-md-3 col-sm-5" />
         <div id="ContentLeftPane4" runat="server" class="col-md-9 col-sm-7" />
     </div>
-
     <div id="BottonRow1" class="row">
         <div id="BottomPane11" runat="server" class="col-md-4" />
         <div id="BottomPane12" runat="server" class="col-md-4" />
         <div id="BottomPane13" runat="server" class="col-md-4" />
     </div>
-
     <div id="BottonRow2" class="row">
         <div id="BottomPane21" runat="server" class="col-md-4" />
         <div id="BottomPane22" runat="server" class="col-md-4" />
         <div id="BottomPane23" runat="server" class="col-md-4" />
     </div>
-
     <div id="BottonRow3" class="row">
         <div id="BottomLeftPane" runat="server" class="col-md-7" />
         <div id="BottomRightPane" runat="server" class="col-md-5" />
     </div>
-
     <div id="BottomRow4" class="row">
         <div id="BottomPane" runat="server" class="col-md-12" />
     </div>
 </div>
-
 <footer class="footer skin-footer">
     <div class="skin-footer-main">
         <div class="container">
@@ -230,7 +204,6 @@
                         </div>
                         <div class="skin-footer-content col-sm-6"><%= Localizer.GetString ("FooterPane1.Content") %></div>
                     </div>
-
                 </div>
                 <div class="col-lg-2 col-md-2 col-sm-6 skin-footer-content"><%= Localizer.GetString ("FooterPane2.Content") %></div>
                 <div class="col-lg-2 col-sm-6 skin-footer-content"><%= Localizer.GetString ("FooterPane3.Content") %></div>
@@ -253,7 +226,6 @@
         </div>
     </div>
 </footer>
-
 <div class="skin-float-button-wrapper">
     <a href="#" class="skin-float-button skin-float-button-up" title="<%: Localizer.GetString ("ButtonUp.Title") %>" style="display:none" data-toggle="tooltip" data-placement="left" data-container="body"></a>
     <skin:FEEDBACKBUTTON runat="server" CssClass="skin-float-button skin-float-button-feedback" Target="_blank" FeedbackTabId="<%# Config.FeedbackTabId %>" />

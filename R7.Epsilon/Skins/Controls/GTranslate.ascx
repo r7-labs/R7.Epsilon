@@ -1,5 +1,4 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.GTranslate" %>
-
 <div class="language-object">
     <span class="Language" title="<%= Localizer.GetString ("GoogleTranslate.Title") %>" data-toggle="tooltip" data-placement="bottom">
         <a href="javascript:skin_gtranslate('<%= CultureInfo.CurrentCulture.TwoLetterISOLanguageName %>')">

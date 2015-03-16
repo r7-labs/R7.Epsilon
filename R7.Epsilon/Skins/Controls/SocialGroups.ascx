@@ -1,5 +1,4 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.SocialGroups" %>
-
 <ul class="skin-socialgroups">
     <li>
         <a class="skin-social-button skin-social-vk" href="http://vk.com/<%= Config.VkGroup %>" target="_blank" title="<%= Localizer.GetString ("VKontakte.Title") %>" aria-label="<%= Localizer.GetString ("VKontakte.Title") %>" ></a>
