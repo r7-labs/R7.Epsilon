@@ -244,10 +244,10 @@
                     <skin:YCYCOUNTER runat="server" />
                 </div>
                 <div class="col-md-10 col-xs-12 skin-terms">
-                    <dnn:copyright ID="dnnCopyright" runat="server" /> |
+                    <dnn:COPYRIGHT ID="dnnCopyright" runat="server" /> |
                     <span class="skin-copyright"><%= Localizer.GetString ("SkinCopyright.Text") %></span> |
-                    <dnn:terms id="dnnTerms" runat="server" /> |
-                    <dnn:privacy id="dnnPrivacy" runat="server" />
+                    <dnn:TERMS id="dnnTerms" runat="server" /> |
+                    <dnn:PRIVACY id="dnnPrivacy" runat="server" />
                 </div>
             </div>
         </div>
