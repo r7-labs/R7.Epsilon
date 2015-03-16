@@ -136,6 +136,9 @@
     <Compile Include="Skins\Controls\Founders.ascx.cs">
       <DependentUpon>Founders.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Skins\Controls\YCycounter.ascx.cs">
+      <DependentUpon>YCycounter.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Containers\Blank.ascx" />
@@ -221,6 +224,7 @@
     <Content Include="Skins\images\social_mono_32x32.png" />
     <Content Include="Skins\images\social_mono_32x32.svg" />
     <Content Include="Skins\Controls\GAdsense.ascx" />
+    <Content Include="Skins\Controls\YCycounter.ascx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

@@ -69,4 +69,7 @@
     <data xml:space="preserve" name="Youtube.Title">
         <value>Youtube</value>
     </data>
+    <data xml:space="preserve" name="YandexCycounter.Text">
+        <value>Yandex citation index</value>
+    </data>
 </root>
