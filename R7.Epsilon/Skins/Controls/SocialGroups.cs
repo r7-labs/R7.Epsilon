@@ -36,5 +36,6 @@ namespace R7.Epsilon
 {
     public class SocialGroups : EpsilonSkinObjectBase
     {
+        public bool MobileView { get; set; }
     }
 }

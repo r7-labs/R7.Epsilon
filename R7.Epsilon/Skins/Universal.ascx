@@ -42,19 +42,22 @@
             <skin:BROWSERCHECK runat="server" />
         </div>
         <div class="row">
-            <div class="col-lg-1 col-md-1 col-sm-2 col-xs-6 skin-language">
+            <div class="col-md-1 col-sm-2 col-xs-4 skin-language">
                 <dnn:LANGUAGE runat="server" id="dnnLANGUAGE" ShowLinks="True" ShowMenu="False" />
             </div>  
-            <div class="col-lg-4 col-md-4 col-sm-2 col-xs-6 skin-functions">
+            <div class="col-md-4 col-sm-2 col-xs-5 skin-functions">
                 <a class="skin-functions-icon skin-functions-icon-gtranslate" href="javascript:skin_gtranslate('<%= CultureInfo.CurrentCulture.TwoLetterISOLanguageName %>')" title="<%: Localizer.GetString ("GoogleTranslate.Title") %>" data-toggle="tooltip" data-placement="bottom"></a>
                 <asp:LinkButton id="linkA11yButton" runat="server" CssClass="skin-functions-icon skin-functions-icon-a11y" OnClick="linkA11yButton_Click" data-toggle="tooltip" data-placement="bottom" />
                 <a class="skin-functions-icon skin-functions-icon-age-rating" href="#" data-toggle="tooltip" data-placement="bottom" title="<%: Localizer.GetString("AgeRating.Title") %>"></a>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-10 skin-search">
+            <div class="visible-xs col-xs-3 skin-socialgroups-wrapper">
+                <skin:SOCIALGROUPS runat="server" MobileView="true" />
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12 skin-search">
                 <dnn:SEARCH id="dnnSearch" runat="server" ShowSite="false" ShowWeb="false" />
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-2 skin-socialgroups-wrapper">
-                <skin:SOCIALGROUPS runat="server" />
+            <div class="col-md-3 col-sm-4 hidden-xs skin-socialgroups-wrapper">
+                <skin:SOCIALGROUPS runat="server" MobileView="false" />
             </div>
         </div>
     </div>
