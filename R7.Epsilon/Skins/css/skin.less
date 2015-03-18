@@ -235,22 +235,20 @@ header > .container > .row
 
 .skin-search
 {
-    // HACK: fix clear button position
+    .searchInputContainer { width:100%; }
+
     .dnnSearchBoxClearText
     {
+        // fix clear button position
         position:relative;
         top:2px;
     }
-    #dnn_dnnSearch_cmdSearch { display:none }
-    #dnn_dnnSearch_txtSearch
-    {
-        width:16em;
-        margin:0;
-    }
+
     .searchSkinObjectPreview
     {
-        /* attach to the right inputbox border */
+        // attach to the right inputbox border
         right:0;
+        top:32px;
     }
 }
 

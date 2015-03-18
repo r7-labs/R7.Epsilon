@@ -3,6 +3,16 @@
 }
 
 $(function() {
+    // override !important 
+    $(".searchInputContainer").attr ("style", "display:inline!important");
+
+    // "Bootstrapify" search
+    $("#dnn_dnnSearch_ClassicSearch").addClass ("input-group");
+    $("#dnn_dnnSearch_txtSearch").removeClass ("NormalTextBox").addClass("form-control");
+    $("#dnn_dnnSearch_cmdSearch").addClass ("btn btn-success").wrap ("<span class='input-group-btn'></span>");
+});
+
+$(function() {
     var localMenu = $(".skin-local-menu").first ();
     if (localMenu.find (".sub").length > 0)
     {
