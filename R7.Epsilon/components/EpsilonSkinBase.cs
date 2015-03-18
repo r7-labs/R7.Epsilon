@@ -86,7 +86,6 @@ namespace R7.Epsilon
             base.OnInit (e);
 
             // localize accessibility button
-            linkA11yButton.Text = Localizer.GetString ("A11y.Text");
             linkA11yButton.ToolTip = Localizer.GetString ("A11y.Title");
         }
 

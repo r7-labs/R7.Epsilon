@@ -14,7 +14,6 @@
 <%@ Register TagPrefix="dnn" TagName="BREADCRUMB" Src="~/Admin/Skins/BreadCrumb.ascx" %>
 <%@ Register TagPrefix="dnn" Namespace="DotNetNuke.Web.Client.ClientResourceManagement" Assembly="DotNetNuke.Web.Client" %>
 <%@ Register TagPrefix="skin" TagName="GADSENSE" Src="Controls/GAdsense.ascx" %>
-<%@ Register TagPrefix="skin" TagName="GTRANSLATE" Src="Controls/GTranslate.ascx" %>
 <%@ Register TagPrefix="skin" TagName="SOCIALGROUPS" Src="Controls/SocialGroups.ascx" %>
 <%@ Register TagPrefix="skin" TagName="PAGEHEADER" Src="Controls/PageHeader.ascx" %>
 <%@ Register TagPrefix="skin" TagName="SOCIALSHARESCRIPTS" Src="Controls/SocialShareScripts.ascx" %>
@@ -43,23 +42,19 @@
             <skin:BROWSERCHECK runat="server" />
         </div>
         <div class="row">
-            <div class="skin-language-wrapper">
-                <div class="skin-language">
-                    <dnn:LANGUAGE runat="server" id="dnnLANGUAGE" ShowLinks="True" ShowMenu="False" />
-                    <skin:GTRANSLATE runat="server" />
-                </div>
+            <div class="col-lg-1 col-md-1 col-sm-2 col-xs-6 skin-language">
+                <dnn:LANGUAGE runat="server" id="dnnLANGUAGE" ShowLinks="True" ShowMenu="False" />
             </div>  
-            <div class="skin-socialgroups-wrapper">
+            <div class="col-lg-4 col-md-4 col-sm-2 col-xs-6 skin-functions">
+                <a class="skin-functions-icon skin-functions-icon-gtranslate" href="javascript:skin_gtranslate('<%= CultureInfo.CurrentCulture.TwoLetterISOLanguageName %>')" title="<%: Localizer.GetString ("GoogleTranslate.Title") %>" data-toggle="tooltip" data-placement="bottom"></a>
+                <asp:LinkButton id="linkA11yButton" runat="server" CssClass="skin-functions-icon skin-functions-icon-a11y" OnClick="linkA11yButton_Click" data-toggle="tooltip" data-placement="bottom" />
+                <a class="skin-functions-icon skin-functions-icon-age-rating" href="#" data-toggle="tooltip" data-placement="bottom" title="<%: Localizer.GetString("AgeRating.Title") %>"></a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-10 skin-search">
+                <dnn:SEARCH id="dnnSearch" runat="server" ShowSite="false" ShowWeb="false" />
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-2 skin-socialgroups-wrapper">
                 <skin:SOCIALGROUPS runat="server" />
-            </div>
-            <div class="skin-search-wrapper">
-                <div class="dnnFormItem skin-search">
-                    <dnn:SEARCH id="dnnSearch" runat="server" ShowSite="false" ShowWeb="false" />
-                </div>
-            </div>
-            <div class="skin-icons-wrapper">
-                <asp:LinkButton id="linkA11yButton" runat="server" CssClass="skin-round-icon skin-icon-a11y" OnClick="linkA11yButton_Click" data-toggle="tooltip" data-placement="bottom" />
-                <div class="skin-round-icon skin-icon-age-rating" data-toggle="tooltip" data-placement="bottom" title="<%: Localizer.GetString("AgeRating.Title") %>"><%= Localizer.GetString("AgeRating.Text") %></div>
             </div>
         </div>
     </div>

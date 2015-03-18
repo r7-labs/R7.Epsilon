@@ -97,9 +97,6 @@
     <Compile Include="Skins\Universal.ascx.cs">
       <DependentUpon>Universal.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Skins\Controls\GTranslate.ascx.cs">
-      <DependentUpon>GTranslate.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Skins\Controls\PageHeader.cs">
       <DependentUpon>PageHeader.ascx</DependentUpon>
     </Compile>
@@ -184,7 +181,6 @@
     <Content Include="Skins\images\logo-template-350x75.png" />
     <Content Include="Skins\images\logo-template-350x75.svg" />
     <Content Include="Skins\js\skin.js" />
-    <Content Include="Skins\Controls\GTranslate.ascx" />
     <Content Include="Skins\images\gtranslate_27x18.png" />
     <Content Include="Skins\images\gtranslate_27x18.svg" />
     <Content Include="Skins\images\logo_template_133x100.png" />
