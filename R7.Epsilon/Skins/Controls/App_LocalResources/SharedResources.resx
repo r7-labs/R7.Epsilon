@@ -12,12 +12,6 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-    <data name="GoogleTranslate.Title" xml:space="preserve">
-        <value>Translate with Google</value>
-    </data>
-    <data name="GoogleTranslate.Alt" xml:space="preserve">
-        <value>Translate with Google</value>
-    </data>
     <data name="PagePublishedMessage.Format" xml:space="preserve">
         <value>{0:MM/dd/yyyy} by {1}</value>
     </data>
