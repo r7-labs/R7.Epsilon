@@ -6,7 +6,7 @@ $(function() {
     // "Bootstrapify" search
     $("#dnn_dnnSearch_ClassicSearch").addClass ("input-group");
     $("#dnn_dnnSearch_txtSearch").removeClass ("NormalTextBox").addClass("form-control");
-    $("#dnn_dnnSearch_cmdSearch").addClass ("btn btn-success").wrap ("<span class='input-group-btn'></span>");
+    $("#dnn_dnnSearch_cmdSearch").addClass ("btn btn-default").wrap ("<span class='input-group-btn'></span>");
 });
 
 $(function() {
