@@ -159,7 +159,7 @@ header > .container > .row
 {
     height:32px; // search carry fix
     padding-left:0;
-    padding-top:7px;
+    padding-top:9px;
 
     & > .language-object 
     {
@@ -171,6 +171,7 @@ header > .container > .row
 .skin-functions
 {   
     padding-left:0;
+    padding-top:4px;
 
     .skin-functions-icon
     {
@@ -194,26 +195,9 @@ header > .container > .row
     }
 }
 
-@media only screen and (max-width : 767px) 
-{
-    .skin-functions 
-    {
-        padding-left:inherit;
-        padding-right:0;
-        text-align:center;
-    }
-
-    .skin-search
-    {
-        padding-top:4px;
-        padding-bottom:4px;
-    }
-}
-
 .skin-search
 {
-    padding-left:0;
-    padding-right:0;
+    padding:0 0 3px 0;
 
     .searchInputContainer 
     { 
@@ -235,10 +219,26 @@ header > .container > .row
     }
 }
 
+@media only screen and (max-width : 767px) 
+{
+    .skin-functions 
+    {
+        padding-left:inherit;
+        padding-right:0;
+        text-align:center;
+    }
+
+    .skin-search
+    {
+        padding-top:4px;
+        padding-bottom:4px;
+    }
+}
+
 .skin-socialgroups-wrapper
 {
-    margin-top:1px;
     padding-right:0;
+    padding-top:4px;
 }
 
 ul.skin-socialgroups
