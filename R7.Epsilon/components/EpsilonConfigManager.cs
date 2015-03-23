@@ -63,13 +63,20 @@ namespace R7.Epsilon
 
         public EpsilonConfig GetConfig (int portalId)
         {
-            if (portalConfigs.ContainsKey (portalId))
-                return portalConfigs [portalId];
-            else
+            lock (instanceLock)
             {
-                var portalConfig = new EpsilonConfig (portalId);
-                portalConfigs.Add (portalId, portalConfig);
-                return portalConfig;
+                if (portalConfigs.ContainsKey (portalId))
+                {
+                    var portalConfig = portalConfigs [portalId];
+                    portalConfig.EnsureIsValid ();
+                    return portalConfig;
+                }
+                else
+                {
+                    var portalConfig = new EpsilonConfig (portalId);
+                    portalConfigs.Add (portalId, portalConfig);
+                    return portalConfig;
+                }
             }
         }
     }

@@ -26,9 +26,6 @@
 
 using System;
 using System.IO;
-using System.Reflection;
-using System.Configuration;
-using System.Collections.Specialized;
 using DotNetNuke.Entities.Portals;
 using DotNetNuke.Common;
 using Nini.Config;
@@ -43,6 +40,14 @@ namespace R7.Epsilon
 
         protected IConfig PortalConfig;
 
+        protected string PortalConfigFile;
+
+        protected DateTime LastWriteTimeUtc;
+
+        protected DateTime ValidUntilTimeUtc;
+
+        // protected const int ValidSeconds = 60;
+
         #endregion
 
         protected EpsilonConfigBase (int portalId)
@@ -50,20 +55,39 @@ namespace R7.Epsilon
             var portalSettings = new PortalSettings (portalId);
 
             // portal config source
-            var portalConfigFile = Path.Combine (portalSettings.HomeDirectoryMapPath, "R7.Epsilon-portal.config");
+            PortalConfigFile = Path.Combine (portalSettings.HomeDirectoryMapPath, "R7.Epsilon-portal.config");
 
-            if (!File.Exists (portalConfigFile))
+            if (!File.Exists (PortalConfigFile))
             {
                 // copy generic config file to portal folder
                 var genericConfigFile = Path.Combine (Globals.HostMapPath, "Skins\\R7.Epsilon\\portal.config");
-                File.Copy (genericConfigFile, portalConfigFile);
+                File.Copy (genericConfigFile, PortalConfigFile);
             }
 
+            Load ();
+        }
+
+        protected void Load ()
+        {
+            // set last write time
+            LastWriteTimeUtc = File.GetLastWriteTimeUtc (PortalConfigFile);
+            // ValidUntilTimeUtc = DateTime.UtcNow.AddSeconds (ValidSeconds);
+
             // get config source
-            PortalConfigSource = new DotNetConfigSource (portalConfigFile);
+            PortalConfigSource = new DotNetConfigSource (PortalConfigFile);
 
             // get configs (config sections)
             PortalConfig = PortalConfigSource.Configs ["Portal"];
+        }
+
+        /// <summary>
+        /// Ensures the config is valid and reload if it's not.
+        /// </summary>
+        public void EnsureIsValid ()
+        {
+            // if (DateTime.UtcNow > ValidUntilTimeUtc)
+                if (File.GetLastWriteTimeUtc (PortalConfigFile) > LastWriteTimeUtc)
+                    Load ();
         }
     }
 }
