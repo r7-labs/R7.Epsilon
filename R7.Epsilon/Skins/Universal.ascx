@@ -155,6 +155,16 @@
         <div id="LeftPane2" runat="server" class="col-md-3 col-sm-5" />
         <div id="ContentLeftPane2" runat="server" class="col-md-9 col-sm-7" />
     </div>
+    <div id="MiddleRow1" class="row">
+        <div id="MiddlePane11" runat="server" class="col-md-4" />
+        <div id="MiddlePane12" runat="server" class="col-md-4" />
+        <div id="MiddlePane13" runat="server" class="col-md-4" />
+    </div>
+    <div id="MiddleRow2" class="row">
+        <div id="MiddlePane21" runat="server" class="col-md-4" />
+        <div id="MiddlePane22" runat="server" class="col-md-4" />
+        <div id="MiddlePane23" runat="server" class="col-md-4" />
+    </div>
     <div id="ContentOddRow3" class="row">
         <div id="ContentPane3" runat="server" class="col-md-9 col-sm-7" />
         <div id="RightPane3" runat="server" class="col-md-3 col-sm-5" />
