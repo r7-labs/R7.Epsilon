@@ -509,9 +509,40 @@ ul.skin-socialgroups
     }
 }
 
- /*------------------------------------------------*/
-/* LOGIN */
-/*------------------------------------------------*/
+/* Login */
+
+.skin-login-simple 
+{
+    float:right;
+    padding-top: 9px;
+    color:#fff;
+
+    a { color:#fff; }
+
+    .skin-login-link
+    {
+        display:inline-block;
+        vertical-align: top;
+        padding-top: 5px;
+        padding-right: 10px;
+    }
+
+    .registerGroup 
+    { 
+        display:inline-block;
+        padding-right:5px;
+
+        .buttonGroup 
+        { 
+            list-style:none;
+            margin: 0px;
+            float: left;
+        }
+
+        .userMessages, .userNotifications, .userDisplayName { display:none; }
+    }
+}
+
 .skin-login-full {
     position:absolute;
     right:0;
@@ -628,16 +659,7 @@ ul.skin-socialgroups
     .userNotifications span { background: url('../images/icon_notification_active.png') no-repeat center center; }
     .userMessages span { background: url('../images/icon_message_active.png') no-repeat center center; }
 }
-
-.skin-login-simple 
-{
-    float:right;
-    margin-right:10px;
-    margin-top:15px;
-    color:#fff;
-    a { color:#fff; }
-}
-
+ 
 /* .navbar { background-image: linear-gradient(#54EBB4, #2FE7A4 60%, #1DE59C) }*/
 
 .navbar-default .navbar-nav > li > div > ul > li > a,

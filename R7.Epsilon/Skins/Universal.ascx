@@ -75,7 +75,8 @@
                 <span class="icon-bar"></span>
             </button>
             <div class="skin-login-simple visible-xs">
-                <dnn:LOGIN runat="server" /> | <dnn:USER runat="server" />
+                <dnn:USER runat="server" LegacyMode="false" />
+                <dnn:LOGIN runat="server" CssClass="skin-login-link" />
             </div>
             <div class="navbar-collapse collapse dnnClear skin-top-menu">
                 <div class="skin-primary-menu">
