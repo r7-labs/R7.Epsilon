@@ -1,5 +1,8 @@
 /* Base menu styles */
 
+// menu variables
+@submenu-border-radius:16px;
+
 // menu font size
 ul.megamenu * { font-size:@menu-font-size; }
 
@@ -65,21 +68,23 @@ ul.megamenu
             { 
                 display:block; 
                 min-height:24px;
-                font-weight:bold;
 
-                a { padding:4px 5px; }
+                a 
+                { 
+                    padding:4px 8px;
+                    border-radius:3px;
+                }
 
                 &.subheader a { border-top:1px solid; }
 
-                &.sublink 
+                &.sublink a
                 { 
-                    font-weight:normal;
-                    a 
-                    { 
-                        padding-top:2px;
-                        padding-bottom:2px;
-                        font-size:@smaller-menu-font-size; 
-                    }
+                    padding-top:2px;
+                    padding-bottom:2px;
+                    font-size:@smaller-menu-font-size; 
+
+                    // subpointer positioning
+                    span { padding-right:0.5em; }
                 }
             }
         }
@@ -95,7 +100,7 @@ ul.megamenu
         li.level0 
         { 
             display:inline-block; // for horizontal menus
-            a { padding:5px; }
+            &> a { padding:5px; }
         }
 
         .sub 
@@ -132,24 +137,21 @@ ul.megamenu
             &:hover, &.megahover 
             { 
                 a.level0 { color:@color-primary-4; }
-                background-color:@color-complement-2; 
+                background-color:@color-complement-1; 
             }
         }
         .sub
         {
-            border-color:@color-complement-2;
+            border-color:@color-complement-1;
             background-color:@color-primary-2;
-            border-bottom-left-radius:@borderRadius;
-            border-bottom-right-radius:@borderRadius;
+            border-bottom-left-radius:@submenu-border-radius;
+            border-bottom-right-radius:@submenu-border-radius;
             box-shadow:2px 2px 2px @color-primary-4;
 
-            li 
+            li.current, li.megahover, li:hover a
             {
-                &.current, &:hover, &.megahover  
-                { 
-                    a { color:@color-primary-4; }
-                    background-color:@color-complement-1;
-                }
+                color:@color-primary-4;
+                background-color:@color-complement-1;
             }
 
             li.subheader a { border-color:darken(@color-primary-2, 5%); }
@@ -179,29 +181,28 @@ ul.megamenu
             }
 
             &.current { background-color:@color-secondary-1-2; }
+
             &:hover, &.megahover 
             { 
                 a.level0 { color:@color-secondary-1-4; }
-                background-color:@color-secondary-2-2; 
+                background-color:@color-secondary-2-1; 
             }
         }
 
         .sub
         {
-            border-color:@color-secondary-2-2;
+            border-color:@color-secondary-2-1;
             background-color:@color-secondary-1-2;
-            border-bottom-left-radius:@borderRadius;
-            border-bottom-right-radius:@borderRadius;
+            border-bottom-left-radius:@submenu-border-radius;
+            border-bottom-right-radius:@submenu-border-radius;
             box-shadow:2px 2px 2px @color-secondary-1-4;
 
-            li 
+            li.current, li.megahover, li:hover a
             {
-                &.current, &:hover, &.megahover  
-                {
-                    a { color:@color-secondary-1-4; }
-                    background-color:@color-secondary-2-1;
-                }
+                color:@color-secondary-1-4;
+                background-color:@color-secondary-2-1;
             }
+
             li.subheader a { border-color:darken(@color-secondary-1-2, 5%); }
         }
     }
@@ -252,7 +253,7 @@ ul.megamenu
             &:hover, &.megahover
             { 
                 color:@color-secondary-1-4;
-                background-color:@color-secondary-2-2; 
+                background-color:@color-secondary-2-1; 
                 border-bottom-left-radius:0;
                 border-bottom-right-radius:0;
 
@@ -265,19 +266,16 @@ ul.megamenu
             top:30px!important;
             width:320px!important;
 
-            border-color:@color-secondary-2-2;
+            border-color:@color-secondary-2-1;
             background-color:@color-secondary-1-2;
-            border-bottom-left-radius:@borderRadius;
-            border-bottom-right-radius:@borderRadius;
+            border-bottom-left-radius:@submenu-border-radius;
+            border-bottom-right-radius:@submenu-border-radius;
             box-shadow:2px 2px 2px @color-secondary-1-4;
 
-            li 
+            li.current, li.megahover, li:hover a
             {
-                &.current, &:hover, &.megahover  
-                {
-                    a { color:@color-secondary-1-4; }
-                    background-color:@color-secondary-2-1;
-                }
+                color:@color-secondary-1-4;
+                background-color:@color-secondary-2-1;
             }
 
             li.subheader a { border-color:darken(@color-secondary-1-2, 5%); }

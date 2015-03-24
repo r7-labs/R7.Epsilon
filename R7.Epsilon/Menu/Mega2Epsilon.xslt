@@ -5,7 +5,7 @@
 	<xsl:param name="Options" />
     <xsl:param name="hamburgerMenu">0</xsl:param>
 	<xsl:param name="subMenuColumns">3</xsl:param>
-	<xsl:param name="subpointer"><![CDATA[&#8226;&nbsp;]]></xsl:param>
+	<xsl:param name="subpointer"><![CDATA[&#8226;]]></xsl:param>
 	<xsl:param name="pointer"><![CDATA[&nbsp;&#9662;]]></xsl:param>
 	<xsl:param name="startUl"><![CDATA[<ul>]]></xsl:param>
 	<xsl:param name="endUl"><![CDATA[</ul>]]></xsl:param>
