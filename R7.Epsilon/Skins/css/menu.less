@@ -64,14 +64,12 @@ ul.megamenu
             li 
             { 
                 display:block; 
-
                 min-height:24px;
-               
                 font-weight:bold;
 
                 a { padding:4px 5px; }
 
-                &.subheader { border-top:1px solid; }
+                &.subheader a { border-top:1px solid; }
 
                 &.sublink 
                 { 
@@ -117,7 +115,7 @@ ul.megamenu
             }
 
             // don't overline first menu items
-            .megarow ul.megamenusubcontent:first-child li.subheader:first-child { border-top:none; }
+            .megarow ul.megamenusubcontent:first-child li.subheader:first-child a { border-top:none; }
         }
     }
 }
@@ -167,7 +165,7 @@ ul.megamenu .sub
                 }
             }
 
-            li.subheader { border-color:darken(@color-primary-2, 5%); }
+            li.subheader a { border-color:darken(@color-primary-2, 5%); }
         }
     }
 }
@@ -217,7 +215,7 @@ ul.megamenu .sub
                     background-color:@color-secondary-2-1;
                 }
             }
-            li.subheader { border-color:darken(@color-secondary-1-2, 5%); }
+            li.subheader a { border-color:darken(@color-secondary-1-2, 5%); }
         }
     }
 }
@@ -295,10 +293,10 @@ ul.megamenu .sub
                 }
             }
 
-            li.subheader { border-color:darken(@color-secondary-1-2, 5%); }
+            li.subheader a { border-color:darken(@color-secondary-1-2, 5%); }
 
             // don't overline first menu items
-            .megarow:first-child ul.megamenusubcontent:first-child li.subheader:first-child { border-top:none; }
+            .megarow:first-child ul.megamenusubcontent:first-child li.subheader:first-child a { border-top:none; }
         }
     }
 }
@@ -335,6 +333,7 @@ ul.megamenu .sub
                 border-bottom:4px solid;
                 border-bottom-right-radius:0;
                 box-shadow:none;
+                padding-top:0;
 
                 // stack menu blocks vertically
                 &> .megarow 
