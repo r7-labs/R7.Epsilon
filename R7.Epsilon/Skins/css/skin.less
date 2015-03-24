@@ -141,22 +141,26 @@ header > .container > .row
     margin-left:0;
 }
 
+.skin-functions-wrapper { padding-left:0 }
+
 .skin-language
 {
+    display:inline-block;
+    vertical-align:top;
     height:32px; // search carry fix
-    padding-left:0;
-    padding-top:9px;
+    padding-top:8px;
 
     & > .language-object 
     {
         display:inline-block;
+        padding-right:10px;
         & > .Language { margin-right:5px; }
     }
 }
 
 .skin-functions
 {   
-    padding-left:0;
+    display:inline-block;
     padding-top:4px;
 
     .skin-functions-icon
@@ -203,13 +207,6 @@ header > .container > .row
 
 @media only screen and (max-width : 767px) 
 {
-    .skin-functions 
-    {
-        padding-left:inherit;
-        padding-right:0;
-        text-align:center;
-    }
-
     .skin-search
     {
         padding-top:4px;
