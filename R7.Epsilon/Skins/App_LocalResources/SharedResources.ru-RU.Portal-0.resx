@@ -20,42 +20,42 @@
         <div class="skin-footer-content-element">
             <strong>Университет</strong>
             <ul class="list-inline">
-                <li><a href="#">Контакты</a></li>
-                <li><a href="#">Обратная связь</a></li>
-                <li><a href="#">Карта сайта</a></li>
-                <li><a href="#">Подразделения</a></li>
-                <li><a href="#">Сотрудники</a></li>
+                <li><a href="/LinkClick.aspx?link=3986">Контакты</a></li>
+                <li><a href="/LinkClick.aspx?link=2659">Обратная связь</a></li>
+                <!-- <li><a href="#">Карта сайта</a></li> -->
+                <li><a href="/LinkClick.aspx?link=3987">Подразделения</a></li>
+                <li><a href="/LinkClick.aspx?link=3996">Сотрудники</a></li>
             </ul>
         </div>        
         <div class="skin-footer-content-element">
             <strong>Печатные издания</strong>
             <ul class="list-inline">
-                <li><a href="#">Мичуринец</a></li>
-                <li><a href="#">Ундервуд</a></li>
-                <li><a href="#">Известия Нижневолжского АУК</a></li>
+                <li><a href="/LinkClick.aspx?link=361">Мичуринец</a></li>
+                <li><a href="/LinkClick.aspx?link=1458">Ундервуд</a></li>
+                <li><a href="/LinkClick.aspx?link=612">Известия Нижневолжского АУК</a></li>
             </ul>
         </div>]]></value>
     </data>
     <data xml:space="preserve" name="FooterPane3.Content">
         <value><![CDATA[
         <div class="skin-footer-content-element">
-            <strong>Приемная комиссия</strong>
+            <strong><a href="/LinkClick.aspx?link=55">Приемная комиссия</a></strong>
             <ul class="list-inline">
-                <li><a href="#">+7 (8442) 411-778</a></li>
+                <li>+7 (8442) 411-778</li>
                 <li><a href="mailto:pricom@volgau.com">pricom@volgau.com</a></li>
             </ul>
         </div>
         <div class="skin-footer-content-element">
-            <strong>Ректорат</strong>
+            <strong><a href="/LinkClick.aspx?link=105">Ректорат</a></strong>
             <ul class="list-inline">
-                <li><a href="#">+7 (8442) 411-784</a></li>
+                <li>+7 (8442) 411-784</li>
                 <li><a href="mailto:volgau@volgau.com">volgau@volgau.com</a></li>
             </ul>
         </div>
         <div class="skin-footer-content-element">
-            <strong>Администратор сайта</strong>
+            <strong><a href="/LinkClick.aspx?link=156">Администратор сайта</a></strong>
             <ul class="list-inline">
-                <li><a href="#">+7 (927) 530-87-50</a></li>
+                <li>+7 (927) 530-87-50</li>
                 <li><a href="mailto:webmaster@volgau.com">webmaster@volgau.com</a></li>
             </ul>
         </div>
