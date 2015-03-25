@@ -4,10 +4,11 @@
 
 $(function() {
     // "Bootstrapify" search
-    $(".skin-search .searchInputContainer").attr ("style", "display:table-cell !important");
-    $(".skin-search #dnn_dnnSearch_txtSearch").removeClass ("NormalTextBox").addClass("form-control");
-    $(".skin-search #dnn_dnnSearch_cmdSearch").addClass ("btn btn-default").wrap ("<span class='input-group-btn'></span>");
-    $(".skin-search > span:first-child").addClass ("input-group").show ();
+    var search = $(".skin-search > span").first ();
+    search.children (".searchInputContainer").attr ("style", "display:table-cell !important")
+        .children ("input").removeClass ("NormalTextBox").addClass ("form-control");
+    search.children ("a").removeClass ("SkinObject").addClass ("btn btn-default").wrap ("<span class='input-group-btn'></span>");
+    search.addClass ("input-group").show ();
 });
 
 $(function() {
