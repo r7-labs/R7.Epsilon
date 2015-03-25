@@ -40,7 +40,7 @@ namespace R7.Epsilon
 
         public ControlLocalizer (Control control)
         {
-            LocalResourceFile = Localization.GetResourceFile (control, control.GetType ().Name);
+            LocalResourceFile = Localization.GetResourceFile (control, control.GetType ().Name + ".ascx");
         }
 
         #region Public methods
@@ -50,6 +50,7 @@ namespace R7.Epsilon
             return Localization.GetString (key, LocalResourceFile);
         }
 
+        // REVIEW: Remove as unused?
         public string GetString (string key, string defaultKey)
         {
             var localizedValue = GetString (key);
