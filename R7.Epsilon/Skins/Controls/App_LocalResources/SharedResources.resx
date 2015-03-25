@@ -27,15 +27,6 @@
     <data name="Founder2.Href" xml:space="preserve">
         <value>http://www.mcx.ru</value>
     </data>
-    <data name="LogoTitle_0.Text" xml:space="preserve">
-        <value>Volgograd&#13;State Agricultural University</value>
-    </data>
-    <data name="LogoTitle_0.Motto" xml:space="preserve">
-        <value>to the good ground...</value>
-    </data>
-    <data name="LogoTitle_Default.Motto" xml:space="preserve">
-        <value>Motto here</value>
-    </data>
     <data name="BrowserCheck.Warning" xml:space="preserve">
         <value><![CDATA[<strong>Warning!</strong><br />We have determined that you are using an outdated version of the browser, which doesn't provide proper support for the modern Internet standards. As a result, the website may be displayed incorrectly, some of its features may not work properly or will not be available. Please update browser!]]></value>
     </data>
@@ -65,5 +56,11 @@
     </data>
     <data xml:space="preserve" name="YandexCycounter.Text">
         <value>Yandex citation index</value>
+    </data>
+    <data name="LogoTitle.Text" xml:space="preserve">
+        <value></value>
+    </data>
+    <data name="LogoTitle.Motto" xml:space="preserve">
+        <value>motto here</value>
     </data>
 </root>

@@ -21,15 +21,6 @@
     <data name="Founder2.Title" xml:space="preserve">
         <value>Сайт Министерства сельского хозяйства</value>
     </data>
-    <data name="LogoTitle_0.Text" xml:space="preserve">
-        <value>Волгоградский&#13;государственный аграрный университет</value>
-    </data>
-    <data name="LogoTitle_0.Motto" xml:space="preserve">
-        <value>на добрую землю...</value>
-    </data>
-    <data name="LogoTitle_Default.Motto" xml:space="preserve">
-        <value>Здесь должен быть девиз</value>
-    </data>
     <data name="BrowserCheck.Warning" xml:space="preserve">
         <value><![CDATA[<strong>Внимание!</strong><br />Мы определили, что Вы используете устаревшую версию браузера, не поддерживающую в должной мере современные стандарты Интернет. Как следствие, сайт может отображаться неправильно, а отдельные его функции могут работать некорректно или будут недоступны. Пожалуйста, обновите браузер!]]></value>
     </data>
