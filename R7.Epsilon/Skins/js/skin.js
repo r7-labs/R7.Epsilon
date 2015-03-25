@@ -5,9 +5,9 @@
 $(function() {
     // "Bootstrapify" search
     $(".skin-search .searchInputContainer").attr ("style", "display:table-cell !important");
-    $(".skin-search #dnn_dnnSearch_ClassicSearch").addClass ("input-group");
     $(".skin-search #dnn_dnnSearch_txtSearch").removeClass ("NormalTextBox").addClass("form-control");
     $(".skin-search #dnn_dnnSearch_cmdSearch").addClass ("btn btn-default").wrap ("<span class='input-group-btn'></span>");
+    $(".skin-search > span:first-child").addClass ("input-group").show ();
 });
 
 $(function() {

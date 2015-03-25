@@ -186,10 +186,13 @@ header > .container > .row
 
 .skin-search
 {
-    padding:2px 0 3px 0;
+    padding:3px 0 0 0;
+
+    // hide search until jQuery rework
+    & > span:first-child { display:none; }
 
     .searchInputContainer { width:100%; }
-
+   
     .dnnSearchBoxClearText
     {
         // fix clear button position
