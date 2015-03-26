@@ -66,7 +66,7 @@
     <nav class="navbar navbar-default skin-primary-navbar" role="navigation">
         <div class="container">
             <div class="navbar-brand skin-navbar-brand-link visible-xs">
-                <a href="/<%= CultureInfo.CurrentCulture.Name.ToLowerInvariant() %>"><%= PortalSettings.PortalName %></a>
+                <a href="/"><%= PortalSettings.PortalName %></a>
             </div>
             <button type="button" class="navbar-toggle skin-top-menu-toggle" data-toggle="collapse" data-target=".skin-top-menu">
                 <span class="sr-only">Toggle navigation</span>
