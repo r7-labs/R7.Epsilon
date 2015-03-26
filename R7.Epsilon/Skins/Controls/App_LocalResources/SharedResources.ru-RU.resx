@@ -51,4 +51,13 @@
     <data xml:space="preserve" name="YandexCycounter.Text">
         <value>Яндекс цитирования</value>
     </data>
+    <data xml:space="preserve" name="FooterPane1.Content">
+        <value>Используйте редактор локализации для изменения этого содержимого</value>
+    </data>
+    <data xml:space="preserve" name="FooterPane2.Content">
+        <value>Используйте редактор локализации для изменения этого содержимого</value>
+    </data>
+    <data xml:space="preserve" name="FooterPane3.Content">
+        <value>Используйте редактор локализации для изменения этого содержимого</value>
+    </data>
 </root>

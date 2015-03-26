@@ -18,4 +18,53 @@
     <data name="LogoTitle.Motto" xml:space="preserve">
         <value>на добрую землю...</value>
     </data>
+    <data xml:space="preserve" name="FooterPane1.Content">
+        <value><![CDATA[<div class="skin-footer-content-well"><span>Сетевое издание &quot;На добрую землю&quot;,</span> <span>свидетельство о регистрации СМИ</span> <span>ЭЛ № ФС 77-56821</span></div>]]></value>
+    </data>
+    <data xml:space="preserve" name="FooterPane2.Content">
+        <value><![CDATA[
+        <div class="skin-footer-content-element">
+            <strong>Университет</strong>
+            <ul class="list-inline">
+                <li><a href="/LinkClick.aspx?link=3986">Контакты</a></li>
+                <li><a href="/LinkClick.aspx?link=2659">Обратная связь</a></li>
+                <!-- <li><a href="#">Карта сайта</a></li> -->
+                <li><a href="/LinkClick.aspx?link=3987">Подразделения</a></li>
+                <li><a href="/LinkClick.aspx?link=3996">Сотрудники</a></li>
+            </ul>
+        </div>        
+        <div class="skin-footer-content-element">
+            <strong>Печатные издания</strong>
+            <ul class="list-inline">
+                <li><a href="/LinkClick.aspx?link=361">Мичуринец</a></li>
+                <li><a href="/LinkClick.aspx?link=1458">Ундервуд</a></li>
+                <li><a href="/LinkClick.aspx?link=612">Известия Нижневолжского АУК</a></li>
+            </ul>
+        </div>]]></value>
+    </data>
+    <data xml:space="preserve" name="FooterPane3.Content">
+        <value><![CDATA[
+        <div class="skin-footer-content-element">
+            <strong><a href="/LinkClick.aspx?link=55">Приемная комиссия</a></strong>
+            <ul class="list-inline">
+                <li>+7 (8442) 411-778</li>
+                <li><a href="mailto:pricom@volgau.com">pricom@volgau.com</a></li>
+            </ul>
+        </div>
+        <div class="skin-footer-content-element">
+            <strong><a href="/LinkClick.aspx?link=105">Ректорат</a></strong>
+            <ul class="list-inline">
+                <li>+7 (8442) 411-784</li>
+                <li><a href="mailto:volgau@volgau.com">volgau@volgau.com</a></li>
+            </ul>
+        </div>
+        <div class="skin-footer-content-element">
+            <strong><a href="/LinkClick.aspx?link=156">Администратор сайта</a></strong>
+            <ul class="list-inline">
+                <li>+7 (927) 530-87-50</li>
+                <li><a href="mailto:webmaster@volgau.com">webmaster@volgau.com</a></li>
+            </ul>
+        </div>
+        ]]></value>
+    </data>
 </root>

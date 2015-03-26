@@ -22,6 +22,7 @@
 <%@ Register TagPrefix="skin" TagName="LOGOMOBILE" Src="Controls/LogoMobile.ascx" %>
 <%@ Register TagPrefix="skin" TagName="BROWSERCHECK" Src="Controls/BrowserCheck.ascx" %>
 <%@ Register TagPrefix="skin" TagName="FEEDBACKBUTTON" Src="Controls/FeedbackButton.ascx" %>
+<%@ Register TagPrefix="skin" TagName="FOOTERCONTENT" Src="Controls/FooterContent.ascx" %>
 <%@ Register TagPrefix="skin" TagName="YCYCOUNTER" Src="Controls/YCycounter.ascx" %>
 
 <dnn:META ID="bootstrapIECompat" runat="server" Name="X-UA-Compatible" Content="IE=edge" />
@@ -215,11 +216,11 @@
                         <div class="skin-footer-buttons col-sm-6 hidden-xs">
                             <dnn:BANNER id="dnnBanner1" runat="server" GroupName="<%# Config.FooterButtonsGroupName %>" BannerTypeId="4" BannerCount="3" Orientation="H" AllowNullBannerType="true" />    
                         </div>
-                        <div class="skin-footer-content col-sm-6"><%= Localizer.GetString ("FooterPane1.Content") %></div>
+                        <skin:FOOTERCONTENT runat="server" CssClass="skin-footer-content col-sm-6" ResourceKey="FooterPane1.Content" />
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-2 col-sm-6 skin-footer-content"><%= Localizer.GetString ("FooterPane2.Content") %></div>
-                <div class="col-lg-2 col-sm-6 skin-footer-content"><%= Localizer.GetString ("FooterPane3.Content") %></div>
+                <skin:FOOTERCONTENT runat="server" CssClass="col-lg-2 col-md-2 col-sm-6 skin-footer-content" ResourceKey="FooterPane2.Content" />
+                <skin:FOOTERCONTENT runat="server" CssClass="col-lg-2 col-sm-6 skin-footer-content" ResourceKey="FooterPane3.Content" />
             </div>
         </div>
     </div>
