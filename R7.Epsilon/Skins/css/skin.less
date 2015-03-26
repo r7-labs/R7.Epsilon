@@ -408,7 +408,9 @@ ul.skin-socialgroups
 
 .page-header 
 { 
-    margin-top:0; 
+    margin-top:0;
+    padding-bottom:10px;
+
     h1, h2
     { 
         margin-top:0;
@@ -423,12 +425,10 @@ ul.skin-socialgroups
 .page-header .skin-page-info
 {
     padding-top:8px;
-    line-height:2em; // separate rows on xs screens
 
     small 
     { 
         display:inline-block;
-        padding-top:4px;
         padding-right:3em; 
     }
 
@@ -436,13 +436,19 @@ ul.skin-socialgroups
     {
         display:inline-block;
 
-        #___plusone_0, .fb-like, .twitter-share-button, #vk_like { display:inline-block; }
+        & > * { display:inline-block; }
 
         #___plusone_0 { vertical-align:bottom !important; } // overriding inline style!
         .twitter-share-button, #vk_like { vertical-align:bottom; }
         .fb-like { margin-right:30px; }
         .fb-like, #vk_like { min-width:110px; }
     }
+}
+
+@media only screen and (max-width : 767px) 
+{
+    // separate rows on xs screens
+    .skin-page-share-buttons > * { margin-top:10px !important; }
 }
 
 .breadcrumb 
