@@ -72,4 +72,16 @@
     <data xml:space="preserve" name="FooterPane3.Content">
         <value>Use language editor to customize this content</value>
     </data>
+    <data name="GoogleTranslate.Title" xml:space="preserve">
+        <value>Translate with Google</value>
+    </data>
+    <data name="GoogleTranslate.Alt" xml:space="preserve">
+        <value>Translate with Google</value>
+    </data>
+    <data name="AgeRating.Text" xml:space="preserve">
+        <value>12+</value>
+    </data>
+    <data name="AgeRating.Title" xml:space="preserve">
+        <value>Information products for children under the age of twelve years (12+)</value>
+    </data>
 </root>

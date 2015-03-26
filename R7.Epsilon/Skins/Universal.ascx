@@ -13,6 +13,7 @@
 <%@ Register TagPrefix="dnn" TagName="BANNER" Src="~/Admin/Skins/Banner.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="BREADCRUMB" Src="~/Admin/Skins/BreadCrumb.ascx" %>
 <%@ Register TagPrefix="dnn" Namespace="DotNetNuke.Web.Client.ClientResourceManagement" Assembly="DotNetNuke.Web.Client" %>
+<%@ Register TagPrefix="skin" TagName="FUNCTIONS" Src="Controls/Functions.ascx" %>
 <%@ Register TagPrefix="skin" TagName="GADSENSE" Src="Controls/GAdsense.ascx" %>
 <%@ Register TagPrefix="skin" TagName="SOCIALGROUPS" Src="Controls/SocialGroups.ascx" %>
 <%@ Register TagPrefix="skin" TagName="PAGEHEADER" Src="Controls/PageHeader.ascx" %>
@@ -49,8 +50,7 @@
                     <dnn:LANGUAGE runat="server" ShowLinks="True" ShowMenu="False" />
                 </div>
                 <div class="skin-functions">
-                    <a class="skin-functions-icon skin-functions-icon-gtranslate" href="javascript:skin_gtranslate('<%= CultureInfo.CurrentCulture.TwoLetterISOLanguageName %>')" title="<%: Localizer.GetString ("GoogleTranslate.Title") %>" data-toggle="tooltip" data-placement="bottom"></a>
-                    <a class="skin-functions-icon skin-functions-icon-age-rating" href="#" data-toggle="tooltip" data-placement="bottom" title="<%: Localizer.GetString("AgeRating.Title") %>"></a>
+                    <skin:FUNCTIONS runat="server" />
                     <asp:LinkButton id="linkA11yButton" runat="server" CssClass="skin-functions-icon skin-functions-icon-a11y" OnClick="linkA11yButton_Click" data-toggle="tooltip" data-placement="bottom" />
                 </div>
             </div>

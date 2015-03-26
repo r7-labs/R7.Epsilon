@@ -144,6 +144,9 @@
     <Compile Include="Skins\Controls\FooterContent.ascx.cs">
       <DependentUpon>FooterContent.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Skins\Controls\Functions.ascx.cs">
+      <DependentUpon>Functions.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Containers\Blank.ascx" />
@@ -233,6 +236,7 @@
     <Content Include="Skins\images\functions_mono_32x32.svg" />
     <Content Include="Skins\Controls\LogoMobile.ascx" />
     <Content Include="Skins\Controls\FooterContent.ascx" />
+    <Content Include="Skins\Controls\Functions.ascx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

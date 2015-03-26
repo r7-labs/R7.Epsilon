@@ -1,0 +1,4 @@
+﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.Functions" %>
+<%@ OutputCache Duration="1200" VaryByParam="TabId" %>
+<a class="skin-functions-icon skin-functions-icon-gtranslate" href="javascript:skin_gtranslate('<%= CultureInfo.CurrentCulture.TwoLetterISOLanguageName %>')" title="<%: Localizer.GetString ("GoogleTranslate.Title") %>" data-toggle="tooltip" data-placement="bottom"></a>
+<a class="skin-functions-icon skin-functions-icon-age-rating" href="#" data-toggle="tooltip" data-placement="bottom" title="<%: Localizer.GetString("AgeRating.Title") %>"></a>                    
