@@ -205,8 +205,10 @@
         <div id="BottomPane" runat="server" class="col-md-12" />
     </div>
     <div class="row">
-        <div class="skin-tags">
-            <dnn:TAGS runat="server" AllowTagging="false" Separator=" " />
+        <div class="col-md-12">
+            <div class="skin-tags">
+                <dnn:TAGS runat="server" AllowTagging="false" Separator=" " />
+            </div>
         </div>
     </div>
 </div>
