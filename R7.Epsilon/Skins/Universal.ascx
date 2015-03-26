@@ -19,9 +19,10 @@
 <%@ Register TagPrefix="skin" TagName="SOCIALSHARESCRIPTS" Src="Controls/SocialShareScripts.ascx" %>
 <%@ Register TagPrefix="skin" TagName="FOUNDERS" Src="Controls/Founders.ascx" %>
 <%@ Register TagPrefix="skin" TagName="LOGOTITLE" Src="Controls/LogoTitle.ascx" %>
+<%@ Register TagPrefix="skin" TagName="LOGOMOBILE" Src="Controls/LogoMobile.ascx" %>
 <%@ Register TagPrefix="skin" TagName="BROWSERCHECK" Src="Controls/BrowserCheck.ascx" %>
 <%@ Register TagPrefix="skin" TagName="FEEDBACKBUTTON" Src="Controls/FeedbackButton.ascx" %>
-<%@ Register TagPrefix="skin" TagName="YCycounter" Src="Controls/YCycounter.ascx" %>
+<%@ Register TagPrefix="skin" TagName="YCYCOUNTER" Src="Controls/YCycounter.ascx" %>
 
 <dnn:META ID="bootstrapIECompat" runat="server" Name="X-UA-Compatible" Content="IE=edge" />
 <dnn:META ID="mobileScale" runat="server" Name="viewport" Content="width=device-width,initial-scale=1" />
@@ -66,7 +67,7 @@
     <nav class="navbar navbar-default skin-primary-navbar" role="navigation">
         <div class="container">
             <div class="navbar-brand skin-navbar-brand-link visible-xs">
-                <a href="/"><%= PortalSettings.PortalName %></a>
+                <skin:LOGOMOBILE runat="server" />
             </div>
             <button type="button" class="navbar-toggle skin-top-menu-toggle" data-toggle="collapse" data-target=".skin-top-menu">
                 <span class="sr-only">Toggle navigation</span>

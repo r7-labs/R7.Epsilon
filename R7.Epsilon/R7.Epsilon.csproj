@@ -138,6 +138,9 @@
     <Compile Include="Skins\Controls\YCycounter.ascx.cs">
       <DependentUpon>YCycounter.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Skins\Controls\LogoMobile.ascx.cs">
+      <DependentUpon>LogoMobile.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Containers\Blank.ascx" />
@@ -225,6 +228,7 @@
     <Content Include="Skins\Controls\YCycounter.ascx" />
     <Content Include="Skins\images\functions_mono_32x32.png" />
     <Content Include="Skins\images\functions_mono_32x32.svg" />
+    <Content Include="Skins\Controls\LogoMobile.ascx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
