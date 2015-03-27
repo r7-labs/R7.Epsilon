@@ -50,6 +50,9 @@
     <Reference Include="Nini">
       <HintPath>lib\Nini.dll</HintPath>
     </Reference>
+    <Reference Include="DotNetNuke.Web.DDRMenu">
+      <HintPath>..\..\..\bin\DotNetNuke.Web.DDRMenu.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Skins\Edit.doctype.xml">
@@ -82,6 +85,7 @@
     <None Include="Skins\App_LocalResources\SharedResources.ru-RU.Portal-0.resx" />
     <None Include="Skins\Controls\App_LocalResources\SharedResources.ru-RU.Portal-0.resx" />
     <None Include="Skins\Controls\App_LocalResources\SharedResources.Portal-0.resx" />
+    <None Include="Configs\volgau.com\README.md" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Skins\Edit.ascx.cs">

@@ -4,6 +4,7 @@
 	<xsl:param name="ControlID" />
 	<xsl:param name="Options" />
     <xsl:param name="hamburgerMenu">0</xsl:param>
+    <xsl:param name="urlType">0</xsl:param>
 	<xsl:param name="subMenuColumns">3</xsl:param>
 	<xsl:param name="pointer"><![CDATA[&nbsp;&#9662;]]></xsl:param>
 	<xsl:param name="startUl"><![CDATA[<ul>]]></xsl:param>
@@ -29,7 +30,7 @@
 		<xsl:choose>
 			<xsl:when test="$level=0">
 				<li>
-					<xsl:attribute name="class">level0 <xsl:if test="@breadcrumb = 1">current</xsl:if></xsl:attribute>
+					<xsl:attribute name="class">level0<xsl:if test="@breadcrumb = 1"> current</xsl:if></xsl:attribute>
                     <a>
 						<xsl:attribute name="class"><xsl:if test="@breadcrumb = 1">current</xsl:if></xsl:attribute>
 						<xsl:choose>
@@ -90,7 +91,17 @@
             <a>
                 <xsl:choose>
                     <xsl:when test="@enabled = 1">
-                        <xsl:attribute name="href"><xsl:value-of select="@url"/></xsl:attribute>
+                        <xsl:choose>
+                            <xsl:when test="$urlType = 1">
+                                <xsl:attribute name="href">/Default.aspx?TabId=<xsl:value-of select="@id"/></xsl:attribute>
+                            </xsl:when>
+                            <xsl:when test="$urlType = 2">
+                                <xsl:attribute name="href">/<xsl:value-of select="@id"/></xsl:attribute>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:attribute name="href"><xsl:value-of select="@url"/></xsl:attribute>
+                            </xsl:otherwise>
+                        </xsl:choose>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:attribute name="href">#</xsl:attribute>

@@ -26,11 +26,16 @@
 
 using System;
 using System.Web.UI.WebControls;
+using System.Collections.Generic;
 using DotNetNuke.Common;
 using DotNetNuke.Framework;
 using DotNetNuke.UI.Skins;
+using DotNetNuke.Web.DDRMenu.TemplateEngine;
 using DotNetNuke.Web.Client;
 using DotNetNuke.Web.Client.ClientResourceManagement;
+
+// aliases
+using DDRMenu = DotNetNuke.Web.DDRMenu;
 
 namespace R7.Epsilon
 {
@@ -43,6 +48,12 @@ namespace R7.Epsilon
         protected DnnCssInclude skinCSS;
 
         protected LinkButton linkA11yButton;
+
+        protected DDRMenu.SkinObject menuPrimary;
+
+        protected DDRMenu.SkinObject menuSecondary;
+
+        protected DDRMenu.SkinObject menuLocal;
 
         #endregion
 
@@ -87,6 +98,16 @@ namespace R7.Epsilon
 
             // localize accessibility button
             linkA11yButton.ToolTip = Localizer.GetString ("A11y.Title");
+
+            // configurable menu template arguments
+            var menuTemplateArgs = new List<TemplateArgument> () {
+                new TemplateArgument ("urlType", Config.MenuUrlType.ToString ()) 
+            };
+
+            // set menu template arguments
+            SetMenuTemplateArguments (menuPrimary, menuTemplateArgs);
+            SetMenuTemplateArguments (menuSecondary, menuTemplateArgs);
+            SetMenuTemplateArguments (menuLocal, menuTemplateArgs);
         }
 
         protected override void OnLoad (EventArgs e)
@@ -106,7 +127,14 @@ namespace R7.Epsilon
                 // alter look of accessibility button
                 linkA11yButton.CssClass = linkA11yButton.CssClass + " enabled";
             }
+        }
 
+        private void SetMenuTemplateArguments (DDRMenu.SkinObject menu, List<TemplateArgument> args)
+        {
+            if (menu.TemplateArguments != null)
+                menu.TemplateArguments.AddRange (args);
+            else
+                menu.TemplateArguments = args;
         }
 
         private void RegisterJavaScript()

@@ -141,6 +141,11 @@ namespace R7.Epsilon
             get { return PortalConfig.GetBoolean ("ShowPrivacy", false); }
         }
 
+        public int MenuUrlType
+        {
+            get { return PortalConfig.GetInt ("MenuUrlType", 0); }
+        }
+
         #endregion
     }
 }
