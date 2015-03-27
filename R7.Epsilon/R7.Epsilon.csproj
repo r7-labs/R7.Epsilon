@@ -196,8 +196,6 @@
     <Content Include="Skins\images\logo-template-350x75.png" />
     <Content Include="Skins\images\logo-template-350x75.svg" />
     <Content Include="Skins\js\skin.js" />
-    <Content Include="Skins\images\gtranslate_27x18.png" />
-    <Content Include="Skins\images\gtranslate_27x18.svg" />
     <Content Include="Skins\images\logo_template_133x100.png" />
     <Content Include="Skins\images\logo_template_133x100.svg" />
     <Content Include="Skins\images\social_32x32.png" />
@@ -206,8 +204,6 @@
     <Content Include="Skins\Controls\PageHeader.ascx" />
     <Content Include="Skins\Controls\SocialShareScripts.ascx" />
     <Content Include="Skins\Controls\Founders.ascx" />
-    <Content Include="Skins\images\header_bg.png" />
-    <Content Include="Skins\images\header_bg.svg" />
     <Content Include="Skins\images\mcx_48x48.png" />
     <Content Include="Skins\images\minobr_48x48.png" />
     <Content Include="Skins\images\minobr_logo.svg" />
