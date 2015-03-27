@@ -5,7 +5,6 @@
 	<xsl:param name="Options" />
     <xsl:param name="hamburgerMenu">0</xsl:param>
 	<xsl:param name="subMenuColumns">3</xsl:param>
-	<xsl:param name="subpointer"><![CDATA[&#8226;]]></xsl:param>
 	<xsl:param name="pointer"><![CDATA[&nbsp;&#9662;]]></xsl:param>
 	<xsl:param name="startUl"><![CDATA[<ul>]]></xsl:param>
 	<xsl:param name="endUl"><![CDATA[</ul>]]></xsl:param>
@@ -103,8 +102,7 @@
 								<xsl:attribute name="onclick">return false</xsl:attribute>
 							</xsl:otherwise>
 						</xsl:choose>
-						<span><xsl:value-of select="$subpointer" disable-output-escaping="yes"/></span>
-						<xsl:value-of select="@text" />
+                        <xsl:value-of select="@text" />
 					</a>
 				</li>
 				<xsl:if test="node">

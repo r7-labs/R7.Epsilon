@@ -14,7 +14,6 @@ ul.megamenu
         padding:0;
         margin:0;
         list-style:none;
-        list-style-type:none;
     }
 
     // disable underline for menu links
@@ -24,10 +23,7 @@ ul.megamenu
     {
         // a should always take 100% of li!
         padding:0 !important; 
-
         margin:0;
-        list-style:none;
-        list-style-type:none;
 
         a { display:block; }
     }
@@ -100,8 +96,11 @@ ul.megamenu
                     padding-bottom:2px;
                     font-size:@smaller-menu-font-size; 
 
-                    // subpointer positioning
-                    span { padding-right:0.5em; }
+                    &:before 
+                    {
+                        content:"•";
+                        padding-right:0.5em;
+                    }
                 }
             }
         }
