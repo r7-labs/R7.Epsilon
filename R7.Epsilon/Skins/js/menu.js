@@ -1,5 +1,5 @@
 function splitSubMenu(controlId, columns) {
-	jQuery("ul#" + controlId + " div.sub").each(function (i) {
+	jQuery("ul#" + controlId + " .sub").each(function (i) {
 		var items = jQuery(this).find('ul');
 		var blockCount = columns;
 		for (var i = 0; i < items.length; i += blockCount) {
@@ -12,13 +12,13 @@ function splitSubMenu(controlId, columns) {
 jQuery(document).ready(function () {
 
 	// calculate height of top level menu and set top style for menu placement
-	jQuery('ul.megamenu li .sub').css('top', jQuery('ul.megamenu > li').height());
+	jQuery('ul.megamenu .sub').css('top', jQuery('ul.megamenu > li').height());
 
 	// set hover class to parent item
-	jQuery('li.level0 div').mouseover(function () {
-		jQuery(this).closest('li.level0').find('a.level0').addClass("megahover")
-	}).mouseout(function () {
-	    jQuery(this).closest('li.level0').find('a.level0').removeClass("megahover")
+	jQuery('li.level0 .sub').mouseover(function () {
+        jQuery(this).closest('li.level0 > a').addClass("megahover")
+    }).mouseout(function () {
+        jQuery(this).closest('li.level0 > a').removeClass("megahover")
 	});
 
 	function megaHoverOver() {
@@ -72,6 +72,6 @@ jQuery(document).ready(function () {
 		out: megaHoverOut // function = onMouseOut callback (REQUIRED)    
 	};
 
-	jQuery("ul.megamenu li .sub").css({ 'opacity': '0' });
+	jQuery("ul.megamenu .sub").css({ 'opacity': '0' });
 	jQuery("ul.megamenu li").hoverIntent(config);
 });

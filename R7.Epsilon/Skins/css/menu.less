@@ -6,9 +6,9 @@
 // menu font size
 ul.megamenu * { font-size:@menu-font-size; }
 
-ul.megamenu 
+ul.megamenu
 {
-    &,ul.megamenusubcontent
+    &, .sub ul
     {
         // reset list styles
         padding:0;
@@ -60,9 +60,9 @@ ul.megamenu
                 clear:both; 
 
                 // don't overline menu top items
-                &:first-child .subheader a { border-top:none; }
+                &:first-child li:first-child a { border-top:none; }
 
-                ul.megamenusubcontent
+                ul
                 { 
                     float:left;
                     padding-left:5px;
@@ -77,29 +77,34 @@ ul.megamenu
 
                 a 
                 { 
-                    padding:4px 8px;
                     border-radius:3px;
-                }
-
-                &.subheader a 
-                { 
-                    border-top:1px solid;
-                    font-weight:bold;
-                }
-
-                // extra space below menu block
-                &.sublink:last-child { margin-bottom:1em; }
-
-                &.sublink a
-                { 
-                    padding-top:2px;
-                    padding-bottom:2px;
+                    padding:2px 8px;
                     font-size:@smaller-menu-font-size; 
 
                     &:before 
                     {
                         content:"•";
                         padding-right:0.5em;
+                    }
+
+                    // extra space below menu block
+                    &:last-child { margin-bottom:1em; }
+                }
+
+                &:first-child a 
+                { 
+                    padding:4px 8px;
+                    border-top:1px solid;
+                    font-weight:bold;
+                    font-size:@menu-font-size;
+
+                    // don't add extra space below
+                    margin-bottom:0;
+
+                    &:before 
+                    { 
+                        content:none;
+                        padding-right:0;
                     }
                 }
             }
@@ -128,7 +133,7 @@ ul.megamenu
                 // fill all menu wrapper width
                 width:100%!important; 
 
-                ul.megamenusubcontent { width:33%; }
+                ul { width:33%; }
             }
         }
     }
@@ -167,7 +172,7 @@ ul.megamenu
                     }
                 }
 
-                li.subheader a { border-color:darken(@color-primary-2, 5%); }
+                li:first-child a { border-color:darken(@color-primary-2, 5%); }
             }
         }
     }
@@ -219,7 +224,7 @@ ul.megamenu
                     }
                 }
 
-                li.subheader a { border-color:darken(@color-secondary-1-2, 5%); }
+                li:first-child a { border-color:darken(@color-secondary-1-2, 5%); }
             }
         }
     }
@@ -291,7 +296,7 @@ ul.megamenu
                 border-bottom-right-radius:@submenu-border-radius;
                 box-shadow:2px 2px 2px @color-secondary-1-4;
 
-                ul.megamenusubcontent { width:100%; }
+                ul { width:100%; }
 
                 li.current, li.megahover, li:hover 
                 {
@@ -302,7 +307,7 @@ ul.megamenu
                     }
                 }
 
-                li.subheader a { border-color:darken(@color-secondary-1-2, 5%); }
+                li:first-child a { border-color:darken(@color-secondary-1-2, 5%); }
             }
         }
     }
@@ -340,7 +345,7 @@ ul.megamenu
                     box-shadow:none;
                     padding-top:0;
 
-                    ul.megamenusubcontent
+                    ul
                     { 
                         float:none;
                         display:block;

@@ -15,7 +15,7 @@ $(function() {
     var localMenu = $(".skin-local-menu").first ();
     if (localMenu.find (".sub").length > 0)
     {
-        localMenu.find ("a.level0").click (function (event) {
+        localMenu.find ("li.level0 > a").click (function (event) {
             event.preventDefault (); 
         });
     }

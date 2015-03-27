@@ -29,14 +29,12 @@
 		<xsl:choose>
 			<xsl:when test="$level=0">
 				<li>
-					<xsl:attribute name="class">level0<xsl:if test="@breadcrumb = 1"> current</xsl:if></xsl:attribute>
+					<xsl:attribute name="class">level0 <xsl:if test="@breadcrumb = 1">current</xsl:if></xsl:attribute>
                     <a>
-						<xsl:attribute name="class">level0<xsl:if test="@breadcrumb = 1"> current</xsl:if></xsl:attribute>
+						<xsl:attribute name="class"><xsl:if test="@breadcrumb = 1">current</xsl:if></xsl:attribute>
 						<xsl:choose>
 							<xsl:when test="@enabled = 1">
-								<xsl:attribute name="href">
-									<xsl:value-of select="@url"/>
-								</xsl:attribute>
+								<xsl:attribute name="href"><xsl:value-of select="@url"/></xsl:attribute>
 							</xsl:when>
 							<xsl:otherwise>
 								<xsl:attribute name="href">#</xsl:attribute>
@@ -68,8 +66,8 @@
 				</li>
 			</xsl:when>
 			<xsl:when test="$level=1">
-				<ul class="megamenusubcontent">
-					<li class="subheader">
+                <ul>
+                    <li>
 						<a>
 							<xsl:choose>
 								<xsl:when test="@enabled = 1">
@@ -91,7 +89,7 @@
 				</ul>
 			</xsl:when>
 			<xsl:otherwise>
-				<li class="sublink">
+                <li>
 					<a>
 						<xsl:choose>
 							<xsl:when test="@enabled = 1">
