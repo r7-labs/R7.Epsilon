@@ -30,4 +30,64 @@
     <data name="SkipToContent.Text" xml:space="preserve">
         <value>Перейти напрямую к содержимому</value>
     </data>
+    <data name="PagePublishedMessage.Format" xml:space="preserve">
+        <value>{0:dd.MM.yyyy}: {1}</value>
+    </data>
+    <data name="Founder1.Title" xml:space="preserve">
+        <value>Сайт Министерства образования и науки</value>
+    </data>
+    <data name="Founder2.Title" xml:space="preserve">
+        <value>Сайт Министерства сельского хозяйства</value>
+    </data>
+    <data name="BrowserCheck.Warning" xml:space="preserve">
+        <value><![CDATA[<strong>Внимание!</strong><br />Мы определили, что Вы используете устаревшую версию браузера, не поддерживающую в должной мере современные стандарты Интернет. Как следствие, сайт может отображаться неправильно, а отдельные его функции могут работать некорректно или будут недоступны. Пожалуйста, обновите браузер!]]></value>
+    </data>
+    <data xml:space="preserve" name="FeedBackButton.Text">
+        <value></value>
+    </data>
+    <data xml:space="preserve" name="FeedBackButton.Tooltip">
+        <value>Выдели место ошибки мышкой и нажми меня, чтобы открыть форму обратной связи</value>
+    </data>
+    <data xml:space="preserve" name="VKontakte.Title">
+        <value>ВКонтакте</value>
+    </data>
+    <data xml:space="preserve" name="Facebook.Title">
+        <value>Facebook</value>
+    </data>
+    <data xml:space="preserve" name="Twitter.Title">
+        <value>Twitter</value>
+    </data>
+    <data xml:space="preserve" name="GooglePlus.Title">
+        <value>Google+</value>
+    </data>
+    <data xml:space="preserve" name="Odnoklassniki.Title">
+        <value>Одноклассники</value>
+    </data>    
+    <data xml:space="preserve" name="Youtube.Title">
+        <value>Youtube</value>
+    </data>
+    <data xml:space="preserve" name="YandexCycounter.Text">
+        <value>Яндекс цитирования</value>
+    </data>
+    <data xml:space="preserve" name="FooterPane1.Content">
+        <value>Используйте редактор локализации для изменения этого содержимого</value>
+    </data>
+    <data xml:space="preserve" name="FooterPane2.Content">
+        <value>Используйте редактор локализации для изменения этого содержимого</value>
+    </data>
+    <data xml:space="preserve" name="FooterPane3.Content">
+        <value>Используйте редактор локализации для изменения этого содержимого</value>
+    </data>
+    <data name="GoogleTranslate.Title" xml:space="preserve">
+        <value>Перевести с помощью Google</value>
+    </data>
+    <data name="GoogleTranslate.Alt" xml:space="preserve">
+        <value>Перевести с помощью Google</value>
+    </data>
+    <data name="AgeRating.Text" xml:space="preserve">
+        <value>12+</value>
+    </data>
+    <data name="AgeRating.Title" xml:space="preserve">
+        <value>Информационная продукция для детей, достигших возраста двенадцати лет (12+)</value>
+    </data>
 </root>

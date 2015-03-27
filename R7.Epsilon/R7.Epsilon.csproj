@@ -73,8 +73,6 @@
     <None Include="Skins\Universal.doctype.xml">
       <DependentUpon>Universal.ascx</DependentUpon>
     </None>
-    <None Include="Skins\Controls\App_LocalResources\SharedResources.resx" />
-    <None Include="Skins\Controls\App_LocalResources\SharedResources.ru-RU.resx" />
     <None Include="R7.Epsilon.csproj" />
     <None Include="Less.targets" />
     <None Include="R7.Epsilon.dnn" />
@@ -83,9 +81,8 @@
     <None Include="Skins\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="lib\Nini.dll" />
     <None Include="Skins\App_LocalResources\SharedResources.ru-RU.Portal-0.resx" />
-    <None Include="Skins\Controls\App_LocalResources\SharedResources.ru-RU.Portal-0.resx" />
-    <None Include="Skins\Controls\App_LocalResources\SharedResources.Portal-0.resx" />
     <None Include="Configs\volgau.com\README.md" />
+    <None Include="Skins\App_LocalResources\SharedResources.Portal-0.resx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Skins\Edit.ascx.cs">
@@ -250,7 +247,6 @@
   <ItemGroup>
     <Folder Include="Menu\" />
     <Folder Include="Skins\Controls\" />
-    <Folder Include="Skins\Controls\App_LocalResources\" />
     <Folder Include="Configs\" />
     <Folder Include="Configs\volgau.com\" />
   </ItemGroup>

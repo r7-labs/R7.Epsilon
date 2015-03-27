@@ -30,4 +30,76 @@
     <data name="SkipToContent.Text" xml:space="preserve">
         <value>Skip to main content</value>
     </data>
+    <data name="PagePublishedMessage.Format" xml:space="preserve">
+        <value>{0:MM/dd/yyyy} by {1}</value>
+    </data>
+    <data name="Founder1.Title" xml:space="preserve">
+        <value>Ministry of Education and Science Website</value>
+    </data>
+    <data name="Founder1.Href" xml:space="preserve">
+        <value>http://минобрнауки.рф</value>
+    </data>
+    <data name="Founder2.Title" xml:space="preserve">
+        <value>Ministry of Agriculture Website</value>
+    </data>
+    <data name="Founder2.Href" xml:space="preserve">
+        <value>http://www.mcx.ru</value>
+    </data>
+    <data name="BrowserCheck.Warning" xml:space="preserve">
+        <value><![CDATA[<strong>Warning!</strong><br />We have determined that you are using an outdated version of the browser, which doesn't provide proper support for the modern Internet standards. As a result, the website may be displayed incorrectly, some of its features may not work properly or will not be available. Please update browser!]]></value>
+    </data>
+    <data xml:space="preserve" name="FeedBackButton.Text">
+        <value></value>
+    </data>
+    <data xml:space="preserve" name="FeedBackButton.Tooltip">
+        <value>Select error with mouse and click me to open feedback form</value>
+    </data>
+    <data xml:space="preserve" name="VKontakte.Title">
+        <value>VKontakte</value>
+    </data>
+    <data xml:space="preserve" name="Facebook.Title">
+        <value>Facebook</value>
+    </data>
+    <data xml:space="preserve" name="Twitter.Title">
+        <value>Twitter</value>
+    </data>
+    <data xml:space="preserve" name="GooglePlus.Title">
+        <value>Google+</value>
+    </data>
+    <data xml:space="preserve" name="Odnoklassniki.Title">
+        <value>Odnoklassniki</value>
+    </data>
+    <data xml:space="preserve" name="Youtube.Title">
+        <value>Youtube</value>
+    </data>
+    <data xml:space="preserve" name="YandexCycounter.Text">
+        <value>Yandex citation index</value>
+    </data>
+    <data name="LogoTitle.Text" xml:space="preserve">
+        <value></value>
+    </data>
+    <data name="LogoTitle.Motto" xml:space="preserve">
+        <value>motto here</value>
+    </data>
+    <data xml:space="preserve" name="FooterPane1.Content">
+        <value>Use language editor to customize this content</value>
+    </data>
+    <data xml:space="preserve" name="FooterPane2.Content">
+        <value>Use language editor to customize this content</value>
+    </data>
+    <data xml:space="preserve" name="FooterPane3.Content">
+        <value>Use language editor to customize this content</value>
+    </data>
+    <data name="GoogleTranslate.Title" xml:space="preserve">
+        <value>Translate with Google</value>
+    </data>
+    <data name="GoogleTranslate.Alt" xml:space="preserve">
+        <value>Translate with Google</value>
+    </data>
+    <data name="AgeRating.Text" xml:space="preserve">
+        <value>12+</value>
+    </data>
+    <data name="AgeRating.Title" xml:space="preserve">
+        <value>Information products for children under the age of twelve years (12+)</value>
+    </data>
 </root>

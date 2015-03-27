@@ -26,6 +26,7 @@
 
 using System;
 using System.Web.UI;
+using DotNetNuke.UI.Skins;
 using DotNetNuke.Services.Localization;
 
 namespace R7.Epsilon
@@ -34,13 +35,18 @@ namespace R7.Epsilon
     {
         #region Properties
 
-        protected string LocalResourceFile { get; private set; }
+        public string LocalResourceFile { get; protected set; }
 
         #endregion
 
         public ControlLocalizer (Control control)
         {
-            LocalResourceFile = Localization.GetResourceFile (control, control.GetType ().Name + ".ascx");
+            // use control base type name, not .ascx one!
+            LocalResourceFile = Localization.GetResourceFile (control, control.GetType ().BaseType.Name + ".ascx");
+
+            // skinobjects must use resourses from skin directory
+            if (control is SkinObjectBase)
+                LocalResourceFile = LocalResourceFile.Replace ("/Controls", string.Empty);
         }
 
         #region Public methods
