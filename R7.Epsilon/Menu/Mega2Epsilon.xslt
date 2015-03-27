@@ -33,15 +33,7 @@
 					<xsl:attribute name="class">level0<xsl:if test="@breadcrumb = 1"> current</xsl:if></xsl:attribute>
                     <a>
 						<xsl:attribute name="class"><xsl:if test="@breadcrumb = 1">current</xsl:if></xsl:attribute>
-						<xsl:choose>
-							<xsl:when test="@enabled = 1">
-								<xsl:attribute name="href"><xsl:value-of select="@url"/></xsl:attribute>
-							</xsl:when>
-							<xsl:otherwise>
-								<xsl:attribute name="href">#</xsl:attribute>
-								<xsl:attribute name="onclick">return false</xsl:attribute>
-							</xsl:otherwise>
-						</xsl:choose>
+                        <xsl:call-template name="menuLink"/>
                         <xsl:choose>
                             <xsl:when test="$hamburgerMenu = 1">
                                 <span class="sr-only"><xsl:value-of select="ddr:GetString('ToggleNavigation.Text','Portals/_default/Skins/R7.Epsilon/App_LocalResources/SharedResources.resx')" /></span>
@@ -68,48 +60,53 @@
 			</xsl:when>
 			<xsl:when test="$level=1">
                 <ul>
-                    <xsl:call-template name="menuItem"/>
+                    <li>
+                        <a>
+                            <xsl:call-template name="menuLink"/>
+                            <xsl:value-of select="@text"/>
+                        </a>
+                    </li>
 					<xsl:if test="node">
 						<xsl:apply-templates select="node">
-							<xsl:with-param name="level" select="$level + 1" />
+							<xsl:with-param name="level" select="$level + 1"/>
 						</xsl:apply-templates>
 					</xsl:if>
 				</ul>
 			</xsl:when>
 			<xsl:otherwise>
-                <xsl:call-template name="menuItem"/>
+                <li>
+                    <a>
+                        <xsl:call-template name="menuLink"/>
+                        <xsl:value-of select="@text"/>
+                    </a>
+                </li>
 				<xsl:if test="node">
 					<xsl:apply-templates select="node">
-						<xsl:with-param name="level" select="$level + 1" />
+						<xsl:with-param name="level" select="$level + 1"/>
 					</xsl:apply-templates>
 				</xsl:if>
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
-    <xsl:template name="menuItem">
-        <li>
-            <a>
+    <xsl:template name="menuLink">
+        <xsl:choose>
+            <xsl:when test="@enabled = 1">
                 <xsl:choose>
-                    <xsl:when test="@enabled = 1">
-                        <xsl:choose>
-                            <xsl:when test="$urlType = 1">
-                                <xsl:attribute name="href">/Default.aspx?TabId=<xsl:value-of select="@id"/></xsl:attribute>
-                            </xsl:when>
-                            <xsl:when test="$urlType = 2">
-                                <xsl:attribute name="href">/<xsl:value-of select="@id"/></xsl:attribute>
-                            </xsl:when>
-                            <xsl:otherwise>
-                                <xsl:attribute name="href"><xsl:value-of select="@url"/></xsl:attribute>
-                            </xsl:otherwise>
-                        </xsl:choose>
+                    <xsl:when test="$urlType = 1">
+                        <xsl:attribute name="href">/Default.aspx?TabId=<xsl:value-of select="@id"/></xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="$urlType = 2">
+                        <xsl:attribute name="href">/<xsl:value-of select="@id"/></xsl:attribute>
                     </xsl:when>
                     <xsl:otherwise>
-                        <xsl:attribute name="href">#</xsl:attribute>
-                        <xsl:attribute name="onclick">return false</xsl:attribute>
+                        <xsl:attribute name="href"><xsl:value-of select="@url"/></xsl:attribute>
                     </xsl:otherwise>
                 </xsl:choose>
-                <xsl:value-of select="@text" />
-            </a>
-        </li>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:attribute name="href">#</xsl:attribute>
+                <xsl:attribute name="onclick">return false</xsl:attribute>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
 </xsl:stylesheet>
