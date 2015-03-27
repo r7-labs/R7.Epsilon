@@ -1,14 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.PageHeader" %>
-<%@ Register TagPrefix="dnn" TagName="MENU" Src="~/DesktopModules/DDRMenu/Menu.ascx" %>
-<%@ Register TagPrefix="dnn" Namespace="DotNetNuke.Web.DDRMenu.TemplateEngine" Assembly="DotNetNuke.Web.DDRMenu" %>
-<div class="skin-local-menu">
-    <dnn:MENU id="menuLocal" runat="server" MenuStyle="Mega2Epsilon" NodeSelector="-1,0,2" IncludeNodes="<%# PortalSettings.ActiveTab.TabID %>">
-        <TemplateArguments> 
-            <dnn:TemplateArgument Name="hamburgerMenu" Value="1" />
-            <dnn:TemplateArgument Name="subMenuColumns" Value="1" />
-        </TemplateArguments>
-    </dnn:MENU>
-</div>
+<%@ OutputCache Duration="1200" VaryByParam="TabId" %>
 <h1>
     <a href="<%= PortalSettings.ActiveTab.FullUrl %>" alt="<%: PortalSettings.ActiveTab.Title %>" title="<%: PortalSettings.ActiveTab.Title %>"><%: PortalSettings.ActiveTab.TabName %></a>
     <small><%: TagLine %></small>
