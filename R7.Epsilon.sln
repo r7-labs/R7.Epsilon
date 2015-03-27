@@ -6,6 +6,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{18F242D6-DEE0-4057-AD61-46CAA7414351}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
+		CUSTOMIZE.md = CUSTOMIZE.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Packaging", "Packaging\Packaging.csproj", "{1FAE1B00-5E10-4B95-A656-423A8DBB08B9}"
