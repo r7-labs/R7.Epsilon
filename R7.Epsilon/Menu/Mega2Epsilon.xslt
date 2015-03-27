@@ -8,7 +8,7 @@
 	<xsl:param name="pointer"><![CDATA[&nbsp;&#9662;]]></xsl:param>
 	<xsl:param name="startUl"><![CDATA[<ul>]]></xsl:param>
 	<xsl:param name="endUl"><![CDATA[</ul>]]></xsl:param>
-	<xsl:template match="/*">
+    <xsl:template match="/*">
 		<xsl:apply-templates select="root" />
 	</xsl:template>
 	<xsl:template match="root">
@@ -67,20 +67,7 @@
 			</xsl:when>
 			<xsl:when test="$level=1">
                 <ul>
-                    <li>
-						<a>
-							<xsl:choose>
-								<xsl:when test="@enabled = 1">
-									<xsl:attribute name="href"><xsl:value-of select="@url"/></xsl:attribute>
-								</xsl:when>
-								<xsl:otherwise>
-									<xsl:attribute name="href">#</xsl:attribute>
-									<xsl:attribute name="onclick">return false</xsl:attribute>
-								</xsl:otherwise>
-							</xsl:choose>
-							<xsl:value-of select="@text" />
-						</a>
-					</li>
+                    <xsl:call-template name="menuItem"/>
 					<xsl:if test="node">
 						<xsl:apply-templates select="node">
 							<xsl:with-param name="level" select="$level + 1" />
@@ -89,20 +76,7 @@
 				</ul>
 			</xsl:when>
 			<xsl:otherwise>
-                <li>
-					<a>
-						<xsl:choose>
-							<xsl:when test="@enabled = 1">
-								<xsl:attribute name="href"><xsl:value-of select="@url"/></xsl:attribute>
-							</xsl:when>
-							<xsl:otherwise>
-								<xsl:attribute name="href">#</xsl:attribute>
-								<xsl:attribute name="onclick">return false</xsl:attribute>
-							</xsl:otherwise>
-						</xsl:choose>
-                        <xsl:value-of select="@text" />
-					</a>
-				</li>
+                <xsl:call-template name="menuItem"/>
 				<xsl:if test="node">
 					<xsl:apply-templates select="node">
 						<xsl:with-param name="level" select="$level + 1" />
@@ -111,4 +85,20 @@
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
+    <xsl:template name="menuItem">
+        <li>
+            <a>
+                <xsl:choose>
+                    <xsl:when test="@enabled = 1">
+                        <xsl:attribute name="href"><xsl:value-of select="@url"/></xsl:attribute>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:attribute name="href">#</xsl:attribute>
+                        <xsl:attribute name="onclick">return false</xsl:attribute>
+                    </xsl:otherwise>
+                </xsl:choose>
+                <xsl:value-of select="@text" />
+            </a>
+        </li>
+    </xsl:template>
 </xsl:stylesheet>
