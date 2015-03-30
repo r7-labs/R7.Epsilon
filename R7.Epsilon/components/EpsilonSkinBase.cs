@@ -150,7 +150,8 @@ namespace R7.Epsilon
             A11yEnabled = !A11yEnabled;
 
             // reload page
-            Response.Redirect (Globals.NavigateURL ());
+            Response.Redirect (Globals.NavigateURL (), false);
+            Context.ApplicationInstance.CompleteRequest();
         }
 
         #endregion
