@@ -75,6 +75,10 @@ ul.megamenu
                 display:block; 
                 min-height:24px;
 
+                // extra space below menu block
+                &:last-child { margin-bottom:1em; }
+                &:first-child { margin-bottom:0; }
+
                 a 
                 { 
                     border-radius:3px;
@@ -86,9 +90,6 @@ ul.megamenu
                         content:"•";
                         padding-right:0.5em;
                     }
-
-                    // extra space below menu block
-                    &:last-child { margin-bottom:1em; }
                 }
 
                 &:first-child a 
@@ -97,9 +98,6 @@ ul.megamenu
                     border-top:1px solid;
                     font-weight:bold;
                     font-size:@menu-font-size;
-
-                    // don't add extra space below
-                    margin-bottom:0;
 
                     &:before 
                     { 
