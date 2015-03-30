@@ -86,6 +86,9 @@
     <None Include="Skins\PopupSkin.doctype.xml">
       <DependentUpon>PopupSkin.ascx</DependentUpon>
     </None>
+    <None Include="Skins\Delta.doctype.xml">
+      <DependentUpon>Delta.ascx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Skins\Edit.ascx.cs">
@@ -150,6 +153,9 @@
     </Compile>
     <Compile Include="Skins\Controls\Functions.ascx.cs">
       <DependentUpon>Functions.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\Delta.ascx.cs">
+      <DependentUpon>Delta.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -237,6 +243,7 @@
     <Content Include="Skins\Controls\FooterContent.ascx" />
     <Content Include="Skins\Controls\Functions.ascx" />
     <Content Include="Configs\volgau.com\R7.Epsilon-portal.config" />
+    <Content Include="Skins\Delta.ascx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
