@@ -83,6 +83,9 @@
     <None Include="Skins\App_LocalResources\SharedResources.ru-RU.Portal-0.resx" />
     <None Include="Configs\volgau.com\README.md" />
     <None Include="Skins\App_LocalResources\SharedResources.Portal-0.resx" />
+    <None Include="Skins\PopupSkin.doctype.xml">
+      <DependentUpon>PopupSkin.ascx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Skins\Edit.ascx.cs">
