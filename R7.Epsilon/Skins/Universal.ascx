@@ -136,82 +136,162 @@
 </header>
 <div id="CarouselPane" runat="server" class="carousel slide" containertype="G" containername="R7.Epsilon" containersrc="Blank.ascx" />
 <div class="container">
-    <div id="TopRow1" class="row">
-        <div id="TopPane" runat="server" class="col-md-12" />
+    <div class="row">
+        <div class="col-md-12">
+            <div id="TopPane" runat="server" />
+        </div>
     </div>
-    <div id="TopRow2" class="row">
-        <div id="TopLeftPane" runat="server" class="col-md-7" />
-        <!-- REVIEW: Make TopRightPane of fixed width? -->
-        <div id="TopRightPane" runat="server" class="col-md-5" />
+    <div class="row">
+        <div class="col-md-7">
+            <div id="TopLeftPane" runat="server" />
+        </div>
+        <div class="col-md-5">
+            <%-- REVIEW: Make TopRightPane of fixed width? --%>
+            <div id="TopRightPane" runat="server" />
+        </div>
     </div>
-    <div id="TopRow3" class="row">
-        <div id="TopPane11" runat="server" class="col-md-4" />
-        <div id="TopPane12" runat="server" class="col-md-4" />
-        <div id="TopPane13" runat="server" class="col-md-4" />
+    <div class="row">
+        <div class="col-md-4">
+            <div id="TopPane11" runat="server" />
+        </div>
+        <div class="col-md-4">
+            <div id="TopPane12" runat="server" />
+        </div>
+        <div class="col-md-4">
+            <div id="TopPane13" runat="server" />
+        </div>
     </div>
-    <div id="TopRow4" class="row">
-        <div id="TopPane21" runat="server" class="col-md-4" />
-        <div id="TopPane22" runat="server" class="col-md-4" />
-        <div id="TopPane23" runat="server" class="col-md-4" />
+    <div class="row">
+        <div class="col-md-4">
+            <div id="TopPane21" runat="server" />
+        </div>
+        <div class="col-md-4">
+            <div id="TopPane22" runat="server" />
+        </div>
+        <div class="col-md-4">
+            <div id="TopPane23" runat="server" />
+        </div>
     </div>
-    <div id="ContentOddRow1" class="row">
-        <div id="ContentPane" runat="server" class="col-md-9 col-sm-7" />
-        <div id="RightPane" runat="server" class="col-md-3 col-sm-5" />
+    <div class="row">
+        <div class="col-md-9 col-sm-7">
+            <div id="ContentPane" runat="server" />
+        </div>
+        <div class="col-md-3 col-sm-5">
+            <div id="RightPane" runat="server" />
+        </div>
     </div>
-    <div id="ContentEvenRow1" class="row"> 
-        <div id="LeftPane" runat="server" class="col-md-3 col-sm-5" />
-        <div id="ContentLeftPane" runat="server" class="col-md-9 col-sm-7" />
+    <div class="row"> 
+        <div class="col-md-3 col-sm-5">
+            <div id="LeftPane" runat="server" />
+        </div>
+        <div class="col-md-9 col-sm-7">
+            <div id="ContentLeftPane" runat="server" />
+        </div>
     </div>
-    <div id="ContentOddRow2" class="row">
-        <div id="ContentPane2" runat="server" class="col-md-9 col-sm-7" />
-        <div id="RightPane2" runat="server" class="col-md-3 col-sm-5" />
+    <div class="row">
+        <div class="col-md-9 col-sm-7">
+            <div id="ContentPane2" runat="server" />
+        </div>
+        <div class="col-md-3 col-sm-5">
+            <div id="RightPane2" runat="server" />
+        </div>
     </div>
-    <div id="ContentEvenRow2" class="row"> 
-        <div id="LeftPane2" runat="server" class="col-md-3 col-sm-5" />
-        <div id="ContentLeftPane2" runat="server" class="col-md-9 col-sm-7" />
+    <div class="row"> 
+        <div class="col-md-3 col-sm-5">
+            <div id="LeftPane2" runat="server" />
+        </div>
+        <div class="col-md-9 col-sm-7">
+            <div id="ContentLeftPane2" runat="server" />
+        </div>
     </div>
-    <div id="MiddleRow1" class="row">
-        <div id="MiddlePane11" runat="server" class="col-md-4" />
-        <div id="MiddlePane12" runat="server" class="col-md-4" />
-        <div id="MiddlePane13" runat="server" class="col-md-4" />
+    <div class="row">
+        <div class="col-md-4">
+            <div id="MiddlePane11" runat="server" />
+        </div>
+        <div class="col-md-4">
+            <div id="MiddlePane12" runat="server" />
+        </div>
+        <div class="col-md-4">
+            <div id="MiddlePane13" runat="server" />
+        </div>
     </div>
-    <div id="MiddleRow2" class="row">
-        <div id="MiddlePane21" runat="server" class="col-md-4" />
-        <div id="MiddlePane22" runat="server" class="col-md-4" />
-        <div id="MiddlePane23" runat="server" class="col-md-4" />
+    <div class="row">
+        <div class="col-md-4">
+            <div id="MiddlePane21" runat="server" />
+        </div>
+        <div class="col-md-4">
+            <div id="MiddlePane22" runat="server" />
+        </div>
+        <div class="col-md-4">
+            <div id="MiddlePane23" runat="server" />
+        </div>
     </div>
-    <div id="ContentOddRow3" class="row">
-        <div id="ContentPane3" runat="server" class="col-md-9 col-sm-7" />
-        <div id="RightPane3" runat="server" class="col-md-3 col-sm-5" />
+    <div class="row">
+        <div class="col-md-9 col-sm-7">
+            <div id="ContentPane3" runat="server" />
+        </div>
+        <div class="col-md-3 col-sm-5">
+            <div id="RightPane3" runat="server" />
+        </div>
     </div>
-    <div id="ContentEvenRow3" class="row"> 
-        <div id="LeftPane3" runat="server" class="col-md-3 col-sm-5" />
-        <div id="ContentLeftPane3" runat="server" class="col-md-9 col-sm-7" />
+    <div class="row"> 
+        <div class="col-md-3 col-sm-5">
+            <div id="LeftPane3" runat="server" />
+        </div>
+        <div class="col-md-9 col-sm-7">
+            <div id="ContentLeftPane3" runat="server" />
+        </div>
     </div>
-    <div id="ContentOddRow4" class="row">
-        <div id="ContentPane4" runat="server" class="col-md-9 col-sm-7" />
-        <div id="RightPane4" runat="server" class="col-md-3 col-sm-5" />
+    <div class="row">
+        <div class="col-md-9 col-sm-7">
+            <div id="ContentPane4" runat="server" />
+        </div>
+        <div class="col-md-3 col-sm-5">
+            <div id="RightPane4" runat="server" />
+        </div>
     </div>
-    <div id="ContentEvenRow4" class="row"> 
-        <div id="LeftPane4" runat="server" class="col-md-3 col-sm-5" />
-        <div id="ContentLeftPane4" runat="server" class="col-md-9 col-sm-7" />
+    <div class="row"> 
+        <div class="col-md-3 col-sm-5">
+            <div id="LeftPane4" runat="server" />
+        </div>
+        <div class="col-md-9 col-sm-7">
+            <div id="ContentLeftPane4" runat="server" />
+        </div>
     </div>
-    <div id="BottonRow1" class="row">
-        <div id="BottomPane11" runat="server" class="col-md-4" />
-        <div id="BottomPane12" runat="server" class="col-md-4" />
-        <div id="BottomPane13" runat="server" class="col-md-4" />
+    <div class="row">
+        <div class="col-md-4">
+            <div id="BottomPane11" runat="server" />
+        </div>
+        <div class="col-md-4">
+            <div id="BottomPane12" runat="server" />
+        </div>
+        <div class="col-md-4">
+            <div id="BottomPane13" runat="server" />
+        </div>
     </div>
-    <div id="BottonRow2" class="row">
-        <div id="BottomPane21" runat="server" class="col-md-4" />
-        <div id="BottomPane22" runat="server" class="col-md-4" />
-        <div id="BottomPane23" runat="server" class="col-md-4" />
+    <div class="row">
+        <div class="col-md-4">
+            <div id="BottomPane21" runat="server" />
+        </div>
+        <div class="col-md-4">
+            <div id="BottomPane22" runat="server" />
+        </div>
+        <div class="col-md-4">
+            <div id="BottomPane23" runat="server" />
+        </div>
     </div>
-    <div id="BottonRow3" class="row">
-        <div id="BottomLeftPane" runat="server" class="col-md-7" />
-        <div id="BottomRightPane" runat="server" class="col-md-5" />
+    <div class="row">
+        <div class="col-md-7">
+            <div id="BottomLeftPane" runat="server" />
+        </div>
+        <div class="col-md-5">
+            <div id="BottomRightPane" runat="server" />
+        </div>
     </div>
-    <div id="BottomRow4" class="row">
-        <div id="BottomPane" runat="server" class="col-md-12" />
+    <div class="row">
+        <div class="col-md-12">
+            <div id="BottomPane" runat="server" />
+        </div>
     </div>
     <div class="row">
         <div class="col-md-12">
