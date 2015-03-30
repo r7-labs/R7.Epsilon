@@ -6,7 +6,7 @@
 			<owner>
 				<name>Roman M. Yagodin</name>
 				<organization>R7.Solutions</organization>
-				<url>http://www.R7.Solutions.com/R7.Epsilon</url>
+				<url>https://github.com/roman-yagodin/R7.Epsilon</url>
 				<email>roman.yagodin@gmail.com</email>
 			</owner>
 			<!-- <azureCompatible>true</azureCompatible> -->
@@ -25,14 +25,6 @@
 						<basePath>Portals\_default\Skins\R7.Epsilon</basePath>
 						<resourceFile>
 							<name>Resources_Skins.zip</name>
-						</resourceFile>
-					</resourceFiles>
-				</component>
-				<component type="ResourceFile">
-					<resourceFiles>
-						<basePath>DesktopModules\DDRMenu\Mega2Epsilon</basePath>
-						<resourceFile>
-							<name>Resources_Menu.zip</name>
 						</resourceFile>
 					</resourceFiles>
 				</component>
@@ -57,7 +49,7 @@
 			<owner>
 				<name>Roman M. Yagodin</name>
 				<organization>R7.Solutions</organization>
-				<url>http://www.R7.Solutions.com/R7.Epsilon</url>
+				<url>https://github.com/roman-yagodin/R7.Epsilon</url>
 				<email>roman.yagodin@gmail.com</email>
 			</owner>
 			<license src="License.txt" />

@@ -11,6 +11,7 @@
 		<ItemGroup>
 			<InstallSkinFiles Include="..\R7.Epsilon\Skins\**\*.ascx" />
 			<InstallSkinFiles Include="..\R7.Epsilon\Skins\**\*.xml" />
+            <InstallSkinFiles Include="..\R7.Epsilon\Skins\**\*.xslt" />
 			<InstallSkinFiles Include="..\R7.Epsilon\Skins\**\*.css" />
 			<InstallSkinFiles Include="..\R7.Epsilon\Skins\**\*.resx" />
 			<InstallSkinFiles Include="..\R7.Epsilon\Skins\**\*.js" />
@@ -35,15 +36,7 @@
 			<InstallContainerFiles Include="..\R7.Epsilon\Containers\**\*.png" />
 			<InstallContainerFiles Include="..\R7.Epsilon\Containers\**\*.gif" />
 		</ItemGroup>
-
-		<!-- Declare menu files -->
-		<ItemGroup>
-			<InstallMenuFiles Include="..\R7.Epsilon\Menu\**\*.css" />
-			<InstallMenuFiles Include="..\R7.Epsilon\Menu\**\*.js" />
-			<InstallMenuFiles Include="..\R7.Epsilon\Menu\**\*.xml" />
-			<InstallMenuFiles Include="..\R7.Epsilon\Menu\**\*.xslt" />
-		</ItemGroup>
-		
+  
 		<!-- Declare manifest files -->
 		<ItemGroup>
 			<InstallManifestFiles Include="..\R7.Epsilon\*.dnn" />
@@ -59,8 +52,7 @@
 		<!-- Copy to tmp dir -->
 		<Copy SourceFiles="@(InstallSkinFiles)" DestinationFolder="$(MSBuildProjectDirectory)\tmp_Skins\%(RecursiveDir)" />
 		<Copy SourceFiles="@(InstallContainerFiles)" DestinationFolder="$(MSBuildProjectDirectory)\tmp_Containers\%(RecursiveDir)" />
-		<Copy SourceFiles="@(InstallMenuFiles)" DestinationFolder="$(MSBuildProjectDirectory)\tmp_Menu\%(RecursiveDir)" />
-	
+
 		<!-- Declare zipped files -->
 		<ItemGroup>
 			<InstallSkinZipFiles Include="$(MSBuildProjectDirectory)\tmp_Skins\**\*.*" />
@@ -69,16 +61,11 @@
 		<ItemGroup>
 			<InstallContainerZipFiles Include="$(MSBuildProjectDirectory)\tmp_Containers\**\*.*" />
 		</ItemGroup>
-
-		<ItemGroup>
-			<InstallMenuZipFiles Include="$(MSBuildProjectDirectory)\tmp_Menu\**\*.*" />
-		</ItemGroup>
-		
+  
 		<!-- Create resource archives  -->
 		<Zip Files="@(InstallSkinZipFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\tmp_Skins" ZipFileName="Resources_Skins.$(PackageExtension)" />
 		<Zip Files="@(InstallContainerZipFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\tmp_Containers" ZipFileName="Resources_Containers.$(PackageExtension)" />
-		<Zip Files="@(InstallMenuZipFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\tmp_Menu" ZipFileName="Resources_Menu.$(PackageExtension)" />
-		
+
 		<!-- Copy binaries -->
 		<Copy SourceFiles="@(InstallBinaryFiles)" DestinationFolder="$(MSBuildProjectDirectory)\tmp_Package\bin" />
 
@@ -89,8 +76,6 @@
 		<Move SourceFiles="$(MSBuildProjectDirectory)\Resources_Skins.$(PackageExtension)"
 			 DestinationFolder="$(MSBuildProjectDirectory)\tmp_Package/" />
 		<Move SourceFiles="$(MSBuildProjectDirectory)\Resources_Containers.$(PackageExtension)"
-			 DestinationFolder="$(MSBuildProjectDirectory)\tmp_Package/" />
-		<Move SourceFiles="$(MSBuildProjectDirectory)\Resources_Menu.$(PackageExtension)"
 			 DestinationFolder="$(MSBuildProjectDirectory)\tmp_Package/" />
 
 		<!-- Declare tmp package folder -->
@@ -107,7 +92,6 @@
 		<!-- Cleanup -->
 		<RemoveDir Directories="$(MSBuildProjectDirectory)\tmp_Skins" />
 		<RemoveDir Directories="$(MSBuildProjectDirectory)\tmp_Containers" />
-		<RemoveDir Directories="$(MSBuildProjectDirectory)\tmp_Menu" />
 		<RemoveDir Directories="$(MSBuildProjectDirectory)\tmp_Package" />
 
 	</Target>

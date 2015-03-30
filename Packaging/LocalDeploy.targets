@@ -6,6 +6,7 @@
 		<ItemGroup>
 			<DeploySkinFiles Include="..\R7.Epsilon\Skins\**\*.ascx" />
 			<DeploySkinFiles Include="..\R7.Epsilon\Skins\**\*.xml" />
+            <DeploySkinFiles Include="..\R7.Epsilon\Skins\**\*.xslt" />
 			<DeploySkinFiles Include="..\R7.Epsilon\Skins\**\*.css" />
 			<DeploySkinFiles Include="..\R7.Epsilon\Skins\**\*.resx" />
 			<DeploySkinFiles Include="..\R7.Epsilon\Skins\**\*.js" />
@@ -31,19 +32,10 @@
 			<DeployContainerFiles Include="..\R7.Epsilon\Containers\**\*.gif" />
 		</ItemGroup>
 
-		<!-- Declare menu files -->
-		<ItemGroup>
-			<DeployMenuFiles Include="..\R7.Epsilon\Menu\**\*.css" />
-			<DeployMenuFiles Include="..\R7.Epsilon\Menu\**\*.js" />
-			<DeployMenuFiles Include="..\R7.Epsilon\Menu\**\*.xml" />
-			<DeployMenuFiles Include="..\R7.Epsilon\Menu\**\*.xslt" />
-		</ItemGroup>
-
 		<!-- Copy files to tmp dirs -->
 		<Copy SourceFiles="@(DeploySkinFiles)" DestinationFolder="$(MSBuildProjectDirectory)\tmp_Skins\%(RecursiveDir)" />
 		<Copy SourceFiles="@(DeployContainerFiles)" DestinationFolder="$(MSBuildProjectDirectory)\tmp_Containers\%(RecursiveDir)" />
-		<Copy SourceFiles="@(DeployMenuFiles)" DestinationFolder="$(MSBuildProjectDirectory)\tmp_Menu\%(RecursiveDir)" />
-		
+
 		<!-- declare files to move -->
 		<ItemGroup>
 			<SkinMoveFiles Include="$(MSBuildProjectDirectory)\tmp_Skins\**\*.*" />	
@@ -53,15 +45,10 @@
 			<ContainerMoveFiles Include="$(MSBuildProjectDirectory)\tmp_Containers\**\*.*" />
 		</ItemGroup>
 	
-		<ItemGroup>
-			<MenuMoveFiles Include="$(MSBuildProjectDirectory)\tmp_Menu\**\*.*" />
-		</ItemGroup>
-
 		<!-- Deploy files -->
 		<Move SourceFiles="@(SkinMoveFiles)" DestinationFolder="$(DnnSkinsPath)\R7.Epsilon\%(RecursiveDir)" />
 		<Move SourceFiles="@(ContainerMoveFiles)" DestinationFolder="$(DnnContainersPath)\R7.Epsilon\%(RecursiveDir)" />
-		<Move SourceFiles="@(MenuMoveFiles)" DestinationFolder="$(DnnMenusPath)\Mega2Epsilon\%(RecursiveDir)" />
-
+		      
 		<!-- Copy binary -->
 		<Copy SourceFiles="$(MSBuildDnnBinPath)\R7.Epsilon.dll" DestinationFolder="$(DnnBinPath)" />
         <Copy SourceFiles="$(MSBuildDnnBinPath)\Nini.dll" DestinationFolder="$(DnnBinPath)" />
@@ -69,7 +56,6 @@
 		<!-- Cleanup -->
 		<RemoveDir Directories="$(MSBuildProjectDirectory)\tmp_Skins" />
 		<RemoveDir Directories="$(MSBuildProjectDirectory)\tmp_Containers" />
-		<RemoveDir Directories="$(MSBuildProjectDirectory)\tmp_Menu" />
-
+		      
 	</Target>
 </Project>

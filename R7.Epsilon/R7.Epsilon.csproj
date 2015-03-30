@@ -64,8 +64,6 @@
     <None Include="Skins\App_LocalResources\SharedResources.resx" />
     <None Include="Skins\images\icon_message.psd" />
     <None Include="Skins\images\icon_notification.psd" />
-    <None Include="Menu\Mega2Epsilon.xslt" />
-    <None Include="Menu\menudef.xml" />
     <None Include="Skins\Simple.doctype.xml">
       <DependentUpon>Simple.ascx</DependentUpon>
     </None>
@@ -89,6 +87,8 @@
     <None Include="Skins\Delta.doctype.xml">
       <DependentUpon>Delta.ascx</DependentUpon>
     </None>
+    <None Include="Skins\Mega2Epsilon\Mega2Epsilon.xslt" />
+    <None Include="Skins\Mega2Epsilon\menudef.xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Skins\Edit.ascx.cs">
@@ -259,6 +259,7 @@
     <Folder Include="Skins\Controls\" />
     <Folder Include="Configs\" />
     <Folder Include="Configs\volgau.com\" />
+    <Folder Include="Skins\Mega2Epsilon\" />
   </ItemGroup>
   <Import Project="Less.targets" />
   <Target Name="BeforeBuild" DependsOnTargets="Less;MinifyJS" />
