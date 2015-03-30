@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.SocialShareScripts" %>
-<%@ OutputCache Duration="1200" VaryByParam="TabId" %>
+<%@ OutputCache Duration="1200" VaryByParam="TabId;Language" %>
 <%-- Facebook Like --%>
 <script>(function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
