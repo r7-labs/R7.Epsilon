@@ -255,7 +255,6 @@
     </MonoDevelop>
   </ProjectExtensions>
   <ItemGroup>
-    <Folder Include="Menu\" />
     <Folder Include="Skins\Controls\" />
     <Folder Include="Configs\" />
     <Folder Include="Configs\volgau.com\" />
