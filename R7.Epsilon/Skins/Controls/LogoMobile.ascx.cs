@@ -27,7 +27,6 @@
 using System;
 using System.Web;
 using System.Web.UI;
-using DotNetNuke.Common;
 using DotNetNuke.Entities.Portals;
 using System.Web.UI.WebControls;
 using System.Web.Security;
@@ -35,15 +34,8 @@ using DotNetNuke.UI.WebControls;
 
 namespace R7.Epsilon
 {
-    public class LogoMobile : EpsilonSkinObjectBase
+    public class LogoMobile: EpsilonSkinObjectBase
     {
-        protected string HomeTabFullUrl
-        {
-            get
-            {
-                return (PortalSettings.HomeTabId != -1) ? 
-                    Globals.NavigateURL (PortalSettings.HomeTabId) : Globals.AddHTTP (PortalSettings.PortalAlias.HTTPAlias);
-            }
-        }
+        
     }
 }

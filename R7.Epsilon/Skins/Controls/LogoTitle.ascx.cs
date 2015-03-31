@@ -34,7 +34,7 @@ using DotNetNuke.UI.WebControls;
 
 namespace R7.Epsilon
 {
-    public class LogoTitle : EpsilonSkinObjectBase
+    public class LogoTitle: EpsilonSkinObjectBase
     {
     }
 }

@@ -26,6 +26,7 @@
 
 using System;
 using System.Web.UI;
+using DotNetNuke.Common;
 using DotNetNuke.UI.Skins;
 
 namespace R7.Epsilon
@@ -45,7 +46,7 @@ namespace R7.Epsilon
 
         #region IConfigurableControl implementation
 
-        protected EpsilonConfig config;
+        private EpsilonConfig config;
 
         public EpsilonConfig Config 
         {
@@ -53,6 +54,15 @@ namespace R7.Epsilon
         }
 
         #endregion
+
+        public string HomeTabFullUrl
+        {
+            get
+            {
+                return (PortalSettings.HomeTabId != -1) ? 
+                    Globals.NavigateURL (PortalSettings.HomeTabId) : Globals.AddHTTP (PortalSettings.PortalAlias.HTTPAlias);
+            }
+        }
     }
 }
 
