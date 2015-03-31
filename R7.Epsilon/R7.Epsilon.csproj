@@ -244,6 +244,7 @@
     <Content Include="Skins\Controls\Functions.ascx" />
     <Content Include="Configs\volgau.com\R7.Epsilon-portal.config" />
     <Content Include="Skins\Delta.ascx" />
+    <Content Include="Skins\css\blueimp.less" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
