@@ -1,4 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.LogoTitle" %>
 <%@ OutputCache Duration="1200" VaryByParam="TabId;Language" %>
-<a class="skin-logo-title" href="<%= HomeTabFullUrl %>"><%= Localizer.SafeGetString ("LogoTitle.Text", PortalSettings.PortalName) %></a>
-<div class="skin-logo-title-motto"><%= Localizer.GetString ("LogoTitle.Motto") %></div>
+<a href="<%= HomeTabFullUrl %>">
+    <div class="skin-logo-title" ><%= Localizer.SafeGetString ("LogoTitle.Text", PortalSettings.PortalName) %></div>
+    <div class="skin-logo-title-motto"><%= Localizer.GetString ("LogoTitle.Motto") %></div>
+</a>
