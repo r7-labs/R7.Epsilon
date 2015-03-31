@@ -41,7 +41,7 @@
 <header>
     <div class="container">
         <div class="row">
-            <a href="#TopRow1" class="sr-only sr-only-focusable"><%: Localizer.GetString ("SkipToContent.Text") %></a>
+            <a href="#dnn_TopPane" class="sr-only sr-only-focusable"><%: Localizer.GetString ("SkipToContent.Text") %></a>
             <skin:BROWSERCHECK runat="server" />
         </div>
         <div class="row">
