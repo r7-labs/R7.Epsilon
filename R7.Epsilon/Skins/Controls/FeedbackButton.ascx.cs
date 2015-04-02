@@ -56,6 +56,9 @@ namespace R7.Epsilon
         {
             base.OnInit (e);
 
+            // set feedback TabId here to avoid cache issues (fix for #14)
+            FeedbackTabId = Config.FeedbackTabId;
+
             linkFeedbackButton.Target = Target;
             linkFeedbackButton.CssClass = "unselectable " + CssClass;
             linkFeedbackButton.ToolTip = Localizer.GetString ("FeedBackButton.Tooltip");
