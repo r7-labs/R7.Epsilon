@@ -9,62 +9,56 @@ function splitSubMenu(controlId, columns) {
 	});
 }
 
+// called by hoverIntent and on top level menu links focus
+function megaHoverOver() {
+    var sub = jQuery(this).find(".sub");
+
+    // show only if not showed
+    if (sub.not(':visible')) {
+        sub.stop().fadeTo('fast', 1).show()
+            .prev().addClass("megahover");
+    }
+
+    // hide other submenus - in all menus!
+    // jQuery(this).parents ("ul.megamenu") - only this menu
+    jQuery("ul.megamenu").find('.sub').each (function () {
+        if (!sub.is (this)) {
+            jQuery(this).stop().css("opacity", 0).hide()
+                .prev().removeClass("megahover");
+        }
+    });
+}
+
+// called by hoverIntent
+function megaHoverOut() {
+    // hide only if not focused
+    if (jQuery(this).find(":focus").length === 0) {
+        jQuery(this).find(".sub").stop().css("opacity", 0).hide()
+            .prev().removeClass("megahover");
+    }
+}
+
 jQuery(document).ready(function () {
 
 	// calculate height of top level menu and set top style for menu placement
 	jQuery('ul.megamenu .sub').css('top', jQuery('ul.megamenu > li').height());
 
 	// set hover class to parent item
-	jQuery('li.level0 .sub').mouseover(function () {
+    // REVIEW: Move to megaHoverOver/Out?
+    /*
+	jQuery('li.level0 > .sub').mouseover(function () {
         jQuery(this).closest('li.level0 > a').addClass("megahover")
     }).mouseout(function () {
         jQuery(this).closest('li.level0 > a').removeClass("megahover")
-	});
+	});*/
 
-	function megaHoverOver() {
-		jQuery(this).find(".sub").stop().fadeTo('slow', 1).show();
+    // open submenu by focusing
+    jQuery('li.level0 > a').focus(function () {
+        jQuery(this).parent().each (function () { megaHoverOver.call(this); });
+    });
 
-		// calculate width of all ul's
-		(function (jQuery) {
-			jQuery.fn.calcSubWidth = function () {
-				rowWidth = 0;
-				// calculate row
-				$(this).find("ul").each(function () {
-					rowWidth += $(this).width();
-				});
-			};
-		})(jQuery);
-
-		if (jQuery(this).find(".megarow").length > 0) { 
-            // if row exists...
-			var biggestRow = 0;
-			// calculate each row
-			jQuery(this).find(".row").each(function () {
-				jQuery(this).calcSubWidth();
-				// find biggest row
-				if (rowWidth > biggestRow) {
-					biggestRow = rowWidth;
-				}
-			});
-			// set width
-			jQuery(this).find(".sub").css({ 'width': biggestRow });
-			jQuery(this).find(".megarow:last").css({ 'margin': '0' });
-		} 
-        else { 
-            // if row does not exist...
-			jQuery(this).calcSubWidth();
-			// set width
-			jQuery(this).find(".sub").css({ 'width': rowWidth });
-		}
-	}
-
-	function megaHoverOut() {
-		jQuery(this).find(".sub").stop().fadeTo('slow', 0, function () {
-			jQuery(this).hide();
-		});
-	}
-    
-	var config = {
+    // hoverIntent options
+    var config = {
 		sensitivity: 2, // number = sensitivity threshold (must be 1 or higher)    
 		interval: 100, // number = milliseconds for onMouseOver polling interval    
 		over: megaHoverOver, // function = onMouseOver callback (REQUIRED)    
@@ -72,6 +66,6 @@ jQuery(document).ready(function () {
 		out: megaHoverOut // function = onMouseOut callback (REQUIRED)    
 	};
 
-	jQuery("ul.megamenu .sub").css({ 'opacity': '0' });
-	jQuery("ul.megamenu li").hoverIntent(config);
+    // invoke hoverIntent
+	jQuery("ul.megamenu > li").hoverIntent(config);
 });
