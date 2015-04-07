@@ -59,7 +59,7 @@
             <div class="visible-xs col-xs-2 skin-socialgroups-wrapper">
                 <skin:SOCIALGROUPS runat="server" MobileView="true" />
             </div>
-            <div class="col-md-4 col-sm-4 col-xs-12 skin-search">
+            <div class="col-md-4 col-sm-4 col-xs-12 skin-search" role="search">
                 <dnn:SEARCH runat="server" ShowSite="false" ShowWeb="false" />
             </div>
             <div class="col-md-3 col-sm-4 hidden-xs skin-socialgroups-wrapper">
@@ -67,7 +67,7 @@
             </div>
         </div>
     </div>
-    <nav class="navbar navbar-default skin-primary-navbar" role="navigation">
+    <nav class="navbar navbar-default skin-primary-navbar">
         <div class="container">
             <div class="navbar-brand skin-navbar-brand-link visible-xs">
                 <skin:LOGOMOBILE runat="server" />
@@ -82,7 +82,7 @@
                 <dnn:USER runat="server" LegacyMode="false" />
                 <dnn:LOGIN runat="server" CssClass="skin-login-link" />
             </div>
-            <div class="navbar-collapse collapse dnnClear skin-top-menu">
+            <div class="navbar-collapse collapse dnnClear skin-top-menu" role="navigation">
                 <div class="skin-primary-menu">
                     <dnn:MENU id="menuPrimary" runat="server" MenuStyle="Mega2Epsilon" NodeSelector="<%# Config.PrimaryMenuNodeSelector %>" IncludeNodes="<%# Config.PrimaryMenuIncludeNodes %>" />
                 </div>
