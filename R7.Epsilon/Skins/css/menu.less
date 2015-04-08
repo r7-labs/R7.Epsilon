@@ -234,7 +234,7 @@ ul.megamenu
 
         li.level0 
         {
-            a
+            & > a
             {
                 display:inline-block;
                 margin-right:5px;
@@ -356,12 +356,16 @@ ul.megamenu
 
         ul.megamenu 
         {
-            background-color:@color-secondary-1-2;
-
             li.level0
-            { 
-                // disable rounded borders
-                a { border-radius:0; }
+            {  
+                // remove space between menu rows
+                margin-bottom:0;
+
+                & > a
+                { 
+                    border-radius:0; // disable rounded borders
+                    background-color:@color-secondary-1-2;
+                }
 
                 .sub { border-color:@color-secondary-2-1; }
             }
