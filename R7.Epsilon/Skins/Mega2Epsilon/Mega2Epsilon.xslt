@@ -3,6 +3,7 @@
 	<xsl:output method="html"/>
 	<xsl:param name="ControlID" />
 	<xsl:param name="Options" />
+    <xsl:param name="enableTopLinks">0</xsl:param>
     <xsl:param name="hamburgerMenu">0</xsl:param>
     <xsl:param name="urlType">0</xsl:param>
 	<xsl:param name="subMenuColumns">3</xsl:param>
@@ -31,7 +32,9 @@
 					<xsl:attribute name="class">level0<xsl:if test="@breadcrumb = 1"> current</xsl:if></xsl:attribute>
                     <a>
 						<xsl:attribute name="class"><xsl:if test="@breadcrumb = 1">current</xsl:if></xsl:attribute>
-                        <xsl:call-template name="menuLink"/>
+                        <xsl:call-template name="menuLink">
+                            <xsl:with-param name="enabled" select="$enableTopLinks = 1 and not ($hamburgerMenu = 1)" />
+                        </xsl:call-template>
                         <xsl:choose>
                             <xsl:when test="$hamburgerMenu = 1">
                                 <span class="sr-only"><xsl:value-of select="ddr:GetString('ToggleNavigation.Text','Portals/_default/Skins/R7.Epsilon/App_LocalResources/SharedResources.resx')" /></span>
@@ -87,8 +90,9 @@
 		</xsl:choose>
 	</xsl:template>
     <xsl:template name="menuLink">
+        <xsl:param name="enabled"><xsl:value-of select="true()"/></xsl:param>
         <xsl:choose>
-            <xsl:when test="@enabled = 1">
+            <xsl:when test="@enabled = 1 and $enabled">
                 <xsl:choose>
                     <xsl:when test="$urlType = 1">
                         <xsl:attribute name="href">/Default.aspx?TabId=<xsl:value-of select="@id"/></xsl:attribute>

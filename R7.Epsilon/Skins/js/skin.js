@@ -13,13 +13,7 @@ $(function() {
 
 $(function() {
     var localMenu = $(".skin-local-menu").first ();
-    if (localMenu.find (".sub").length > 0)
-    {
-        localMenu.find ("li.level0 > a").click (function (event) {
-            event.preventDefault (); 
-        });
-    }
-    else
+    if (localMenu.find (".sub").length === 0)
         localMenu.hide ();
 });
 
