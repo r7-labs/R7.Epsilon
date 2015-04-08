@@ -324,7 +324,7 @@
     <div class="skin-footer-last">
         <div class="container">
             <div class="row">
-                <div class="col-md-2 col-xs-12 skin-footer-80x31-buttons">
+                <div class="col-md-2 col-xs-12 skin-footer-88x31-buttons">
                     <skin:YCYCOUNTER runat="server" />
                 </div>
                 <div class="col-md-10 col-xs-12 skin-terms">
