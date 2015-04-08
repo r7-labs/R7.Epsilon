@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0" DefaultTargets="MakeCustomizations">
+	<Target Name="MakeCustomizations" Condition=" '$(Configuration)' == 'Release' ">
+		<!-- Read package version from the manifest -->
+		<XmlRead Prefix="n" Namespace="http://schemas.microsoft.com/developer/msbuild/2003"
+			 XPath="/dotnetnuke/packages/package[1]/@version" XmlFileName="..\R7.Epsilon\R7.Epsilon.dnn">
+			<Output TaskParameter="Value" PropertyName="Version" />
+		</XmlRead>
+		
+		<!-- Declare custom files -->
+		<ItemGroup>
+			<CustomFiles Include="..\R7.Epsilon\Customizations\volgau.com\**\*.*" />
+		</ItemGroup>
+        
+		<!-- Copy to tmp dir -->
+		<Copy SourceFiles="@(CustomFiles)" DestinationFolder="$(MSBuildProjectDirectory)\tmp_Custom\%(RecursiveDir)" />
+		      
+		<!-- Declare zipped files -->
+		<ItemGroup>
+			<CustomZipFiles Include="$(MSBuildProjectDirectory)\tmp_Custom\**\*.*" />
+		</ItemGroup>
+	
+		<!-- Create archive  -->
+		<Zip Files="@(CustomZipFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\tmp_Custom" ZipFileName="R7.Epsilon-$(Version)-volgau_com.$(PackageExtension)" />
+        
+		<!-- Copy the custom package to the output directory -->
+		<Move SourceFiles="$(MSBuildProjectDirectory)\R7.Epsilon-$(Version)-volgau_com.$(PackageExtension)" DestinationFolder="$(PackageOutputPath)/" />
+		
+		<!-- Cleanup -->
+		<RemoveDir Directories="$(MSBuildProjectDirectory)\tmp_Custom" />
+
+	</Target>
+</Project>
