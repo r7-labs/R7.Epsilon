@@ -78,9 +78,6 @@
     <None Include="License.txt" />
     <None Include="Skins\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="lib\Nini.dll" />
-    <None Include="Skins\App_LocalResources\SharedResources.ru-RU.Portal-0.resx" />
-    <None Include="Configs\volgau.com\README.md" />
-    <None Include="Skins\App_LocalResources\SharedResources.Portal-0.resx" />
     <None Include="Skins\PopupSkin.doctype.xml">
       <DependentUpon>PopupSkin.ascx</DependentUpon>
     </None>
@@ -89,6 +86,9 @@
     </None>
     <None Include="Skins\Mega2Epsilon\Mega2Epsilon.xslt" />
     <None Include="Skins\Mega2Epsilon\menudef.xml" />
+    <None Include="Customizations\volgau.com\README.md" />
+    <None Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\App_LocalResources\SharedResources.Portal-0.resx" />
+    <None Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\App_LocalResources\SharedResources.ru-RU.Portal-0.resx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Skins\Edit.ascx.cs">
@@ -242,9 +242,9 @@
     <Content Include="Skins\Controls\LogoMobile.ascx" />
     <Content Include="Skins\Controls\FooterContent.ascx" />
     <Content Include="Skins\Controls\Functions.ascx" />
-    <Content Include="Configs\volgau.com\R7.Epsilon-portal.config" />
     <Content Include="Skins\Delta.ascx" />
     <Content Include="Skins\css\blueimp.less" />
+    <Content Include="Customizations\volgau.com\Portals\0\R7.Epsilon-portal.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
@@ -257,9 +257,15 @@
   </ProjectExtensions>
   <ItemGroup>
     <Folder Include="Skins\Controls\" />
-    <Folder Include="Configs\" />
-    <Folder Include="Configs\volgau.com\" />
     <Folder Include="Skins\Mega2Epsilon\" />
+    <Folder Include="Customizations\" />
+    <Folder Include="Customizations\volgau.com\" />
+    <Folder Include="Customizations\volgau.com\Portals\" />
+    <Folder Include="Customizations\volgau.com\Portals\0\" />
+    <Folder Include="Customizations\volgau.com\Portals\_default\" />
+    <Folder Include="Customizations\volgau.com\Portals\_default\Skins\" />
+    <Folder Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\" />
+    <Folder Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\App_LocalResources\" />
   </ItemGroup>
   <Import Project="Less.targets" />
   <Target Name="BeforeBuild" DependsOnTargets="Less;MinifyJS" />
