@@ -210,9 +210,6 @@
     <Content Include="Skins\Controls\PageHeader.ascx" />
     <Content Include="Skins\Controls\SocialShareScripts.ascx" />
     <Content Include="Skins\Controls\Founders.ascx" />
-    <Content Include="Skins\images\mcx_48x48.png" />
-    <Content Include="Skins\images\minobr_48x48.png" />
-    <Content Include="Skins\images\minobr_logo.svg" />
     <Content Include="Skins\images\logo_template_178x100.xcf" />
     <Content Include="Skins\Controls\LogoTitle.ascx" />
     <Content Include="Skins\Controls\BrowserCheck.ascx" />
@@ -245,6 +242,12 @@
     <Content Include="Skins\Delta.ascx" />
     <Content Include="Skins\css\blueimp.less" />
     <Content Include="Customizations\volgau.com\Portals\0\R7.Epsilon-portal.config" />
+    <Content Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\images\founder1_48x48.png" />
+    <Content Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\images\founder2_48x48.png" />
+    <Content Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\images\founder1_logo.svg" />
+    <Content Include="Skins\images\founder1_48x48.png" />
+    <Content Include="Skins\images\founder1_logo.svg" />
+    <Content Include="Skins\images\founder2_48x48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
@@ -266,6 +269,7 @@
     <Folder Include="Customizations\volgau.com\Portals\_default\Skins\" />
     <Folder Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\" />
     <Folder Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\App_LocalResources\" />
+    <Folder Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\images\" />
   </ItemGroup>
   <Import Project="Less.targets" />
   <Target Name="BeforeBuild" DependsOnTargets="Less;MinifyJS" />

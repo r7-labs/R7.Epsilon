@@ -34,10 +34,16 @@
         <value>{0:dd.MM.yyyy}: {1}</value>
     </data>
     <data name="Founder1.Title" xml:space="preserve">
-        <value>Сайт Министерства образования и науки</value>
+        <value>Сайт учредителя 1</value>
+    </data>
+    <data name="Founder1.Href" xml:space="preserve">
+        <value>http://www.founder1.ru</value>
     </data>
     <data name="Founder2.Title" xml:space="preserve">
-        <value>Сайт Министерства сельского хозяйства</value>
+        <value>Сайт учредителя 2</value>
+    </data>
+    <data name="Founder2.Href" xml:space="preserve">
+        <value>http://www.founder2.ru</value>
     </data>
     <data name="BrowserCheck.Warning" xml:space="preserve">
         <value><![CDATA[<strong>Внимание!</strong><br />Мы определили, что Вы используете устаревшую версию браузера, не поддерживающую в должной мере современные стандарты Интернет. Как следствие, сайт может отображаться неправильно, а отдельные его функции могут работать некорректно или будут недоступны. Пожалуйста, обновите браузер!]]></value>
@@ -70,13 +76,13 @@
         <value>Яндекс цитирования</value>
     </data>
     <data xml:space="preserve" name="FooterPane1.Content">
-        <value>Используйте редактор локализации для изменения этого содержимого</value>
+        <value>Используйте редактор локализации для изменения этого содержимого путем изменения значения FooterPane1.Content.</value>
     </data>
     <data xml:space="preserve" name="FooterPane2.Content">
-        <value>Используйте редактор локализации для изменения этого содержимого</value>
+        <value>Используйте редактор локализации для изменения этого содержимого путем изменения значения FooterPane2.Content.</value>
     </data>
     <data xml:space="preserve" name="FooterPane3.Content">
-        <value>Используйте редактор локализации для изменения этого содержимого</value>
+        <value>Используйте редактор локализации для изменения этого содержимого путем изменения значения FooterPane3.Content.</value>
     </data>
     <data name="GoogleTranslate.Title" xml:space="preserve">
         <value>Перевести с помощью Google</value>

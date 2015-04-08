@@ -12,6 +12,18 @@
 	<resheader name="writer">
 		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
 	</resheader>
+    <data name="Founder1.Title" xml:space="preserve">
+        <value>Сайт Министерства образования и науки</value>
+    </data>
+    <data name="Founder1.Href" xml:space="preserve">
+        <value>http://минобрнауки.рф</value>
+    </data>
+    <data name="Founder2.Title" xml:space="preserve">
+        <value>Сайт Министерства сельского хозяйства</value>
+    </data>
+    <data name="Founder2.Href" xml:space="preserve">
+        <value>http://www.mcx.ru</value>
+    </data>
     <data name="LogoTitle.Text" xml:space="preserve">
         <value>Волгоградский&#13;государственный аграрный университет</value>
     </data>
