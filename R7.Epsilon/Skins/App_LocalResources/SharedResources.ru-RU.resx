@@ -12,6 +12,9 @@
 	<resheader name="writer">
 		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
 	</resheader>
+    <data name="SystemUser.Text" xml:space="preserve">
+        <value>Система</value>
+    </data>
     <data name="A11y.Text" xml:space="preserve">
         <value><![CDATA[<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>]]></value>
     </data>

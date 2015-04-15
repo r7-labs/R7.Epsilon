@@ -31,6 +31,7 @@ using DotNetNuke.Entities.Portals;
 using System.Web.UI.WebControls;
 using System.Web.Security;
 using DotNetNuke.UI.WebControls;
+using DotNetNuke.Entities.Users;
 
 namespace R7.Epsilon
 {
@@ -68,9 +69,11 @@ namespace R7.Epsilon
             get
             {
                 var activeTab = PortalSettings.ActiveTab;
+                var user = activeTab.CreatedByUser (PortalSettings.PortalId);
+                var userName = (user != null)? user.DisplayName : Localizer.GetString ("SystemUser.Text");
+
                 return string.Format (Localizer.GetString ("PagePublishedMessage.Format"),  
-                    activeTab.CreatedOnDate, 
-                    activeTab.CreatedByUser (PortalSettings.PortalId).DisplayName); 
+                    activeTab.CreatedOnDate, userName); 
             }
         }
     }

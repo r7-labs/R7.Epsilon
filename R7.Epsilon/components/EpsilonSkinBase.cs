@@ -133,10 +133,14 @@ namespace R7.Epsilon
 
         private void SetMenuTemplateArguments (DDRMenu.SkinObject menu, List<TemplateArgument> args)
         {
-            if (menu.TemplateArguments != null)
-                menu.TemplateArguments.AddRange (args);
-            else
-                menu.TemplateArguments = args;
+            // check if menu exists for various skin derivatives
+            if (menu != null)
+            {
+                if (menu.TemplateArguments != null)
+                    menu.TemplateArguments.AddRange (args);
+                else
+                    menu.TemplateArguments = args;
+            }
         }
 
         private void RegisterJavaScript()

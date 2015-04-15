@@ -6,7 +6,6 @@
 <%@ Register TagPrefix="dnn" TagName="LOGIN" Src="~/Admin/Skins/Login.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="PRIVACY" Src="~/Admin/Skins/Privacy.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="TERMS" Src="~/Admin/Skins/Terms.ascx" %>
-<%@ Register TagPrefix="dnn" TagName="TAGS" Src="~/Admin/Skins/Tags.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="COPYRIGHT" Src="~/Admin/Skins/Copyright.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="JQUERY" Src="~/Admin/Skins/jQuery.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="META" Src="~/Admin/Skins/Meta.ascx" %>
@@ -16,7 +15,6 @@
 <%@ Register TagPrefix="skin" TagName="FUNCTIONS" Src="Controls/Functions.ascx" %>
 <%@ Register TagPrefix="skin" TagName="GADSENSE" Src="Controls/GAdsense.ascx" %>
 <%@ Register TagPrefix="skin" TagName="SOCIALGROUPS" Src="Controls/SocialGroups.ascx" %>
-<%@ Register TagPrefix="skin" TagName="PAGEHEADER" Src="Controls/PageHeader.ascx" %>
 <%@ Register TagPrefix="skin" TagName="FOUNDERS" Src="Controls/Founders.ascx" %>
 <%@ Register TagPrefix="skin" TagName="LOGOTITLE" Src="Controls/LogoTitle.ascx" %>
 <%@ Register TagPrefix="skin" TagName="LOGOMOBILE" Src="Controls/LogoMobile.ascx" %>
@@ -117,32 +115,12 @@
                 <dnn:BREADCRUMB id="dnnBREADCRUMB" runat="server" CssClass="skin-breadcrumb-link" RootLevel="0" Separator="/" />
             </div>
         </div>
-        <div class="container">
-            <div class="page-header">
-                <div class="skin-local-menu">
-                    <dnn:MENU id="menuLocal" runat="server" MenuStyle="Mega2Epsilon" NodeSelector="-1,0,2" IncludeNodes="<%# PortalSettings.ActiveTab.TabID %>">
-                        <TemplateArguments> 
-                            <dnn:TemplateArgument Name="hamburgerMenu" Value="1" />
-                            <dnn:TemplateArgument Name="subMenuColumns" Value="1" />
-                        </TemplateArguments>
-                    </dnn:MENU>
-                </div>
-                <skin:PAGEHEADER runat="server" EnableSocialShare="false" />
-            </div>
-        </div>
     </nav>
 </header>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
             <div id="ContentPane" runat="server" />
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="skin-tags">
-                <dnn:TAGS runat="server" AllowTagging="false" Separator=" " />
-            </div>
         </div>
     </div>
 </div>
