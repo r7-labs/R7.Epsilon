@@ -192,7 +192,14 @@ header > .container > .row
     // hide search until jQuery rework
     & > span:first-child { display:none; }
 
-    .searchInputContainer { width:100%; }
+    // hide search button (workaround for #16)
+    & > span > a { display:none; }
+
+    .searchInputContainer
+    {
+        width:100%;
+        input { border-left:5px solid @color-primary-3; }
+    }
    
     .dnnSearchBoxClearText
     {

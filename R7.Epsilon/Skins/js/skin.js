@@ -5,10 +5,8 @@
 $(function() {
     // "Bootstrapify" search
     var search = $(".skin-search > span").first ();
-    search.children (".searchInputContainer").attr ("style", "display:table-cell !important")
-        .children ("input").removeClass ("NormalTextBox").addClass ("form-control");
-    search.children ("a").removeClass ("SkinObject").addClass ("btn btn-default").wrap ("<span class='input-group-btn'></span>");
-    search.addClass ("input-group").show ();
+    search.children (".searchInputContainer").children ("input").removeClass ("NormalTextBox").addClass ("form-control");
+    search.show ();
 });
 
 $(function() {
