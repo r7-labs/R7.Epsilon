@@ -97,9 +97,12 @@ namespace R7.Epsilon
             base.OnInit (e);
 
             // localize accessibility button
-            var a11yLabel = Localizer.GetString ("A11y.Title");
-            linkA11yButton.ToolTip = a11yLabel;
-            linkA11yButton.Attributes.Add ("aria-label", a11yLabel);
+            if (linkA11yButton != null)
+            {
+                var a11yLabel = Localizer.GetString ("A11y.Title");
+                linkA11yButton.ToolTip = a11yLabel;
+                linkA11yButton.Attributes.Add ("aria-label", a11yLabel);
+            }
 
             // configurable menu template arguments
             var menuTemplateArgs = new List<TemplateArgument> () {
