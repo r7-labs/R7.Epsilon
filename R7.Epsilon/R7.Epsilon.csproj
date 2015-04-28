@@ -64,9 +64,6 @@
     <None Include="Skins\App_LocalResources\SharedResources.resx" />
     <None Include="Skins\images\icon_message.psd" />
     <None Include="Skins\images\icon_notification.psd" />
-    <None Include="Skins\Simple.doctype.xml">
-      <DependentUpon>Simple.ascx</DependentUpon>
-    </None>
     <None Include="Skins\App_LocalResources\SharedResources.ru-RU.resx" />
     <None Include="Skins\Universal.doctype.xml">
       <DependentUpon>Universal.ascx</DependentUpon>
@@ -99,9 +96,6 @@
     </Compile>
     <Compile Include="Skins\PopupSkin.ascx.cs">
       <DependentUpon>PopupSkin.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Skins\Simple.ascx.cs">
-      <DependentUpon>Simple.ascx</DependentUpon>
     </Compile>
     <Compile Include="Skins\Universal.ascx.cs">
       <DependentUpon>Universal.ascx</DependentUpon>
@@ -188,7 +182,6 @@
     <Content Include="Skins\images\logo-template.svg" />
     <Content Include="Skins\images\button_100x100.png" />
     <Content Include="Skins\images\button_100x100.svg" />
-    <Content Include="Skins\Simple.ascx" />
     <Content Include="Skins\js\npm.js" />
     <Content Include="Skins\Universal.ascx" />
     <Content Include="Containers\Default_H3.ascx" />
