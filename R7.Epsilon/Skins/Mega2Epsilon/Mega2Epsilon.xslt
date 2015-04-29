@@ -3,7 +3,7 @@
 	<xsl:output method="html"/>
 	<xsl:param name="ControlID" />
 	<xsl:param name="Options" />
-    <xsl:param name="enableTopLinks">0</xsl:param>
+    <xsl:param name="enableTopLinks">1</xsl:param>
     <xsl:param name="hamburgerMenu">0</xsl:param>
     <xsl:param name="urlType">0</xsl:param>
 	<xsl:param name="subMenuColumns">3</xsl:param>
