@@ -3,6 +3,20 @@
 }
 
 $(function() {
+    var breadcrumb = $(".breadcrumb > span").first ();
+    var links = breadcrumb.children ("a").length;
+
+    if (links === 1) {
+        // hide parent container
+        breadcrumb.parent ().parent ().hide ();
+    }
+    else {
+        // remove last link
+        breadcrumb.children ("a").last ().remove ();    
+    }
+});
+
+$(function() {
     // "Bootstrapify" search
     var search = $(".skin-search > span").first ();
     search.children (".searchInputContainer").children ("input").removeClass ("NormalTextBox").addClass ("form-control");
