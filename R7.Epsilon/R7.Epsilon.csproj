@@ -221,7 +221,6 @@
     <Content Include="Skins\js\a11y.js" />
     <Content Include="Skins\js\menu.js" />
     <Content Include="Skins\portal.config" />
-    <Content Include="Containers\Thumbnail.ascx" />
     <Content Include="Skins\css\a11y-layout.less" />
     <Content Include="Skins\images\social_mono_32x32.png" />
     <Content Include="Skins\images\social_mono_32x32.svg" />
@@ -242,6 +241,14 @@
     <Content Include="Skins\images\founder1_logo.svg" />
     <Content Include="Skins\images\founder2_48x48.png" />
     <Content Include="Customizations\volgau.com\Portals\0\logo_133x100.png" />
+    <Content Include="Containers\Default_H4.ascx" />
+    <Content Include="Containers\Thumbnail.ascx" />
+    <Content Include="Containers\Thumbnail_H.ascx" />
+    <Content Include="Containers\Callout_Warning.ascx" />
+    <Content Include="Containers\Callout_Danger.ascx" />
+    <Content Include="Containers\Callout_Success.ascx" />
+    <Content Include="Containers\Callout_Primary.ascx" />
+    <Content Include="Containers\Callout_Default.ascx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
