@@ -3,6 +3,14 @@
 }
 
 $(function() {
+    skin_init_search ();
+    skin_init_breadcrumb ();
+    skin_init_localmenu ();
+    skin_init_upbutton ();
+    skin_init_tooltips ();
+});
+
+function skin_init_breadcrumb () {
     var breadcrumb = $(".breadcrumb > span").first ();
     var links = breadcrumb.children ("a").length;
 
@@ -14,23 +22,23 @@ $(function() {
         // remove last link
         breadcrumb.children ("a").last ().remove ();    
     }
-});
+}
 
-$(function() {
+function skin_init_search () {
     // "Bootstrapify" search
     var search = $(".skin-search > span").first ();
     search.children (".searchInputContainer").children ("input").removeClass ("NormalTextBox").addClass ("form-control");
     search.show ();
-});
+}
 
-$(function() {
+function skin_init_localmenu () {
     var localMenu = $(".skin-local-menu").first ();
     if (localMenu.find (".sub").length === 0)
         localMenu.hide ();
-});
+}
 
 // Up Button
-$(function() {
+function skin_init_upbutton () {
     var offset = 320;
     var duration = 500;
     jQuery(window).scroll(function() {
@@ -45,8 +53,22 @@ $(function() {
         event.preventDefault();
         jQuery('html, body').animate({scrollTop: 0}, duration);
         return false;
-    })
-});
+    });
+}
+
+// init tooltips
+function skin_init_tooltips () {
+  $('[data-toggle="tooltip"]').tooltip();
+}
+
+// Feedback Button
+function skin_feedback_button (obj, feedbackTabId, activeTabId) {
+    $(obj).attr ("href", "/Default.aspx?tabid=" + feedbackTabId + "&errortabid=" + activeTabId);
+    var errorContext = encodeURIComponent (rangy.getSelection ().toString ().replace (/(\n|\r)/gm," ").replace (/\s+/g, " ").replace (/\"/g, "").trim ().substring (0,100));
+    if (!!errorContext)
+        $(obj).attr ("href",  $(obj).attr ("href") + "&errorcontext=" + errorContext);
+    return true;
+}
 
 /*
 $(function() {
@@ -61,17 +83,3 @@ $(function() {
     })
 });
 */
-
-// Feedback Button
-function skin_feedback_button (obj, feedbackTabId, activeTabId) {
-    $(obj).attr ("href", "/Default.aspx?tabid=" + feedbackTabId + "&errortabid=" + activeTabId);
-    var errorContext = encodeURIComponent (rangy.getSelection ().toString ().replace (/(\n|\r)/gm," ").replace (/\s+/g, " ").replace (/\"/g, "").trim ().substring (0,100));
-    if (!!errorContext)
-        $(obj).attr ("href",  $(obj).attr ("href") + "&errorcontext=" + errorContext);
-    return true;
-}
-
-// init tooltips
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
