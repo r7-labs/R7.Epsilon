@@ -98,7 +98,7 @@
                         <xsl:attribute name="href">/Default.aspx?TabId=<xsl:value-of select="@id"/></xsl:attribute>
                     </xsl:when>
                     <xsl:when test="$urlType = 2">
-                        <xsl:attribute name="href">/<xsl:value-of select="@id"/></xsl:attribute>
+                        <xsl:attribute name="href">/p<xsl:value-of select="@id"/></xsl:attribute>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:attribute name="href"><xsl:value-of select="@url"/></xsl:attribute>
