@@ -1,5 +1,5 @@
 ﻿//
-// PageHeader.ascx.cs
+// PageInfo.ascx.cs
 //
 // Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
@@ -35,30 +35,29 @@ using DotNetNuke.Entities.Users;
 
 namespace R7.Epsilon
 {
-    public class PageHeader : EpsilonSkinObjectBase
+    public class PageInfo : EpsilonSkinObjectBase
     {
-        // REVIEW: Convert to control attribute?
-        // chars to trim, including en and em dashes
-        private static char [] trimSeparators = { ' ', '-', '\u2013', '\u2014',  '.', ':', '/', '\\' };
+        public bool ShowPageInfo { get; set; }
 
-        protected string TagLine
+        public bool ShowShareButtons { get; set; }
+
+        protected PageInfo ()
+        {
+            // set default values
+            ShowPageInfo = true;
+            ShowShareButtons = true;
+        }
+
+        protected string PublishedMessage
         {
             get
-            { 
-                // if Title starts with TabName, use varying Title part as tagline,
-                // or use Title as tagline otherwise.
-
+            {
                 var activeTab = PortalSettings.ActiveTab;
-                           
-                if (!string.IsNullOrWhiteSpace (activeTab.Title))
-                {
-                    if (activeTab.Title.StartsWith (activeTab.TabName, StringComparison.InvariantCultureIgnoreCase))
-                        return activeTab.Title.Substring (activeTab.TabName.Length).TrimStart (trimSeparators);
+                var user = activeTab.CreatedByUser (PortalSettings.PortalId);
+                var userName = (user != null)? user.DisplayName : Localizer.GetString ("SystemUser.Text");
 
-                    return activeTab.Title;
-                }
-            
-                return string.Empty;
+                return string.Format (Localizer.GetString ("PagePublishedMessage.Format"),  
+                    activeTab.CreatedOnDate, userName); 
             }
         }
     }
