@@ -17,6 +17,7 @@
 <%@ Register TagPrefix="skin" TagName="GADSENSE" Src="Controls/GAdsense.ascx" %>
 <%@ Register TagPrefix="skin" TagName="SOCIALGROUPS" Src="Controls/SocialGroups.ascx" %>
 <%@ Register TagPrefix="skin" TagName="PAGEINFO" Src="Controls/PageInfo.ascx" %>
+<%@ Register TagPrefix="skin" TagName="ADMINPAGEINFO" Src="Controls/AdminPageInfo.ascx" %>
 <%@ Register TagPrefix="skin" TagName="SOCIALSHARESCRIPTS" Src="Controls/SocialShareScripts.ascx" %>
 <%@ Register TagPrefix="skin" TagName="FOUNDERS" Src="Controls/Founders.ascx" %>
 <%@ Register TagPrefix="skin" TagName="LOGOTITLE" Src="Controls/LogoTitle.ascx" %>
@@ -123,6 +124,9 @@
             <div class="page-header">
                 <skin:PAGEINFO runat="server" ShowPageInfo="false" />
             </div>
+        </div>
+        <div class="container">
+            <skin:ADMINPAGEINFO runat="server" />
         </div>
     </nav>
 </header>

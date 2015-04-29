@@ -1,5 +1,5 @@
 ﻿//
-// PageInfo.ascx.cs
+// AdminPageInfo.ascx.cs
 //
 // Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
@@ -35,33 +35,22 @@ using DotNetNuke.Entities.Users;
 
 namespace R7.Epsilon
 {
-    public class PageInfo : EpsilonSkinObjectBase
+    public class AdminPageInfo : EpsilonSkinObjectBase
     {
-        public bool ShowPageInfo { get; set; }
-
-        public bool ShowShareButtons { get; set; }
-
-        protected PageInfo ()
-        {
-            // set default values
-            ShowPageInfo = true;
-            ShowShareButtons = true;
-        }
-
         /// <summary>
-        /// Gets page published info message.
+        /// Gets page permalink
         /// </summary>
-        /// <value>The published message.</value>
-        protected string PublishedMessage
+        /// <value>The page permalink.</value>
+        protected string PagePermalink
         {
             get
-            {
-                var activeTab = PortalSettings.ActiveTab;
-                var user = activeTab.CreatedByUser (PortalSettings.PortalId);
-                var userName = (user != null)? user.DisplayName : Localizer.GetString ("SystemUser.Text");
-
-                return string.Format (Localizer.GetString ("PagePublishedMessage.Format"),  
-                    activeTab.CreatedOnDate, userName); 
+            { 
+                switch (Config.MenuUrlType)
+                {
+                    case 1: return "/Default.aspx?TabId=" + PortalSettings.ActiveTab.TabID;
+                    case 2: return "/p" + PortalSettings.ActiveTab.TabID;
+                    default: return "/LinkClick.aspx?link=" + PortalSettings.ActiveTab.TabID;
+                }
             }
         }
     }
