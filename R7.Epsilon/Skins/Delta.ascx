@@ -135,9 +135,6 @@
                 <skin:PAGEINFO runat="server" />
             </div>
         </div>
-        <div class="container">
-            <skin:ADMINPAGEINFO runat="server" />
-        </div>
     </nav>
 </header>
 <div class="container">
@@ -182,6 +179,9 @@
             </div>
         </div>
     </div>
+</div>
+<div class="container">
+    <skin:ADMINPAGEINFO runat="server" />
 </div>
 <footer class="footer skin-footer">
     <div class="skin-footer-main">

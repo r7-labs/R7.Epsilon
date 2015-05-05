@@ -125,9 +125,6 @@
                 <skin:PAGEINFO runat="server" ShowPageInfo="false" />
             </div>
         </div>
-        <div class="container">
-            <skin:ADMINPAGEINFO runat="server" />
-        </div>
     </nav>
 </header>
 <div id="CarouselPane" runat="server" class="carousel slide" containertype="G" containername="R7.Epsilon" containersrc="Blank.ascx" />
@@ -296,6 +293,9 @@
             </div>
         </div>
     </div>
+</div>
+<div class="container">
+    <skin:ADMINPAGEINFO runat="server" />
 </div>
 <footer class="footer skin-footer">
     <div class="skin-footer-main">
