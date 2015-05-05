@@ -86,6 +86,9 @@
     <None Include="Customizations\volgau.com\README.md" />
     <None Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\App_LocalResources\SharedResources.Portal-0.resx" />
     <None Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\App_LocalResources\SharedResources.ru-RU.Portal-0.resx" />
+    <None Include="Skins\Admin.doctype.xml">
+      <DependentUpon>Admin.ascx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Skins\Edit.ascx.cs">
@@ -156,6 +159,9 @@
     </Compile>
     <Compile Include="Skins\Controls\AdminPageInfo.cs">
       <DependentUpon>AdminPageInfo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\Admin.ascx.cs">
+      <DependentUpon>Admin.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -257,6 +263,7 @@
     <Content Include="Containers\Callout_Default.ascx" />
     <Content Include="Skins\Controls\PageInfo.ascx" />
     <Content Include="Skins\Controls\AdminPageInfo.ascx" />
+    <Content Include="Skins\Admin.ascx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
