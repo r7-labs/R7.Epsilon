@@ -27,7 +27,9 @@ function skin_init_breadcrumb () {
 function skin_init_search () {
     // "Bootstrapify" search
     var search = $(".skin-search > span").first ();
-    search.children (".searchInputContainer").children ("input").removeClass ("NormalTextBox").addClass ("form-control");
+    search.children (".searchInputContainer").attr("style", "display:table-cell !important")
+        .children ("input").removeClass ("NormalTextBox").addClass ("form-control");
+    search.children ("a").removeClass ("SkinObject").addClass ("btn btn-default");
     search.show ();
 }
 
