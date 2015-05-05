@@ -139,8 +139,6 @@
         </div>
     </nav>
 </header>
-
-
 <div id="CarouselPane" runat="server" class="carousel slide" containertype="G" containername="R7.Epsilon" containersrc="Blank.ascx" />
 <div class="container">
     <div class="row">
@@ -334,10 +332,10 @@
     <div class="skin-footer-last">
         <div class="container">
             <div class="row">
-                <div class="col-md-2 col-xs-12 skin-footer-88x31-buttons">
+                <div class="col-md-2 col-sm-4 col-xs-12 skin-footer-88x31-buttons">
                     <skin:YCYCOUNTER runat="server" />
                 </div>
-                <div class="col-md-10 col-xs-12 skin-terms">
+                <div class="col-md-10 col-sm-8 col-xs-12 skin-terms">
                     <dnn:COPYRIGHT runat="server" /> |
                     <span class="skin-copyright"><%= Localizer.GetString ("SkinCopyright.Text") %></span>
                     <% if (Config.ShowTerms) { %> | <dnn:TERMS runat="server" /> <% } %>
