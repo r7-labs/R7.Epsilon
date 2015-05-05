@@ -38,56 +38,39 @@ namespace R7.Epsilon
     {
         #region Properties
 
-        private int minIeVersion = 9;
-
         /// <summary>
         /// Gets or sets the minimum IE major version.
         /// </summary>
         /// <value>The minimum IE major version.</value>
-        protected int MinIeVersion 
-        {
-            get { return minIeVersion; }
-            set { minIeVersion = value; }
-        }
+        protected int MinIeVersion { get; set; }
  
-        #endregion
-
-        protected enum CompLevel { /* Error, */ Warning, OK }
-
-        #region Controls
-
-        protected Literal literalBrowserCheck;
-
-        #endregion
-
-        protected override void OnLoad (EventArgs e)
+        protected bool IsCompatibleBrowser
         {
-            base.OnLoad (e);
+            get
+            { 
+                // get browser
+                var browser = Request.Browser;
+                var browserName = browser.Browser.ToUpperInvariant();
 
-            // get browser
-            var browser = Request.Browser;
-            var browserName = browser.Browser.ToUpperInvariant();
+                // default is compatible
+                var compatible = true;
 
-            // check for browser type and version 
-            var compLevel = CompLevel.OK;
-
-            if (browserName.StartsWith ("IE") || browserName.Contains ("MSIE"))
-            {
-                if (Request.Browser.MajorVersion < MinIeVersion)
+                // check for browser type and version 
+                if (browserName.StartsWith ("IE") || browserName.Contains ("MSIE"))
                 {
-                    compLevel = CompLevel.Warning;
+                    compatible = Request.Browser.MajorVersion >= MinIeVersion;
                 }
+
+                return compatible;
             }
-           
-            // if check determines old browser, display message
-            if (compLevel != CompLevel.OK)
-            {
-                // REVIEW: Use Bootstrap styles and make alert dismissible
-                literalBrowserCheck.Visible = true;
-                literalBrowserCheck.Text = string.Format ("<div class=\"dnnFormMessage dnnFormWarning\">{0}</div>",
-                    Localizer.GetString ("BrowserCheck.Warning")
-                );
-            }
+        }
+
+        #endregion
+
+        protected BrowserCheck ()
+        {
+            // default value
+            MinIeVersion = 9;
         }
     }
 }
