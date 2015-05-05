@@ -111,4 +111,7 @@
     <data name="PagePermalink.Tooltip" xml:space="preserve">
         <value>Permalink</value>
     </data>
+    <data name="PagePermalink.Format" xml:space="preserve">
+        <value>/Default.aspx?TabId={0}</value>
+    </data>
 </root>

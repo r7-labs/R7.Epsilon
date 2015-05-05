@@ -44,13 +44,9 @@ namespace R7.Epsilon
         protected string PagePermalink
         {
             get
-            { 
-                switch (Config.MenuUrlType)
-                {
-                    case 1: return "/Default.aspx?TabId=" + PortalSettings.ActiveTab.TabID;
-                    case 2: return "/p" + PortalSettings.ActiveTab.TabID;
-                    default: return "/LinkClick.aspx?link=" + PortalSettings.ActiveTab.TabID;
-                }
+            {
+                return string.Format (Localizer.SafeGetString ("PagePermalink.Format", "/Default.aspx?TabId={0}"), 
+                    PortalSettings.ActiveTab.TabID);
             }
         }
     }
