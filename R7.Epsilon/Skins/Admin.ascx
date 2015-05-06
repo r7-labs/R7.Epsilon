@@ -128,7 +128,7 @@
                     </dnn:MENU>
                 </div>
                 <skin:PAGEHEADER runat="server" />
-                <skin:PAGEINFO runat="server" />
+                <skin:PAGEINFO runat="server" ShowShareButtons="false" />
             </div>
         </div>
     </nav>
