@@ -96,12 +96,16 @@ namespace R7.Epsilon
         {
             base.OnInit (e);
 
-            // localize accessibility button
+            // init accessibility button
             if (linkA11yButton != null)
             {
                 var a11yLabel = Localizer.GetString ("A11y.Title");
                 linkA11yButton.ToolTip = a11yLabel;
                 linkA11yButton.Attributes.Add ("aria-label", a11yLabel);
+
+                // use non-standard obrnadzor.gov.ru microformats
+                if (Config.UseObrnadzorMicroformats)
+                    linkA11yButton.Attributes.Add ("itemprop", "Copy");
             }
 
             // configurable menu template arguments
