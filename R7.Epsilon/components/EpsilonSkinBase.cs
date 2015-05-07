@@ -103,8 +103,8 @@ namespace R7.Epsilon
                 linkA11yButton.ToolTip = a11yLabel;
                 linkA11yButton.Attributes.Add ("aria-label", a11yLabel);
 
-                // use non-standard obrnadzor.gov.ru microformats
-                if (Config.UseObrnadzorMicroformats)
+                // use obrnadzor.gov.ru microdata
+                if (Config.UseObrnadzorMicrodata)
                     linkA11yButton.Attributes.Add ("itemprop", "Copy");
             }
 

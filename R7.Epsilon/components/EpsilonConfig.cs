@@ -146,9 +146,9 @@ namespace R7.Epsilon
             get { return PortalConfig.GetInt ("MenuUrlType", 0); }
         }
 
-        public bool UseObrnadzorMicroformats
+        public bool UseObrnadzorMicrodata
         {
-            get { return PortalConfig.GetBoolean ("UseObrnadzorMicroformats", false); }
+            get { return PortalConfig.GetBoolean ("UseObrnadzorMicrodata", false); }
         }
 
         #endregion
