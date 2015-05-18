@@ -37,10 +37,11 @@
                         </xsl:call-template>
                         <xsl:choose>
                             <xsl:when test="$hamburgerMenu = 1">
-                                <span class="sr-only"><xsl:value-of select="ddr:GetString('ToggleNavigation.Text','Portals/_default/Skins/R7.Epsilon/App_LocalResources/SharedResources.resx')" /></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
+                                <xsl:attribute name="aria-label"><xsl:value-of select="ddr:GetString('ToggleNavigation.Text','Portals/_default/Skins/R7.Epsilon/App_LocalResources/SharedResources.resx')" /></xsl:attribute>
+                                <span class="hidden-xs"><xsl:value-of select="ddr:GetString('Contents.Text','Portals/_default/Skins/R7.Epsilon/App_LocalResources/SharedResources.resx')" disable-output-escaping="yes" /></span>
+                                <span class="icon-bar visible-xs"></span>
+                                <span class="icon-bar visible-xs"></span>
+                                <span class="icon-bar visible-xs"></span>
                             </xsl:when>
                             <xsl:otherwise>
                                 <xsl:value-of select="@text" />

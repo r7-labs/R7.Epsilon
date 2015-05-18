@@ -228,6 +228,7 @@ ul.megamenu
 .skin-local-menu 
 {
     display:inline-block;
+    margin-bottom:15px;
 
     ul.megamenu 
     { 
@@ -239,19 +240,11 @@ ul.megamenu
             & > a
             {
                 display:inline-block;
-                margin-right:5px;
-                margin-bottom:2px;
-
-                // prevent stretching before item content will be replaced
-                // REVIEW: Needs to be tested
-                max-width:47px;
-                overflow:hidden;
-                vertical-align:bottom;
 
                 // menu button look
                 border:none;
                 border-radius:4px;
-                background-color:@color-secondary-1-3;
+                background-color:@color-secondary-1-2;
                 padding:4px 10px;
 
                 .icon-bar 
@@ -268,8 +261,6 @@ ul.megamenu
                 { 
                     color:@color-secondary-1-4;
                     background-color:@color-secondary-2-1; 
-                    border-bottom-left-radius:0;
-                    border-bottom-right-radius:0;
 
                     .icon-bar { background-color:@color-secondary-1-4; }
                 }
@@ -277,7 +268,7 @@ ul.megamenu
 
             .sub
             {
-                top:30px!important;
+                top:26px!important;
                 width:320px!important;
 
                 border-color:@color-secondary-2-1;
