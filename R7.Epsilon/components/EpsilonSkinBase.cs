@@ -47,7 +47,7 @@ namespace R7.Epsilon
 
         protected DnnCssInclude skinCSS;
 
-        protected LinkButton linkA11yButton;
+        protected HyperLink linkA11yVersion;
 
         protected DDRMenu.SkinObject menuPrimary;
 
@@ -61,6 +61,21 @@ namespace R7.Epsilon
         {
             get 
             { 
+                // try to get a11y mode from querystring
+                var a11yParamStr = Request.QueryString ["a11y"];
+                if (!string.IsNullOrWhiteSpace (a11yParamStr))
+                {
+                    bool a11yParam;
+                    if (bool.TryParse (a11yParamStr, out a11yParam))
+                    {
+                        // store a11y mode in the session
+                        Session ["A11YEnabled"] = a11yParam;
+                        return a11yParam;
+                    }
+                }
+
+                // no a11y was found in the querystring,
+                // return session value
                 var obj = Session ["A11YEnabled"];
                 return obj != null ? (bool) obj : false;
             }
@@ -97,15 +112,15 @@ namespace R7.Epsilon
             base.OnInit (e);
 
             // init accessibility button
-            if (linkA11yButton != null)
+            if (linkA11yVersion != null)
             {
                 var a11yLabel = Localizer.GetString ("A11y.Title");
-                linkA11yButton.ToolTip = a11yLabel;
-                linkA11yButton.Attributes.Add ("aria-label", a11yLabel);
+                linkA11yVersion.ToolTip = a11yLabel;
+                linkA11yVersion.Attributes.Add ("aria-label", a11yLabel);
 
                 // use obrnadzor.gov.ru microdata
                 if (Config.UseObrnadzorMicrodata)
-                    linkA11yButton.Attributes.Add ("itemprop", "Copy");
+                    linkA11yVersion.Attributes.Add ("itemprop", "Copy");
             }
 
             // configurable menu template arguments
@@ -125,6 +140,13 @@ namespace R7.Epsilon
 
             RegisterJavaScript ();
 
+            if (linkA11yVersion != null)
+            {
+                // make link to toggle a11y mode
+                linkA11yVersion.NavigateUrl = Globals.NavigateURL (
+                    PortalSettings.ActiveTab.TabID, "", "a11y", (!A11yEnabled).ToString ());
+            }
+
             if (skinCSS != null && A11yEnabled)
             {
                 // replace current skin
@@ -134,7 +156,7 @@ namespace R7.Epsilon
                 ClientResourceManager.RegisterScript (Page, "/Portals/_default/Skins/R7.Epsilon/js/a11y.min.js", FileOrder.Js.DefaultPriority, "DnnFormBottomProvider");
 
                 // alter look of accessibility button
-                linkA11yButton.CssClass = linkA11yButton.CssClass + " enabled";
+                linkA11yVersion.CssClass = linkA11yVersion.CssClass + " enabled";
             }
         }
 
@@ -154,19 +176,5 @@ namespace R7.Epsilon
         {
             jQuery.RequestRegistration();
         }
-
-        #region Handlers
-
-        protected virtual void linkA11yButton_Click (object sender, EventArgs e)
-        {
-            // toggle accessibility
-            A11yEnabled = !A11yEnabled;
-
-            // reload page
-            Response.Redirect (Globals.NavigateURL (), false);
-            Context.ApplicationInstance.CompleteRequest();
-        }
-
-        #endregion
     }
 }

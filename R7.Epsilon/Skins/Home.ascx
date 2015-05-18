@@ -56,7 +56,7 @@
                 </div>
                 <div class="skin-functions">
                     <skin:FUNCTIONS runat="server" />
-                    <asp:LinkButton id="linkA11yButton" runat="server" CssClass="skin-functions-icon skin-functions-icon-a11y" OnClick="linkA11yButton_Click" data-toggle="tooltip" data-placement="bottom" />
+                    <asp:HyperLink id="linkA11yVersion" runat="server" CssClass="skin-functions-icon skin-functions-icon-a11y" data-toggle="tooltip" data-placement="bottom" />
                 </div>
             </div>
             <div class="visible-xs col-xs-2 skin-socialgroups-wrapper">
