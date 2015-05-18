@@ -264,6 +264,12 @@
     <Content Include="Skins\Controls\PageInfo.ascx" />
     <Content Include="Skins\Controls\AdminPageInfo.ascx" />
     <Content Include="Skins\Admin.ascx" />
+    <Content Include="Containers\Panel_Default.ascx" />
+    <Content Include="Containers\Panel_Primary.ascx" />
+    <Content Include="Containers\Panel_Info.ascx" />
+    <Content Include="Containers\Panel_Success.ascx" />
+    <Content Include="Containers\Panel_Warning.ascx" />
+    <Content Include="Containers\Panel_Danger.ascx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
