@@ -1,3 +1,14 @@
+/* Mixins */
+
+.square-backgrounded-button (@width, @bg-image)
+{
+    width: @width;
+    height: @width;
+    cursor: pointer;
+    background-image: @bg-image;
+    background-repeat: no-repeat;
+}
+
 /* Styles */
 
 body 
@@ -165,11 +176,10 @@ header > .container > .row
     .skin-functions-icon
     {
         display:inline-block;
-        width:32px;
-        height:32px;
-        background-image:url('../images/functions_mono_32x32.png');
-        background-repeat:no-repeat;
-        cursor:pointer;
+        margin-left:3px;
+        &:first-child a { margin-left:0; }
+
+        .square-backgrounded-button (32px, url('../images/functions_mono_32x32.png'));
 
         &.skin-functions-icon-gtranslate { background-position:0 0; }
         &.skin-functions-icon-gtranslate:hover { background-position:0 -32px; }   
@@ -254,15 +264,16 @@ ul.skin-socialgroups
     { 
         display:inline; 
         list-style-type: none; 
+        &:last-child a { margin-right:0; }
     }
+
     .skin-social-button
     {
         display:inline-block;
-        width:32px;
-        height:32px;
-        background-image:@social-icons;
-        background-repeat:no-repeat;
-    
+        margin-right:3px;
+
+        .square-backgrounded-button (32px, @social-icons);
+
         &.skin-social-vk { background-position:0 0; }
         &.skin-social-vk:hover { background-position:0 -32px; }
 
@@ -691,7 +702,7 @@ ul.skin-socialgroups
         margin-right:4px;
     }
 
-    .userMessages { margin-right:6px; }
+    .userMessages { margin-right:8px; }
     .userNotifications { margin-right:4px; }
 
     .userMessages,
