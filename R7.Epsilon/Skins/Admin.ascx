@@ -45,7 +45,7 @@
             <a href="#dnn_TopPane" class="sr-only sr-only-focusable"><%: Localizer.GetString ("SkipToContent.Text") %></a>
         </div>
         <div class="row">
-            <div class="col-md-5 col-sm-4 col-xs-10 skin-functions-wrapper">
+            <div class="col-md-4 col-sm-4 col-xs-10 skin-functions-wrapper">
                 <div class="skin-language">
                     <dnn:LANGUAGE runat="server" ShowLinks="True" ShowMenu="False" />
                 </div>
@@ -57,10 +57,10 @@
             <div class="visible-xs col-xs-2 skin-socialgroups-wrapper">
                 <skin:SOCIALGROUPS runat="server" MobileView="true" />
             </div>
-            <div class="col-md-4 col-sm-4 col-xs-12 skin-search" role="search">
+            <div class="col-md-4 col-sm-3 col-xs-12 skin-search" role="search">
                 <dnn:SEARCH runat="server" ShowSite="false" ShowWeb="false" />
             </div>
-            <div class="col-md-3 col-sm-4 hidden-xs skin-socialgroups-wrapper">
+            <div class="col-md-4 col-sm-5 hidden-xs skin-socialgroups-wrapper">
                 <skin:SOCIALGROUPS runat="server" MobileView="false" />
             </div>
         </div>
