@@ -2,5 +2,5 @@
 <%@ Register TagPrefix="dnn" TagName="TITLE" Src="~/Admin/Containers/Title.ascx" %>
 <div class="cnt-default dnnClear">
     <h4><dnn:TITLE ID="dnnTITLE" runat="server" CssClass="h4" /></h4>
-    <div class="ContainerPane" runat="server" id="ContentPane"></div>
+    <div id="ContentPane" runat="server"></div>
 </div>

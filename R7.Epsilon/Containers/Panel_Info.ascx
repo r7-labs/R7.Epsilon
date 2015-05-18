@@ -4,5 +4,5 @@
     <div class="panel-heading">
         <h3 class="panel-title"><dnn:TITLE ID="dnnTITLE" runat="server" /></h3>
     </div>
-    <div class="ContainerPane" runat="server" id="ContentPane"></div>
+    <div id="ContentPane" runat="server"></div>
 </div>
