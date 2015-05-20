@@ -41,16 +41,21 @@ function skin_init_localmenu () {
 }
 
 function skin_init_modulesmenu () {
-    var li0 = $('.skin-headers-menu ul#dnn_menuHeaders li.level0').first();
+    var li0 = $('ul#dnn_menuHeaders li.level0').first();
     li0.append ('<div class="sub"><ul></ul></div>');
     var pageContents = li0.find ('ul').first();
     var thisH = pageContents.parents('.DnnModule').find('h2,h3,h4').first();
     $('h2,h3,h4').each(function () {
         if (!$(this).is(thisH)) {
             var title = $(this).text().trim();
-            var id = $(this).parents('.DnnModule').find('a').first().attr('name');
-            if (id && title) {
-                pageContents.append('<ul><li><a href="#' + id + '">' + title + '</a></li><ul>');
+            if (title) {
+                var anchor = $(this).children('a').attr('name');
+                if (!anchor) {
+                    anchor = $(this).parents('.DnnModule').find('a').first().attr('name');
+                }
+                if (anchor) {
+                    pageContents.append('<ul><li><a href="#' + anchor + '">' + title + '</a></li><ul>');
+                } 
             }
         }
     });
