@@ -45,6 +45,7 @@ function skin_init_modulesmenu () {
     li0.append ('<div class="sub"><ul></ul></div>');
     var pageContents = li0.find ('ul').first();
     var thisH = pageContents.parents('.DnnModule').find('h2,h3,h4').first();
+    var menuItems = [];
     $('h2,h3,h4').each(function () {
         if (!$(this).is(thisH)) {
             var title = $(this).text().trim();
@@ -54,11 +55,17 @@ function skin_init_modulesmenu () {
                     anchor = $(this).parents('.DnnModule').find('a').first().attr('name');
                 }
                 if (anchor) {
-                    pageContents.append('<ul><li><a href="#' + anchor + '">' + title + '</a></li><ul>');
+                    menuItems.push('<ul><li><a href="#' + anchor + '">' + title + '</a></li><ul>');
                 } 
             }
         }
     });
+    if (menuItems.length >= 3) {
+        pageContents.append(menuItems);
+    }
+    else {
+       $('ul#dnn_menuHeaders').hide();
+    }
 }
 
 // Up Button
