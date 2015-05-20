@@ -42,7 +42,7 @@ ul.megamenu
 
 /* Shared menu styles */
 
-.skin-primary-menu, .skin-secondary-menu, .skin-local-menu
+.skin-primary-menu, .skin-secondary-menu, .skin-local-menu, .skin-headers-menu
 {
     // place submenu relative to menu wrappers
     position:relative;
@@ -225,10 +225,10 @@ ul.megamenu
 
 /* Local menu styles */
 
-.skin-local-menu 
+.skin-local-menu, .skin-headers-menu
 {
     display:inline-block;
-    margin-bottom:15px;
+    margin-bottom:5px;
 
     ul.megamenu 
     { 
@@ -295,8 +295,6 @@ ul.megamenu
 
 @media only screen and (max-width : 767px) 
 {
-    // local menu do not [possibly] reqiure styling for xs screens
-
     .skin-primary-menu, .skin-secondary-menu
     {
         ul.megamenu 
@@ -362,6 +360,14 @@ ul.megamenu
 
                 .sub { border-color:@color-secondary-2-1; }
             }
+        }
+    }
+
+    .skin-local-menu, .skin-headers-menu {
+        display:block; 
+        li.level0 > a { 
+            width:12em; 
+            text-align:right;
         }
     }
 }

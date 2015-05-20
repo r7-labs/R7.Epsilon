@@ -5,19 +5,20 @@
 	<xsl:param name="Options" />
     <xsl:param name="enableTopLinks">1</xsl:param>
     <xsl:param name="hamburgerMenu">0</xsl:param>
+    <xsl:param name="resourceKey">LocalMenu</xsl:param>
     <xsl:param name="urlType">0</xsl:param>
 	<xsl:param name="subMenuColumns">3</xsl:param>
-	<xsl:param name="pointer"></xsl:param>
+    <xsl:param name="pointer"></xsl:param>
     <xsl:template match="/*">
 		<xsl:apply-templates select="root" />
 	</xsl:template>
 	<xsl:template match="root">
-		<script type="text/javascript">
+        <script type="text/javascript">
 			jQuery(document).ready(function() {
 				splitSubMenu(&quot;<xsl:value-of select="$ControlID" />&quot;, <xsl:value-of select="$subMenuColumns"/>);
 			});
-		</script>
-		<ul class="megamenu">
+	    </script>
+        <ul class="megamenu">
             <xsl:attribute name="id"><xsl:value-of select="$ControlID" /></xsl:attribute>
             <xsl:apply-templates select="node">
 				<xsl:with-param name="level" select="0"/>
@@ -37,11 +38,7 @@
                         </xsl:call-template>
                         <xsl:choose>
                             <xsl:when test="$hamburgerMenu = 1">
-                                <xsl:attribute name="aria-label"><xsl:value-of select="ddr:GetString('ToggleNavigation.Text','Portals/_default/Skins/R7.Epsilon/App_LocalResources/SharedResources.resx')" /></xsl:attribute>
-                                <span class="hidden-xs"><xsl:value-of select="ddr:GetString('Contents.Text','Portals/_default/Skins/R7.Epsilon/App_LocalResources/SharedResources.resx')" disable-output-escaping="yes" /></span>
-                                <span class="icon-bar visible-xs"></span>
-                                <span class="icon-bar visible-xs"></span>
-                                <span class="icon-bar visible-xs"></span>
+                                <xsl:value-of select="ddr:GetString(concat($resourceKey,'.Text'),'Portals/_default/Skins/R7.Epsilon/App_LocalResources/SharedResources.resx')" disable-output-escaping="yes" />
                             </xsl:when>
                             <xsl:otherwise>
                                 <xsl:value-of select="@text" />

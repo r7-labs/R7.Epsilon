@@ -27,8 +27,11 @@
     <data name="ButtonUp.Title" xml:space="preserve">
         <value>Нажми меня, чтобы перейти наверх</value>
     </data>
-    <data name="Contents.Text" xml:space="preserve">
+    <data name="LocalMenu.Text" xml:space="preserve">
         <value><![CDATA[Содержание <span class="glyphicon glyphicon-menu-down"></span>]]></value>
+    </data>
+    <data name="HeadersMenu.Text" xml:space="preserve">
+        <value><![CDATA[На этой странице <span class="glyphicon glyphicon-menu-down"></span>]]></value>
     </data>
     <data name="ToggleNavigation.Text" xml:space="preserve">
         <value>Включить/выключить навигационное меню</value>

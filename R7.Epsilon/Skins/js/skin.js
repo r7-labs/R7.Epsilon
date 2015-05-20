@@ -6,6 +6,7 @@ $(function() {
     skin_init_search ();
     skin_init_breadcrumb ();
     skin_init_localmenu ();
+    skin_init_modulesmenu ();
     skin_init_upbutton ();
     skin_init_tooltips ();
 });
@@ -37,6 +38,22 @@ function skin_init_localmenu () {
     var localMenu = $(".skin-local-menu").first ();
     if (localMenu.find (".sub").length === 0)
         localMenu.hide ();
+}
+
+function skin_init_modulesmenu () {
+    var li0 = $('.skin-headers-menu ul#dnn_menuHeaders li.level0').first();
+    li0.append ('<div class="sub"><ul></ul></div>');
+    var pageContents = li0.find ('ul').first();
+    var thisH = pageContents.parents('.DnnModule').find('h2,h3,h4').first();
+    $('h2,h3,h4').each(function () {
+        if (!$(this).is(thisH)) {
+            var title = $(this).text().trim();
+            var id = $(this).parents('.DnnModule').find('a').first().attr('name');
+            if (id && title) {
+                pageContents.append('<ul><li><a href="#' + id + '">' + title + '</a></li><ul>');
+            }
+        }
+    });
 }
 
 // Up Button

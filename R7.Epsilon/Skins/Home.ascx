@@ -126,6 +126,15 @@
             <div class="page-header">
                 <skin:PAGEINFO runat="server" ShowPageInfo="false" />
             </div>
+            <div class="skin-headers-menu">
+                <dnn:MENU id="menuHeaders" runat="server" MenuStyle="Mega2Epsilon" NodeSelector="-1,0,0" IncludeNodes="<%# PortalSettings.ActiveTab.TabID %>">
+                    <TemplateArguments>
+                        <dnn:TemplateArgument Name="hamburgerMenu" Value="1" />
+                        <dnn:TemplateArgument Name="subMenuColumns" Value="1" />
+                        <dnn:TemplateArgument Name="resourceKey" Value="HeadersMenu" />
+                    </TemplateArguments>
+                </dnn:MENU>
+            </div>
         </div>
     </nav>
 </header>
