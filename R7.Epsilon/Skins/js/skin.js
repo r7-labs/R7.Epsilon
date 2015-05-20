@@ -65,7 +65,7 @@ function skin_init_modulesmenu () {
         pageContents.append(menuItems);
     }
     else {
-       $('ul#dnn_menuHeaders').hide();
+       $('ul#dnn_menuHeaders').parent().addClass('hidden');
     }
 }
 
