@@ -888,3 +888,13 @@ ul.skin-socialgroups
         line-height:2.5em;
     }
 }
+
+.dnnSortable 
+{ 
+    // restore value, overriden by col-*
+    min-height:110px!important;
+
+    // use col-* value instead
+    &.ui-sortable { padding:0 15px; }
+}
+

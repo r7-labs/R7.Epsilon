@@ -3,6 +3,7 @@
 }
 
 $(function() {
+    skin_empty_layout_rows ();
     skin_init_search ();
     skin_init_breadcrumb ();
     skin_init_localmenu ();
@@ -99,6 +100,17 @@ function skin_feedback_button (obj, feedbackTabId, activeTabId) {
     if (!!errorContext)
         $(obj).attr ("href",  $(obj).attr ("href") + "&errorcontext=" + errorContext);
     return true;
+}
+
+// done with empty layout rows
+function skin_empty_layout_rows ()
+{
+    $('.row').each (function () {
+        if ($(this).children ().length ===
+            $(this).children ('.DNNEmptyPane').not ('.dnnSortable').length) {
+            $(this).addClass ('hidden');
+        }
+    });
 }
 
 /*

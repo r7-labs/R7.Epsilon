@@ -150,9 +150,7 @@
 </header>
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
-            <div id="TopPane" runat="server" />
-        </div>
+        <div id="TopPane" runat="server" class="col-md-12" />
     </div>
     <div class="row">
         <div class="col-md-3">
@@ -168,20 +166,12 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-4">
-            <div id="BottomPane1" runat="server" />
-        </div>
-        <div class="col-md-4">
-            <div id="BottomPane2" runat="server" />
-        </div>
-        <div class="col-md-4">
-            <div id="BottomPane3" runat="server" />
-        </div>
+        <div id="BottomPane1" runat="server" class="col-md-4" />
+        <div id="BottomPane2" runat="server" class="col-md-4" />
+        <div id="BottomPane3" runat="server" class="col-md-4" />
     </div>
     <div class="row">
-        <div class="col-md-12">
-            <div id="BottomPane" runat="server" />
-        </div>
+        <div id="BottomPane" runat="server" class="col-md-12" />
     </div>
     <div class="row">
         <div class="col-md-12">

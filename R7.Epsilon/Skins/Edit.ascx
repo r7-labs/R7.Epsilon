@@ -118,9 +118,7 @@
 </header>
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
-            <div id="ContentPane" runat="server" />
-        </div>
+        <div id="ContentPane" runat="server" class="col-md-12" />
     </div>
 </div>
 <footer class="footer skin-footer">
