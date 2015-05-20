@@ -91,6 +91,11 @@ namespace R7.Epsilon
             get { return PortalConfig.Get ("VkGroup", string.Empty); }
         }
 
+        public string FacebookAppId
+        {
+            get { return PortalConfig.Get ("FacebookAppId", string.Empty); }
+        }
+
         public string FacebookGroup
         {
             get { return PortalConfig.Get ("FacebookGroup", string.Empty); }
