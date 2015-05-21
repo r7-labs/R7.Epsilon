@@ -71,7 +71,7 @@
             </div>
         </div>
     </div>
-    <nav class="navbar navbar-default skin-primary-navbar">
+    <nav class="navbar skin-primary-navbar">
         <div class="container">
             <div class="navbar-brand skin-navbar-brand-link visible-xs">
                 <skin:LOGOMOBILE runat="server" />

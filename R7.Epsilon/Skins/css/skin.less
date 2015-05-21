@@ -363,14 +363,14 @@ ul.skin-socialgroups
     &.skin-founder-1
     { 
         background-image:@founder-icon-1;
-        // as .navbar-default top gradient point
+        // as navbar top gradient point
         box-shadow:2px 2px 2px @color-primary-3; 
     }
 
     &.skin-founder-2 
     { 
         background-image:@founder-icon-2;
-        // as .navbar-default bottom gradient point
+        // as navbar bottom gradient point
         box-shadow:2px 2px 2px @color-complement-2;
     }
 }
@@ -403,19 +403,19 @@ ul.skin-socialgroups
     }
 }
 
-.navbar-default
+.skin-primary-navbar
 {
-    background-color:#fff;
     border:none;
     border-radius:0;
-    background:@header-background;
+    background-color:@header-background-color;
+    background-image:@header-background-image;
 }
 
 @media only screen and (max-width: 767px) 
 {
-    .navbar-default 
+    .skin-primary-navbar
     { 
-        background:none; // reset gradient
+        background-image:none; // reset gradient
         background-color:@color-primary-4;
     }
 }
@@ -551,7 +551,8 @@ ul.skin-socialgroups
 {
     padding-top:12px;
     padding-bottom:12px;
-    background:@footer-main-background;
+    background-color:@footer-main-background-color;
+    background-image:@footer-main-background-image;
 }
 
 .skin-banner-large { margin-bottom:10px; }
@@ -749,21 +750,6 @@ ul.skin-socialgroups
     }
     .userNotifications span { background: url('../images/icon_notification_active.png') no-repeat center center; }
     .userMessages span { background: url('../images/icon_message_active.png') no-repeat center center; }
-}
- 
-/* .navbar { background-image: linear-gradient(#54EBB4, #2FE7A4 60%, #1DE59C) }*/
-
-.navbar-default .navbar-nav > li > div > ul > li > a,
-/*.navbar-default .LoginLink {
-  color: #ffffff;
-}*/
-
-.navbar-default .navbar-nav > li > div > a:hover,
-.navbar-default .navbar-nav > li > div > a:focus,
-.navbar-default .navbar-nav > li > div > ul > li > a:hover,
-.navbar-default .navbar-nav > li > div > ul > li > a:focus {
-  color: #ffffff;
-  background-color: #17cc8a;
 }
 
 /* Callout styles */
