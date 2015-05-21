@@ -859,6 +859,33 @@ ul.skin-socialgroups
 // fix white-on-white text when editing module title
 .cnt-panel input.LabelEditTextClass { color:#000; }
 
+.cnt-collapse
+{
+    h2, h3, h4 
+    {
+        /*border-bottom:1px solid #ccc;
+        border-left:1px solid #ccc;
+        border-right:1px solid #ccc;
+        border-radius:4px;*/
+
+        & > a 
+        { 
+            color:#000;
+            border:none;
+            text-decoration:none;
+            cursor:pointer;
+
+            display:block;
+            width:100%;
+
+            &.collapsed
+            {
+               border-bottom:1px solid #ccc;
+            }
+        }
+    }
+}
+
 /* End container styles */
 
 /* fix for carousel for large resolution displays */
