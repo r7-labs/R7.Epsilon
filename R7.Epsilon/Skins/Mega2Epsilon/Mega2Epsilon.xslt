@@ -13,11 +13,13 @@
 		<xsl:apply-templates select="root" />
 	</xsl:template>
 	<xsl:template match="root">
-        <script type="text/javascript">
-			jQuery(document).ready(function() {
-				splitSubMenu(&quot;<xsl:value-of select="$ControlID" />&quot;, <xsl:value-of select="$subMenuColumns"/>);
-			});
-	    </script>
+        <xsl:if test="$subMenuColumns > 1">
+            <script type="text/javascript">
+    			jQuery(document).ready(function() {
+    				splitSubMenu(&quot;<xsl:value-of select="$ControlID" />&quot;, <xsl:value-of select="$subMenuColumns"/>);
+    			});
+    	    </script>
+        </xsl:if>
         <ul class="megamenu">
             <xsl:attribute name="id"><xsl:value-of select="$ControlID" /></xsl:attribute>
             <xsl:apply-templates select="node">
