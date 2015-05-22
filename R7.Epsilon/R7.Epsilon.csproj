@@ -288,6 +288,7 @@
     <Content Include="Skins\Controls\LocalMenu.ascx" />
     <Content Include="Skins\Controls\HeadersMenu.ascx" />
     <Content Include="Application\Global.asax" />
+    <Content Include="Skins\Controls\JsVariables.ascx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

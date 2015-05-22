@@ -32,10 +32,9 @@
 		<xsl:choose>
 			<xsl:when test="$level=0">
 				<li>
-					<xsl:attribute name="class">level0<xsl:if test="@breadcrumb = 1"> current</xsl:if></xsl:attribute>
+					<xsl:attribute name="class">level0</xsl:attribute>
                     <a>
-						<xsl:attribute name="class"><xsl:if test="@breadcrumb = 1">current</xsl:if></xsl:attribute>
-                        <xsl:call-template name="menuLink">
+						<xsl:call-template name="menuLink">
                             <xsl:with-param name="enabled" select="$enableTopLinks = 1 and not ($hamburgerMenu = 1)" />
                         </xsl:call-template>
                         <xsl:choose>

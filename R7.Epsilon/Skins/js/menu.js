@@ -68,4 +68,11 @@ jQuery(document).ready(function () {
 
     // invoke hoverIntent
 	jQuery("ul.megamenu > li").hoverIntent(config);
+
+    // mark current tab link
+    if (epsilon.tabName) {
+        jQuery("ul.megamenu a:contains('" + epsilon.tabName + "')").filter (function() {
+            return $(this).text () == epsilon.tabName;
+        }).addClass ("current");
+    }
 });
