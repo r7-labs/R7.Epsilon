@@ -43,8 +43,8 @@ function skin_init_localmenu () {
 
 function skin_init_modulesmenu () {
     var li0 = $('.skin-headers-menu li.level0').first();
-    li0.append ('<div class="sub"><ul></ul></div>');
-    var pageContents = li0.find ('ul').first();
+    li0.append ('<div class="sub"></div>');
+    var pageContents = li0.children('div.sub').first();
     var thisH = pageContents.parents('.DnnModule').find('h2,h3,h4').first();
     var menuItems = [];
     $('h2,h3,h4').each(function () {

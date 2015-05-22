@@ -286,6 +286,9 @@ ul.megamenu
                 ul { width:100%; }
 
                 li:first-child a { border-color:darken(@color-secondary-1-2, 5%); }
+
+                // don't overline menu top items
+                ul:first-child li:first-child a { border-top:none; }
             }
         }
     }
