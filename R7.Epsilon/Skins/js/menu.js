@@ -71,7 +71,7 @@ jQuery(document).ready(function () {
 
     // mark current tab link
     if (epsilon.tabName) {
-        jQuery("ul.megamenu a:contains('" + epsilon.tabName + "')").filter (function() {
+        jQuery("ul.megamenu li.level0 >  a:contains('" + epsilon.tabName + "')").filter (function() {
             return $(this).text () == epsilon.tabName;
         }).addClass ("current");
     }
