@@ -30,12 +30,8 @@ using System.Collections.Generic;
 using DotNetNuke.Common;
 using DotNetNuke.Framework;
 using DotNetNuke.UI.Skins;
-using DotNetNuke.Web.DDRMenu.TemplateEngine;
 using DotNetNuke.Web.Client;
 using DotNetNuke.Web.Client.ClientResourceManagement;
-
-// aliases
-using DDRMenu = DotNetNuke.Web.DDRMenu;
 
 namespace R7.Epsilon
 {
@@ -48,12 +44,6 @@ namespace R7.Epsilon
         protected DnnCssInclude skinCSS;
 
         protected HyperLink linkA11yVersion;
-
-        protected DDRMenu.SkinObject menuPrimary;
-
-        protected DDRMenu.SkinObject menuSecondary;
-
-        protected DDRMenu.SkinObject menuLocal;
 
         #endregion
 
@@ -122,16 +112,6 @@ namespace R7.Epsilon
                 if (Config.UseObrnadzorMicrodata)
                     linkA11yVersion.Attributes.Add ("itemprop", "Copy");
             }
-
-            // configurable menu template arguments
-            var menuTemplateArgs = new List<TemplateArgument> () {
-                new TemplateArgument ("urlType", Config.MenuUrlType.ToString ()) 
-            };
-
-            // set menu template arguments
-            SetMenuTemplateArguments (menuPrimary, menuTemplateArgs);
-            SetMenuTemplateArguments (menuSecondary, menuTemplateArgs);
-            SetMenuTemplateArguments (menuLocal, menuTemplateArgs);
         }
 
         protected override void OnLoad (EventArgs e)
@@ -157,18 +137,6 @@ namespace R7.Epsilon
 
                 // alter look of accessibility button
                 linkA11yVersion.CssClass = linkA11yVersion.CssClass + " enabled";
-            }
-        }
-
-        private void SetMenuTemplateArguments (DDRMenu.SkinObject menu, List<TemplateArgument> args)
-        {
-            // check if menu exists for various skin derivatives
-            if (menu != null)
-            {
-                if (menu.TemplateArguments != null)
-                    menu.TemplateArguments.AddRange (args);
-                else
-                    menu.TemplateArguments = args;
             }
         }
 

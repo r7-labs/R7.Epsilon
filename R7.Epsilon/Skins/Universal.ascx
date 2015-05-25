@@ -10,7 +10,6 @@
 <%@ Register TagPrefix="dnn" TagName="COPYRIGHT" Src="~/Admin/Skins/Copyright.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="JQUERY" Src="~/Admin/Skins/jQuery.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="META" Src="~/Admin/Skins/Meta.ascx" %>
-<%@ Register TagPrefix="dnn" TagName="MENU" Src="~/DesktopModules/DDRMenu/Menu.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="BANNER" Src="~/Admin/Skins/Banner.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="BREADCRUMB" Src="~/Admin/Skins/BreadCrumb.ascx" %>
 <%@ Register TagPrefix="skin" TagName="FUNCTIONS" Src="Controls/Functions.ascx" %>
@@ -27,7 +26,11 @@
 <%@ Register TagPrefix="skin" TagName="FEEDBACKBUTTON" Src="Controls/FeedbackButton.ascx" %>
 <%@ Register TagPrefix="skin" TagName="FOOTERCONTENT" Src="Controls/FooterContent.ascx" %>
 <%@ Register TagPrefix="skin" TagName="YCYCOUNTER" Src="Controls/YCycounter.ascx" %>
-<%@ Register TagPrefix="dnn" Namespace="DotNetNuke.Web.DDRMenu.TemplateEngine" Assembly="DotNetNuke.Web.DDRMenu" %>
+<%@ Register TagPrefix="skin" TagName="PRIMARYMENU" Src="Controls/PrimaryMenu.ascx" %>
+<%@ Register TagPrefix="skin" TagName="SECONDARYMENU" Src="Controls/SecondaryMenu.ascx" %>
+<%@ Register TagPrefix="skin" TagName="LOCALMENU" Src="Controls/LocalMenu.ascx" %>
+<%@ Register TagPrefix="skin" TagName="HEADERSMENU" Src="Controls/HeadersMenu.ascx" %>
+<%@ Register TagPrefix="skin" TagName="JSVARIABLES" Src="Controls/JsVariables.ascx" %>
 <%@ Register TagPrefix="dnn" Namespace="DotNetNuke.Web.Client.ClientResourceManagement" Assembly="DotNetNuke.Web.Client" %>
 
 <dnn:META ID="bootstrapIECompat" runat="server" Name="X-UA-Compatible" Content="IE=edge" />
@@ -43,6 +46,7 @@
 <dnn:DnnJsInclude runat="server" FilePath="rangy/rangy-core.js" PathNameAlias="SharedScripts" ForceProvider="DnnFormBottomProvider" />
 <dnn:DnnJsInclude runat="server" FilePath="~/Resources/Shared/components/flowplayer/flowplayer.min.js" ForceProvider="DnnFormBottomProvider" />
 
+<skin:JSVARIABLES runat="server" />
 <div id="fb-root"></div>
 <header>
     <div class="container">
@@ -87,9 +91,7 @@
                 <dnn:LOGIN runat="server" CssClass="skin-login-link" />
             </div>
             <div class="navbar-collapse collapse dnnClear skin-top-menu" role="navigation">
-                <div class="skin-primary-menu">
-                    <dnn:MENU id="menuPrimary" runat="server" MenuStyle="Mega2Epsilon" NodeSelector="<%# Config.PrimaryMenuNodeSelector %>" IncludeNodes="<%# Config.PrimaryMenuIncludeNodes %>" />
-                </div>
+                <skin:PRIMARYMENU runat="server" />
             </div>
             <div class="navbar-collapse collapse skin-primary-navbar-main">
                 <div class="skin-founders-wrapper">
@@ -111,9 +113,7 @@
     <nav class="navbar skin-secondary-navbar" role="navigation">
         <div class="container">
             <div class="navbar-collapse collapse dnnClear skin-top-menu">
-                <div class="skin-secondary-menu">
-                    <dnn:MENU id="menuSecondary" runat="server" MenuStyle="Mega2Epsilon" NodeSelector="<%# Config.SecondaryMenuNodeSelector %>" IncludeNodes="<%# Config.SecondaryMenuIncludeNodes %>" />
-                </div>    
+                <skin:SECONDARYMENU runat="server" /> 
             </div>
         </div>
     </nav>
@@ -128,23 +128,8 @@
                 <skin:PAGEHEADER runat="server" />
                 <skin:PAGEINFO runat="server" />
             </div>
-            <div class="skin-local-menu">
-                <dnn:MENU id="menuLocal" runat="server" MenuStyle="Mega2Epsilon" NodeSelector="-1,0,2" IncludeNodes="<%# PortalSettings.ActiveTab.TabID %>">
-                    <TemplateArguments> 
-                        <dnn:TemplateArgument Name="hamburgerMenu" Value="1" />
-                        <dnn:TemplateArgument Name="subMenuColumns" Value="1" />
-                    </TemplateArguments>
-                </dnn:MENU>
-            </div>
-            <div class="skin-headers-menu">
-                <dnn:MENU id="menuHeaders" runat="server" MenuStyle="Mega2Epsilon" NodeSelector="-1,0,0" IncludeNodes="<%# PortalSettings.ActiveTab.TabID %>">
-                    <TemplateArguments>
-                        <dnn:TemplateArgument Name="hamburgerMenu" Value="1" />
-                        <dnn:TemplateArgument Name="subMenuColumns" Value="1" />
-                        <dnn:TemplateArgument Name="resourceKey" Value="HeadersMenu" />
-                    </TemplateArguments>
-                </dnn:MENU>
-            </div>
+            <skin:LOCALMENU runat="server" />
+            <skin:HEADERSMENU runat="server" PassDefaultTemplateArgs="false" />
         </div>
     </nav>
 </header>

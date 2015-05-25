@@ -163,6 +163,19 @@
     <Compile Include="Skins\Admin.ascx.cs">
       <DependentUpon>Admin.ascx</DependentUpon>
     </Compile>
+    <Compile Include="components\EpsilonMenuBase.cs" />
+    <Compile Include="Skins\Controls\HeadersMenu.ascx.cs">
+      <DependentUpon>HeadersMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\Controls\LocalMenu.ascx.cs">
+      <DependentUpon>LocalMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\Controls\PrimaryMenu.ascx.cs">
+      <DependentUpon>PrimaryMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\Controls\SecondaryMenu.ascx.cs">
+      <DependentUpon>SecondaryMenu.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Containers\Blank.ascx" />
@@ -270,6 +283,12 @@
     <Content Include="Containers\Panel_Success.ascx" />
     <Content Include="Containers\Panel_Warning.ascx" />
     <Content Include="Containers\Panel_Danger.ascx" />
+    <Content Include="Skins\Controls\PrimaryMenu.ascx" />
+    <Content Include="Skins\Controls\SecondaryMenu.ascx" />
+    <Content Include="Skins\Controls\LocalMenu.ascx" />
+    <Content Include="Skins\Controls\HeadersMenu.ascx" />
+    <Content Include="Application\Global.asax" />
+    <Content Include="Skins\Controls\JsVariables.ascx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
@@ -292,6 +311,7 @@
     <Folder Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\" />
     <Folder Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\App_LocalResources\" />
     <Folder Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\images\" />
+    <Folder Include="Application\" />
   </ItemGroup>
   <Import Project="Less.targets" />
   <Target Name="BeforeBuild" DependsOnTargets="Less;MinifyJS" />
