@@ -847,6 +847,69 @@ ul.skin-socialgroups
   width: 100%;
 }
 
+/* link classes */
+/* TODO: 32x32 links! */
+
+a.link
+{ 
+    background-repeat:no-repeat;
+    background-position:center left;
+    padding:0 18px 0 0; 
+
+    /* by category */
+
+    &.link-email { background-image:url('/icons/Sigma/Email_16X16_Standard.png'); }
+    &.link-portable-document { background-image:url('/icons/Sigma/ExtPdf_16X16_Standard.png'); }
+    &.link-document { background-image:url('/icons/Sigma/ExtDoc_16X16_Standard.png'); }
+    &.link-spreadsheet { background-image:url('/icons/Sigma/ExtXls_16X16_Standard.png'); }
+    &.link-presentation { background-image:url('/icons/Sigma/ExtPpt_16X16_Standard.png'); }
+    &.link-archive { background-image:url('/icons/Sigma/ExtZip_16X16_Standard.png'); }
+    &.link-image { background-image:url('/icons/Sigma/ExtPng_16X16_Standard.png'); }
+    &.link-audio { background-image:url('/icons/Sigma/ExtMp3_16X16_Standard.png'); }
+    &.link-video { background-image:url('/icons/Sigma/ExtMp4_16X16_Standard.png'); }
+
+    /* by file extension */
+
+    &.ext-pdf { background-image:url('/icons/Sigma/ExtPdf_16X16_Standard.png'); }
+    &.ext-ps { background-image:url('/icons/Sigma/ExtPs_16X16_Standard.png'); }
+    &.ext-xpi { background-image:url('/icons/Sigma/ExtXpi_16X16_Standard.png'); }
+
+    &.ext-doc { background-image:url('/icons/Sigma/ExtDoc_16X16_Standard.png'); }
+    &.ext-docx { background-image:url('/icons/Sigma/ExtDocx_16X16_Standard.png'); }
+
+    &.ext-xls { background-image:url('/icons/Sigma/ExtXls_16X16_Standard.png'); }
+    &.ext-xlsx { background-image:url('/icons/Sigma/ExtXlsx_16X16_Standard.png'); }
+
+    &.ext-ppt { background-image:url('/icons/Sigma/ExtPpt_16X16_Standard.png'); }
+    &.ext-pptx { background-image:url('/icons/Sigma/ExtPptx_16X16_Standard.png'); }
+
+    &.ext-zip { background-image:url('/icons/Sigma/ExtZip_16X16_Standard.png'); }
+    &.ext-rar { background-image:url('/icons/Sigma/ExtRar_16X16_Standard.png'); }
+
+    &.ext-txt { background-image:url('/icons/Sigma/ExtTxt_16X16_Standard.png'); }
+
+    &.ext-gif { background-image:url('/icons/Sigma/ExtGif_16X16_Standard.png'); }
+    &.ext-png { background-image:url('/icons/Sigma/ExtPng_16X16_Standard.png'); }
+    &.ext-jpg { background-image:url('/icons/Sigma/ExtJpg_16X16_Standard.png'); }
+    &.ext-jpeg { background-image:url('/icons/Sigma/ExtJpeg_16X16_Standard.png'); }
+
+    &.ext-mp3 { background-image:url('/icons/Sigma/ExtMp3_16X16_Standard.png'); }
+    &.ext-wav { background-image:url('/icons/Sigma/ExtWav_16X16_Standard.png'); }
+    &.ext-ogg { background-image:url('/icons/Sigma/ExtOgg_16X16_Standard.png'); }
+
+    &.ext-mp2 { background-image:url('/icons/Sigma/ExtMp2_16X16_Standard.png'); }
+    &.ext-mp4 { background-image:url('/icons/Sigma/ExtMp4_16X16_Standard.png'); }
+    &.ext-avi { background-image:url('/icons/Sigma/ExtAvi_16X16_Standard.png'); }
+    &.ext-wmv { background-image:url('/icons/Sigma/ExtWmv_16X16_Standard.png'); }
+    &.ext-mpeg { background-image:url('/icons/Sigma/ExtMpeg_16X16_Standard.png'); }
+
+    /* substitutions (no icon in Sigma set) */
+    &.ext-odt { background-image:url('/icons/Sigma/ExtDoc_16X16_Standard.png'); }
+    &.ext-ods { background-image:url('/icons/Sigma/ExtXls_16X16_Standard.png'); }
+    &.ext-odp { background-image:url('/icons/Sigma/ExtPpt_16X16_Standard.png'); }
+    &.ext-7z { background-image:url('/icons/Sigma/ExtZip_16X16_Standard.png'); }
+}
+
 /* fix for DNN dropdown lists being cut off*/
 .dnnDropDownList .selected-item, .dnnDropDownList .selected-item a {
 	height: 35px !important;
