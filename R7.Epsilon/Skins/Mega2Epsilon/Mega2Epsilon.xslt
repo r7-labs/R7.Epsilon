@@ -109,5 +109,6 @@
                 <xsl:attribute name="onclick">return false</xsl:attribute>
             </xsl:otherwise>
         </xsl:choose>
+        <xsl:attribute name="data-id"><xsl:value-of select="@id"/></xsl:attribute>
     </xsl:template>
 </xsl:stylesheet>

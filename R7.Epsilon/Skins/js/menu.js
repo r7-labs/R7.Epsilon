@@ -70,9 +70,9 @@ jQuery(document).ready(function () {
 	jQuery("ul.megamenu > li").hoverIntent(config);
 
     // mark current tab link
-    if (epsilon.tabName) {
-        jQuery("ul.megamenu li.level0 >  a:contains('" + epsilon.tabName + "')").filter (function() {
-            return $(this).text () == epsilon.tabName;
+    if (epsilon.breadCrumbs) {
+        jQuery("ul.megamenu a").filter (function() {
+            return epsilon.breadCrumbs.indexOf (parseInt(jQuery(this).attr("data-id"))) !== -1;
         }).addClass ("current");
     }
 });
