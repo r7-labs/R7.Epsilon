@@ -176,6 +176,9 @@
     <Compile Include="Skins\Controls\SecondaryMenu.ascx.cs">
       <DependentUpon>SecondaryMenu.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Skins\Controls\JsVariables.ascx.cs">
+      <DependentUpon>JsVariables.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Containers\Blank.ascx" />

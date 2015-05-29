@@ -1,9 +1,10 @@
-﻿<%@ Control Language="C#" Inherits="R7.Epsilon.EpsilonSkinObjectBase" %>
+﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.JsVariables" %>
 
 <script type="text/javascript">
 var epsilon = {
     tabId:<%= PortalSettings.ActiveTab.TabID %>,
     tabName:'<%= PortalSettings.ActiveTab.TabName %>',
-    portalId:<%= PortalSettings.Current.PortalId %>
+    portalId:<%= PortalSettings.Current.PortalId %>,
+    breadCrumbs:[<%= BreadCrumbsList %>]
 }
 </script>
