@@ -1,13 +1,28 @@
 ﻿<%@ Application Inherits="DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication" Language="C#" %>
 <%@ Import Namespace="DotNetNuke.Entities.Portals" %>
+<%@ Import Namespace="DotNetNuke.Entities.Users" %>
+<%@ Import Namespace="R7.Epsilon" %>
 <script runat="server">
 public override string GetVaryByCustomString (HttpContext context, string arg)
 {
-    if (string.Compare (arg, "PortalId", StringComparison.InvariantCultureIgnoreCase) == 0)
+    var result = string.Empty;
+    foreach (var part in arg.Split (';'))
     {
-        return "portalid=" + PortalSettings.Current.PortalId;
+        if (part == "PortalId") {
+            result += "portalid=" + PortalSettings.Current.PortalId;
+        }
+        else if (part == "UserRoles") {
+            if (Request.IsAuthenticated) {
+                var user = UserController.GetCurrentUserInfo ();
+                if (user != null)
+                    result += "userroles=" + Utils.FormatList (",", (Array)user.Roles);
+            }
+        }
+        else {
+            result += base.GetVaryByCustomString (context, arg);
+        }
     }
 
-    return base.GetVaryByCustomString(context, arg);
+    return result;
 }
 </script>
