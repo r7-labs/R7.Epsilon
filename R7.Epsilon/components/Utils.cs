@@ -26,6 +26,7 @@
 using System;
 using System.Web;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Collections.Generic;
 using System.Web.UI.WebControls;
@@ -221,6 +222,25 @@ namespace R7.Epsilon
 
 			return sb.ToString ();
 		}
+
+        public static string FormatList<T> (string separator, IEnumerable<T> args)
+        {
+            var sb = new StringBuilder ();
+
+            var i = 0;
+            foreach (var a in args)
+            {
+                if (!string.IsNullOrWhiteSpace (a.ToString ()))
+                {
+                    if (i++ > 0)
+                        sb.Append (separator);
+
+                    sb.Append (a);
+                }
+            }
+
+            return sb.ToString ();
+        }
 
 		public static string FirstCharToUpper (string s)
 		{
