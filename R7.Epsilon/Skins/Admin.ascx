@@ -131,6 +131,23 @@
     <div class="row">
         <div id="ContentPane" runat="server" class="col-md-12" />
     </div>
+    <div class="row">
+        <div id="BottomPane11" runat="server" class="col-md-4" />
+        <div id="BottomPane12" runat="server" class="col-md-4" />
+        <div id="BottomPane13" runat="server" class="col-md-4" />
+    </div>
+    <div class="row">
+        <div id="BottomPane21" runat="server" class="col-md-4" />
+        <div id="BottomPane22" runat="server" class="col-md-4" />
+        <div id="BottomPane23" runat="server" class="col-md-4" />
+    </div>
+    <div class="row">
+        <div id="BottomLeftPane" runat="server" class="col-md-7" />
+        <div id="BottomRightPane" runat="server" class="col-md-5" />
+    </div>
+    <div class="row">
+        <div id="BottomPane" runat="server" class="col-md-12" />
+    </div>
 </div>
 <div class="container">
     <skin:ADMINPAGEINFO runat="server" />
