@@ -109,7 +109,7 @@
         <value>Информационная продукция для детей, достигших возраста двенадцати лет (12+)</value>
     </data>
     <data name="PagePermalink.Text" xml:space="preserve">
-        <value><![CDATA[<span class="glyphicon glyphicon-link"></span>]]></value>
+        <value><![CDATA[<span class="glyphicon glyphicon-link"></span> Ссылка]]></value>
     </data>
     <data name="PagePermalink.Tooltip" xml:space="preserve">
         <value>Постоянная ссылка</value>

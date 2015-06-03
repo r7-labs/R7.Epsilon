@@ -115,7 +115,7 @@
         <value>Information products for children since the age of twelve years (12+)</value>
     </data>
     <data name="PagePermalink.Text" xml:space="preserve">
-        <value><![CDATA[<span class="glyphicon glyphicon-link"></span>]]></value>
+        <value><![CDATA[<span class="glyphicon glyphicon-link"></span> Link]]></value>
     </data>
     <data name="PagePermalink.Tooltip" xml:space="preserve">
         <value>Permalink</value>
