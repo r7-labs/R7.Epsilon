@@ -168,6 +168,9 @@
         <div id="MiddlePane11" runat="server" class="col-md-4" />
         <div id="MiddlePane12" runat="server" class="col-md-4" />
         <div id="MiddlePane13" runat="server" class="col-md-4" />
+    </div>    
+    <div class="row">
+        <div id="MiddlePane" runat="server" class="col-md-12" />
     </div>
     <div class="row">
         <div id="MiddlePane21" runat="server" class="col-md-4" />
