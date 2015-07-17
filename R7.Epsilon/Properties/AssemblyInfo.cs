@@ -30,10 +30,10 @@ using System.Runtime.CompilerServices;
 // Change them to the values specific to your project.
 
 [assembly: AssemblyTitle ("R7.Epsilon")]
-[assembly: AssemblyDescription ("")]
+[assembly: AssemblyDescription ("Responsive skin for DNN Platform")]
 [assembly: AssemblyConfiguration ("")]
 [assembly: AssemblyCompany ("R7.Solutions")]
-[assembly: AssemblyProduct ("")]
+[assembly: AssemblyProduct ("R7.Epsilon")]
 [assembly: AssemblyCopyright ("")]
 [assembly: AssemblyTrademark ("")]
 [assembly: AssemblyCulture ("")]
@@ -42,7 +42,7 @@ using System.Runtime.CompilerServices;
 // The form "{Major}.{Minor}.*" will automatically update the build and revision,
 // and "{Major}.{Minor}.{Build}.*" will update just the revision.
 
-[assembly: AssemblyVersion ("1.0.*")]
+[assembly: AssemblyVersion ("1.0.0.*")]
 
 // The following attributes are used to specify the signing key for the assembly,
 // if desired. See the Mono documentation for more information about signing.
