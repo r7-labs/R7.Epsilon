@@ -448,23 +448,24 @@ ul.skin-socialgroups
     padding-top:10px;
 
     small 
-    { 
+    {
         display:inline-block;
         padding-right:3em; 
     }
-
-    .skin-page-share-buttons
-    {
-        display:inline-block;
-
-        & > * { display:inline-block; }
-
-        #___plusone_0 { vertical-align:bottom !important; } // overriding inline style!
-        .twitter-share-button, #vk_like { vertical-align:bottom; }
-        .fb-like, .twitter-share-button { margin-right:30px; }
-        .fb-like, #vk_like { min-width:110px; }
-    }
 }
+
+.skin-social-share-buttons
+{
+    display:inline-block;
+
+    & > * { display:inline-block; }
+
+    #___plusone_0 { vertical-align:bottom !important; } // overriding inline style!
+    .twitter-share-button, #vk_like { vertical-align:bottom; }
+    .fb-like, .twitter-share-button { margin-right:30px; }
+    .fb-like, #vk_like { min-width:110px; }
+}
+
 
 @media only screen and (max-width : 767px) 
 {

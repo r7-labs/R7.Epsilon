@@ -16,6 +16,7 @@
 <%@ Register TagPrefix="skin" TagName="GADSENSE" Src="Controls/GAdsense.ascx" %>
 <%@ Register TagPrefix="skin" TagName="SOCIALGROUPS" Src="Controls/SocialGroups.ascx" %>
 <%@ Register TagPrefix="skin" TagName="PAGEINFO" Src="Controls/PageInfo.ascx" %>
+<%@ Register TagPrefix="skin" TagName="SOCIALSHAREBUTTONS" Src="Controls/SocialShareButtons.ascx" %>
 <%@ Register TagPrefix="skin" TagName="ADMINPAGEINFO" Src="Controls/AdminPageInfo.ascx" %>
 <%@ Register TagPrefix="skin" TagName="SOCIALSHARESCRIPTS" Src="Controls/SocialShareScripts.ascx" %>
 <%@ Register TagPrefix="skin" TagName="FOUNDERS" Src="Controls/Founders.ascx" %>
@@ -122,10 +123,8 @@
             </div>
         </div>
         <div class="container">
-            <div class="page-header">
-                <skin:PAGEINFO runat="server" ShowPageInfo="false" />
-            </div>
-            <skin:HEADERSMENU runat="server" PassDefaultTemplateArgs="false" /> 
+            <skin:HEADERSMENU runat="server" PassDefaultTemplateArgs="false" />
+            <skin:SOCIALSHAREBUTTONS runat="server" />
         </div>
     </nav>
 </header>

@@ -1,5 +1,5 @@
 ﻿//
-// PageInfo.ascx.cs
+// SocialShareButtons.ascx.cs
 //
 // Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
@@ -35,31 +35,7 @@ using DotNetNuke.Entities.Users;
 
 namespace R7.Epsilon
 {
-    public class PageInfo : EpsilonSkinObjectBase
+    public class SocialShareButtons: EpsilonSkinObjectBase
     {
-        public bool ShowPageInfo { get; set; }
-
-        protected PageInfo ()
-        {
-            // set default values
-            ShowPageInfo = true;
-        }
-
-        /// <summary>
-        /// Gets page published info message.
-        /// </summary>
-        /// <value>The published message.</value>
-        protected string PublishedMessage
-        {
-            get
-            {
-                var activeTab = PortalSettings.ActiveTab;
-                var user = activeTab.CreatedByUser (PortalSettings.PortalId);
-                var userName = (user != null)? user.DisplayName : Localizer.GetString ("SystemUser.Text");
-
-                return string.Format (Localizer.GetString ("PagePublishedMessage.Format"),  
-                    activeTab.CreatedOnDate, userName); 
-            }
-        }
     }
 }

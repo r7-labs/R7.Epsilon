@@ -180,6 +180,9 @@
     <Compile Include="Skins\Controls\JsVariables.ascx.cs">
       <DependentUpon>JsVariables.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Skins\Controls\SocialShareButtons.cs">
+      <DependentUpon>SocialShareButtons.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Containers\Blank.ascx" />
@@ -293,6 +296,7 @@
     <Content Include="Skins\Controls\HeadersMenu.ascx" />
     <Content Include="Application\Global.asax" />
     <Content Include="Skins\Controls\JsVariables.ascx" />
+    <Content Include="Skins\Controls\SocialShareButtons.ascx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
