@@ -124,6 +124,7 @@
             </div>
             <skin:LOCALMENU runat="server" />
             <skin:HEADERSMENU runat="server" PassDefaultTemplateArgs="false" />
+            <div id="skin-separator-1">&nbsp;</div>
         </div>
     </nav>
 </header>

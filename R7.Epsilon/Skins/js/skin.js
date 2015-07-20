@@ -38,7 +38,10 @@ function skin_init_search () {
 function skin_init_localmenu () {
     var localMenu = $(".skin-local-menu").first ();
     if (localMenu.find (".sub").length === 0)
-        localMenu.hide ();
+    {
+        localMenu.addClass ("hidden");
+        $('#skin-separator-1').first().addClass('hidden-local');
+    }
 }
 
 function skin_init_modulesmenu () {
@@ -65,7 +68,8 @@ function skin_init_modulesmenu () {
         pageContents.append(menuItems);
     }
     else {
-       $('.skin-headers-menu').first().addClass('hidden');
+        $('.skin-headers-menu').first().addClass('hidden');
+        $('#skin-separator-1').first().addClass('hidden-headers');
     }
 }
 
