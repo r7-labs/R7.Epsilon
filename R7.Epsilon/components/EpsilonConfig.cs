@@ -81,6 +81,21 @@ namespace R7.Epsilon
             get { return PortalConfig.GetBoolean ("VkShareEnabled", false); }
         }
 
+        public bool FacebookShareEnabled
+        {
+            get { return PortalConfig.GetBoolean ("FacebookShareEnabled", false); }
+        }
+
+        public bool TwitterShareEnabled
+        {
+            get { return PortalConfig.GetBoolean ("TwitterShareEnabled", false); }
+        }
+
+        public bool GoogleShareEnabled
+        {
+            get { return PortalConfig.GetBoolean ("GoogleShareEnabled", false); }
+        }
+
         public string VkApiId
         {
             get { return PortalConfig.Get ("VkApiId", string.Empty); }
