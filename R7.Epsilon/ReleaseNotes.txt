@@ -1,2 +1,8 @@
-﻿<h3>Version 1.0.0</h3>
+﻿<h3>Version 1.0.1</h3>
+<ul>
+    <li>Added config options to toggle all social share buttons & scripts.</li>
+    <li>Social share buttons relocated to local menus row.</li>
+</ul>
+
+<h3>Version 1.0.0</h3>
 <p>Initial release.</p>
