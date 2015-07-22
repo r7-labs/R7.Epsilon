@@ -79,9 +79,6 @@
     <None Include="Skins\PopupSkin.doctype.xml">
       <DependentUpon>PopupSkin.ascx</DependentUpon>
     </None>
-    <None Include="Skins\Delta.doctype.xml">
-      <DependentUpon>Delta.ascx</DependentUpon>
-    </None>
     <None Include="Skins\Mega2Epsilon\Mega2Epsilon.xslt" />
     <None Include="Skins\Mega2Epsilon\menudef.xml" />
     <None Include="Customizations\volgau.com\README.md" />
@@ -151,9 +148,6 @@
     </Compile>
     <Compile Include="Skins\Controls\Functions.ascx.cs">
       <DependentUpon>Functions.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Skins\Delta.ascx.cs">
-      <DependentUpon>Delta.ascx</DependentUpon>
     </Compile>
     <Compile Include="Skins\Controls\PageInfo.cs">
       <DependentUpon>PageInfo.ascx</DependentUpon>
@@ -263,7 +257,6 @@
     <Content Include="Skins\Controls\LogoMobile.ascx" />
     <Content Include="Skins\Controls\FooterContent.ascx" />
     <Content Include="Skins\Controls\Functions.ascx" />
-    <Content Include="Skins\Delta.ascx" />
     <Content Include="Skins\css\blueimp.less" />
     <Content Include="Customizations\volgau.com\Portals\0\R7.Epsilon-portal.config" />
     <Content Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\images\founder1_48x48.png" />
