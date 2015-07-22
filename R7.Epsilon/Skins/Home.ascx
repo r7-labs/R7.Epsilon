@@ -124,7 +124,7 @@
         </div>
         <div class="container">
             <skin:HEADERSMENU runat="server" PassDefaultTemplateArgs="false" />
-            <div id="skin-separator-1" class="hidden-local">&nbsp;</div>
+            <div id="skin-separator-1" class="hidden-xs hidden-local">&nbsp;</div>
             <skin:SOCIALSHAREBUTTONS runat="server" />
         </div>
     </nav>
