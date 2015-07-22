@@ -14,15 +14,10 @@ $(function() {
 
 function skin_init_breadcrumb () {
     var breadcrumb = $(".breadcrumb > span").first ();
-    var links = breadcrumb.children ("a").length;
-
-    if (links === 1) {
-        // hide parent container
-        breadcrumb.parent ().parent ().hide ();
-    }
-    else {
-        // remove last link
-        breadcrumb.children ("a").last ().remove ();    
+    if (breadcrumb)
+    {
+        // remove link to current page
+        breadcrumb.children ("a").last ().remove ();   
     }
 }
 

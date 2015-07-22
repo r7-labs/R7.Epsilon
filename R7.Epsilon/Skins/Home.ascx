@@ -118,11 +118,6 @@
     </nav>
     <nav class="navbar skin-local-navbar" role="navigation">
         <div class="container">
-            <div class="breadcrumb">
-                <dnn:BREADCRUMB id="dnnBREADCRUMB" runat="server" CssClass="skin-breadcrumb-link" RootLevel="0" Separator="/" />
-            </div>
-        </div>
-        <div class="container">
             <skin:HEADERSMENU runat="server" PassDefaultTemplateArgs="false" />
             <div id="skin-separator-1" class="hidden-xs hidden-local">&nbsp;</div>
             <skin:SOCIALSHAREBUTTONS runat="server" />

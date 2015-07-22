@@ -121,7 +121,7 @@
     <nav class="navbar skin-local-navbar" role="navigation">
         <div class="container">
             <div class="breadcrumb">
-                <dnn:BREADCRUMB id="dnnBREADCRUMB" runat="server" CssClass="skin-breadcrumb-link" RootLevel="0" Separator="/" />
+                <dnn:BREADCRUMB id="dnnBREADCRUMB" runat="server" CssClass="skin-breadcrumb-link" RootLevel="-1" Separator="/" />
             </div>
         </div>
         <div class="container">
