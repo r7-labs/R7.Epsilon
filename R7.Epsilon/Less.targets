@@ -4,6 +4,7 @@
     <ItemGroup>
         <LessFiles Include="Skins\css\default-skin.less" />
         <LessFiles Include="Skins\css\a11y-skin.less" />
+        <LessFiles Include="Skins\css\consulting-skin.less" />
     </ItemGroup>
     <!-- Declare JS files -->
     <ItemGroup>
