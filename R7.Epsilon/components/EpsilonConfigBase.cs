@@ -55,12 +55,12 @@ namespace R7.Epsilon
             var portalSettings = new PortalSettings (portalId);
 
             // portal config source
-            PortalConfigFile = Path.Combine (portalSettings.HomeDirectoryMapPath, "R7.Epsilon-portal.config");
+            PortalConfigFile = Path.Combine (portalSettings.HomeDirectoryMapPath, "R7.Epsilon.config");
 
             if (!File.Exists (PortalConfigFile))
             {
                 // copy generic config file to portal folder
-                var genericConfigFile = Path.Combine (Globals.HostMapPath, "Skins\\R7.Epsilon\\portal.config");
+                var genericConfigFile = Path.Combine (Globals.HostMapPath, "Skins\\R7.Epsilon\\R7.Epsilon.config");
                 File.Copy (genericConfigFile, PortalConfigFile);
             }
 

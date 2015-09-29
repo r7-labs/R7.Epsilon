@@ -6,7 +6,7 @@ But there are other ways. Below I want to explain available customization option
 ## Portal-level config
 
 Unlike many other skin, R7.Epsilon could be configured per portal. 
-Portal-level options could be set via editing `R7.Epsilon-portal.config` file in portal root directory.
+Portal-level options could be set via editing `R7.Epsilon.config` file in portal root directory.
 
 Portal config file is generic .NET config file with key-value pairs. Most important ones described in the table:
 
