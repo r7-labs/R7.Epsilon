@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+    <data name="Founder1.Title" xml:space="preserve">
+        <value>Сайт Министерства образования и науки</value>
+    </data>
+    <data name="Founder1.Href" xml:space="preserve">
+        <value>http://минобрнауки.рф</value>
+    </data>
+    <data name="Founder2.Title" xml:space="preserve">
+        <value>Сайт Министерства сельского хозяйства</value>
+    </data>
+    <data name="Founder2.Href" xml:space="preserve">
+        <value>http://www.mcx.ru</value>
+    </data>
+    <data name="LogoTitle.Text" xml:space="preserve">
+        <value>Мультиязычный портал&#13;Волгоградского ГАУ</value>
+    </data>
+    <data name="LogoTitle.Motto" xml:space="preserve">
+        <value></value>
+    </data>
+    <data xml:space="preserve" name="FooterPane1.Content">
+        <value><![CDATA[<div class="skin-footer-content-well"></div>]]></value>
+    </data>
+    <data xml:space="preserve" name="FooterPane2.Content">
+        <value><![CDATA[
+        <div class="skin-footer-content-element">
+            <strong>Университет</strong>
+            <ul class="list-inline">
+                <li><a href="http://www.volgau.com/LinkClick.aspx?link=3986">Контакты</a></li>
+                <li><a href="http://www.volgau.com/LinkClick.aspx?link=2659">Обратная связь</a></li>
+                <li><a href="http://www.volgau.com/LinkClick.aspx?link=10463">Подразделения</a></li>
+                <li><a href="http://www.volgau.com/LinkClick.aspx?link=10462">Сотрудники</a></li>
+            </ul>
+        </div>        
+        <div class="skin-footer-content-element">
+            <strong>Печатные издания</strong>
+            <ul class="list-inline">
+                <li><a href="http://www.volgau.com/LinkClick.aspx?link=361">Мичуринец</a></li>
+                <li><a href="http://www.volgau.com/LinkClick.aspx?link=612">Известия Нижневолжского АУК</a></li>
+            </ul>
+        </div>]]></value>
+    </data>
+    <data xml:space="preserve" name="FooterPane3.Content">
+        <value><![CDATA[
+        <div class="skin-footer-content-element">
+            <strong><a href="http://www.volgau.com/LinkClick.aspx?link=55">Приемная комиссия</a></strong>
+            <ul class="list-inline">
+                <li>+7 (8442) 411-778</li>
+                <li>+7 (8442) 411-885</li>
+                <li><a href="mailto:pricom@volgau.com">pricom@volgau.com</a></li>
+            </ul>
+        </div>
+        <div class="skin-footer-content-element">
+            <strong><a href="http://www.volgau.com/LinkClick.aspx?link=105">Ректорат</a></strong>
+            <ul class="list-inline">
+                <li>+7 (8442) 411-784</li>
+                <li><a href="mailto:volgau@volgau.com">volgau@volgau.com</a></li>
+            </ul>
+        </div>
+        <div class="skin-footer-content-element">
+            <strong><a href="http://www.volgau.com/LinkClick.aspx?link=156">Администратор сайта</a></strong>
+            <ul class="list-inline">
+                <li>+7 (927) 530-87-50</li>
+                <li><a href="mailto:webmaster@volgau.com">webmaster@volgau.com</a></li>
+            </ul>
+        </div>
+        ]]></value>
+    </data>
+</root>

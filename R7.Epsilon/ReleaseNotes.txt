@@ -1,4 +1,9 @@
-﻿<h3>Version 1.0.3</h3>
+﻿<h3>Version 1.0.4</h3>
+<ul>
+    <li>Add skin variant and customization resources for world.volgau.com portal.</li>
+</ul>
+
+<h3>Version 1.0.3</h3>
 <ul>
     <li>Set profile image dimensions (fix DNN 7.4.1 behavior), make it round; adjust rounded borders for logout button.</li>
     <li>Allow to define footer last line background color in the layout file.</li>
