@@ -297,6 +297,9 @@
     <Content Include="Skins\R7.Epsilon.config" />
     <Content Include="Customizations\volgau.com\Portals\0\R7.Epsilon.config" />
     <Content Include="Customizations\volgau.com\Portals\2\R7.Epsilon.config" />
+    <Content Include="Skins\css\world-layout.less" />
+    <Content Include="Skins\css\world-palette.less" />
+    <Content Include="Skins\css\world-skin.less" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
