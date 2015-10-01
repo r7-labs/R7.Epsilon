@@ -190,12 +190,12 @@ ul.megamenu
 
             a 
             {
-                &.current { background-color:@color-secondary-1-2; }
+                &.current { background-color:@secondary-menu-base-color-2; }
 
                 &:hover, &.megahover, &:focus
                 {
-                    color:@color-secondary-1-4;
-                    background-color:@color-secondary-2-1; 
+                    color:#000;
+                    background-color:@secondary-menu-highlight-color-1; 
                 }
             }
 
@@ -204,20 +204,26 @@ ul.megamenu
                 // compensate external spacing
                 padding-left:7px;
                 padding-right:7x;
-                background-color:@color-secondary-1-3;
+                background-color:@secondary-menu-base-color-3;
                 border-bottom-right-radius:@borderRadius;
                 border-bottom-left-radius:@borderRadius;
             }
 
             .sub
             {
-                border-color:@color-secondary-2-1;
-                background-color:@color-secondary-1-2;
+                border-color:@secondary-menu-highlight-color-1;
+                background-color:@secondary-menu-base-color-2;
                 border-bottom-left-radius:@submenu-border-radius;
                 border-bottom-right-radius:@submenu-border-radius;
-                box-shadow:2px 2px 2px @color-secondary-1-4;
+                box-shadow:2px 2px 2px @secondary-menu-base-color-4;
 
-                li:first-child a { border-color:darken(@color-secondary-1-2, 5%); }
+                a:hover, a:focus
+                { 
+                    color:@secondary-menu-base-color-4;
+                    background-color:@secondary-menu-highlight-color-1; 
+                }
+
+                li:first-child a { border-color:darken(@secondary-menu-base-color-2, 5%); }
             }
         }
     }
@@ -245,7 +251,7 @@ ul.megamenu
                 // menu button look
                 border:none;
                 border-radius:4px;
-                background-color:@color-secondary-1-2;
+                background-color:@secondary-menu-base-color-2;
                 padding:4px 10px;
 
                 .icon-bar 
@@ -260,10 +266,10 @@ ul.megamenu
 
                 &:hover, &.megahover, &:focus
                 { 
-                    color:@color-secondary-1-4;
-                    background-color:@color-secondary-2-1; 
+                    color:#000;
+                    background-color:@secondary-menu-highlight-color-1; 
 
-                    .icon-bar { background-color:@color-secondary-1-4; }
+                    .icon-bar { background-color:#000; }
                 }
             }
 
@@ -272,21 +278,21 @@ ul.megamenu
                 top:26px!important;
                 width:320px!important;
 
-                border-color:@color-secondary-2-1;
-                background-color:@color-secondary-1-2;
+                border-color:@secondary-menu-highlight-color-1;
+                background-color:@secondary-menu-base-color-2;
                 border-bottom-left-radius:@submenu-border-radius;
                 border-bottom-right-radius:@submenu-border-radius;
-                box-shadow:2px 2px 2px @color-secondary-1-4;
+                box-shadow:2px 2px 2px @secondary-menu-base-color-4;
 
                 a:hover, a:focus
                 { 
-                    color:@color-secondary-1-4;
-                    background-color:@color-secondary-2-1; 
+                    color:@secondary-menu-base-color-4;
+                    background-color:@secondary-menu-highlight-color-1; 
                 }
 
                 ul { width:100%; }
 
-                li:first-child a { border-color:darken(@color-secondary-1-2, 5%); }
+                li:first-child a { border-color:darken(@secondary-menu-base-color-2, 5%); }
 
                 // don't overline menu top items
                 ul:first-child li:first-child a { border-top:none; }
@@ -359,10 +365,10 @@ ul.megamenu
                 & > a
                 { 
                     border-radius:0; // disable rounded borders
-                    background-color:@color-secondary-1-2;
+                    background-color:@secondary-menu-base-color-2;
                 }
 
-                .sub { border-color:@color-secondary-2-1; }
+                .sub { border-color:@secondary-menu-highlight-color-1; }
             }
         }
     }
