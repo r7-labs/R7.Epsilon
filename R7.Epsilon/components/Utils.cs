@@ -52,14 +52,19 @@ namespace R7.Epsilon
 
 	public class Utils
 	{
-		public static string GetUserDisplayName (int userId)
-		{
-			var portalId = PortalController.GetCurrentPortalSettings ().PortalId;
-			var user = UserController.GetUserById (portalId, userId);
+        /// <summary>
+        /// Gets the name of the user display.
+        /// </summary>
+        /// <returns>The user display name.</returns>
+        /// <param name="userId">User identifier.</param>
+        /// <param name="defName">Default user display name. Pass Null.NullInteger.ToString() to use with ModuleAuditControl.</param>
+		public static string GetUserDisplayName (int userId, string defName)
+        {
+            var portalId = PortalController.GetCurrentPortalSettings ().PortalId;
+            var user = UserController.GetUserById (portalId, userId);
 
-			// TODO: "System" user name needs localization
-			return (user != null) ? user.DisplayName : "System";
-		}
+            return (user != null) ? user.DisplayName : defName;
+        }
 
 		/// <summary>
 		/// Determines if the specified file is an images.
