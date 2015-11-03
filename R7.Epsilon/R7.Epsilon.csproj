@@ -72,8 +72,6 @@
     <None Include="R7.Epsilon.csproj" />
     <None Include="Less.targets" />
     <None Include="R7.Epsilon.dnn" />
-    <None Include="ReleaseNotes.txt" />
-    <None Include="License.txt" />
     <None Include="Skins\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="lib\Nini.dll" />
     <None Include="Skins\PopupSkin.doctype.xml">
@@ -91,6 +89,8 @@
     <None Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\App_LocalResources\SharedResources.ru-RU.Portal-2.resx" />
     <None Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\App_LocalResources\SharedResources.Portal-3.resx" />
     <None Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\App_LocalResources\SharedResources.ru-RU.Portal-3.resx" />
+    <None Include="license.txt" />
+    <None Include="releaseNotes.txt" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Skins\Edit.ascx.cs">

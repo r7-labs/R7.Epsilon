@@ -1,0 +1,9 @@
+﻿<p>This skin is published under the terms of <a href="http://opensource.org/licenses/MIT" target="_blank">MIT License</a>.</p>
+
+<hr />
+
+<p>Social icons based on Stephen Hutchings's <a href="https://github.com/stephenhutchings/typicons.font" target="_blank">Typicons</a>, 
+published under <a href="http://creativecommons.org/licenses/by-sa/3.0/" target="_blank">CC BY-CA</a> license.</p>
+
+<p>Google translate and A11y icons based on Xaviju's <a href="https://github.com/Xaviju/inkscape-open-symbols">Inkscape Open Symbols</a>,
+the source of which is published under <a href="http://opensource.org/licenses/GPL-2.0" target="_blank">GPLv2</a> license.</p>
