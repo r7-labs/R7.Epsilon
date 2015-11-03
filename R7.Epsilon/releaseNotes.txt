@@ -1,4 +1,13 @@
-﻿<h3>Version 1.0.4</h3>
+﻿<h3>Version 1.5.0</h3>
+<ul>
+    <li>Use more semantic versioning.</li>
+    <li>Add editable module titles for Blank and Thumbnail containers.</li>
+    <li>Use round profile image in xs login control also.</li>
+    <li>Set dependency to DNN 7.4.0.</li>
+    <li>Modernize some API calls.</li>
+</ul>
+
+<h3>Version 1.0.4</h3>
 <ul>
     <li>Add skin variant and customization resources for world.volgau.com portal.</li>
 </ul>
