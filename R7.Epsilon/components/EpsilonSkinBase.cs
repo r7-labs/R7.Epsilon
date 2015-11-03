@@ -32,6 +32,7 @@ using DotNetNuke.Framework;
 using DotNetNuke.UI.Skins;
 using DotNetNuke.Web.Client;
 using DotNetNuke.Web.Client.ClientResourceManagement;
+using DotNetNuke.Framework.JavaScriptLibraries;
 
 namespace R7.Epsilon
 {
@@ -142,7 +143,7 @@ namespace R7.Epsilon
 
         private void RegisterJavaScript()
         {
-            jQuery.RequestRegistration();
+            JavaScript.RequestRegistration (CommonJs.jQuery);
         }
     }
 }
