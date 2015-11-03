@@ -57,7 +57,7 @@ namespace R7.Epsilon
                 var user = activeTab.CreatedByUser (PortalSettings.PortalId);
 
                 return string.Format (Localizer.GetString ("PagePublishedMessage.Format"),  
-                    activeTab.CreatedOnDate, Utils.GetUserDisplayName (user.UserID, Localizer.GetString ("SystemUser.Text"))); 
+                    activeTab.CreatedOnDate, (user != null)? user.DisplayName : Localizer.GetString ("SystemUser.Text")); 
             }
         }
     }
