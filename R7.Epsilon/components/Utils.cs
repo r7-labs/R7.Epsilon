@@ -60,7 +60,7 @@ namespace R7.Epsilon
         /// <param name="defName">Default user display name. Pass Null.NullInteger.ToString() to use with ModuleAuditControl.</param>
 		public static string GetUserDisplayName (int userId, string defName)
         {
-            var portalId = PortalController.GetCurrentPortalSettings ().PortalId;
+            var portalId = PortalController.Instance.GetCurrentPortalSettings ().PortalId;
             var user = UserController.GetUserById (portalId, userId);
 
             return (user != null) ? user.DisplayName : defName;
