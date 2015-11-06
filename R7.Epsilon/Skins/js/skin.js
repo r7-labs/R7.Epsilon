@@ -13,11 +13,13 @@ $(function() {
 });
 
 function skin_init_breadcrumb () {
-    var breadcrumb = $(".breadcrumb > span").first ();
-    if (breadcrumb)
-    {
-        // remove link to current page
-        breadcrumb.children ("a").last ().remove ();   
+    if (epsilon.breadCrumbsRemoveLastLink) {
+        var breadcrumb = $(".breadcrumb > span").first ();
+        if (breadcrumb)
+        {
+            // remove link to current page
+            breadcrumb.children ("a").last ().remove ();   
+        }
     }
 }
 

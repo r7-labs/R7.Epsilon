@@ -5,6 +5,7 @@ var epsilon = {
     tabId:<%= PortalSettings.ActiveTab.TabID %>,
     tabName:'<%= PortalSettings.ActiveTab.TabName %>',
     portalId:<%= PortalSettings.Current.PortalId %>,
-    breadCrumbs:[<%= BreadCrumbsList %>]
+    breadCrumbs:[<%= BreadCrumbsList %>],
+    breadCrumbsRemoveLastLink:<%= BreadCrumbsRemoveLastLink %>
 }
 </script>

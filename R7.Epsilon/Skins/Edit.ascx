@@ -37,7 +37,7 @@
 <dnn:DnnJsInclude runat="server" FilePath="rangy/rangy-core.js" PathNameAlias="SharedScripts" ForceProvider="DnnFormBottomProvider" />
 <dnn:DnnJsInclude runat="server" FilePath="~/Resources/Shared/components/flowplayer/flowplayer.min.js" ForceProvider="DnnFormBottomProvider" />
 
-<skin:JSVARIABLES runat="server" />
+<skin:JSVARIABLES runat="server" BreadCrumbsRemoveLastLink="false" />
 <header>
     <div class="container">
         <div class="row">

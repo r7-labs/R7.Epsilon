@@ -43,6 +43,13 @@ namespace R7.Epsilon
             }
         }
 
+        private bool breadCrumbsRemoveLastLink = true;
+        protected bool BreadCrumbsRemoveLastLink
+        {
+            get { return breadCrumbsRemoveLastLink; }
+            set { breadCrumbsRemoveLastLink = value; }
+        }
+
         #endregion
     }
 }
