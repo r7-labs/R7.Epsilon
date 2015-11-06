@@ -163,7 +163,15 @@ header > .container > .row
     {
         display:inline-block;
 
-        & > .Language { margin-right:8px; }
+        & > .Language 
+        { 
+            opacity:0.33;
+            margin-right:8px;
+        }
+
+        & > .Language:hover,
+        & > .Language.selected { opacity:1; }
+
         & > .Language:last-child { margin-right:15px; }
     }
 }
