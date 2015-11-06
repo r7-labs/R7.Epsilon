@@ -32,22 +32,31 @@ namespace R7.Epsilon
 {
     public class JsVariables: EpsilonSkinObjectBase
     {
-        #region Properties
-
-        protected string BreadCrumbsList
-        {
-            get 
-            {
-                return Utils.FormatList (",", PortalSettings.ActiveTab.BreadCrumbs
-                    .ToArray().Select (b => ((TabInfo)b).TabID)); 
-            }
-        }
+        #region Control properties
 
         private bool breadCrumbsRemoveLastLink = true;
         protected bool BreadCrumbsRemoveLastLink
         {
             get { return breadCrumbsRemoveLastLink; }
             set { breadCrumbsRemoveLastLink = value; }
+        }
+
+        #endregion
+
+        #region Bindable properties
+
+        protected string JsBreadCrumbsRemoveLastLink
+        {
+            get { return breadCrumbsRemoveLastLink.ToString ().ToLowerInvariant (); }
+        }
+
+        protected string JsBreadCrumbsList
+        {
+            get 
+            {
+                return "[" + Utils.FormatList (",", PortalSettings.ActiveTab.BreadCrumbs
+                    .ToArray ().Select (b => ((TabInfo) b).TabID)) + "]"; 
+            }
         }
 
         #endregion
