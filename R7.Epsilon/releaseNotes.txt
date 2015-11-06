@@ -1,4 +1,11 @@
-﻿<h3>Version 1.5.0</h3>
+﻿<h3>Version 1.5.1</h3>
+<ul>
+    <li>Don't remove last breadcrumb link in edit skin.</li>
+    <li>Make non-current language button semi-opaque.</li>
+    <li>Restore default line height for page header / tagline.</li>
+</ul>
+
+<h3>Version 1.5.0</h3>
 <ul>
     <li>Use more semantic versioning.</li>
     <li>Add editable module titles for Blank and Thumbnail containers.</li>
