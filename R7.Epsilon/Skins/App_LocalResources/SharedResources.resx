@@ -121,6 +121,6 @@
         <value>Permalink</value>
     </data>
     <data name="PagePermalink.Format" xml:space="preserve">
-        <value>/Default.aspx?TabId={0}</value>
+        <value>/LinkClick.aspx?link={0}</value>
     </data>
 </root>

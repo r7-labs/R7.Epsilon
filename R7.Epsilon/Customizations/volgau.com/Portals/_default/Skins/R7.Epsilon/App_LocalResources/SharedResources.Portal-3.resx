@@ -30,9 +30,6 @@
     <data name="LogoTitle.Motto" xml:space="preserve">
         <value></value>
     </data>
-    <data name="PagePermalink.Format" xml:space="preserve">
-        <value>/p{0}</value>
-    </data>
     <data xml:space="preserve" name="FooterPane1.Content">
         <value><![CDATA[<div class="skin-footer-content-well"></div>]]></value>
     </data>

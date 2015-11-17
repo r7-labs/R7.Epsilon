@@ -30,7 +30,4 @@
     <data name="LogoTitle.Motto" xml:space="preserve">
         <value>to the good ground...</value>
     </data>
-    <data name="PagePermalink.Format" xml:space="preserve">
-        <value>/p{0}</value>
-    </data>
 </root>

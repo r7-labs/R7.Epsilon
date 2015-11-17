@@ -30,7 +30,4 @@
     <data name="LogoTitle.Motto" xml:space="preserve">
         <value>of Volgograd&#13;SAU</value>
     </data>
-    <data name="PagePermalink.Format" xml:space="preserve">
-        <value>/p{0}</value>
-    </data>
 </root>
