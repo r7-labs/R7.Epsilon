@@ -1,5 +1,5 @@
 ﻿//
-// AdminPageInfo.ascx.cs
+// Permalink.ascx.cs
 //
 // Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
@@ -27,15 +27,29 @@
 using System;
 using System.Web;
 using System.Web.UI;
-using DotNetNuke.Entities.Portals;
 using System.Web.UI.WebControls;
 using System.Web.Security;
+using DotNetNuke.Entities.Portals;
 using DotNetNuke.UI.WebControls;
 using DotNetNuke.Entities.Users;
+using DotNetNuke.Common;
 
 namespace R7.Epsilon
 {
-    public class AdminPageInfo : EpsilonSkinObjectBase
+    public class Permalink : EpsilonSkinObjectBase
     {
+        /// <summary>
+        /// Gets page permalink
+        /// </summary>
+        /// <value>The page permalink.</value>
+        protected string PagePermalink
+        {
+            get
+            {
+                return Globals.AddHTTP (PortalSettings.Current.PortalAlias.HTTPAlias + 
+                    string.Format (Localizer.SafeGetString ("Permalink.Format", "/Default.aspx?TabId={0}"), 
+                    PortalSettings.ActiveTab.TabID));
+            }
+        }
     }
 }

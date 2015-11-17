@@ -18,7 +18,7 @@
 <%@ Register TagPrefix="skin" TagName="PAGEHEADER" Src="Controls/PageHeader.ascx" %>
 <%@ Register TagPrefix="skin" TagName="PAGEINFO" Src="Controls/PageInfo.ascx" %>
 <%@ Register TagPrefix="skin" TagName="SOCIALSHAREBUTTONS" Src="Controls/SocialShareButtons.ascx" %>
-<%@ Register TagPrefix="skin" TagName="ADMINPAGEINFO" Src="Controls/AdminPageInfo.ascx" %>
+<%@ Register TagPrefix="skin" TagName="PERMALINK" Src="Controls/Permalink.ascx" %>
 <%@ Register TagPrefix="skin" TagName="SOCIALSHARESCRIPTS" Src="Controls/SocialShareScripts.ascx" %>
 <%@ Register TagPrefix="skin" TagName="FOUNDERS" Src="Controls/Founders.ascx" %>
 <%@ Register TagPrefix="skin" TagName="LOGOTITLE" Src="Controls/LogoTitle.ascx" %>
@@ -223,10 +223,10 @@
                 <dnn:TAGS runat="server" AllowTagging="false" Separator=" " />
             </div>
         </div>
+        <div class="col-md-12">
+            <skin:PERMALINK runat="server" />
+        </div>
     </div>
-</div>
-<div class="container">
-    <skin:ADMINPAGEINFO runat="server" />
 </div>
 <footer class="footer skin-footer">
     <div class="skin-footer-main">

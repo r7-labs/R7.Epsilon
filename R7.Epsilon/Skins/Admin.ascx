@@ -15,7 +15,7 @@
 <%@ Register TagPrefix="skin" TagName="SOCIALGROUPS" Src="Controls/SocialGroups.ascx" %>
 <%@ Register TagPrefix="skin" TagName="PAGEHEADER" Src="Controls/PageHeader.ascx" %>
 <%@ Register TagPrefix="skin" TagName="PAGEINFO" Src="Controls/PageInfo.ascx" %>
-<%@ Register TagPrefix="skin" TagName="ADMINPAGEINFO" Src="Controls/AdminPageInfo.ascx" %>
+<%@ Register TagPrefix="skin" TagName="PERMALINK" Src="Controls/Permalink.ascx" %>
 <%@ Register TagPrefix="skin" TagName="FOUNDERS" Src="Controls/Founders.ascx" %>
 <%@ Register TagPrefix="skin" TagName="LOGOTITLE" Src="Controls/LogoTitle.ascx" %>
 <%@ Register TagPrefix="skin" TagName="LOGOMOBILE" Src="Controls/LogoMobile.ascx" %>
@@ -149,9 +149,11 @@
     <div class="row">
         <div id="BottomPane" runat="server" class="col-md-12" />
     </div>
-</div>
-<div class="container">
-    <skin:ADMINPAGEINFO runat="server" />
+    <div class="row">
+        <div class="col-md-12">
+            <skin:PERMALINK runat="server" />
+        </div>
+    </div>
 </div>
 <footer class="footer skin-footer">
     <div class="skin-footer-main">

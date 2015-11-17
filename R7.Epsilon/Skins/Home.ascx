@@ -17,7 +17,6 @@
 <%@ Register TagPrefix="skin" TagName="SOCIALGROUPS" Src="Controls/SocialGroups.ascx" %>
 <%@ Register TagPrefix="skin" TagName="PAGEINFO" Src="Controls/PageInfo.ascx" %>
 <%@ Register TagPrefix="skin" TagName="SOCIALSHAREBUTTONS" Src="Controls/SocialShareButtons.ascx" %>
-<%@ Register TagPrefix="skin" TagName="ADMINPAGEINFO" Src="Controls/AdminPageInfo.ascx" %>
 <%@ Register TagPrefix="skin" TagName="SOCIALSHARESCRIPTS" Src="Controls/SocialShareScripts.ascx" %>
 <%@ Register TagPrefix="skin" TagName="FOUNDERS" Src="Controls/Founders.ascx" %>
 <%@ Register TagPrefix="skin" TagName="LOGOTITLE" Src="Controls/LogoTitle.ascx" %>
@@ -212,9 +211,6 @@
             </div>
         </div>
     </div>
-</div>
-<div class="container">
-    <skin:ADMINPAGEINFO runat="server" />
 </div>
 <footer class="footer skin-footer">
     <div class="skin-footer-main">

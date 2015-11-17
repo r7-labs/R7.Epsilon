@@ -156,9 +156,6 @@
     <Compile Include="Skins\Controls\PageInfo.cs">
       <DependentUpon>PageInfo.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Skins\Controls\AdminPageInfo.cs">
-      <DependentUpon>AdminPageInfo.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Skins\Admin.ascx.cs">
       <DependentUpon>Admin.ascx</DependentUpon>
     </Compile>
@@ -180,6 +177,12 @@
     </Compile>
     <Compile Include="Skins\Controls\SocialShareButtons.cs">
       <DependentUpon>SocialShareButtons.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\Controls\Permalink.ascx.cs">
+      <DependentUpon>Permalink.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\Controls\AdminPageInfo.cs">
+      <DependentUpon>AdminPageInfo.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -304,6 +307,7 @@
     <Content Include="Skins\css\world-skin.less" />
     <Content Include="Customizations\volgau.com\Portals\3\R7.Epsilon.config" />
     <Content Include="Customizations\volgau.com\Portals\3\logo_133x100.png" />
+    <Content Include="Skins\Controls\Permalink.ascx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
