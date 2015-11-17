@@ -996,5 +996,16 @@ a.link
     &.ui-sortable { padding:0 15px; }
 }
 
-/* Bootstrap extensions */
+// box-sizing fix for some DNN core modules
+.ModDotNetNukeModulesDigitalAssetsC *,
+.ModDotNetNukeModulesCoreMessagingC *,
+.ModDotNetNukeModulesMemberDirectoryC *,
+.ModViewProfileC *,
+.ModSearchResultsC *,
+.ModConsoleC *
+{ 
+    box-sizing: unset;
+}
+
+// Bootstrap embed-responsive extensions
 .embed-responsive-5by4 { padding-bottom:78.75%; }
