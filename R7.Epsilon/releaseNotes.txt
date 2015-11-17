@@ -1,4 +1,12 @@
-﻿<h3>Version 1.5.1</h3>
+﻿<h3>Version 1.6.0</h3>
+<ul>
+    <li>Make page permalink public, remove admin page permalink.</li>
+    <li>Add bold line over skin footer.</li>
+    <li>Add embed-responsive-5by4 class for 5:4 videos.</li>
+    <li>Apply box-sizing fix for some DNN core modules.</li>
+</ul>
+
+<h3>Version 1.5.1</h3>
 <ul>
     <li>Don't remove last breadcrumb link in edit skin.</li>
     <li>Make non-current language button semi-opaque.</li>
