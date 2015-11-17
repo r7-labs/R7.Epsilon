@@ -105,15 +105,6 @@
     <Compile Include="Skins\Universal.ascx.cs">
       <DependentUpon>Universal.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Skins\Controls\PageHeader.cs">
-      <DependentUpon>PageHeader.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Skins\Controls\SocialShareScripts.cs">
-      <DependentUpon>SocialShareScripts.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Skins\Controls\SocialGroups.cs">
-      <DependentUpon>SocialGroups.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Skins\Controls\LogoTitle.ascx.cs">
       <DependentUpon>LogoTitle.ascx</DependentUpon>
     </Compile>
@@ -153,9 +144,6 @@
     <Compile Include="Skins\Controls\Functions.ascx.cs">
       <DependentUpon>Functions.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Skins\Controls\PageInfo.cs">
-      <DependentUpon>PageInfo.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Skins\Admin.ascx.cs">
       <DependentUpon>Admin.ascx</DependentUpon>
     </Compile>
@@ -175,14 +163,26 @@
     <Compile Include="Skins\Controls\JsVariables.ascx.cs">
       <DependentUpon>JsVariables.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Skins\Controls\SocialShareButtons.cs">
-      <DependentUpon>SocialShareButtons.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Skins\Controls\Permalink.ascx.cs">
       <DependentUpon>Permalink.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Skins\Controls\AdminPageInfo.cs">
+    <Compile Include="Skins\Controls\AdminPageInfo.ascx.cs">
       <DependentUpon>AdminPageInfo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\Controls\PageHeader.ascx.cs">
+      <DependentUpon>PageHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\Controls\PageInfo.ascx.cs">
+      <DependentUpon>PageInfo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\Controls\SocialGroups.ascx.cs">
+      <DependentUpon>SocialGroups.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\Controls\SocialShareButtons.ascx.cs">
+      <DependentUpon>SocialShareButtons.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\Controls\SocialShareScripts.ascx.cs">
+      <DependentUpon>SocialShareScripts.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
