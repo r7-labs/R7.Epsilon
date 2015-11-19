@@ -12,7 +12,7 @@
         <a class="skin-social-button skin-social-tw" href="http://twitter.com/<%= Config.TwitterGroup %>" rel="nofollow" target="_blank" title="<%= Localizer.GetString ("Twitter.Title") %>" aria-label="<%= Localizer.GetString ("Twitter.Title") %>"></a>
     </li>
     <li>
-        <a class="skin-social-button skin-social-gp" href="http://plus.google.com/b/<%= Config.GoogleGroup %>" target="_blank" title="<%= Localizer.GetString ("GooglePlus.Title") %>" aria-label="<%= Localizer.GetString ("GooglePlus.Title") %>"></a>
+        <a class="skin-social-button skin-social-gp" href="http://plus.google.com/<%= Config.GoogleGroup %>" target="_blank" title="<%= Localizer.GetString ("GooglePlus.Title") %>" aria-label="<%= Localizer.GetString ("GooglePlus.Title") %>"></a>
     </li>
     <li>
         <a class="skin-social-button skin-social-ok" href="http://www.odnoklassniki.ru/group/<%= Config.OkGroup %>" rel="nofollow" target="_blank" title="<%= Localizer.GetString ("Odnoklassniki.Title") %>" aria-label="<%= Localizer.GetString ("Odnoklassniki.Title") %>"></a>
