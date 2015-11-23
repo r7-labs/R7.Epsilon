@@ -1,12 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0" DefaultTargets="MakeInstallPackage">
 	<Target Name="MakeInstallPackage" Condition=" '$(Configuration)' == 'Release' ">
-		<!-- Read package version from the manifest -->
-		<XmlRead Prefix="n" Namespace="http://schemas.microsoft.com/developer/msbuild/2003"
+
+        <!-- Read package version from the manifest -->
+		<XmlRead Condition=" '$(OS)' != 'Unix' " Prefix="n" Namespace="http://schemas.microsoft.com/developer/msbuild/2003"
 			 XPath="/dotnetnuke/packages/package[1]/@version" XmlFileName="..\R7.Epsilon\R7.Epsilon.dnn">
 			<Output TaskParameter="Value" PropertyName="Version" />
 		</XmlRead>
-		
+        <Exec Condition=" '$(OS)' == 'Unix' " Command="xmllint --xpath 'string(/dotnetnuke/packages/package[1]/@version)' ..\R7.Epsilon\R7.Epsilon.dnn > __version" />
+        <ReadLinesFromFile Condition=" '$(OS)' == 'Unix' " File="__version">
+            <Output TaskParameter="Lines" PropertyName="Version"/>
+        </ReadLinesFromFile>
+        <Delete Condition=" '$(OS)' == 'Unix' " Files="__version" />
+
 		<!-- Declare skin files -->
 		<ItemGroup>
 			<InstallSkinFiles Include="..\R7.Epsilon\Skins\**\*.ascx" />
@@ -46,7 +52,7 @@
 		<!-- Declare binaries -->
 		<ItemGroup>	
 			<InstallBinaryFiles Include="$(MSBuildDnnBinPath)\R7.Epsilon*.dll" />
-            <InstallBinaryFiles Include="..\R7.Epsilon\lib\*.dll" />
+            <InstallBinaryFiles Include="..\R7.Epsilon\lib\Nini.dll" />
 		</ItemGroup>
 	
 		<!-- Copy to tmp dir -->
@@ -63,8 +69,11 @@
 		</ItemGroup>
   
 		<!-- Create resource archives  -->
-		<Zip Files="@(InstallSkinZipFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\tmp_Skins" ZipFileName="Resources_Skins.$(PackageExtension)" />
-		<Zip Files="@(InstallContainerZipFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\tmp_Containers" ZipFileName="Resources_Containers.$(PackageExtension)" />
+		<Zip Condition=" '$(OS)' != 'Unix' " Files="@(InstallSkinZipFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\tmp_Skins" ZipFileName="Resources_Skins.$(PackageExtension)" />
+		<Zip Condition=" '$(OS)' != 'Unix' " Files="@(InstallContainerZipFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\tmp_Containers" ZipFileName="Resources_Containers.$(PackageExtension)" />
+
+        <Exec Condition=" '$(OS)' == 'Unix' " Command="zip -r -6 -UN=UTF8 &quot;$(MSBuildProjectDirectory)\Resources_Skins.$(PackageExtension)&quot; ." WorkingDirectory="$(MSBuildProjectDirectory)/tmp_Skins" />
+        <Exec Condition=" '$(OS)' == 'Unix' " Command="zip -r -6 -UN=UTF8 &quot;$(MSBuildProjectDirectory)\Resources_Containers.$(PackageExtension)&quot; ." WorkingDirectory="$(MSBuildProjectDirectory)/tmp_Containers" />
 
 		<!-- Copy binaries -->
 		<Copy SourceFiles="@(InstallBinaryFiles)" DestinationFolder="$(MSBuildProjectDirectory)\tmp_Package\bin" />
@@ -73,10 +82,13 @@
 		<Copy SourceFiles="@(InstallManifestFiles)" DestinationFolder="$(MSBuildProjectDirectory)\tmp_Package" />
 	
 		<!--- Move resource archives to tmp_Package folder -->
-		<Move SourceFiles="$(MSBuildProjectDirectory)\Resources_Skins.$(PackageExtension)"
+		<Copy SourceFiles="$(MSBuildProjectDirectory)\Resources_Skins.$(PackageExtension)"
 			 DestinationFolder="$(MSBuildProjectDirectory)\tmp_Package/" />
-		<Move SourceFiles="$(MSBuildProjectDirectory)\Resources_Containers.$(PackageExtension)"
+        <Delete Files="$(MSBuildProjectDirectory)\Resources_Skins.$(PackageExtension)" />
+
+		<Copy SourceFiles="$(MSBuildProjectDirectory)\Resources_Containers.$(PackageExtension)"
 			 DestinationFolder="$(MSBuildProjectDirectory)\tmp_Package/" />
+        <Delete Files="$(MSBuildProjectDirectory)\Resources_Containers.$(PackageExtension)" />
 
 		<!-- Declare tmp package folder -->
 		<ItemGroup>
@@ -84,10 +96,12 @@
 		</ItemGroup>
 		
 		<!-- Create the install package -->
-		<Zip Files="@(InstallPackageFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\tmp_Package" ZipFileName="$(PackageName)-$(Version)-Install.$(PackageExtension)" />
-		
+		<Zip Condition=" '$(OS)' != 'Unix' " Files="@(InstallPackageFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\tmp_Package" ZipFileName="$(PackageName)-$(Version)-Install.$(PackageExtension)" />
+		<Exec Condition=" '$(OS)' == 'Unix' " Command="zip -r -6 -UN=UTF8 &quot;$(MSBuildProjectDirectory)\$(PackageName)-$(Version)-Install.$(PackageExtension)&quot; ." WorkingDirectory="$(MSBuildProjectDirectory)/tmp_Package" />
+
 		<!-- Copy the install package to the output directory -->
-		<Move SourceFiles="$(MSBuildProjectDirectory)\$(PackageName)-$(Version)-Install.$(PackageExtension)" DestinationFolder="$(PackageOutputPath)/" />
+		<Copy SourceFiles="$(MSBuildProjectDirectory)\$(PackageName)-$(Version)-Install.$(PackageExtension)" DestinationFolder="$(PackageOutputPath)/" />
+        <Delete Files="$(MSBuildProjectDirectory)\$(PackageName)-$(Version)-Install.$(PackageExtension)" />
 		
 		<!-- Cleanup -->
 		<RemoveDir Directories="$(MSBuildProjectDirectory)\tmp_Skins" />

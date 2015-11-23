@@ -1,11 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0" DefaultTargets="MakeCustomizations">
 	<Target Name="MakeCustomizations" Condition=" '$(Configuration)' == 'Release' ">
+
 		<!-- Read package version from the manifest -->
-		<XmlRead Prefix="n" Namespace="http://schemas.microsoft.com/developer/msbuild/2003"
-			 XPath="/dotnetnuke/packages/package[1]/@version" XmlFileName="..\R7.Epsilon\R7.Epsilon.dnn">
-			<Output TaskParameter="Value" PropertyName="Version" />
-		</XmlRead>
+        <XmlRead Condition=" '$(OS)' != 'Unix' " Prefix="n" Namespace="http://schemas.microsoft.com/developer/msbuild/2003"
+             XPath="/dotnetnuke/packages/package[1]/@version" XmlFileName="..\R7.Epsilon\R7.Epsilon.dnn">
+            <Output TaskParameter="Value" PropertyName="Version" />
+        </XmlRead>
+        <Exec Condition=" '$(OS)' == 'Unix' " Command="xmllint --xpath 'string(/dotnetnuke/packages/package[1]/@version)' ..\R7.Epsilon\R7.Epsilon.dnn > __version" />
+        <ReadLinesFromFile Condition=" '$(OS)' == 'Unix' " File="__version">
+            <Output TaskParameter="Lines" PropertyName="Version"/>
+        </ReadLinesFromFile>
+        <Delete Condition=" '$(OS)' == 'Unix' " Files="__version" />
 		
 		<!-- Declare custom files -->
 		<ItemGroup>
@@ -21,10 +27,12 @@
 		</ItemGroup>
 	
 		<!-- Create archive  -->
-		<Zip Files="@(CustomZipFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\tmp_Custom" ZipFileName="R7.Epsilon-$(Version)-volgau_com.$(PackageExtension)" />
-        
+		<Zip Condition=" '$(OS)' != 'Unix' " Files="@(CustomZipFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\tmp_Custom" ZipFileName="R7.Epsilon-$(Version)-volgau_com.$(PackageExtension)" />
+        <Exec Condition=" '$(OS)' == 'Unix' " Command="zip -r -6 -UN=UTF8 &quot;$(MSBuildProjectDirectory)\R7.Epsilon-$(Version)-volgau_com.$(PackageExtension)&quot; ." WorkingDirectory="$(MSBuildProjectDirectory)/tmp_Custom" />
+
 		<!-- Copy the custom package to the output directory -->
-		<Move SourceFiles="$(MSBuildProjectDirectory)\R7.Epsilon-$(Version)-volgau_com.$(PackageExtension)" DestinationFolder="$(PackageOutputPath)/" />
+		<Copy SourceFiles="$(MSBuildProjectDirectory)\R7.Epsilon-$(Version)-volgau_com.$(PackageExtension)" DestinationFolder="$(PackageOutputPath)/" />
+        <Delete Files="$(MSBuildProjectDirectory)\R7.Epsilon-$(Version)-volgau_com.$(PackageExtension)" />
 		
 		<!-- Cleanup -->
 		<RemoveDir Directories="$(MSBuildProjectDirectory)\tmp_Custom" />

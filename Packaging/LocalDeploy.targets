@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0" DefaultTargets="DoLocalDeploy">
-	<Target Name="DoLocalDeploy">
-	
+	<Target Name="DoLocalDeploy" Condition=" '$(Configuration)' == 'Debug' ">
+ 
 		<!-- Declare skin files -->
 		<ItemGroup>
 			<DeploySkinFiles Include="..\R7.Epsilon\Skins\**\*.ascx" />
@@ -32,6 +32,12 @@
 			<DeployContainerFiles Include="..\R7.Epsilon\Containers\**\*.gif" />
 		</ItemGroup>
 
+        <!-- Declare binaries -->
+        <ItemGroup> 
+            <DeployBinaryFiles Include="$(MSBuildDnnBinPath)\R7.Epsilon*.dll" />
+            <DeployBinaryFiles Include="..\R7.Epsilon\lib\Nini.dll" />
+        </ItemGroup>
+
 		<!-- Copy files to tmp dirs -->
 		<Copy SourceFiles="@(DeploySkinFiles)" DestinationFolder="$(MSBuildProjectDirectory)\tmp_Skins\%(RecursiveDir)" />
 		<Copy SourceFiles="@(DeployContainerFiles)" DestinationFolder="$(MSBuildProjectDirectory)\tmp_Containers\%(RecursiveDir)" />
@@ -46,13 +52,12 @@
 		</ItemGroup>
 	
 		<!-- Deploy files -->
-		<Move SourceFiles="@(SkinMoveFiles)" DestinationFolder="$(DnnSkinsPath)\R7.Epsilon\%(RecursiveDir)" />
-		<Move SourceFiles="@(ContainerMoveFiles)" DestinationFolder="$(DnnContainersPath)\R7.Epsilon\%(RecursiveDir)" />
+		<Copy SourceFiles="@(SkinMoveFiles)" DestinationFolder="$(DnnSkinsPath)\R7.Epsilon\%(RecursiveDir)" />
+		<Copy SourceFiles="@(ContainerMoveFiles)" DestinationFolder="$(DnnContainersPath)\R7.Epsilon\%(RecursiveDir)" />
 		      
-		<!-- Copy binary -->
-		<Copy SourceFiles="$(MSBuildDnnBinPath)\R7.Epsilon.dll" DestinationFolder="$(DnnBinPath)" />
-        <Copy SourceFiles="$(MSBuildDnnBinPath)\Nini.dll" DestinationFolder="$(DnnBinPath)" />
-
+		<!-- Copy binaries -->
+		<Copy SourceFiles="@(DeployBinaryFiles)" DestinationFolder="$(DnnBinPath)" />
+        
 		<!-- Cleanup -->
 		<RemoveDir Directories="$(MSBuildProjectDirectory)\tmp_Skins" />
 		<RemoveDir Directories="$(MSBuildProjectDirectory)\tmp_Containers" />
