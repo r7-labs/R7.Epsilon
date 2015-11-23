@@ -36,6 +36,7 @@
     <None Include="Packaging.csproj" />
     <None Include="Install.targets" />
     <None Include="Customizations.targets" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets" />
