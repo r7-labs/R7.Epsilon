@@ -35,7 +35,7 @@ namespace R7.Epsilon
         #region Control properties
 
         private bool breadCrumbsRemoveLastLink = true;
-        protected bool BreadCrumbsRemoveLastLink
+        public bool BreadCrumbsRemoveLastLink
         {
             get { return breadCrumbsRemoveLastLink; }
             set { breadCrumbsRemoveLastLink = value; }
