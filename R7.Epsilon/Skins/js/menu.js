@@ -11,7 +11,7 @@ function splitSubMenu(controlId, columns) {
 
 // called by hoverIntent and on top level menu links focus
 function megaHoverOver() {
-    var sub = jQuery(this).find(".sub");
+    var sub = jQuery(this).parent().find(".sub");
 
     // show only if not showed
     if (sub.not(':visible')) {
@@ -32,8 +32,8 @@ function megaHoverOver() {
 // called by hoverIntent
 function megaHoverOut() {
     // hide only if not focused
-    if (jQuery(this).find(":focus").length === 0) {
-        jQuery(this).find(".sub").stop().css("opacity", 0).hide()
+    if (jQuery(this).parent().find(":focus").length === 0) {
+        jQuery(this).parent().find(".sub").stop().css("opacity", 0).hide()
             .prev().removeClass("megahover");
     }
 }
@@ -53,9 +53,14 @@ jQuery(document).ready(function () {
 	});*/
 
     // open submenu by focusing
-    jQuery('li.level0 > a').focus(function () {
-        jQuery(this).parent().each (function () { megaHoverOver.call(this); });
+    jQuery('li.level0 > a.level0').focus(function () {
+        jQuery(this).each (function () { megaHoverOver.call(this); });
     });
+
+    // open submenu by touching
+    jQuery('li.level0 > a.touchpad').click(function () {
+        jQuery(this).each (function () { megaHoverOver.call(this); });
+    })
 
     // hoverIntent options
     var config = {
@@ -67,12 +72,12 @@ jQuery(document).ready(function () {
 	};
 
     // invoke hoverIntent
-	jQuery("ul.megamenu > li").hoverIntent(config);
-
+	jQuery('ul.megamenu a.level0').hoverIntent(config);
+    
     // mark current tab link
     if (epsilon.breadCrumbs) {
-        jQuery("ul.megamenu a").filter (function() {
-            return epsilon.breadCrumbs.indexOf (parseInt(jQuery(this).attr("data-id"))) !== -1;
-        }).addClass ("current");
+        jQuery('ul.megamenu a').filter (function() {
+            return epsilon.breadCrumbs.indexOf (parseInt(jQuery(this).attr('data-id'))) !== -1;
+        }).addClass ('current');
     }
 });

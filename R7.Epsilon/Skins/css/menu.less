@@ -25,7 +25,7 @@ ul.megamenu
         padding:0 !important; 
         margin:0;
 
-        a { display:block; }
+        a { display:inline-block; }
     }
 
     // submenu (popup)
@@ -122,6 +122,13 @@ ul.megamenu
             display:inline-block; // for horizontal menus
 
             & > a { padding:5px; }
+
+            & > a.touchpad
+            {
+               padding-left:0;
+               padding-right:0;
+               & > span { font-size:@smaller-menu-font-size; }
+            }
         
             .sub 
             { 

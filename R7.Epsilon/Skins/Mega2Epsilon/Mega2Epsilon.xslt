@@ -8,7 +8,7 @@
     <xsl:param name="resourceKey">LocalMenu</xsl:param>
     <xsl:param name="urlType">0</xsl:param>
 	<xsl:param name="subMenuColumns">3</xsl:param>
-    <xsl:param name="pointer"></xsl:param>
+    <xsl:param name="pointer">&#9207;</xsl:param>
     <xsl:template match="/*">
 		<xsl:apply-templates select="root" />
 	</xsl:template>
@@ -34,6 +34,7 @@
 				<li>
 					<xsl:attribute name="class">level0</xsl:attribute>
                     <a>
+                        <xsl:attribute name="class">level0</xsl:attribute>
 						<xsl:call-template name="menuLink">
                             <xsl:with-param name="enabled" select="$enableTopLinks = 1 and not ($hamburgerMenu = 1)" />
                         </xsl:call-template>
@@ -43,12 +44,14 @@
                             </xsl:when>
                             <xsl:otherwise>
                                 <xsl:value-of select="@text" />
-						        <xsl:if test="node">
-							        <xsl:value-of select="$pointer" disable-output-escaping="yes"/>
-						        </xsl:if>
-                            </xsl:otherwise>
+						    </xsl:otherwise>
                         </xsl:choose>
 					</a>
+                    <xsl:if test="node">
+                        <a class="touchpad" href="#" tabIndex="-1">
+                            <span><xsl:value-of select="$pointer" disable-output-escaping="yes"/></span>
+                        </a>
+                    </xsl:if>
 					<xsl:if test="node">
 						<div class="sub">
 							<xsl:apply-templates select="node">
