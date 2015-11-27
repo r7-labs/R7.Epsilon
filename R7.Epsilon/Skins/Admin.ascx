@@ -143,6 +143,11 @@
         <div id="BottomPane23" runat="server" class="col-md-4" />
     </div>
     <div class="row">
+        <div id="BottomPane31" runat="server" class="col-md-4" />
+        <div id="BottomPane32" runat="server" class="col-md-4" />
+        <div id="BottomPane33" runat="server" class="col-md-4" />
+    </div>
+    <div class="row">
         <div id="BottomLeftPane" runat="server" class="col-md-7" />
         <div id="BottomRightPane" runat="server" class="col-md-5" />
     </div>
