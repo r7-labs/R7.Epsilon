@@ -1,4 +1,12 @@
-﻿<h3>Version 1.6.0</h3>
+﻿<h3>Version 1.6.1</h3>
+<ul>
+    <li>Implement #29: Add basic support for canonical URLs .</li>
+    <li>Add third row of top and bottom 4:12 panes.</li>
+    <li>Ability to build project in Linux using Mono 4 and xbuild.</li>
+    <li>volgau.com: update website admin phone number.</li>
+</ul>
+
+<h3>Version 1.6.0</h3>
 <ul>
     <li>Make page permalink public, remove admin page permalink.</li>
     <li>Add bold line over skin footer.</li>
