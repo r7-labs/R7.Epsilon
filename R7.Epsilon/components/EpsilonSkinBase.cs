@@ -26,6 +26,7 @@
 
 using System;
 using System.Web.UI.WebControls;
+using System.Web.UI.HtmlControls;
 using System.Collections.Generic;
 using DotNetNuke.Common;
 using DotNetNuke.Framework;
@@ -113,6 +114,13 @@ namespace R7.Epsilon
                 if (Config.UseObrnadzorMicrodata)
                     linkA11yVersion.Attributes.Add ("itemprop", "Copy");
             }
+
+            // add canonical URL link
+            // TODO: Add support for blogs and forums
+            var linkCanonicalUrl = new HtmlLink ();
+            linkCanonicalUrl.Attributes.Add ("rel", "canonical");
+            linkCanonicalUrl.Href = Globals.NavigateURL ();
+            Page.Header.Controls.Add (linkCanonicalUrl);
         }
 
         protected override void OnLoad (EventArgs e)
