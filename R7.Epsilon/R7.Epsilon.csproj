@@ -105,6 +105,9 @@
     <None Include="releaseNotes.txt" />
     <None Include="lib\ClientDependency.Core.dll" />
     <None Include="lib\DotNetNuke.Web.DDRMenu.dll" />
+    <None Include="Skins\Custom.doctype.xml">
+      <DependentUpon>Custom.ascx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Skins\Edit.ascx.cs">
@@ -197,6 +200,9 @@
     </Compile>
     <Compile Include="Skins\Controls\SocialShareScripts.ascx.cs">
       <DependentUpon>SocialShareScripts.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\Custom.ascx.cs">
+      <DependentUpon>Custom.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -323,6 +329,7 @@
     <Content Include="Customizations\volgau.com\Portals\3\logo_133x100.png" />
     <Content Include="Skins\Controls\Permalink.ascx" />
     <Content Include="packages.config" />
+    <Content Include="Skins\Custom.ascx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

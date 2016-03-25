@@ -34,6 +34,7 @@ using DotNetNuke.UI.Skins;
 using DotNetNuke.Web.Client;
 using DotNetNuke.Web.Client.ClientResourceManagement;
 using DotNetNuke.Framework.JavaScriptLibraries;
+using DotNetNuke.Entities.Portals;
 
 namespace R7.Epsilon
 {
@@ -48,6 +49,20 @@ namespace R7.Epsilon
         protected HyperLink linkA11yVersion;
 
         #endregion
+
+        private int? tabId;
+        protected int TabId
+        {
+            get
+            {
+                if (tabId == null)
+                {
+                    tabId = PortalSettings.ActiveTab.TabID;
+                }
+
+                return tabId.Value;
+            }
+        }
 
         private bool A11yEnabled 
         {
