@@ -40,6 +40,7 @@ using System.Linq;
 using System.Collections.Generic;
 using Telerik.Web.UI;
 using System.Collections;
+using R7.Epsilon.Skins.Layouts;
 
 namespace R7.Epsilon
 {
@@ -47,15 +48,24 @@ namespace R7.Epsilon
     {
         public Custom ()
 		{
-			
+         
 		}
+
+        protected PlaceHolder placeLayout;
 
         protected string Message { get; set; }
             
         protected override void OnInit (EventArgs e)
         {
+            var layout = LoadControl ("~/Portals/_default/Skins/R7.Epsilon/Layouts/Layout1.ascx");
+            placeLayout.Controls.Add (layout);
+
             base.OnInit (e);
 
+
+            //base.OnOnPreInit (e);
+
+            /*
             var tabSettings = TabController.Instance.GetTabSettings (TabId);
 
             foreach (var paneKey in Panes.Keys)
@@ -71,7 +81,7 @@ namespace R7.Epsilon
                         pane.Attributes.Add ("class", (string) setting);
                     }
                 }
-            }
+            }*/
         }
 
         protected void buttonTestPostBack_Click (object sender, EventArgs e)

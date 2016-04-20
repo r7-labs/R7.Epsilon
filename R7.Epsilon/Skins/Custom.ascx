@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="false" CodeBehind="Custom.ascx.cs" Inherits="R7.Epsilon.Custom" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Custom.ascx.cs" Inherits="R7.Epsilon.Custom" %>
 <%@ Register TagPrefix="dnn" TagName="LOGO" Src="~/Admin/Skins/Logo.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="LANGUAGE" Src="~/Admin/Skins/Language.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="SEARCH" Src="~/Admin/Skins/Search.ascx" %>
@@ -38,7 +38,7 @@
 <dnn:META ID="mobileScale" runat="server" Name="viewport" Content="width=device-width,initial-scale=1" />
 <dnn:DnnCssInclude ID="bootStrapCSS" runat="server" FilePath="css/bootstrap.min.css" PathNameAlias="SkinPath" Priority="14" />
 <dnn:DnnCssInclude ID="bootStrapThemeCSS" runat="server" FilePath="css/bootstrap-theme.min.css" PathNameAlias="SkinPath" Priority="14" />
-<dnn:DnnCssInclude id="skinCSS" runat="server" FilePath="<%# Config.SkinCss %>" PathNameAlias="SkinPath" />
+<dnn:DnnCssInclude id="skinCSS" runat="server" FilePath="css/default-skin.min.css" PathNameAlias="SkinPath" />
 <dnn:DnnCssInclude runat="server" FilePath="~/Resources/Shared/components/flowplayer/skin/minimalist.css" />
 <dnn:JQUERY ID="dnnjQuery" runat="server" jQueryHoverIntent="true" />
 <dnn:DnnJsInclude ID="bootstrapJS" runat="server" FilePath="js/bootstrap.min.js" PathNameAlias="SkinPath" Priority="10" ForceProvider="DnnFormBottomProvider" />
@@ -52,7 +52,7 @@
 <header>
     <div class="container">
         <div class="row">
-            <a href="#dnn_TopPane" class="sr-only sr-only-focusable"><%: Localizer.GetString ("SkipToContent.Text") %></a>
+            <a href="#dnn_TopPane" class="sr-only sr-only-focusable">{{SkipToContent.Text}}</a>
             <skin:BROWSERCHECK runat="server" />
         </div>
         <div class="row">
@@ -82,7 +82,7 @@
                 <skin:LOGOMOBILE runat="server" />
             </div>
             <button type="button" class="navbar-toggle skin-top-menu-toggle" data-toggle="collapse" data-target=".skin-top-menu">
-                <span class="sr-only"><%: Localizer.GetString ("ToggleNavigation.Text") %></span>
+                <span class="sr-only">{{ToggleNavigation.Text}}</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -139,95 +139,8 @@
 <div id="CarouselPane" runat="server" class="carousel slide" containertype="G" containername="R7.Epsilon" containersrc="Blank.ascx" />
 <asp:Button id="buttonTestPostBack" runat="server" OnClick="buttonTestPostBack_Click" Text="Test PostBack" />
 <div class="container">
-    <div class="row">
-        <div id="TopPane" runat="server" class="col-md-12" />
-    </div>
-    <div class="row">
-        <div id="TopLeftPane" runat="server" />
-        <div id="TopRightPane" runat="server" />
-    </div>
-    <div class="row">
-        <div id="TopPane11" runat="server" class="col-md-4" />
-        <div id="TopPane12" runat="server" class="col-md-4" />
-        <div id="TopPane13" runat="server" class="col-md-4" />
-    </div>
-    <div class="row">
-        <div id="TopPane21" runat="server" class="col-md-4" />
-        <div id="TopPane22" runat="server" class="col-md-4" />
-        <div id="TopPane23" runat="server" class="col-md-4" />
-    </div>
-    <div class="row">
-        <div id="TopPane31" runat="server" class="col-md-4" />
-        <div id="TopPane32" runat="server" class="col-md-4" />
-        <div id="TopPane33" runat="server" class="col-md-4" />
-    </div>
-    <div class="row">
-        <div id="ContentPane" runat="server" class="col-md-9 col-sm-7" />
-        <div id="RightPane" runat="server" class="col-md-3 col-sm-5" />
-    </div>
-    <div class="row"> 
-        <div id="LeftPane" runat="server" class="col-md-3 col-sm-5" />
-        <div id="ContentLeftPane" runat="server" class="col-md-9 col-sm-7" />
-    </div>
-    <div class="row">
-        <div id="ContentPane2" runat="server" class="col-md-9 col-sm-7" />
-        <div id="RightPane2" runat="server" class="col-md-3 col-sm-5" />
-    </div>
-    <div class="row"> 
-        <div id="LeftPane2" runat="server" class="col-md-3 col-sm-5" />
-        <div id="ContentLeftPane2" runat="server" class="col-md-9 col-sm-7" />
-    </div>
-    <div class="row">
-        <div id="MiddlePane11" runat="server" class="col-md-4" />
-        <div id="MiddlePane12" runat="server" class="col-md-4" />
-        <div id="MiddlePane13" runat="server" class="col-md-4" />
-    </div>
-    <div class="row">
-        <div id="MiddlePane" runat="server" class="col-md-12" />
-    </div>
-    <div class="row">
-        <div id="MiddlePane21" runat="server" class="col-md-4" />
-        <div id="MiddlePane22" runat="server" class="col-md-4" />
-        <div id="MiddlePane23" runat="server" class="col-md-4" />
-    </div>
-    <div class="row">
-        <div id="ContentPane3" runat="server" class="col-md-9 col-sm-7" />
-        <div id="RightPane3" runat="server" class="col-md-3 col-sm-5" />
-    </div>
-    <div class="row"> 
-        <div id="LeftPane3" runat="server" class="col-md-3 col-sm-5" />
-        <div id="ContentLeftPane3" runat="server" class="col-md-9 col-sm-7" />
-    </div>
-    <div class="row">
-        <div id="ContentPane4" runat="server" class="col-md-9 col-sm-7" />
-        <div id="RightPane4" runat="server" class="col-md-3 col-sm-5" />
-    </div>
-    <div class="row"> 
-        <div id="LeftPane4" runat="server" class="col-md-3 col-sm-5" />
-        <div id="ContentLeftPane4" runat="server" class="col-md-9 col-sm-7" />
-    </div>
-    <div class="row">
-        <div id="BottomPane11" runat="server" class="col-md-4" />
-        <div id="BottomPane12" runat="server" class="col-md-4" />
-        <div id="BottomPane13" runat="server" class="col-md-4" />
-    </div>
-    <div class="row">
-        <div id="BottomPane21" runat="server" class="col-md-4" />
-        <div id="BottomPane22" runat="server" class="col-md-4" />
-        <div id="BottomPane23" runat="server" class="col-md-4" />
-    </div>
-    <div class="row">
-        <div id="BottomPane31" runat="server" class="col-md-4" />
-        <div id="BottomPane32" runat="server" class="col-md-4" />
-        <div id="BottomPane33" runat="server" class="col-md-4" />
-    </div>
-    <div class="row">
-        <div id="BottomLeftPane" runat="server" class="col-md-7" />
-        <div id="BottomRightPane" runat="server" class="col-md-5" />
-    </div>
-    <div class="row">
-        <div id="BottomPane" runat="server" class="col-md-12" />
-    </div>
+    <div id="ppp" runat="server"></div>
+    <asp:PlaceHolder id="placeLayout" runat="server"></asp:PlaceHolder>
     <div class="row">
         <div class="col-md-12">
             <div class="skin-tags">
@@ -249,7 +162,7 @@
                     </div>
                     <div class="row">
                         <div class="skin-footer-buttons col-sm-6 hidden-xs">
-                            <dnn:BANNER id="dnnBanner1" runat="server" GroupName="<%# Config.FooterButtonsGroupName %>" BannerTypeId="4" BannerCount="3" Orientation="H" AllowNullBannerType="true" />    
+                            <dnn:BANNER id="dnnBanner1" runat="server" GroupName="{{Config.FooterButtonsGroupName}}" BannerTypeId="4" BannerCount="3" Orientation="H" AllowNullBannerType="true" />    
                         </div>
                         <skin:FOOTERCONTENT runat="server" CssClass="skin-footer-content col-sm-6" ResourceKey="FooterPane1.Content" />
                     </div>
@@ -267,16 +180,16 @@
                 </div>
                 <div class="col-md-10 col-sm-8 col-xs-12 skin-terms">
                     <dnn:COPYRIGHT runat="server" /> |
-                    <span class="skin-copyright"><%= Localizer.GetString ("SkinCopyright.Text") %></span>
-                    <% if (Config.ShowTerms) { %> | <dnn:TERMS runat="server" /> <% } %>
-                    <% if (Config.ShowPrivacy) { %> | <dnn:PRIVACY runat="server" /> <% } %>
+                    <span class="skin-copyright">{{SkinCopyright.Text}}</span>
+                     | <dnn:TERMS runat="server" />
+                     | <dnn:PRIVACY runat="server" />
                 </div>
             </div>
         </div>
     </div>
 </footer>
 <div class="skin-float-button-wrapper">
-    <a href="#" class="skin-float-button skin-float-button-up" title="<%: Localizer.GetString ("ButtonUp.Title") %>" style="display:none" data-toggle="tooltip" data-placement="left" data-container="body"></a>
+    <a href="#" class="skin-float-button skin-float-button-up" title="{{ButtonUp.Title}}" style="display:none" data-toggle="tooltip" data-placement="left" data-container="body"></a>
     <skin:FEEDBACKBUTTON runat="server" CssClass="skin-float-button skin-float-button-feedback" Target="_blank" />
 </div>
 <skin:SOCIALSHARESCRIPTS runat="server" />
