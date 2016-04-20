@@ -198,6 +198,7 @@
     <Compile Include="Skins\Controls\SocialShareScripts.ascx.cs">
       <DependentUpon>SocialShareScripts.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Models\ModelHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Containers\Blank.ascx" />
@@ -348,6 +349,7 @@
     <Folder Include="Application\" />
     <Folder Include="Customizations\volgau.com\Portals\2\" />
     <Folder Include="Customizations\volgau.com\Portals\3\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <Import Project="Less.targets" />
   <Target Name="BeforeBuild" DependsOnTargets="Less;MinifyJS" />
