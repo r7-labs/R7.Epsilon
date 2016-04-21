@@ -24,6 +24,9 @@
     <data name="SkinCopyright.Text" xml:space="preserve">
         <value><![CDATA[<a href="https://github.com/roman-yagodin/R7.Epsilon" target="_blank">Тема оформления R7.Epsilon</a>]]></value>
     </data>
+    <data name="CopyrightNote.Text" xml:space="preserve">
+        <value>При перепечатке текстовой информации и фотографий ссылка на сайт обязательна</value>
+    </data>
     <data name="ButtonUp.Title" xml:space="preserve">
         <value>Нажми меня, чтобы перейти наверх</value>
     </data>

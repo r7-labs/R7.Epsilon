@@ -24,6 +24,9 @@
     <data name="SkinCopyright.Text" xml:space="preserve">
         <value><![CDATA[<a href="https://github.com/roman-yagodin/R7.Epsilon" target="_blank">R7.Epsilon Theme</a>]]></value>
     </data>
+    <data name="CopyrightNote.Text" xml:space="preserve">
+        <value>By copying the text and photos the reference to the site is mandatory</value>
+    </data>
     <data name="ButtonUp.Title" xml:space="preserve">
         <value>Click me to go up</value>
     </data>
