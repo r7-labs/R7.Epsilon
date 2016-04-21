@@ -39,8 +39,8 @@
     <data name="SkipToContent.Text" xml:space="preserve">
         <value>Skip to main content</value>
     </data>
-    <data name="PagePublishedMessage.Format" xml:space="preserve">
-        <value>{0:MM/dd/yyyy} by {1}</value>
+    <data name="PublishedOnDate.Format" xml:space="preserve">
+        <value>dd MMM yyyy</value>
     </data>
     <data name="Founder1.Title" xml:space="preserve">
         <value>Website of Founder 1</value>

@@ -39,8 +39,8 @@
     <data name="SkipToContent.Text" xml:space="preserve">
         <value>Перейти напрямую к содержимому</value>
     </data>
-    <data name="PagePublishedMessage.Format" xml:space="preserve">
-        <value>{0:dd.MM.yyyy}: {1}</value>
+    <data name="PublishedOnDate.Format" xml:space="preserve">
+        <value>dd MMMM yyyy</value>
     </data>
     <data name="Founder1.Title" xml:space="preserve">
         <value>Сайт учредителя 1</value>

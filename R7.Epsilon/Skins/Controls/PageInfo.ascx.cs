@@ -46,20 +46,23 @@ namespace R7.Epsilon
             ShowPageInfo = true;
         }
 
-        /// <summary>
-        /// Gets page published info message.
-        /// </summary>
-        /// <value>The published message.</value>
-        protected string PublishedMessage
+        protected string PublishedOnDate
+        {
+            get
+            {
+                var activeTab = PortalSettings.ActiveTab;
+                return ModelHelper.PublishedOnDate (activeTab.CreatedOnDate, activeTab.StartDate)
+                    .ToString (Localizer.SafeGetString ("PublishedOnDate.Format", "MM/dd/yyyy")); 
+            }
+        }
+
+        protected string PublishedByUserName
         {
             get
             {
                 var activeTab = PortalSettings.ActiveTab;
                 var user = activeTab.CreatedByUser (PortalSettings.PortalId);
-
-                return string.Format (Localizer.GetString ("PagePublishedMessage.Format"), 
-                    ModelHelper.PublishedOnDate (activeTab.CreatedOnDate, activeTab.StartDate),
-                    (user != null)? user.DisplayName : Localizer.GetString ("SystemUser.Text")); 
+                return (user != null)? user.DisplayName : Localizer.SafeGetString ("SystemUser.Text", "System");
             }
         }
     }
