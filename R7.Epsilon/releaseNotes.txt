@@ -1,4 +1,16 @@
-﻿<h3>Version 1.6.1</h3>
+﻿<div style="white-space:normal">
+
+<h3>Version 1.6.2</h3>
+<ul>
+    <li>Use page start date (if set) as publication date.</li>
+    <li>Update PageInfo control visual style and internals.</li>
+    <li>Trying to make YouTube icon more notable.</li>
+    <li>Additional copyright note in the footer.</li>
+    <li>Update skin copyright.</li>
+    <li>Include .pdb's in local deploy to allow debugging.</li>
+</ul>
+
+<h3>Version 1.6.1</h3>
 <ul>
     <li>Implement #29: Add basic support for canonical URLs .</li>
     <li>Add third row of top and bottom 4:12 panes.</li>
@@ -61,3 +73,5 @@
 
 <h3>Version 1.0.0</h3>
 <p>Initial release.</p>
+
+</div>
