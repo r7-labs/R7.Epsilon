@@ -60,12 +60,6 @@ namespace R7.Epsilon
         protected bool A11yEnabled 
         {
             get {
-
-                // disable A11y mode for 404 and 500 error pages
-                if (IsErrorPage) {
-                    return false;
-                }
-
                 // try to get a11y mode from querystring
                 var a11yParamStr = Request.QueryString ["a11y"];
                 if (!string.IsNullOrWhiteSpace (a11yParamStr))
@@ -73,16 +67,17 @@ namespace R7.Epsilon
                     bool a11yParam;
                     if (bool.TryParse (a11yParamStr, out a11yParam))
                     {
-                        // store a11y mode in the session
-                        Session ["A11YEnabled"] = a11yParam;
+                        // store a11y mode in the cookie
+                        Response.Cookies ["a11y"].Value = a11yParam.ToString ();
+                        Response.Cookies ["a11y"].Expires = DateTime.Now.AddDays (1d);
                         return a11yParam;
                     }
                 }
 
-                // no a11y was found in the querystring,
-                // return session value
-                var obj = Session ["A11YEnabled"];
-                return obj != null ? (bool) obj : false;
+                // no a11y was found in the querystring, so return cookie value
+                var cookie = Request.Cookies ["a11y"];
+                bool a11yEnabled;
+                return (cookie != null && bool.TryParse (cookie.Value, out a11yEnabled)) ? a11yEnabled : false;
             }
         }
 
