@@ -4,7 +4,7 @@
 // Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-// Copyright (c) 2015 
+// Copyright (c) 2015-2016 Roman M. Yagodin
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -49,10 +49,23 @@ namespace R7.Epsilon
 
         #endregion
 
-        private bool A11yEnabled 
+        protected bool IsErrorPage
         {
-            get 
-            { 
+            get {
+                var activeTabId = PortalSettings.ActiveTab.TabID;
+                return activeTabId == PortalSettings.ErrorPage404 || activeTabId == PortalSettings.ErrorPage500;
+            }
+        }
+
+        protected bool A11yEnabled 
+        {
+            get {
+
+                // disable A11y mode for 404 and 500 error pages
+                if (IsErrorPage) {
+                    return false;
+                }
+
                 // try to get a11y mode from querystring
                 var a11yParamStr = Request.QueryString ["a11y"];
                 if (!string.IsNullOrWhiteSpace (a11yParamStr))
@@ -70,10 +83,6 @@ namespace R7.Epsilon
                 // return session value
                 var obj = Session ["A11YEnabled"];
                 return obj != null ? (bool) obj : false;
-            }
-            set
-            {
-                Session ["A11YEnabled"] = value;
             }
         }
 
