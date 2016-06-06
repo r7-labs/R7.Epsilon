@@ -25,8 +25,7 @@
 // THE SOFTWARE.
 
 using System;
-
-// aliases
+using R7.Epsilon.Components;
 using DDRMenu = DotNetNuke.Web.DDRMenu;
 
 namespace R7.Epsilon

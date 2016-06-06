@@ -16,6 +16,7 @@ using DotNetNuke.Services.Exceptions;
 using DotNetNuke.Entities.Modules;
 using DotNetNuke.Entities.Modules.Actions;
 using DotNetNuke.Services.Localization;
+using R7.Epsilon.Components;
 
 namespace R7.Epsilon
 {

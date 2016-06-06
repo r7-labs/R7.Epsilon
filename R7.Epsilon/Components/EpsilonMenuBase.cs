@@ -37,7 +37,7 @@ using DotNetNuke.Web.DDRMenu.TemplateEngine;
 // aliases
 using DDRMenu = DotNetNuke.Web.DDRMenu;
 
-namespace R7.Epsilon
+namespace R7.Epsilon.Components
 {
     public abstract class EpsilonMenuBase: EpsilonSkinObjectBase
     {

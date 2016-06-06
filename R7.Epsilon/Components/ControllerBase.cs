@@ -35,7 +35,7 @@ using DotNetNuke.Common.Utilities;
 using DotNetNuke.Entities.Modules;
 using DotNetNuke.Services.Search;
 
-namespace R7.Epsilon
+namespace R7.Epsilon.Components
 {
 	public abstract class ControllerBase
 	{

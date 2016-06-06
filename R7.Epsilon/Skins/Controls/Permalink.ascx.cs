@@ -33,6 +33,7 @@ using DotNetNuke.Entities.Portals;
 using DotNetNuke.UI.WebControls;
 using DotNetNuke.Entities.Users;
 using DotNetNuke.Common;
+using R7.Epsilon.Components;
 
 namespace R7.Epsilon
 {

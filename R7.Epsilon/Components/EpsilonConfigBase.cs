@@ -30,7 +30,7 @@ using DotNetNuke.Entities.Portals;
 using DotNetNuke.Common;
 using Nini.Config;
 
-namespace R7.Epsilon
+namespace R7.Epsilon.Components
 {
     public abstract class EpsilonConfigBase
     {

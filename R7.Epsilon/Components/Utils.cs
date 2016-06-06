@@ -38,7 +38,7 @@ using DotNetNuke.Entities.Modules;
 using DotNetNuke.Entities.Users;
 using DotNetNuke.Services.Localization;
 
-namespace R7.Epsilon
+namespace R7.Epsilon.Components
 {
 	/// <summary>
 	/// Message severities

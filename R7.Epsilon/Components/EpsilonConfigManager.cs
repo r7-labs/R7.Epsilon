@@ -27,7 +27,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace R7.Epsilon
+namespace R7.Epsilon.Components
 {
     public class EpsilonConfigManager
     {

@@ -26,7 +26,7 @@
 
 using System;
 
-namespace R7.Epsilon
+namespace R7.Epsilon.Components
 {
     public class EpsilonConfig: EpsilonConfigBase
     {

@@ -29,7 +29,7 @@ using System.Web.UI;
 using DotNetNuke.UI.Skins;
 using DotNetNuke.Services.Localization;
 
-namespace R7.Epsilon
+namespace R7.Epsilon.Components
 {
     public class ControlLocalizer
     {

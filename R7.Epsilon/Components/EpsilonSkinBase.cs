@@ -35,7 +35,7 @@ using DotNetNuke.Web.Client;
 using DotNetNuke.Web.Client.ClientResourceManagement;
 using DotNetNuke.Framework.JavaScriptLibraries;
 
-namespace R7.Epsilon
+namespace R7.Epsilon.Components
 {
     public class EpsilonSkinBase: Skin, ILocalizableControl, IConfigurableControl
     {

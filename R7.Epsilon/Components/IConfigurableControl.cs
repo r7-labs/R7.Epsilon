@@ -1,5 +1,5 @@
 ﻿//
-// EpsilonSkinObjectBase.cs
+// IConfigurableControl.cs
 //
 // Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
@@ -25,44 +25,12 @@
 // THE SOFTWARE.
 
 using System;
-using System.Web.UI;
-using DotNetNuke.Common;
-using DotNetNuke.UI.Skins;
 
-namespace R7.Epsilon
+namespace R7.Epsilon.Components
 {
-    public class EpsilonSkinObjectBase: SkinObjectBase, ILocalizableControl, IConfigurableControl
+    public interface IConfigurableControl
     {
-        #region ILocalizableControl implementation
-
-        private ControlLocalizer localizer;
-
-        public ControlLocalizer Localizer
-        {
-            get { return localizer ?? (localizer = new ControlLocalizer (this)); } 
-        }
-
-        #endregion
-
-        #region IConfigurableControl implementation
-
-        private EpsilonConfig config;
-
-        public EpsilonConfig Config 
-        {
-            get { return config ?? (config = EpsilonConfigManager.Instance.GetConfig (PortalSettings.PortalId)); }
-        }
-
-        #endregion
-
-        public string HomeTabFullUrl
-        {
-            get
-            {
-                return (PortalSettings.HomeTabId != -1) ? 
-                    Globals.NavigateURL (PortalSettings.HomeTabId) : Globals.AddHTTP (PortalSettings.PortalAlias.HTTPAlias);
-            }
-        }
+        EpsilonConfig Config { get; }
     }
 }
 

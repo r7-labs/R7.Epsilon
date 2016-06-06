@@ -32,7 +32,7 @@ using DotNetNuke.Common;
 using DotNetNuke.Security;
 using DotNetNuke.Entities.Modules;
 
-namespace R7.Epsilon
+namespace R7.Epsilon.Components
 {
     public class EpsilonContainerBase: Container
     {
