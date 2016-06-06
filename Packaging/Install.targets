@@ -46,7 +46,7 @@
 		<!-- Declare manifest files -->
 		<ItemGroup>
 			<InstallManifestFiles Include="..\R7.Epsilon\*.dnn" />
-			<InstallManifestFiles Include="..\R7.Epsilon\*.txt" />
+			<InstallManifestFiles Include="..\R7.Epsilon\*.htm" />
 		</ItemGroup>
 			
 		<!-- Declare binaries -->

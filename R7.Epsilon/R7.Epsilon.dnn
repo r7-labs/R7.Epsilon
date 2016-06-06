@@ -10,8 +10,8 @@
 				<email>roman.yagodin@gmail.com</email>
 			</owner>
 			<!-- <azureCompatible>true</azureCompatible> -->
-			<license src="license.txt" />
-			<releaseNotes src="releaseNotes.txt" />
+			<license src="license.htm" />
+			<releaseNotes src="releaseNotes.htm" />
 			<dependencies>
                 <dependency type="CoreVersion">07.04.00</dependency>
             </dependencies>
@@ -54,8 +54,8 @@
 				<url>https://github.com/roman-yagodin/R7.Epsilon</url>
 				<email>roman.yagodin@gmail.com</email>
 			</owner>
-			<license src="license.txt" />
-			<releaseNotes src="releaseNotes.txt" />
+			<license src="license.htm" />
+			<releaseNotes src="releaseNotes.htm" />
             <components>
 				<component type="Container">
 					<containerFiles>
