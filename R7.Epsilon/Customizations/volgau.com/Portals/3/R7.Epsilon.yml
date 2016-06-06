@@ -1,0 +1,54 @@
+﻿skin-css: css/world-skin.min.css
+
+skin-a11y-css: css/a11y-skin.min.css
+
+footer-buttons-group-name: NavMenu1
+
+feedback-tab-id: 2659
+
+primary-menu-node-selector: "*,0,2"
+
+primary-menu-include-nodes:
+
+secondary-menu-node-selector: "*,0,2"
+
+secondary-menu-include-nodes: 0
+
+menu-url-type: 0
+
+vk-share-enabled: true
+
+vk-api-id: 4754730
+
+vk-group: volgau_com
+
+facebook-share-enabled: false
+
+# specify Facebook App ID for the "like" button, or leave empty (will produce messages in JS console)
+facebook-app-id: 413998678785585
+
+facebook-group: volgau
+
+twitter-share-enabled: false
+
+twitter-group: volgau_com
+
+twitter-via: volgau_com
+
+google-share-enabled: true
+
+google-group: communities/113661705633931940712
+
+youtube-group: UCYPMmQknVPxosuY4iPCfVDg
+
+ok-group: 51992191172689
+
+adsense-client: ca-pub-9311000650074319
+
+adsense-slot: 6593885688
+
+show-terms: false
+
+show-privacy: false
+
+use-obrnadzor-microdata: true

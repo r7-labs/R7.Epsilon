@@ -36,9 +36,6 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="Nini">
-      <HintPath>lib\Nini.dll</HintPath>
-    </Reference>
     <Reference Include="DotNetNuke">
       <HintPath>..\packages\DotNetNuke.Core.7.4.2.216\lib\net40\DotNetNuke.dll</HintPath>
       <Private>False</Private>
@@ -66,6 +63,9 @@
     <Reference Include="DotNetNuke.Web.DDRMenu">
       <HintPath>lib\DotNetNuke.Web.DDRMenu.dll</HintPath>
     </Reference>
+    <Reference Include="YamlDotNet">
+      <HintPath>..\packages\YamlDotNet.3.8.0\lib\net35\YamlDotNet.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Skins\Edit.doctype.xml">
@@ -85,7 +85,6 @@
     <None Include="Less.targets" />
     <None Include="R7.Epsilon.dnn" />
     <None Include="Skins\fonts\glyphicons-halflings-regular.woff2" />
-    <None Include="lib\Nini.dll" />
     <None Include="Skins\PopupSkin.doctype.xml">
       <DependentUpon>PopupSkin.ascx</DependentUpon>
     </None>
@@ -103,6 +102,10 @@
     <None Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\App_LocalResources\SharedResources.ru-RU.Portal-3.resx" />
     <None Include="lib\ClientDependency.Core.dll" />
     <None Include="lib\DotNetNuke.Web.DDRMenu.dll" />
+    <None Include="Skins\R7.Epsilon.yml" />
+    <None Include="Customizations\volgau.com\Portals\0\R7.Epsilon.yml" />
+    <None Include="Customizations\volgau.com\Portals\2\R7.Epsilon.yml" />
+    <None Include="Customizations\volgau.com\Portals\3\R7.Epsilon.yml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Skins\Edit.ascx.cs">
@@ -187,9 +190,6 @@
     <Compile Include="Models\ModelHelper.cs" />
     <Compile Include="Components\ControllerBase.cs" />
     <Compile Include="Components\ControlLocalizer.cs" />
-    <Compile Include="Components\EpsilonConfig.cs" />
-    <Compile Include="Components\EpsilonConfigBase.cs" />
-    <Compile Include="Components\EpsilonConfigManager.cs" />
     <Compile Include="Components\EpsilonContainerBase.cs" />
     <Compile Include="Components\EpsilonMenuBase.cs" />
     <Compile Include="Components\EpsilonSkinBase.cs" />
@@ -197,6 +197,8 @@
     <Compile Include="Components\IConfigurableControl.cs" />
     <Compile Include="Components\ILocalizableControl.cs" />
     <Compile Include="Components\Utils.cs" />
+    <Compile Include="Components\EpsilonPortalConfig.cs" />
+    <Compile Include="Components\EpsilonConfig.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Containers\Blank.ascx" />
@@ -312,13 +314,9 @@
     <Content Include="Skins\css\consulting-layout.less" />
     <Content Include="Skins\css\consulting-skin.less" />
     <Content Include="Customizations\volgau.com\Portals\2\logo_133x100.png" />
-    <Content Include="Skins\R7.Epsilon.config" />
-    <Content Include="Customizations\volgau.com\Portals\0\R7.Epsilon.config" />
-    <Content Include="Customizations\volgau.com\Portals\2\R7.Epsilon.config" />
     <Content Include="Skins\css\world-layout.less" />
     <Content Include="Skins\css\world-palette.less" />
     <Content Include="Skins\css\world-skin.less" />
-    <Content Include="Customizations\volgau.com\Portals\3\R7.Epsilon.config" />
     <Content Include="Customizations\volgau.com\Portals\3\logo_133x100.png" />
     <Content Include="Skins\Controls\Permalink.ascx" />
     <Content Include="packages.config" />

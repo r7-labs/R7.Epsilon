@@ -94,11 +94,11 @@ namespace R7.Epsilon.Components
 
         #region IConfigurableControl implementation
 
-        protected EpsilonConfig config;
+        protected EpsilonPortalConfig config;
 
-        public EpsilonConfig Config 
+        public EpsilonPortalConfig Config 
         {
-            get { return config ?? (config = EpsilonConfigManager.Instance.GetConfig (PortalSettings.PortalId)); }
+            get { return config ?? (config = EpsilonConfig.GetInstance (PortalSettings.PortalId)); }
         }
 
         #endregion

@@ -1,11 +1,54 @@
-﻿using System;
-namespace R7.Epsilon.Skins
-{
-    public class R7
-    {
-        public R7()
-        {
-        }
-    }
-}
+﻿skin-css: css/default-skin.min.css
 
+skin-a11y-css: css/a11y-skin.min.css
+
+footer-buttons-group-name: FooterButtons
+
+feedback-tab-id: 100
+
+primary-menu-node-selector: "*,0,2"
+
+primary-menu-include-nodes:
+
+secondary-menu-node-selector: "*,0,2"
+
+secondary-menu-include-nodes:
+
+menu-url-type: 0
+
+vk-share-enabled: false
+
+vk-api-id: your-vk-api-id
+
+vk-group: your-vk-group
+
+facebook-share-enabled: true
+
+# specify Facebook App ID for the "like" button, or leave empty (will produce messages in JS console)
+facebook-app-id:
+
+facebook-group: your-facebook-group
+
+twitter-share-enabled: true
+
+twitter-group: your-twitter-group
+
+twitter-via: your-twitter-via
+
+google-share-enabled: true
+
+google-group: your-google-plus-group
+
+youtube-group: your-youtube-group
+
+ok-group: your-ok-group
+
+adsense-client: ca-pub-0000000000000000
+
+adsense-slot: 0000000000
+
+show-terms: true
+
+show-privacy: true
+
+use-obrnadzor-microdata: false

@@ -5,7 +5,7 @@
 		<!-- Declare skin files -->
 		<ItemGroup>
 			<DeploySkinFiles Include="..\R7.Epsilon\Skins\**\*.ascx" />
-			<DeploySkinFiles Include="..\R7.Epsilon\Skins\**\*.xml" />
+            <DeploySkinFiles Include="..\R7.Epsilon\Skins\**\*.xml" />
             <DeploySkinFiles Include="..\R7.Epsilon\Skins\**\*.xslt" />
 			<DeploySkinFiles Include="..\R7.Epsilon\Skins\**\*.css" />
 			<DeploySkinFiles Include="..\R7.Epsilon\Skins\**\*.resx" />
@@ -13,7 +13,7 @@
 			<DeploySkinFiles Include="..\R7.Epsilon\Skins\**\*.jpg" />
 			<DeploySkinFiles Include="..\R7.Epsilon\Skins\**\*.png" />
 			<DeploySkinFiles Include="..\R7.Epsilon\Skins\**\*.gif" />
-            <DeploySkinFiles Include="..\R7.Epsilon\Skins\**\*.config" />
+            <DeploySkinFiles Include="..\R7.Epsilon\Skins\**\*.yml" />
             <DeploySkinFiles Include="..\R7.Epsilon\Skins\**\fonts\*.eot" />
             <DeploySkinFiles Include="..\R7.Epsilon\Skins\**\fonts\*.svg" />
             <DeploySkinFiles Include="..\R7.Epsilon\Skins\**\fonts\*.ttf" />
@@ -36,7 +36,7 @@
         <ItemGroup> 
             <DeployBinaryFiles Include="$(MSBuildDnnBinPath)\R7.Epsilon*.dll" />
             <DeployBinaryFiles Include="$(MSBuildDnnBinPath)\R7.Epsilon*.pdb" />
-            <DeployBinaryFiles Include="..\R7.Epsilon\lib\Nini.dll" />
+            <DeployBinaryFiles Include="$(MSBuildDnnBinPath)\YamlDotNet.dll" />
         </ItemGroup>
 
 		<!-- Copy files to tmp dirs -->

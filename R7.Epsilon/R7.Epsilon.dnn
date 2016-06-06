@@ -39,7 +39,7 @@
 						</assembly>
 						<assembly>
 							<path>bin</path>
-							<name>Nini.dll</name>
+							<name>YamlDotNet.dll</name>
 						</assembly>
 					</assemblies>
 				</component>

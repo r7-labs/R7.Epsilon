@@ -30,7 +30,7 @@ namespace R7.Epsilon.Components
 {
     public interface IConfigurableControl
     {
-        EpsilonConfig Config { get; }
+        EpsilonPortalConfig Config { get; }
     }
 }
 

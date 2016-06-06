@@ -28,148 +28,63 @@ using System;
 
 namespace R7.Epsilon.Components
 {
-    public class EpsilonConfig: EpsilonConfigBase
+    public class EpsilonPortalConfig
     {
-        public EpsilonConfig (int portalId): base (portalId)
-        {
-        }
-
         #region Portal config properties
 
-        public string SkinCss
-        {
-            get { return PortalConfig.Get ("SkinCss", "default-skin.min.css"); }
-        }
+        public string SkinCss { get; set; }
 
-        public string SkinA11yCss
-        {
-            get { return PortalConfig.Get ("SkinA11yCss", "a11y-skin.min.css"); }
-        }
+        public string SkinA11yCss { get; set; }
 
-        public int FeedbackTabId
-        {
-            get { return PortalConfig.GetInt ("FeedbackTabId", -1); }
-        }
+        public int FeedbackTabId { get; set; }
 
-        public string PrimaryMenuNodeSelector
-        {
-            get { return PortalConfig.Get ("PrimaryMenuNodeSelector", "*,0,2"); }
-        }
+        public string PrimaryMenuNodeSelector { get; set; }
 
-        public string PrimaryMenuIncludeNodes
-        {
-            get { return PortalConfig.Get ("PrimaryMenuIncludeNodes", string.Empty); }
-        }
+        public string PrimaryMenuIncludeNodes { get; set; }
 
-        public string SecondaryMenuNodeSelector
-        {
-            get { return PortalConfig.Get ("SecondaryMenuNodeSelector", "*,0,2"); }
-        }
+        public string SecondaryMenuNodeSelector { get; set; }
 
-        public string SecondaryMenuIncludeNodes
-        {
-            get { return PortalConfig.Get ("SecondaryMenuIncludeNodes", string.Empty); }
-        }
+        public string SecondaryMenuIncludeNodes { get; set; }
 
-        public string FooterButtonsGroupName
-        {
-            get { return PortalConfig.Get ("FooterButtonsGroupName", "FooterButtons"); }
-        }
+        public string FooterButtonsGroupName { get; set; }
 
-        public bool VkShareEnabled 
-        {
-            get { return PortalConfig.GetBoolean ("VkShareEnabled", false); }
-        }
+        public bool VkShareEnabled { get; set; }
 
-        public bool FacebookShareEnabled
-        {
-            get { return PortalConfig.GetBoolean ("FacebookShareEnabled", false); }
-        }
+        public string VkApiId { get; set; }
 
-        public bool TwitterShareEnabled
-        {
-            get { return PortalConfig.GetBoolean ("TwitterShareEnabled", false); }
-        }
+        public string VkGroup { get; set; }
 
-        public bool GoogleShareEnabled
-        {
-            get { return PortalConfig.GetBoolean ("GoogleShareEnabled", false); }
-        }
+        public bool FacebookShareEnabled { get; set; }
 
-        public string VkApiId
-        {
-            get { return PortalConfig.Get ("VkApiId", string.Empty); }
-        }
+        public string FacebookAppId { get; set; }
 
-        public string VkGroup
-        {
-            get { return PortalConfig.Get ("VkGroup", string.Empty); }
-        }
+        public string FacebookGroup { get; set; }
 
-        public string FacebookAppId
-        {
-            get { return PortalConfig.Get ("FacebookAppId", string.Empty); }
-        }
+        public bool TwitterShareEnabled { get; set; }
 
-        public string FacebookGroup
-        {
-            get { return PortalConfig.Get ("FacebookGroup", string.Empty); }
-        }
+        public string TwitterGroup { get; set; }
 
-        public string TwitterGroup
-        {
-            get { return PortalConfig.Get ("TwitterGroup", string.Empty); }
-        }
+        public string TwitterVia { get; set; }
 
-        public string TwitterVia
-        {
-            get { return PortalConfig.Get ("TwitterVia", TwitterGroup); }
-        }
+        public bool GoogleShareEnabled { get; set; }
 
-        public string OkGroup
-        {
-            get { return PortalConfig.Get ("OkGroup", string.Empty); }
-        }
+        public string GoogleGroup { get; set; }
 
-        public string GoogleGroup
-        {
-            get { return PortalConfig.Get ("GoogleGroup", string.Empty); }
-        }
+        public string YoutubeGroup { get; set; } 
 
-        public string YoutubeGroup
-        {
-            get { return PortalConfig.Get ("YoutubeGroup", string.Empty); }
-        }
+        public string OkGroup { get; set; }
 
-        public string AdsenseClient
-        {
-            get { return PortalConfig.Get ("AdsenseClient", string.Empty); }
-        }
+        public string AdsenseClient { get; set; }
 
-        public string AdsenseSlot
-        {
-            get { return PortalConfig.Get ("AdsenseSlot", string.Empty); }
-        }
+        public string AdsenseSlot { get; set; }
 
-        public bool ShowTerms
-        {
-            get { return PortalConfig.GetBoolean ("ShowTerms", false); }
-        }
+        public bool ShowTerms { get; set; }
 
-        public bool ShowPrivacy
-        {
-            get { return PortalConfig.GetBoolean ("ShowPrivacy", false); }
-        }
+        public bool ShowPrivacy { get; set; }
 
-        public int MenuUrlType
-        {
-            get { return PortalConfig.GetInt ("MenuUrlType", 0); }
-        }
+        public int MenuUrlType { get; set; }
 
-        public bool UseObrnadzorMicrodata
-        {
-            get { return PortalConfig.GetBoolean ("UseObrnadzorMicrodata", false); }
-        }
+        public bool UseObrnadzorMicrodata { get; set; }
 
         #endregion
     }
