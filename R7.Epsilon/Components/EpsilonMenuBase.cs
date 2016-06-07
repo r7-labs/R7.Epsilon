@@ -87,25 +87,6 @@ namespace R7.Epsilon.Components
         {
             base.OnInit (e);
 
-            /* 
-            // init menu
-            switch (Menu.ID)
-            {
-                case "menuLocal":
-                case "menuHeaders":
-                    Menu.IncludeNodes = PortalSettings.ActiveTab.TabID.ToString ();
-                    break;
-                case "menuPrimary":
-                    Menu.NodeSelector = Config.PrimaryMenuNodeSelector;
-                    Menu.IncludeNodes = Config.PrimaryMenuIncludeNodes;
-                    break;
-                case "menuSecondary":
-                    Menu.NodeSelector = Config.SecondaryMenuNodeSelector;
-                    Menu.IncludeNodes = Config.SecondaryMenuIncludeNodes;
-                    break;
-            }
-            */
-
             if (PassDefaultTemplateArgs)
             {
                 // configurable menu template arguments

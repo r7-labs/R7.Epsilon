@@ -6,13 +6,13 @@ footer-buttons-group-name: FooterButtons
 
 feedback-tab-id: 100
 
-primary-menu-node-selector: "*,0,2"
+primary-menu:
+  node-selector: "*,0,2"
+  include-nodes:
 
-primary-menu-include-nodes:
-
-secondary-menu-node-selector: "*,0,2"
-
-secondary-menu-include-nodes:
+secondary-menu:
+  node-selector: "*,0,2"
+  include-nodes:
 
 menu-url-type: 0
 

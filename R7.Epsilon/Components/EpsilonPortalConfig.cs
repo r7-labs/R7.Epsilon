@@ -38,13 +38,9 @@ namespace R7.Epsilon.Components
 
         public int FeedbackTabId { get; set; }
 
-        public string PrimaryMenuNodeSelector { get; set; }
+        public MenuConfig PrimaryMenu { get; set; }
 
-        public string PrimaryMenuIncludeNodes { get; set; }
-
-        public string SecondaryMenuNodeSelector { get; set; }
-
-        public string SecondaryMenuIncludeNodes { get; set; }
+        public MenuConfig SecondaryMenu { get; set; }
 
         public string FooterButtonsGroupName { get; set; }
 
@@ -88,5 +84,13 @@ namespace R7.Epsilon.Components
 
         #endregion
     }
+
+    public class MenuConfig
+    {
+        public string NodeSelector { get; set; }
+
+        public string IncludeNodes { get; set; }
+    }
+
 }
 

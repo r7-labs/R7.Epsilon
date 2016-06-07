@@ -6,13 +6,13 @@ footer-buttons-group-name: NavMenu1
 
 feedback-tab-id: 2659
 
-primary-menu-node-selector: "*,0,2"
+primary-menu:
+  node-selector: "*,0,2"
+  include-nodes: "36,7388,104,1206,58,3985,109,9427,7384,1239"
 
-primary-menu-include-nodes: "36,7388,104,1206,58,3985,109,9427,7384,1239"
-
-secondary-menu-node-selector: "*,0,2"
-
-secondary-menu-include-nodes: "55,94,96,2769,89,2014"
+secondary-menu:
+  node-selector: "*,0,2"
+  include-nodes: "55,94,96,2769,89,2014"
 
 menu-url-type: 2
 

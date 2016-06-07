@@ -41,8 +41,8 @@ namespace R7.Epsilon
         protected override void OnInit (EventArgs e)
         {
             Menu = menuPrimary;
-            Menu.NodeSelector = Config.PrimaryMenuNodeSelector;
-            Menu.IncludeNodes = Config.PrimaryMenuIncludeNodes;
+            Menu.NodeSelector = Config.PrimaryMenu.NodeSelector;
+            Menu.IncludeNodes = Config.PrimaryMenu.IncludeNodes;
 
             base.OnInit (e);
         }
