@@ -25,6 +25,7 @@
 // THE SOFTWARE.
 
 using System;
+using System.Dynamic;
 
 namespace R7.Epsilon.Components
 {
@@ -70,9 +71,7 @@ namespace R7.Epsilon.Components
 
         public string OkGroup { get; set; }
 
-        public string AdsenseClient { get; set; }
-
-        public string AdsenseSlot { get; set; }
+        public AdsenseConfig Adsense { get; set; }
 
         public bool ShowTerms { get; set; }
 
@@ -90,6 +89,13 @@ namespace R7.Epsilon.Components
         public string NodeSelector { get; set; }
 
         public string IncludeNodes { get; set; }
+    }
+
+    public class AdsenseConfig
+    {
+        public string Client { get; set; }
+
+        public string Slot { get; set; }
     }
 
 }

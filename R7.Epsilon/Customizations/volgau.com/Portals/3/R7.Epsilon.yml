@@ -43,9 +43,9 @@ youtube-group: UCYPMmQknVPxosuY4iPCfVDg
 
 ok-group: 51992191172689
 
-adsense-client: ca-pub-9311000650074319
-
-adsense-slot: 6593885688
+adsense:
+  client: ca-pub-9311000650074319
+  slot: 6593885688
 
 show-terms: false
 

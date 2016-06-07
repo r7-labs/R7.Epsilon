@@ -43,9 +43,9 @@ youtube-group: your-youtube-group
 
 ok-group: your-ok-group
 
-adsense-client: ca-pub-0000000000000000
-
-adsense-slot: 0000000000
+adsense:
+  client: ca-pub-0000000000000000
+  slot: 0000000000
 
 show-terms: true
 
