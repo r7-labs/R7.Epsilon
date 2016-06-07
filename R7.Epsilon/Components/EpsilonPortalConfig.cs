@@ -45,31 +45,17 @@ namespace R7.Epsilon.Components
 
         public string FooterButtonsGroupName { get; set; }
 
-        public bool VkShareEnabled { get; set; }
+        public VkConfig Vk { get; set; }
+       
+        public FacebookConfig Facebook { get; set; }
 
-        public string VkApiId { get; set; }
+        public TwitterConfig Twitter { get; set; }
 
-        public string VkGroup { get; set; }
+        public GooglePlusConfig Google { get; set; }
 
-        public bool FacebookShareEnabled { get; set; }
+        public OkConfig Ok { get; set; }
 
-        public string FacebookAppId { get; set; }
-
-        public string FacebookGroup { get; set; }
-
-        public bool TwitterShareEnabled { get; set; }
-
-        public string TwitterGroup { get; set; }
-
-        public string TwitterVia { get; set; }
-
-        public bool GoogleShareEnabled { get; set; }
-
-        public string GoogleGroup { get; set; }
-
-        public string YoutubeGroup { get; set; } 
-
-        public string OkGroup { get; set; }
+        public YoutubeConfig Youtube{ get; set; }
 
         public AdsenseConfig Adsense { get; set; }
 
@@ -98,5 +84,40 @@ namespace R7.Epsilon.Components
         public string Slot { get; set; }
     }
 
+    public abstract class SocialNetworkConfig
+    {
+        public bool ShareEnabled { get; set; }
+
+        public string Group { get; set; }
+    }
+
+    public class VkConfig: SocialNetworkConfig
+    {
+        public string ApiId { get; set; }
+    }
+
+    public class FacebookConfig: SocialNetworkConfig
+    {
+        public string AppId { get; set; }
+    }
+
+    public class TwitterConfig: SocialNetworkConfig
+    {
+        public string Via { get; set; }
+    }
+
+    public class GooglePlusConfig: SocialNetworkConfig
+    {
+    }
+
+    public class OkConfig
+    {
+        public string Group { get; set; }
+    }
+
+    public class YoutubeConfig
+    {
+        public string Group { get; set; }
+    }
 }
 

@@ -16,32 +16,31 @@ secondary-menu:
 
 menu-url-type: 0
 
-vk-share-enabled: false
+vk:
+  share-enabled: false
+  api-id: your-vk-api-id
+  group: your-vk-group
 
-vk-api-id: your-vk-api-id
+facebook:
+  share-enabled: true
+  # specify Facebook App ID for the "like" button, or leave empty (will produce messages in JS console)
+  app-id:
+  group: your-facebook-group
 
-vk-group: your-vk-group
+twitter:
+  share-enabled: true
+  group: your-twitter-group
+  via: your-twitter-via
 
-facebook-share-enabled: true
+google:
+  share-enabled: true
+  group: your-google-plus-group
 
-# specify Facebook App ID for the "like" button, or leave empty (will produce messages in JS console)
-facebook-app-id:
+youtube:
+  group: your-youtube-group
 
-facebook-group: your-facebook-group
-
-twitter-share-enabled: true
-
-twitter-group: your-twitter-group
-
-twitter-via: your-twitter-via
-
-google-share-enabled: true
-
-google-group: your-google-plus-group
-
-youtube-group: your-youtube-group
-
-ok-group: your-ok-group
+ok:
+  group: your-ok-group
 
 adsense:
   client: ca-pub-0000000000000000
