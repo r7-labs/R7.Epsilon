@@ -26,6 +26,7 @@
 
 using System;
 using System.Text;
+using System.Collections.Generic;
 
 namespace R7.Epsilon.Components
 {
@@ -55,5 +56,23 @@ namespace R7.Epsilon.Components
 
 			return sb.ToString ();
 		}
+
+        public static string FormatList<T> (string separator, IEnumerable<T> args) where T: struct
+        {
+            var sb = new StringBuilder ();
+
+            var i = 0;
+            foreach (var a in args) {
+                if (!string.IsNullOrWhiteSpace (a.ToString ())) {
+                    if (i++ > 0) {
+                        sb.Append (separator);
+                    }
+
+                    sb.Append (a);
+                }
+            }
+
+            return sb.ToString ();
+        }
 	}
 }

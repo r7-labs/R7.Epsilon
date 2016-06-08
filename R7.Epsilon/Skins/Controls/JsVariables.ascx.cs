@@ -55,7 +55,7 @@ namespace R7.Epsilon
         {
             get 
             {
-                return "[" + Utils.FormatList (",", PortalSettings.ActiveTab.BreadCrumbs
+                return "[" + Utils.FormatList<int> (",", PortalSettings.ActiveTab.BreadCrumbs
                     .ToArray ().Select (b => ((TabInfo) b).TabID)) + "]"; 
             }
         }
