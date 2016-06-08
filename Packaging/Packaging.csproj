@@ -59,4 +59,14 @@
   <ItemGroup>
     <Compile Include="Dummy.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\R7.Epsilon\R7.Epsilon.csproj">
+      <Project>{F7F17F2A-6F32-4AC4-B2EE-1C637D0A26EF}</Project>
+      <Name>R7.Epsilon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\R7.Epsilon.Tests\R7.Epsilon.Tests.csproj">
+      <Project>{46155C3C-2950-4AA1-AEDD-B5A0C4F4C421}</Project>
+      <Name>R7.Epsilon.Tests</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
