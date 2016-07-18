@@ -27,10 +27,8 @@
 using System;
 using DotNetNuke.UI.Containers;
 using DotNetNuke.Security.Permissions;
-using DotNetNuke.UI.Skins.Controls;
 using DotNetNuke.Common;
 using DotNetNuke.Security;
-using DotNetNuke.Entities.Modules;
 
 namespace R7.Epsilon.Components
 {
@@ -48,8 +46,6 @@ namespace R7.Epsilon.Components
         {
             get
             {
-                ModuleInfo _configuration = null;
-
                 // Perform tri-state switch check to avoid having to perform a security
                 // role lookup on every property access (instead caching the result)
                 if (_isEditable == null)
@@ -60,22 +56,11 @@ namespace R7.Epsilon.Components
                         blnPreview = false;
                     }
 
-                    // get current module info
-                    if (_configuration == null)
-                    {
-                        var moduleIdStr = ID.Replace ("ctr", string.Empty);
-                        int moduleId;
-                        if (int.TryParse (moduleIdStr, out moduleId))
-                        {
-                            _configuration = ModuleController.Instance.GetModule (moduleId, PortalSettings.ActiveTab.TabID, false);
-                        }
-                    }
-
                     var blnHasModuleEditPermissions = false;
-                    if (_configuration != null)
+                    if (ModuleConfiguration != null)
                     {
                         blnHasModuleEditPermissions = ModulePermissionController.HasModuleAccess (
-                            SecurityAccessLevel.Edit, "CONTENT", _configuration);
+                            SecurityAccessLevel.Edit, "CONTENT", ModuleConfiguration);
                     }
 
                     _isEditable = !blnPreview && blnHasModuleEditPermissions;
