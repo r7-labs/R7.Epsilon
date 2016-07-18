@@ -1,5 +1,5 @@
 ﻿//
-// Smart.ascx.cs
+// SmartContainer.ascx.cs
 //
 // Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
@@ -26,13 +26,29 @@
 
 using System;
 using R7.Epsilon.Components;
+using System.Web.UI.HtmlControls;
 
 namespace R7.Epsilon.Containers
 {
-
     public class SmartContainer: EpsilonContainerBase
     {
-        public SmartContainer () {
+        // TODO: Add ViewState
+        protected string ContainerCssClass
+        {
+            get {
+                var containerCssClassObj = ModuleConfiguration.TabModuleSettings ["containerCssClass"]; 
+                return (containerCssClassObj != null) 
+                    ? (string) containerCssClassObj 
+                    // TODO: Get default from portal config
+                    : "col-md-12";
+            }
+        }
+
+        protected override void OnLoad (EventArgs e)
+        {
+            base.OnLoad (e);
+
+            ((HtmlGenericControl) Parent).Attributes ["class"] += " " + ContainerCssClass;
         }
     }
 }

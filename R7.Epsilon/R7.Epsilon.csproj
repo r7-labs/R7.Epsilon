@@ -106,6 +106,9 @@
     <None Include="Customizations\volgau.com\Portals\0\R7.Epsilon.yml" />
     <None Include="Customizations\volgau.com\Portals\2\R7.Epsilon.yml" />
     <None Include="Customizations\volgau.com\Portals\3\R7.Epsilon.yml" />
+    <None Include="Skins\Smart.doctype.xml">
+      <DependentUpon>Smart.ascx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Skins\Edit.ascx.cs">
@@ -199,6 +202,12 @@
     <Compile Include="Components\Utils.cs" />
     <Compile Include="Components\EpsilonPortalConfig.cs" />
     <Compile Include="Components\EpsilonConfig.cs" />
+    <Compile Include="Containers\SmartContainer.ascx.cs">
+      <DependentUpon>Smart.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Skins\SmartSkin.cs">
+      <DependentUpon>Smart.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Containers\Blank.ascx" />
@@ -322,6 +331,8 @@
     <Content Include="packages.config" />
     <Content Include="license.htm" />
     <Content Include="releaseNotes.htm" />
+    <Content Include="Containers\Smart.ascx" />
+    <Content Include="Skins\Smart.ascx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

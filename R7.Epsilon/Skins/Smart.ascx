@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Universal.ascx.cs" Inherits="R7.Epsilon.Universal" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="SmartSkin.ascx.cs" Inherits="R7.Epsilon.SmartSkin" %>
 <%@ Register TagPrefix="dnn" TagName="LOGO" Src="~/Admin/Skins/Logo.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="LANGUAGE" Src="~/Admin/Skins/Language.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="SEARCH" Src="~/Admin/Skins/Search.ascx" %>
@@ -138,95 +138,17 @@
 </header>
 <div id="CarouselPane" runat="server" class="carousel slide" containertype="G" containername="R7.Epsilon" containersrc="Blank.ascx" />
 <div class="container">
-    <div class="row">
-        <div id="TopPane" runat="server" class="col-md-12" />
-    </div>
-    <div class="row">
-        <div id="TopLeftPane" runat="server" class="col-md-7" />
-        <div id="TopRightPane" runat="server" class="col-md-5" />
-    </div>
-    <div class="row">
-        <div id="TopPane11" runat="server" class="col-md-4" />
-        <div id="TopPane12" runat="server" class="col-md-4" />
-        <div id="TopPane13" runat="server" class="col-md-4" />
-    </div>
-    <div class="row">
-        <div id="TopPane21" runat="server" class="col-md-4" />
-        <div id="TopPane22" runat="server" class="col-md-4" />
-        <div id="TopPane23" runat="server" class="col-md-4" />
-    </div>
-    <div class="row">
-        <div id="TopPane31" runat="server" class="col-md-4" />
-        <div id="TopPane32" runat="server" class="col-md-4" />
-        <div id="TopPane33" runat="server" class="col-md-4" />
-    </div>
-    <div class="row">
-        <div id="ContentPane" runat="server" class="col-md-9 col-sm-7" />
-        <div id="RightPane" runat="server" class="col-md-3 col-sm-5" />
-    </div>
-    <div class="row"> 
-        <div id="LeftPane" runat="server" class="col-md-3 col-sm-5" />
-        <div id="ContentLeftPane" runat="server" class="col-md-9 col-sm-7" />
-    </div>
-    <div class="row">
-        <div id="ContentPane2" runat="server" class="col-md-9 col-sm-7" />
-        <div id="RightPane2" runat="server" class="col-md-3 col-sm-5" />
-    </div>
-    <div class="row"> 
-        <div id="LeftPane2" runat="server" class="col-md-3 col-sm-5" />
-        <div id="ContentLeftPane2" runat="server" class="col-md-9 col-sm-7" />
-    </div>
-    <div class="row">
-        <div id="MiddlePane11" runat="server" class="col-md-4" />
-        <div id="MiddlePane12" runat="server" class="col-md-4" />
-        <div id="MiddlePane13" runat="server" class="col-md-4" />
-    </div>
-    <div class="row">
-        <div id="MiddlePane" runat="server" class="col-md-12" />
-    </div>
-    <div class="row">
-        <div id="MiddlePane21" runat="server" class="col-md-4" />
-        <div id="MiddlePane22" runat="server" class="col-md-4" />
-        <div id="MiddlePane23" runat="server" class="col-md-4" />
-    </div>
-    <div class="row">
-        <div id="ContentPane3" runat="server" class="col-md-9 col-sm-7" />
-        <div id="RightPane3" runat="server" class="col-md-3 col-sm-5" />
-    </div>
-    <div class="row"> 
-        <div id="LeftPane3" runat="server" class="col-md-3 col-sm-5" />
-        <div id="ContentLeftPane3" runat="server" class="col-md-9 col-sm-7" />
-    </div>
-    <div class="row">
-        <div id="ContentPane4" runat="server" class="col-md-9 col-sm-7" />
-        <div id="RightPane4" runat="server" class="col-md-3 col-sm-5" />
-    </div>
-    <div class="row"> 
-        <div id="LeftPane4" runat="server" class="col-md-3 col-sm-5" />
-        <div id="ContentLeftPane4" runat="server" class="col-md-9 col-sm-7" />
-    </div>
-    <div class="row">
-        <div id="BottomPane11" runat="server" class="col-md-4" />
-        <div id="BottomPane12" runat="server" class="col-md-4" />
-        <div id="BottomPane13" runat="server" class="col-md-4" />
-    </div>
-    <div class="row">
-        <div id="BottomPane21" runat="server" class="col-md-4" />
-        <div id="BottomPane22" runat="server" class="col-md-4" />
-        <div id="BottomPane23" runat="server" class="col-md-4" />
-    </div>
-    <div class="row">
-        <div id="BottomPane31" runat="server" class="col-md-4" />
-        <div id="BottomPane32" runat="server" class="col-md-4" />
-        <div id="BottomPane33" runat="server" class="col-md-4" />
-    </div>
-    <div class="row">
-        <div id="BottomLeftPane" runat="server" class="col-md-7" />
-        <div id="BottomRightPane" runat="server" class="col-md-5" />
-    </div>
-    <div class="row">
-        <div id="BottomPane" runat="server" class="col-md-12" />
-    </div>
+    <div id="ContentPane" runat="server" class="row" />
+    <div id="Row_01" runat="server" class="row" />
+    <div id="Row_02" runat="server" class="row" />
+    <div id="Row_03" runat="server" class="row" />
+    <div id="Row_04" runat="server" class="row" />
+    <div id="Row_05" runat="server" class="row" />
+    <div id="Row_06" runat="server" class="row" />
+    <div id="Row_07" runat="server" class="row" />
+    <div id="Row_08" runat="server" class="row" />
+    <div id="Row_09" runat="server" class="row" />
+    <div id="Row_10" runat="server" class="row" />
     <div class="row">
         <div class="col-md-12">
             <div class="skin-tags">
