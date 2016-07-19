@@ -1,8 +1,25 @@
 ﻿panes:
-  - name: ContentPane
+
+  - name: TopPane1
+    place: panesRow1 
+    class: col-md-3 col-sm-6
+
+  - name: TopPane2
     place: panesRow1
+    class: col-md-3 col-sm-6
+
+  - name: TopPane3
+    place: panesRow1
+    class: col-md-3 col-sm-6
+
+  - name: TopPane4
+    place: panesRow1
+    class: col-md-3 col-sm-6
+
+  - name: ContentPane
+    place: panesRow2
     class: col-md-9 col-sm-7
 
   - name: RightPane
-    place: panesRow1 
+    place: panesRow2 
     class: col-md-3 col-sm-5
