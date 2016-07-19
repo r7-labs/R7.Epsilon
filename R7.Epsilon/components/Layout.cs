@@ -26,7 +26,23 @@ namespace R7.Epsilon.Components
 {
     public class Layout
     {
+        public List<DockInfo> Docks { get; set; }
+    }
+
+    public class DockInfo
+    {
+        public string Dock { get; set; }
+
         public List<PaneInfo> Panes { get; set; }
+    }
+
+    public class PaneInfo
+    {
+        public string Pane { get; set; }
+
+        public string Class { get; set; }
+
+        // default container?
     }
 }
 

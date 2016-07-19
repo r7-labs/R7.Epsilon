@@ -213,7 +213,6 @@
       <DependentUpon>Layout1.ascx</DependentUpon>
     </Compile>
     <Compile Include="components\Layout.cs" />
-    <Compile Include="components\PaneInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Containers\Blank.ascx" />

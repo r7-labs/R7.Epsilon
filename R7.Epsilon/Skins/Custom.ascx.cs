@@ -52,18 +52,21 @@ namespace R7.Epsilon
                 var deserializer = new Deserializer (namingConvention: new HyphenatedNamingConvention ());
                 var layout = deserializer.Deserialize<Layout> (textReader);
             
-                var places = Controls
+                var docks = Controls
                 .Cast<Control> ()
                 .Where (c => c.GetType () == typeof (PlaceHolder))
                 .Cast<PlaceHolder> ()
                 .ToDictionary (p => p.ID, p => p);
 
-                foreach (var pane in layout.Panes) {
-                    var paneControl = new HtmlGenericControl ("div");
-                    paneControl.ID = pane.Name;
-                    paneControl.Attributes.Add ("class", pane.Class);
+                foreach (var dock in layout.Docks) {
+                    foreach (var pane in dock.Panes) {
 
-                    Controls.AddAt (Controls.IndexOf (places [pane.Place]), paneControl);
+                        var paneControl = new HtmlGenericControl ("div");
+                        paneControl.ID = pane.Pane;
+                        paneControl.Attributes.Add ("class", pane.Class);
+
+                        Controls.AddAt (Controls.IndexOf (docks [dock.Dock]), paneControl);
+                    }
                 }
 
             }
