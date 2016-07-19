@@ -207,3 +207,8 @@
     <skin:FEEDBACKBUTTON runat="server" CssClass="skin-float-button skin-float-button-feedback" Target="_blank" />
 </div>
 <skin:SOCIALSHARESCRIPTS runat="server" />
+<script type="text/javascript">
+$(document).ready (function () {
+    $("ul#ControlEditPageMenu").find ("ul").append ("<li><a href='#'>Adjust Panes Layout</a></li>");
+});
+</script>
