@@ -63,7 +63,22 @@ namespace R7.Epsilon
 
                         var paneControl = new HtmlGenericControl ("div");
                         paneControl.ID = pane.Pane;
-                        paneControl.Attributes.Add ("class", pane.Class);
+
+                        if (!string.IsNullOrWhiteSpace (pane.Class)) {
+                            paneControl.Attributes.Add ("class", pane.Class);
+                        }
+
+                        if (!string.IsNullOrWhiteSpace (pane.ContainerType)) {
+                            paneControl.Attributes.Add ("containertype", pane.ContainerType);
+                        }
+
+                        if (!string.IsNullOrWhiteSpace (pane.ContainerName)) {
+                            paneControl.Attributes.Add ("containername", pane.ContainerName);
+                        }
+
+                        if (!string.IsNullOrWhiteSpace (pane.ContainerSrc)) {
+                            paneControl.Attributes.Add ("containersrc", pane.ContainerSrc);
+                        }
 
                         Controls.AddAt (Controls.IndexOf (docks [dock.Dock]), paneControl);
                     }

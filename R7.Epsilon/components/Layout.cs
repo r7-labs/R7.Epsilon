@@ -42,7 +42,11 @@ namespace R7.Epsilon.Components
 
         public string Class { get; set; }
 
-        // default container?
+        public string ContainerType { get; set; }
+
+        public string ContainerName { get; set; }
+
+        public string ContainerSrc { get; set; }
     }
 }
 

@@ -18,6 +18,9 @@
     panes:
         - pane: ContentPane
           class: col-md-9 col-sm-7
+          container-type: G
+          container-name: R7.Epsilon
+          container-src: Blank.ascx
 
         - pane: RightPane
           class: col-md-3 col-sm-5
