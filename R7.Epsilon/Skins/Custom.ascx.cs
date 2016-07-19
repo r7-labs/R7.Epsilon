@@ -30,50 +30,42 @@ using System.Web.UI.HtmlControls;
 using System.Linq;
 using System.Collections.Generic;
 using System.Web.UI;
+using R7.Epsilon.Components;
+using YamlDotNet.Serialization;
+using YamlDotNet.Serialization.NamingConventions;
+using System.IO;
+using DotNetNuke.Common;
 
 namespace R7.Epsilon
 {
-    public class PaneInfo
-    {
-        public string Place { get; set; }
-    
-        public string Name { get; set; }
-
-        public string Class { get; set; }
-
-        // default container?
-    }
 
     public partial class Custom : EpsilonSkinBase
     {
-        public Custom ()
-		{
-		}
-
-        protected PlaceHolder placeLayout;
-
         protected string Message { get; set; }
 
         protected override void OnInit (EventArgs e)
         {
-            // TODO: Load from layout file
-            var panes = new [] {
-                new PaneInfo { Place = "panesRow1", Name = "ContentPane", Class="col-md-9 col-sm-7" },
-                new PaneInfo { Place = "panesRow1", Name = "RightPane", Class="col-md-3 col-sm-5" }
-            };
+            using (var textReader = new StringReader (File.ReadAllText (Path.Combine (
+                                        Globals.HostMapPath,
+                                        "Skins\\R7.Epsilon\\Layouts\\Layout1.yml")))) {
 
-            var places = Controls
+                var deserializer = new Deserializer (namingConvention: new HyphenatedNamingConvention ());
+                var layout = deserializer.Deserialize<Layout> (textReader);
+            
+                var places = Controls
                 .Cast<Control> ()
                 .Where (c => c.GetType () == typeof (PlaceHolder))
                 .Cast<PlaceHolder> ()
                 .ToDictionary (p => p.ID, p => p);
 
-            foreach (var pane in panes) {
-                var paneControl = new HtmlGenericControl ("div");
-                paneControl.ID = pane.Name;
-                paneControl.Attributes.Add ("class", pane.Class);
+                foreach (var pane in layout.Panes) {
+                    var paneControl = new HtmlGenericControl ("div");
+                    paneControl.ID = pane.Name;
+                    paneControl.Attributes.Add ("class", pane.Class);
 
-                Controls.AddAt (Controls.IndexOf (places [pane.Place]), paneControl);
+                    Controls.AddAt (Controls.IndexOf (places [pane.Place]), paneControl);
+                }
+
             }
 
             base.OnInit (e);
@@ -98,6 +90,7 @@ namespace R7.Epsilon
         }
 
         protected void buttonTestPostBack_Click (object sender, EventArgs e)
-        {}
+        {
+        }
     }
 }
