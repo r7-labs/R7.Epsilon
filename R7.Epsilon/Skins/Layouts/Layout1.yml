@@ -1,0 +1,10 @@
+﻿pane:
+  name: ContentPane
+  place: panesRow1
+  class: col-md-9 col-sm-7
+
+pane:
+  name: RightPane
+  place: panesRow1 
+  class: col-md-3 col-sm-5
+ 

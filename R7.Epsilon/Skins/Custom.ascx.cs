@@ -25,45 +25,58 @@
 // THE SOFTWARE.
 
 using System;
-using DotNetNuke.Security;
-using DotNetNuke.Services.Exceptions;
-using DotNetNuke.Entities.Modules;
-using DotNetNuke.Entities.Modules.Actions;
-using DotNetNuke.Services.Localization;
 using System.Web.UI.WebControls;
 using System.Web.UI.HtmlControls;
-using System.Threading;
-using DotNetNuke.Entities.Tabs;
-using System.Runtime.InteropServices;
-using DotNetNuke.Services.Messaging.Data;
 using System.Linq;
 using System.Collections.Generic;
-using Telerik.Web.UI;
-using System.Collections;
-using R7.Epsilon.Skins.Layouts;
+using System.Web.UI;
 
 namespace R7.Epsilon
 {
+    public class PaneInfo
+    {
+        public string Place { get; set; }
+    
+        public string Name { get; set; }
+
+        public string Class { get; set; }
+
+        // default container?
+    }
+
     public partial class Custom : EpsilonSkinBase
     {
         public Custom ()
 		{
-         
 		}
 
         protected PlaceHolder placeLayout;
 
         protected string Message { get; set; }
-            
+
         protected override void OnInit (EventArgs e)
         {
-            var layout = LoadControl ("~/Portals/_default/Skins/R7.Epsilon/Layouts/Layout1.ascx");
-            placeLayout.Controls.Add (layout);
+            // TODO: Load from layout file
+            var panes = new [] {
+                new PaneInfo { Place = "panesRow1", Name = "ContentPane", Class="col-md-9 col-sm-7" },
+                new PaneInfo { Place = "panesRow1", Name = "RightPane", Class="col-md-3 col-sm-5" }
+            };
+
+            var places = Controls
+                .Cast<Control> ()
+                .Where (c => c.GetType () == typeof (PlaceHolder))
+                .Cast<PlaceHolder> ()
+                .ToDictionary (p => p.ID, p => p);
+
+            foreach (var pane in panes) {
+                var paneControl = new HtmlGenericControl ("div");
+                paneControl.ID = pane.Name;
+                paneControl.Attributes.Add ("class", pane.Class);
+
+                Controls.AddAt (Controls.IndexOf (places [pane.Place]), paneControl);
+            }
 
             base.OnInit (e);
-
-
-            //base.OnOnPreInit (e);
 
             /*
             var tabSettings = TabController.Instance.GetTabSettings (TabId);

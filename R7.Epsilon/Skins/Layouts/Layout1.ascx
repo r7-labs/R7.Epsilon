@@ -22,7 +22,7 @@
         <div id="dnn_TopPane33" ClientIDMode="Static" runat="server" class="col-md-4" />
     </div>
     <div class="row">
-        <div id="ContentPane" ClientIDMode="Static" runat="server" class="col-md-9 col-sm-7" />
+        <div id="dnn_ContentPane" ClientIDMode="Static" runat="server" class="col-md-9 col-sm-7" />
         <div id="dnn_RightPane" ClientIDMode="Static" runat="server" class="col-md-3 col-sm-5" />
     </div>
     <div class="row"> 
