@@ -52,38 +52,41 @@ namespace R7.Epsilon
                 var deserializer = new Deserializer (namingConvention: new HyphenatedNamingConvention ());
                 var layout = deserializer.Deserialize<Layout> (textReader);
             
-                var docks = Controls
+                var skinDocks = Controls
                 .Cast<Control> ()
                 .Where (c => c.GetType () == typeof (PlaceHolder))
                 .Cast<PlaceHolder> ()
                 .ToDictionary (p => p.ID, p => p);
 
                 foreach (var dock in layout.Docks) {
-                    foreach (var pane in dock.Panes) {
+                    PlaceHolder dockControl;
+                    if (skinDocks.TryGetValue (dock.Dock, out dockControl))
+                    {
+                        foreach (var pane in dock.Panes) {
+                        
+                            var paneControl = new HtmlGenericControl ("div");
+                            paneControl.ID = pane.Pane;
 
-                        var paneControl = new HtmlGenericControl ("div");
-                        paneControl.ID = pane.Pane;
+                            if (!string.IsNullOrWhiteSpace (pane.Class)) {
+                                paneControl.Attributes.Add ("class", pane.Class);
+                            }
 
-                        if (!string.IsNullOrWhiteSpace (pane.Class)) {
-                            paneControl.Attributes.Add ("class", pane.Class);
+                            if (!string.IsNullOrWhiteSpace (pane.ContainerType)) {
+                                paneControl.Attributes.Add ("containertype", pane.ContainerType);
+                            }
+
+                            if (!string.IsNullOrWhiteSpace (pane.ContainerName)) {
+                                paneControl.Attributes.Add ("containername", pane.ContainerName);
+                            }
+
+                            if (!string.IsNullOrWhiteSpace (pane.ContainerSrc)) {
+                                paneControl.Attributes.Add ("containersrc", pane.ContainerSrc);
+                            }
+
+                            Controls.AddAt (Controls.IndexOf (dockControl), paneControl);
                         }
-
-                        if (!string.IsNullOrWhiteSpace (pane.ContainerType)) {
-                            paneControl.Attributes.Add ("containertype", pane.ContainerType);
-                        }
-
-                        if (!string.IsNullOrWhiteSpace (pane.ContainerName)) {
-                            paneControl.Attributes.Add ("containername", pane.ContainerName);
-                        }
-
-                        if (!string.IsNullOrWhiteSpace (pane.ContainerSrc)) {
-                            paneControl.Attributes.Add ("containersrc", pane.ContainerSrc);
-                        }
-
-                        Controls.AddAt (Controls.IndexOf (docks [dock.Dock]), paneControl);
                     }
                 }
-
             }
 
             base.OnInit (e);
