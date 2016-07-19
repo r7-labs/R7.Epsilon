@@ -27,6 +27,7 @@
 using System;
 using System.Linq;
 using DotNetNuke.Entities.Tabs;
+using R7.Epsilon.Components;
 
 namespace R7.Epsilon
 {
