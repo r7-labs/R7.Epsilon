@@ -64,7 +64,7 @@
       <HintPath>lib\DotNetNuke.Web.DDRMenu.dll</HintPath>
     </Reference>
     <Reference Include="YamlDotNet">
-      <HintPath>..\packages\YamlDotNet.3.8.0\lib\net35\YamlDotNet.dll</HintPath>
+      <HintPath>..\packages\YamlDotNet.3.9.0\lib\net35\YamlDotNet.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
