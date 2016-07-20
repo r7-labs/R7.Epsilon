@@ -59,5 +59,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DefaultPortalConfigTests.cs" />
+    <Compile Include="CustomPortalConfigTests.cs" />
   </ItemGroup>
 </Project>
