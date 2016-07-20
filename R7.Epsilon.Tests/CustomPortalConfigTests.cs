@@ -1,5 +1,5 @@
 ﻿//
-// DefaultPortalConfigTests.cs
+// CustomPortalConfigTests.cs
 //
 // Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
