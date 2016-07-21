@@ -113,17 +113,3 @@ function skin_empty_layout_rows ()
         }
     });
 }
-
-/*
-$(function() {
-    $("body").mouseup (function(event) {
-        if (rangy.getSelection ().toString())
-        {
-            var duration = 500;
-            $(".skin-float-button-feedback").fadeIn(duration);
-        }
-        else
-            $(".skin-float-button-feedback").fadeOut(duration);
-    })
-});
-*/
