@@ -1,6 +1,6 @@
 ﻿<dotnetnuke type="Package" version="5.0">
 	<packages>
-		<package name="R7.Epsilon Skin" type="Skin" version="01.06.02">
+		<package name="R7.Epsilon Skin" type="Skin" version="01.07.00">
 			<friendlyName>R7.Epsilon</friendlyName>
 			<description>Highly customizable, multiportal, responsive skin for DNN Platfrom using Bootstrap 3. Requires installation via the Host/Extensions page.</description>
 			<owner>
@@ -45,7 +45,7 @@
 				</component>
 			</components>
 		</package>
-		<package name="R7.Epsilon Containers" type="Container" version="01.06.02">
+		<package name="R7.Epsilon Containers" type="Container" version="01.07.00">
 			<friendlyName>R7.Epsilon</friendlyName>
 			<description>Containers for the R7.Epsilon Skin package.</description>
 			<owner>

@@ -1,5 +1,21 @@
 ﻿<div style="white-space:normal">
 
+<h3>Version 1.7.0</h3>
+<ul>
+    <li>Switch from XML to YAML for portal config files.</li>
+    <li>Fix crash then skin is used for 404 and 500 error pages by using cookie instead of session state.</li>
+    <li>Upgrade to Bootstrap 3.3.6.</li>
+    <li>Fix highly possible crash in Utils.FormatList by adding null check.</li>
+    <li>Add xUnit-based tests project.</li>
+    <li>Some code refactoring.</li>
+</ul>
+<p>
+    <strong>Upgrade Notice:</strong>
+    New config files <code>(R7.Epsilon.yml)</code> will be placed at the portal root automatically on first load,
+    but they will contain only default settings. You may need to manually migrate settings from old config files 
+    <code>(R7.Epsilon.xml)</code> to new ones.
+</p>
+
 <h3>Version 1.6.2</h3>
 <ul>
     <li>Use page start date (if set) as publication date.</li>
@@ -67,7 +83,7 @@
 
 <h3>Version 1.0.1</h3>
 <ul>
-    <li>Added config options to toggle all social share buttons & scripts.</li>
+    <li>Added config options to toggle all social share buttons &amp; scripts.</li>
     <li>Social share buttons relocated to local menus row.</li>
 </ul>
 
