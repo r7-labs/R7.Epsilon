@@ -15,3 +15,7 @@ R7.Epsilon/Skins/js/*.min.js
 # Downloaded NuGet packages
 packages/*
 Packages/*
+
+# Bower components
+bower_components/*
+
