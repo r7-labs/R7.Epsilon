@@ -3,23 +3,24 @@
 <%@ Import Namespace="DotNetNuke.Entities.Users" %>
 <%@ Import Namespace="R7.Epsilon.Components" %>
 <script runat="server">
-public override string GetVaryByCustomString (HttpContext context, string arg)
+public override string GetVaryByCustomString (HttpContext context, string custom)
 {
     var result = string.Empty;
-    foreach (var part in arg.Split (';'))
+    foreach (var part in custom.Split (';'))
     {
         if (part == "PortalId") {
             result += "portalid=" + PortalSettings.Current.PortalId;
         }
         else if (part == "UserRoles") {
             if (Request.IsAuthenticated) {
-                var user = UserController.GetCurrentUserInfo ();
-                if (user != null)
-                    result += "userroles=" + Utils.FormatList (",", (Array)user.Roles);
+                var user = UserController.Instance.GetCurrentUserInfo ();
+                if (user != null) {
+                    result += "userroles=" + Utils.FormatList (",", (Array) user.Roles);
+                }
             }
         }
         else {
-            result += base.GetVaryByCustomString (context, arg);
+            result += base.GetVaryByCustomString (context, custom);
         }
     }
 
