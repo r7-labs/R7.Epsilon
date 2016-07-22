@@ -13,6 +13,8 @@
 			<license src="license.htm" />
 			<releaseNotes src="releaseNotes.htm" />
 			<dependencies>
+                <!-- .NET 4.5 -->
+                <dependency type="Type">System.Reflection.ReflectionContext</dependency>
                 <dependency type="CoreVersion">07.04.00</dependency>
             </dependencies>
 			<components>
