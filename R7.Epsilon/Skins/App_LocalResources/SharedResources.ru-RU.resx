@@ -22,7 +22,7 @@
         <value>Включить (выключить) возможности сайта для слабовидящих</value>
     </data>
     <data name="SkinCopyright.Text" xml:space="preserve">
-        <value><![CDATA[<a href="https://github.com/roman-yagodin/R7.Epsilon" target="_blank">Тема оформления R7.Epsilon v1.7.0</a>]]></value>
+        <value><![CDATA[<a href="https://github.com/roman-yagodin/R7.Epsilon" target="_blank">Тема R7.Epsilon v1.7.0</a>]]></value>
     </data>
     <data name="CopyrightNote.Text" xml:space="preserve">
         <value>При перепечатке текстовой информации и фотографий ссылка на сайт обязательна</value>
