@@ -3,11 +3,12 @@
 [![Join the chat at https://gitter.im/roman-yagodin/R7.Epsilon](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/roman-yagodin/R7.Epsilon?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 *R7.Epsilon* is a opensource responsive skin for DNN Platform based on Bootstrap 3.
+
 See *R7.Epsilon* skin in action at http://www.volgau.com
 
 # Features
 
-- Admins can define portal-specific settings via <del>XML</del>YAML file.
+- Admins can define portal-specific settings via <del>XML</del> YAML file.
 - Users can switch between a11y and normal theme.
 - In the a11y mode DNN modal popups are blocked (if they are enabled.
 - Variety of containers, including DNN-style messages, Bootstrap thumbnail, callouts, etc.
@@ -38,7 +39,7 @@ See *R7.Epsilon* skin in action at http://www.volgau.com
 # Install
 
 - Get latest install package from the [releases](https://github.com/roman-yagodin/R7.Epsilon/releases).
-- Go to the *DNN* gt; *Host* gt; *Extensions*, click *Install Extension*.
+- Go to the *DNN* &gt; *Host* &gt; *Extensions*, click *Install Extension*.
 - Optionally replace `Global.asax` file in the application root folder with one shipped alongside skin install package
 (this will enable more advanced `VaryByCustom` cache options for skin controls - by PortalId, by UserRoles).
 
