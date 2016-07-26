@@ -30,11 +30,10 @@ using System.Web.UI.HtmlControls;
 using System.Collections.Generic;
 using System.Web.UI;
 using R7.Epsilon.Components;
-using System.IO;
-using DotNetNuke.Common;
 using DotNetNuke.Services.Exceptions;
 using DotNetNuke.Entities.Tabs;
 using DotNetNuke.Entities.Portals;
+using DotNetNuke.Common;
 
 namespace R7.Epsilon
 {
@@ -55,12 +54,8 @@ namespace R7.Epsilon
                     // TODO: Add test to ensure that default layout exists
                     var layoutName = (layoutSetting != null)? (string) layoutSetting : "Default";
                    
-                    // load layout
-                    var layoutMarkup = File.ReadAllText (GetLayoutFile (layoutName));
-
-                    // parse layout to list of panes
-                    var listPanes = MarkupParser.ParseLayout (layoutMarkup);
-
+                    var listPanes = LayoutManager.GetLayout (PortalSettings.Current.PortalId, layoutName).Panes;
+                        
                     // create and insert pane controls
                     var insertIndex = Controls.IndexOf (placeDynamicPanes);
                     foreach (var pane in listPanes) {
@@ -100,27 +95,10 @@ namespace R7.Epsilon
             base.OnInit (e);
         }
 
-        const string layoutsFolder = "Skins\\R7.Epsilon\\Layouts\\";
-
-        protected string GetLayoutFile (string layoutName)
-        {
-            // REVIEW: Use HomeDirectoryMapPath instead?
-            var portalLayoutFile = Path.Combine (PortalSettings.Current.HomeSystemDirectoryMapPath, layoutsFolder + layoutName + ".xml");
-            if (File.Exists (portalLayoutFile)) {
-                return portalLayoutFile;
-            }
-            else {
-                var hostLayoutFile = Path.Combine (Globals.HostMapPath, layoutsFolder + layoutName + ".xml");
-                if (File.Exists (hostLayoutFile)) {
-                    return hostLayoutFile;
-                }
-            }
-
-            throw new Exception (string.Format ("Cannot find layout file \"{0}.xml\"", layoutName));
-        }
-
         protected void buttonTestPostBack_Click (object sender, EventArgs e)
         {
+            LayoutManager.Reset ();
+            Response.Redirect (Globals.NavigateURL ());
         }
     }
 }

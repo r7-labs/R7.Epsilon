@@ -212,6 +212,8 @@
     </Compile>
     <Compile Include="components\MarkupParser.cs" />
     <Compile Include="components\DynamicPane.cs" />
+    <Compile Include="components\LayoutManager.cs" />
+    <Compile Include="components\Layout.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Containers\Blank.ascx" />
