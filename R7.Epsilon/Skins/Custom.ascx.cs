@@ -27,65 +27,67 @@
 using System;
 using System.Web.UI.WebControls;
 using System.Web.UI.HtmlControls;
-using System.Linq;
 using System.Collections.Generic;
 using System.Web.UI;
 using R7.Epsilon.Components;
-using YamlDotNet.Serialization;
-using YamlDotNet.Serialization.NamingConventions;
 using System.IO;
 using DotNetNuke.Common;
+using DotNetNuke.Services.Exceptions;
 
 namespace R7.Epsilon
 {
-
     public partial class Custom : EpsilonSkinBase
     {
-        protected string Message { get; set; }
+        // TODO: Move to the EpsilonSkinBase class
+        protected PlaceHolder placeDynamicPanes;
 
         protected override void OnInit (EventArgs e)
         {
-            using (var textReader = new StringReader (File.ReadAllText (Path.Combine (
-                                        Globals.HostMapPath,
-                                        "Skins\\R7.Epsilon\\Layouts\\Layout1.yml")))) {
+            if (placeDynamicPanes != null) {
 
-                var deserializer = new Deserializer (namingConvention: new HyphenatedNamingConvention ());
-                var layout = deserializer.Deserialize<Layout> (textReader);
-            
-                var skinDocks = Controls
-                .Cast<Control> ()
-                .Where (c => c.GetType () == typeof (PlaceHolder))
-                .Cast<PlaceHolder> ()
-                .ToDictionary (p => p.ID, p => p);
+                try {
+                    // load layout file
+                    var layoutMarkup = File.ReadAllText (
+                        Path.Combine (Globals.HostMapPath, "Skins\\R7.Epsilon\\Layouts\\Layout1.xml")
+                    );
 
-                foreach (var dock in layout.Docks) {
-                    PlaceHolder dockControl;
-                    if (skinDocks.TryGetValue (dock.Dock, out dockControl))
-                    {
-                        foreach (var pane in dock.Panes) {
-                        
-                            var paneControl = new HtmlGenericControl ("div");
-                            paneControl.ID = pane.Pane;
+                    // parse layout to list of panes
+                    var listPanes = MarkupParser.ParseLayout (layoutMarkup);
 
-                            if (!string.IsNullOrWhiteSpace (pane.Class)) {
-                                paneControl.Attributes.Add ("class", pane.Class);
-                            }
+                    // create and insert pane controls
+                    var insertIndex = Controls.IndexOf (placeDynamicPanes);
+                    foreach (var pane in listPanes) {
 
-                            if (!string.IsNullOrWhiteSpace (pane.ContainerType)) {
-                                paneControl.Attributes.Add ("containertype", pane.ContainerType);
-                            }
+                        // TODO: Get tag from layout
+                        var paneControl = new HtmlGenericControl ("div");
+                        paneControl.ID = pane.Pane;
 
-                            if (!string.IsNullOrWhiteSpace (pane.ContainerName)) {
-                                paneControl.Attributes.Add ("containername", pane.ContainerName);
-                            }
+                        if (!string.IsNullOrEmpty (pane.CssClass)) {
+                            paneControl.Attributes.Add ("class", pane.CssClass);
+                        }
 
-                            if (!string.IsNullOrWhiteSpace (pane.ContainerSrc)) {
-                                paneControl.Attributes.Add ("containersrc", pane.ContainerSrc);
-                            }
+                        if (!string.IsNullOrEmpty (pane.ContainerType)) {
+                            paneControl.Attributes.Add ("containertype", pane.ContainerType);
+                        }
 
-                            Controls.AddAt (Controls.IndexOf (dockControl), paneControl);
+                        if (!string.IsNullOrEmpty (pane.ContainerName)) {
+                            paneControl.Attributes.Add ("containername", pane.ContainerName);
+                        }
+
+                        if (!string.IsNullOrEmpty (pane.ContainerSrc)) {
+                            paneControl.Attributes.Add ("containersrc", pane.ContainerSrc);
+                        }
+
+                        Controls.AddAt (insertIndex++, new LiteralControl (pane.MarkupBefore));
+                        Controls.AddAt (insertIndex++, paneControl);
+
+                        if (!string.IsNullOrEmpty (pane.MarkupAfter)) {
+                            Controls.AddAt (insertIndex++, new LiteralControl (pane.MarkupAfter));
                         }
                     }
+                }
+                catch (Exception ex) {
+                    Exceptions.ProcessPageLoadException (new Exception ("Cannot load layout", ex));
                 }
             }
 

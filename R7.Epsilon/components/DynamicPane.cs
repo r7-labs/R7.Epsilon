@@ -1,5 +1,5 @@
 ﻿//
-//  Layout.cs
+//  DynamicPane.cs
 //
 //  Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
@@ -21,32 +21,38 @@
 
 using System;
 using System.Collections.Generic;
+using System.Web.UI;
 
 namespace R7.Epsilon.Components
 {
-    public class Layout
-    {
-        public List<DockInfo> Docks { get; set; }
-    }
-
-    public class DockInfo
-    {
-        public string Dock { get; set; }
-
-        public List<PaneInfo> Panes { get; set; }
-    }
-
-    public class PaneInfo
+    public class DynamicPane
     {
         public string Pane { get; set; }
 
-        public string Class { get; set; }
+        public string CssClass { get; set; }
 
         public string ContainerType { get; set; }
 
         public string ContainerName { get; set; }
 
         public string ContainerSrc { get; set; }
+
+        public string MarkupBefore { get; set; }
+
+        public string MarkupAfter { get; set; }
+
+        public DynamicPane () 
+        {
+        }
+
+        public DynamicPane (string markup)
+        {
+            Pane = MarkupParser.ParseAttribute (markup, "id");
+            CssClass = MarkupParser.ParseAttribute (markup, "class");
+            ContainerType = MarkupParser.ParseAttribute (markup, "containertype");
+            ContainerName = MarkupParser.ParseAttribute (markup, "containername");
+            ContainerSrc = MarkupParser.ParseAttribute (markup, "containersrc");
+        }
     }
 }
 

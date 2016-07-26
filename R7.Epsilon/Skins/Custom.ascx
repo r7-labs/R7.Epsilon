@@ -136,25 +136,9 @@
         </div>
     </nav>
 </header>
-<div id="CarouselPane" runat="server" class="carousel slide" containertype="G" containername="R7.Epsilon" containersrc="Blank.ascx" />
 <asp:Button id="buttonTestPostBack" runat="server" OnClick="buttonTestPostBack_Click" Text="Test PostBack" />
+<asp:PlaceHolder id="placeDynamicPanes" runat="server"></asp:PlaceHolder>
 <div class="container">
-    <div id="ppp" runat="server"></div>
-    <div class="row">
-        <asp:PlaceHolder id="panesRow1" runat="server"></asp:PlaceHolder>
-    </div>
-    <div class="row">
-        <asp:PlaceHolder id="panesRow2" runat="server"></asp:PlaceHolder>
-    </div>
-    <div class="row">
-        <asp:PlaceHolder id="panesRow3" runat="server"></asp:PlaceHolder>
-    </div>
-    <div class="row">
-        <asp:PlaceHolder id="panesRow4" runat="server"></asp:PlaceHolder>
-    </div>
-    <div class="row">
-        <asp:PlaceHolder id="panesRow5" runat="server"></asp:PlaceHolder>
-    </div>
     <div class="row">
         <div class="col-md-12">
             <div class="skin-tags">
