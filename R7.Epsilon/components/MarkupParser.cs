@@ -27,9 +27,10 @@ namespace R7.Epsilon.Components
     {
         public static string ParseTag (string markup)
         {
-            var startIndex = markup.IndexOf ("<", StringComparison.OrdinalIgnoreCase) + 1;
+            var startIndex = markup.IndexOf ("<", StringComparison.Ordinal);
             if (startIndex >= 0) {
-                var endIndex = markup.IndexOf (" ", startIndex, StringComparison.OrdinalIgnoreCase);
+                startIndex += 1;
+                var endIndex = markup.IndexOf (" ", startIndex, StringComparison.Ordinal);
                 return markup.Substring (startIndex, endIndex - startIndex);
             }
 
@@ -38,9 +39,10 @@ namespace R7.Epsilon.Components
 
         public static string ParseAttribute (string markup, string attr)
         {
-            var startIndex = markup.IndexOf (attr + "=\"", StringComparison.OrdinalIgnoreCase) + attr.Length + 2;
+            var startIndex = markup.IndexOf (attr + "=\"", StringComparison.OrdinalIgnoreCase);
             if (startIndex >= 0) {
-                var endIndex = markup.IndexOf ("\"", startIndex, StringComparison.OrdinalIgnoreCase);
+                startIndex += attr.Length + 2;
+                var endIndex = markup.IndexOf ("\"", startIndex, StringComparison.Ordinal);
                 return markup.Substring (startIndex, endIndex - startIndex);
             }
 
