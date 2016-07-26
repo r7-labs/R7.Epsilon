@@ -192,7 +192,9 @@
 </div>
 <skin:SOCIALSHARESCRIPTS runat="server" />
 <script type="text/javascript">
-$(document).ready (function () {
-    $("ul#ControlEditPageMenu").find ("ul").append ("<li><a href='#'>Adjust Panes Layout</a></li>");
-});
+(function ($) {
+    $(function () {
+        $("ul#ControlEditPageMenu").find ("ul").append ("<li><a href='#'>Adjust Panes Layout</a></li>");
+    });
+}(jQuery));
 </script>
