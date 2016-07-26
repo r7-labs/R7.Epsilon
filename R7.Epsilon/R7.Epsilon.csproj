@@ -113,6 +113,7 @@
       <DependentUpon>Custom.ascx</DependentUpon>
     </None>
     <None Include="Skins\Layouts\Layout1.xml" />
+    <None Include="Skins\Layouts\Default.xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Skins\Edit.ascx.cs">

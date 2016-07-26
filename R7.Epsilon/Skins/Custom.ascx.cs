@@ -33,6 +33,7 @@ using R7.Epsilon.Components;
 using System.IO;
 using DotNetNuke.Common;
 using DotNetNuke.Services.Exceptions;
+using DotNetNuke.Entities.Tabs;
 
 namespace R7.Epsilon
 {
@@ -43,12 +44,20 @@ namespace R7.Epsilon
 
         protected override void OnInit (EventArgs e)
         {
+            // check if skin supports custom layouts
             if (placeDynamicPanes != null) {
 
                 try {
+                    var tabSettings = TabController.Instance.GetTabSettings (TabId);
+                    var layoutSetting = tabSettings ["r7_Epsilon_Layout"];
+
+                    // TODO: Add test to ensure that default layout exists
+                    var layout = (layoutSetting != null)? (string) layoutSetting : "Default";
+                   
                     // load layout file
+                    // TODO: Allow layout loading from portal folder
                     var layoutMarkup = File.ReadAllText (
-                        Path.Combine (Globals.HostMapPath, "Skins\\R7.Epsilon\\Layouts\\Layout1.xml")
+                        Path.Combine (Globals.HostMapPath, "Skins\\R7.Epsilon\\Layouts\\" + layout + ".xml")
                     );
 
                     // parse layout to list of panes
@@ -86,29 +95,11 @@ namespace R7.Epsilon
                     }
                 }
                 catch (Exception ex) {
-                    Exceptions.ProcessPageLoadException (new Exception ("Cannot load layout", ex));
+                    Exceptions.ProcessPageLoadException (new Exception (ex.Message, ex));
                 }
             }
 
             base.OnInit (e);
-
-            /*
-            var tabSettings = TabController.Instance.GetTabSettings (TabId);
-
-            foreach (var paneKey in Panes.Keys)
-            {
-                // panekey in setting / db must be in lowercase: TopPane => r7_Epsilon_toppane_CssClass
-
-                var setting = tabSettings ["r7_Epsilon_" + paneKey + "_CssClass"];
-                if (setting != null)
-                {
-                    var pane = (HtmlControl) FindControl (paneKey);
-                    if (pane != null)
-                    {
-                        pane.Attributes.Add ("class", (string) setting);
-                    }
-                }
-            }*/
         }
 
         protected void buttonTestPostBack_Click (object sender, EventArgs e)
