@@ -58,9 +58,8 @@ namespace R7.Epsilon
                     var insertIndex = Controls.IndexOf (placeDynamicPanes);
                     foreach (var pane in listPanes) {
 
-                        // TODO: Get tag from layout
-                        var paneControl = new HtmlGenericControl ("div");
-                        paneControl.ID = pane.Pane;
+                        var paneControl = new HtmlGenericControl (pane.Tag);
+                        paneControl.ID = pane.ID;
 
                         if (!string.IsNullOrEmpty (pane.CssClass)) {
                             paneControl.Attributes.Add ("class", pane.CssClass);

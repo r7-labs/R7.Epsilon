@@ -25,6 +25,17 @@ namespace R7.Epsilon.Components
 {
     public static class MarkupParser
     {
+        public static string ParseTag (string markup)
+        {
+            var startIndex = markup.IndexOf ("<", StringComparison.OrdinalIgnoreCase) + 1;
+            if (startIndex >= 0) {
+                var endIndex = markup.IndexOf (" ", startIndex, StringComparison.OrdinalIgnoreCase);
+                return markup.Substring (startIndex, endIndex - startIndex);
+            }
+
+            return null;
+        }
+
         public static string ParseAttribute (string markup, string attr)
         {
             var startIndex = markup.IndexOf (attr + "=\"", StringComparison.OrdinalIgnoreCase) + attr.Length + 2;

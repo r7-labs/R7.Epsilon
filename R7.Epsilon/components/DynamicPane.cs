@@ -27,7 +27,9 @@ namespace R7.Epsilon.Components
 {
     public class DynamicPane
     {
-        public string Pane { get; set; }
+        public string Tag { get; set; }
+
+        public string ID { get; set; }
 
         public string CssClass { get; set; }
 
@@ -47,7 +49,8 @@ namespace R7.Epsilon.Components
 
         public DynamicPane (string markup)
         {
-            Pane = MarkupParser.ParseAttribute (markup, "id");
+            Tag = MarkupParser.ParseTag (markup);
+            ID = MarkupParser.ParseAttribute (markup, "id");
             CssClass = MarkupParser.ParseAttribute (markup, "class");
             ContainerType = MarkupParser.ParseAttribute (markup, "containertype");
             ContainerName = MarkupParser.ParseAttribute (markup, "containername");
