@@ -34,6 +34,7 @@ using System.IO;
 using DotNetNuke.Common;
 using DotNetNuke.Services.Exceptions;
 using DotNetNuke.Entities.Tabs;
+using DotNetNuke.Entities.Portals;
 
 namespace R7.Epsilon
 {
@@ -52,13 +53,10 @@ namespace R7.Epsilon
                     var layoutSetting = tabSettings ["r7_Epsilon_Layout"];
 
                     // TODO: Add test to ensure that default layout exists
-                    var layout = (layoutSetting != null)? (string) layoutSetting : "Default";
+                    var layoutName = (layoutSetting != null)? (string) layoutSetting : "Default";
                    
-                    // load layout file
-                    // TODO: Allow layout loading from portal folder
-                    var layoutMarkup = File.ReadAllText (
-                        Path.Combine (Globals.HostMapPath, "Skins\\R7.Epsilon\\Layouts\\" + layout + ".xml")
-                    );
+                    // load layout
+                    var layoutMarkup = File.ReadAllText (GetLayoutFile (layoutName));
 
                     // parse layout to list of panes
                     var listPanes = MarkupParser.ParseLayout (layoutMarkup);
@@ -100,6 +98,25 @@ namespace R7.Epsilon
             }
 
             base.OnInit (e);
+        }
+
+        const string layoutsFolder = "Skins\\R7.Epsilon\\Layouts\\";
+
+        protected string GetLayoutFile (string layoutName)
+        {
+            // REVIEW: Use HomeDirectoryMapPath instead?
+            var portalLayoutFile = Path.Combine (PortalSettings.Current.HomeSystemDirectoryMapPath, layoutsFolder + layoutName + ".xml");
+            if (File.Exists (portalLayoutFile)) {
+                return portalLayoutFile;
+            }
+            else {
+                var hostLayoutFile = Path.Combine (Globals.HostMapPath, layoutsFolder + layoutName + ".xml");
+                if (File.Exists (hostLayoutFile)) {
+                    return hostLayoutFile;
+                }
+            }
+
+            throw new Exception (string.Format ("Cannot find layout file \"{0}.xml\"", layoutName));
         }
 
         protected void buttonTestPostBack_Click (object sender, EventArgs e)
