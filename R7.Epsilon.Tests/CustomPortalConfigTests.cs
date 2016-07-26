@@ -26,29 +26,33 @@
 
 using System;
 using R7.Epsilon.Components;
-using Xunit;
 using System.IO;
+using System.Linq;
+using System.Collections.Generic;
 using YamlDotNet.Serialization.NamingConventions;
-using YamlDotNet.Serialization;
+using Xunit;
 
 namespace R7.Epsilon.Tests
 {
     public class CustomPortalConfigTests
     {
-        [Theory]
-        [InlineData (0)]
-        [InlineData (2)]
-        [InlineData (3)]
-        public void PortalConfigDeserializationTest (int portalNumber)
+        [Theory, MemberData ("ConfigFilesData")]
+        public void PortalConfigTest (string configFile)
         {
-            var configFile = Path.Combine ("..", "..", "..", "R7.Epsilon", "Customizations",
-                "volgau.com", "Portals", portalNumber.ToString (), "R7.Epsilon.yml");
-
             using (var configReader = new StringReader (File.ReadAllText (configFile))) {
-                var deserializer = new Deserializer (namingConvention: new HyphenatedNamingConvention ());
+                var deserializer = new YamlDotNet.Serialization.Deserializer (namingConvention: new HyphenatedNamingConvention ());
                 Assert.NotNull (deserializer.Deserialize<EpsilonPortalConfig> (configReader));
-            } 
+            }
+        }
+
+        public static IEnumerable<object []> ConfigFilesData
+        {
+            get {
+                return Directory.GetFiles (
+                    Path.Combine ("..", "..", "..", "R7.Epsilon", "Customizations"), 
+                    "R7.Epsilon.yml", SearchOption.AllDirectories
+                ).Select (f => new object [] { f });
+            }
         }
     }
 }
-
