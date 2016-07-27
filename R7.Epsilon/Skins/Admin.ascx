@@ -46,7 +46,7 @@
 <header>
     <div class="container">
         <div class="row">
-            <a href="#dnn_TopPane" class="sr-only sr-only-focusable"><%: Localizer.GetString ("SkipToContent.Text") %></a>
+            <asp:HyperLink id="linkSkipToContent" runat="server" href="#content" CssClass="sr-only sr-only-focusable" />
         </div>
         <div class="row">
             <div class="col-md-4 col-sm-4 col-xs-10 skin-functions-wrapper">
@@ -128,6 +128,7 @@
         </div>
     </nav>
 </header>
+<a id="content" name="content"></a>
 <div class="container">
     <div class="row">
         <div id="ContentPane" runat="server" class="col-md-12" />

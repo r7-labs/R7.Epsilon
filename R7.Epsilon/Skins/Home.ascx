@@ -49,7 +49,7 @@
 <header>
     <div class="container">
         <div class="row">
-            <a href="#dnn_TopPane" class="sr-only sr-only-focusable"><%: Localizer.GetString ("SkipToContent.Text") %></a>
+            <asp:HyperLink id="linkSkipToContent" runat="server" href="#content" CssClass="sr-only sr-only-focusable" />
             <skin:BROWSERCHECK runat="server" />
         </div>
         <div class="row">
@@ -123,6 +123,7 @@
         </div>
     </nav>
 </header>
+<a id="content" name="content"></a>
 <div id="CarouselPane" runat="server" class="carousel slide" containertype="G" containername="R7.Epsilon" containersrc="Blank.ascx" />
 <div class="container">
     <div class="row">

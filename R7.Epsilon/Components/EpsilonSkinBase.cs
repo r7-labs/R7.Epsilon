@@ -45,6 +45,8 @@ namespace R7.Epsilon.Components
 
         protected DnnCssInclude skinCSS;
 
+        protected HyperLink linkSkipToContent;
+
         protected HyperLink linkA11yVersion;
 
         #endregion
@@ -106,6 +108,10 @@ namespace R7.Epsilon.Components
         protected override void OnInit (EventArgs e)
         {
             base.OnInit (e);
+
+            if (linkSkipToContent != null) {
+                linkSkipToContent.Text = Localizer.GetString ("SkipToContent.Text");    
+            }
 
             // init accessibility button
             if (linkA11yVersion != null)
