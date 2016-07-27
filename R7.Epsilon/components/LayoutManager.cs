@@ -72,8 +72,7 @@ namespace R7.Epsilon.Components
             foreach (var layoutFile in layoutFiles) {
                 if (File.Exists (layoutFile)) {
                     try {
-                        var layout = new Layout ();
-                        layout.Panes = MarkupParser.ParseLayout (File.ReadAllText (layoutFile));
+                        var layout = MarkupParser.ParseLayout (File.ReadAllText (layoutFile));
                         layoutCollection.Add (Path.GetFileNameWithoutExtension (layoutFile), layout);
                     }
                     catch (Exception ex) {

@@ -49,10 +49,10 @@ namespace R7.Epsilon.Components
             return null;
         }
 
-        public static List<DynamicPane> ParseLayout (string markup)
+        public static Layout ParseLayout (string markup)
         {
             const string runatServer = "runat=\"server\"";
-            var listPanes = new List<DynamicPane> ();
+            var layout = new Layout ();
             var prevEndPaneIndex = 0;
 
             // find first pane
@@ -68,7 +68,7 @@ namespace R7.Epsilon.Components
 
                 prevEndPaneIndex = endPaneIndex;
 
-                listPanes.Add (pane);
+                layout.Panes.Add (pane);
 
                 if (endPaneIndex >= (markup.Length - 1)) {
                     break;
@@ -78,11 +78,11 @@ namespace R7.Epsilon.Components
                 paneIndex = markup.IndexOf (runatServer, prevEndPaneIndex, StringComparison.Ordinal);
             }
 
-            if (listPanes.Count > 0) {
-                listPanes [listPanes.Count - 1].MarkupAfter = markup.Substring (prevEndPaneIndex);
+            if (layout.Panes.Count > 0) {
+                layout.Panes [layout.Panes.Count - 1].MarkupAfter = markup.Substring (prevEndPaneIndex);
             }
 
-            return listPanes;
+            return layout;
         }
     }
 }
