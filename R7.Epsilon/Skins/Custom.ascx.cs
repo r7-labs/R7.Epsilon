@@ -54,36 +54,39 @@ namespace R7.Epsilon
                     // TODO: Add test to ensure that default layout exists
                     var layoutName = (layoutSetting != null)? (string) layoutSetting : "Default";
                    
-                    var listPanes = LayoutManager.GetLayout (PortalSettings.Current.PortalId, layoutName).Panes;
+                    var layout = LayoutManager2.GetLayout (PortalSettings.Current.PortalId, layoutName);
+                    if (layout != null) {
+                        var listPanes = layout.Panes;
                         
-                    // create and insert pane controls
-                    var insertIndex = Controls.IndexOf (placeDynamicPanes);
-                    foreach (var pane in listPanes) {
+                        // create and insert pane controls
+                        var insertIndex = Controls.IndexOf (placeDynamicPanes);
+                        foreach (var pane in listPanes) {
 
-                        var paneControl = new HtmlGenericControl (pane.Tag);
-                        paneControl.ID = pane.ID;
+                            var paneControl = new HtmlGenericControl (pane.Tag);
+                            paneControl.ID = pane.ID;
 
-                        if (!string.IsNullOrEmpty (pane.CssClass)) {
-                            paneControl.Attributes.Add ("class", pane.CssClass);
-                        }
+                            if (!string.IsNullOrEmpty (pane.CssClass)) {
+                                paneControl.Attributes.Add ("class", pane.CssClass);
+                            }
 
-                        if (!string.IsNullOrEmpty (pane.ContainerType)) {
-                            paneControl.Attributes.Add ("containertype", pane.ContainerType);
-                        }
+                            if (!string.IsNullOrEmpty (pane.ContainerType)) {
+                                paneControl.Attributes.Add ("containertype", pane.ContainerType);
+                            }
 
-                        if (!string.IsNullOrEmpty (pane.ContainerName)) {
-                            paneControl.Attributes.Add ("containername", pane.ContainerName);
-                        }
+                            if (!string.IsNullOrEmpty (pane.ContainerName)) {
+                                paneControl.Attributes.Add ("containername", pane.ContainerName);
+                            }
 
-                        if (!string.IsNullOrEmpty (pane.ContainerSrc)) {
-                            paneControl.Attributes.Add ("containersrc", pane.ContainerSrc);
-                        }
+                            if (!string.IsNullOrEmpty (pane.ContainerSrc)) {
+                                paneControl.Attributes.Add ("containersrc", pane.ContainerSrc);
+                            }
 
-                        Controls.AddAt (insertIndex++, new LiteralControl (pane.MarkupBefore));
-                        Controls.AddAt (insertIndex++, paneControl);
+                            Controls.AddAt (insertIndex++, new LiteralControl (pane.MarkupBefore));
+                            Controls.AddAt (insertIndex++, paneControl);
 
-                        if (!string.IsNullOrEmpty (pane.MarkupAfter)) {
-                            Controls.AddAt (insertIndex++, new LiteralControl (pane.MarkupAfter));
+                            if (!string.IsNullOrEmpty (pane.MarkupAfter)) {
+                                Controls.AddAt (insertIndex++, new LiteralControl (pane.MarkupAfter));
+                            }
                         }
                     }
                 }
@@ -97,7 +100,7 @@ namespace R7.Epsilon
 
         protected void buttonTestPostBack_Click (object sender, EventArgs e)
         {
-            LayoutManager.Reset ();
+            LayoutManager2.Reset ();
             Response.Redirect (Globals.NavigateURL ());
         }
     }

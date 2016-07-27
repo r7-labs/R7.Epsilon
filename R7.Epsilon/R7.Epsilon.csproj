@@ -214,6 +214,7 @@
     <Compile Include="components\DynamicPane.cs" />
     <Compile Include="components\LayoutManager.cs" />
     <Compile Include="components\Layout.cs" />
+    <Compile Include="components\LayoutManager2.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Containers\Blank.ascx" />
