@@ -187,7 +187,7 @@
                 <div class="col-md-10 col-sm-8 col-xs-12 skin-terms">
                     <div>
                         <dnn:COPYRIGHT runat="server" /> |
-                        <span class="skin-copyright"><%= Localizer.GetString ("SkinCopyright.Text") %></span>
+                        <asp:Label runat="server" CssClass="skin-copyright" Text='<%# Localizer.GetString ("SkinCopyright.Text") %>' />
                         <% if (Config.ShowTerms) { %> | <dnn:TERMS runat="server" /> <% } %>
                         <% if (Config.ShowPrivacy) { %> | <dnn:PRIVACY runat="server" /> <% } %>
                     </div>
