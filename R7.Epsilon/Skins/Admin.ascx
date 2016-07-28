@@ -181,21 +181,9 @@
     <div class="skin-footer-last">
         <div class="container">
             <div class="row">
-                <div class="col-md-2 col-sm-4 col-xs-12 skin-footer-88x31-buttons">
-                    <skin:YCYCOUNTER runat="server" />
-                </div>
+                <div class="col-md-2 col-sm-4 col-xs-12 skin-footer-88x31-buttons"></div>
                 <div class="col-md-10 col-sm-8 col-xs-12 skin-terms">
-                    <div>
-                        <dnn:COPYRIGHT runat="server" /> |
-                        <asp:Label runat="server" CssClass="skin-copyright" Text='<%# Localizer.GetString ("SkinCopyright.Text") %>' />
-                        <asp:Literal runat="server" Visible='<%# Config.ShowTerms %>' Text="|" />
-                        <dnn:TERMS   runat="server" Visible='<%# Config.ShowTerms %>' />
-                        <asp:Literal runat="server" Visible='<%# Config.ShowPrivacy %>' Text="|" />
-                        <dnn:PRIVACY runat="server" Visible='<%# Config.ShowPrivacy %>' />
-                    </div>
-                    <div>
-                        <asp:Label runat="server" Text='<%# Localizer.GetString ("CopyrightNote.Text") %>' />
-                    </div>
+                    <asp:Label runat="server" CssClass="skin-copyright" Text='<%# Localizer.GetString ("SkinCopyright.Text") %>' />
                 </div>
             </div>
         </div>
