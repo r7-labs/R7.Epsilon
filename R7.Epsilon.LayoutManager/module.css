@@ -1,0 +1,9 @@
+﻿/* Place CSS for view control here */
+
+.R7.Epsilon.LayoutManager_ContentList { width:100% }             
+.R7.Epsilon.LayoutManager_ContentListItem { text-align: left }
+.R7.Epsilon.LayoutManager_UserName { font-weight:bold }
+.R7.Epsilon.LayoutManager_CreateOnDate { font-style:italic }
+.R7.Epsilon.LayoutManager_Content { clear:both }
+
+

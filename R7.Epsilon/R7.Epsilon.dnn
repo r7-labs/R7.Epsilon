@@ -32,6 +32,14 @@
 						</resourceFile>
 					</resourceFiles>
 				</component>
+                <component type="ResourceFile">
+                    <resourceFiles>
+                        <basePath>DesktopModules\R7.Epsilon</basePath>
+                        <resourceFile>
+                            <name>Resources_Modules.zip</name>
+                        </resourceFile>
+                    </resourceFiles>
+                </component>
 				<component type="Assembly">
 					<assemblies>
 						<basePath>bin</basePath>
@@ -75,5 +83,69 @@
 				</component>
 			</components>
 		</package>
-	</packages>
+         <package name="R7.Epsilon.LayoutManager" type="Module" version="01.07.00">
+            <friendlyName>R7.Epsilon.LayoutManager</friendlyName>
+            <description>Module to manage R7.Epsilon skin layouts.</description>
+            <owner>
+                <name>Roman M. Yagodin</name>
+                <organization>R7.Solutions</organization>
+                <url>https://github.com/roman-yagodin/R7.Epsilon</url>
+                <email>roman.yagodin@gmail.com</email>
+            </owner>
+            <license src="license.htm" />
+            <releaseNotes src="releaseNotes.htm" />
+            <components>
+                <component type="Module">
+                    <desktopModule>
+                        <moduleName>R7.Epsilon.LayoutManager</moduleName>
+                        <foldername>R7.Epsilon.LayoutManager</foldername>
+                        <businessControllerClass>R7.Epsilon.LayoutManager.Components.LayoutManagerController</businessControllerClass>
+                        <supportedFeatures />
+                        <moduleDefinitions>
+                            <moduleDefinition>
+                                <friendlyName>R7.Epsilon.LayoutManager</friendlyName>
+                                <definitionName>R7.Epsilon.LayoutManager</definitionName>
+                                <defaultCacheTime>0</defaultCacheTime>
+                                <moduleControls>
+                                    <moduleControl>
+                                        <controlKey />
+                                        <controlSrc>DesktopModules/R7.Epsilon/ViewLayoutManager.ascx</controlSrc>
+                                        <controlTitle />
+                                        <controlType>View</controlType>
+                                        <iconFile />
+                                        <helpUrl />
+                                        <supportsPartialRendering>False</supportsPartialRendering>
+                                        <supportsPopUps>False</supportsPopUps>
+                                        <viewOrder>0</viewOrder>
+                                    </moduleControl>
+                                    <moduleControl>
+                                        <controlKey>Edit</controlKey>
+                                        <controlSrc>DesktopModules/R7.Epsilon/R7.Epsilon.LayoutManager/EditLayout.ascx</controlSrc>
+                                        <supportsPartialRendering>False</supportsPartialRendering>
+                                        <supportsPopUps>True</supportsPopUps>
+                                        <controlTitle>Edit</controlTitle>
+                                        <controlType>Edit</controlType>
+                                        <iconFile />
+                                        <helpUrl />
+                                        <supportsPartialRendering>False</supportsPartialRendering>
+                                        <supportsPopUps>True</supportsPopUps>
+                                        <viewOrder>0</viewOrder>
+                                    </moduleControl>
+                                </moduleControls>
+                            </moduleDefinition>
+                        </moduleDefinitions>
+                    </desktopModule>
+                </component>
+                <component type="Assembly">
+                    <assemblies>
+                        <basePath>bin</basePath>
+                        <assembly>
+                            <path>bin</path>
+                            <name>R7.Epsilon.LayoutManager.dll</name>
+                        </assembly>
+                    </assemblies>
+                </component>
+            </components>
+        </package>
+    </packages>
 </dotnetnuke>

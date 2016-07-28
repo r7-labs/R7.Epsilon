@@ -51,6 +51,7 @@
     <DnnSkinsPath>$(DnnInstallPath)\Portals\_default\Skins</DnnSkinsPath>
     <DnnContainersPath>$(DnnInstallPath)\Portals\_default\Containers</DnnContainersPath>
     <DnnMenusPath>$(DnnInstallPath)\DesktopModules\DDRMenu</DnnMenusPath>
+    <DnnModulesPath>$(DnnInstallPath)\DesktopModules</DnnModulesPath>
   </PropertyGroup>
   <Import Project="Install.targets" />
   <Import Project="Customizations.targets" />
@@ -67,6 +68,10 @@
     <ProjectReference Include="..\R7.Epsilon.Tests\R7.Epsilon.Tests.csproj">
       <Project>{46155C3C-2950-4AA1-AEDD-B5A0C4F4C421}</Project>
       <Name>R7.Epsilon.Tests</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\R7.Epsilon.LayoutManager\R7.Epsilon.LayoutManager.csproj">
+      <Project>{E1127917-284E-4960-94A2-E357E2BDAC76}</Project>
+      <Name>R7.Epsilon.LayoutManager</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

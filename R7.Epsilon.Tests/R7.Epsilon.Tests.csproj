@@ -56,6 +56,10 @@
       <Project>{F7F17F2A-6F32-4AC4-B2EE-1C637D0A26EF}</Project>
       <Name>R7.Epsilon</Name>
     </ProjectReference>
+    <ProjectReference Include="..\R7.Epsilon.LayoutManager\R7.Epsilon.LayoutManager.csproj">
+      <Project>{E1127917-284E-4960-94A2-E357E2BDAC76}</Project>
+      <Name>R7.Epsilon.LayoutManager</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DefaultPortalConfigTests.cs" />
