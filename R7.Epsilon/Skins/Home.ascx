@@ -253,8 +253,10 @@
                     <div>
                         <dnn:COPYRIGHT runat="server" /> |
                         <asp:Label runat="server" CssClass="skin-copyright" Text='<%# Localizer.GetString ("SkinCopyright.Text") %>' />
-                        <% if (Config.ShowTerms) { %> | <dnn:TERMS runat="server" /> <% } %>
-                        <% if (Config.ShowPrivacy) { %> | <dnn:PRIVACY runat="server" /> <% } %>
+                        <asp:Literal runat="server" Visible='<%# Config.ShowTerms %>' Text="|" />
+                        <dnn:TERMS   runat="server" Visible='<%# Config.ShowTerms %>' />
+                        <asp:Literal runat="server" Visible='<%# Config.ShowPrivacy %>' Text="|" />
+                        <dnn:PRIVACY runat="server" Visible='<%# Config.ShowPrivacy %>' />
                     </div>
                     <div>
                         <asp:Label runat="server" Text='<%# Localizer.GetString ("CopyrightNote.Text") %>' />
