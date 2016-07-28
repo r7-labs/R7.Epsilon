@@ -215,6 +215,7 @@
     <Compile Include="Components\LayoutManager.cs" />
     <Compile Include="Components\Layout.cs" />
     <Compile Include="Components\LayoutManager2.cs" />
+    <Compile Include="Components\LayoutChecker.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Containers\Blank.ascx" />
