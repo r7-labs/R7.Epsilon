@@ -38,7 +38,7 @@
 <dnn:META ID="mobileScale" runat="server" Name="viewport" Content="width=device-width,initial-scale=1" />
 <dnn:DnnCssInclude ID="bootStrapCSS" runat="server" FilePath="css/bootstrap.min.css" PathNameAlias="SkinPath" Priority="14" />
 <dnn:DnnCssInclude ID="bootStrapThemeCSS" runat="server" FilePath="css/bootstrap-theme.min.css" PathNameAlias="SkinPath" Priority="14" />
-<dnn:DnnCssInclude id="skinCSS" runat="server" FilePath="css/default-skin.min.css" PathNameAlias="SkinPath" />
+<dnn:DnnCssInclude id="skinCSS" runat="server" FilePath="<%# Config.SkinCss %>" PathNameAlias="SkinPath" />
 <dnn:DnnCssInclude runat="server" FilePath="~/Resources/Shared/components/flowplayer/skin/minimalist.css" />
 <dnn:JQUERY ID="dnnjQuery" runat="server" jQueryHoverIntent="true" />
 <dnn:DnnJsInclude ID="bootstrapJS" runat="server" FilePath="js/bootstrap.min.js" PathNameAlias="SkinPath" Priority="10" ForceProvider="DnnFormBottomProvider" />
@@ -52,7 +52,7 @@
 <header>
     <div class="container">
         <div class="row">
-            <a href="#dnn_TopPane" class="sr-only sr-only-focusable">{{SkipToContent.Text}}</a>
+            <asp:HyperLink runat="server" href="#content" CssClass="sr-only sr-only-focusable" Text='<%# Localizer.GetString ("SkipToContent.Text") %>' />
             <skin:BROWSERCHECK runat="server" />
         </div>
         <div class="row">
@@ -82,7 +82,7 @@
                 <skin:LOGOMOBILE runat="server" />
             </div>
             <button type="button" class="navbar-toggle skin-top-menu-toggle" data-toggle="collapse" data-target=".skin-top-menu">
-                <span class="sr-only">{{ToggleNavigation.Text}}</span>
+                <asp:Label runat="server" CssClass="sr-only" Text='<%# Localizer.GetString ("ToggleNavigation.Text") %>' />
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -136,6 +136,7 @@
         </div>
     </nav>
 </header>
+<a id="content" name="content"></a>
 <asp:Button id="buttonTestPostBack" runat="server" OnClick="buttonTestPostBack_Click" Text="Test PostBack" />
 <asp:PlaceHolder id="placeDynamicPanes" runat="server"></asp:PlaceHolder>
 <div class="container">
@@ -160,7 +161,7 @@
                     </div>
                     <div class="row">
                         <div class="skin-footer-buttons col-sm-6 hidden-xs">
-                            <dnn:BANNER id="dnnBanner1" runat="server" GroupName="{{Config.FooterButtonsGroupName}}" BannerTypeId="4" BannerCount="3" Orientation="H" AllowNullBannerType="true" />    
+                            <dnn:BANNER id="dnnBanner1" runat="server" GroupName="<%# Config.FooterButtonsGroupName %>" BannerTypeId="4" BannerCount="3" Orientation="H" AllowNullBannerType="true" />    
                         </div>
                         <skin:FOOTERCONTENT runat="server" CssClass="skin-footer-content col-sm-6" ResourceKey="FooterPane1.Content" />
                     </div>
@@ -177,17 +178,24 @@
                     <skin:YCYCOUNTER runat="server" />
                 </div>
                 <div class="col-md-10 col-sm-8 col-xs-12 skin-terms">
-                    <dnn:COPYRIGHT runat="server" /> |
-                    <span class="skin-copyright">{{SkinCopyright.Text}}</span>
-                     | <dnn:TERMS runat="server" />
-                     | <dnn:PRIVACY runat="server" />
+                    <div>
+                        <dnn:COPYRIGHT runat="server" /> |
+                        <asp:Label runat="server" CssClass="skin-copyright" Text='<%# Localizer.GetString ("SkinCopyright.Text") %>' />
+                        <asp:Literal runat="server" Visible='<%# Config.ShowTerms %>' Text="|" />
+                        <dnn:TERMS   runat="server" Visible='<%# Config.ShowTerms %>' />
+                        <asp:Literal runat="server" Visible='<%# Config.ShowPrivacy %>' Text="|" />
+                        <dnn:PRIVACY runat="server" Visible='<%# Config.ShowPrivacy %>' />
+                    </div>
+                    <div>
+                        <asp:Label runat="server" Text='<%# Localizer.GetString ("CopyrightNote.Text") %>' />
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </footer>
 <div class="skin-float-button-wrapper">
-    <a href="#" class="skin-float-button skin-float-button-up" title="{{ButtonUp.Title}}" style="display:none" data-toggle="tooltip" data-placement="left" data-container="body"></a>
+    <asp:HyperLink runat="server" href="#" CssClass="skin-float-button skin-float-button-up" Style="display:none" ToolTip='<%# Localizer.GetString ("ButtonUp.Title") %>' data-toggle="tooltip" data-placement="left" data-container="body" />
     <skin:FEEDBACKBUTTON runat="server" CssClass="skin-float-button skin-float-button-feedback" Target="_blank" />
 </div>
 <skin:SOCIALSHARESCRIPTS runat="server" />
