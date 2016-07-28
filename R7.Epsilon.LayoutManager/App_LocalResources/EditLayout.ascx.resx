@@ -1,18 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-    <data xml:space="preserve" name="lblContent.Text">
-    <value>Content:</value>
-  </data>
-    <data xml:space="preserve" name="lblContent.Help">
-    <value>Enter the Content</value>
-  </data>
-    <data xml:space="preserve" name="valContent.ErrorMessage">
-    <value>&lt;br&gt;Content is required</value>
-  </data>
-    <data xml:space="preserve" name="ModuleHelp.Text">
-    <value>&lt;P&gt;A R7.Epsilon.LayoutManager module&lt;/P&gt;</value>
-  </data>
-    <data xml:space="preserve" name="ControlTitle_edit.Text">
-    <value>Edit R7.Epsilon.LayoutManager</value>
-  </data>
+	<data name="labelLayoutName.Text" xml:space="preserve"> 
+        <value>Layout Name:</value>
+    </data>
+	<data name="labelLayoutName.Help" xml:space="preserve">
+        <value>Name of the layout file, without extension</value>
+    </data>
+	<data name="valContent.ErrorMessage" xml:space="preserve">
+        <value>&lt;br&gt;Content is required</value>
+    </data>
+	<data name="ModuleHelp.Text" xml:space="preserve">
+        <value>&lt;P&gt;A R7.Epsilon.LayoutManager module&lt;/P&gt;</value>
+    </data>
+	<data name="ControlTitle_edit.Text" xml:space="preserve">
+        <value>Edit Layout</value>
+    </data>
 </root>

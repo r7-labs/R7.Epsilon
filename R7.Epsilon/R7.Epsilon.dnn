@@ -124,7 +124,7 @@
                                         <supportsPartialRendering>False</supportsPartialRendering>
                                         <supportsPopUps>True</supportsPopUps>
                                         <controlTitle>Edit</controlTitle>
-                                        <controlType>Edit</controlType>
+                                        <controlType>Admin</controlType>
                                         <iconFile />
                                         <helpUrl />
                                         <supportsPartialRendering>False</supportsPartialRendering>

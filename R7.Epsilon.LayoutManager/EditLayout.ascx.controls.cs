@@ -13,7 +13,8 @@ namespace R7.Epsilon.LayoutManager
         protected LinkButton buttonUpdate;
         protected LinkButton buttonDelete;
         protected HyperLink linkCancel;
-        protected TextEditor txtContent;
+        protected TextBox layoutEditor;
+        protected TextBox textLayoutName;
         protected ModuleAuditControl ctlAudit;
     }
 }

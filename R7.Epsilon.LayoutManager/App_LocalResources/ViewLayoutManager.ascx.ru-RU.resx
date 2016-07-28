@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-    <data xml:space="preserve" name="AddContent.Action">
-    <value>Добавить содержимое</value>
-  </data>
-    <data xml:space="preserve" name="ModuleHelp.Text">
-    <value>&lt;P&gt; Модуль R7.Epsilon.LayoutManager&lt;/P&gt;</value>
-  </data>
-    <data xml:space="preserve" name="DefaultContent.Text">
-    <value>Что-то вместо содержимого</value>
-  </data>
-    <data xml:space="preserve" name="NothingToDisplay.Text">
-      <value>Нечего отображать, добавьте элементы.</value>
-  </data>
+    <data name="AddLayout.Action" xml:space="preserve">
+        <value>Добавить лейаут</value>
+    </data>
+    <data name="ModuleHelp.Text" xml:space="preserve">
+        <value>&lt;P&gt; Модуль R7.Epsilon.LayoutManager&lt;/P&gt;</value>
+    </data>
+    <data name="DefaultContent.Text" xml:space="preserve">
+        <value>Что-то вместо содержимого</value>
+    </data>
+    <data name="NothingToDisplay.Text" xml:space="preserve">
+        <value>Нечего отображать, добавьте элементы.</value>
+    </data>
 </root>

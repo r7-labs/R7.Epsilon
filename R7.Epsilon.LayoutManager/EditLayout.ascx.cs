@@ -25,6 +25,7 @@
 // THE SOFTWARE.
 
 using System;
+using System.IO;
 using DotNetNuke.Common;
 using DotNetNuke.Entities.Modules;
 using DotNetNuke.Services.Exceptions;
@@ -63,6 +64,19 @@ namespace R7.Epsilon.LayoutManager
             {
                 if (!IsPostBack)
                 {
+                    var layoutName = Request.QueryString ["layoutName"];
+                    if (string.IsNullOrEmpty (layoutName)) {
+                        var layoutFile = Path.Combine (Globals.HostMapPath, "Skins\\R7.Epsilon\\Layouts", "Default.xml");
+                        if (File.Exists (layoutFile)) {
+                            layoutEditor.Text = "<!-- Default layout template -->\n" + File.ReadAllText (layoutFile);
+                        }
+                    } else {
+                        var layoutFile = Path.Combine (Globals.HostMapPath, "Skins\\R7.Epsilon\\Layouts", layoutName + ".xml");
+                        if (File.Exists (layoutFile)) {
+                            layoutEditor.Text = File.ReadAllText (layoutFile);
+                            textLayoutName.Text = layoutName;
+                        }
+                    }
                 }
             } 
             catch (Exception ex)
@@ -84,6 +98,11 @@ namespace R7.Epsilon.LayoutManager
         {
             try
             {
+                var layoutName = textLayoutName.Text.Trim ();
+
+                var layoutFile = Path.Combine (Globals.HostMapPath, "Skins\\R7.Epsilon\\Layouts", layoutName + ".xml");
+                File.WriteAllText (layoutFile, layoutEditor.Text);
+
                 ModuleController.SynchronizeModule (ModuleId);
                 Response.Redirect (Globals.NavigateURL (), true);
             }

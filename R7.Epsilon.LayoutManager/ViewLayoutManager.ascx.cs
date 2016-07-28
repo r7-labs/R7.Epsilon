@@ -26,11 +26,13 @@
 
 using System;
 using DotNetNuke.Entities.Modules;
+using DotNetNuke.Entities.Modules.Actions;
 using DotNetNuke.Services.Exceptions;
+using DotNetNuke.Entities.Icons;
 
 namespace R7.Epsilon.LayoutManager
 {
-    public partial class ViewLayoutManager : PortalModuleBase
+    public partial class ViewLayoutManager : PortalModuleBase, IActionable
     {
         #region Handlers
 
@@ -52,6 +54,32 @@ namespace R7.Epsilon.LayoutManager
             {
                 Exceptions.ProcessModuleLoadException (this, ex);
             }
+        }
+
+        #endregion
+
+        #region IActionable implementation
+
+        public ModuleActionCollection ModuleActions {
+            get {
+                var actions = new ModuleActionCollection ();
+
+                actions.Add (new ModuleAction (
+                    GetNextActionID (),
+                    LocalizeString ("AddLayout.Action"),
+                    ModuleActionType.AddContent,
+                    "",
+                    IconController.IconURL ("Add"),
+                    EditUrl ("Edit"),
+                    "",
+                    false,
+                    DotNetNuke.Security.SecurityAccessLevel.Admin,
+                    true
+                ));
+
+                return actions;
+            }
+
         }
 
         #endregion
