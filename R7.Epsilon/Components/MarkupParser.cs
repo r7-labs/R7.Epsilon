@@ -51,6 +51,8 @@ namespace R7.Epsilon.Components
 
         public static Layout ParseLayout (string markup)
         {
+            // TODO: Add support for <div id="SomePane" runat="server" ...>...</div> markup
+
             const string runatServer = "runat=\"server\"";
             var layout = new Layout ();
             var prevEndPaneIndex = 0;
