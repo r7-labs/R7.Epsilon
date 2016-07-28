@@ -49,7 +49,7 @@
 <header>
     <div class="container">
         <div class="row">
-            <asp:HyperLink id="linkSkipToContent" runat="server" href="#content" CssClass="sr-only sr-only-focusable" />
+            <asp:HyperLink runat="server" href="#content" CssClass="sr-only sr-only-focusable" Text='<%# Localizer.GetString ("SkipToContent.Text") %>' />
             <skin:BROWSERCHECK runat="server" />
         </div>
         <div class="row">
