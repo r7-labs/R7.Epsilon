@@ -150,7 +150,9 @@
                         <% if (Config.ShowTerms) { %> | <dnn:TERMS runat="server" /> <% } %>
                         <% if (Config.ShowPrivacy) { %> | <dnn:PRIVACY runat="server" /> <% } %>
                     </div>
-                    <div><%= Localizer.GetString ("CopyrightNote.Text") %></div>
+                    <div>
+                        <asp:Label runat="server" Text='<%# Localizer.GetString ("CopyrightNote.Text") %>' />
+                    </div>
                 </div>
             </div>
         </div>
