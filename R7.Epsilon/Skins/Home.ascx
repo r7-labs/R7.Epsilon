@@ -79,7 +79,7 @@
                 <skin:LOGOMOBILE runat="server" />
             </div>
             <button type="button" class="navbar-toggle skin-top-menu-toggle" data-toggle="collapse" data-target=".skin-top-menu">
-                <span class="sr-only"><%: Localizer.GetString ("ToggleNavigation.Text") %></span>
+                <asp:Label runat="server" CssClass="sr-only" Text='<%# Localizer.GetString ("ToggleNavigation.Text") %>' />
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
