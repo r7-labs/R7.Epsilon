@@ -202,7 +202,7 @@
 <script type="text/javascript">
 (function ($) {
     $(function () {
-        $("ul#ControlEditPageMenu").find ("ul").append ("<li><a href='#'>Adjust Panes Layout</a></li>");
+        $("ul#ControlEditPageMenu").find ("ul").append ("<li><a href='javascript:dnnModal.show(\"http://dnn.local/Division/ctl/EditDivision/mid/493/division_id/2/returntabid/97?popUp=true\",/*showReturn*/false,550,950,true,\"\")'>Adjust Panes Layout</a></li>");
     });
 }(jQuery));
 </script>
