@@ -24,4 +24,10 @@
 	<data name="NoLayouts.Info" xml:space="preserve">
         <value>There is no layouts found for selected portal.</value>
     </data>
+	<data name="LayoutFileNotFound.Error" xml:space="preserve">
+        <value>Cannot find specified layout file.</value>
+    </data>
+    <data name="InvalidQueryString.Error" xml:space="preserve">
+        <value>Query string is invalid.</value>
+    </data>
 </root>

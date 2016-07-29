@@ -30,6 +30,9 @@ using DotNetNuke.Common;
 using DotNetNuke.Entities.Modules;
 using DotNetNuke.Services.Exceptions;
 using DotNetNuke.Services.Localization;
+using DotNetNuke.UI.Skins;
+using DotNetNuke.UI.Skins.Controls;
+using R7.Epsilon.LayoutManager.Components;
 
 namespace R7.Epsilon.LayoutManager
 {
@@ -62,23 +65,54 @@ namespace R7.Epsilon.LayoutManager
 
             try {
                 if (!IsPostBack) {
-                    var layoutName = Request.QueryString ["layoutName"];
-                    if (string.IsNullOrEmpty (layoutName)) {
-                        var layoutFile = Path.Combine (Globals.HostMapPath, "Skins\\R7.Epsilon\\Layouts", "Default.xml");
-                        if (File.Exists (layoutFile)) {
-                            layoutEditor.Text = "<!-- Default layout template -->\n" + File.ReadAllText (layoutFile);
+                    var layoutNameStr = Request.QueryString ["layoutname"];
+                    var layoutPortalIdStr = Request.QueryString ["layoutportalid"];
+
+                    // at least portalid should be specified
+                    if (!string.IsNullOrEmpty (layoutPortalIdStr)) {
+
+                        var layoutName = layoutNameStr;
+                        var layoutPortalId = int.Parse (layoutPortalIdStr);
+                        var codePrefix = string.Empty;
+                        var layoutFile = string.Empty;
+
+                        if (!string.IsNullOrEmpty (layoutName)) {
+                            layoutFile = LayoutController.GetLayoutFileName (layoutName, layoutPortalId);
+                        } 
+                        else {
+                            // new template
+                            codePrefix = "<!-- Default layout template -->\n";
+                            layoutFile = LayoutController.GetLayoutFileName ("Default", layoutPortalId);
+
+                            // if it already host portal, don't do anything
+                            if (layoutPortalId != -1 && !File.Exists (layoutFile)) {
+                                layoutFile = LayoutController.GetLayoutFileName ("Default", -1);
+                            }
                         }
-                    } else {
-                        var layoutFile = Path.Combine (Globals.HostMapPath, "Skins\\R7.Epsilon\\Layouts", layoutName + ".xml");
+
                         if (File.Exists (layoutFile)) {
-                            layoutEditor.Text = File.ReadAllText (layoutFile);
+                            layoutEditor.Text = codePrefix + File.ReadAllText (layoutFile);
                             textLayoutName.Text = layoutName;
+                            hiddenPortalId.Value = layoutPortalId.ToString ();
+                        } 
+                        else {
+                            ErrorMessage ("LayoutFileNotFound.Error");
                         }
+                    } 
+                    else {
+                        // portalid argument is required, but don't expose it
+                        ErrorMessage ("InvalidQueryString.Error");
                     }
                 }
-            } catch (Exception ex) {
+            } 
+            catch (Exception ex) {
                 Exceptions.ProcessModuleLoadException (this, ex);
             }
+        }
+
+        protected void ErrorMessage (string messageResource)
+        {
+            Skin.AddModuleMessage (this, LocalizeString (messageResource), ModuleMessage.ModuleMessageType.RedError);
         }
 
         /// <summary>
@@ -94,13 +128,15 @@ namespace R7.Epsilon.LayoutManager
         {
             try {
                 var layoutName = textLayoutName.Text.Trim ();
+                var layoutPortaId = int.Parse (hiddenPortalId.Value);
 
-                var layoutFile = Path.Combine (Globals.HostMapPath, "Skins\\R7.Epsilon\\Layouts", layoutName + ".xml");
+                var layoutFile = LayoutController.GetLayoutFileName (layoutName, layoutPortaId);
                 File.WriteAllText (layoutFile, layoutEditor.Text);
 
                 ModuleController.SynchronizeModule (ModuleId);
                 Response.Redirect (Globals.NavigateURL (), true);
-            } catch (Exception ex) {
+            } 
+            catch (Exception ex) {
                 Exceptions.ProcessModuleLoadException (this, ex);
             }
         }
@@ -117,9 +153,17 @@ namespace R7.Epsilon.LayoutManager
         protected void buttonDelete_Click (object sender, EventArgs e)
         {
             try {
+
+                var layoutName = textLayoutName.Text.Trim ();
+                var layoutPortaId = int.Parse (hiddenPortalId.Value);
+
+                var layoutFile = LayoutController.GetLayoutFileName (layoutName, layoutPortaId);
+                File.Delete (layoutFile);
+
                 ModuleController.SynchronizeModule (ModuleId);
                 Response.Redirect (Globals.NavigateURL (), true);
-            } catch (Exception ex) {
+            } 
+            catch (Exception ex) {
                 Exceptions.ProcessModuleLoadException (this, ex);
             }
         }

@@ -24,7 +24,7 @@
             		<asp:TemplateField>
                         <ItemTemplate>
                             <asp:HyperLink runat="server" IconKey="Edit" 
-								NavigateUrl='<%# EditUrl ("layoutName", (string) Eval ("Name"), "Edit", "portalId", ((int) Eval ("PortalId")).ToString ()) %>' />
+								NavigateUrl='<%# EditUrl ("layoutname", (string) Eval ("Name"), "Edit", "layoutportalid", ((int) Eval ("PortalId")).ToString ()) %>' />
                         </ItemTemplate>
                     </asp:TemplateField>
             		<asp:BoundField DataField="Name" HeaderText="Layout Name" />
