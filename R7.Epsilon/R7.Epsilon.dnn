@@ -109,7 +109,7 @@
                                 <moduleControls>
                                     <moduleControl>
                                         <controlKey />
-                                        <controlSrc>DesktopModules/R7.Epsilon/ViewLayoutManager.ascx</controlSrc>
+                                        <controlSrc>DesktopModules/R7.Epsilon/R7.Epsilon.LayoutManager/ViewLayoutManager.ascx</controlSrc>
                                         <controlTitle />
                                         <controlType>View</controlType>
                                         <iconFile />
