@@ -69,9 +69,11 @@
     <Compile Include="EditLayout.ascx.controls.cs">
       <DependentUpon>EditLayout.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Models\LayoutInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="js\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="module.css" />

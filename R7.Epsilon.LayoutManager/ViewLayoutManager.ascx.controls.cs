@@ -11,5 +11,6 @@ namespace R7.Epsilon.LayoutManager
 {
     public partial class ViewLayoutManager
     {
+        protected GridView gridLayouts;
     }
 }

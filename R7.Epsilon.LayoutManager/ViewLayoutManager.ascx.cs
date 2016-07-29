@@ -25,10 +25,15 @@
 // THE SOFTWARE.
 
 using System;
+using System.IO;
+using System.Linq;
+using System.Web.UI.WebControls;
+using DotNetNuke.Common;
+using DotNetNuke.Entities.Icons;
 using DotNetNuke.Entities.Modules;
 using DotNetNuke.Entities.Modules.Actions;
 using DotNetNuke.Services.Exceptions;
-using DotNetNuke.Entities.Icons;
+using R7.Epsilon.LayoutManager.Models;
 
 namespace R7.Epsilon.LayoutManager
 {
@@ -46,10 +51,25 @@ namespace R7.Epsilon.LayoutManager
 
             try {
                 if (!IsPostBack) {
+                    
+                    var layoutFiles = Directory.GetFiles (
+                        Path.Combine (Globals.HostMapPath, "Skins", "R7.Epsilon", "Layouts"), "*.xml"
+                    );
+
+                    if (layoutFiles != null) {
+                        gridLayouts.DataSource = layoutFiles.Select (lf => new LayoutInfo (lf));
+                        gridLayouts.DataBind ();
+                    }
                 }
             } catch (Exception ex) {
                 Exceptions.ProcessModuleLoadException (this, ex);
             }
+        }
+
+        protected void gridLayouts_RowDataBound (object sender, GridViewRowEventArgs e)
+        {
+            // show or hide actions column
+            e.Row.Cells [0].Visible = IsEditable;
         }
 
         #endregion
