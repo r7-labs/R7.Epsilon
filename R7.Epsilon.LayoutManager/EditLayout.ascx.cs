@@ -36,7 +36,7 @@ namespace R7.Epsilon.LayoutManager
     public partial class EditLayout : PortalModuleBase
     {
         #region Handlers
-        
+
         /// <summary>
         /// Handles Init event for a control.
         /// </summary>
@@ -59,11 +59,9 @@ namespace R7.Epsilon.LayoutManager
         protected override void OnLoad (EventArgs e)
         {
             base.OnLoad (e);
-            
-            try
-            {
-                if (!IsPostBack)
-                {
+
+            try {
+                if (!IsPostBack) {
                     var layoutName = Request.QueryString ["layoutName"];
                     if (string.IsNullOrEmpty (layoutName)) {
                         var layoutFile = Path.Combine (Globals.HostMapPath, "Skins\\R7.Epsilon\\Layouts", "Default.xml");
@@ -78,9 +76,7 @@ namespace R7.Epsilon.LayoutManager
                         }
                     }
                 }
-            } 
-            catch (Exception ex)
-            {
+            } catch (Exception ex) {
                 Exceptions.ProcessModuleLoadException (this, ex);
             }
         }
@@ -96,8 +92,7 @@ namespace R7.Epsilon.LayoutManager
         /// </param>
         protected void buttonUpdate_Click (object sender, EventArgs e)
         {
-            try
-            {
+            try {
                 var layoutName = textLayoutName.Text.Trim ();
 
                 var layoutFile = Path.Combine (Globals.HostMapPath, "Skins\\R7.Epsilon\\Layouts", layoutName + ".xml");
@@ -105,11 +100,9 @@ namespace R7.Epsilon.LayoutManager
 
                 ModuleController.SynchronizeModule (ModuleId);
                 Response.Redirect (Globals.NavigateURL (), true);
-            }
-            catch (Exception ex)
-            {
+            } catch (Exception ex) {
                 Exceptions.ProcessModuleLoadException (this, ex);
-            }    
+            }
         }
 
         /// <summary>
@@ -123,17 +116,14 @@ namespace R7.Epsilon.LayoutManager
         /// </param>
         protected void buttonDelete_Click (object sender, EventArgs e)
         {
-            try
-            {
+            try {
                 ModuleController.SynchronizeModule (ModuleId);
                 Response.Redirect (Globals.NavigateURL (), true);
-            } 
-            catch (Exception ex)
-            {
+            } catch (Exception ex) {
                 Exceptions.ProcessModuleLoadException (this, ex);
             }
         }
-        
+
         #endregion
     }
 }

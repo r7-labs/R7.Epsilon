@@ -6,10 +6,10 @@ using DotNetNuke.UI.UserControls;
 using DotNetNuke.UI.WebControls;
 using DotNetNuke.Web.UI.WebControls;
 
-namespace R7.Epsilon.LayoutManager 
+namespace R7.Epsilon.LayoutManager
 {
     public partial class EditLayout
-    {    
+    {
         protected LinkButton buttonUpdate;
         protected LinkButton buttonDelete;
         protected HyperLink linkCancel;

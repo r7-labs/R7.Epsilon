@@ -42,16 +42,12 @@ namespace R7.Epsilon.LayoutManager
         /// <param name="e">Event args.</param>
         protected override void OnLoad (EventArgs e)
         {
-            base.OnLoad(e);
-            
-            try
-            {
-                if (!IsPostBack)
-                {
+            base.OnLoad (e);
+
+            try {
+                if (!IsPostBack) {
                 }
-            }
-            catch (Exception ex)
-            {
+            } catch (Exception ex) {
                 Exceptions.ProcessModuleLoadException (this, ex);
             }
         }
