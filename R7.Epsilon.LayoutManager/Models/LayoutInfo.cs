@@ -31,12 +31,15 @@ namespace R7.Epsilon.LayoutManager.Models
 {
     public class LayoutInfo
     {
-        public LayoutInfo (string fileName)
+        public LayoutInfo (string fileName, int portalId)
         {
             FileName = fileName;
+            PortalId = portalId;
         }
 
         public string FileName { get; set; }
+
+        public int PortalId { get; set; }
 
         public string Name 
         {

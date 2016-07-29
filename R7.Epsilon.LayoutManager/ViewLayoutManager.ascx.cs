@@ -25,6 +25,7 @@
 // THE SOFTWARE.
 
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web.UI.WebControls;
@@ -32,6 +33,7 @@ using DotNetNuke.Common;
 using DotNetNuke.Entities.Icons;
 using DotNetNuke.Entities.Modules;
 using DotNetNuke.Entities.Modules.Actions;
+using DotNetNuke.Entities.Portals;
 using DotNetNuke.Services.Exceptions;
 using R7.Epsilon.LayoutManager.Models;
 
@@ -40,6 +42,26 @@ namespace R7.Epsilon.LayoutManager
     public partial class ViewLayoutManager : PortalModuleBase, IActionable
     {
         #region Handlers
+
+        const int HOST_PORTAL_ID = -1;
+
+        /// <summary>
+        /// Handles Init event for a control
+        /// </summary>
+        /// <param name="e">Event args.</param>
+        protected override void OnInit (EventArgs e)
+        {
+            base.OnInit (e);
+
+            // get portals
+            var portals = PortalController.Instance.GetPortals ();
+
+            // insert host "portal"
+            portals.Insert (0, new PortalInfo { PortalID = HOST_PORTAL_ID, PortalName = LocalizeString ("Host.Text") });
+
+            comboPortal.DataSource = portals;
+            comboPortal.DataBind ();
+        }
 
         /// <summary>
         /// Handles Load event for a control
@@ -51,17 +73,10 @@ namespace R7.Epsilon.LayoutManager
 
             try {
                 if (!IsPostBack) {
-                    
-                    var layoutFiles = Directory.GetFiles (
-                        Path.Combine (Globals.HostMapPath, "Skins", "R7.Epsilon", "Layouts"), "*.xml"
-                    );
-
-                    if (layoutFiles != null) {
-                        gridLayouts.DataSource = layoutFiles.Select (lf => new LayoutInfo (lf));
-                        gridLayouts.DataBind ();
-                    }
+                    BindLayouts (HOST_PORTAL_ID);
                 }
-            } catch (Exception ex) {
+            } 
+            catch (Exception ex) {
                 Exceptions.ProcessModuleLoadException (this, ex);
             }
         }
@@ -70,6 +85,12 @@ namespace R7.Epsilon.LayoutManager
         {
             // show or hide actions column
             e.Row.Cells [0].Visible = IsEditable;
+        }
+
+        protected void comboPortals_SelectedIndexChanged (object sender, EventArgs e)
+        {
+            var portalId = int.Parse (comboPortal.SelectedValue);
+            BindLayouts (portalId);
         }
 
         #endregion
@@ -95,10 +116,32 @@ namespace R7.Epsilon.LayoutManager
 
                 return actions;
             }
-
         }
 
         #endregion
+
+        protected IEnumerable<LayoutInfo> GetLayouts (int portalId)
+        {
+            var mapPath = (portalId != HOST_PORTAL_ID)
+              ? PortalController.Instance.GetPortal (portalId).HomeSystemDirectoryMapPath
+              : Globals.HostMapPath;
+
+            var layoutDirectory = Path.Combine (mapPath, "Skins", "R7.Epsilon", "Layouts");
+            if (Directory.Exists (layoutDirectory)) {
+                var layoutFiles = Directory.GetFiles (layoutDirectory, "*.xml");
+                if (layoutFiles != null) {
+                    return layoutFiles.Select (lf => new LayoutInfo (lf, portalId));
+                }
+            }
+
+            return Enumerable.Empty<LayoutInfo> ();
+        }
+
+        protected void BindLayouts (int portalId)
+        {
+            var layouts = GetLayouts (portalId);
+            gridLayouts.DataSource = layouts;
+            gridLayouts.DataBind ();
+        }
     }
 }
-

@@ -12,4 +12,16 @@
 	<data name="NothingToDisplay.Text" xml:space="preserve">
         <value>Nothing to display, add some items.</value>
     </data>
+	<data name="labelPortal.Text" xml:space="preserve">
+        <value>Portal:</value>
+    </data>
+	<data name="labelPortal.Help" xml:space="preserve">
+        <value>Select portal to manage its layouts.</value>
+    </data>
+	<data name="Host.Text" xml:space="preserve">
+        <value>Host</value>
+    </data>
+	<data name="NoLayouts.Info" xml:space="preserve">
+        <value>There is no layouts found for selected portal.</value>
+    </data>
 </root>
