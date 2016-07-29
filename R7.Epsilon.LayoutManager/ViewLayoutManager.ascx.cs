@@ -142,6 +142,13 @@ namespace R7.Epsilon.LayoutManager
             var layouts = GetLayouts (portalId);
             gridLayouts.DataSource = layouts;
             gridLayouts.DataBind ();
+
+            // add / remove "empty" CSS class
+            if (!layouts.Any ()) {
+                gridLayouts.CssClass = gridLayouts.CssClass + " " + "empty";
+            } else {
+                gridLayouts.CssClass = gridLayouts.CssClass.Replace ("empty", "").TrimEnd ();
+            }
         }
     }
 }
