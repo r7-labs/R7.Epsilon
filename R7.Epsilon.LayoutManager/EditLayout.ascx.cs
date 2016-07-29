@@ -81,7 +81,7 @@ namespace R7.Epsilon.LayoutManager
                         } 
                         else {
                             // new template
-                            codePrefix = "<!-- Default layout template -->\n";
+                            codePrefix = "<!-- Default layout template -->" + Environment.NewLine;
                             layoutFile = LayoutController.GetLayoutFileName ("Default", layoutPortalId);
 
                             // if it already host portal, don't do anything
