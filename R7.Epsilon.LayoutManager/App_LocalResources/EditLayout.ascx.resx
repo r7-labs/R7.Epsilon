@@ -15,4 +15,10 @@
 	<data name="ControlTitle_edit.Text" xml:space="preserve">
         <value>Edit Layout</value>
     </data>
+	<data name="LayoutFileNotFound.Error" xml:space="preserve">
+        <value>Cannot find specified layout file.</value>
+    </data>
+    <data name="InvalidQueryString.Error" xml:space="preserve">
+        <value>Query string is invalid.</value>
+    </data>
 </root>

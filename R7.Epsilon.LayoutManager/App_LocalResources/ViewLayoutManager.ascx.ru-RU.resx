@@ -24,10 +24,4 @@
 	<data name="NoLayouts.Info" xml:space="preserve">
         <value>На выбранном сайте найдены лейауты.</value>
     </data>
-	<data name="LayoutFileNotFound.Error" xml:space="preserve">
-        <value>Указанный файл лейаута не найден.</value>
-    </data>
-    <data name="InvalidQueryString.Error" xml:space="preserve">
-        <value>Строка запроса не верна.</value>
-    </data>
 </root>

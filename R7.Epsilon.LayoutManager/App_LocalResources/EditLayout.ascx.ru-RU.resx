@@ -15,4 +15,10 @@
     <data name="ControlTitle_edit.Text" xml:space="preserve">
         <value>Редактирование лейаута</value>
     </data>
+	<data name="LayoutFileNotFound.Error" xml:space="preserve">
+        <value>Указанный файл лейаута не найден.</value>
+    </data>
+    <data name="InvalidQueryString.Error" xml:space="preserve">
+        <value>Строка запроса не верна.</value>
+    </data>
 </root>
