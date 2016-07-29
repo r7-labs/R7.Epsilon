@@ -70,6 +70,7 @@
       <DependentUpon>EditLayout.ascx</DependentUpon>
     </Compile>
     <Compile Include="Models\LayoutInfo.cs" />
+    <Compile Include="Components\LayoutController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="js\" />
