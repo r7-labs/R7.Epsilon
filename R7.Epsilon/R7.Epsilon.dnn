@@ -114,7 +114,7 @@
                                         <controlType>View</controlType>
                                         <iconFile />
                                         <helpUrl />
-                                        <supportsPartialRendering>False</supportsPartialRendering>
+                                        <supportsPartialRendering>true</supportsPartialRendering>
                                         <supportsPopUps>False</supportsPopUps>
                                         <viewOrder>0</viewOrder>
                                     </moduleControl>
