@@ -19,12 +19,12 @@
 
 <div class="dnnForm dnnClear">
     <fieldset>
-        <div class="dnnFormItem">
-            <asp:TextBox ID="layoutEditor" runat="server" TextMode="MultiLine" Rows="10" Width="100%" />
+		<div class="dnnFormItem">
+            <dnn:Label ID="labelLayoutName" runat="server" ControlName="textLayoutName" />  
+            <asp:TextBox ID="textLayoutName" runat="server" />
         </div>
         <div class="dnnFormItem">
-			<dnn:Label ID="labelLayoutName" runat="server" ControlName="textLayoutName" />  
-		    <asp:TextBox ID="textLayoutName" runat="server" />
+            <asp:TextBox ID="layoutEditor" runat="server" TextMode="MultiLine" Rows="10" Width="100%" />
         </div>
     </fieldset>
     <ul class="dnnActions dnnClear">
