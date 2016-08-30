@@ -53,6 +53,12 @@ namespace R7.Epsilon.LayoutManager
 
             // add confirmation dialog to delete button
             buttonDelete.Attributes.Add ("onClick", "javascript:return confirm('" + Localization.GetString ("DeleteItem") + "');");
+
+            var layoutNameStr = Request.QueryString ["layoutname"];
+            if (!string.IsNullOrEmpty (layoutNameStr) && layoutNameStr == "Default") {
+                // don't delete default layout
+                buttonDelete.Visible = false;
+            }
         }
 
         /// <summary>
@@ -88,6 +94,9 @@ namespace R7.Epsilon.LayoutManager
                             if (layoutPortalId != -1 && !File.Exists (layoutFile)) {
                                 layoutFile = LayoutController.GetLayoutFileName ("Default", -1);
                             }
+
+                            // cannot delete unsaved layout
+                            buttonDelete.Visible = false;
                         }
 
                         if (File.Exists (layoutFile)) {
