@@ -79,6 +79,7 @@ namespace R7.Epsilon.LayoutManager
 
                         var layoutName = layoutNameStr;
                         var layoutPortalId = int.Parse (layoutPortalIdStr);
+
                         var codePrefix = string.Empty;
                         var layoutFile = string.Empty;
 
@@ -102,6 +103,9 @@ namespace R7.Epsilon.LayoutManager
                         if (File.Exists (layoutFile)) {
                             layoutEditor.Text = codePrefix + File.ReadAllText (layoutFile);
                             textLayoutName.Text = layoutName;
+
+                            // store request values
+                            hiddenLayoutName.Value = layoutName;
                             hiddenPortalId.Value = layoutPortalId.ToString ();
                         } 
                         else {
@@ -162,8 +166,7 @@ namespace R7.Epsilon.LayoutManager
         protected void buttonDelete_Click (object sender, EventArgs e)
         {
             try {
-
-                var layoutName = textLayoutName.Text.Trim ();
+                var layoutName = hiddenLayoutName.Value;
                 var layoutPortaId = int.Parse (hiddenPortalId.Value);
 
                 var layoutFile = LayoutController.GetLayoutFileName (layoutName, layoutPortaId);
