@@ -33,7 +33,6 @@
         <li><asp:HyperLink id="linkCancel" runat="server" CssClass="dnnSecondaryAction" resourcekey="cmdCancel" /></li>
     </ul>
 	<asp:HiddenField id="hiddenPortalId" runat="server" />
-    <dnn:Audit id="ctlAudit" runat="server" />
 </div>
 <script type="text/javascript">
 (function ($) {

@@ -15,7 +15,6 @@ namespace R7.Epsilon.LayoutManager
         protected HyperLink linkCancel;
         protected TextBox layoutEditor;
         protected TextBox textLayoutName;
-        protected ModuleAuditControl ctlAudit;
         protected HiddenField hiddenPortalId;
     }
 }
