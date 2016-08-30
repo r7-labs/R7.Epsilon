@@ -51,14 +51,19 @@ namespace R7.Epsilon.LayoutManager
             // set url for Cancel link
             linkCancel.NavigateUrl = Globals.NavigateURL ();
 
-            // add confirmation dialog to delete button
-            buttonDelete.Attributes.Add ("onClick", "javascript:return confirm('" + Localization.GetString ("DeleteItem") + "');");
-
             var layoutNameStr = Request.QueryString ["layoutname"];
-            if (!string.IsNullOrEmpty (layoutNameStr) && layoutNameStr == "Default") {
-                // don't delete default layout
-                buttonDelete.Visible = false;
-            }
+            if (!string.IsNullOrEmpty (layoutNameStr)) {
+                if (layoutNameStr == "Default") {
+                    // don't delete default layout
+                    buttonDelete.Visible = false;
+                } 
+                else {
+                    // add confirmation dialog to delete button
+                    buttonDelete.Attributes.Add ("onClick", "javascript:return confirm('"
+                                                 + string.Format (LocalizeString ("DeleteItem.Format"), layoutNameStr)
+                                                 + "');");
+                }
+            } 
         }
 
         /// <summary>

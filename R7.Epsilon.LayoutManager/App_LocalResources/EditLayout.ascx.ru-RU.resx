@@ -24,4 +24,7 @@
 	<data name="LayoutName.Required" xml:space="preserve">
         <value>Укажите имя файла лейаута.</value>
     </data>
+	<data name="DeleteItem.Format" xml:space="preserve">
+        <value>Уверены, что хотите удалить лейаут {0}?</value>
+    </data>
 </root>

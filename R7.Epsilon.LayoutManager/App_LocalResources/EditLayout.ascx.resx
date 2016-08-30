@@ -24,4 +24,7 @@
 	<data name="LayoutName.Required" xml:space="preserve">
         <value>The name of the layout file is required.</value>
     </data>
+	<data name="DeleteItem.Format" xml:space="preserve">
+        <value>Are you sure you want to delete the {0} layout?</value>
+    </data>
 </root>
