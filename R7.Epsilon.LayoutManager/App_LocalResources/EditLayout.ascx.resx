@@ -21,4 +21,7 @@
     <data name="InvalidQueryString.Error" xml:space="preserve">
         <value>Query string is invalid.</value>
     </data>
+	<data name="LayoutName.Required" xml:space="preserve">
+        <value>The name of the layout file is required.</value>
+    </data>
 </root>

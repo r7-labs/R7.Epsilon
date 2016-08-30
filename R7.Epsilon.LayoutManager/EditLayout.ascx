@@ -22,6 +22,8 @@
 		<div class="dnnFormItem">
             <dnn:Label ID="labelLayoutName" runat="server" ControlName="textLayoutName" />  
             <asp:TextBox ID="textLayoutName" runat="server" />
+			<asp:RequiredFieldValidator runat="server" resourcekey="LayoutName.Required"
+                ControlToValidate="textLayoutName" Display="Dynamic" CssClass="dnnFormMessage dnnFormError" />
         </div>
         <div class="dnnFormItem">
             <asp:TextBox ID="layoutEditor" runat="server" TextMode="MultiLine" Rows="10" Width="100%" />
@@ -29,7 +31,7 @@
     </fieldset>
     <ul class="dnnActions dnnClear">
         <li><asp:LinkButton id="buttonUpdate" runat="server" CssClass="dnnPrimaryAction" resourcekey="cmdUpdate" OnClick="buttonUpdate_Click" CausesValidation="true" /></li>
-        <li><asp:LinkButton id="buttonDelete" runat="server" CssClass="dnnSecondaryAction" resourcekey="cmdDelete" OnClick="buttonDelete_Click" /></li>
+        <li><asp:LinkButton id="buttonDelete" runat="server" CssClass="dnnSecondaryAction" resourcekey="cmdDelete" OnClick="buttonDelete_Click" CausesValidation="false" /></li>
         <li><asp:HyperLink id="linkCancel" runat="server" CssClass="dnnSecondaryAction" resourcekey="cmdCancel" /></li>
     </ul>
 	<asp:HiddenField id="hiddenPortalId" runat="server" />
