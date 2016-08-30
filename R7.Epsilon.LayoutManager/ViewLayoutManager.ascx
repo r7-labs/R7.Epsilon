@@ -34,5 +34,9 @@
 				</EmptyDataTemplate>
             </asp:GridView>
 	    </div>
+		<div class="dnnFormItem">
+            <label class="dnnLabel"></label>
+			<asp:HyperLink id="linkAddLayout" runat="server" CssClass="dnnPrimaryAction" resourcekey="AddLayout.Text" />
+		</div>
     </fieldset>
 </div>

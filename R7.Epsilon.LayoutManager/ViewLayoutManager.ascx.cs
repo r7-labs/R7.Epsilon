@@ -72,6 +72,9 @@ namespace R7.Epsilon.LayoutManager
             base.OnLoad (e);
 
             try {
+                // setup "Add Layout" link
+                linkAddLayout.NavigateUrl = EditUrl ("layoutportalid", comboPortal.SelectedValue, "Edit");
+
                 if (!IsPostBack) {
                     BindLayouts (HOST_PORTAL_ID);
                 }

@@ -24,4 +24,7 @@
 	<data name="NoLayouts.Info" xml:space="preserve">
         <value>На выбранном сайте найдены лейауты.</value>
     </data>
+	<data name="AddLayout.Text" xml:space="preserve">
+        <value>Добавить лейаут</value>
+    </data>
 </root>

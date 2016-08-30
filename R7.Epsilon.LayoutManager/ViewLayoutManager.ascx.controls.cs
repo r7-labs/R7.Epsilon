@@ -13,5 +13,6 @@ namespace R7.Epsilon.LayoutManager
     {
         protected DropDownList comboPortal;
         protected GridView gridLayouts;
+        protected HyperLink linkAddLayout;
     }
 }
