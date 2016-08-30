@@ -28,14 +28,14 @@
         <div class="dnnFormItem">
             <asp:TextBox ID="layoutEditor" runat="server" TextMode="MultiLine" Rows="10" Width="100%" />
         </div>
+		<asp:HiddenField id="hiddenPortalId" runat="server" />
+        <asp:HiddenField id="hiddenLayoutName" runat="server" />
+		<ul class="dnnActions dnnClear">
+            <li><asp:LinkButton id="buttonUpdate" runat="server" CssClass="dnnPrimaryAction" resourcekey="cmdUpdate" OnClick="buttonUpdate_Click" CausesValidation="true" /></li>
+            <li><asp:LinkButton id="buttonDelete" runat="server" CssClass="dnnSecondaryAction" resourcekey="cmdDelete" OnClick="buttonDelete_Click" CausesValidation="false" /></li>
+            <li><asp:HyperLink id="linkCancel" runat="server" CssClass="dnnSecondaryAction" resourcekey="cmdCancel" /></li>
+        </ul>
     </fieldset>
-    <ul class="dnnActions dnnClear">
-        <li><asp:LinkButton id="buttonUpdate" runat="server" CssClass="dnnPrimaryAction" resourcekey="cmdUpdate" OnClick="buttonUpdate_Click" CausesValidation="true" /></li>
-        <li><asp:LinkButton id="buttonDelete" runat="server" CssClass="dnnSecondaryAction" resourcekey="cmdDelete" OnClick="buttonDelete_Click" CausesValidation="false" /></li>
-        <li><asp:HyperLink id="linkCancel" runat="server" CssClass="dnnSecondaryAction" resourcekey="cmdCancel" /></li>
-    </ul>
-	<asp:HiddenField id="hiddenPortalId" runat="server" />
-	<asp:HiddenField id="hiddenLayoutName" runat="server" />
 </div>
 <script type="text/javascript">
 (function ($) {
