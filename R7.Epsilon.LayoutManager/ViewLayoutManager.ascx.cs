@@ -108,12 +108,6 @@ namespace R7.Epsilon.LayoutManager
             }
         }
 
-        protected void gridLayouts_RowDataBound (object sender, GridViewRowEventArgs e)
-        {
-            // show or hide actions column
-            e.Row.Cells [0].Visible = IsEditable;
-        }
-
         protected void comboPortals_SelectedIndexChanged (object sender, EventArgs e)
         {
             var portalId = int.Parse (comboPortal.SelectedValue);

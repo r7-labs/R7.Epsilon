@@ -11,7 +11,7 @@
 	    <div class="dnnFormItem">
 			<label class="dnnLabel"></label>
     	    <asp:GridView id="gridLayouts" runat="server" AutoGenerateColumns="false"
-					CssClass="dnnGrid gridLayouts" GridLines="None" OnRowDataBound="gridLayouts_RowDataBound">
+					CssClass="dnnGrid gridLayouts" GridLines="None">
             	<HeaderStyle CssClass="dnnGridHeader" HorizontalAlign="Left" />
                 <RowStyle CssClass="dnnGridItem" HorizontalAlign="Left" />
                 <AlternatingRowStyle CssClass="dnnGridAltItem" />
