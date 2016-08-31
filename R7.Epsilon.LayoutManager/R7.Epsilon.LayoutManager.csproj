@@ -79,6 +79,7 @@
       <DependentUpon>SelectLayout.ascx</DependentUpon>
     </Compile>
     <Compile Include="Components\Const.cs" />
+    <Compile Include="Components\LayoutEqualityComparer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="js\" />
@@ -97,6 +98,8 @@
     <None Include="App_LocalResources\EditLayout.ascx.ru-RU.resx" />
     <None Include="App_LocalResources\ViewLayoutManager.ascx.resx" />
     <None Include="App_LocalResources\ViewLayoutManager.ascx.ru-RU.resx" />
+    <None Include="App_LocalResources\SelectLayout.ascx.resx" />
+    <None Include="App_LocalResources\SelectLayout.ascx.ru-RU.resx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>

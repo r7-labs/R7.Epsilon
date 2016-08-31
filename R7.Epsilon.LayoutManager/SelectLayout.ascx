@@ -5,12 +5,14 @@
 <%@ Register TagPrefix="dnn" Namespace="DotNetNuke.Web.UI.WebControls" Assembly="DotNetNuke.Web" %>
 <%@ Register TagPrefix="dnn" Namespace="DotNetNuke.Web.Client.ClientResourceManagement" Assembly="DotNetNuke.Web.Client" %>
 
-<dnn:DnnCssInclude runat="server" FilePath="~/DesktopModules/R7.Epsilon/R7.Epsilon.LayoutManager/admin.css" Priority="200" />
 <div class="dnnForm dnnClear">
     <fieldset>
 		<div class="dnnFormItem">
             <dnn:Label id="labelLayout" runat="server" ControlName="comboLayout" />  
-            <asp:DropDownList id="comboLayout" runat="server" />
+            <asp:DropDownList id="comboLayout" runat="server"
+				DataTextField = "Name"
+				DataValueField = "Name"
+		    />
         </div>
     	<ul class="dnnActions dnnClear">
             <li><asp:LinkButton id="buttonSelect" runat="server" CssClass="dnnPrimaryAction" resourcekey="Select.Text" OnClick="buttonSelect_Click" /></li>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<data name="ModuleHelp.Text" xml:space="preserve">
+        <value>&lt;P&gt;A R7.Epsilon.LayoutManager module&lt;/P&gt;</value>
+    </data>
+	<data name="ControlTitle_edit.Text" xml:space="preserve">
+        <value>Select Layout</value>
+    </data>
+	<data name="labelLayout.Text" xml:space="preserve"> 
+        <value>Layout:</value>
+    </data>
+    <data name="labelLayout.Help" xml:space="preserve">
+        <value>Select layout from the dropdown.</value>
+    </data>
+	<data name="NotSelected.Text" xml:space="preserve">
+        <value>&lt; Not Selected &gt;</value>
+    </data>
+</root>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<data name="ModuleHelp.Text" xml:space="preserve">
+        <value>&lt;P&gt;Модуль R7.Epsilon.LayoutManager&lt;/P&gt;</value>
+    </data>
+	<data name="ControlTitle_edit.Text" xml:space="preserve">
+        <value>Выберите лейаут</value>
+    </data>
+	<data name="labelLayout.Text" xml:space="preserve"> 
+        <value>Лейаут:</value>
+    </data>
+    <data name="labelLayout.Help" xml:space="preserve">
+        <value>Выберите лейаут из выпадающего списка.</value>
+    </data>
+	<data name="NotSelected.Text" xml:space="preserve">
+        <value>&lt; Не выбрано &gt;</value>
+    </data>
+</root>

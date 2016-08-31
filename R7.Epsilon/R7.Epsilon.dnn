@@ -130,7 +130,7 @@
                                         <viewOrder>0</viewOrder>
                                     </moduleControl>
                                     <moduleControl>
-                                        <controlKey>Edit</controlKey>
+                                        <controlKey>Select</controlKey>
                                         <controlSrc>DesktopModules/R7.Epsilon/R7.Epsilon.LayoutManager/SelectLayout.ascx</controlSrc>
                                         <controlTitle>Select Layout</controlTitle>
                                         <controlType>Edit</controlType>

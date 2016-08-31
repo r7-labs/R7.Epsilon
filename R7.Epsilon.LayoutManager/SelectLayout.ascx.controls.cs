@@ -10,6 +10,7 @@ namespace R7.Epsilon.LayoutManager
 {
     public partial class SelectLayout
     {
+        protected DropDownList comboLayout;
         protected LinkButton buttonSelect;
         protected HyperLink linkCancel;
     }

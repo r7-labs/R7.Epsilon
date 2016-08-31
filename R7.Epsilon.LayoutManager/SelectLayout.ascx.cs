@@ -25,14 +25,18 @@
 // THE SOFTWARE.
 
 using System;
-using System.IO;
+using System.Web.UI.WebControls;
 using DotNetNuke.Common;
 using DotNetNuke.Entities.Modules;
+using DotNetNuke.Entities.Tabs;
 using DotNetNuke.Services.Exceptions;
-using DotNetNuke.Services.Localization;
 using DotNetNuke.UI.Skins;
 using DotNetNuke.UI.Skins.Controls;
 using R7.Epsilon.LayoutManager.Components;
+using System.Collections;
+using R7.Epsilon.LayoutManager.Models;
+using System.Linq;
+using DotNetNuke.Services.Localization;
 
 namespace R7.Epsilon.LayoutManager
 {
@@ -61,6 +65,22 @@ namespace R7.Epsilon.LayoutManager
 
             try {
                 if (!IsPostBack) {
+
+                    if (string.IsNullOrEmpty (Request.QueryString ["returntabid"])) {
+                        // TODO: Log error
+                        Response.Redirect (Globals.NavigateURL (), true);
+                        return;
+                    }
+
+                    BindLayouts (PortalId);
+
+                    // select existing value
+                    var tabSettings = TabController.Instance.GetTabSettings (int.Parse (Request.QueryString ["returntabid"]));
+                    var layoutName = (string) tabSettings ["r7_Epsilon_Layout"];
+
+                    if (layoutName != null) {
+                        comboLayout.SelectedValue = layoutName;
+                    }
                 }
             } 
             catch (Exception ex) {
@@ -80,7 +100,16 @@ namespace R7.Epsilon.LayoutManager
         protected void buttonSelect_Click (object sender, EventArgs e)
         {
             try {
-                ModuleController.SynchronizeModule (ModuleId);
+                
+                if (comboLayout.SelectedIndex > 0) {
+                    // update tab setting
+                    TabController.Instance.UpdateTabSetting (int.Parse (Request.QueryString ["returntabid"]), "r7_Epsilon_Layout", comboLayout.SelectedValue);
+                } 
+                else {
+                    // delete tab setting
+                    TabController.Instance.DeleteTabSetting (int.Parse (Request.QueryString ["returntabid"]), "r7_Epsilon_Layout");
+                }
+
                 Response.Redirect (GetReturnUrl (), true);
             } 
             catch (Exception ex) {
@@ -90,6 +119,19 @@ namespace R7.Epsilon.LayoutManager
 
         #endregion
 
+        protected void BindLayouts (int portalId)
+        {
+            comboLayout.DataSource = LayoutController.GetLayouts (portalId)
+                .Concat (LayoutController.GetLayouts (Const.HOST_PORTAL_ID))
+                .Distinct (new LayoutEqualityComparer ())
+                .OrderBy (L => L.Name);
+            
+            comboLayout.DataBind ();
+
+            // insert default item
+            comboLayout.Items.Insert (0, new ListItem (LocalizeString ("NotSelected.Text"), int.MinValue.ToString ()));
+        }
+
         protected string GetReturnUrl ()
         {
             var returnTabIdStr = Request.QueryString ["returntabid"];
@@ -98,6 +140,11 @@ namespace R7.Epsilon.LayoutManager
             }
 
             return Globals.NavigateURL ();
+        }
+
+        protected void ErrorMessage (string messageResource)
+        {
+            Skin.AddModuleMessage (this, LocalizeString (messageResource), ModuleMessage.ModuleMessageType.RedError);
         }
     }
 }
