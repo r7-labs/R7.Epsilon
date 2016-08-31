@@ -31,8 +31,7 @@ using DotNetNuke.Common;
 using DotNetNuke.Entities.Modules;
 using DotNetNuke.Entities.Tabs;
 using DotNetNuke.Services.Exceptions;
-using DotNetNuke.UI.Skins;
-using DotNetNuke.UI.Skins.Controls;
+using DotNetNuke.Services.Log.EventLog;
 using R7.Epsilon.LayoutManager.Components;
 
 namespace R7.Epsilon.LayoutManager
@@ -90,7 +89,13 @@ namespace R7.Epsilon.LayoutManager
                 if (!IsPostBack) {
 
                     if (FromTabId == null) {
-                        // TODO: Log querystring error
+                        // fromtabid argument is required, but don't expose it to end-user
+                        EventLogController.Instance.AddLog (
+                            "R7.Epsilon.LayoutManager.SelectLayout", 
+                            "Querystring is invalid. The fromtabid argument is required.", 
+                            EventLogController.EventLogType.HOST_ALERT
+                        );
+                        
                         Response.Redirect (Globals.NavigateURL (), true);
                         return;
                     }
@@ -158,11 +163,6 @@ namespace R7.Epsilon.LayoutManager
         protected string GetReturnUrl ()
         {
             return (FromTabId != null)? Globals.NavigateURL (FromTabId.Value) : Globals.NavigateURL ();
-        }
-
-        protected void ErrorMessage (string messageResource)
-        {
-            Skin.AddModuleMessage (this, LocalizeString (messageResource), ModuleMessage.ModuleMessageType.RedError);
         }
     }
 }
