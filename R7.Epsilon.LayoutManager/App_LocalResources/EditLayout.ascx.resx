@@ -27,4 +27,7 @@
 	<data name="DeleteItem.Format" xml:space="preserve">
         <value>Are you sure you want to delete the {0} layout?</value>
     </data>
+	<data name="LayoutFileAlreadyExists.Warning" xml:space="preserve">
+        <value>Layout file with this name already exists. Please enter different name and try again.</value>
+    </data> 
 </root>

@@ -27,4 +27,7 @@
 	<data name="DeleteItem.Format" xml:space="preserve">
         <value>Уверены, что хотите удалить лейаут {0}?</value>
     </data>
+	<data name="LayoutFileAlreadyExists.Warning" xml:space="preserve">
+        <value>Файл лейаута с таким именем уже существует. Введите другое имя и попробуйте снова.</value>
+    </data>
 </root>

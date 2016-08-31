@@ -133,6 +133,11 @@ namespace R7.Epsilon.LayoutManager
             Skin.AddModuleMessage (this, LocalizeString (messageResource), ModuleMessage.ModuleMessageType.RedError);
         }
 
+        protected void WarningMessage (string messageResource)
+        {
+            Skin.AddModuleMessage (this, LocalizeString (messageResource), ModuleMessage.ModuleMessageType.YellowWarning);
+        }
+
         /// <summary>
         /// Handles Click event for Update button
         /// </summary>
@@ -146,9 +151,15 @@ namespace R7.Epsilon.LayoutManager
         {
             try {
                 var layoutName = textLayoutName.Text.Trim ();
+                var originalLayoutName = hiddenLayoutName.Value;
                 var layoutPortaId = int.Parse (hiddenPortalId.Value);
-
                 var layoutFile = LayoutController.GetLayoutFileName (layoutName, layoutPortaId);
+
+                if (layoutName != originalLayoutName && File.Exists (layoutFile)) {
+                    WarningMessage ("LayoutFileAlreadyExists.Warning");
+                    return;
+                }
+
                 File.WriteAllText (layoutFile, layoutEditor.Text);
 
                 ModuleController.SynchronizeModule (ModuleId);
