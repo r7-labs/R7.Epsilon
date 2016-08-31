@@ -25,6 +25,7 @@
 // THE SOFTWARE.
 
 using System;
+using System.Linq;
 using System.Web.UI.WebControls;
 using DotNetNuke.Common;
 using DotNetNuke.Entities.Modules;
@@ -33,15 +34,37 @@ using DotNetNuke.Services.Exceptions;
 using DotNetNuke.UI.Skins;
 using DotNetNuke.UI.Skins.Controls;
 using R7.Epsilon.LayoutManager.Components;
-using System.Collections;
-using R7.Epsilon.LayoutManager.Models;
-using System.Linq;
-using DotNetNuke.Services.Localization;
 
 namespace R7.Epsilon.LayoutManager
 {
     public partial class SelectLayout : PortalModuleBase
     {
+        #region Properties
+
+        int? fromTabId;
+
+        /// <summary>
+        /// Identifier of tab from which module is called
+        /// </summary>
+        protected int? FromTabId
+        {
+            get {
+                if (fromTabId == null) {
+                    var fromTabIdStr = Request.QueryString ["fromtabid"];
+                    if (!string.IsNullOrWhiteSpace (fromTabIdStr)) {
+                        int fromTabIdInt;
+                        if (int.TryParse (fromTabIdStr, out fromTabIdInt)) {
+                            fromTabId = fromTabIdInt;
+                        }
+                    }
+                }
+
+                return fromTabId;
+            }
+        }
+
+        #endregion
+
         #region Handlers
 
         /// <summary>
@@ -66,8 +89,8 @@ namespace R7.Epsilon.LayoutManager
             try {
                 if (!IsPostBack) {
 
-                    if (string.IsNullOrEmpty (Request.QueryString ["returntabid"])) {
-                        // TODO: Log error
+                    if (FromTabId == null) {
+                        // TODO: Log querystring error
                         Response.Redirect (Globals.NavigateURL (), true);
                         return;
                     }
@@ -75,7 +98,7 @@ namespace R7.Epsilon.LayoutManager
                     BindLayouts (PortalId);
 
                     // select existing value
-                    var tabSettings = TabController.Instance.GetTabSettings (int.Parse (Request.QueryString ["returntabid"]));
+                    var tabSettings = TabController.Instance.GetTabSettings (FromTabId.Value);
                     var layoutName = (string) tabSettings ["r7_Epsilon_Layout"];
 
                     if (layoutName != null) {
@@ -103,11 +126,11 @@ namespace R7.Epsilon.LayoutManager
                 
                 if (comboLayout.SelectedIndex > 0) {
                     // update tab setting
-                    TabController.Instance.UpdateTabSetting (int.Parse (Request.QueryString ["returntabid"]), "r7_Epsilon_Layout", comboLayout.SelectedValue);
+                    TabController.Instance.UpdateTabSetting (FromTabId.Value, "r7_Epsilon_Layout", comboLayout.SelectedValue);
                 } 
                 else {
                     // delete tab setting
-                    TabController.Instance.DeleteTabSetting (int.Parse (Request.QueryString ["returntabid"]), "r7_Epsilon_Layout");
+                    TabController.Instance.DeleteTabSetting (FromTabId.Value, "r7_Epsilon_Layout");
                 }
 
                 Response.Redirect (GetReturnUrl (), true);
@@ -134,12 +157,7 @@ namespace R7.Epsilon.LayoutManager
 
         protected string GetReturnUrl ()
         {
-            var returnTabIdStr = Request.QueryString ["returntabid"];
-            if (!string.IsNullOrEmpty (returnTabIdStr)) {
-                return Globals.NavigateURL (int.Parse (returnTabIdStr));
-            }
-
-            return Globals.NavigateURL ();
+            return (FromTabId != null)? Globals.NavigateURL (FromTabId.Value) : Globals.NavigateURL ();
         }
 
         protected void ErrorMessage (string messageResource)
@@ -148,4 +166,3 @@ namespace R7.Epsilon.LayoutManager
         }
     }
 }
-
