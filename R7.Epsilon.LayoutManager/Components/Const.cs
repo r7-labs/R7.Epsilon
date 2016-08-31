@@ -31,5 +31,7 @@ namespace R7.Epsilon.LayoutManager.Components
     public static class Const
     {
         public const int HOST_PORTAL_ID = -1;
+
+        public const string LAYOUT_TAB_SETTING_NAME = "r7_Epsilon_Layout";
     }
 }

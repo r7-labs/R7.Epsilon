@@ -53,7 +53,7 @@ namespace R7.Epsilon.LayoutManager.Components
                     INNER JOIN {databaseOwner}[{objectQualifier}Tabs] AS T ON TS.TabID = T.TabID
                     WHERE T.PortalID = @0 AND TS.SettingName = @1 AND TS.SettingValue = @2";
 
-                return 0 < db.ExecuteScalar<int> (CommandType.Text, sqlQuery, portalId, "r7_Epsilon_Layout", layoutName);
+                return 0 < db.ExecuteScalar<int> (CommandType.Text, sqlQuery, portalId, Const.LAYOUT_TAB_SETTING_NAME, layoutName);
             }
         }
 

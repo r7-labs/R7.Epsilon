@@ -99,7 +99,7 @@ namespace R7.Epsilon.LayoutManager
 
                     // select existing value
                     var tabSettings = TabController.Instance.GetTabSettings (FromTabId.Value);
-                    var layoutName = (string) tabSettings ["r7_Epsilon_Layout"];
+                    var layoutName = (string) tabSettings [Const.LAYOUT_TAB_SETTING_NAME];
 
                     if (layoutName != null) {
                         comboLayout.SelectedValue = layoutName;
@@ -126,11 +126,11 @@ namespace R7.Epsilon.LayoutManager
                 
                 if (comboLayout.SelectedIndex > 0) {
                     // update tab setting
-                    TabController.Instance.UpdateTabSetting (FromTabId.Value, "r7_Epsilon_Layout", comboLayout.SelectedValue);
+                    TabController.Instance.UpdateTabSetting (FromTabId.Value, Const.LAYOUT_TAB_SETTING_NAME, comboLayout.SelectedValue);
                 } 
                 else {
                     // delete tab setting
-                    TabController.Instance.DeleteTabSetting (FromTabId.Value, "r7_Epsilon_Layout");
+                    TabController.Instance.DeleteTabSetting (FromTabId.Value, Const.LAYOUT_TAB_SETTING_NAME);
                 }
 
                 Response.Redirect (GetReturnUrl (), true);
