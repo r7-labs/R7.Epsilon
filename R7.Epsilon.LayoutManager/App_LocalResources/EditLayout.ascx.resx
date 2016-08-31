@@ -29,5 +29,8 @@
     </data>
 	<data name="LayoutFileAlreadyExists.Warning" xml:space="preserve">
         <value>Layout file with this name already exists. Please enter different name and try again.</value>
+    </data>
+	<data name="LayoutIsInUse.Warning" xml:space="preserve">
+        <value>Cannot delete layout as it is used on some pages.</value>
     </data> 
 </root>

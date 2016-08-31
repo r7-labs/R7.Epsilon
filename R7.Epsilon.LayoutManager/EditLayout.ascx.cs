@@ -182,10 +182,13 @@ namespace R7.Epsilon.LayoutManager
         protected void buttonDelete_Click (object sender, EventArgs e)
         {
             try {
-                // TODO: Should not delete layout in use!
-
                 var layoutName = hiddenLayoutName.Value;
                 var layoutPortaId = int.Parse (hiddenPortalId.Value);
+
+                if (LayoutController.IsLayoutInUse (layoutName, PortalId)) {
+                    WarningMessage ("LayoutIsInUse.Warning");
+                    return;
+                }
 
                 var layoutFile = LayoutController.GetLayoutFileName (layoutName, layoutPortaId);
                 File.Delete (layoutFile);

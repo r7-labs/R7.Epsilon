@@ -30,4 +30,7 @@
 	<data name="LayoutFileAlreadyExists.Warning" xml:space="preserve">
         <value>Файл лейаута с таким именем уже существует. Введите другое имя и попробуйте снова.</value>
     </data>
+	<data name="LayoutIsInUse.Warning" xml:space="preserve">
+        <value>Невозможно удалить лейаут, так как он используется на некоторых страницах.</value>
+    </data> 
 </root>
