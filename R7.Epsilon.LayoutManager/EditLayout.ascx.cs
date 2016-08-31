@@ -128,16 +128,6 @@ namespace R7.Epsilon.LayoutManager
             }
         }
 
-        protected void ErrorMessage (string messageResource)
-        {
-            Skin.AddModuleMessage (this, LocalizeString (messageResource), ModuleMessage.ModuleMessageType.RedError);
-        }
-
-        protected void WarningMessage (string messageResource)
-        {
-            Skin.AddModuleMessage (this, LocalizeString (messageResource), ModuleMessage.ModuleMessageType.YellowWarning);
-        }
-
         /// <summary>
         /// Handles Click event for Update button
         /// </summary>
@@ -202,6 +192,17 @@ namespace R7.Epsilon.LayoutManager
         }
 
         #endregion
+
+        protected void ErrorMessage (string messageResource)
+        {
+            Skin.AddModuleMessage (this, LocalizeString (messageResource), ModuleMessage.ModuleMessageType.RedError);
+        }
+
+        protected void WarningMessage (string messageResource)
+        {
+            Skin.AddModuleMessage (this, LocalizeString (messageResource), ModuleMessage.ModuleMessageType.YellowWarning);
+        }
+
     }
 }
 
