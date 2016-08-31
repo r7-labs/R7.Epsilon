@@ -24,6 +24,9 @@
 	<data name="NoLayouts.Info" xml:space="preserve">
         <value>There is no layouts found for selected portal.</value>
     </data>
+	<data name="NotAllowed.Warning" xml:space="preserve">
+        <value>Only site admins or superusers can manage layouts.</value>
+    </data>
 	<data name="AddLayout.Text" xml:space="preserve">
         <value>Add Layout</value>
     </data>

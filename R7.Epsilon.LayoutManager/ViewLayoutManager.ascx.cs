@@ -35,6 +35,8 @@ using DotNetNuke.Entities.Modules;
 using DotNetNuke.Entities.Modules.Actions;
 using DotNetNuke.Entities.Portals;
 using DotNetNuke.Services.Exceptions;
+using DotNetNuke.UI.Skins;
+using DotNetNuke.UI.Skins.Controls;
 using R7.Epsilon.LayoutManager.Models;
 
 namespace R7.Epsilon.LayoutManager
@@ -53,30 +55,52 @@ namespace R7.Epsilon.LayoutManager
         {
             base.OnInit (e);
 
-            // get portals
-            var portals = PortalController.Instance.GetPortals ();
-
-            // insert host "portal"
-            portals.Insert (0, new PortalInfo { PortalID = HOST_PORTAL_ID, PortalName = LocalizeString ("Host.Text") });
-
-            comboPortal.DataSource = portals;
+            comboPortal.DataSource = GetManageablePortals ();
             comboPortal.DataBind ();
+        }
+
+        protected IEnumerable<PortalInfo> GetManageablePortals ()
+        {
+            if (UserInfo.IsSuperUser) {
+                // host can manage all portals plus host "portal"
+                var portals = PortalController.Instance.GetPortals ();
+                portals.Insert (0, new PortalInfo { PortalID = HOST_PORTAL_ID, PortalName = LocalizeString ("Host.Text") });
+
+                return portals.Cast<PortalInfo> ();
+            }
+
+            if (UserInfo.IsInRole ("Administrators")) {
+                // admin can manage its portal only
+                var portals = new PortalInfo [] {
+                    new PortalInfo { PortalID = PortalId, PortalName = PortalSettings.Current.PortalName }
+                };
+
+                return portals;
+            }
+
+            return Enumerable.Empty<PortalInfo> ();
         }
 
         /// <summary>
         /// Handles Load event for a control
-        /// </summary>
+        /// </summary>t
         /// <param name="e">Event args.</param>
         protected override void OnLoad (EventArgs e)
         {
             base.OnLoad (e);
 
             try {
+                if (comboPortal.Items.Count == 0) {
+                    WarningMessage ("NotAllowed.Warning");
+                    panelViewLayoutManager.Visible = false;
+                    return;
+                }
+
                 // setup "Add Layout" link
                 linkAddLayout.NavigateUrl = EditUrl ("layoutportalid", comboPortal.SelectedValue, "Edit");
 
                 if (!IsPostBack) {
-                    BindLayouts (HOST_PORTAL_ID);
+                    BindLayouts (int.Parse (comboPortal.SelectedValue));
                 }
             } 
             catch (Exception ex) {
@@ -152,6 +176,16 @@ namespace R7.Epsilon.LayoutManager
             } else {
                 gridLayouts.CssClass = gridLayouts.CssClass.Replace ("empty", "").TrimEnd ();
             }
+        }
+
+        protected void ErrorMessage (string messageResource)
+        {
+            Skin.AddModuleMessage (this, LocalizeString (messageResource), ModuleMessage.ModuleMessageType.RedError);
+        }
+
+        protected void WarningMessage (string messageResource)
+        {
+            Skin.AddModuleMessage (this, LocalizeString (messageResource), ModuleMessage.ModuleMessageType.YellowWarning);
         }
     }
 }

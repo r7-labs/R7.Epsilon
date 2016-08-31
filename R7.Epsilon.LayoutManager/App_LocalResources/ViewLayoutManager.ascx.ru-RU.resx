@@ -24,6 +24,9 @@
 	<data name="NoLayouts.Info" xml:space="preserve">
         <value>На выбранном сайте найдены лейауты.</value>
     </data>
+	<data name="NotAllowed.Warning" xml:space="preserve">
+        <value>Только администраторы сайтов или хостинга могут управлять лейаутами.</value>
+    </data>
 	<data name="AddLayout.Text" xml:space="preserve">
         <value>Добавить лейаут</value>
     </data>

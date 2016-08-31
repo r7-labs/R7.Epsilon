@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="false" CodeBehind="ViewLayoutManager.ascx.cs" Inherits="R7.Epsilon.LayoutManager.ViewLayoutManager" %>
 <%@ Register TagPrefix="dnn" TagName="Label" Src="~/controls/labelcontrol.ascx" %>
-<div class="dnnForm dnnClear">
+<asp:Panel id="panelViewLayoutManager" runat="server" CssClass="dnnForm dnnClear">
     <fieldset>
 		<div class="dnnFormItem">
 	        <dnn:Label id="labelPortal" runat="server" ControlName="comboPortal" />
@@ -39,4 +39,4 @@
 			<asp:HyperLink id="linkAddLayout" runat="server" CssClass="dnnPrimaryAction" resourcekey="AddLayout.Text" />
 		</div>
     </fieldset>
-</div>
+</asp:Panel>

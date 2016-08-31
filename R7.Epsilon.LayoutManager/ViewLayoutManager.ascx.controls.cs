@@ -11,6 +11,7 @@ namespace R7.Epsilon.LayoutManager
 {
     public partial class ViewLayoutManager
     {
+        protected Panel panelViewLayoutManager;
         protected DropDownList comboPortal;
         protected GridView gridLayouts;
         protected HyperLink linkAddLayout;
