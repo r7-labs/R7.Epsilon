@@ -24,11 +24,14 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+using System.Collections.Generic;
 using System.Data;
 using System.IO;
+using System.Linq;
 using DotNetNuke.Common;
 using DotNetNuke.Data;
 using DotNetNuke.Entities.Portals;
+using R7.Epsilon.LayoutManager.Models;
 
 namespace R7.Epsilon.LayoutManager.Components
 {
@@ -52,6 +55,23 @@ namespace R7.Epsilon.LayoutManager.Components
 
                 return 0 < db.ExecuteScalar<int> (CommandType.Text, sqlQuery, portalId, "r7_Epsilon_Layout", layoutName);
             }
+        }
+
+        public static IEnumerable<LayoutInfo> GetLayouts (int portalId)
+        {
+            var mapPath = (portalId != Const.HOST_PORTAL_ID)
+              ? PortalController.Instance.GetPortal (portalId).HomeSystemDirectoryMapPath
+              : Globals.HostMapPath;
+
+            var layoutDirectory = Path.Combine (mapPath, "Skins", "R7.Epsilon", "Layouts");
+            if (Directory.Exists (layoutDirectory)) {
+                var layoutFiles = Directory.GetFiles (layoutDirectory, "*.xml");
+                if (layoutFiles != null) {
+                    return layoutFiles.Select (lf => new LayoutInfo (lf, portalId));
+                }
+            }
+
+            return Enumerable.Empty<LayoutInfo> ();
         }
     }
 }

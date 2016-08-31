@@ -38,14 +38,13 @@ using DotNetNuke.Services.Exceptions;
 using DotNetNuke.UI.Skins;
 using DotNetNuke.UI.Skins.Controls;
 using R7.Epsilon.LayoutManager.Models;
+using R7.Epsilon.LayoutManager.Components;
 
 namespace R7.Epsilon.LayoutManager
 {
     public partial class ViewLayoutManager : PortalModuleBase, IActionable
     {
         #region Handlers
-
-        const int HOST_PORTAL_ID = -1;
 
         /// <summary>
         /// Handles Init event for a control
@@ -64,7 +63,7 @@ namespace R7.Epsilon.LayoutManager
             if (UserInfo.IsSuperUser) {
                 // host can manage all portals plus host "portal"
                 var portals = PortalController.Instance.GetPortals ();
-                portals.Insert (0, new PortalInfo { PortalID = HOST_PORTAL_ID, PortalName = LocalizeString ("Host.Text") });
+                portals.Insert (0, new PortalInfo { PortalID = Const.HOST_PORTAL_ID, PortalName = LocalizeString ("Host.Text") });
 
                 return portals.Cast<PortalInfo> ();
             }
@@ -141,26 +140,9 @@ namespace R7.Epsilon.LayoutManager
 
         #endregion
 
-        protected IEnumerable<LayoutInfo> GetLayouts (int portalId)
-        {
-            var mapPath = (portalId != HOST_PORTAL_ID)
-              ? PortalController.Instance.GetPortal (portalId).HomeSystemDirectoryMapPath
-              : Globals.HostMapPath;
-
-            var layoutDirectory = Path.Combine (mapPath, "Skins", "R7.Epsilon", "Layouts");
-            if (Directory.Exists (layoutDirectory)) {
-                var layoutFiles = Directory.GetFiles (layoutDirectory, "*.xml");
-                if (layoutFiles != null) {
-                    return layoutFiles.Select (lf => new LayoutInfo (lf, portalId));
-                }
-            }
-
-            return Enumerable.Empty<LayoutInfo> ();
-        }
-
         protected void BindLayouts (int portalId)
         {
-            var layouts = GetLayouts (portalId);
+            var layouts = LayoutController.GetLayouts (portalId);
             gridLayouts.DataSource = layouts;
             gridLayouts.DataBind ();
 
