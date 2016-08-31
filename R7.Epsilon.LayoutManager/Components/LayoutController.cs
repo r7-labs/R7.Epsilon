@@ -24,9 +24,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using System;
+using System.Data;
 using System.IO;
 using DotNetNuke.Common;
+using DotNetNuke.Data;
 using DotNetNuke.Entities.Portals;
 
 namespace R7.Epsilon.LayoutManager.Components
@@ -40,6 +41,17 @@ namespace R7.Epsilon.LayoutManager.Components
                 : PortalController.Instance.GetPortal (portalId).HomeSystemDirectoryMapPath;
 
             return Path.Combine (mapPath, "Skins", "R7.Epsilon", "Layouts", name + ".xml");
+        }
+
+        public static bool IsLayoutInUse (string layoutName, int portalId)
+        {
+            using (var db = DataContext.Instance ()) {
+                var sqlQuery = @"SELECT COUNT (*) FROM {databaseOwner}[{objectQualifier}TabSettings] AS TS
+                    INNER JOIN {databaseOwner}[{objectQualifier}Tabs] AS T ON TS.TabID = T.TabID
+                    WHERE T.PortalID = @0 AND TS.SettingName = @1 AND TS.SettingValue = @2";
+
+                return 0 < db.ExecuteScalar<int> (CommandType.Text, sqlQuery, portalId, "r7_Epsilon_Layout", layoutName);
+            }
         }
     }
 }

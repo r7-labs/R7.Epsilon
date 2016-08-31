@@ -1,5 +1,5 @@
 ﻿//
-// LayoutInfo.cs
+// TabSettingInfo.cs
 //
 // Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
@@ -23,33 +23,15 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-
 using System;
-using System.IO;
-using R7.Epsilon.LayoutManager.Components;
-
+using DotNetNuke.ComponentModel.DataAnnotations;
 namespace R7.Epsilon.LayoutManager.Models
 {
-    public class LayoutInfo
+    [TableName ("TabSettings")]
+    public class TabSettingInfo
     {
-        public LayoutInfo (string fileName, int portalId)
-        {
-            FileName = fileName;
-            PortalId = portalId;
-        }
+        public string SettingName { get; set; }
 
-        public string FileName { get; set; }
-
-        public int PortalId { get; set; }
-
-        public string Name 
-        {
-            get { return Path.GetFileNameWithoutExtension (FileName); }
-        }
-
-        public bool IsInUse
-        {
-            get { return LayoutController.IsLayoutInUse (Name, PortalId); }
-        }
+        public string SettingValue { get; set; }
     }
 }

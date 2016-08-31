@@ -71,6 +71,7 @@
     </Compile>
     <Compile Include="Models\LayoutInfo.cs" />
     <Compile Include="Components\LayoutController.cs" />
+    <Compile Include="Models\TabSettingInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="js\" />
