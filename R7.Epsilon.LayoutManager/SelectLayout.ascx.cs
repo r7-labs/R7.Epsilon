@@ -92,7 +92,7 @@ namespace R7.Epsilon.LayoutManager
                         // fromtabid argument is required, but don't expose it to end-user
                         EventLogController.Instance.AddLog (
                             "R7.Epsilon.LayoutManager.SelectLayout", 
-                            "Querystring is invalid. The fromtabid argument is required.", 
+                            "Querystring is invalid. The 'fromtabid' argument is required.", 
                             EventLogController.EventLogType.HOST_ALERT
                         );
                         

@@ -128,7 +128,7 @@ namespace R7.Epsilon.LayoutManager
                         // layoutportalid argument is required, but don't expose it to end-user
                         EventLogController.Instance.AddLog (
                             "R7.Epsilon.LayoutManager.EditLayout", 
-                            "Querystring is invalid, The layoutportalid argument is required.", 
+                            "Querystring is invalid, The 'layoutportalid' argument is required.", 
                             EventLogController.EventLogType.HOST_ALERT
                         );
                         
