@@ -121,10 +121,19 @@
                                     <moduleControl>
                                         <controlKey>Edit</controlKey>
                                         <controlSrc>DesktopModules/R7.Epsilon/R7.Epsilon.LayoutManager/EditLayout.ascx</controlSrc>
+                                        <controlTitle>Edit Layout</controlTitle>
+                                        <controlType>Admin</controlType>
+                                        <iconFile />
+                                        <helpUrl />
                                         <supportsPartialRendering>False</supportsPartialRendering>
                                         <supportsPopUps>True</supportsPopUps>
-                                        <controlTitle>Edit</controlTitle>
-                                        <controlType>Admin</controlType>
+                                        <viewOrder>0</viewOrder>
+                                    </moduleControl>
+                                    <moduleControl>
+                                        <controlKey>Edit</controlKey>
+                                        <controlSrc>DesktopModules/R7.Epsilon/R7.Epsilon.LayoutManager/SelectLayout.ascx</controlSrc>
+                                        <controlTitle>Select Layout</controlTitle>
+                                        <controlType>Edit</controlType>
                                         <iconFile />
                                         <helpUrl />
                                         <supportsPartialRendering>False</supportsPartialRendering>

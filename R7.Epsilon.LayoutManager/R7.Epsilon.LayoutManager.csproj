@@ -72,6 +72,12 @@
     <Compile Include="Models\LayoutInfo.cs" />
     <Compile Include="Components\LayoutController.cs" />
     <Compile Include="Models\TabSettingInfo.cs" />
+    <Compile Include="SelectLayout.ascx.cs">
+      <DependentUpon>SelectLayout.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="SelectLayout.ascx.controls.cs">
+      <DependentUpon>SelectLayout.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="js\" />
@@ -83,6 +89,7 @@
     <Content Include="packages.config" />
     <Content Include="EditLayout.ascx" />
     <Content Include="ViewLayoutManager.ascx" />
+    <Content Include="SelectLayout.ascx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App_LocalResources\EditLayout.ascx.resx" />
