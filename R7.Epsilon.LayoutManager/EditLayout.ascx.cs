@@ -29,7 +29,6 @@ using System.IO;
 using DotNetNuke.Common;
 using DotNetNuke.Entities.Modules;
 using DotNetNuke.Services.Exceptions;
-using DotNetNuke.Services.Localization;
 using DotNetNuke.Services.Log.EventLog;
 using DotNetNuke.UI.Skins;
 using DotNetNuke.UI.Skins.Controls;
@@ -115,7 +114,14 @@ namespace R7.Epsilon.LayoutManager
                             hiddenPortalId.Value = layoutPortalId.ToString ();
                         } 
                         else {
-                            ErrorMessage ("LayoutFileNotFound.Error");
+                            // layout file not found, but don't expose it to end-user
+                            EventLogController.Instance.AddLog (
+                                "R7.Epsilon.LayoutManager.EditLayout",
+                                string.Format ("Cannot find specified layout file '{0}'.", layoutFile),
+                                EventLogController.EventLogType.HOST_ALERT
+                            );
+
+                            Response.Redirect (Globals.NavigateURL (), true);
                         }
                     } 
                     else {
@@ -200,16 +206,9 @@ namespace R7.Epsilon.LayoutManager
 
         #endregion
 
-        protected void ErrorMessage (string messageResource)
-        {
-            Skin.AddModuleMessage (this, LocalizeString (messageResource), ModuleMessage.ModuleMessageType.RedError);
-        }
-
         protected void WarningMessage (string messageResource)
         {
             Skin.AddModuleMessage (this, LocalizeString (messageResource), ModuleMessage.ModuleMessageType.YellowWarning);
         }
-
     }
 }
-
