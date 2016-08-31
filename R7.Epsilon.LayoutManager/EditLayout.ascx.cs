@@ -30,6 +30,7 @@ using DotNetNuke.Common;
 using DotNetNuke.Entities.Modules;
 using DotNetNuke.Services.Exceptions;
 using DotNetNuke.Services.Localization;
+using DotNetNuke.Services.Log.EventLog;
 using DotNetNuke.UI.Skins;
 using DotNetNuke.UI.Skins.Controls;
 using R7.Epsilon.LayoutManager.Components;
@@ -118,8 +119,14 @@ namespace R7.Epsilon.LayoutManager
                         }
                     } 
                     else {
-                        // portalid argument is required, but don't expose it
-                        ErrorMessage ("InvalidQueryString.Error");
+                        // layoutportalid argument is required, but don't expose it to end-user
+                        EventLogController.Instance.AddLog (
+                            "R7.Epsilon.LayoutManager.EditLayout", 
+                            "Querystring is invalid, The layoutportalid argument is required.", 
+                            EventLogController.EventLogType.HOST_ALERT
+                        );
+                        
+                        Response.Redirect (Globals.NavigateURL (), true);
                     }
                 }
             } 

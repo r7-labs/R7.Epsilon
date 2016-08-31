@@ -18,9 +18,6 @@
 	<data name="LayoutFileNotFound.Error" xml:space="preserve">
         <value>Указанный файл лейаута не найден.</value>
     </data>
-    <data name="InvalidQueryString.Error" xml:space="preserve">
-        <value>Строка запроса не верна.</value>
-    </data>
 	<data name="LayoutName.Required" xml:space="preserve">
         <value>Укажите имя файла лейаута.</value>
     </data>
