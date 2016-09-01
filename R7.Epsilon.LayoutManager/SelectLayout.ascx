@@ -10,7 +10,7 @@
 		<div class="dnnFormItem">
             <dnn:Label id="labelLayout" runat="server" ControlName="comboLayout" />  
             <asp:DropDownList id="comboLayout" runat="server"
-				DataTextField = "Name"
+				DataTextField = "Name_String"
 				DataValueField = "Name"
 		    />
         </div>
