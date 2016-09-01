@@ -67,6 +67,7 @@ namespace R7.Epsilon.LayoutManager.Components
         public static IEnumerable<LayoutInfo> GetPortalLayouts (int portalId)
         {
             Contract.Requires (portalId == Const.HOST_PORTAL_ID || portalId >= 0);
+            Contract.Ensures (Contract.Result<IEnumerable<LayoutInfo>> () != null);
 
             var mapPath = (portalId != Const.HOST_PORTAL_ID)
               ? PortalController.Instance.GetPortal (portalId).HomeSystemDirectoryMapPath
