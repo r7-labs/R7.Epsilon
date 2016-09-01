@@ -21,4 +21,7 @@
 	<data name="NotSelected.Text" xml:space="preserve">
         <value>&lt; Не выбрано &gt;</value>
     </data>
+	<data name="HostLayout.Format" xml:space="preserve">
+        <value>{0} (хостинг)</value>
+    </data>
 </root>

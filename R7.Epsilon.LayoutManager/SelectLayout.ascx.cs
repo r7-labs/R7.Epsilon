@@ -193,7 +193,12 @@ namespace R7.Epsilon.LayoutManager
             comboLayout.Items.Add (new ListItem (LocalizeString ("NotSelected.Text"), int.MinValue.ToString ()));
 
             foreach (var layout in layouts) {
-                var item = new ListItem (layout.Name, LayoutController.SettingValuePrefix (layout.PortalId) + layout.Name);
+
+                var layoutName = layout.PortalId == Const.HOST_PORTAL_ID 
+                                       ? string.Format (LocalizeString ("HostLayout.Format"), layout.Name) 
+                                       : layout.Name;
+                
+                var item = new ListItem (layoutName, LayoutController.SettingValuePrefix (layout.PortalId) + layout.Name);
 
                 // mark host layouts
                 if (layout.PortalId == Const.HOST_PORTAL_ID) {
