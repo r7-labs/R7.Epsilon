@@ -27,9 +27,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using DotNetNuke.Entities.Icons;
 using DotNetNuke.Entities.Modules;
-using DotNetNuke.Entities.Modules.Actions;
 using DotNetNuke.Entities.Portals;
 using DotNetNuke.Services.Exceptions;
 using DotNetNuke.UI.Skins;
@@ -123,11 +121,6 @@ namespace R7.Epsilon.LayoutManager
             } else {
                 gridLayouts.CssClass = gridLayouts.CssClass.Replace ("empty", "").TrimEnd ();
             }
-        }
-
-        protected void ErrorMessage (string messageResource)
-        {
-            Skin.AddModuleMessage (this, LocalizeString (messageResource), ModuleMessage.ModuleMessageType.RedError);
         }
 
         protected void WarningMessage (string messageResource)
