@@ -38,7 +38,7 @@ using R7.Epsilon.LayoutManager.Components;
 
 namespace R7.Epsilon.LayoutManager
 {
-    public partial class ViewLayoutManager : PortalModuleBase, IActionable
+    public partial class ViewLayoutManager : PortalModuleBase
     {
         #region Handlers
 
@@ -107,31 +107,6 @@ namespace R7.Epsilon.LayoutManager
         {
             var portalId = int.Parse (comboPortal.SelectedValue);
             BindLayouts (portalId);
-        }
-
-        #endregion
-
-        #region IActionable implementation
-
-        public ModuleActionCollection ModuleActions {
-            get {
-                var actions = new ModuleActionCollection ();
-
-                actions.Add (new ModuleAction (
-                    GetNextActionID (),
-                    LocalizeString ("AddLayout.Action"),
-                    ModuleActionType.AddContent,
-                    "",
-                    IconController.IconURL ("Add"),
-                    EditUrl ("Edit"),
-                    "",
-                    false,
-                    DotNetNuke.Security.SecurityAccessLevel.Admin,
-                    true
-                ));
-
-                return actions;
-            }
         }
 
         #endregion

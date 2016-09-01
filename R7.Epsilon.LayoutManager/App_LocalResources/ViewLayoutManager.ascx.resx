@@ -1,8 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-	<data name="AddLayout.Action" xml:space="preserve">
-        <value>Add Layout</value>
-    </data>
 	<data name="ModuleHelp.Text" xml:space="preserve">
         <value>&lt;P&gt;A R7.Epsilon.LayoutManager module&lt;/P&gt;</value>
     </data>
