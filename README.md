@@ -48,7 +48,15 @@ See *R7.Epsilon* skin in action at http://www.volgau.com
 Project code originates from Chris Hammond's [HammerFlex](https://github.com/ChrisHammond/HammerFlex) skin 
 and utilizes some ideas from [Tidy](http://tidy.codeplex.com/) skin. You should really try them too!
 
-# Assets License
+# License
+
+[![AGPLv3](https://www.gnu.org/graphics/agplv3-155x51.png)](https://www.gnu.org/licenses/agpl-3.0.html)
+
+The *R7.Epsilon* is free software: you can redistribute it and/or modify it under the terms of 
+the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, 
+or (at your option) any later version.
+
+## License for assets
 
 Social icons based on Stephen Hutchings's [Typicons](https://github.com/stephenhutchings/typicons.font), 
 published under the terms of [CC BY-CA](http://creativecommons.org/licenses/by-sa/3.0/) license.
