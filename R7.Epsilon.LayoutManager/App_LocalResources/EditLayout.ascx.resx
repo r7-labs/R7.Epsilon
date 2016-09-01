@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<data name="labelLayoutName.Text" xml:space="preserve"> 
+        <value>Layout Name:</value>
+    </data>
+	<data name="labelLayoutName.Help" xml:space="preserve">
+        <value>Name of the layout file, without extension</value>
+    </data>
+	<data name="valContent.ErrorMessage" xml:space="preserve">
+        <value>&lt;br&gt;Content is required</value>
+    </data>
+	<data name="ModuleHelp.Text" xml:space="preserve">
+        <value>&lt;P&gt;A R7.Epsilon.LayoutManager module&lt;/P&gt;</value>
+    </data>
+	<data name="ControlTitle_edit.Text" xml:space="preserve">
+        <value>Edit Layout</value>
+    </data>
+	<data name="LayoutName.Required" xml:space="preserve">
+        <value>The name of the layout file is required.</value>
+    </data>
+	<data name="DeleteItem.Format" xml:space="preserve">
+        <value>Are you sure you want to delete the {0} layout?</value>
+    </data>
+	<data name="LayoutFileAlreadyExists.Warning" xml:space="preserve">
+        <value>Layout file with this name already exists. Please enter different name and try again.</value>
+    </data>
+	<data name="LayoutIsInUse.Warning" xml:space="preserve">
+        <value>Cannot delete layout as it is used on some pages.</value>
+    </data> 
+</root>

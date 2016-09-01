@@ -42,7 +42,18 @@
 			<InstallContainerFiles Include="..\R7.Epsilon\Containers\**\*.png" />
 			<InstallContainerFiles Include="..\R7.Epsilon\Containers\**\*.gif" />
 		</ItemGroup>
-  
+
+        <!-- Declare module files -->
+        <ItemGroup>
+            <InstallLayoutManagerFiles Include="..\R7.Epsilon.LayoutManager\**\*.ascx" />
+            <InstallLayoutManagerFiles Include="..\R7.Epsilon.LayoutManager\**\*.css" />
+            <InstallLayoutManagerFiles Include="..\R7.Epsilon.LayoutManager\**\*.resx" />
+            <InstallLayoutManagerFiles Include="..\R7.Epsilon.LayoutManager\**\*.js" />
+            <InstallLayoutManagerFiles Include="..\R7.Epsilon.LayoutManager\**\*.jpg" />
+            <InstallLayoutManagerFiles Include="..\R7.Epsilon.LayoutManager\**\*.png" />
+            <InstallLayoutManagerFiles Include="..\R7.Epsilon.LayoutManager\**\*.gif" />
+        </ItemGroup>
+
 		<!-- Declare manifest files -->
 		<ItemGroup>
 			<InstallManifestFiles Include="..\R7.Epsilon\*.dnn" />
@@ -58,6 +69,7 @@
 		<!-- Copy to tmp dir -->
 		<Copy SourceFiles="@(InstallSkinFiles)" DestinationFolder="$(MSBuildProjectDirectory)\tmp_Skins\%(RecursiveDir)" />
 		<Copy SourceFiles="@(InstallContainerFiles)" DestinationFolder="$(MSBuildProjectDirectory)\tmp_Containers\%(RecursiveDir)" />
+        <Copy SourceFiles="@(InstallLayoutManagerFiles)" DestinationFolder="$(MSBuildProjectDirectory)\tmp_Modules\R7.Epsilon.LayoutManager\%(RecursiveDir)" />
 
 		<!-- Declare zipped files -->
 		<ItemGroup>
@@ -67,13 +79,19 @@
 		<ItemGroup>
 			<InstallContainerZipFiles Include="$(MSBuildProjectDirectory)\tmp_Containers\**\*.*" />
 		</ItemGroup>
+
+        <ItemGroup>
+            <InstallModuleZipFiles Include="$(MSBuildProjectDirectory)\tmp_Modules\**\*.*" />
+        </ItemGroup>
   
 		<!-- Create resource archives  -->
 		<Zip Condition=" '$(OS)' != 'Unix' " Files="@(InstallSkinZipFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\tmp_Skins" ZipFileName="Resources_Skins.$(PackageExtension)" />
 		<Zip Condition=" '$(OS)' != 'Unix' " Files="@(InstallContainerZipFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\tmp_Containers" ZipFileName="Resources_Containers.$(PackageExtension)" />
+        <Zip Condition=" '$(OS)' != 'Unix' " Files="@(InstallModuleZipFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\tmp_Modules" ZipFileName="Resources_Modules.$(PackageExtension)" />
 
         <Exec Condition=" '$(OS)' == 'Unix' " Command="zip -r -6 -UN=UTF8 &quot;$(MSBuildProjectDirectory)\Resources_Skins.$(PackageExtension)&quot; ." WorkingDirectory="$(MSBuildProjectDirectory)/tmp_Skins" />
         <Exec Condition=" '$(OS)' == 'Unix' " Command="zip -r -6 -UN=UTF8 &quot;$(MSBuildProjectDirectory)\Resources_Containers.$(PackageExtension)&quot; ." WorkingDirectory="$(MSBuildProjectDirectory)/tmp_Containers" />
+        <Exec Condition=" '$(OS)' == 'Unix' " Command="zip -r -6 -UN=UTF8 &quot;$(MSBuildProjectDirectory)\Resources_Modules.$(PackageExtension)&quot; ." WorkingDirectory="$(MSBuildProjectDirectory)/tmp_Modules" />
 
 		<!-- Copy binaries -->
 		<Copy SourceFiles="@(InstallBinaryFiles)" DestinationFolder="$(MSBuildProjectDirectory)\tmp_Package\bin" />
@@ -89,6 +107,10 @@
 		<Copy SourceFiles="$(MSBuildProjectDirectory)\Resources_Containers.$(PackageExtension)"
 			 DestinationFolder="$(MSBuildProjectDirectory)\tmp_Package/" />
         <Delete Files="$(MSBuildProjectDirectory)\Resources_Containers.$(PackageExtension)" />
+
+        <Copy SourceFiles="$(MSBuildProjectDirectory)\Resources_Modules.$(PackageExtension)"
+             DestinationFolder="$(MSBuildProjectDirectory)\tmp_Package/" />
+        <Delete Files="$(MSBuildProjectDirectory)\Resources_Modules.$(PackageExtension)" />
 
 		<!-- Declare tmp package folder -->
 		<ItemGroup>
@@ -106,6 +128,7 @@
 		<!-- Cleanup -->
 		<RemoveDir Directories="$(MSBuildProjectDirectory)\tmp_Skins" />
 		<RemoveDir Directories="$(MSBuildProjectDirectory)\tmp_Containers" />
+        <RemoveDir Directories="$(MSBuildProjectDirectory)\tmp_Modules" />
 		<RemoveDir Directories="$(MSBuildProjectDirectory)\tmp_Package" />
 
 	</Target>

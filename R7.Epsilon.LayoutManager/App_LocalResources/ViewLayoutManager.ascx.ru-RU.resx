@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <data name="ModuleHelp.Text" xml:space="preserve">
+        <value>&lt;P&gt; Модуль R7.Epsilon.LayoutManager&lt;/P&gt;</value>
+    </data>
+    <data name="DefaultContent.Text" xml:space="preserve">
+        <value>Что-то вместо содержимого</value>
+    </data>
+    <data name="NothingToDisplay.Text" xml:space="preserve">
+        <value>Нечего отображать, добавьте элементы.</value>
+    </data>
+	<data name="labelPortal.Text" xml:space="preserve">
+        <value>Сайт:</value>
+    </data>
+    <data name="labelPortal.Help" xml:space="preserve">
+        <value>Выберите сайт для управления лейаутами.</value>
+    </data>
+	<data name="Host.Text" xml:space="preserve">
+        <value>Host</value>
+    </data>
+	<data name="NoLayouts.Info" xml:space="preserve">
+        <value>На выбранном сайте найдены лейауты.</value>
+    </data>
+	<data name="NotAllowed.Warning" xml:space="preserve">
+        <value>Только администраторы сайтов или хостинга могут управлять лейаутами.</value>
+    </data>
+	<data name="AddLayout.Text" xml:space="preserve">
+        <value>Добавить лейаут</value>
+    </data>
+</root>

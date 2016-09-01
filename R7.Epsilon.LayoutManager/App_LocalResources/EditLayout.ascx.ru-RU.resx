@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <data name="labelLayoutName.Text" xml:space="preserve"> 
+        <value>Название лейаута:</value>
+    </data>
+    <data name="labelLayoutName.Help" xml:space="preserve">
+        <value>Имя файла лейаута, без расширения.</value>
+    </data>
+    <data name="valContent.ErrorMessage" xml:space="preserve">
+        <value>&lt;br&gt;Содержимое обязательно!</value>
+    </data>
+    <data name="ModuleHelp.Text" xml:space="preserve">
+        <value>&lt;P&gt;Модуль R7.Epsilon.LayoutManager&lt;/P&gt;</value>
+    </data>
+    <data name="ControlTitle_edit.Text" xml:space="preserve">
+        <value>Редактирование лейаута</value>
+    </data>
+	<data name="LayoutName.Required" xml:space="preserve">
+        <value>Укажите имя файла лейаута.</value>
+    </data>
+	<data name="DeleteItem.Format" xml:space="preserve">
+        <value>Уверены, что хотите удалить лейаут {0}?</value>
+    </data>
+	<data name="LayoutFileAlreadyExists.Warning" xml:space="preserve">
+        <value>Файл лейаута с таким именем уже существует. Введите другое имя и попробуйте снова.</value>
+    </data>
+	<data name="LayoutIsInUse.Warning" xml:space="preserve">
+        <value>Невозможно удалить лейаут, так как он используется на некоторых страницах.</value>
+    </data> 
+</root>

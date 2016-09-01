@@ -32,6 +32,17 @@
 			<DeployContainerFiles Include="..\R7.Epsilon\Containers\**\*.gif" />
 		</ItemGroup>
 
+        <!-- Declare module files -->
+        <ItemGroup>
+            <DeployLayoutManagerFiles Include="..\R7.Epsilon.LayoutManager\**\*.ascx" />
+            <DeployLayoutManagerFiles Include="..\R7.Epsilon.LayoutManager\**\*.css" />
+            <DeployLayoutManagerFiles Include="..\R7.Epsilon.LayoutManager\**\*.resx" />
+            <DeployLayoutManagerFiles Include="..\R7.Epsilon.LayoutManager\**\*.js" />
+            <DeployLayoutManagerFiles Include="..\R7.Epsilon.LayoutManager\**\*.jpg" />
+            <DeployLayoutManagerFiles Include="..\R7.Epsilon.LayoutManager\**\*.png" />
+            <DeployLayoutManagerFiles Include="..\R7.Epsilon.LayoutManager\**\*.gif" />
+        </ItemGroup>
+
         <!-- Declare binaries -->
         <ItemGroup> 
             <DeployBinaryFiles Include="$(MSBuildDnnBinPath)\R7.Epsilon*.dll" />
@@ -42,6 +53,7 @@
 		<!-- Copy files to tmp dirs -->
 		<Copy SourceFiles="@(DeploySkinFiles)" DestinationFolder="$(MSBuildProjectDirectory)\tmp_Skins\%(RecursiveDir)" />
 		<Copy SourceFiles="@(DeployContainerFiles)" DestinationFolder="$(MSBuildProjectDirectory)\tmp_Containers\%(RecursiveDir)" />
+        <Copy SourceFiles="@(DeployLayoutManagerFiles)" DestinationFolder="$(MSBuildProjectDirectory)\tmp_Modules\R7.Epsilon.LayoutManager\%(RecursiveDir)" />
 
 		<!-- declare files to move -->
 		<ItemGroup>
@@ -51,17 +63,23 @@
 		<ItemGroup>	
 			<ContainerMoveFiles Include="$(MSBuildProjectDirectory)\tmp_Containers\**\*.*" />
 		</ItemGroup>
+
+        <ItemGroup> 
+            <ModuleMoveFiles Include="$(MSBuildProjectDirectory)\tmp_Modules\**\*.*" />
+        </ItemGroup>
 	
 		<!-- Deploy files -->
 		<Copy SourceFiles="@(SkinMoveFiles)" DestinationFolder="$(DnnSkinsPath)\R7.Epsilon\%(RecursiveDir)" />
 		<Copy SourceFiles="@(ContainerMoveFiles)" DestinationFolder="$(DnnContainersPath)\R7.Epsilon\%(RecursiveDir)" />
-		      
+		<Copy SourceFiles="@(ModuleMoveFiles)" DestinationFolder="$(DnnModulesPath)\R7.Epsilon\%(RecursiveDir)" />
+
 		<!-- Copy binaries -->
 		<Copy SourceFiles="@(DeployBinaryFiles)" DestinationFolder="$(DnnBinPath)" />
         
 		<!-- Cleanup -->
 		<RemoveDir Directories="$(MSBuildProjectDirectory)\tmp_Skins" />
 		<RemoveDir Directories="$(MSBuildProjectDirectory)\tmp_Containers" />
+        <RemoveDir Directories="$(MSBuildProjectDirectory)\tmp_Modules" />
 		      
 	</Target>
 </Project>
