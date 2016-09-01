@@ -66,21 +66,21 @@ namespace R7.Epsilon.LayoutManager.Components
             Contract.Requires (!string.IsNullOrEmpty (layoutName));
             Contract.Requires (portalId == Const.HOST_PORTAL_ID || portalId >= 0);
 
-            using (var db = DataContext.Instance ()) {
-                if (portalId == Const.HOST_PORTAL_ID) {
-                    var sqlQuery = @"SELECT COUNT (*) FROM {databaseOwner}[{objectQualifier}TabSettings] AS TS
+            const string hostSqlQuery = @"SELECT COUNT (*) FROM {databaseOwner}[{objectQualifier}TabSettings] AS TS
                                     WHERE TS.SettingName LIKE @0 AND TS.SettingValue = @1";
 
-                    return 0 < db.ExecuteScalar<int> (CommandType.Text, sqlQuery,
+            const string portalSqlQuery = @"SELECT COUNT (*) FROM {databaseOwner}[{objectQualifier}TabSettings] AS TS
+                                    INNER JOIN {databaseOwner}[{objectQualifier}Tabs] AS T ON TS.TabID = T.TabID
+                                    WHERE T.PortalID = @0 AND TS.SettingName LIKE @1 AND TS.SettingValue = @2";
+
+            using (var db = DataContext.Instance ()) {
+                if (portalId == Const.HOST_PORTAL_ID) {
+                    return 0 < db.ExecuteScalar<int> (CommandType.Text, hostSqlQuery,
                                                       Const.LAYOUT_TAB_SETTING_NAME_BASE + "%",
                                                       SettingValuePrefix (portalId) + layoutName);
                 }
                 else {
-                    var sqlQuery =  @"SELECT COUNT (*) FROM {databaseOwner}[{objectQualifier}TabSettings] AS TS
-                                    INNER JOIN {databaseOwner}[{objectQualifier}Tabs] AS T ON TS.TabID = T.TabID
-                                    WHERE T.PortalID = @0 AND TS.SettingName LIKE @1 AND TS.SettingValue = @2";
-
-                    return 0 < db.ExecuteScalar<int> (CommandType.Text, sqlQuery, portalId,
+                    return 0 < db.ExecuteScalar<int> (CommandType.Text, portalSqlQuery, portalId,
                                                       Const.LAYOUT_TAB_SETTING_NAME_BASE + "%",
                                                       SettingValuePrefix (portalId) + layoutName);
                 }
