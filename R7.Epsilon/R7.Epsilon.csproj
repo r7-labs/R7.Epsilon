@@ -108,6 +108,11 @@
     <None Include="Customizations\volgau.com\Portals\2\R7.Epsilon.yml" />
     <None Include="Customizations\volgau.com\Portals\3\R7.Epsilon.yml" />
     <None Include="lib\README.md" />
+    <None Include="Skins\Custom.doctype.xml">
+      <DependentUpon>Custom.ascx</DependentUpon>
+    </None>
+    <None Include="Skins\Layouts\Layout1.xml" />
+    <None Include="Skins\Layouts\Default.xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Skins\Edit.ascx.cs">
@@ -201,6 +206,15 @@
     <Compile Include="Components\Utils.cs" />
     <Compile Include="Components\EpsilonPortalConfig.cs" />
     <Compile Include="Components\EpsilonConfig.cs" />
+    <Compile Include="Models\DynamicPane.cs" />
+    <Compile Include="Models\Layout.cs" />
+    <Compile Include="Components\MarkupParser.cs" />
+    <Compile Include="Components\LayoutChecker.cs" />
+    <Compile Include="Models\PaneEqualityComparer.cs" />
+    <Compile Include="Components\LayoutManager.cs" />
+    <Compile Include="Skins\Custom.ascx.cs">
+      <DependentUpon>Custom.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Containers\Blank.ascx" />
@@ -324,6 +338,7 @@
     <Content Include="packages.config" />
     <Content Include="license.htm" />
     <Content Include="releaseNotes.htm" />
+    <Content Include="Skins\Custom.ascx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
@@ -351,6 +366,7 @@
     <Folder Include="Customizations\volgau.com\Portals\3\" />
     <Folder Include="Models\" />
     <Folder Include="Components\" />
+    <Folder Include="Skins\Layouts\" />
   </ItemGroup>
   <Import Project="Less.targets" />
   <Target Name="BeforeBuild" DependsOnTargets="Less;MinifyJS" />
