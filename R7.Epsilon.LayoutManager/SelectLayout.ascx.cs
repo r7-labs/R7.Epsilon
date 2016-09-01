@@ -25,6 +25,7 @@
 // THE SOFTWARE.
 
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.UI.WebControls;
 using DotNetNuke.Common;
@@ -34,6 +35,7 @@ using DotNetNuke.Entities.Tabs;
 using DotNetNuke.Services.Exceptions;
 using DotNetNuke.Services.Log.EventLog;
 using R7.Epsilon.LayoutManager.Components;
+using R7.Epsilon.LayoutManager.Models;
 
 namespace R7.Epsilon.LayoutManager
 {
@@ -115,12 +117,17 @@ namespace R7.Epsilon.LayoutManager
 
                     BindLayouts (PortalId);
 
-                    // select existing value
+                    // select existing values
                     var tabSettings = TabController.Instance.GetTabSettings (FromTabId.Value);
-                    var layoutName = (string) tabSettings [Const.LAYOUT_TAB_SETTING_NAME];
 
+                    var layoutName = (string) tabSettings [Const.LAYOUT_TAB_SETTING_NAME];
                     if (layoutName != null) {
                         comboLayout.SelectedValue = layoutName;
+                    }
+
+                    var a11yLayoutName = (string) tabSettings [Const.A11Y_LAYOUT_TAB_SETTING_NAME];
+                    if (a11yLayoutName != null) {
+                        comboA11yLayout.SelectedValue = a11yLayoutName;
                     }
                 }
             } 
@@ -151,6 +158,14 @@ namespace R7.Epsilon.LayoutManager
                     TabController.Instance.DeleteTabSetting (FromTabId.Value, Const.LAYOUT_TAB_SETTING_NAME);
                 }
 
+                if (comboA11yLayout.SelectedIndex > 0) {
+                    // update tab setting
+                    TabController.Instance.UpdateTabSetting (FromTabId.Value, Const.A11Y_LAYOUT_TAB_SETTING_NAME, comboA11yLayout.SelectedValue);
+                } else {
+                    // delete tab setting
+                    TabController.Instance.DeleteTabSetting (FromTabId.Value, Const.A11Y_LAYOUT_TAB_SETTING_NAME);
+                }
+
                 Response.Redirect (GetReturnUrl (), true);
             } 
             catch (Exception ex) {
@@ -162,12 +177,20 @@ namespace R7.Epsilon.LayoutManager
 
         protected void BindLayouts (int portalId)
         {
+            var layouts = LayoutController.GetLayouts (portalId).OrderBy (L => L.Name);
+
+            FillLayoutComboBox (comboLayout, layouts);
+            FillLayoutComboBox (comboA11yLayout, layouts);
+        }
+
+        protected void FillLayoutComboBox (DropDownList comboLayout, IEnumerable<LayoutInfo> layouts)
+        {
             comboLayout.Items.Clear ();
 
             // add default item
             comboLayout.Items.Add (new ListItem (LocalizeString ("NotSelected.Text"), int.MinValue.ToString ()));
 
-            foreach (var layout in LayoutController.GetLayouts (portalId).OrderBy (L => L.Name)) {
+            foreach (var layout in layouts) {
                 var item = new ListItem (layout.Name, layout.Name);
 
                 // mark host layouts

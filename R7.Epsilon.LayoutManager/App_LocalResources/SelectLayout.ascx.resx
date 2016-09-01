@@ -12,6 +12,12 @@
     <data name="labelLayout.Help" xml:space="preserve">
         <value>Select layout from the dropdown. Host layouts marked bold.</value>
     </data>
+	<data name="labelA11yLayout.Text" xml:space="preserve"> 
+        <value>A11y Mode Layout:</value>
+    </data>
+    <data name="labelA11yLayout.Help" xml:space="preserve">
+        <value>Select layout for accessibility mode from the dropdown. If none selected, in the accessibility mode base layout will be used. Host layouts marked bold.</value>
+    </data>
 	<data name="NotSelected.Text" xml:space="preserve">
         <value>&lt; Not Selected &gt;</value>
     </data>

@@ -58,9 +58,10 @@ namespace R7.Epsilon.LayoutManager.Components
             using (var db = DataContext.Instance ()) {
                 var sqlQuery = @"SELECT COUNT (*) FROM {databaseOwner}[{objectQualifier}TabSettings] AS TS
                     INNER JOIN {databaseOwner}[{objectQualifier}Tabs] AS T ON TS.TabID = T.TabID
-                    WHERE T.PortalID = @0 AND TS.SettingName = @1 AND TS.SettingValue = @2";
+                    WHERE T.PortalID = @0 AND TS.SettingName LIKE @1 AND TS.SettingValue = @2";
 
-                return 0 < db.ExecuteScalar<int> (CommandType.Text, sqlQuery, portalId, Const.LAYOUT_TAB_SETTING_NAME, layoutName);
+                return 0 < db.ExecuteScalar<int> (CommandType.Text, sqlQuery, 
+                                                  portalId, Const.LAYOUT_TAB_SETTING_NAME_BASE + "%", layoutName);
             }
         }
 

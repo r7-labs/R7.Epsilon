@@ -11,6 +11,10 @@
             <dnn:Label id="labelLayout" runat="server" ControlName="comboLayout" />  
             <asp:DropDownList id="comboLayout" runat="server" />
         </div>
+		<div class="dnnFormItem">
+            <dnn:Label id="labelA11yLayout" runat="server" ControlName="comboA11yLayout" />  
+            <asp:DropDownList id="comboA11yLayout" runat="server" />
+        </div>
     	<ul class="dnnActions dnnClear">
             <li><asp:LinkButton id="buttonSelect" runat="server" CssClass="dnnPrimaryAction" resourcekey="Select.Text" OnClick="buttonSelect_Click" /></li>
             <li><asp:HyperLink id="linkCancel" runat="server" CssClass="dnnSecondaryAction" resourcekey="cmdCancel" /></li>
