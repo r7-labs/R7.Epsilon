@@ -47,3 +47,11 @@ See *R7.Epsilon* skin in action at http://www.volgau.com
 
 Project code originates from Chris Hammond's [HammerFlex](https://github.com/ChrisHammond/HammerFlex) skin 
 and utilizes some ideas from [Tidy](http://tidy.codeplex.com/) skin. You should really try them too!
+
+# Assets License
+
+Social icons based on Stephen Hutchings's [Typicons](https://github.com/stephenhutchings/typicons.font), 
+published under the terms of [CC BY-CA](http://creativecommons.org/licenses/by-sa/3.0/) license.
+
+Google translate and A11y icons based on Xaviju's [Inkscape Open Symbols](https://github.com/Xaviju/inkscape-open-symbols),
+the source of which is published under [GPLv2](http://opensource.org/licenses/GPL-2.0) license.

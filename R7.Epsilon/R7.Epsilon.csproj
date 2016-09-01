@@ -107,6 +107,7 @@
     <None Include="Customizations\volgau.com\Portals\0\R7.Epsilon.yml" />
     <None Include="Customizations\volgau.com\Portals\2\R7.Epsilon.yml" />
     <None Include="Customizations\volgau.com\Portals\3\R7.Epsilon.yml" />
+    <None Include="lib\README.md" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Skins\Edit.ascx.cs">
