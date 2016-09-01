@@ -38,6 +38,17 @@ namespace R7.Epsilon.LayoutManager.Components
 {
     public static class LayoutController
     {
+        /// <summary>
+        /// Returns layout name prefix which is used in tab settings
+        /// </summary>
+        /// <returns>The value prefix.</returns>
+        /// <param name="portalId">Portal identifier.</param>
+        public static string SettingValuePrefix (int portalId)
+        {
+            // [G]lobal and [L]ocal like in SkinSrc or ContainerSrc fields
+            return (portalId == Const.HOST_PORTAL_ID) ? "[G]" : "[L]";
+        }
+
         public static string GetLayoutFileName (string layoutName, int portalId)
         {
             Contract.Requires (!string.IsNullOrEmpty (layoutName));
@@ -56,12 +67,23 @@ namespace R7.Epsilon.LayoutManager.Components
             Contract.Requires (portalId == Const.HOST_PORTAL_ID || portalId >= 0);
 
             using (var db = DataContext.Instance ()) {
-                var sqlQuery = @"SELECT COUNT (*) FROM {databaseOwner}[{objectQualifier}TabSettings] AS TS
-                    INNER JOIN {databaseOwner}[{objectQualifier}Tabs] AS T ON TS.TabID = T.TabID
-                    WHERE T.PortalID = @0 AND TS.SettingName LIKE @1 AND TS.SettingValue = @2";
+                if (portalId == Const.HOST_PORTAL_ID) {
+                    var sqlQuery = @"SELECT COUNT (*) FROM {databaseOwner}[{objectQualifier}TabSettings] AS TS
+                                    WHERE TS.SettingName LIKE @0 AND TS.SettingValue = @1";
 
-                return 0 < db.ExecuteScalar<int> (CommandType.Text, sqlQuery, 
-                                                  portalId, Const.LAYOUT_TAB_SETTING_NAME_BASE + "%", layoutName);
+                    return 0 < db.ExecuteScalar<int> (CommandType.Text, sqlQuery,
+                                                      Const.LAYOUT_TAB_SETTING_NAME_BASE + "%",
+                                                      SettingValuePrefix (portalId) + layoutName);
+                }
+                else {
+                    var sqlQuery =  @"SELECT COUNT (*) FROM {databaseOwner}[{objectQualifier}TabSettings] AS TS
+                                    INNER JOIN {databaseOwner}[{objectQualifier}Tabs] AS T ON TS.TabID = T.TabID
+                                    WHERE T.PortalID = @0 AND TS.SettingName LIKE @1 AND TS.SettingValue = @2";
+
+                    return 0 < db.ExecuteScalar<int> (CommandType.Text, sqlQuery, portalId,
+                                                      Const.LAYOUT_TAB_SETTING_NAME_BASE + "%",
+                                                      SettingValuePrefix (portalId) + layoutName);
+                }
             }
         }
 
@@ -86,31 +108,15 @@ namespace R7.Epsilon.LayoutManager.Components
         }
 
         /// <summary>
-        /// Gets all available layouts for portal, including host layouts not overriden on portal level
+        /// Gets all available layouts for portal, including host layouts
         /// </summary>
         /// <returns>The layouts.</returns>
         /// <param name="portalId">Portal identifier.</param>
         public static IEnumerable<LayoutInfo> GetLayouts (int portalId)
         {
             Contract.Requires (portalId >= 0);
-            
-            var hostLayouts = GetPortalLayouts (Const.HOST_PORTAL_ID);
-            var portalLayouts = GetPortalLayouts (portalId);
 
-            var layouts = new List<LayoutInfo> ();
-            var layoutComparer = new LayoutEqualityComparer ();
-
-            // add host layouts, if no overriding portal layouts exists
-            foreach (var hostLayout in hostLayouts) {
-                if (null == portalLayouts.FirstOrDefault (pl => layoutComparer.Equals (pl, hostLayout))) {
-                    layouts.Add (hostLayout);
-                }
-            }
-
-            // add all portal layouts
-            layouts.AddRange (portalLayouts);
-
-            return layouts;
+            return GetPortalLayouts (Const.HOST_PORTAL_ID).Concat (GetPortalLayouts (portalId));
         }
     }
 }

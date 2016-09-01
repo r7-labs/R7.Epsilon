@@ -152,7 +152,7 @@ namespace R7.Epsilon.LayoutManager
                 if (comboLayout.SelectedIndex > 0) {
                     // update tab setting
                     TabController.Instance.UpdateTabSetting (FromTabId.Value, Const.LAYOUT_TAB_SETTING_NAME, comboLayout.SelectedValue);
-                } 
+                }
                 else {
                     // delete tab setting
                     TabController.Instance.DeleteTabSetting (FromTabId.Value, Const.LAYOUT_TAB_SETTING_NAME);
@@ -177,7 +177,9 @@ namespace R7.Epsilon.LayoutManager
 
         protected void BindLayouts (int portalId)
         {
-            var layouts = LayoutController.GetLayouts (portalId).OrderBy (L => L.Name);
+            var layouts = LayoutController.GetLayouts (portalId)
+                                          .OrderByDescending (L => L.PortalId == Const.HOST_PORTAL_ID)
+                                          .ThenBy (L => L.Name);
 
             FillLayoutComboBox (comboLayout, layouts);
             FillLayoutComboBox (comboA11yLayout, layouts);
@@ -191,7 +193,7 @@ namespace R7.Epsilon.LayoutManager
             comboLayout.Items.Add (new ListItem (LocalizeString ("NotSelected.Text"), int.MinValue.ToString ()));
 
             foreach (var layout in layouts) {
-                var item = new ListItem (layout.Name, layout.Name);
+                var item = new ListItem (layout.Name, LayoutController.SettingValuePrefix (layout.PortalId) + layout.Name);
 
                 // mark host layouts
                 if (layout.PortalId == Const.HOST_PORTAL_ID) {
