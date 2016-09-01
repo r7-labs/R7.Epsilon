@@ -73,5 +73,31 @@ namespace R7.Epsilon.LayoutManager.Components
 
             return Enumerable.Empty<LayoutInfo> ();
         }
+
+        /// <summary>
+        /// Gets all available layouts for portal, including host layouts not overriden on portal level
+        /// </summary>
+        /// <returns>The layouts.</returns>
+        /// <param name="portalId">Portal identifier.</param>
+        public static IEnumerable<LayoutInfo> GetLayouts (int portalId)
+        {
+            var hostLayouts = GetPortalLayouts (Const.HOST_PORTAL_ID);
+            var portalLayouts = GetPortalLayouts (portalId);
+
+            var layouts = new List<LayoutInfo> ();
+            var layoutComparer = new LayoutEqualityComparer ();
+
+            // add host layouts, if no overriding portal layouts exists
+            foreach (var hostLayout in hostLayouts) {
+                if (null == portalLayouts.FirstOrDefault (pl => layoutComparer.Equals (pl, hostLayout))) {
+                    layouts.Add (hostLayout);
+                }
+            }
+
+            // add all portal layouts
+            layouts.AddRange (portalLayouts);
+
+            return layouts;
+        }
     }
 }

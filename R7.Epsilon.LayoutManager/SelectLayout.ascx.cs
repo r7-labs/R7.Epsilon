@@ -149,11 +149,7 @@ namespace R7.Epsilon.LayoutManager
 
         protected void BindLayouts (int portalId)
         {
-            comboLayout.DataSource = LayoutController.GetPortalLayouts (portalId)
-                .Concat (LayoutController.GetPortalLayouts (Const.HOST_PORTAL_ID))
-                .Distinct (new LayoutEqualityComparer ())
-                .OrderBy (L => L.Name);
-            
+            comboLayout.DataSource = LayoutController.GetLayouts (portalId).OrderBy (L => L.Name);
             comboLayout.DataBind ();
 
             // insert default item
