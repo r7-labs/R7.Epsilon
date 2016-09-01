@@ -28,6 +28,7 @@ using System;
 using System.Linq;
 using System.Web.UI.WebControls;
 using DotNetNuke.Common;
+using DotNetNuke.Common.Utilities;
 using DotNetNuke.Entities.Modules;
 using DotNetNuke.Entities.Tabs;
 using DotNetNuke.Services.Exceptions;
@@ -62,6 +63,11 @@ namespace R7.Epsilon.LayoutManager
             }
         }
 
+        protected bool InPopup
+        {
+            get { return Request.QueryString ["popup"] != null; }
+        }
+
         #endregion
 
         #region Handlers
@@ -74,7 +80,14 @@ namespace R7.Epsilon.LayoutManager
         {
             base.OnInit (e);
 
-            linkCancel.NavigateUrl = GetReturnUrl ();
+            // set url for Cancel link
+            if (InPopup) {
+                linkCancel.Attributes.Add ("onclick", "javascript:return " +
+                    UrlUtils.ClosePopUp (refresh: false, url: "", onClickEvent: true));
+            } 
+            else {
+                linkCancel.NavigateUrl = GetReturnUrl ();
+            }
         }
 
         /// <summary>

@@ -27,6 +27,7 @@
 using System;
 using System.IO;
 using DotNetNuke.Common;
+using DotNetNuke.Common.Utilities;
 using DotNetNuke.Entities.Modules;
 using DotNetNuke.Services.Exceptions;
 using DotNetNuke.Services.Log.EventLog;
@@ -38,6 +39,15 @@ namespace R7.Epsilon.LayoutManager
 {
     public partial class EditLayout : PortalModuleBase
     {
+        #region Properties
+
+        protected bool InPopup
+        {
+            get { return Request.QueryString ["popup"] != null; }
+        }
+
+        #endregion
+
         #region Handlers
 
         /// <summary>
@@ -49,7 +59,12 @@ namespace R7.Epsilon.LayoutManager
             base.OnInit (e);
 
             // set url for Cancel link
-            linkCancel.NavigateUrl = Globals.NavigateURL ();
+            if (InPopup) {
+                linkCancel.Attributes.Add ("onclick", "javascript:return " +
+                    UrlUtils.ClosePopUp (refresh: false, url: "", onClickEvent: true));
+            } else {
+                linkCancel.NavigateUrl = Globals.NavigateURL ();
+            }
 
             var layoutNameStr = Request.QueryString ["layoutname"];
             if (!string.IsNullOrEmpty (layoutNameStr)) {
