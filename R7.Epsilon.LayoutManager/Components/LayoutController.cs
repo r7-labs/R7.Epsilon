@@ -26,6 +26,7 @@
 
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics.Contracts;
 using System.IO;
 using System.Linq;
 using DotNetNuke.Common;
@@ -37,17 +38,23 @@ namespace R7.Epsilon.LayoutManager.Components
 {
     public static class LayoutController
     {
-        public static string GetLayoutFileName (string name, int portalId)
+        public static string GetLayoutFileName (string layoutName, int portalId)
         {
-            var mapPath = (portalId == -1) 
+            Contract.Requires (!string.IsNullOrEmpty (layoutName));
+            Contract.Requires (portalId == Const.HOST_PORTAL_ID || portalId >= 0);
+
+            var mapPath = (portalId == Const.HOST_PORTAL_ID)
                 ? Globals.HostMapPath 
                 : PortalController.Instance.GetPortal (portalId).HomeSystemDirectoryMapPath;
 
-            return Path.Combine (mapPath, "Skins", "R7.Epsilon", "Layouts", name + ".xml");
+            return Path.Combine (mapPath, "Skins", "R7.Epsilon", "Layouts", layoutName + ".xml");
         }
 
         public static bool IsLayoutInUse (string layoutName, int portalId)
         {
+            Contract.Requires (!string.IsNullOrEmpty (layoutName));
+            Contract.Requires (portalId == Const.HOST_PORTAL_ID || portalId >= 0);
+
             using (var db = DataContext.Instance ()) {
                 var sqlQuery = @"SELECT COUNT (*) FROM {databaseOwner}[{objectQualifier}TabSettings] AS TS
                     INNER JOIN {databaseOwner}[{objectQualifier}Tabs] AS T ON TS.TabID = T.TabID
@@ -59,6 +66,8 @@ namespace R7.Epsilon.LayoutManager.Components
 
         public static IEnumerable<LayoutInfo> GetPortalLayouts (int portalId)
         {
+            Contract.Requires (portalId == Const.HOST_PORTAL_ID || portalId >= 0);
+
             var mapPath = (portalId != Const.HOST_PORTAL_ID)
               ? PortalController.Instance.GetPortal (portalId).HomeSystemDirectoryMapPath
               : Globals.HostMapPath;
@@ -81,6 +90,8 @@ namespace R7.Epsilon.LayoutManager.Components
         /// <param name="portalId">Portal identifier.</param>
         public static IEnumerable<LayoutInfo> GetLayouts (int portalId)
         {
+            Contract.Requires (portalId >= 0);
+            
             var hostLayouts = GetPortalLayouts (Const.HOST_PORTAL_ID);
             var portalLayouts = GetPortalLayouts (portalId);
 
