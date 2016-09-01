@@ -26,10 +26,7 @@
 
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Web.UI.WebControls;
-using DotNetNuke.Common;
 using DotNetNuke.Entities.Icons;
 using DotNetNuke.Entities.Modules;
 using DotNetNuke.Entities.Modules.Actions;
@@ -37,7 +34,6 @@ using DotNetNuke.Entities.Portals;
 using DotNetNuke.Services.Exceptions;
 using DotNetNuke.UI.Skins;
 using DotNetNuke.UI.Skins.Controls;
-using R7.Epsilon.LayoutManager.Models;
 using R7.Epsilon.LayoutManager.Components;
 
 namespace R7.Epsilon.LayoutManager
