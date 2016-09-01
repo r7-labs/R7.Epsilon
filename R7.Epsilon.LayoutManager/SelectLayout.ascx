@@ -9,10 +9,7 @@
     <fieldset>
 		<div class="dnnFormItem">
             <dnn:Label id="labelLayout" runat="server" ControlName="comboLayout" />  
-            <asp:DropDownList id="comboLayout" runat="server"
-				DataTextField = "Name_String"
-				DataValueField = "Name"
-		    />
+            <asp:DropDownList id="comboLayout" runat="server" />
         </div>
     	<ul class="dnnActions dnnClear">
             <li><asp:LinkButton id="buttonSelect" runat="server" CssClass="dnnPrimaryAction" resourcekey="Select.Text" OnClick="buttonSelect_Click" /></li>

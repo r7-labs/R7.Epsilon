@@ -149,11 +149,21 @@ namespace R7.Epsilon.LayoutManager
 
         protected void BindLayouts (int portalId)
         {
-            comboLayout.DataSource = LayoutController.GetLayouts (portalId).OrderBy (L => L.Name);
-            comboLayout.DataBind ();
+            comboLayout.Items.Clear ();
 
-            // insert default item
-            comboLayout.Items.Insert (0, new ListItem (LocalizeString ("NotSelected.Text"), int.MinValue.ToString ()));
+            // add default item
+            comboLayout.Items.Add (new ListItem (LocalizeString ("NotSelected.Text"), int.MinValue.ToString ()));
+
+            foreach (var layout in LayoutController.GetLayouts (portalId).OrderBy (L => L.Name)) {
+                var item = new ListItem (layout.Name, layout.Name);
+
+                // mark host layouts
+                if (layout.PortalId == Const.HOST_PORTAL_ID) {
+                    item.Attributes.Add ("style", "font-weight:bold");
+                }
+
+                comboLayout.Items.Add (item);
+            }
         }
 
         protected string GetReturnUrl ()

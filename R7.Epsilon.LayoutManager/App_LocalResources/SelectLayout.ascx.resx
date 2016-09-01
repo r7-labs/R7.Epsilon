@@ -10,7 +10,7 @@
         <value>Layout:</value>
     </data>
     <data name="labelLayout.Help" xml:space="preserve">
-        <value>Select layout from the dropdown.</value>
+        <value>Select layout from the dropdown. Host layouts marked bold.</value>
     </data>
 	<data name="NotSelected.Text" xml:space="preserve">
         <value>&lt; Not Selected &gt;</value>

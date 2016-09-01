@@ -10,7 +10,7 @@
         <value>Лейаут:</value>
     </data>
     <data name="labelLayout.Help" xml:space="preserve">
-        <value>Выберите лейаут из выпадающего списка.</value>
+        <value>Выберите лейаут из выпадающего списка. Лейауты хостинга выделены полужирным.</value>
     </data>
 	<data name="NotSelected.Text" xml:space="preserve">
         <value>&lt; Не выбрано &gt;</value>

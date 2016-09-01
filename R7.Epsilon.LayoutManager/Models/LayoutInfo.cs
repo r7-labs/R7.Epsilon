@@ -51,10 +51,5 @@ namespace R7.Epsilon.LayoutManager.Models
         {
             get { return LayoutController.IsLayoutInUse (Name, PortalId); }
         }
-
-        public string Name_String
-        {
-            get { return Name + ((PortalId == Const.HOST_PORTAL_ID) ? " (host)" : string.Empty); }
-        }
     }
 }
