@@ -34,6 +34,6 @@ namespace R7.Epsilon.LayoutManager.Components
 
         public const string LAYOUT_TAB_SETTING_NAME = LAYOUT_TAB_SETTING_NAME_BASE;
 
-        public const string A11Y_LAYOUT_TAB_SETTING_NAME = LAYOUT_TAB_SETTING_NAME + "A11y";
+        public const string A11Y_LAYOUT_TAB_SETTING_NAME = LAYOUT_TAB_SETTING_NAME + "_A11y";
     }
 }
