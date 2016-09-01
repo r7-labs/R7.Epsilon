@@ -199,3 +199,12 @@
     <skin:FEEDBACKBUTTON runat="server" CssClass="skin-float-button skin-float-button-feedback" Target="_blank" />
 </div>
 <skin:SOCIALSHARESCRIPTS runat="server" />
+<script type="text/javascript">
+(function ($) {
+    $(function () {
+	    if (epsilon.layoutManagerUrl) {
+            $("ul#ControlEditPageMenu").find ("ul").append ("<li><a href='javascript:dnnModal.show(\"" + epsilon.layoutManagerUrl + "/fromtabid/" + epsilon.tabId + "?popUp=true\",/*showReturn*/false,550,950,true,\"\")'>Select Layout</a></li>");
+	    }
+    });
+}(jQuery));
+</script>
