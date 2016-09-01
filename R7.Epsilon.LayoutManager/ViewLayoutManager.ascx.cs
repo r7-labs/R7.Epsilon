@@ -142,7 +142,7 @@ namespace R7.Epsilon.LayoutManager
 
         protected void BindLayouts (int portalId)
         {
-            var layouts = LayoutController.GetLayouts (portalId);
+            var layouts = LayoutController.GetPortalLayouts (portalId);
             gridLayouts.DataSource = layouts;
             gridLayouts.DataBind ();
 

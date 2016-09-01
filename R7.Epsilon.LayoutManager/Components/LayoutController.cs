@@ -57,7 +57,7 @@ namespace R7.Epsilon.LayoutManager.Components
             }
         }
 
-        public static IEnumerable<LayoutInfo> GetLayouts (int portalId)
+        public static IEnumerable<LayoutInfo> GetPortalLayouts (int portalId)
         {
             var mapPath = (portalId != Const.HOST_PORTAL_ID)
               ? PortalController.Instance.GetPortal (portalId).HomeSystemDirectoryMapPath
