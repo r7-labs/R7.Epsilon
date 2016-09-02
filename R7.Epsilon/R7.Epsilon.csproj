@@ -216,6 +216,7 @@
       <DependentUpon>Custom.ascx</DependentUpon>
     </Compile>
     <Compile Include="Components\Const.cs" />
+    <Compile Include="Components\LayoutFileManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Containers\Blank.ascx" />

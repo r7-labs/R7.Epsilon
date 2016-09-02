@@ -45,18 +45,6 @@ namespace R7.Epsilon.LayoutManager.Components
             return (portalId == Const.HOST_PORTAL_ID) ? "[G]" : "[L]";
         }
 
-        public static string GetLayoutFileName (string layoutName, int portalId)
-        {
-            Contract.Requires (!string.IsNullOrEmpty (layoutName));
-            Contract.Requires (portalId == Const.HOST_PORTAL_ID || portalId >= 0);
-
-            var mapPath = (portalId == Const.HOST_PORTAL_ID)
-                ? Globals.HostMapPath 
-                : PortalController.Instance.GetPortal (portalId).HomeSystemDirectoryMapPath;
-
-            return Path.Combine (mapPath, Const.LAYOUTS_FOLDER, layoutName + ".xml");
-        }
-
         public static bool IsLayoutInUse (string layoutName, int portalId)
         {
             Contract.Requires (!string.IsNullOrEmpty (layoutName));
