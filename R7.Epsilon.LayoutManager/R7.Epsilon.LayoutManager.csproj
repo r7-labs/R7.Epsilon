@@ -69,7 +69,6 @@
     <Compile Include="EditLayout.ascx.controls.cs">
       <DependentUpon>EditLayout.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Models\TabSettingInfo.cs" />
     <Compile Include="SelectLayout.ascx.cs">
       <DependentUpon>SelectLayout.ascx</DependentUpon>
     </Compile>
@@ -79,7 +78,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="js\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="module.css" />
