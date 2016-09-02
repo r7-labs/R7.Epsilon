@@ -21,30 +21,52 @@
 
 using System;
 using System.Linq;
+using System.Xml;
 using R7.Epsilon.Models;
 
 namespace R7.Epsilon.Components
 {
     public static class LayoutValidator
     {
-        public static bool IsValid (Layout layout)
+        public static bool IsValid (string layoutMarkup)
         {
-            var havePanes = false;
-            var haveSingleContentPane = false;
+            return IsValidXml ("<root>" + layoutMarkup + "</root>") 
+                && HasValidPanes (MarkupParser.ParseLayout (layoutMarkup));
+        }
+
+        private static bool IsValidXml (string markup)
+        {
+            try {
+                if (!string.IsNullOrEmpty (markup)) {
+                    var xmlDoc = new XmlDocument ();
+                    xmlDoc.LoadXml (markup);
+                    return true;
+                }
+                return false;
+            }
+            catch (XmlException) {
+                return false;
+            }
+        }
+
+        private static bool HasValidPanes (Layout layout)
+        {
+            var hasPanes = false;
+            var hasSingleContentPane = false;
             var allPanesDistinct = false;
 
             // layout contains some panes
-            havePanes = layout.Panes.Count > 0;
+            hasPanes = layout.Panes.Count > 0;
 
-            if (havePanes) {
+            if (hasPanes) {
                 // layout contains single ContentPane
-                haveSingleContentPane = layout.Panes.SingleOrDefault (p => string.Equals (p.ID, "ContentPane", StringComparison.OrdinalIgnoreCase)) != null;
+                hasSingleContentPane = layout.Panes.SingleOrDefault (p => string.Equals (p.ID, "ContentPane", StringComparison.OrdinalIgnoreCase)) != null;
 
                 // all panes have distinct names
                 allPanesDistinct = layout.Panes.Count == layout.Panes.Distinct (new PaneEqualityComparer ()).Count ();
             }
 
-            return havePanes && haveSingleContentPane && allPanesDistinct;
+            return hasPanes && hasSingleContentPane && allPanesDistinct;
         }
     }
 }

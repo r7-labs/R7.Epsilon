@@ -173,7 +173,7 @@ namespace R7.Epsilon.LayoutManager
                     return;
                 }
 
-                if (!LayoutValidator.IsValid (MarkupParser.ParseLayout (layoutEditor.Text))) {
+                if (!LayoutValidator.IsValid (layoutEditor.Text)) {
                     WarningMessage ("LayoutMarkupIsInvalid.Warning");
                     return;
                 }
