@@ -176,6 +176,7 @@ namespace R7.Epsilon.LayoutManager
 
                 File.WriteAllText (layoutFile, layoutEditor.Text);
 
+                R7.Epsilon.Components.LayoutManager.ResetLayout (layoutPortaId, layoutName);
                 ModuleController.SynchronizeModule (ModuleId);
                 Response.Redirect (Globals.NavigateURL (), true);
             } 
@@ -207,6 +208,7 @@ namespace R7.Epsilon.LayoutManager
                 var layoutFile = LayoutController.GetLayoutFileName (layoutName, layoutPortaId);
                 File.Delete (layoutFile);
 
+                R7.Epsilon.Components.LayoutManager.ResetLayout (layoutPortaId, layoutName);
                 ModuleController.SynchronizeModule (ModuleId);
                 Response.Redirect (Globals.NavigateURL (), true);
             } 

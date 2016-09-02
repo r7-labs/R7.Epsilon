@@ -28,6 +28,9 @@ using R7.Epsilon.Models;
 
 namespace R7.Epsilon.Components
 {
+    /// <summary>
+    /// Holds layouts dictionary.
+    /// </summary>
     public static class LayoutManager
     {
         private static ConcurrentDictionary<string, Lazy<Layout>> layouts =
@@ -79,6 +82,17 @@ namespace R7.Epsilon.Components
         public static void Reset ()
         {
             layouts = new ConcurrentDictionary<string, Lazy<Layout>> ();
+        }
+
+        /// <summary>
+        /// Removes layout reference from dictionary, so it can be re-added later
+        /// </summary>
+        /// <param name="portalId">Portal identifier.</param>
+        /// <param name="layoutName">Layout name.</param>
+        public static void ResetLayout (int portalId, string layoutName)
+        {
+            Lazy<Layout> removedLayout;
+            layouts.TryRemove (portalId + ":" + layoutName, out removedLayout);
         }
     }
 }
