@@ -48,18 +48,18 @@ namespace R7.Epsilon
 
                     // try use a11y layout in a11y mode
                     if (A11yEnabled) {
-                        layoutSetting = tabSettings ["r7_Epsilon_Layout_A11y"];
+                        layoutSetting = tabSettings [Const.A11Y_LAYOUT_TAB_SETTING_NAME];
                     }
 
                     // try use standard layout (not in a11y mode or no a11y layout set)
                     if (layoutSetting == null) {
-                        layoutSetting = tabSettings ["r7_Epsilon_Layout"];
+                        layoutSetting = tabSettings [Const.LAYOUT_TAB_SETTING_NAME];
                     }
 
                     // TODO: Add test to ensure that default host layout exists
                     // REVIEW: Default layout for skin could be named after skin, e.g. Home.ascx => Home.xml
                     var layoutNamePrefixed = (layoutSetting != null) ? (string) layoutSetting : "[G]Default";
-                    var layoutPortalId = layoutNamePrefixed.Substring (0, 3) == "[L]" ? PortalSettings.PortalId : -1;
+                    var layoutPortalId = layoutNamePrefixed.Substring (0, 3) == "[L]" ? PortalSettings.PortalId : Const.HOST_PORTAL_ID;
                     var layoutName = layoutNamePrefixed.Substring (3);
 
                     var layout = LayoutManager.GetLayout (layoutPortalId, layoutName);

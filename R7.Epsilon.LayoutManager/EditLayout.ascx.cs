@@ -28,6 +28,7 @@ using DotNetNuke.Services.Exceptions;
 using DotNetNuke.Services.Log.EventLog;
 using DotNetNuke.UI.Skins;
 using DotNetNuke.UI.Skins.Controls;
+using R7.Epsilon.Components;
 using R7.Epsilon.LayoutManager.Components;
 
 namespace R7.Epsilon.LayoutManager
@@ -107,8 +108,8 @@ namespace R7.Epsilon.LayoutManager
                             layoutFile = LayoutController.GetLayoutFileName ("Default", layoutPortalId);
 
                             // if it already host portal, don't do anything
-                            if (layoutPortalId != -1 && !File.Exists (layoutFile)) {
-                                layoutFile = LayoutController.GetLayoutFileName ("Default", -1);
+                            if (layoutPortalId != Const.HOST_PORTAL_ID && !File.Exists (layoutFile)) {
+                                layoutFile = LayoutController.GetLayoutFileName ("Default", Const.HOST_PORTAL_ID);
                             }
 
                             // cannot delete unsaved layout

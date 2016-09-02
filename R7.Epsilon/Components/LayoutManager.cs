@@ -50,7 +50,7 @@ namespace R7.Epsilon.Components
 
             string layoutFile = null;
 
-            if (portalId == -1) {
+            if (portalId == Const.HOST_PORTAL_ID) {
                 var hostLayoutFile = Path.Combine (Globals.HostMapPath, layoutsFolder, layoutName + ".xml");
                 if (File.Exists (hostLayoutFile)) {
                     layoutFile = hostLayoutFile;
