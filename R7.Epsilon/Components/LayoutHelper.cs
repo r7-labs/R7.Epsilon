@@ -20,9 +20,11 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
+using System.Data;
 using System.Diagnostics.Contracts;
 using System.IO;
 using DotNetNuke.Common;
+using DotNetNuke.Data;
 using DotNetNuke.Entities.Portals;
 
 namespace R7.Epsilon.Components
@@ -39,6 +41,31 @@ namespace R7.Epsilon.Components
                 : PortalController.Instance.GetPortal (portalId).HomeSystemDirectoryMapPath;
 
             return Path.Combine (mapPath, Const.LAYOUTS_FOLDER, layoutName + ".xml");
+        }
+
+        public static bool IsLayoutInUse (string layoutName, int portalId)
+        {
+            Contract.Requires (!string.IsNullOrEmpty (layoutName));
+            Contract.Requires (portalId == Const.HOST_PORTAL_ID || portalId >= 0);
+
+            const string hostSqlQuery = @"SELECT COUNT (*) FROM {databaseOwner}[{objectQualifier}TabSettings] AS TS
+                                    WHERE TS.SettingName LIKE @0 AND TS.SettingValue = @1";
+
+            const string portalSqlQuery = @"SELECT COUNT (*) FROM {databaseOwner}[{objectQualifier}TabSettings] AS TS
+                                    INNER JOIN {databaseOwner}[{objectQualifier}Tabs] AS T ON TS.TabID = T.TabID
+                                    WHERE T.PortalID = @0 AND TS.SettingName LIKE @1 AND TS.SettingValue = @2";
+
+            using (var db = DataContext.Instance ()) {
+                if (portalId == Const.HOST_PORTAL_ID) {
+                    return 0 < db.ExecuteScalar<int> (CommandType.Text, hostSqlQuery,
+                                                      Const.LAYOUT_TAB_SETTING_NAME_BASE + "%",
+                                                      Const.GetSettingValuePrefix (portalId) + layoutName);
+                } else {
+                    return 0 < db.ExecuteScalar<int> (CommandType.Text, portalSqlQuery, portalId,
+                                                      Const.LAYOUT_TAB_SETTING_NAME_BASE + "%",
+                                                      Const.GetSettingValuePrefix (portalId) + layoutName);
+                }
+            }
         }
     }
 }

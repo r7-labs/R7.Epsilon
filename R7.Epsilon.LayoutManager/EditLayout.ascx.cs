@@ -200,7 +200,7 @@ namespace R7.Epsilon.LayoutManager
                 var layoutName = hiddenLayoutName.Value;
                 var layoutPortaId = int.Parse (hiddenPortalId.Value);
 
-                if (LayoutController.IsLayoutInUse (layoutName, layoutPortaId)) {
+                if (LayoutHelper.IsLayoutInUse (layoutName, layoutPortaId)) {
                     WarningMessage ("LayoutIsInUse.Warning");
                     return;
                 }

@@ -34,32 +34,6 @@ namespace R7.Epsilon.LayoutManager.Components
 {
     public static class LayoutController
     {
-        public static bool IsLayoutInUse (string layoutName, int portalId)
-        {
-            Contract.Requires (!string.IsNullOrEmpty (layoutName));
-            Contract.Requires (portalId == Const.HOST_PORTAL_ID || portalId >= 0);
-
-            const string hostSqlQuery = @"SELECT COUNT (*) FROM {databaseOwner}[{objectQualifier}TabSettings] AS TS
-                                    WHERE TS.SettingName LIKE @0 AND TS.SettingValue = @1";
-
-            const string portalSqlQuery = @"SELECT COUNT (*) FROM {databaseOwner}[{objectQualifier}TabSettings] AS TS
-                                    INNER JOIN {databaseOwner}[{objectQualifier}Tabs] AS T ON TS.TabID = T.TabID
-                                    WHERE T.PortalID = @0 AND TS.SettingName LIKE @1 AND TS.SettingValue = @2";
-
-            using (var db = DataContext.Instance ()) {
-                if (portalId == Const.HOST_PORTAL_ID) {
-                    return 0 < db.ExecuteScalar<int> (CommandType.Text, hostSqlQuery,
-                                                      Const.LAYOUT_TAB_SETTING_NAME_BASE + "%",
-                                                      Const.GetSettingValuePrefix (portalId) + layoutName);
-                }
-                else {
-                    return 0 < db.ExecuteScalar<int> (CommandType.Text, portalSqlQuery, portalId,
-                                                      Const.LAYOUT_TAB_SETTING_NAME_BASE + "%",
-                                                      Const.GetSettingValuePrefix (portalId) + layoutName);
-                }
-            }
-        }
-
         public static IEnumerable<LayoutFile> GetPortalLayoutFiles (int portalId)
         {
             Contract.Requires (portalId == Const.HOST_PORTAL_ID || portalId >= 0);

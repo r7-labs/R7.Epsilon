@@ -20,7 +20,7 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System.IO;
-using R7.Epsilon.LayoutManager.Components;
+using R7.Epsilon.Components;
 
 namespace R7.Epsilon.LayoutManager.Models
 {
@@ -43,7 +43,7 @@ namespace R7.Epsilon.LayoutManager.Models
 
         public bool IsInUse
         {
-            get { return LayoutController.IsLayoutInUse (Name, PortalId); }
+            get { return LayoutHelper.IsLayoutInUse (Name, PortalId); }
         }
     }
 }
