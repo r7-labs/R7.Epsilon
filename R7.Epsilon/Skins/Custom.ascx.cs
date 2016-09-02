@@ -64,11 +64,9 @@ namespace R7.Epsilon
 
                     var layout = LayoutManager.GetLayout (layoutPortalId, layoutName);
                     if (layout != null) {
-                        var listPanes = layout.Panes;
-
                         // create and insert pane controls
                         var insertIndex = Controls.IndexOf (placeDynamicPanes);
-                        foreach (var pane in listPanes) {
+                        foreach (var pane in layout.Panes) {
 
                             var paneControl = new HtmlGenericControl (pane.Tag);
                             paneControl.ID = pane.ID;
@@ -89,7 +87,12 @@ namespace R7.Epsilon
                                 paneControl.Attributes.Add ("containersrc", pane.ContainerSrc);
                             }
 
-                            Controls.AddAt (insertIndex++, new LiteralControl (pane.MarkupBefore));
+                            // insert controls
+
+                            if (!string.IsNullOrEmpty (pane.MarkupBefore)) {
+                                Controls.AddAt (insertIndex++, new LiteralControl (pane.MarkupBefore));
+                            }
+
                             Controls.AddAt (insertIndex++, paneControl);
 
                             if (!string.IsNullOrEmpty (pane.MarkupAfter)) {
