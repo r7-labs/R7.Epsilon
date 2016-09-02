@@ -28,6 +28,6 @@
         <value>Cannot delete layout as it is used on some pages.</value>
     </data> 
 	<data name="LayoutMarkupIsInvalid.Warning" xml:space="preserve">
-        <value>Layout markup is invalid. It should be well-formed XML (except for root element rule), contain at least ContentPane pane and any number of other panes with unique names.</value>
-    </data> 
+        <value>There are errors found in the layout markup. It should be well-formed XML (except for root element rule), contain at least the &quot;ContentPane&quot; pane, also names of other panes must be unique.</value>
+	</data> 
 </root>
