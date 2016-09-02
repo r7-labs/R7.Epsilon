@@ -111,7 +111,7 @@
     <None Include="Skins\Custom.doctype.xml">
       <DependentUpon>Custom.ascx</DependentUpon>
     </None>
-    <None Include="Skins\Layouts\Layout1.xml" />
+    <None Include="Skins\Layouts\Universal.xml" />
     <None Include="Skins\Layouts\Default.xml" />
   </ItemGroup>
   <ItemGroup>
