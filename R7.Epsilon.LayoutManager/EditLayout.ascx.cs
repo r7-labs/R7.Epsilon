@@ -100,16 +100,16 @@ namespace R7.Epsilon.LayoutManager
                         var layoutFile = string.Empty;
 
                         if (!string.IsNullOrEmpty (layoutName)) {
-                            layoutFile = LayoutFileManager.GetLayoutFileName (layoutName, layoutPortalId);
+                            layoutFile = LayoutHelper.GetLayoutFileName (layoutName, layoutPortalId);
                         } 
                         else {
                             // new template
                             codePrefix = "<!-- Default layout template -->" + Environment.NewLine;
-                            layoutFile = LayoutFileManager.GetLayoutFileName ("Default", layoutPortalId);
+                            layoutFile = LayoutHelper.GetLayoutFileName ("Default", layoutPortalId);
 
                             // if it already host portal, don't do anything
                             if (layoutPortalId != Const.HOST_PORTAL_ID && !File.Exists (layoutFile)) {
-                                layoutFile = LayoutFileManager.GetLayoutFileName ("Default", Const.HOST_PORTAL_ID);
+                                layoutFile = LayoutHelper.GetLayoutFileName ("Default", Const.HOST_PORTAL_ID);
                             }
 
                             // cannot delete unsaved layout
@@ -167,7 +167,7 @@ namespace R7.Epsilon.LayoutManager
                 var layoutName = textLayoutName.Text.Trim ();
                 var originalLayoutName = hiddenLayoutName.Value;
                 var layoutPortaId = int.Parse (hiddenPortalId.Value);
-                var layoutFile = LayoutFileManager.GetLayoutFileName (layoutName, layoutPortaId);
+                var layoutFile = LayoutHelper.GetLayoutFileName (layoutName, layoutPortaId);
 
                 if (layoutName != originalLayoutName && File.Exists (layoutFile)) {
                     WarningMessage ("LayoutFileAlreadyExists.Warning");
@@ -205,7 +205,7 @@ namespace R7.Epsilon.LayoutManager
                     return;
                 }
 
-                var layoutFile = LayoutFileManager.GetLayoutFileName (layoutName, layoutPortaId);
+                var layoutFile = LayoutHelper.GetLayoutFileName (layoutName, layoutPortaId);
                 File.Delete (layoutFile);
 
                 R7.Epsilon.Components.LayoutManager.ResetLayout (layoutPortaId, layoutName);

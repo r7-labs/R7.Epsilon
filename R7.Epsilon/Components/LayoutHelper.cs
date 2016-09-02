@@ -1,5 +1,5 @@
 ﻿//
-//  LayoutFileManager.cs
+//  LayoutHelper.cs
 //
 //  Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
@@ -27,7 +27,7 @@ using DotNetNuke.Entities.Portals;
 
 namespace R7.Epsilon.Components
 {
-    public static class LayoutFileManager
+    public static class LayoutHelper
     {
         public static string GetLayoutFileName (string layoutName, int portalId)
         {

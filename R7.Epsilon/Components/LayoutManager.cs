@@ -47,7 +47,7 @@ namespace R7.Epsilon.Components
             var portalId = int.Parse (keyParts [0]);
             var layoutName = keyParts [1];
 
-            var layoutFile = LayoutFileManager.GetLayoutFileName (layoutName, portalId);
+            var layoutFile = LayoutHelper.GetLayoutFileName (layoutName, portalId);
             if (File.Exists (layoutFile)) {
                 try {
                     return MarkupParser.ParseLayout (File.ReadAllText (layoutFile));
