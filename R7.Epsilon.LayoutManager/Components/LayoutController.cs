@@ -34,17 +34,6 @@ namespace R7.Epsilon.LayoutManager.Components
 {
     public static class LayoutController
     {
-        /// <summary>
-        /// Returns layout name prefix which is used in tab settings
-        /// </summary>
-        /// <returns>The value prefix.</returns>
-        /// <param name="portalId">Portal identifier.</param>
-        public static string SettingValuePrefix (int portalId)
-        {
-            // [G]lobal and [L]ocal like in SkinSrc or ContainerSrc fields
-            return (portalId == Const.HOST_PORTAL_ID) ? "[G]" : "[L]";
-        }
-
         public static bool IsLayoutInUse (string layoutName, int portalId)
         {
             Contract.Requires (!string.IsNullOrEmpty (layoutName));
@@ -61,12 +50,12 @@ namespace R7.Epsilon.LayoutManager.Components
                 if (portalId == Const.HOST_PORTAL_ID) {
                     return 0 < db.ExecuteScalar<int> (CommandType.Text, hostSqlQuery,
                                                       Const.LAYOUT_TAB_SETTING_NAME_BASE + "%",
-                                                      SettingValuePrefix (portalId) + layoutName);
+                                                      Const.SettingValuePrefix (portalId) + layoutName);
                 }
                 else {
                     return 0 < db.ExecuteScalar<int> (CommandType.Text, portalSqlQuery, portalId,
                                                       Const.LAYOUT_TAB_SETTING_NAME_BASE + "%",
-                                                      SettingValuePrefix (portalId) + layoutName);
+                                                      Const.SettingValuePrefix (portalId) + layoutName);
                 }
             }
         }

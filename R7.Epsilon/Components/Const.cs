@@ -32,5 +32,16 @@ namespace R7.Epsilon.Components
         public const string LAYOUT_TAB_SETTING_NAME = LAYOUT_TAB_SETTING_NAME_BASE;
 
         public const string A11Y_LAYOUT_TAB_SETTING_NAME = LAYOUT_TAB_SETTING_NAME + "_A11y";
+
+        /// <summary>
+        /// Returns layout name prefix which is used in tab settings
+        /// </summary>
+        /// <returns>The value prefix.</returns>
+        /// <param name="portalId">Portal identifier.</param>
+        public static string SettingValuePrefix (int portalId)
+        {
+            // [G]lobal and [L]ocal like in SkinSrc or ContainerSrc fields
+            return (portalId == HOST_PORTAL_ID) ? "[G]" : "[L]";
+        }
     }
 }
