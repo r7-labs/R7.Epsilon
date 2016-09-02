@@ -48,15 +48,20 @@ namespace R7.Epsilon.Components
             var portalId = int.Parse (keyParts [0]);
             var layoutName = keyParts [1];
 
-            var portalHomeDirectory = PortalController.Instance.GetPortal (portalId).HomeSystemDirectoryMapPath;
-            var portalLayoutFile = Path.Combine (portalHomeDirectory, layoutsFolder, layoutName + ".xml");
-            var hostLayoutFile = Path.Combine (Globals.HostMapPath, layoutsFolder, layoutName + ".xml");
-
             string layoutFile = null;
-            if (File.Exists (portalLayoutFile)) {
-                layoutFile = portalLayoutFile;
-            } else if (File.Exists (hostLayoutFile)) {
-                layoutFile = hostLayoutFile;
+
+            if (portalId == -1) {
+                var hostLayoutFile = Path.Combine (Globals.HostMapPath, layoutsFolder, layoutName + ".xml");
+                if (File.Exists (hostLayoutFile)) {
+                    layoutFile = hostLayoutFile;
+                }
+            } 
+            else {
+                var portalHomeDirectory = PortalController.Instance.GetPortal (portalId).HomeSystemDirectoryMapPath;
+                var portalLayoutFile = Path.Combine (portalHomeDirectory, layoutsFolder, layoutName + ".xml");
+                if (File.Exists (portalLayoutFile)) {
+                    layoutFile = portalLayoutFile;
+                }
             }
 
             if (layoutFile != null) {
