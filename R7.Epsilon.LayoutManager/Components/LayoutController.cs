@@ -50,12 +50,12 @@ namespace R7.Epsilon.LayoutManager.Components
                 if (portalId == Const.HOST_PORTAL_ID) {
                     return 0 < db.ExecuteScalar<int> (CommandType.Text, hostSqlQuery,
                                                       Const.LAYOUT_TAB_SETTING_NAME_BASE + "%",
-                                                      Const.SettingValuePrefix (portalId) + layoutName);
+                                                      Const.GetSettingValuePrefix (portalId) + layoutName);
                 }
                 else {
                     return 0 < db.ExecuteScalar<int> (CommandType.Text, portalSqlQuery, portalId,
                                                       Const.LAYOUT_TAB_SETTING_NAME_BASE + "%",
-                                                      Const.SettingValuePrefix (portalId) + layoutName);
+                                                      Const.GetSettingValuePrefix (portalId) + layoutName);
                 }
             }
         }

@@ -38,7 +38,7 @@ namespace R7.Epsilon.Components
         /// </summary>
         /// <returns>The value prefix.</returns>
         /// <param name="portalId">Portal identifier.</param>
-        public static string SettingValuePrefix (int portalId)
+        public static string GetSettingValuePrefix (int portalId)
         {
             // [G]lobal and [L]ocal like in SkinSrc or ContainerSrc fields
             return (portalId == HOST_PORTAL_ID) ? "[G]" : "[L]";

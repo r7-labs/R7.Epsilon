@@ -194,7 +194,7 @@ namespace R7.Epsilon.LayoutManager
                                        ? string.Format (LocalizeString ("HostLayout.Format"), layout.Name) 
                                        : layout.Name;
                 
-                var item = new ListItem (layoutName, Const.SettingValuePrefix (layout.PortalId) + layout.Name);
+                var item = new ListItem (layoutName, Const.GetSettingValuePrefix (layout.PortalId) + layout.Name);
 
                 // mark host layouts
                 if (layout.PortalId == Const.HOST_PORTAL_ID) {
