@@ -28,7 +28,6 @@ using DotNetNuke.Services.Exceptions;
 using DotNetNuke.UI.Skins;
 using DotNetNuke.UI.Skins.Controls;
 using R7.Epsilon.Components;
-using R7.Epsilon.LayoutManager.Components;
 
 namespace R7.Epsilon.LayoutManager
 {
@@ -107,7 +106,7 @@ namespace R7.Epsilon.LayoutManager
 
         protected void BindLayouts (int portalId)
         {
-            var layouts = LayoutController.GetPortalLayoutFiles (portalId);
+            var layouts = LayoutHelper.GetPortalLayoutFiles (portalId);
             gridLayouts.DataSource = layouts;
             gridLayouts.DataBind ();
 

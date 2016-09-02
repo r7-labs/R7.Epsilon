@@ -19,13 +19,15 @@
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics.Contracts;
 using System.IO;
+using System.Linq;
 using DotNetNuke.Common;
 using DotNetNuke.Data;
 using DotNetNuke.Entities.Portals;
+using R7.Epsilon.Models;
 
 namespace R7.Epsilon.Components
 {
@@ -66,6 +68,38 @@ namespace R7.Epsilon.Components
                                                       Const.GetSettingValuePrefix (portalId) + layoutName);
                 }
             }
+        }
+
+        public static IEnumerable<LayoutFile> GetPortalLayoutFiles (int portalId)
+        {
+            Contract.Requires (portalId == Const.HOST_PORTAL_ID || portalId >= 0);
+            Contract.Ensures (Contract.Result<IEnumerable<LayoutFile>> () != null);
+
+            var mapPath = (portalId != Const.HOST_PORTAL_ID)
+              ? PortalController.Instance.GetPortal (portalId).HomeSystemDirectoryMapPath
+              : Globals.HostMapPath;
+
+            var layoutDirectory = Path.Combine (mapPath, Const.LAYOUTS_FOLDER);
+            if (Directory.Exists (layoutDirectory)) {
+                var layoutFiles = Directory.GetFiles (layoutDirectory, "*.xml");
+                if (layoutFiles != null) {
+                    return layoutFiles.Select (lf => new LayoutFile (lf, portalId));
+                }
+            }
+
+            return Enumerable.Empty<LayoutFile> ();
+        }
+
+        /// <summary>
+        /// Gets all available layouts for portal, including host layouts
+        /// </summary>
+        /// <returns>The layouts.</returns>
+        /// <param name="portalId">Portal identifier.</param>
+        public static IEnumerable<LayoutFile> GetLayoutFiles (int portalId)
+        {
+            Contract.Requires (portalId >= 0);
+
+            return GetPortalLayoutFiles (Const.HOST_PORTAL_ID).Concat (GetPortalLayoutFiles (portalId));
         }
     }
 }

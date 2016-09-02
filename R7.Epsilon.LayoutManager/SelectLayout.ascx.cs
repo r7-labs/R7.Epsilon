@@ -174,7 +174,7 @@ namespace R7.Epsilon.LayoutManager
 
         protected void BindLayouts (int portalId)
         {
-            var layouts = LayoutController.GetLayoutFiles (portalId)
+            var layouts = LayoutHelper.GetLayoutFiles (portalId)
                                           .OrderByDescending (L => L.PortalId == Const.HOST_PORTAL_ID)
                                           .ThenBy (L => L.Name);
 
