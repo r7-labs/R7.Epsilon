@@ -47,7 +47,7 @@ namespace R7.Epsilon.Components
 
         #endregion
 
-        ConcurrentDictionary<string, Lazy<Layout>> layouts =
+        readonly ConcurrentDictionary<string, Lazy<Layout>> layouts =
             new ConcurrentDictionary<string, Lazy<Layout>> ();
 
         public Layout GetLayout (int portalId, string layoutName)
