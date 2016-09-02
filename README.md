@@ -24,6 +24,14 @@ See *R7.Epsilon* skin in action at http://www.volgau.com
 - Google Adsense 728x90 banners support. 
 - Feedback link with user-selected content (*rangy* library must be installed to `~/Resources/Shared/scripts/rangy`).
 
+## Custom pane layouts feature
+
+Admins can create and modify custom pane layouts using *LayoutManager* module, then apply them to the page 
+using new *Select Layout* command from *Edit Page* menu in the control panel. Selected layout name and kind (host or portal)
+are stored in the page settings. Additional layout can be set to use in a11y mode.
+
+This feature currently available only if *Custom* skin is selected for a page.
+
 ## Features considered temporary (could be removed in any subsequent release):
 
 - *Flowplayer HTML5* support (must be installed to `~/Resources/Shared/components/flowplayer`).
