@@ -22,8 +22,6 @@
 using System;
 using System.Collections.Concurrent;
 using System.IO;
-using DotNetNuke.Common;
-using DotNetNuke.Entities.Portals;
 using R7.Epsilon.Models;
 
 namespace R7.Epsilon.Components
@@ -49,23 +47,8 @@ namespace R7.Epsilon.Components
             var portalId = int.Parse (keyParts [0]);
             var layoutName = keyParts [1];
 
-            string layoutFile = null;
-
-            if (portalId == Const.HOST_PORTAL_ID) {
-                var hostLayoutFile = Path.Combine (Globals.HostMapPath, Const.LAYOUTS_FOLDER, layoutName + ".xml");
-                if (File.Exists (hostLayoutFile)) {
-                    layoutFile = hostLayoutFile;
-                }
-            } 
-            else {
-                var portalHomeDirectory = PortalController.Instance.GetPortal (portalId).HomeSystemDirectoryMapPath;
-                var portalLayoutFile = Path.Combine (portalHomeDirectory, Const.LAYOUTS_FOLDER, layoutName + ".xml");
-                if (File.Exists (portalLayoutFile)) {
-                    layoutFile = portalLayoutFile;
-                }
-            }
-
-            if (layoutFile != null) {
+            var layoutFile = LayoutFileManager.GetLayoutFileName (layoutName, portalId);
+            if (File.Exists (layoutFile)) {
                 try {
                     return MarkupParser.ParseLayout (File.ReadAllText (layoutFile));
                 } catch (Exception ex) {
