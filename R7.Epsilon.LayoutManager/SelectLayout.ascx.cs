@@ -32,6 +32,7 @@ using DotNetNuke.Services.Log.EventLog;
 using R7.Epsilon.Components;
 using R7.Epsilon.LayoutManager.Components;
 using R7.Epsilon.LayoutManager.Models;
+using R7.Epsilon.Models;
 
 namespace R7.Epsilon.LayoutManager
 {

@@ -22,7 +22,7 @@
 using System.IO;
 using R7.Epsilon.Components;
 
-namespace R7.Epsilon.LayoutManager.Models
+namespace R7.Epsilon.Models
 {
     public class LayoutFile
     {

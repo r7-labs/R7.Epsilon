@@ -1,5 +1,5 @@
 ﻿//
-//  LayoutEqualityComparer.cs
+//  LayoutFileEqualityComparer.cs
 //
 //  Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
@@ -20,9 +20,8 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System.Collections.Generic;
-using R7.Epsilon.LayoutManager.Models;
 
-namespace R7.Epsilon.LayoutManager.Components
+namespace R7.Epsilon.Models
 {
     public class LayoutFileEqualityComparer : IEqualityComparer<LayoutFile>
     {

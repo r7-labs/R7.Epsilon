@@ -69,7 +69,6 @@
     <Compile Include="EditLayout.ascx.controls.cs">
       <DependentUpon>EditLayout.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Models\LayoutFile.cs" />
     <Compile Include="Components\LayoutController.cs" />
     <Compile Include="Models\TabSettingInfo.cs" />
     <Compile Include="SelectLayout.ascx.cs">
@@ -78,7 +77,6 @@
     <Compile Include="SelectLayout.ascx.controls.cs">
       <DependentUpon>SelectLayout.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Components\LayoutFileEqualityComparer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="js\" />
