@@ -29,8 +29,8 @@ using DotNetNuke.Entities.Modules;
 using DotNetNuke.Entities.Tabs;
 using DotNetNuke.Services.Exceptions;
 using DotNetNuke.Services.Log.EventLog;
-using R7.Epsilon.LayoutManager.Components;
-using R7.Epsilon.LayoutManager.Models;
+using R7.Epsilon.Components;
+using R7.Epsilon.Models;
 
 namespace R7.Epsilon.LayoutManager
 {
@@ -84,6 +84,20 @@ namespace R7.Epsilon.LayoutManager
             } 
             else {
                 linkCancel.NavigateUrl = GetReturnUrl ();
+            }
+
+            // set url for Manage link
+            if (UserInfo.IsSuperUser || UserInfo.IsInRole ("Administators")) {
+                var layoutManager = ModuleController.Instance.GetModuleByDefinition (PortalId, "R7.Epsilon.LayoutManager");
+                if (layoutManager != null) {
+                    linkManage.NavigateUrl = Globals.NavigateURL (layoutManager.TabID);
+                }
+                else {
+                    linkManage.Visible = false;
+                }
+            }
+            else {
+                linkManage.Visible = false;
             }
         }
 
@@ -172,7 +186,7 @@ namespace R7.Epsilon.LayoutManager
 
         protected void BindLayouts (int portalId)
         {
-            var layouts = LayoutController.GetLayouts (portalId)
+            var layouts = LayoutHelper.GetLayoutFiles (portalId)
                                           .OrderByDescending (L => L.PortalId == Const.HOST_PORTAL_ID)
                                           .ThenBy (L => L.Name);
 
@@ -180,7 +194,7 @@ namespace R7.Epsilon.LayoutManager
             FillLayoutComboBox (comboA11yLayout, layouts);
         }
 
-        protected void FillLayoutComboBox (DropDownList comboLayout, IEnumerable<LayoutInfo> layouts)
+        protected void FillLayoutComboBox (DropDownList comboLayout, IEnumerable<LayoutFile> layouts)
         {
             comboLayout.Items.Clear ();
 
@@ -193,7 +207,7 @@ namespace R7.Epsilon.LayoutManager
                                        ? string.Format (LocalizeString ("HostLayout.Format"), layout.Name) 
                                        : layout.Name;
                 
-                var item = new ListItem (layoutName, LayoutController.SettingValuePrefix (layout.PortalId) + layout.Name);
+                var item = new ListItem (layoutName, Const.GetSettingValuePrefix (layout.PortalId) + layout.Name);
 
                 // mark host layouts
                 if (layout.PortalId == Const.HOST_PORTAL_ID) {

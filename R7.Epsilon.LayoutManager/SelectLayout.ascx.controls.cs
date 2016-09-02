@@ -14,5 +14,6 @@ namespace R7.Epsilon.LayoutManager
         protected DropDownList comboA11yLayout;
         protected LinkButton buttonSelect;
         protected HyperLink linkCancel;
+        protected HyperLink linkManage;
     }
 }

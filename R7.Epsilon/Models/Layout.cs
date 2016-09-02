@@ -1,5 +1,5 @@
 ﻿//
-//  Const.cs
+//  Layout.cs
 //
 //  Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
@@ -19,16 +19,12 @@
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-namespace R7.Epsilon.LayoutManager.Components
+using System.Collections.Generic;
+
+namespace R7.Epsilon.Models
 {
-    public static class Const
+    public class Layout
     {
-        public const int HOST_PORTAL_ID = -1;
-
-        public const string LAYOUT_TAB_SETTING_NAME_BASE = "r7_Epsilon_Layout";
-
-        public const string LAYOUT_TAB_SETTING_NAME = LAYOUT_TAB_SETTING_NAME_BASE;
-
-        public const string A11Y_LAYOUT_TAB_SETTING_NAME = LAYOUT_TAB_SETTING_NAME + "_A11y";
+        public List<DynamicPane> Panes = new List<DynamicPane> ();
     }
 }

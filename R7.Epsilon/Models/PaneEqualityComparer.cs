@@ -1,5 +1,5 @@
 ﻿//
-//  LayoutInfo.cs
+//  PaneEqualityComparer.cs
 //
 //  Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
@@ -19,31 +19,25 @@
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-using System.IO;
-using R7.Epsilon.LayoutManager.Components;
+using System;
+using System.Collections.Generic;
 
-namespace R7.Epsilon.LayoutManager.Models
+namespace R7.Epsilon.Models
 {
-    public class LayoutInfo
+    public class PaneEqualityComparer : IEqualityComparer<DynamicPane>
     {
-        public LayoutInfo (string fileName, int portalId)
+        #region IEqualityComparer implementation
+
+        public bool Equals (DynamicPane x, DynamicPane y)
         {
-            FileName = fileName;
-            PortalId = portalId;
+            return string.Equals (x.ID, y.ID, StringComparison.OrdinalIgnoreCase);
         }
 
-        public string FileName { get; set; }
-
-        public int PortalId { get; set; }
-
-        public string Name 
+        public int GetHashCode (DynamicPane obj)
         {
-            get { return Path.GetFileNameWithoutExtension (FileName); }
+            return obj.ID.GetHashCode ();
         }
 
-        public bool IsInUse
-        {
-            get { return LayoutController.IsLayoutInUse (Name, PortalId); }
-        }
+        #endregion
     }
 }

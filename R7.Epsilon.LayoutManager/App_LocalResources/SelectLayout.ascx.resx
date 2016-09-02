@@ -24,4 +24,10 @@
 	<data name="HostLayout.Format" xml:space="preserve">
         <value>{0} (host)</value>
     </data>
+	<data name="Select.Text" xml:space="preserve">
+        <value>Select</value>
+    </data>
+	<data name="Manage.Text" xml:space="preserve">
+        <value>Manage Layouts</value>
+    </data>
 </root>

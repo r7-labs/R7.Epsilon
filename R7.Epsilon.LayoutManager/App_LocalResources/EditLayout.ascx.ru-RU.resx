@@ -26,5 +26,8 @@
     </data>
 	<data name="LayoutIsInUse.Warning" xml:space="preserve">
         <value>Невозможно удалить лейаут, так как он используется на некоторых страницах.</value>
+    </data>
+	<data name="LayoutMarkupIsInvalid.Warning" xml:space="preserve">
+        <value>В разметке лейаута обнаружены ошибки. Лейаут должен быть оформлен как правильно построенный XML (кроме правила корневого элемента), обязательно содержать панель &quot;ContentPane&quot;, имена остальных панелей должны быть уникальными.</value>
     </data> 
 </root>

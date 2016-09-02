@@ -19,8 +19,9 @@
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-using System;
 using System.Linq;
+using DotNetNuke.Common;
+using DotNetNuke.Entities.Modules;
 using DotNetNuke.Entities.Tabs;
 using R7.Epsilon.Components;
 
@@ -52,6 +53,19 @@ namespace R7.Epsilon
             {
                 return "[" + Utils.FormatList<int> (",", PortalSettings.ActiveTab.BreadCrumbs
                     .ToArray ().Select (b => ((TabInfo) b).TabID)) + "]"; 
+            }
+        }
+
+        protected string LayoutManagerUrl
+        {
+            get {
+                var layoutManager = ModuleController.Instance.GetModuleByDefinition (PortalSettings.PortalId, "R7.Epsilon.LayoutManager");
+                if (layoutManager != null) {
+                    return Globals.NavigateURL (layoutManager.TabID, "Select", "mid", layoutManager.ModuleID.ToString ());
+                }
+
+                // TODO: Log error: no LayoutManager module found, layout selection feature is disabled
+                return null;
             }
         }
 

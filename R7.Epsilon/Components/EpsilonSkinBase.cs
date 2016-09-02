@@ -52,6 +52,17 @@ namespace R7.Epsilon.Components
             }
         }
 
+        private int? tabId;
+        protected int TabId {
+            get {
+                if (tabId == null) {
+                    tabId = PortalSettings.ActiveTab.TabID;
+                }
+
+                return tabId.Value;
+            }
+        }
+
         protected bool A11yEnabled 
         {
             get {

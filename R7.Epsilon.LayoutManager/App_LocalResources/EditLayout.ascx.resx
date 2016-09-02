@@ -27,4 +27,7 @@
 	<data name="LayoutIsInUse.Warning" xml:space="preserve">
         <value>Cannot delete layout as it is used on some pages.</value>
     </data> 
+	<data name="LayoutMarkupIsInvalid.Warning" xml:space="preserve">
+        <value>There are errors found in the layout markup. It should be well-formed XML (except for root element rule), contain at least the &quot;ContentPane&quot; pane, also names of other panes must be unique.</value>
+	</data> 
 </root>

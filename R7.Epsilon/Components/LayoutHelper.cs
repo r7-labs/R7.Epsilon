@@ -1,5 +1,5 @@
 ﻿//
-//  LayoutController.cs
+//  LayoutHelper.cs
 //
 //  Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
@@ -27,33 +27,22 @@ using System.Linq;
 using DotNetNuke.Common;
 using DotNetNuke.Data;
 using DotNetNuke.Entities.Portals;
-using R7.Epsilon.LayoutManager.Models;
+using R7.Epsilon.Models;
 
-namespace R7.Epsilon.LayoutManager.Components
+namespace R7.Epsilon.Components
 {
-    public static class LayoutController
+    public static class LayoutHelper
     {
-        /// <summary>
-        /// Returns layout name prefix which is used in tab settings
-        /// </summary>
-        /// <returns>The value prefix.</returns>
-        /// <param name="portalId">Portal identifier.</param>
-        public static string SettingValuePrefix (int portalId)
-        {
-            // [G]lobal and [L]ocal like in SkinSrc or ContainerSrc fields
-            return (portalId == Const.HOST_PORTAL_ID) ? "[G]" : "[L]";
-        }
-
         public static string GetLayoutFileName (string layoutName, int portalId)
         {
             Contract.Requires (!string.IsNullOrEmpty (layoutName));
             Contract.Requires (portalId == Const.HOST_PORTAL_ID || portalId >= 0);
 
             var mapPath = (portalId == Const.HOST_PORTAL_ID)
-                ? Globals.HostMapPath 
+                ? Globals.HostMapPath
                 : PortalController.Instance.GetPortal (portalId).HomeSystemDirectoryMapPath;
 
-            return Path.Combine (mapPath, "Skins", "R7.Epsilon", "Layouts", layoutName + ".xml");
+            return Path.Combine (mapPath, Const.LAYOUTS_FOLDER, layoutName + ".xml");
         }
 
         public static bool IsLayoutInUse (string layoutName, int portalId)
@@ -72,34 +61,33 @@ namespace R7.Epsilon.LayoutManager.Components
                 if (portalId == Const.HOST_PORTAL_ID) {
                     return 0 < db.ExecuteScalar<int> (CommandType.Text, hostSqlQuery,
                                                       Const.LAYOUT_TAB_SETTING_NAME_BASE + "%",
-                                                      SettingValuePrefix (portalId) + layoutName);
-                }
-                else {
+                                                      Const.GetSettingValuePrefix (portalId) + layoutName);
+                } else {
                     return 0 < db.ExecuteScalar<int> (CommandType.Text, portalSqlQuery, portalId,
                                                       Const.LAYOUT_TAB_SETTING_NAME_BASE + "%",
-                                                      SettingValuePrefix (portalId) + layoutName);
+                                                      Const.GetSettingValuePrefix (portalId) + layoutName);
                 }
             }
         }
 
-        public static IEnumerable<LayoutInfo> GetPortalLayouts (int portalId)
+        public static IEnumerable<LayoutFile> GetPortalLayoutFiles (int portalId)
         {
             Contract.Requires (portalId == Const.HOST_PORTAL_ID || portalId >= 0);
-            Contract.Ensures (Contract.Result<IEnumerable<LayoutInfo>> () != null);
+            Contract.Ensures (Contract.Result<IEnumerable<LayoutFile>> () != null);
 
             var mapPath = (portalId != Const.HOST_PORTAL_ID)
               ? PortalController.Instance.GetPortal (portalId).HomeSystemDirectoryMapPath
               : Globals.HostMapPath;
 
-            var layoutDirectory = Path.Combine (mapPath, "Skins", "R7.Epsilon", "Layouts");
+            var layoutDirectory = Path.Combine (mapPath, Const.LAYOUTS_FOLDER);
             if (Directory.Exists (layoutDirectory)) {
                 var layoutFiles = Directory.GetFiles (layoutDirectory, "*.xml");
                 if (layoutFiles != null) {
-                    return layoutFiles.Select (lf => new LayoutInfo (lf, portalId));
+                    return layoutFiles.Select (lf => new LayoutFile (lf, portalId));
                 }
             }
 
-            return Enumerable.Empty<LayoutInfo> ();
+            return Enumerable.Empty<LayoutFile> ();
         }
 
         /// <summary>
@@ -107,11 +95,22 @@ namespace R7.Epsilon.LayoutManager.Components
         /// </summary>
         /// <returns>The layouts.</returns>
         /// <param name="portalId">Portal identifier.</param>
-        public static IEnumerable<LayoutInfo> GetLayouts (int portalId)
+        public static IEnumerable<LayoutFile> GetLayoutFiles (int portalId)
         {
             Contract.Requires (portalId >= 0);
 
-            return GetPortalLayouts (Const.HOST_PORTAL_ID).Concat (GetPortalLayouts (portalId));
+            return GetPortalLayoutFiles (Const.HOST_PORTAL_ID).Concat (GetPortalLayoutFiles (portalId));
+        }
+
+        /// <summary>
+        /// Gets the layout manager object. 
+        /// For use in LayoutManager module only to resolve naming issues.
+        /// </summary>
+        /// <returns>The layout manager.</returns>
+        public static LayoutManager GetManager ()
+        {
+            // REVIEW: Need to rename LayoutManager module or LayoutManager class
+            return LayoutManager.Instance;
         }
     }
 }

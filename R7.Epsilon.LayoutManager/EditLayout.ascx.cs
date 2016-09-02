@@ -28,7 +28,7 @@ using DotNetNuke.Services.Exceptions;
 using DotNetNuke.Services.Log.EventLog;
 using DotNetNuke.UI.Skins;
 using DotNetNuke.UI.Skins.Controls;
-using R7.Epsilon.LayoutManager.Components;
+using R7.Epsilon.Components;
 
 namespace R7.Epsilon.LayoutManager
 {
@@ -99,16 +99,16 @@ namespace R7.Epsilon.LayoutManager
                         var layoutFile = string.Empty;
 
                         if (!string.IsNullOrEmpty (layoutName)) {
-                            layoutFile = LayoutController.GetLayoutFileName (layoutName, layoutPortalId);
+                            layoutFile = LayoutHelper.GetLayoutFileName (layoutName, layoutPortalId);
                         } 
                         else {
                             // new template
                             codePrefix = "<!-- Default layout template -->" + Environment.NewLine;
-                            layoutFile = LayoutController.GetLayoutFileName ("Default", layoutPortalId);
+                            layoutFile = LayoutHelper.GetLayoutFileName ("Default", layoutPortalId);
 
                             // if it already host portal, don't do anything
-                            if (layoutPortalId != -1 && !File.Exists (layoutFile)) {
-                                layoutFile = LayoutController.GetLayoutFileName ("Default", -1);
+                            if (layoutPortalId != Const.HOST_PORTAL_ID && !File.Exists (layoutFile)) {
+                                layoutFile = LayoutHelper.GetLayoutFileName ("Default", Const.HOST_PORTAL_ID);
                             }
 
                             // cannot delete unsaved layout
@@ -166,15 +166,21 @@ namespace R7.Epsilon.LayoutManager
                 var layoutName = textLayoutName.Text.Trim ();
                 var originalLayoutName = hiddenLayoutName.Value;
                 var layoutPortaId = int.Parse (hiddenPortalId.Value);
-                var layoutFile = LayoutController.GetLayoutFileName (layoutName, layoutPortaId);
+                var layoutFile = LayoutHelper.GetLayoutFileName (layoutName, layoutPortaId);
 
                 if (layoutName != originalLayoutName && File.Exists (layoutFile)) {
                     WarningMessage ("LayoutFileAlreadyExists.Warning");
                     return;
                 }
 
+                if (!LayoutValidator.IsValid (layoutEditor.Text)) {
+                    WarningMessage ("LayoutMarkupIsInvalid.Warning");
+                    return;
+                }
+
                 File.WriteAllText (layoutFile, layoutEditor.Text);
 
+                LayoutHelper.GetManager ().ResetLayout (layoutPortaId, layoutName);
                 ModuleController.SynchronizeModule (ModuleId);
                 Response.Redirect (Globals.NavigateURL (), true);
             } 
@@ -198,14 +204,15 @@ namespace R7.Epsilon.LayoutManager
                 var layoutName = hiddenLayoutName.Value;
                 var layoutPortaId = int.Parse (hiddenPortalId.Value);
 
-                if (LayoutController.IsLayoutInUse (layoutName, layoutPortaId)) {
+                if (LayoutHelper.IsLayoutInUse (layoutName, layoutPortaId)) {
                     WarningMessage ("LayoutIsInUse.Warning");
                     return;
                 }
 
-                var layoutFile = LayoutController.GetLayoutFileName (layoutName, layoutPortaId);
+                var layoutFile = LayoutHelper.GetLayoutFileName (layoutName, layoutPortaId);
                 File.Delete (layoutFile);
 
+                LayoutHelper.GetManager ().ResetLayout (layoutPortaId, layoutName);
                 ModuleController.SynchronizeModule (ModuleId);
                 Response.Redirect (Globals.NavigateURL (), true);
             } 

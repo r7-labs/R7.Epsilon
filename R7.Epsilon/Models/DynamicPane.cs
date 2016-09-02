@@ -1,5 +1,5 @@
 ﻿//
-//  LayoutEqualityComparer.cs
+//  DynamicPane.cs
 //
 //  Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
@@ -19,21 +19,24 @@
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-using System.Collections.Generic;
-using R7.Epsilon.LayoutManager.Models;
-
-namespace R7.Epsilon.LayoutManager.Components
+namespace R7.Epsilon.Models
 {
-    public class LayoutEqualityComparer : IEqualityComparer<LayoutInfo>
+    public class DynamicPane
     {
-        public bool Equals (LayoutInfo x, LayoutInfo y)
-        {
-            return x.Name == y.Name;
-        }
+        public string Tag { get; set; }
 
-        public int GetHashCode (LayoutInfo obj)
-        {
-            return obj.Name.GetHashCode ();
-        }
+        public string ID { get; set; }
+
+        public string CssClass { get; set; }
+
+        public string ContainerType { get; set; }
+
+        public string ContainerName { get; set; }
+
+        public string ContainerSrc { get; set; }
+
+        public string MarkupBefore { get; set; }
+
+        public string MarkupAfter { get; set; }
     }
 }

@@ -1,5 +1,5 @@
 ﻿//
-//  TabSettingInfo.cs
+//  LayoutFile.cs
 //
 //  Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
@@ -19,15 +19,31 @@
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-using DotNetNuke.ComponentModel.DataAnnotations;
+using System.IO;
+using R7.Epsilon.Components;
 
-namespace R7.Epsilon.LayoutManager.Models
+namespace R7.Epsilon.Models
 {
-    [TableName ("TabSettings")]
-    public class TabSettingInfo
+    public class LayoutFile
     {
-        public string SettingName { get; set; }
+        public LayoutFile (string fileName, int portalId)
+        {
+            FileName = fileName;
+            PortalId = portalId;
+        }
 
-        public string SettingValue { get; set; }
+        public string FileName { get; set; }
+
+        public int PortalId { get; set; }
+
+        public string Name 
+        {
+            get { return Path.GetFileNameWithoutExtension (FileName); }
+        }
+
+        public bool IsInUse
+        {
+            get { return LayoutHelper.IsLayoutInUse (Name, PortalId); }
+        }
     }
 }
