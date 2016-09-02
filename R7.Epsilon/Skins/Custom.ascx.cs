@@ -43,12 +43,26 @@ namespace R7.Epsilon
 
                 try {
                     var tabSettings = TabController.Instance.GetTabSettings (TabId);
-                    var layoutSetting = tabSettings ["r7_Epsilon_Layout"];
 
-                    // TODO: Add test to ensure that default layout exists
-                    var layoutName = (layoutSetting != null) ? (string)layoutSetting : "Default";
+                    object layoutSetting = null;
 
-                    var layout = LayoutManager.GetLayout (PortalSettings.Current.PortalId, layoutName);
+                    // try use a11y layout in a11y mode
+                    if (A11yEnabled) {
+                        layoutSetting = tabSettings ["r7_Epsilon_Layout_A11y"];
+                    }
+
+                    // try use standard layout (not in a11y mode or no a11y layout set)
+                    if (layoutSetting == null) {
+                        layoutSetting = tabSettings ["r7_Epsilon_Layout"];
+                    }
+
+                    // TODO: Add test to ensure that default host layout exists
+                    // REVIEW: Default layout for skin could be named after skin, e.g. Home.ascx => Home.xml
+                    var layoutNamePrefixed = (layoutSetting != null) ? (string) layoutSetting : "[G]Default";
+                    var layoutPortalId = layoutNamePrefixed.Substring (0, 3) == "[L]" ? PortalSettings.PortalId : -1;
+                    var layoutName = layoutNamePrefixed.Substring (3);
+
+                    var layout = LayoutManager.GetLayout (layoutPortalId, layoutName);
                     if (layout != null) {
                         var listPanes = layout.Panes;
 
