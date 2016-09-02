@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="false" CodeBehind="EditLayout.ascx.cs" Inherits="R7.Epsilon.LayoutManager.SelectLayout" %>
+﻿<%@ Control Language="C#" AutoEventWireup="false" CodeBehind="SelectLayout.ascx.cs" Inherits="R7.Epsilon.LayoutManager.SelectLayout" %>
 <%@ Register TagPrefix="dnn" TagName="Label" Src="~/controls/labelcontrol.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="TextEditor" Src="~/controls/TextEditor.ascx"%>
 <%@ Register TagPrefix="dnn" TagName="Audit" Src="~/controls/ModuleAuditControl.ascx" %>
