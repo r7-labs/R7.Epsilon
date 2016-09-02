@@ -50,6 +50,20 @@ namespace R7.Epsilon.Components
             return null;
         }
 
+        public static DynamicPane ParseDynamicPane (string markup)
+        {
+            var pane = new DynamicPane ();
+
+            pane.Tag = ParseTag (markup);
+            pane.ID = ParseAttribute (markup, "id");
+            pane.CssClass = ParseAttribute (markup, "class");
+            pane.ContainerType = ParseAttribute (markup, "containertype");
+            pane.ContainerName = ParseAttribute (markup, "containername");
+            pane.ContainerSrc = ParseAttribute (markup, "containersrc");
+
+            return pane;
+        }
+
         public static Layout ParseLayout (string markup)
         {
             // TODO: Add support for <div id="SomePane" runat="server" ...>...</div> markup
@@ -66,7 +80,7 @@ namespace R7.Epsilon.Components
                 var endPaneIndex = markup.IndexOf ("/>", paneIndex + runatServer.Length, StringComparison.Ordinal) + 2;
                 var paneMarkup = markup.Substring (startPaneIndex, endPaneIndex - startPaneIndex);
 
-                var pane = new DynamicPane (paneMarkup);
+                var pane = ParseDynamicPane (paneMarkup);
                 pane.MarkupBefore = markup.Substring (prevEndPaneIndex, startPaneIndex - prevEndPaneIndex);
 
                 prevEndPaneIndex = endPaneIndex;

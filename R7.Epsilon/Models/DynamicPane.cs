@@ -19,8 +19,6 @@
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-using R7.Epsilon.Components;
-
 namespace R7.Epsilon.Models
 {
     public class DynamicPane
@@ -40,19 +38,5 @@ namespace R7.Epsilon.Models
         public string MarkupBefore { get; set; }
 
         public string MarkupAfter { get; set; }
-
-        public DynamicPane ()
-        {
-        }
-
-        public DynamicPane (string markup)
-        {
-            Tag = MarkupParser.ParseTag (markup);
-            ID = MarkupParser.ParseAttribute (markup, "id");
-            CssClass = MarkupParser.ParseAttribute (markup, "class");
-            ContainerType = MarkupParser.ParseAttribute (markup, "containertype");
-            ContainerName = MarkupParser.ParseAttribute (markup, "containername");
-            ContainerSrc = MarkupParser.ParseAttribute (markup, "containersrc");
-        }
     }
 }
