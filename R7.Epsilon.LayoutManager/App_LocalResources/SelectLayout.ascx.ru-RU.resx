@@ -24,4 +24,10 @@
 	<data name="HostLayout.Format" xml:space="preserve">
         <value>{0} (хостинг)</value>
     </data>
+	<data name="Select.Text" xml:space="preserve">
+        <value>Выбрать</value>
+    </data>
+	<data name="Manage.Text" xml:space="preserve">
+        <value>Управление лейаутами</value>
+    </data>
 </root>

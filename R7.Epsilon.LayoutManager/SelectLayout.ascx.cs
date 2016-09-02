@@ -87,6 +87,20 @@ namespace R7.Epsilon.LayoutManager
             else {
                 linkCancel.NavigateUrl = GetReturnUrl ();
             }
+
+            // set url for Manage link
+            if (UserInfo.IsSuperUser || UserInfo.IsInRole ("Administators")) {
+                var layoutManager = ModuleController.Instance.GetModuleByDefinition (PortalId, "R7.Epsilon.LayoutManager");
+                if (layoutManager != null) {
+                    linkManage.NavigateUrl = Globals.NavigateURL (layoutManager.TabID);
+                }
+                else {
+                    linkManage.Visible = false;
+                }
+            }
+            else {
+                linkManage.Visible = false;
+            }
         }
 
         /// <summary>

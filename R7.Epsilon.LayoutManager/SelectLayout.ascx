@@ -17,6 +17,7 @@
         </div>
     	<ul class="dnnActions dnnClear">
             <li><asp:LinkButton id="buttonSelect" runat="server" CssClass="dnnPrimaryAction" resourcekey="Select.Text" OnClick="buttonSelect_Click" /></li>
+			<li><asp:HyperLink id="linkManage" runat="server" CssClass="dnnSecondaryAction" resourcekey="Manage.Text" /></li>
             <li><asp:HyperLink id="linkCancel" runat="server" CssClass="dnnSecondaryAction" resourcekey="cmdCancel" /></li>
         </ul>
     </fieldset>
