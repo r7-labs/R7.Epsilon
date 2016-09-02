@@ -60,7 +60,7 @@ namespace R7.Epsilon.LayoutManager.Components
             }
         }
 
-        public static IEnumerable<LayoutFile> GetPortalLayouts (int portalId)
+        public static IEnumerable<LayoutFile> GetPortalLayoutFiles (int portalId)
         {
             Contract.Requires (portalId == Const.HOST_PORTAL_ID || portalId >= 0);
             Contract.Ensures (Contract.Result<IEnumerable<LayoutFile>> () != null);
@@ -85,11 +85,11 @@ namespace R7.Epsilon.LayoutManager.Components
         /// </summary>
         /// <returns>The layouts.</returns>
         /// <param name="portalId">Portal identifier.</param>
-        public static IEnumerable<LayoutFile> GetLayouts (int portalId)
+        public static IEnumerable<LayoutFile> GetLayoutFiles (int portalId)
         {
             Contract.Requires (portalId >= 0);
 
-            return GetPortalLayouts (Const.HOST_PORTAL_ID).Concat (GetPortalLayouts (portalId));
+            return GetPortalLayoutFiles (Const.HOST_PORTAL_ID).Concat (GetPortalLayoutFiles (portalId));
         }
     }
 }
