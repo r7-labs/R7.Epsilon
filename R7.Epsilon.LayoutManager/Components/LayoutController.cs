@@ -54,7 +54,7 @@ namespace R7.Epsilon.LayoutManager.Components
                 ? Globals.HostMapPath 
                 : PortalController.Instance.GetPortal (portalId).HomeSystemDirectoryMapPath;
 
-            return Path.Combine (mapPath, "Skins", "R7.Epsilon", "Layouts", layoutName + ".xml");
+            return Path.Combine (mapPath, Const.LAYOUTS_FOLDER, layoutName + ".xml");
         }
 
         public static bool IsLayoutInUse (string layoutName, int portalId)
@@ -92,7 +92,7 @@ namespace R7.Epsilon.LayoutManager.Components
               ? PortalController.Instance.GetPortal (portalId).HomeSystemDirectoryMapPath
               : Globals.HostMapPath;
 
-            var layoutDirectory = Path.Combine (mapPath, "Skins", "R7.Epsilon", "Layouts");
+            var layoutDirectory = Path.Combine (mapPath, Const.LAYOUTS_FOLDER);
             if (Directory.Exists (layoutDirectory)) {
                 var layoutFiles = Directory.GetFiles (layoutDirectory, "*.xml");
                 if (layoutFiles != null) {

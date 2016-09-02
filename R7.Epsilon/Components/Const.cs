@@ -25,6 +25,8 @@ namespace R7.Epsilon.Components
     {
         public const int HOST_PORTAL_ID = -1;
 
+        public const string LAYOUTS_FOLDER = "Skins\\R7.Epsilon\\Layouts\\";
+
         public const string LAYOUT_TAB_SETTING_NAME_BASE = "r7_Epsilon_Layout";
 
         public const string LAYOUT_TAB_SETTING_NAME = LAYOUT_TAB_SETTING_NAME_BASE;

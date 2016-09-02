@@ -43,8 +43,6 @@ namespace R7.Epsilon.Components
             ).Value;
         }
 
-        const string layoutsFolder = "Skins\\R7.Epsilon\\Layouts\\";
-
         private static Layout GetLayoutByKey (string key)
         {
             var keyParts = key.Split (new [] { ':' }, StringSplitOptions.RemoveEmptyEntries);
@@ -54,14 +52,14 @@ namespace R7.Epsilon.Components
             string layoutFile = null;
 
             if (portalId == Const.HOST_PORTAL_ID) {
-                var hostLayoutFile = Path.Combine (Globals.HostMapPath, layoutsFolder, layoutName + ".xml");
+                var hostLayoutFile = Path.Combine (Globals.HostMapPath, Const.LAYOUTS_FOLDER, layoutName + ".xml");
                 if (File.Exists (hostLayoutFile)) {
                     layoutFile = hostLayoutFile;
                 }
             } 
             else {
                 var portalHomeDirectory = PortalController.Instance.GetPortal (portalId).HomeSystemDirectoryMapPath;
-                var portalLayoutFile = Path.Combine (portalHomeDirectory, layoutsFolder, layoutName + ".xml");
+                var portalLayoutFile = Path.Combine (portalHomeDirectory, Const.LAYOUTS_FOLDER, layoutName + ".xml");
                 if (File.Exists (portalLayoutFile)) {
                     layoutFile = portalLayoutFile;
                 }
