@@ -113,6 +113,7 @@
     </None>
     <None Include="Skins\Layouts\Universal.xml" />
     <None Include="Skins\Layouts\Default.xml" />
+    <None Include="Skins\Layouts\Default_A11y.xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Skins\Edit.ascx.cs">
