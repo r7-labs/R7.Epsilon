@@ -20,13 +20,12 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using R7.Epsilon.Models;
 
 namespace R7.Epsilon.Components
 {
-    public static class LayoutChecker
+    public static class LayoutValidator
     {
         public static bool IsValid (Layout layout)
         {
