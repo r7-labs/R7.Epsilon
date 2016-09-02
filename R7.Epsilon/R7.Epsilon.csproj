@@ -215,6 +215,7 @@
     <Compile Include="Skins\Custom.ascx.cs">
       <DependentUpon>Custom.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Components\Const.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Containers\Blank.ascx" />

@@ -27,6 +27,7 @@ using System.Linq;
 using DotNetNuke.Common;
 using DotNetNuke.Data;
 using DotNetNuke.Entities.Portals;
+using R7.Epsilon.Components;
 using R7.Epsilon.LayoutManager.Models;
 
 namespace R7.Epsilon.LayoutManager.Components

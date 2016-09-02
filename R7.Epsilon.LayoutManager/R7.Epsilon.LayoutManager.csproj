@@ -78,7 +78,6 @@
     <Compile Include="SelectLayout.ascx.controls.cs">
       <DependentUpon>SelectLayout.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Components\Const.cs" />
     <Compile Include="Components\LayoutEqualityComparer.cs" />
   </ItemGroup>
   <ItemGroup>

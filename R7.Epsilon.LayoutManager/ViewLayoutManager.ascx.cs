@@ -27,6 +27,7 @@ using DotNetNuke.Entities.Portals;
 using DotNetNuke.Services.Exceptions;
 using DotNetNuke.UI.Skins;
 using DotNetNuke.UI.Skins.Controls;
+using R7.Epsilon.Components;
 using R7.Epsilon.LayoutManager.Components;
 
 namespace R7.Epsilon.LayoutManager

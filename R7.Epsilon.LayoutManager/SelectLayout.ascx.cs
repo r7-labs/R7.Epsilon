@@ -29,6 +29,7 @@ using DotNetNuke.Entities.Modules;
 using DotNetNuke.Entities.Tabs;
 using DotNetNuke.Services.Exceptions;
 using DotNetNuke.Services.Log.EventLog;
+using R7.Epsilon.Components;
 using R7.Epsilon.LayoutManager.Components;
 using R7.Epsilon.LayoutManager.Models;
 
