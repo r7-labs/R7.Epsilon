@@ -62,7 +62,7 @@ namespace R7.Epsilon
                     var layoutPortalId = layoutNamePrefixed.Substring (0, 3) == "[L]" ? PortalSettings.PortalId : Const.HOST_PORTAL_ID;
                     var layoutName = layoutNamePrefixed.Substring (3);
 
-                    var layout = LayoutManager.GetLayout (layoutPortalId, layoutName);
+                    var layout = LayoutManager.Instance.GetLayout (layoutPortalId, layoutName);
                     if (layout != null) {
                         // create and insert pane controls
                         var insertIndex = Controls.IndexOf (placeDynamicPanes);
@@ -110,7 +110,7 @@ namespace R7.Epsilon
 
         protected void buttonTestPostBack_Click (object sender, EventArgs e)
         {
-            LayoutManager.Reset ();
+            LayoutManager.ResetInstance ();
             Response.Redirect (Globals.NavigateURL ());
         }
     }

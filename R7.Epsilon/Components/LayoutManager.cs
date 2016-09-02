@@ -29,19 +29,35 @@ namespace R7.Epsilon.Components
     /// <summary>
     /// Holds layouts dictionary.
     /// </summary>
-    public static class LayoutManager
+    public class LayoutManager
     {
-        private static ConcurrentDictionary<string, Lazy<Layout>> layouts =
+        #region Singleton implementation
+
+        static Lazy<LayoutManager> instance = new Lazy<LayoutManager> ();
+
+        public static LayoutManager Instance
+        {
+            get { return instance.Value; }
+        }
+
+        public static void ResetInstance ()
+        {
+            instance = new Lazy<LayoutManager> ();
+        }
+
+        #endregion
+
+        ConcurrentDictionary<string, Lazy<Layout>> layouts =
             new ConcurrentDictionary<string, Lazy<Layout>> ();
 
-        public static Layout GetLayout (int portalId, string layoutName)
+        public Layout GetLayout (int portalId, string layoutName)
         {
             return layouts.GetOrAdd (portalId + ":" + layoutName, key =>
                 new Lazy<Layout> (() => GetLayoutByKey (key))
             ).Value;
         }
 
-        private static Layout GetLayoutByKey (string key)
+        Layout GetLayoutByKey (string key)
         {
             var keyParts = key.Split (new [] { ':' }, StringSplitOptions.RemoveEmptyEntries);
             var portalId = int.Parse (keyParts [0]);
@@ -60,17 +76,12 @@ namespace R7.Epsilon.Components
             return null;
         }
 
-        public static void Reset ()
-        {
-            layouts = new ConcurrentDictionary<string, Lazy<Layout>> ();
-        }
-
         /// <summary>
         /// Removes layout reference from dictionary, so it can be re-added later
         /// </summary>
         /// <param name="portalId">Portal identifier.</param>
         /// <param name="layoutName">Layout name.</param>
-        public static void ResetLayout (int portalId, string layoutName)
+        public void ResetLayout (int portalId, string layoutName)
         {
             Lazy<Layout> removedLayout;
             layouts.TryRemove (portalId + ":" + layoutName, out removedLayout);
