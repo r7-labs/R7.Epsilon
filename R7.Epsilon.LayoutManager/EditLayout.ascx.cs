@@ -173,6 +173,11 @@ namespace R7.Epsilon.LayoutManager
                     return;
                 }
 
+                if (!LayoutValidator.IsValid (MarkupParser.ParseLayout (layoutEditor.Text))) {
+                    WarningMessage ("LayoutMarkupIsInvalid.Warning");
+                    return;
+                }
+
                 File.WriteAllText (layoutFile, layoutEditor.Text);
 
                 LayoutHelper.GetManager ().ResetLayout (layoutPortaId, layoutName);
