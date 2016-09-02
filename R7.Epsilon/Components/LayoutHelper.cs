@@ -101,5 +101,16 @@ namespace R7.Epsilon.Components
 
             return GetPortalLayoutFiles (Const.HOST_PORTAL_ID).Concat (GetPortalLayoutFiles (portalId));
         }
+
+        /// <summary>
+        /// Gets the layout manager object. 
+        /// For use in LayoutManager module only to resolve naming issues.
+        /// </summary>
+        /// <returns>The layout manager.</returns>
+        public static LayoutManager GetManager ()
+        {
+            // REVIEW: Need to rename LayoutManager module or LayoutManager class
+            return LayoutManager.Instance;
+        }
     }
 }
