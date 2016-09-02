@@ -24,14 +24,14 @@ using R7.Epsilon.LayoutManager.Models;
 
 namespace R7.Epsilon.LayoutManager.Components
 {
-    public class LayoutEqualityComparer : IEqualityComparer<LayoutInfo>
+    public class LayoutFileEqualityComparer : IEqualityComparer<LayoutFile>
     {
-        public bool Equals (LayoutInfo x, LayoutInfo y)
+        public bool Equals (LayoutFile x, LayoutFile y)
         {
             return x.Name == y.Name;
         }
 
-        public int GetHashCode (LayoutInfo obj)
+        public int GetHashCode (LayoutFile obj)
         {
             return obj.Name.GetHashCode ();
         }

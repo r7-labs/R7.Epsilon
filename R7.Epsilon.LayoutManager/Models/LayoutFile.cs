@@ -1,5 +1,5 @@
 ﻿//
-//  LayoutInfo.cs
+//  LayoutFile.cs
 //
 //  Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
@@ -24,9 +24,9 @@ using R7.Epsilon.LayoutManager.Components;
 
 namespace R7.Epsilon.LayoutManager.Models
 {
-    public class LayoutInfo
+    public class LayoutFile
     {
-        public LayoutInfo (string fileName, int portalId)
+        public LayoutFile (string fileName, int portalId)
         {
             FileName = fileName;
             PortalId = portalId;

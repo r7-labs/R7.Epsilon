@@ -71,10 +71,10 @@ namespace R7.Epsilon.LayoutManager.Components
             }
         }
 
-        public static IEnumerable<LayoutInfo> GetPortalLayouts (int portalId)
+        public static IEnumerable<LayoutFile> GetPortalLayouts (int portalId)
         {
             Contract.Requires (portalId == Const.HOST_PORTAL_ID || portalId >= 0);
-            Contract.Ensures (Contract.Result<IEnumerable<LayoutInfo>> () != null);
+            Contract.Ensures (Contract.Result<IEnumerable<LayoutFile>> () != null);
 
             var mapPath = (portalId != Const.HOST_PORTAL_ID)
               ? PortalController.Instance.GetPortal (portalId).HomeSystemDirectoryMapPath
@@ -84,11 +84,11 @@ namespace R7.Epsilon.LayoutManager.Components
             if (Directory.Exists (layoutDirectory)) {
                 var layoutFiles = Directory.GetFiles (layoutDirectory, "*.xml");
                 if (layoutFiles != null) {
-                    return layoutFiles.Select (lf => new LayoutInfo (lf, portalId));
+                    return layoutFiles.Select (lf => new LayoutFile (lf, portalId));
                 }
             }
 
-            return Enumerable.Empty<LayoutInfo> ();
+            return Enumerable.Empty<LayoutFile> ();
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace R7.Epsilon.LayoutManager.Components
         /// </summary>
         /// <returns>The layouts.</returns>
         /// <param name="portalId">Portal identifier.</param>
-        public static IEnumerable<LayoutInfo> GetLayouts (int portalId)
+        public static IEnumerable<LayoutFile> GetLayouts (int portalId)
         {
             Contract.Requires (portalId >= 0);
 

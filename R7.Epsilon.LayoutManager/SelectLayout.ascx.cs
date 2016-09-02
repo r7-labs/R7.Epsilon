@@ -181,7 +181,7 @@ namespace R7.Epsilon.LayoutManager
             FillLayoutComboBox (comboA11yLayout, layouts);
         }
 
-        protected void FillLayoutComboBox (DropDownList comboLayout, IEnumerable<LayoutInfo> layouts)
+        protected void FillLayoutComboBox (DropDownList comboLayout, IEnumerable<LayoutFile> layouts)
         {
             comboLayout.Items.Clear ();
 
