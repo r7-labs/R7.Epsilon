@@ -149,8 +149,8 @@
         <div id="BottomPane33" runat="server" class="col-md-4" />
     </div>
     <div class="row">
-        <div id="BottomLeftPane" runat="server" class="col-md-7" />
-        <div id="BottomRightPane" runat="server" class="col-md-5" />
+        <div id="BottomLeftPane" runat="server" class="col-md-6" />
+        <div id="BottomRightPane" runat="server" class="col-md-6" />
     </div>
     <div class="row">
         <div id="BottomPane" runat="server" class="col-md-12" />
