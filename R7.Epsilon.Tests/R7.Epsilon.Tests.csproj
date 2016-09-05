@@ -65,9 +65,11 @@
     <Compile Include="DefaultPortalConfigTests.cs" />
     <Compile Include="CustomPortalConfigTests.cs" />
     <Compile Include="Skins\Layouts\LayoutTests.cs" />
+    <Compile Include="Components\LayoutValidatorTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Skins\" />
     <Folder Include="Skins\Layouts\" />
+    <Folder Include="Components\" />
   </ItemGroup>
 </Project>
