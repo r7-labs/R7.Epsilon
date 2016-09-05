@@ -123,4 +123,7 @@
     <data name="Permalink.Format" xml:space="preserve">
         <value>/LinkClick.aspx?link={0}</value>
     </data>
+	<data name="SelectLayout.Text" xml:space="preserve">
+        <value>Select Layout</value>
+    </data>
 </root>

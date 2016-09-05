@@ -7,6 +7,7 @@ var epsilon = {
     portalId:<%= PortalSettings.Current.PortalId %>,
     breadCrumbs:<%= JsBreadCrumbsList %>,
     breadCrumbsRemoveLastLink:<%= JsBreadCrumbsRemoveLastLink %>,
-	layoutManagerUrl:'<%= LayoutManagerUrl %>'
-}
+	layoutManagerUrl:'<%= LayoutManagerUrl %>',
+    localization: { <%= LocalizationResources %> }
+};
 </script>

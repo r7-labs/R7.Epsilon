@@ -114,4 +114,7 @@
     <data name="Permalink.Text" xml:space="preserve">
         <value><![CDATA[<span class="glyphicon glyphicon-globe"></span> Постоянная ссылка:]]></value>
     </data>
+	<data name="SelectLayout.Text" xml:space="preserve">
+        <value>Выбрать лейаут</value>
+    </data>
 </root>

@@ -20,6 +20,7 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System.Linq;
+using System.Text;
 using DotNetNuke.Common;
 using DotNetNuke.Entities.Modules;
 using DotNetNuke.Entities.Tabs;
@@ -66,6 +67,17 @@ namespace R7.Epsilon
 
                 // TODO: Log error: no LayoutManager module found, layout selection feature is disabled
                 return null;
+            }
+        }
+
+        public string LocalizationResources
+        {
+            get {
+                var sb = new StringBuilder ();
+
+                sb.AppendFormat ("selectLayout: '{0}'", Localizer.GetString ("SelectLayout.Text"));
+
+                return sb.ToString ();
             }
         }
 

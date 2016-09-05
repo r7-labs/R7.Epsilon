@@ -203,7 +203,7 @@
 (function ($) {
     $(function () {
 	    if (epsilon.layoutManagerUrl) {
-            $("ul#ControlEditPageMenu").find ("ul").append ("<li><a href='javascript:dnnModal.show(\"" + epsilon.layoutManagerUrl + "/fromtabid/" + epsilon.tabId + "?popUp=true\",/*showReturn*/false,550,950,true,\"\")'>Select Layout</a></li>");
+            $("ul#ControlEditPageMenu").find ("ul").append ("<li><a href='javascript:dnnModal.show(\"" + epsilon.layoutManagerUrl + "/fromtabid/" + epsilon.tabId + "?popUp=true\",/*showReturn*/false,550,950,true,\"\")'>" + epsilon.localization.selectLayout + "</a></li>");
 	    }
     });
 }(jQuery));
