@@ -4,7 +4,6 @@
 <%@ Register TagPrefix="dnn" TagName="SEARCH" Src="~/Admin/Skins/Search.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="PRIVACY" Src="~/Admin/Skins/Privacy.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="TERMS" Src="~/Admin/Skins/Terms.ascx" %>
-<%@ Register TagPrefix="dnn" TagName="TAGS" Src="~/Admin/Skins/Tags.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="COPYRIGHT" Src="~/Admin/Skins/Copyright.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="JQUERY" Src="~/Admin/Skins/jQuery.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="META" Src="~/Admin/Skins/Meta.ascx" %>
@@ -121,20 +120,12 @@
     <div class="row">
         <div id="TopPane" runat="server" class="col-md-12" />
     </div>
-    <div class="row">
+	<div class="row">
         <div id="ContentPane" runat="server" class="col-md-9 col-sm-7" />
         <div id="RightPane" runat="server" class="col-md-3 col-sm-5" />
     </div>
     <div class="row">
-        <div id="BottomLeftPane" runat="server" class="col-md-7" />
-        <div id="BottomRightPane" runat="server" class="col-md-5" />
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="skin-tags">
-                <dnn:TAGS runat="server" AllowTagging="false" Separator=" " />
-            </div>
-        </div>
+        <div id="BottomPane" runat="server" class="col-md-12" />
     </div>
 </div>
 <footer class="footer skin-footer">
