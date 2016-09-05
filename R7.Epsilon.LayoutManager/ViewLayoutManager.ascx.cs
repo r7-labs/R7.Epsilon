@@ -28,6 +28,7 @@ using DotNetNuke.Services.Exceptions;
 using DotNetNuke.UI.Skins;
 using DotNetNuke.UI.Skins.Controls;
 using R7.Epsilon.Components;
+using R7.News.ControlExtensions;
 
 namespace R7.Epsilon.LayoutManager
 {
@@ -45,6 +46,8 @@ namespace R7.Epsilon.LayoutManager
 
             comboPortal.DataSource = GetManageablePortals ();
             comboPortal.DataBind ();
+
+            gridLayouts.LocalizeColumnHeaders (LocalResourceFile);
         }
 
         protected IEnumerable<PortalInfo> GetManageablePortals ()

@@ -27,9 +27,8 @@
 								NavigateUrl='<%# EditUrl ("layoutname", (string) Eval ("Name"), "Edit", "layoutportalid", ((int) Eval ("PortalId")).ToString ()) %>' />
                         </ItemTemplate>
                     </asp:TemplateField>
-					<%-- TODO: Localize headers --%>
-            		<asp:BoundField DataField="Name" HeaderText="Layout Name" />
-					<asp:BoundField DataField="IsInUse" HeaderText="Is in Use?" />
+					<asp:BoundField DataField="Name" HeaderText="LayoutName.Column" />
+					<asp:BoundField DataField="IsInUse" HeaderText="LayoutInUse.Column" />
             	</Columns>
 				<EmptyDataTemplate>
                     <asp:Label runat="server" CssClass="dnnFormMessage dnnFormInfo" resourcekey="NoLayouts.Info" />

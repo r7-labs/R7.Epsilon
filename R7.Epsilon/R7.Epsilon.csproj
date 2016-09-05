@@ -220,6 +220,7 @@
     <Compile Include="Components\LayoutHelper.cs" />
     <Compile Include="Models\LayoutFile.cs" />
     <Compile Include="Models\LayoutFileEqualityComparer.cs" />
+    <Compile Include="ControlExtensions\GridViewExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Containers\Blank.ascx" />
@@ -372,6 +373,7 @@
     <Folder Include="Models\" />
     <Folder Include="Components\" />
     <Folder Include="Skins\Layouts\" />
+    <Folder Include="ControlExtensions\" />
   </ItemGroup>
   <Import Project="Less.targets" />
   <Target Name="BeforeBuild" DependsOnTargets="Less;MinifyJS" />

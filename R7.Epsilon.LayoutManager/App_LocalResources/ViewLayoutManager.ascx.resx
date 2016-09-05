@@ -27,4 +27,10 @@
 	<data name="AddLayout.Text" xml:space="preserve">
         <value>Add Layout</value>
     </data>
+	<data name="LayoutName.Column" xml:space="preserve">
+        <value>Layout Name</value>
+    </data>
+	<data name="LayoutInUse.Column" xml:space="preserve">
+        <value>Is in Use?</value>
+    </data>
 </root>

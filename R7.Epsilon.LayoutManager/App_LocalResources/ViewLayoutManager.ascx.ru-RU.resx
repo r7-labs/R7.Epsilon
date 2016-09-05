@@ -27,4 +27,10 @@
 	<data name="AddLayout.Text" xml:space="preserve">
         <value>Добавить лейаут</value>
     </data>
+	<data name="LayoutName.Column" xml:space="preserve">
+        <value>Название лейаута</value>
+    </data>
+    <data name="LayoutInUse.Column" xml:space="preserve">
+        <value>Используется?</value>
+    </data>
 </root>
