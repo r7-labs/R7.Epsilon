@@ -137,7 +137,7 @@
     </nav>
 </header>
 <a id="content" name="content"></a>
-<asp:Button id="buttonTestPostBack" runat="server" OnClick="buttonTestPostBack_Click" Text="Test PostBack" />
+<%-- <asp:Button id="buttonTestPostBack" runat="server" OnClick="buttonTestPostBack_Click" Text="Test PostBack" /> --%>
 <asp:PlaceHolder id="placeDynamicPanes" runat="server"></asp:PlaceHolder>
 <div class="container">
     <div class="row">
