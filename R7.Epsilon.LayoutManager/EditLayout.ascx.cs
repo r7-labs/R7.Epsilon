@@ -178,6 +178,12 @@ namespace R7.Epsilon.LayoutManager
                     return;
                 }
 
+                // ensure layouts directory exists
+                var layoutsDirectory = Path.GetDirectoryName (layoutFile);
+                if (!Directory.Exists (layoutsDirectory)) {
+                    Directory.CreateDirectory (layoutsDirectory);
+                }
+
                 File.WriteAllText (layoutFile, layoutEditor.Text);
 
                 LayoutHelper.GetManager ().ResetLayout (layoutPortaId, layoutName);
