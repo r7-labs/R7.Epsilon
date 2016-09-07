@@ -120,7 +120,6 @@
         <div class="container">
             <div class="page-header">
                 <skin:PAGEHEADER runat="server" />
-                <skin:PAGEINFO runat="server" />
             </div>
             <skin:LOCALMENU runat="server" />
             <skin:HEADERSMENU runat="server" PassDefaultTemplateArgs="false" />
