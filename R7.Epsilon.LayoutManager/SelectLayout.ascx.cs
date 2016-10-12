@@ -87,7 +87,7 @@ namespace R7.Epsilon.LayoutManager
             }
 
             // set url for Manage link
-            if (UserInfo.IsSuperUser || UserInfo.IsInRole ("Administators")) {
+            if (UserInfo.IsSuperUser || UserInfo.IsInRole ("Administrators")) {
                 var layoutManager = ModuleController.Instance.GetModuleByDefinition (PortalId, "R7.Epsilon.LayoutManager");
                 if (layoutManager != null) {
                     linkManage.NavigateUrl = Globals.NavigateURL (layoutManager.TabID);
