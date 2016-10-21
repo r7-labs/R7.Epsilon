@@ -1,0 +1,11 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "packages": true,
+        "bower_components": true,
+        "**/bin": true,
+        "**/obj": true,
+        "**/*.min.css": true,
+        "**/*.min.js": true
+    }
+}
