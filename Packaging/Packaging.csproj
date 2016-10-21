@@ -19,6 +19,25 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
+    <CustomCommands>
+      <CustomCommands>
+        <Command>
+          <type>Custom</type>
+          <name>Make Install Package</name>
+          <command>xbuild /p:Configuration=${ProjectConfigName} InstallPackage.targets</command>
+        </Command>
+        <Command>
+          <type>Custom</type>
+          <name>Do Local Deploy</name>
+          <command>xbuild /p:Configuration=${ProjectConfigName} LocalDeploy.targets</command>
+        </Command>
+        <Command>
+          <type>Custom</type>
+          <name>Make Customizations Package</name>
+          <command>xbuild /p:Configuration=${ProjectConfigName} Customizations.targets</command>
+        </Command>
+      </CustomCommands>
+    </CustomCommands>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -39,24 +58,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <Import Project="../packages/MSBuildTasks.1.4.0.128/tools/MSBuild.Community.Tasks.Targets" />
-  <PropertyGroup>
-    <PackageExtension>zip</PackageExtension>
-    <PackageName>R7.Epsilon</PackageName>
-    <PackageOutputPath>output</PackageOutputPath>
-    <MSBuildDnnBinPath Condition="'$(MSBuildDnnBinPath)' == ''">..\R7.Epsilon\bin\$(Configuration)</MSBuildDnnBinPath>
-    <DnnInstallPath Condition="'$(OS)' != 'Unix'">C:\Dotnetnuke7</DnnInstallPath>
-    <DnnInstallPath Condition="'$(OS)' == 'Unix'">/home/redhound/mnt/dnn</DnnInstallPath>
-    <DnnBinPath>$(DnnInstallPath)\bin</DnnBinPath>
-    <DnnSkinsPath>$(DnnInstallPath)\Portals\_default\Skins</DnnSkinsPath>
-    <DnnContainersPath>$(DnnInstallPath)\Portals\_default\Containers</DnnContainersPath>
-    <DnnMenusPath>$(DnnInstallPath)\DesktopModules\DDRMenu</DnnMenusPath>
-    <DnnModulesPath>$(DnnInstallPath)\DesktopModules</DnnModulesPath>
-  </PropertyGroup>
-  <Import Project="Install.targets" />
-  <Import Project="Customizations.targets" />
   <Import Project="LocalDeploy.targets" />
-  <Target Name="AfterBuild" DependsOnTargets="MakeInstallPackage;MakeCustomizations;DoLocalDeploy" />
+  <Target Name="AfterBuild" DependsOnTargets="DoLocalDeploy" Condition=" '$(Configuration)' == 'Debug' " />
   <ItemGroup>
     <Compile Include="Dummy.cs" />
   </ItemGroup>

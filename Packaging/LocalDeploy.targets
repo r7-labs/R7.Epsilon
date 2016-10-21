@@ -1,85 +1,88 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0" DefaultTargets="DoLocalDeploy">
-	<Target Name="DoLocalDeploy" Condition=" '$(Configuration)' == 'Debug' ">
- 
+	<Import Project="BuildSettings.targets" />
+	<Target Name="DoLocalDeploy">
+ 		
 		<!-- Declare skin files -->
 		<ItemGroup>
-			<DeploySkinFiles Include="..\R7.Epsilon\Skins\**\*.ascx" />
-            <DeploySkinFiles Include="..\R7.Epsilon\Skins\**\*.xml" />
-            <DeploySkinFiles Include="..\R7.Epsilon\Skins\**\*.xslt" />
-			<DeploySkinFiles Include="..\R7.Epsilon\Skins\**\*.css" />
-			<DeploySkinFiles Include="..\R7.Epsilon\Skins\**\*.resx" />
-			<DeploySkinFiles Include="..\R7.Epsilon\Skins\**\*.js" />
-			<DeploySkinFiles Include="..\R7.Epsilon\Skins\**\*.jpg" />
-			<DeploySkinFiles Include="..\R7.Epsilon\Skins\**\*.png" />
-			<DeploySkinFiles Include="..\R7.Epsilon\Skins\**\*.gif" />
-            <DeploySkinFiles Include="..\R7.Epsilon\Skins\**\*.yml" />
-            <DeploySkinFiles Include="..\R7.Epsilon\Skins\**\fonts\*.eot" />
-            <DeploySkinFiles Include="..\R7.Epsilon\Skins\**\fonts\*.svg" />
-            <DeploySkinFiles Include="..\R7.Epsilon\Skins\**\fonts\*.ttf" />
-            <DeploySkinFiles Include="..\R7.Epsilon\Skins\**\fonts\*.woff" />
-            <DeploySkinFiles Include="..\R7.Epsilon\Skins\**\fonts\*.woff2" />
+			<DeploySkinFiles Include="$(MainProjectPath)/Skins/**/*.ascx" />
+            <DeploySkinFiles Include="$(MainProjectPath)/R7.Epsilon/Skins/**/*.xml" />
+            <DeploySkinFiles Include="$(MainProjectPath)/R7.Epsilon/Skins/**/*.xslt" />
+			<DeploySkinFiles Include="$(MainProjectPath)/R7.Epsilon/Skins/**/*.css" />
+			<DeploySkinFiles Include="$(MainProjectPath)/R7.Epsilon/Skins/**/*.resx" />
+			<DeploySkinFiles Include="$(MainProjectPath)/R7.Epsilon/Skins/**/*.js" />
+			<DeploySkinFiles Include="$(MainProjectPath)/R7.Epsilon/Skins/**/*.jpg" />
+			<DeploySkinFiles Include="$(MainProjectPath)/R7.Epsilon/Skins/**/*.png" />
+			<DeploySkinFiles Include="$(MainProjectPath)/R7.Epsilon/Skins/**/*.gif" />
+            <DeploySkinFiles Include="$(MainProjectPath)/R7.Epsilon/Skins/**/*.yml" />
+			<DeploySkinFiles Include="$(MainProjectPath)/R7.Epsilon/Skins/**/*.json" />
+            <DeploySkinFiles Include="$(MainProjectPath)/R7.Epsilon/Skins/**/fonts/*.eot" />
+            <DeploySkinFiles Include="$(MainProjectPath)/R7.Epsilon/Skins/**/fonts/*.svg" />
+            <DeploySkinFiles Include="$(MainProjectPath)/R7.Epsilon/Skins/**/fonts/*.ttf" />
+            <DeploySkinFiles Include="$(MainProjectPath)/R7.Epsilon/Skins/**/fonts/*.woff" />
+            <DeploySkinFiles Include="$(MainProjectPath)/R7.Epsilon/Skins/**/fonts/*.woff2" />
 		</ItemGroup>
 
 		<!-- Declare container files -->
 		<ItemGroup>
-			<DeployContainerFiles Include="..\R7.Epsilon\Containers\**\*.ascx" />
-			<DeployContainerFiles Include="..\R7.Epsilon\Containers\**\*.css" />
-			<DeployContainerFiles Include="..\R7.Epsilon\Containers\**\*.resx" />
-			<DeployContainerFiles Include="..\R7.Epsilon\Containers\**\*.js" />
-			<DeployContainerFiles Include="..\R7.Epsilon\Containers\**\*.jpg" />
-			<DeployContainerFiles Include="..\R7.Epsilon\Containers\**\*.png" />
-			<DeployContainerFiles Include="..\R7.Epsilon\Containers\**\*.gif" />
+			<DeployContainerFiles Include="$(MainProjectPath)/Containers/**/*.ascx" />
+			<DeployContainerFiles Include="$(MainProjectPath)/Containers/**/*.css" />
+			<DeployContainerFiles Include="$(MainProjectPath)/Containers/**/*.resx" />
+			<DeployContainerFiles Include="$(MainProjectPath)/Containers/**/*.js" />
+			<DeployContainerFiles Include="$(MainProjectPath)/Containers/**/*.jpg" />
+			<DeployContainerFiles Include="$(MainProjectPath)/Containers/**/*.png" />
+			<DeployContainerFiles Include="$(MainProjectPath)/Containers/**/*.gif" />
 		</ItemGroup>
 
         <!-- Declare module files -->
         <ItemGroup>
-            <DeployLayoutManagerFiles Include="..\R7.Epsilon.LayoutManager\**\*.ascx" />
-            <DeployLayoutManagerFiles Include="..\R7.Epsilon.LayoutManager\**\*.css" />
-            <DeployLayoutManagerFiles Include="..\R7.Epsilon.LayoutManager\**\*.resx" />
-            <DeployLayoutManagerFiles Include="..\R7.Epsilon.LayoutManager\**\*.js" />
-            <DeployLayoutManagerFiles Include="..\R7.Epsilon.LayoutManager\**\*.jpg" />
-            <DeployLayoutManagerFiles Include="..\R7.Epsilon.LayoutManager\**\*.png" />
-            <DeployLayoutManagerFiles Include="..\R7.Epsilon.LayoutManager\**\*.gif" />
+            <DeployLayoutManagerFiles Include="../R7.Epsilon.LayoutManager/**/*.ascx" />
+            <DeployLayoutManagerFiles Include="../R7.Epsilon.LayoutManager/**/*.css" />
+            <DeployLayoutManagerFiles Include="../R7.Epsilon.LayoutManager/**/*.resx" />
+            <DeployLayoutManagerFiles Include="../R7.Epsilon.LayoutManager/**/*.js" />
+            <DeployLayoutManagerFiles Include="../R7.Epsilon.LayoutManager/**/*.jpg" />
+            <DeployLayoutManagerFiles Include="../R7.Epsilon.LayoutManager/**/*.png" />
+            <DeployLayoutManagerFiles Include="../R7.Epsilon.LayoutManager/**/*.gif" />
         </ItemGroup>
 
         <!-- Declare binaries -->
         <ItemGroup> 
-            <DeployBinaryFiles Include="$(MSBuildDnnBinPath)\R7.Epsilon*.dll" />
-            <DeployBinaryFiles Include="$(MSBuildDnnBinPath)\R7.Epsilon*.pdb" />
-            <DeployBinaryFiles Include="$(MSBuildDnnBinPath)\YamlDotNet.dll" />
+            <DeployBinaryFiles Include="$(MainProjectOutputPath)/R7.Epsilon*.dll" />
+            <DeployBinaryFiles Include="$(MainProjectOutputPath)/R7.Epsilon*.pdb" />
+            <DeployBinaryFiles Include="$(MainProjectOutputPath)/YamlDotNet.dll" />
         </ItemGroup>
 
+		<!-- Cleanup -->
+		<RemoveDir Directories="$(TmpDir)" />
+
 		<!-- Copy files to tmp dirs -->
-		<Copy SourceFiles="@(DeploySkinFiles)" DestinationFolder="$(MSBuildProjectDirectory)\tmp_Skins\%(RecursiveDir)" />
-		<Copy SourceFiles="@(DeployContainerFiles)" DestinationFolder="$(MSBuildProjectDirectory)\tmp_Containers\%(RecursiveDir)" />
-        <Copy SourceFiles="@(DeployLayoutManagerFiles)" DestinationFolder="$(MSBuildProjectDirectory)\tmp_Modules\R7.Epsilon.LayoutManager\%(RecursiveDir)" />
+		<Copy SourceFiles="@(DeploySkinFiles)" DestinationFolder="$(TmpDir)/Skins/%(RecursiveDir)" />
+		<Copy SourceFiles="@(DeployContainerFiles)" DestinationFolder="$(TmpDir)/Containers/%(RecursiveDir)" />
+        <Copy SourceFiles="@(DeployLayoutManagerFiles)" DestinationFolder="$(TmpDir)/Modules/R7.Epsilon.LayoutManager/%(RecursiveDir)" />
 
 		<!-- declare files to move -->
 		<ItemGroup>
-			<SkinMoveFiles Include="$(MSBuildProjectDirectory)\tmp_Skins\**\*.*" />	
+			<SkinMoveFiles Include="$(TmpDir)/Skins/**/*.*" />	
 		</ItemGroup>
 	
 		<ItemGroup>	
-			<ContainerMoveFiles Include="$(MSBuildProjectDirectory)\tmp_Containers\**\*.*" />
+			<ContainerMoveFiles Include="$(TmpDir)/Containers/**/*.*" />
 		</ItemGroup>
 
         <ItemGroup> 
-            <ModuleMoveFiles Include="$(MSBuildProjectDirectory)\tmp_Modules\**\*.*" />
+            <ModuleMoveFiles Include="$(TmpDir)/Modules/**/*.*" />
         </ItemGroup>
 	
 		<!-- Deploy files -->
-		<Copy SourceFiles="@(SkinMoveFiles)" DestinationFolder="$(DnnSkinsPath)\R7.Epsilon\%(RecursiveDir)" />
-		<Copy SourceFiles="@(ContainerMoveFiles)" DestinationFolder="$(DnnContainersPath)\R7.Epsilon\%(RecursiveDir)" />
-		<Copy SourceFiles="@(ModuleMoveFiles)" DestinationFolder="$(DnnModulesPath)\R7.Epsilon\%(RecursiveDir)" />
+		<Copy SourceFiles="@(SkinMoveFiles)" DestinationFolder="$(DnnSkinsPath)/R7.Epsilon/%(RecursiveDir)" SkipUnchangedFiles="true" />
+		<Copy SourceFiles="@(ContainerMoveFiles)" DestinationFolder="$(DnnContainersPath)/R7.Epsilon/%(RecursiveDir)" SkipUnchangedFiles="true" />
+		<Copy SourceFiles="@(ModuleMoveFiles)" DestinationFolder="$(DnnModulesPath)/R7.Epsilon/%(RecursiveDir)" SkipUnchangedFiles="true" />
 
 		<!-- Copy binaries -->
-		<Copy SourceFiles="@(DeployBinaryFiles)" DestinationFolder="$(DnnBinPath)" />
+		<Copy SourceFiles="@(DeployBinaryFiles)" DestinationFolder="$(DnnBinPath)" SkipUnchangedFiles="true" />
         
 		<!-- Cleanup -->
-		<RemoveDir Directories="$(MSBuildProjectDirectory)\tmp_Skins" />
-		<RemoveDir Directories="$(MSBuildProjectDirectory)\tmp_Containers" />
-        <RemoveDir Directories="$(MSBuildProjectDirectory)\tmp_Modules" />
+		<RemoveDir Directories="$(TmpDir)" />
 		      
 	</Target>
 </Project>

@@ -1,0 +1,25 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+
+    <!-- Import MSBuild.Community.Tasks -->
+    <Import Project="../packages/MSBuildTasks.1.4.0.128/tools/MSBuild.Community.Tasks.Targets" />
+    
+    <!-- Main properties -->
+    <PropertyGroup>
+        <PackageName>R7.Epsilon</PackageName>
+        <PackageOutputPath>bin/Package</PackageOutputPath>
+        <TmpDir>tmp</TmpDir>
+        <DnnLocalDeployPath Condition=" '$(OS)' == 'Unix' ">/home/redhound/mnt/dnn</DnnLocalDeployPath>
+        <DnnLocalDeployPath Condition=" '$(OS)' != 'Unix' ">C:\Dotnetnuke7</DnnLocalDeployPath>
+    </PropertyGroup>
+
+    <!-- Derieved properties -->
+    <PropertyGroup>
+        <MainProjectPath>../$(PackageName)</MainProjectPath>
+        <MainProjectOutputPath>$(MainProjectPath)/bin/$(Configuration)</MainProjectOutputPath>
+        <DnnBinPath>$(DnnLocalDeployPath)/bin</DnnBinPath>
+        <DnnSkinsPath>$(DnnLocalDeployPath)/Portals/_default/Skins</DnnSkinsPath>
+        <DnnContainersPath>$(DnnLocalDeployPath)/Portals/_default/Containers</DnnContainersPath>
+        <DnnMenusPath>$(DnnLocalDeployPath)/DesktopModules/DDRMenu</DnnMenusPath>
+        <DnnModulesPath>$(DnnLocalDeployPath)/DesktopModules</DnnModulesPath>
+    </PropertyGroup>
+</Project>
