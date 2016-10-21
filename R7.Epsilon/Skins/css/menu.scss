@@ -1,10 +1,10 @@
 //
-//  menu.less
+//  menu.scss
 //
 //  Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2015 Roman M. Yagodin
+//  Copyright (c) 2015-016 Roman M. Yagodin
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -22,10 +22,10 @@
 /* Base menu styles */
 
 // menu variables
-@submenu-border-radius:16px;
+$submenu-border-radius:16px;
 
 // menu font size
-ul.megamenu * { font-size:@menu-font-size; }
+ul.megamenu * { font-size:$menu-font-size; }
 
 ul.megamenu
 {
@@ -105,7 +105,7 @@ ul.megamenu
                 { 
                     border-radius:3px;
                     padding:2px 8px;
-                    font-size:@smaller-menu-font-size; 
+                    font-size:$smaller-menu-font-size; 
 
                     &:before 
                     {
@@ -119,7 +119,7 @@ ul.megamenu
                     padding:4px 8px;
                     border-top:1px solid;
                     font-weight:bold;
-                    font-size:@menu-font-size;
+                    font-size:$menu-font-size;
 
                     &:before 
                     { 
@@ -147,7 +147,7 @@ ul.megamenu
             .sub 
             { 
                 position:absolute;
-                top:(@menu-font-size * 2 - 2px) !important;
+                top:($menu-font-size * 2 - 2px) !important;
                 left:0;
 
                 // fill all menu wrapper width
@@ -165,30 +165,30 @@ ul.megamenu
 {
     ul.megamenu
     {
-        background-color:@color-primary-4;
+        background-color:$color-primary-4;
 
         li.level0
         {
             a
             {
-                &.current { background-color:@color-primary-3; }
+                &.current { background-color:$color-primary-3; }
 
                 &:hover, &.megahover, &:focus
                 { 
-                    color:@color-primary-4;
-                    background-color:@color-complement-1; 
+                    color:$color-primary-4;
+                    background-color:$color-complement-1; 
                 }
             }
         
             .sub
             {
-                border-color:@color-complement-1;
-                background-color:@color-primary-2;
-                border-bottom-left-radius:@submenu-border-radius;
-                border-bottom-right-radius:@submenu-border-radius;
-                box-shadow:2px 2px 2px @color-primary-4;
+                border-color:$color-complement-1;
+                background-color:$color-primary-2;
+                border-bottom-left-radius:$submenu-border-radius;
+                border-bottom-right-radius:$submenu-border-radius;
+                box-shadow:2px 2px 2px $color-primary-4;
 
-                li:first-child a { border-color:darken(@color-primary-2, 5%); }
+                li:first-child a { border-color:darken($color-primary-2, 5%); }
             }
         }
     }
@@ -211,12 +211,12 @@ ul.megamenu
 
             a 
             {
-                &.current { background-color:@secondary-menu-base-color-2; }
+                &.current { background-color:$secondary-menu-base-color-2; }
 
                 &:hover, &.megahover, &:focus
                 {
                     color:#000;
-                    background-color:@secondary-menu-highlight-color-1; 
+                    background-color:$secondary-menu-highlight-color-1; 
                 }
             }
 
@@ -225,26 +225,26 @@ ul.megamenu
                 // compensate external spacing
                 padding-left:7px;
                 padding-right:7x;
-                background-color:@secondary-menu-base-color-3;
-                border-bottom-right-radius:@borderRadius;
-                border-bottom-left-radius:@borderRadius;
+                background-color:$secondary-menu-base-color-3;
+                border-bottom-right-radius:$borderRadius;
+                border-bottom-left-radius:$borderRadius;
             }
 
             .sub
             {
-                border-color:@secondary-menu-highlight-color-1;
-                background-color:@secondary-menu-base-color-2;
-                border-bottom-left-radius:@submenu-border-radius;
-                border-bottom-right-radius:@submenu-border-radius;
-                box-shadow:2px 2px 2px @secondary-menu-base-color-4;
+                border-color:$secondary-menu-highlight-color-1;
+                background-color:$secondary-menu-base-color-2;
+                border-bottom-left-radius:$submenu-border-radius;
+                border-bottom-right-radius:$submenu-border-radius;
+                box-shadow:2px 2px 2px $secondary-menu-base-color-4;
 
                 a:hover, a:focus
                 { 
-                    color:@secondary-menu-base-color-4;
-                    background-color:@secondary-menu-highlight-color-1; 
+                    color:$secondary-menu-base-color-4;
+                    background-color:$secondary-menu-highlight-color-1; 
                 }
 
-                li:first-child a { border-color:darken(@secondary-menu-base-color-2, 5%); }
+                li:first-child a { border-color:darken($secondary-menu-base-color-2, 5%); }
             }
         }
     }
@@ -272,7 +272,7 @@ ul.megamenu
                 // menu button look
                 border:none;
                 border-radius:4px;
-                background-color:@secondary-menu-base-color-2;
+                background-color:$secondary-menu-base-color-2;
                 padding:4px 10px;
 
                 .icon-bar 
@@ -288,7 +288,7 @@ ul.megamenu
                 &:hover, &.megahover, &:focus
                 { 
                     color:#000;
-                    background-color:@secondary-menu-highlight-color-1; 
+                    background-color:$secondary-menu-highlight-color-1; 
 
                     .icon-bar { background-color:#000; }
                 }
@@ -299,21 +299,21 @@ ul.megamenu
                 top:26px!important;
                 width:320px!important;
 
-                border-color:@secondary-menu-highlight-color-1;
-                background-color:@secondary-menu-base-color-2;
-                border-bottom-left-radius:@submenu-border-radius;
-                border-bottom-right-radius:@submenu-border-radius;
-                box-shadow:2px 2px 2px @secondary-menu-base-color-4;
+                border-color:$secondary-menu-highlight-color-1;
+                background-color:$secondary-menu-base-color-2;
+                border-bottom-left-radius:$submenu-border-radius;
+                border-bottom-right-radius:$submenu-border-radius;
+                box-shadow:2px 2px 2px $secondary-menu-base-color-4;
 
                 a:hover, a:focus
                 { 
-                    color:@secondary-menu-base-color-4;
-                    background-color:@secondary-menu-highlight-color-1; 
+                    color:$secondary-menu-base-color-4;
+                    background-color:$secondary-menu-highlight-color-1; 
                 }
 
                 ul { width:100%; }
 
-                li:first-child a { border-color:darken(@secondary-menu-base-color-2, 5%); }
+                li:first-child a { border-color:darken($secondary-menu-base-color-2, 5%); }
 
                 // don't overline menu top items
                 ul:first-child li:first-child a { border-top:none; }
@@ -367,8 +367,8 @@ ul.megamenu
     {
         ul.megamenu 
         { 
-            background-color:@color-primary-2; 
-            li.level0 .sub { border-color:@color-complement-1; }
+            background-color:$color-primary-2; 
+            li.level0 .sub { border-color:$color-complement-1; }
         }
     }
 
@@ -386,10 +386,10 @@ ul.megamenu
                 & > a
                 { 
                     border-radius:0; // disable rounded borders
-                    background-color:@secondary-menu-base-color-2;
+                    background-color:$secondary-menu-base-color-2;
                 }
 
-                .sub { border-color:@secondary-menu-highlight-color-1; }
+                .sub { border-color:$secondary-menu-highlight-color-1; }
             }
         }
     }

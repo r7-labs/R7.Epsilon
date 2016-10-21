@@ -1,10 +1,10 @@
-﻿//
-//  default-palette.less
+//
+//  default-palette.scss
 //
 //  Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2015 Roman M. Yagodin
+//  Copyright (c) 2015-2016 Roman M. Yagodin
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -24,29 +24,29 @@
 // http://paletton.com/#uid=c332A3x1E0klsmcbaxpgBrdqchCvzc6
 // green blue yellow yellowgreen
 
-@color-primary-0: #287956;  /* Main Primary color */
-@color-primary-1: #74B298;
-@color-primary-2: #489574;
-@color-primary-3: #11603E;
-@color-primary-4: #014226;
+$color-primary-0: #287956;  /* Main Primary color */
+$color-primary-1: #74B298;
+$color-primary-2: #489574;
+$color-primary-3: #11603E;
+$color-primary-4: #014226;
 
-@color-secondary-1-0: #2B5372;  /* Main Secondary color (1) */
-@color-secondary-1-1: #7190A8;
-@color-secondary-1-2: #486E8C;
-@color-secondary-1-3: #153C5A;
-@color-secondary-1-4: #05253E;
+$color-secondary-1-0: #2B5372;  /* Main Secondary color (1) */
+$color-secondary-1-1: #7190A8;
+$color-secondary-1-2: #486E8C;
+$color-secondary-1-3: #153C5A;
+$color-secondary-1-4: #05253E;
 
-@color-secondary-2-0: #B1A63A;  /* Main Secondary color (2) */
-@color-secondary-2-1: #FFF7A6;
-@color-secondary-2-2: #D9CF68;
-@color-secondary-2-3: #8C8219;
-@color-secondary-2-4: #605801;
+$color-secondary-2-0: #B1A63A;  /* Main Secondary color (2) */
+$color-secondary-2-1: #FFF7A6;
+$color-secondary-2-2: #D9CF68;
+$color-secondary-2-3: #8C8219;
+$color-secondary-2-4: #605801;
 
-@color-complement-0: #649E34;   /* Main Complement color */
-@color-complement-1: #B9E495;
-@color-complement-2: #8AC15D;
-@color-complement-3: #457D17;
-@color-complement-4: #285601;
+$color-complement-0: #649E34;   /* Main Complement color */
+$color-complement-1: #B9E495;
+$color-complement-2: #8AC15D;
+$color-complement-3: #457D17;
+$color-complement-4: #285601;
 
 /* Other Palettes */
 

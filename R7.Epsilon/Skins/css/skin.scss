@@ -1,5 +1,5 @@
 //
-//  skin.less
+//  skin.scss
 //
 //  Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
@@ -21,12 +21,12 @@
 
 /* Mixins */
 
-.square-backgrounded-button (@width, @bg-image)
+@mixin square-backgrounded-button ($width, $bg-image)
 {
-    width: @width;
-    height: @width;
+    width: $width;
+    height: $width;
     cursor: pointer;
-    background-image: @bg-image;
+    background-image: $bg-image;
     background-repeat: no-repeat;
 }
 
@@ -34,13 +34,13 @@
 
 body 
 { 
-    font-size:@font-size; 
+    font-size:$font-size; 
     line-height:1.42857;
 }
 
 .Normal 
 {
-    font-size:@font-size;
+    font-size:$font-size;
     line-height:1.42857;
 }
 
@@ -153,8 +153,8 @@ ul.dnnAdminTabNav {
     width:48px;
     height:48px;
     cursor:pointer; 
-    opacity:@float-button-opacity;
-    &:hover { opacity:@float-button-opacity-hover; }
+    opacity:$float-button-opacity;
+    &:hover { opacity:$float-button-opacity-hover; }
 }
 
 .skin-float-button-up { background: transparent url('../images/up_48x48.png') no-repeat left; }
@@ -208,7 +208,7 @@ header > .container > .row
         margin-left:3px;
         &:first-child a { margin-left:0; }
 
-        .square-backgrounded-button (32px, url('../images/functions_mono_32x32.png'));
+        @include square-backgrounded-button (32px, url('../images/functions_mono_32x32.png'));
 
         &.skin-functions-icon-gtranslate { background-position:0 0; }
         &.skin-functions-icon-gtranslate:hover { background-position:0 -32px; }   
@@ -303,7 +303,7 @@ ul.skin-socialgroups
         display:inline-block;
         margin-right:3px;
 
-        .square-backgrounded-button (32px, @social-icons);
+        @include square-backgrounded-button (32px, $social-icons);
 
         &.skin-social-vk { background-position:0 0; }
         &.skin-social-vk:hover { background-position:0 -32px; }
@@ -338,7 +338,7 @@ ul.skin-socialgroups
     background-color:transparent;
     &:hover
     { 
-        background-color:@color-primary-3;
+        background-color:$color-primary-3;
     }
     .icon-bar { background-color:#fff; }
 }
@@ -366,7 +366,7 @@ ul.skin-socialgroups
     img 
     { 
         border-radius:4px;
-        box-shadow:2px 2px 2px @color-primary-4;
+        box-shadow:2px 2px 2px $color-primary-4;
     }
 }
 
@@ -393,16 +393,16 @@ ul.skin-socialgroups
 
     &.skin-founder-1
     { 
-        background-image:@founder-icon-1;
+        background-image:$founder-icon-1;
         // as navbar top gradient point
-        box-shadow:2px 2px 2px @color-primary-3; 
+        box-shadow:2px 2px 2px $color-primary-3; 
     }
 
     &.skin-founder-2 
     { 
-        background-image:@founder-icon-2;
+        background-image:$founder-icon-2;
         // as navbar bottom gradient point
-        box-shadow:2px 2px 2px @color-complement-2;
+        box-shadow:2px 2px 2px $color-complement-2;
     }
 }
 
@@ -421,16 +421,16 @@ ul.skin-socialgroups
         font-size:18px;
         line-height:1.1em;
         color:#fff;
-        text-shadow:@logo-title-text-shadow;
+        text-shadow:$logo-title-text-shadow;
 
         &:first-line { font-size:22px; }
     }
 
     .skin-logo-title-motto
     {
-        color:@color-primary-4;
+        color:$color-primary-4;
         font-weight:bold;
-        text-shadow:@logo-title-motto-shadow;
+        text-shadow:$logo-title-motto-shadow;
     }
 }
 
@@ -438,8 +438,8 @@ ul.skin-socialgroups
 {
     border:none;
     border-radius:0;
-    background-color:@header-background-color;
-    background-image:@header-background-image;
+    background-color:$header-background-color;
+    background-image:$header-background-image;
 }
 
 @media only screen and (max-width: 767px) 
@@ -447,7 +447,7 @@ ul.skin-socialgroups
     .skin-primary-navbar
     { 
         background-image:none; // reset gradient
-        background-color:@color-primary-4;
+        background-color:$color-primary-4;
     }
 }
 
@@ -468,7 +468,7 @@ ul.skin-socialgroups
     h1, h2
     { 
         margin-top:0;
-        a { color:@color-secondary-1-3; }
+        a { color:$color-secondary-1-3; }
     }
     h1 small, h2 small { display:inline-block; }
 }
@@ -516,7 +516,7 @@ ul.skin-socialgroups
 
 .breadcrumb 
 {
-    background-color:transparent; // lighten(@color-complement-1, 20%);
+    background-color:transparent; // lighten($color-complement-1, 20%);
     padding-left:0;
     padding-right:0;
     margin-bottom:0;
@@ -529,8 +529,8 @@ ul.skin-socialgroups
         &:first-child { margin-left:inherit; }
         &:last-child 
         {
-            color:@color-secondary-1-3;;
-            font-size:@big-font-size; 
+            color:$color-secondary-1-3;;
+            font-size:$big-font-size; 
             font-weight:bold;
         }    
     }
@@ -603,9 +603,9 @@ ul.skin-socialgroups
 {
     padding-top:12px;
     padding-bottom:12px;
-    background-color:@footer-main-background-color;
-    background-image:@footer-main-background-image;
-    border-top:4px solid @footer-line-background-color;
+    background-color:$footer-main-background-color;
+    background-image:$footer-main-background-image;
+    border-top:4px solid $footer-line-background-color;
 }
 
 .skin-banner-large { margin-bottom:10px; }
@@ -631,7 +631,7 @@ ul.skin-socialgroups
 .skin-footer-last 
 {
     padding:10px 0;
-    background-color:@footer-last-background-color;
+    background-color:$footer-last-background-color;
 
     .skin-footer-88x31-buttons
     { 
@@ -709,12 +709,12 @@ ul.skin-socialgroups
     right:0;
     top:0;
 
-    // background-color:lighten(@color-complement-1, 10%);
-    background-color:@color-primary-4;
+    // background-color:lighten($color-complement-1, 10%);
+    background-color:$color-primary-4;
     padding:8px;
     border-bottom-left-radius:16px;
     border-bottom-right-radius:16px;
-    box-shadow:2px 2px 2px @color-primary-3;
+    box-shadow:2px 2px 2px $color-primary-3;
 
     a { color:#fff; }
 
@@ -726,7 +726,7 @@ ul.skin-socialgroups
         {
             height:32px;
             color:#000;
-            background-color:@color-complement-1;
+            background-color:$color-complement-1;
             padding-right:16px;
             padding-left:16px;
             border-radius:16px;
@@ -773,7 +773,7 @@ ul.skin-socialgroups
         width:32px;
         height:32px;
         border-radius:16px;
-        background-color:@color-complement-1;
+        background-color:$color-complement-1;
     }
     .userMessages a { 
         height: 32px;

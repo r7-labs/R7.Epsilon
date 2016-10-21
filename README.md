@@ -17,7 +17,7 @@ See *R7.Epsilon* skin in action at http://www.volgau.com
 - Social share buttons for Facebook, Twitter, Google+, VK.com.
 - Completely localizable parts (full Russian translation included).
 - Portal / host admins can customize footer content using language editor.
-- Devs can define styles using Less.
+- Devs can define styles using <del>Less</del> SCSS.
 - Less and UglifyJS integrated into the build process.
 - Devs can use [Paletton.com](http://paletton.com) to create and customize palettes.
 - Various adjustments for mobile screens.

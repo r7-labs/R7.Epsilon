@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0" DefaultTargets="CompileScss;MinifyJS">
+	<!-- Declare SCSS files -->
+	<ItemGroup>
+        <ScssFiles Include="Skins\css\*-skin.scss" />
+    </ItemGroup>
+    <!-- Declare JS files -->
+    <ItemGroup>
+        <JsFiles Include="Skins\js\menu.js" />
+        <JsFiles Include="Skins\js\skin.js" />
+        <JsFiles Include="Skins\js\a11y.js" />
+    </ItemGroup>
+    <!-- Compile SCSS files -->
+    <Target Name="CompileScss">
+        <!-- Compile and minify -->
+        <Exec Command="node-sass --output-style compressed %(ScssFiles.Identity) > %(RelativeDir)%(Filename).min.css" /> 
+    </Target>
+    <!-- Minify JS files -->
+    <Target Name="MinifyJS">
+        <Exec Command="uglifyjs %(JsFiles.Identity) > %(RelativeDir)%(Filename).min.js" /> 
+    </Target>
+</Project>
