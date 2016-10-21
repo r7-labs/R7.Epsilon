@@ -1,0 +1,46 @@
+{
+	// See http://go.microsoft.com/fwlink/?LinkId=733558
+	// for the documentation about the tasks.json format
+	"version": "0.1.0",
+	"windows": {
+		"command": "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\MSBuild.exe"
+	},
+	"linux": {
+		"command": "xbuild"
+	},
+	"args": [
+		// Ask msbuild to generate full paths for file names.
+		"/property:GenerateFullPaths=true"
+	],
+	// Don't pass task name as an argument
+	"suppressTaskName": true,
+	// Show the output window only if unrecognized errors occur.
+	"showOutput": "silent",
+	"tasks": [
+		{
+			"taskName": "build debug",
+			"isBuildCommand": true,
+			"args": ["/t:Build", "/p:Configuration=Debug"],
+			// Use the standard MS compiler pattern to detect errors, warnings and infos
+			"problemMatcher": "$msCompile"
+		},
+		{
+			"taskName": "build release",
+			"args": ["/t:Build", "/p:Configuration=Release"],
+			// Use the standard MS compiler pattern to detect errors, warnings and infos
+			"problemMatcher": "$msCompile"
+		},
+		{
+			"taskName": "make install package",
+			"args": ["/p:Configuration=Release", "Packaging/InstallPackage.targets" ]
+		},
+		{
+			"taskName": "make customizations package",
+			"args": ["/p:Configuration=Release", "Packaging/Customizations.targets" ]
+		},
+		{
+			"taskName": "do local deploy",
+			"args": ["/p:Configuration=Debug", "Packaging/LocalDeploy.targets" ]
+		}
+	]
+}
