@@ -55,7 +55,7 @@
         <!-- Declare binaries -->
         <ItemGroup> 
             <DeployBinaryFiles Include="$(MainProjectOutputPath)/R7.Epsilon*.dll" />
-            <DeployBinaryFiles Include="$(MainProjectOutputPath)/R7.Epsilon*.pdb" />
+            <DeployBinaryFiles Include="$(MainProjectOutputPath)/R7.Epsilon*.pdb" Condition=" '$(Configuration)' == 'Debug' "/>
             <DeployBinaryFiles Include="$(MainProjectOutputPath)/YamlDotNet.dll" />
         </ItemGroup>
 
@@ -86,7 +86,7 @@
 		<Copy SourceFiles="@(ModuleMoveFiles)" DestinationFolder="$(DnnModulesPath)/R7.Epsilon/%(RecursiveDir)" SkipUnchangedFiles="true" />
 
 		<!-- Copy binaries -->
-		<Copy Condition=" '$(EnableDeployBinaries)' == 'true'" SourceFiles="@(DeployBinaryFiles)" DestinationFolder="$(DnnBinPath)" SkipUnchangedFiles="true" />
+		<Copy Condition=" '$(EnableDeployBinaries)' == 'true' " SourceFiles="@(DeployBinaryFiles)" DestinationFolder="$(DnnBinPath)" SkipUnchangedFiles="true" />
         
 		<!-- Cleanup -->
 		<RemoveDir Directories="$(TmpDir)" />
