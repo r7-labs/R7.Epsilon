@@ -89,9 +89,9 @@
         </ItemGroup>
   
 		<!-- Create resource archives  -->
-		<Zip Condition=" '$(OS)' != 'Unix' " Files="@(InstallSkinZipFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\tmp\Skins" ZipFileName="Resources_Skins.zip" />
-		<Zip Condition=" '$(OS)' != 'Unix' " Files="@(InstallContainerZipFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\tmp\Containers" ZipFileName="Resources_Containers.zip" />
-        <Zip Condition=" '$(OS)' != 'Unix' " Files="@(InstallModuleZipFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\tmp\Modules" ZipFileName="Resources_Modules.zip" />
+		<Zip Condition=" '$(OS)' != 'Unix' " Files="@(InstallSkinZipFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\bin\tmp\Skins" ZipFileName="Resources_Skins.zip" />
+		<Zip Condition=" '$(OS)' != 'Unix' " Files="@(InstallContainerZipFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\bin\tmp\Containers" ZipFileName="Resources_Containers.zip" />
+        <Zip Condition=" '$(OS)' != 'Unix' " Files="@(InstallModuleZipFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\bin\tmp\Modules" ZipFileName="Resources_Modules.zip" />
 
         <Exec Condition=" '$(OS)' == 'Unix' " Command="zip -r -6 -UN=UTF8 &quot;Resources_Skins.zip&quot; ." WorkingDirectory="$(TmpDir)/Skins" />
         <Exec Condition=" '$(OS)' == 'Unix' " Command="zip -r -6 -UN=UTF8 &quot;Resources_Containers.zip&quot; ." WorkingDirectory="$(TmpDir)/Containers" />
@@ -117,7 +117,7 @@
 		</ItemGroup>
 		
 		<!-- Create the install package -->
-		<Zip Condition=" '$(OS)' != 'Unix' " Files="@(InstallPackageFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\tmp\Package" ZipFileName="$(PackageFileName)" />
+		<Zip Condition=" '$(OS)' != 'Unix' " Files="@(InstallPackageFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\bin\tmp\Package" ZipFileName="$(PackageFileName)" />
 		<Exec Condition=" '$(OS)' == 'Unix' " Command="zip -r -6 -UN=UTF8 &quot;$(PackageFileName)&quot; ." WorkingDirectory="$(TmpDir)/Package" />
 
 		<!-- Copy the install package to the output directory -->

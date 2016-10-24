@@ -7,7 +7,7 @@
     <PropertyGroup>
         <PackageName>R7.Epsilon</PackageName>
         <PackageOutputPath>bin/Package</PackageOutputPath>
-        <TmpDir>tmp</TmpDir>
+        <TmpDir>bin/tmp</TmpDir>
         <DnnLocalDeployPath Condition=" '$(OS)' == 'Unix' ">/home/redhound/mnt/dnn</DnnLocalDeployPath>
         <DnnLocalDeployPath Condition=" '$(OS)' != 'Unix' ">C:\Dotnetnuke7</DnnLocalDeployPath>
     </PropertyGroup>

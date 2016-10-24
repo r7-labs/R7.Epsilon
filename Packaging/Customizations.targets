@@ -30,7 +30,7 @@
 		</ItemGroup>
 	
 		<!-- Create archive  -->
-		<Zip Condition=" '$(OS)' != 'Unix' " Files="@(CustomZipFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\tmp\Custom" ZipFileName="$(PackageFileName)" />
+		<Zip Condition=" '$(OS)' != 'Unix' " Files="@(CustomZipFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\bin\tmp\Custom" ZipFileName="$(PackageFileName)" />
         <Exec Condition=" '$(OS)' == 'Unix' " Command="zip -r -6 -UN=UTF8 &quot;$(PackageFileName)&quot; ." WorkingDirectory="$(TmpDir)/Custom" />
 
 		<!-- Copy the custom package to the output directory -->
