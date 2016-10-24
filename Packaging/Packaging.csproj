@@ -22,19 +22,19 @@
     <CustomCommands>
       <CustomCommands>
         <Command>
-          <type>Custom</type>
-          <name>Make Install Package</name>
-          <command>xbuild /p:Configuration=${ProjectConfigName} InstallPackage.targets</command>
+        <type>Custom</type>
+          <name>Re-deploy Assets</name>
+          <command>xbuild LocalDeploy.targets</command>
         </Command>
         <Command>
-          <type>Custom</type>
-          <name>Do Local Deploy</name>
-          <command>xbuild /p:Configuration=${ProjectConfigName} LocalDeploy.targets</command>
+        <type>Custom</type>
+          <name>Make Install Package</name>
+          <command>xbuild /t:Build /p:Configuration=${ProjectConfigName} /p:EnableInstallPackage=true /p:EnableLocalDeploy=false ../R7.Epsilon.sln</command>
         </Command>
         <Command>
           <type>Custom</type>
           <name>Make Customizations Package</name>
-          <command>xbuild /p:Configuration=${ProjectConfigName} Customizations.targets</command>
+          <command>xbuild Customizations.targets</command>
         </Command>
       </CustomCommands>
     </CustomCommands>
@@ -53,13 +53,15 @@
   <ItemGroup>
     <None Include="LocalDeploy.targets" />
     <None Include="Packaging.csproj" />
-    <None Include="Install.targets" />
+    <None Include="InstallPackage.targets" />
     <None Include="Customizations.targets" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="BuildSettings.targets" />
   <Import Project="LocalDeploy.targets" />
-  <Target Name="AfterBuild" DependsOnTargets="DoLocalDeploy" Condition=" '$(Configuration)' == 'Debug' " />
+  <Import Project="InstallPackage.targets" />
+  <Target Name="AfterBuild" DependsOnTargets="DoLocalDeploy;MakeInstallPackage" Condition=" '$(EnableAfterBuild)' != 'false' " />
   <ItemGroup>
     <Compile Include="Dummy.cs" />
   </ItemGroup>

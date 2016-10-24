@@ -17,29 +17,43 @@
 	"showOutput": "always",
 	"tasks": [
 		{
-			"taskName": "build debug",
+			"taskName": "Build",
 			"isBuildCommand": true,
 			"args": ["/t:Build", "/p:Configuration=Debug"],
 			// Use the standard MS compiler pattern to detect errors, warnings and infos
 			"problemMatcher": "$msCompile"
 		},
 		{
-			"taskName": "build release",
+			"taskName": "Compile (Debug)",
+			"args": ["/t:Build", "/p:Configuration=Debug", "/p:EnableAfterBuild=false"],
+			// Use the standard MS compiler pattern to detect errors, warnings and infos
+			"problemMatcher": "$msCompile"
+		},
+		{
+			"taskName": "Compile (Release)",
+			"args": ["/t:Build", "/p:Configuration=Release", "/p:EnableAfterBuild=false"],
+			// Use the standard MS compiler pattern to detect errors, warnings and infos
+			"problemMatcher": "$msCompile"
+		},
+		{
+			"taskName": "Make Install Package (Release)",
 			"args": ["/t:Build", "/p:Configuration=Release"],
 			// Use the standard MS compiler pattern to detect errors, warnings and infos
 			"problemMatcher": "$msCompile"
 		},
 		{
-			"taskName": "make install package",
-			"args": ["/p:Configuration=Release", "Packaging/InstallPackage.targets" ]
+			"taskName": "Make Install Package (Debug)",
+			"args": ["/t:Build", "/p:Configuration=Debug", "/p:EnableInstallPackage=true", "/p:EnableLocalDeploy=false"],
+			// Use the standard MS compiler pattern to detect errors, warnings and infos
+			"problemMatcher": "$msCompile"
 		},
 		{
-			"taskName": "make customizations package",
-			"args": ["/p:Configuration=Release", "Packaging/Customizations.targets" ]
+			"taskName": "Re-deploy Assets",
+			"args": ["Packaging/LocalDeploy.targets"]
 		},
 		{
-			"taskName": "do local deploy",
-			"args": ["/p:Configuration=Debug", "Packaging/LocalDeploy.targets" ]
+			"taskName": "Make Customizations Package",
+			"args": ["Packaging/Customizations.targets"]
 		}
 	]
 }
