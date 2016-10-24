@@ -141,25 +141,31 @@ ul.dnnAdminTabNav {
 .skin-float-button-wrapper
 {
     position:fixed;
-    bottom:170px;
-    right:20px;
+    bottom:1em;
+    right:1.5em;
     z-index:10;
     width:50px; // for vertical buttons
 }
 
-.skin-float-button
-{   
+.skin-float-button {
     display:inline-block;
-    width:48px;
-    height:48px;
-    cursor:pointer; 
+    width:48px+4px;
+    height:48px+4px;
+    border:2px solid #fff;
+    border-radius:(48px + 4px)/2;
+    cursor:pointer;
     opacity:$float-button-opacity;
     &:hover { opacity:$float-button-opacity-hover; }
 }
 
-.skin-float-button-up { background: transparent url('../images/up_48x48.png') no-repeat left; }
+.skin-float-button-up {
+    // FIXME: should be $primary-menu-color
+    background:$color-primary-4 url('../images/up_48x48.png') no-repeat left;
+}
 
-.skin-float-button-feedback { background: transparent url('../images/feedback_48x48.png') no-repeat left; }
+.skin-float-button-feedback {
+    background:$footer-last-background-color url('../images/feedback_48x48.png') no-repeat left; 
+}
 
 header > .container 
 {
