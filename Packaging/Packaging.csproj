@@ -55,6 +55,7 @@
     <None Include="Packaging.csproj" />
     <None Include="InstallPackage.targets" />
     <None Include="Customizations.targets" />
+    <None Include="Preprocess.targets" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

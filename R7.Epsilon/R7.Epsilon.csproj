@@ -83,7 +83,6 @@
       <DependentUpon>Universal.ascx</DependentUpon>
     </None>
     <None Include="R7.Epsilon.csproj" />
-    <None Include="Preprocess.targets" />
     <None Include="R7.Epsilon.dnn" />
     <None Include="Skins\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Skins\PopupSkin.doctype.xml">
@@ -387,6 +386,6 @@
     <Folder Include="Skins\Layouts\" />
     <Folder Include="ControlExtensions\" />
   </ItemGroup>
-  <Import Project="Preprocess.targets" />
+  <Import Project="../Packaging/Preprocess.targets" />
   <Target Name="BeforeBuild" DependsOnTargets="CompileScss;MinifyJS" />
 </Project>
