@@ -48,6 +48,11 @@
 			"problemMatcher": "$msCompile"
 		},
 		{
+			"taskName": "Run Tests (Debug)",
+			"isTestCommand": true,
+			"args": ["/p:Configuration=Debug", "Packaging/Tests.targets"]
+		},
+		{
 			"taskName": "Re-deploy Assets",
 			"args": ["Packaging/LocalDeploy.targets"]
 		},
