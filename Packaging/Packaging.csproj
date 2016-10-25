@@ -36,7 +36,7 @@
           <name>Make Install Package</name>
           <command>xbuild /t:Build /p:Configuration=${ProjectConfigName} /p:EnableTests=true /p:EnableInstallPackage=true /p:EnableLocalDeploy=false ../R7.Epsilon.sln</command>
         </Command>
-	    <Command>
+        <Command>
           <type>Custom</type>
           <name>Make Customizations Package</name>
           <command>xbuild /p:Configuration=${ProjectConfigName} Customizations.targets</command>
