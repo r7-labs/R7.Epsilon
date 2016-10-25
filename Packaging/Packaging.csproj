@@ -23,18 +23,33 @@
       <CustomCommands>
         <Command>
           <type>Custom</type>
-          <name>Re-deploy Assets</name>
-          <command>xbuild LocalDeploy.targets</command>
+          <name>Build Only</name>
+          <command>xbuild /t:Build /p:Configuration=${ProjectConfigName} /p:EnableAfterBuild=false ../R7.Epsilon.sln</command>
+        </Command>
+        <Command>
+          <type>Custom</type>
+          <name>Do Local Deploy</name>
+          <command>xbuild /t:Build /p:Configuration=${ProjectConfigName} /p:EnableTests=false /p:EnableInstallPackage=false /p:EnableLocalDeploy=true ../R7.Epsilon.sln</command>
         </Command>
         <Command>
           <type>Custom</type>
           <name>Make Install Package</name>
-          <command>xbuild /t:Build /p:Configuration=${ProjectConfigName} /p:EnableInstallPackage=true /p:EnableLocalDeploy=false ../R7.Epsilon.sln</command>
+          <command>xbuild /t:Build /p:Configuration=${ProjectConfigName} /p:EnableTests=true /p:EnableInstallPackage=true /p:EnableLocalDeploy=false ../R7.Epsilon.sln</command>
+        </Command>
+	    <Command>
+          <type>Custom</type>
+          <name>Make Customizations Package</name>
+          <command>xbuild /p:Configuration=${ProjectConfigName} Customizations.targets</command>
         </Command>
         <Command>
           <type>Custom</type>
-          <name>Make Customizations Package</name>
-          <command>xbuild Customizations.targets</command>
+          <name>Run Tests</name>
+          <command>xbuild /t:Build /p:Configuration=${ProjectConfigName} /p:EnableTests=true /p:EnableInstallPackage=false /p:EnableLocalDeploy=false ../R7.Epsilon.sln</command>
+        </Command>
+        <Command>
+          <type>Custom</type>
+          <name>Re-deploy Assets</name>
+          <command>xbuild /p:Configuration=${ProjectConfigName} /p:LocalDeployIncludeBinaries=false /p:EnableTests=false LocalDeploy.targets</command>
         </Command>
       </CustomCommands>
     </CustomCommands>
@@ -51,6 +66,8 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="BuildSettings.targets" />
+    <None Include="BuildDefaults.targets" />
     <None Include="LocalDeploy.targets" />
     <None Include="Packaging.csproj" />
     <None Include="InstallPackage.targets" />
@@ -61,9 +78,11 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="BuildSettings.targets" />
+  <Import Project="BuildDefaults.targets" />
+  <Import Project="Tests.targets" />
   <Import Project="LocalDeploy.targets" />
   <Import Project="InstallPackage.targets" />
-  <Target Name="AfterBuild" DependsOnTargets="DoLocalDeploy;MakeInstallPackage" Condition=" '$(EnableAfterBuild)' != 'false' " />
+  <Target Name="AfterBuild" DependsOnTargets="Tests;LocalDeploy;InstallPackage" Condition=" '$(EnableAfterBuild)' != 'false' " />
   <ItemGroup>
     <Compile Include="Dummy.cs" />
   </ItemGroup>
