@@ -22,7 +22,7 @@ See *R7.Epsilon* skin in action at http://www.volgau.com
 - Devs can use [Paletton.com](http://paletton.com) to create and customize palettes.
 - Various adjustments for mobile screens.
 - Google Adsense 728x90 banners support. 
-- Feedback link with user-selected content (*rangy* library must be installed to `~/Resources/Shared/scripts/rangy`).
+- Feedback link with user-selected content (uses [Rangy](https://github.com/timdown/rangy) JavaScript library).
 
 ## Custom pane layouts feature
 

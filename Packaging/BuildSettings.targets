@@ -22,5 +22,6 @@
         <DnnContainersPath>$(DnnLocalDeployPath)/Portals/_default/Containers</DnnContainersPath>
         <DnnMenusPath>$(DnnLocalDeployPath)/DesktopModules/DDRMenu</DnnMenusPath>
         <DnnModulesPath>$(DnnLocalDeployPath)/DesktopModules</DnnModulesPath>
+        <DnnJsLibrariesPath>$(DnnLocalDeployPath)/Resources/Libraries</DnnJsLibrariesPath>
     </PropertyGroup>
 </Project>

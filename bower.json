@@ -1,0 +1,7 @@
+{
+  "name": "R7.Epsilon",
+  "private": true,
+  "dependencies": {
+    "rangy": "^1.3.0"
+  }
+}
