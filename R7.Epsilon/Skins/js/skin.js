@@ -106,6 +106,7 @@ function skin_init_upbutton () {
     
     jQuery('.skin-float-button-up').click(function(event) {
         event.preventDefault();
+        $(this).tooltip ('hide');
         jQuery('html, body').animate({scrollTop: 0}, duration);
         return false;
     });
