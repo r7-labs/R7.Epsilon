@@ -31,6 +31,7 @@ $(function() {
     skin_init_modulesmenu ();
     skin_init_upbutton ();
     skin_init_tooltips ();
+    skin_setup_feedback_module ();
 });
 
 function skin_init_breadcrumb () {
@@ -128,6 +129,32 @@ function skin_setup_feedback_url (obj, errorTabId) {
     }
 
     return true;
+}
+
+function getLocationOrigin (location) {
+    return (!!location.origin) 
+        ? location.origin
+        : location.protocol + "//" + location.hostname + (location.port ? ":" + location.port: "");
+}
+
+function skin_setup_feedback_module () {
+    // TODO: Pass feedbackModuleId in querystring
+    var feedbackModuleId = 547;
+    if (feedbackModuleId) {
+        // TODO: Make format strings localizeable
+        var feedbackInfo = "\n\n---";
+        if (!!epsilon.queryParams ["errortabid"]) {
+            feedbackInfo += "\nPage: {origin}/linkclick.aspx?link={page}"
+                .replace (/\{origin\}/, getLocationOrigin (window.location))
+                .replace (/\{page\}/, epsilon.queryParams ["errortabid"]);
+
+            if (!!epsilon.queryParams ["errorcontext"]) {
+                feedbackInfo += "\nSelection: \"{selection}\"".replace (/\{selection\}/, epsilon.queryParams ["errorcontext"]);
+            }
+
+            $("#dnn_ctr" + feedbackModuleId + "_Feedback_txtBody").val (feedbackInfo).trigger ("change").trigger ("keyup");
+        }
+    }
 }
 
 // done with empty layout rows
