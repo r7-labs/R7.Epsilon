@@ -65,8 +65,8 @@ namespace R7.Epsilon
                 linkFeedback.ToolTip = Localizer.GetString ("FeedBackButton.Tooltip");
                 linkFeedback.Text = Localizer.GetString  ("FeedBackButton.Text");
                 linkFeedback.Attributes.Add ("data-feedback-url", feedbackUrl);
-                linkFeedback.Attributes.Add ("onclick", string.Format ("javascript:return skin_setup_feedback_url(this, {0})",
-                                                                       PortalSettings.ActiveTab.TabID));
+                linkFeedback.Attributes.Add ("onclick", string.Format ("javascript:return skin_setup_feedback_url(this,{0})",
+                                                                       feedbackModule.ModuleID));
             }
             else {
                 // no feedback module found, hide the button

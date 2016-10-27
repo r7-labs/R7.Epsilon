@@ -117,15 +117,15 @@ function skin_init_tooltips () {
 }
 
 // setup feedback url
-function skin_setup_feedback_url (obj, errorTabId) {
-    var errorContext = encodeURIComponent (rangy.getSelection ().toString ().replace (/(\n|\r)/gm," ").replace (/\s+/g, " ").replace (/\"/g, "").trim ().substring (0,100));
-    var errorArgs = "&errortabid=" + errorTabId + ((!!errorContext)? "&errorcontext=" + errorContext : "");
+function skin_setup_feedback_url (obj, feedbackModuleId) {
+    var selection = encodeURIComponent (rangy.getSelection ().toString ().replace (/(\n|\r)/gm," ").replace (/\s+/g, " ").replace (/\"/g, "").trim ().substring (0,100));
+    var params = "&returntabid=" + epsilon.queryParams ["TabId"] + "&feedbackmid=" + feedbackModuleId + ((!!selection)? "&feedbackselection=" + selection : "");
     var feedbackUrl = $(obj).attr ("data-feedback-url");
     if (feedbackUrl.includes ("?popUp=")) {
-        $(obj).attr ("href", feedbackUrl.replace (/\?popUp=(\w+)/, "?popUp=$1" + errorArgs));
+        $(obj).attr ("href", feedbackUrl.replace (/\?popUp=(\w+)/, "?popUp=$1" + params));
     }
     else {
-        $(obj).attr ("href", feedbackUrl + args);
+        $(obj).attr ("href", feedbackUrl + params);
     }
 
     return true;
@@ -138,21 +138,19 @@ function getLocationOrigin (location) {
 }
 
 function skin_setup_feedback_module () {
-    // TODO: Pass feedbackModuleId in querystring
-    var feedbackModuleId = 547;
-    if (feedbackModuleId) {
+    if (!!epsilon.queryParams ["feedbackmid"]) {
         // TODO: Make format strings localizeable
         var feedbackInfo = "\n\n---";
-        if (!!epsilon.queryParams ["errortabid"]) {
+        if (!!epsilon.queryParams ["returntabid"]) {
             feedbackInfo += "\nPage: {origin}/linkclick.aspx?link={page}"
                 .replace (/\{origin\}/, getLocationOrigin (window.location))
-                .replace (/\{page\}/, epsilon.queryParams ["errortabid"]);
+                .replace (/\{page\}/, epsilon.queryParams ["returntabid"]);
 
-            if (!!epsilon.queryParams ["errorcontext"]) {
-                feedbackInfo += "\nSelection: \"{selection}\"".replace (/\{selection\}/, epsilon.queryParams ["errorcontext"]);
+            if (!!epsilon.queryParams ["feedbackselection"]) {
+                feedbackInfo += "\nSelection: \"{selection}\"".replace (/\{selection\}/, epsilon.queryParams ["feedbackselection"]);
             }
 
-            $("#dnn_ctr" + feedbackModuleId + "_Feedback_txtBody").val (feedbackInfo).trigger ("change").trigger ("keyup");
+            $("#dnn_ctr" + epsilon.queryParams ["feedbackmid"] + "_Feedback_txtBody").val (feedbackInfo).trigger ("change").trigger ("keyup");
         }
     }
 }
