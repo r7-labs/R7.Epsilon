@@ -40,10 +40,6 @@ namespace R7.Epsilon
 
         #region Properties
 
-        public int FeedbackTabId { get; set; }
-
-        public string Target { get; set; }
-
         public string CssClass { get; set; }
 
         #endregion
@@ -58,9 +54,16 @@ namespace R7.Epsilon
                                                  .FirstOrDefault (m => m.TabID == Config.FeedbackTabId);
             
             if (feedbackModule != null) {
-                var feedbackUrl = UrlUtils.PopUpUrl (Globals.NavigateURL (feedbackModule.TabID, "", "mid", feedbackModule.ModuleID.ToString ()),
-                                                     this, PortalSettings.Current, false, false, 550, 950, false, "");
-
+                var feedbackUrl = Globals.NavigateURL (feedbackModule.TabID, "", "mid", feedbackModule.ModuleID.ToString ());
+                if (PortalSettings.Current.EnablePopUps) {
+                    feedbackUrl = UrlUtils.PopUpUrl (feedbackUrl, this, PortalSettings.Current, false, false, 550, 950, false, "");
+                }
+                else
+                {
+                    // popups disabled, open feedback in new window
+                    linkFeedback.Target = "_blank";
+                }
+ 
                 linkFeedback.CssClass = "unselectable " + CssClass;
                 linkFeedback.ToolTip = Localizer.GetString ("FeedBackButton.Tooltip");
                 linkFeedback.Text = Localizer.GetString  ("FeedBackButton.Text");
