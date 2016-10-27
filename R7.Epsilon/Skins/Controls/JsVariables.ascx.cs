@@ -75,7 +75,10 @@ namespace R7.Epsilon
             get {
                 var sb = new StringBuilder ();
 
-                sb.AppendFormat ("selectLayout: '{0}'", Localizer.GetString ("SelectLayout.Text"));
+                sb.AppendFormat ("selectLayout:'{0}',", Localizer.GetString ("SelectLayout.Text"));
+                sb.AppendFormat ("feedbackTemplate:'{0}',", Localizer.GetString ("Feedback.Template"));
+                sb.AppendFormat ("feedbackPageTemplate:'{0}',", Localizer.GetString ("FeedbackPage.Template"));
+                sb.AppendFormat ("feedbackSelectionTemplate:'{0}'", Localizer.GetString ("FeedbackSelection.Template"));
 
                 return sb.ToString ();
             }

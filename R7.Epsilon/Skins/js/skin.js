@@ -139,18 +139,19 @@ function getLocationOrigin (location) {
 
 function skin_setup_feedback_module () {
     if (!!epsilon.queryParams ["feedbackmid"]) {
-        // TODO: Make format strings localizeable
-        var feedbackInfo = "\n\n---";
+        var feedbackContent = "";
         if (!!epsilon.queryParams ["returntabid"]) {
-            feedbackInfo += "\nPage: {origin}/linkclick.aspx?link={page}"
+            feedbackContent += epsilon.localization ["feedbackPageTemplate"]
                 .replace (/\{origin\}/, getLocationOrigin (window.location))
                 .replace (/\{page\}/, epsilon.queryParams ["returntabid"]);
 
             if (!!epsilon.queryParams ["feedbackselection"]) {
-                feedbackInfo += "\nSelection: \"{selection}\"".replace (/\{selection\}/, epsilon.queryParams ["feedbackselection"]);
+                feedbackContent += epsilon.localization ["feedbackSelectionTemplate"].replace (/\{selection\}/, epsilon.queryParams ["feedbackselection"]);
             }
 
-            $("#dnn_ctr" + epsilon.queryParams ["feedbackmid"] + "_Feedback_txtBody").val (feedbackInfo).trigger ("change").trigger ("keyup");
+            $("#dnn_ctr" + epsilon.queryParams ["feedbackmid"] + "_Feedback_txtBody")
+                .val (epsilon.localization ["feedbackTemplate"].replace (/\{content\}/, feedbackContent))
+                .trigger ("change").trigger ("keyup");
         }
     }
 }
