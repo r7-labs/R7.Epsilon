@@ -8,6 +8,7 @@ var epsilon = {
     breadCrumbs:<%= JsBreadCrumbsList %>,
     breadCrumbsRemoveLastLink:<%= JsBreadCrumbsRemoveLastLink %>,
 	layoutManagerUrl:'<%= LayoutManagerUrl %>',
-    localization: { <%= LocalizationResources %> }
+    localization: { <%= LocalizationResources %> },
+    queryParams: { <%= QueryParams %> }
 };
 </script>

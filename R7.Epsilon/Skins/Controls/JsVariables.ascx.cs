@@ -81,6 +81,17 @@ namespace R7.Epsilon
             }
         }
 
+        public string QueryParams
+        {
+            get {
+                var sb = new StringBuilder (Request.QueryString.Count);
+                foreach (string key in Request.QueryString.Keys) {
+                    sb.AppendFormat ("{2}{0}:'{1}'", key, Request.QueryString [key], sb.Length == 0? "" : ",");
+                }
+                return sb.ToString ();
+            }
+        }
+
         #endregion
     }
 }
