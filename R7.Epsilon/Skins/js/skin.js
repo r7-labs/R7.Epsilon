@@ -115,12 +115,18 @@ function skin_init_tooltips () {
   $('[data-toggle="tooltip"]').tooltip();
 }
 
-// Feedback Button
-function skin_feedback_button (obj, feedbackTabId, activeTabId) {
-    $(obj).attr ("href", "/Default.aspx?tabid=" + feedbackTabId + "&errortabid=" + activeTabId);
+// setup feedback url
+function skin_setup_feedback_url (obj, errorTabId) {
     var errorContext = encodeURIComponent (rangy.getSelection ().toString ().replace (/(\n|\r)/gm," ").replace (/\s+/g, " ").replace (/\"/g, "").trim ().substring (0,100));
-    if (!!errorContext)
-        $(obj).attr ("href",  $(obj).attr ("href") + "&errorcontext=" + errorContext);
+    var errorArgs = "&errortabid=" + errorTabId + ((!!errorContext)? "&errorcontext=" + errorContext : "");
+    var feedbackUrl = $(obj).attr ("data-feedback-url");
+    if (feedbackUrl.includes ("?popUp=")) {
+        $(obj).attr ("href", feedbackUrl.replace (/\?popUp=(\w+)/, "?popUp=$1" + errorArgs));
+    }
+    else {
+        $(obj).attr ("href", feedbackUrl + args);
+    }
+
     return true;
 }
 
