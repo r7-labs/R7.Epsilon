@@ -59,7 +59,7 @@ namespace R7.Epsilon
             
             if (feedbackModule != null) {
                 var feedbackUrl = UrlUtils.PopUpUrl (Globals.NavigateURL (feedbackModule.TabID, "", "mid", feedbackModule.ModuleID.ToString ()),
-                                                     PortalSettings.Current, false, false, 550, 950);
+                                                     this, PortalSettings.Current, false, false, 550, 950, false, "");
 
                 linkFeedback.CssClass = "unselectable " + CssClass;
                 linkFeedback.ToolTip = Localizer.GetString ("FeedBackButton.Tooltip");
