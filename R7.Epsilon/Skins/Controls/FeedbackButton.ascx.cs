@@ -55,7 +55,7 @@ namespace R7.Epsilon
             
             if (feedbackModule != null) {
                 var feedbackUrl = Globals.NavigateURL (feedbackModule.TabID, "", "mid", feedbackModule.ModuleID.ToString ());
-                if (PortalSettings.Current.EnablePopUps) {
+                if (PortalSettings.Current.EnablePopUps && !((EpsilonSkinBase) this.Parent).A11yEnabled) {
                     feedbackUrl = UrlUtils.PopUpUrl (feedbackUrl, this, PortalSettings.Current, false, false, 550, 950, false, "");
                 }
                 else
