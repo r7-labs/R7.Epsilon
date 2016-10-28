@@ -4,7 +4,7 @@
 //  Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2015 Roman M. Yagodin
+//  Copyright (c) 2015-2016 Roman M. Yagodin
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -20,12 +20,12 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
-using System.Web;
-using System.Web.UI;
-using DotNetNuke.Entities.Portals;
+using System.Linq;
 using System.Web.UI.WebControls;
-using System.Web.Security;
-using DotNetNuke.UI.WebControls;
+using DotNetNuke.Common;
+using DotNetNuke.Common.Utilities;
+using DotNetNuke.Entities.Modules;
+using DotNetNuke.Entities.Portals;
 using R7.Epsilon.Components;
 
 namespace R7.Epsilon
@@ -34,15 +34,11 @@ namespace R7.Epsilon
     {
         #region Controls
 
-        protected HyperLink linkFeedbackButton;
+        protected HyperLink linkFeedback;
 
         #endregion
 
         #region Properties
-
-        public int FeedbackTabId { get; set; }
-
-        public string Target { get; set; }
 
         public string CssClass { get; set; }
 
@@ -52,15 +48,33 @@ namespace R7.Epsilon
         {
             base.OnInit (e);
 
-            // set feedback TabId here to avoid cache issues (fix for #14)
-            FeedbackTabId = Config.FeedbackTabId;
-
-            linkFeedbackButton.Target = Target;
-            linkFeedbackButton.CssClass = "unselectable " + CssClass;
-            linkFeedbackButton.ToolTip = Localizer.GetString ("FeedBackButton.Tooltip");
-            linkFeedbackButton.Text = Localizer.GetString  ("FeedBackButton.Text");
-            linkFeedbackButton.Attributes.Add ("onclick", string.Format ("javascript:return skin_feedback_button(this, {0}, {1})", 
-                FeedbackTabId, PortalSettings.ActiveTab.TabID));
+            // find feedback module
+            var feedbackModule = ModuleController.Instance.GetModulesByDefinition (PortalSettings.PortalId, "Feedback")
+                                                 .Cast<ModuleInfo> ()
+                                                 .FirstOrDefault (m => m.TabID == Config.FeedbackTabId);
+            
+            if (feedbackModule != null) {
+                var feedbackUrl = Globals.NavigateURL (feedbackModule.TabID, "", "mid", feedbackModule.ModuleID.ToString ());
+                if (PortalSettings.Current.EnablePopUps && !((EpsilonSkinBase) this.Parent).A11yEnabled) {
+                    feedbackUrl = UrlUtils.PopUpUrl (feedbackUrl, this, PortalSettings.Current, false, false, 550, 950, false, "");
+                }
+                else
+                {
+                    // popups disabled, open feedback in new window
+                    linkFeedback.Target = "_blank";
+                }
+ 
+                linkFeedback.CssClass = "unselectable " + CssClass;
+                linkFeedback.ToolTip = Localizer.GetString ("FeedBackButton.Tooltip");
+                linkFeedback.Text = Localizer.GetString  ("FeedBackButton.Text");
+                linkFeedback.Attributes.Add ("data-feedback-url", feedbackUrl);
+                linkFeedback.Attributes.Add ("onclick", string.Format ("javascript:return skin_setup_feedback_url(this,{0})",
+                                                                       feedbackModule.ModuleID));
+            }
+            else {
+                // no feedback module found, hide the button
+                linkFeedback.Visible = false;
+            }
         }
     }
 }

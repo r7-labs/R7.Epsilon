@@ -126,4 +126,13 @@
 	<data name="SelectLayout.Text" xml:space="preserve">
         <value>Select Layout</value>
     </data>
+    <data name="Feedback.Template" xml:space="preserve">
+        <value>\n\n---{content}</value>
+    </data> 
+    <data name="FeedbackPage.Template" xml:space="preserve">
+        <value>\nPage: {origin}/linkclick.aspx?link={page}</value>
+    </data>
+    <data name="FeedbackSelection.Template" xml:space="preserve">
+        <value>\nSelection: \&quot;{selection}\&quot;</value>
+    </data>
 </root>

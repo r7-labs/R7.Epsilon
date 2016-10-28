@@ -117,4 +117,10 @@
 	<data name="SelectLayout.Text" xml:space="preserve">
         <value>Выбрать лейаут</value>
     </data>
+    <data name="FeedbackPage.Template" xml:space="preserve">
+        <value>\nСтраница: {origin}/linkclick.aspx?link={page}</value>
+    </data>
+    <data name="FeedbackSelection.Template" xml:space="preserve">
+        <value>\nВыделенный фрагмент: \&quot;{selection}\&quot;</value>
+    </data>
 </root>

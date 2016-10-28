@@ -269,6 +269,6 @@
 </footer>
 <div class="skin-float-button-wrapper">
     <asp:HyperLink runat="server" href="#" CssClass="skin-float-button skin-float-button-up" Style="display:none" ToolTip='<%# Localizer.GetString ("ButtonUp.Title") %>' data-toggle="tooltip" data-placement="left" data-container="body" />
-    <skin:FEEDBACKBUTTON runat="server" CssClass="skin-float-button skin-float-button-feedback" Target="_blank" />
+    <skin:FEEDBACKBUTTON runat="server" CssClass="skin-float-button skin-float-button-feedback" />
 </div>
-<skin:SOCIALSHARESCRIPTS runat="server" />
+<skin:SOCIALSHARESCRIPTS runat="server" />>

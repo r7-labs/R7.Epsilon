@@ -63,7 +63,7 @@ namespace R7.Epsilon.Components
             }
         }
 
-        protected bool A11yEnabled 
+        public bool A11yEnabled
         {
             get {
                 // try to get a11y mode from querystring

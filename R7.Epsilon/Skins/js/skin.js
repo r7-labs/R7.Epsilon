@@ -4,7 +4,7 @@
 //  Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2015 Roman M. Yagodin
+//  Copyright (c) 2015-2016 Roman M. Yagodin
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -31,6 +31,7 @@ $(function() {
     skin_init_modulesmenu ();
     skin_init_upbutton ();
     skin_init_tooltips ();
+    skin_setup_feedback_module ();
 });
 
 function skin_init_breadcrumb () {
@@ -105,6 +106,7 @@ function skin_init_upbutton () {
     
     jQuery('.skin-float-button-up').click(function(event) {
         event.preventDefault();
+        $(this).tooltip ('hide');
         jQuery('html, body').animate({scrollTop: 0}, duration);
         return false;
     });
@@ -115,13 +117,44 @@ function skin_init_tooltips () {
   $('[data-toggle="tooltip"]').tooltip();
 }
 
-// Feedback Button
-function skin_feedback_button (obj, feedbackTabId, activeTabId) {
-    $(obj).attr ("href", "/Default.aspx?tabid=" + feedbackTabId + "&errortabid=" + activeTabId);
-    var errorContext = encodeURIComponent (rangy.getSelection ().toString ().replace (/(\n|\r)/gm," ").replace (/\s+/g, " ").replace (/\"/g, "").trim ().substring (0,100));
-    if (!!errorContext)
-        $(obj).attr ("href",  $(obj).attr ("href") + "&errorcontext=" + errorContext);
+// setup feedback url
+function skin_setup_feedback_url (obj, feedbackModuleId) {
+    var selection = encodeURIComponent (rangy.getSelection ().toString ().replace (/(\n|\r)/gm," ").replace (/\s+/g, " ").replace (/\"/g, "").trim ().substring (0,100));
+    var params = "&returntabid=" + epsilon.queryParams ["TabId"] + "&feedbackmid=" + feedbackModuleId + ((!!selection)? "&feedbackselection=" + selection : "");
+    var feedbackUrl = $(obj).attr ("data-feedback-url");
+    if (feedbackUrl.includes ("?popUp=")) {
+        $(obj).attr ("href", feedbackUrl.replace (/\?popUp=(\w+)/, "?popUp=$1" + params));
+    }
+    else {
+        $(obj).attr ("href", feedbackUrl + params);
+    }
+
     return true;
+}
+
+function getLocationOrigin (location) {
+    return (!!location.origin) 
+        ? location.origin
+        : location.protocol + "//" + location.hostname + (location.port ? ":" + location.port: "");
+}
+
+function skin_setup_feedback_module () {
+    if (!!epsilon.queryParams ["feedbackmid"]) {
+        var feedbackContent = "";
+        if (!!epsilon.queryParams ["returntabid"]) {
+            feedbackContent += epsilon.localization ["feedbackPageTemplate"]
+                .replace (/\{origin\}/, getLocationOrigin (window.location))
+                .replace (/\{page\}/, epsilon.queryParams ["returntabid"]);
+
+            if (!!epsilon.queryParams ["feedbackselection"]) {
+                feedbackContent += epsilon.localization ["feedbackSelectionTemplate"].replace (/\{selection\}/, epsilon.queryParams ["feedbackselection"]);
+            }
+
+            $("#dnn_ctr" + epsilon.queryParams ["feedbackmid"] + "_Feedback_txtBody")
+                .val (epsilon.localization ["feedbackTemplate"].replace (/\{content\}/, feedbackContent))
+                .trigger ("change").trigger ("keyup");
+        }
+    }
 }
 
 // done with empty layout rows

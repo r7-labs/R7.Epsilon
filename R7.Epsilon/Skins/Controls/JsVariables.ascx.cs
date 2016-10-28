@@ -75,8 +75,22 @@ namespace R7.Epsilon
             get {
                 var sb = new StringBuilder ();
 
-                sb.AppendFormat ("selectLayout: '{0}'", Localizer.GetString ("SelectLayout.Text"));
+                sb.AppendFormat ("selectLayout:'{0}',", Localizer.GetString ("SelectLayout.Text"));
+                sb.AppendFormat ("feedbackTemplate:'{0}',", Localizer.GetString ("Feedback.Template"));
+                sb.AppendFormat ("feedbackPageTemplate:'{0}',", Localizer.GetString ("FeedbackPage.Template"));
+                sb.AppendFormat ("feedbackSelectionTemplate:'{0}'", Localizer.GetString ("FeedbackSelection.Template"));
 
+                return sb.ToString ();
+            }
+        }
+
+        public string QueryParams
+        {
+            get {
+                var sb = new StringBuilder (Request.QueryString.Count);
+                foreach (string key in Request.QueryString.Keys) {
+                    sb.AppendFormat ("{2}{0}:'{1}'", key, Request.QueryString [key], sb.Length == 0? "" : ",");
+                }
                 return sb.ToString ();
             }
         }
