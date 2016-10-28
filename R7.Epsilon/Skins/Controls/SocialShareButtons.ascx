@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.SocialShareButtons" %>
+﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.Components.EpsilonSkinObjectBase" %>
 <%@ OutputCache Duration="1200" VaryByParam="TabId;Language" %>
 <div class="skin-social-share-buttons">
     <% if (Config.Vk.ShareEnabled) { %><div id="vk_like"></div><% } %>

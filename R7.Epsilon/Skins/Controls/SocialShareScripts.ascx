@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.SocialShareScripts" %>
+﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.Components.EpsilonSkinObjectBase" %>
 <%@ OutputCache Duration="1200" VaryByParam="TabId;Language" %>
 <%-- Facebook Like --%><% if (Config.Facebook.ShareEnabled) { %>
 <script>(function(d, s, id) {

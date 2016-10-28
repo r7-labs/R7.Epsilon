@@ -122,21 +122,6 @@
     <None Include="Skins\Layouts\Home.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Skins\Edit.ascx.cs">
-      <DependentUpon>Edit.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Skins\Home.ascx.cs">
-      <DependentUpon>Home.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Skins\PopupSkin.ascx.cs">
-      <DependentUpon>PopupSkin.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Skins\Universal.ascx.cs">
-      <DependentUpon>Universal.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Skins\Controls\LogoTitle.ascx.cs">
-      <DependentUpon>LogoTitle.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Skins\Controls\BrowserCheck.ascx.cs">
       <DependentUpon>BrowserCheck.ascx</DependentUpon>
     </Compile>
@@ -144,26 +129,11 @@
       <DependentUpon>FeedbackButton.ascx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Skins\Controls\GAdsense.ascx.cs">
-      <DependentUpon>GAdsense.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Skins\Controls\Founders.ascx.cs">
       <DependentUpon>Founders.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Skins\Controls\YCycounter.ascx.cs">
-      <DependentUpon>YCycounter.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Skins\Controls\LogoMobile.ascx.cs">
-      <DependentUpon>LogoMobile.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Skins\Controls\FooterContent.ascx.cs">
       <DependentUpon>FooterContent.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Skins\Controls\Functions.ascx.cs">
-      <DependentUpon>Functions.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Skins\Admin.ascx.cs">
-      <DependentUpon>Admin.ascx</DependentUpon>
     </Compile>
     <Compile Include="Skins\Controls\HeadersMenu.ascx.cs">
       <DependentUpon>HeadersMenu.ascx</DependentUpon>
@@ -183,9 +153,6 @@
     <Compile Include="Skins\Controls\Permalink.ascx.cs">
       <DependentUpon>Permalink.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Skins\Controls\AdminPageInfo.ascx.cs">
-      <DependentUpon>AdminPageInfo.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Skins\Controls\PageHeader.ascx.cs">
       <DependentUpon>PageHeader.ascx</DependentUpon>
     </Compile>
@@ -194,12 +161,6 @@
     </Compile>
     <Compile Include="Skins\Controls\SocialGroups.ascx.cs">
       <DependentUpon>SocialGroups.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Skins\Controls\SocialShareButtons.ascx.cs">
-      <DependentUpon>SocialShareButtons.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Skins\Controls\SocialShareScripts.ascx.cs">
-      <DependentUpon>SocialShareScripts.ascx</DependentUpon>
     </Compile>
     <Compile Include="Models\ModelHelper.cs" />
     <Compile Include="Components\ControllerBase.cs" />
@@ -227,9 +188,6 @@
     <Compile Include="Models\LayoutFile.cs" />
     <Compile Include="Models\LayoutFileEqualityComparer.cs" />
     <Compile Include="ControlExtensions\GridViewExtensions.cs" />
-    <Compile Include="Skins\ErrorSkin.ascx.cs">
-      <DependentUpon>ErrorSkin.ascx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Containers\Blank.ascx" />
