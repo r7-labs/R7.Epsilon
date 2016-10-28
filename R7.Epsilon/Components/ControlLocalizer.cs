@@ -4,7 +4,7 @@
 //  Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2015 Roman M. Yagodin
+//  Copyright (c) 2015-2016 Roman M. Yagodin
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -19,10 +19,10 @@
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-using System;
+using System.IO;
 using System.Web.UI;
-using DotNetNuke.UI.Skins;
 using DotNetNuke.Services.Localization;
+using DotNetNuke.UI.Skins;
 
 namespace R7.Epsilon.Components
 {
@@ -34,14 +34,14 @@ namespace R7.Epsilon.Components
 
         #endregion
 
-        public ControlLocalizer (Control control)
+        public ControlLocalizer (TemplateControl control)
         {
-            // use control base type name, not .ascx one!
-            LocalResourceFile = Localization.GetResourceFile (control, control.GetType ().BaseType.Name + ".ascx");
+            LocalResourceFile = Localization.GetResourceFile (control, Path.GetFileName (control.AppRelativeVirtualPath));
 
-            // skinobjects must use resourses from skin directory
-            if (control is SkinObjectBase)
+            // skinobjects must use resources from parent (skins) directory
+            if (control is SkinObjectBase) {
                 LocalResourceFile = LocalResourceFile.Replace ("/Controls", string.Empty);
+            }
         }
 
         #region Public methods
