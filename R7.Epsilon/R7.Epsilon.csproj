@@ -88,8 +88,6 @@
     <None Include="Skins\PopupSkin.doctype.xml">
       <DependentUpon>PopupSkin.ascx</DependentUpon>
     </None>
-    <None Include="Skins\Mega2Epsilon\Mega2Epsilon.xslt" />
-    <None Include="Skins\Mega2Epsilon\menudef.xml" />
     <None Include="Customizations\volgau.com\README.md" />
     <None Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\App_LocalResources\SharedResources.Portal-0.resx" />
     <None Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\App_LocalResources\SharedResources.ru-RU.Portal-0.resx" />
@@ -120,6 +118,8 @@
       <DependentUpon>HomeCustom.ascx</DependentUpon>
     </None>
     <None Include="Skins\Layouts\Home.xml" />
+    <None Include="Menus\Mega2Epsilon\Mega2Epsilon.xslt" />
+    <None Include="Menus\Mega2Epsilon\menudef.xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -325,7 +325,6 @@
     </MonoDevelop>
   </ProjectExtensions>
   <ItemGroup>
-    <Folder Include="Skins\Mega2Epsilon\" />
     <Folder Include="Customizations\" />
     <Folder Include="Customizations\volgau.com\" />
     <Folder Include="Customizations\volgau.com\Portals\" />
@@ -343,6 +342,8 @@
     <Folder Include="Skins\Layouts\" />
     <Folder Include="ControlExtensions\" />
     <Folder Include="Skins\SkinObjects\" />
+    <Folder Include="Menus\" />
+    <Folder Include="Menus\Mega2Epsilon\" />
   </ItemGroup>
   <Import Project="../Packaging/Preprocess.targets" />
   <Target Name="BeforeBuild" DependsOnTargets="CompileScss;MinifyJS" />

@@ -43,6 +43,16 @@
 			<DeployContainerFiles Include="$(MainProjectPath)/Containers/**/*.gif" />
 		</ItemGroup>
 
+		<!-- Declare menu files -->
+        <ItemGroup>
+            <DeployMenuFiles Include="$(MainProjectPath)/Menus/**/*.xslt" />
+			<DeployMenuFiles Include="$(MainProjectPath)/Menus/**/*.cshtml" />
+            <DeployMenuFiles Include="$(MainProjectPath)/Menus/**/*.txt" />
+			<DeployMenuFiles Include="$(MainProjectPath)/Menus/**/*.xml" />
+            <DeployMenuFiles Include="$(MainProjectPath)/Menus/**/*.min.css" />
+            <DeployMenuFiles Include="$(MainProjectPath)/Menus/**/*.min.js" />
+        </ItemGroup>
+
         <!-- Declare module files -->
         <ItemGroup>
             <DeployLayoutManagerFiles Include="../R7.Epsilon.LayoutManager/**/*.ascx" />
@@ -75,6 +85,7 @@
 		<!-- Copy files to tmp dirs -->
 		<Copy SourceFiles="@(DeploySkinFiles)" DestinationFolder="$(TmpDir)/Skins/%(RecursiveDir)" />
 		<Copy SourceFiles="@(DeployContainerFiles)" DestinationFolder="$(TmpDir)/Containers/%(RecursiveDir)" />
+		<Copy SourceFiles="@(DeployMenuFiles)" DestinationFolder="$(TmpDir)/Menus/%(RecursiveDir)" />
         <Copy SourceFiles="@(DeployLayoutManagerFiles)" DestinationFolder="$(TmpDir)/Modules/R7.Epsilon.LayoutManager/%(RecursiveDir)" />
 		<Copy SourceFiles="@(DeployRangyFiles)" DestinationFolder="$(TmpDir)/Rangy/%(RecursiveDir)" />
 		
@@ -87,6 +98,10 @@
 			<ContainerMoveFiles Include="$(TmpDir)/Containers/**/*.*" />
 		</ItemGroup>
 
+		<ItemGroup>   
+            <MenuMoveFiles Include="$(TmpDir)/Menus/**/*.*" />
+        </ItemGroup>
+
         <ItemGroup> 
             <ModuleMoveFiles Include="$(TmpDir)/Modules/**/*.*" />
         </ItemGroup>
@@ -98,6 +113,7 @@
 		<!-- Deploy files -->
 		<Copy SourceFiles="@(SkinMoveFiles)" DestinationFolder="$(DnnSkinsPath)/R7.Epsilon/%(RecursiveDir)" SkipUnchangedFiles="true" />
 		<Copy SourceFiles="@(ContainerMoveFiles)" DestinationFolder="$(DnnContainersPath)/R7.Epsilon/%(RecursiveDir)" SkipUnchangedFiles="true" />
+		<Copy SourceFiles="@(MenuMoveFiles)" DestinationFolder="$(DnnMenusPath)/%(RecursiveDir)" SkipUnchangedFiles="true" />
 		<Copy SourceFiles="@(ModuleMoveFiles)" DestinationFolder="$(DnnModulesPath)/R7.Epsilon/%(RecursiveDir)" SkipUnchangedFiles="true" />
 		<Copy SourceFiles="@(RangyMoveFiles)" DestinationFolder="$(DnnJsLibrariesPath)/Rangy/01_03_00/%(RecursiveDir)" SkipUnchangedFiles="true" />
 

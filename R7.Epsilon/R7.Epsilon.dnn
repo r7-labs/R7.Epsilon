@@ -40,6 +40,14 @@
                         </resourceFile>
                     </resourceFiles>
                 </component>
+				<component type="ResourceFile">
+                    <resourceFiles>
+                        <basePath>DesktopModules\DDRMenu</basePath>
+                        <resourceFile>
+                            <name>Resources_Menus.zip</name>
+                        </resourceFile>
+                    </resourceFiles>
+                </component>
 				<component type="Assembly">
 					<assemblies>
 						<basePath>bin</basePath>
