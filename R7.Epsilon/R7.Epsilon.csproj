@@ -165,9 +165,7 @@
     <Compile Include="Models\ModelHelper.cs" />
     <Compile Include="Components\ControllerBase.cs" />
     <Compile Include="Components\ControlLocalizer.cs" />
-    <Compile Include="Components\EpsilonContainerBase.cs" />
     <Compile Include="Components\EpsilonMenuBase.cs" />
-    <Compile Include="Components\EpsilonSkinBase.cs" />
     <Compile Include="Components\EpsilonSkinObjectBase.cs" />
     <Compile Include="Components\IConfigurableControl.cs" />
     <Compile Include="Components\ILocalizableControl.cs" />
@@ -188,6 +186,8 @@
     <Compile Include="Models\LayoutFile.cs" />
     <Compile Include="Models\LayoutFileEqualityComparer.cs" />
     <Compile Include="ControlExtensions\GridViewExtensions.cs" />
+    <Compile Include="Skins\EpsilonSkinBase.cs" />
+    <Compile Include="Containers\EpsilonContainerBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Containers\Blank.ascx" />

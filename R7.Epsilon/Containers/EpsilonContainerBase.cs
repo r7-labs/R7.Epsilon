@@ -20,14 +20,13 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
-using DotNetNuke.UI.Containers;
-using DotNetNuke.Security.Permissions;
-using DotNetNuke.UI.Skins.Controls;
 using DotNetNuke.Common;
-using DotNetNuke.Security;
 using DotNetNuke.Entities.Modules;
+using DotNetNuke.Security;
+using DotNetNuke.Security.Permissions;
+using DotNetNuke.UI.Containers;
 
-namespace R7.Epsilon.Components
+namespace R7.Epsilon.Containers
 {
     public class EpsilonContainerBase: Container
     {

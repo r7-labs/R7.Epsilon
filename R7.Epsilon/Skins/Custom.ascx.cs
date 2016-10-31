@@ -29,7 +29,7 @@ using DotNetNuke.Entities.Tabs;
 using DotNetNuke.Services.Exceptions;
 using R7.Epsilon.Components;
 
-namespace R7.Epsilon
+namespace R7.Epsilon.Skins
 {
     public class Custom : EpsilonSkinBase
     {

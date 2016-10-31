@@ -20,19 +20,18 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
-using System.Web.UI.WebControls;
 using System.Web.UI.HtmlControls;
-using System.Collections.Generic;
+using System.Web.UI.WebControls;
 using DotNetNuke.Common;
-using DotNetNuke.Framework;
+using DotNetNuke.Framework.JavaScriptLibraries;
 using DotNetNuke.UI.Skins;
 using DotNetNuke.Web.Client;
 using DotNetNuke.Web.Client.ClientResourceManagement;
-using DotNetNuke.Framework.JavaScriptLibraries;
+using R7.Epsilon.Components;
 
-namespace R7.Epsilon.Components
+namespace R7.Epsilon.Skins
 {
-    public class EpsilonSkinBase: Skin, ILocalizableControl, IConfigurableControl
+    public class EpsilonSkinBase : Skin, ILocalizableControl, IConfigurableControl
     {
         #region Controls
 
@@ -44,8 +43,7 @@ namespace R7.Epsilon.Components
 
         #endregion
 
-        protected bool IsErrorPage
-        {
+        protected bool IsErrorPage {
             get {
                 var activeTabId = PortalSettings.ActiveTab.TabID;
                 return activeTabId == PortalSettings.ErrorPage404 || activeTabId == PortalSettings.ErrorPage500;
@@ -63,16 +61,13 @@ namespace R7.Epsilon.Components
             }
         }
 
-        public bool A11yEnabled
-        {
+        public bool A11yEnabled {
             get {
                 // try to get a11y mode from querystring
                 var a11yParamStr = Request.QueryString ["a11y"];
-                if (!string.IsNullOrWhiteSpace (a11yParamStr))
-                {
+                if (!string.IsNullOrWhiteSpace (a11yParamStr)) {
                     bool a11yParam;
-                    if (bool.TryParse (a11yParamStr, out a11yParam))
-                    {
+                    if (bool.TryParse (a11yParamStr, out a11yParam)) {
                         // store a11y mode in the cookie
                         Response.Cookies ["a11y"].Value = a11yParam.ToString ();
                         Response.Cookies ["a11y"].Expires = DateTime.Now.AddDays (1d);
@@ -91,9 +86,8 @@ namespace R7.Epsilon.Components
 
         protected ControlLocalizer localizer;
 
-        public ControlLocalizer Localizer
-        {
-            get { return localizer ?? (localizer = new ControlLocalizer (this)); } 
+        public ControlLocalizer Localizer {
+            get { return localizer ?? (localizer = new ControlLocalizer (this)); }
         }
 
         #endregion
@@ -102,8 +96,7 @@ namespace R7.Epsilon.Components
 
         protected EpsilonPortalConfig config;
 
-        public EpsilonPortalConfig Config 
-        {
+        public EpsilonPortalConfig Config {
             get { return config ?? (config = EpsilonConfig.GetInstance (PortalSettings.PortalId)); }
         }
 
@@ -114,8 +107,7 @@ namespace R7.Epsilon.Components
             base.OnInit (e);
 
             // init accessibility button
-            if (linkA11yVersion != null)
-            {
+            if (linkA11yVersion != null) {
                 var a11yLabel = Localizer.GetString ("A11y.Title");
                 linkA11yVersion.ToolTip = a11yLabel;
                 linkA11yVersion.Attributes.Add ("aria-label", a11yLabel);
@@ -139,15 +131,13 @@ namespace R7.Epsilon.Components
 
             RegisterJavaScript ();
 
-            if (linkA11yVersion != null)
-            {
+            if (linkA11yVersion != null) {
                 // make link to toggle a11y mode
                 linkA11yVersion.NavigateUrl = Globals.NavigateURL (
                     PortalSettings.ActiveTab.TabID, "", "a11y", (!A11yEnabled).ToString ());
             }
 
-            if (skinCSS != null && A11yEnabled)
-            {
+            if (skinCSS != null && A11yEnabled) {
                 // replace current skin
                 skinCSS.FilePath = Config.SkinA11yCss;
 
@@ -159,7 +149,7 @@ namespace R7.Epsilon.Components
             }
         }
 
-        private void RegisterJavaScript()
+        private void RegisterJavaScript ()
         {
             JavaScript.RequestRegistration (CommonJs.jQuery);
         }

@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Custom.ascx.cs" Inherits="R7.Epsilon.Custom" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Custom.ascx.cs" Inherits="R7.Epsilon.Skins.Custom" %>
 <%@ Register TagPrefix="dnn" TagName="LOGO" Src="~/Admin/Skins/Logo.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="LANGUAGE" Src="~/Admin/Skins/Language.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="SEARCH" Src="~/Admin/Skins/Search.ascx" %>
