@@ -188,6 +188,7 @@
     </Compile>
     <Compile Include="Skins\SkinObjects\EpsilonSkinObjectBase.cs" />
     <Compile Include="Skins\SkinObjects\EpsilonMenuBase.cs" />
+    <Compile Include="Components\CacheHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Containers\Blank.ascx" />
