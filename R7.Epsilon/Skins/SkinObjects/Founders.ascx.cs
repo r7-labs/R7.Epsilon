@@ -19,15 +19,6 @@
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-using System;
-using System.Web;
-using System.Web.UI;
-using DotNetNuke.Entities.Portals;
-using System.Web.UI.WebControls;
-using System.Web.Security;
-using DotNetNuke.UI.WebControls;
-using R7.Epsilon.Components;
-
 namespace R7.Epsilon.Skins.SkinObjects
 {
     public class Founders : EpsilonSkinObjectBase

@@ -22,8 +22,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Xunit;
 using R7.Epsilon.Components;
+using Xunit;
 
 namespace R7.Epsilon.Tests.Skins.Layouts
 {

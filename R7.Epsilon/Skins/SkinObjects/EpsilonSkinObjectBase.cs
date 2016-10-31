@@ -19,23 +19,20 @@
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-using System;
-using System.Web.UI;
 using DotNetNuke.Common;
 using DotNetNuke.UI.Skins;
 using R7.Epsilon.Components;
 
 namespace R7.Epsilon.Skins.SkinObjects
 {
-    public class EpsilonSkinObjectBase: SkinObjectBase, ILocalizableControl, IConfigurableControl
+    public class EpsilonSkinObjectBase : SkinObjectBase, ILocalizableControl, IConfigurableControl
     {
         #region ILocalizableControl implementation
 
         private ControlLocalizer localizer;
 
-        public ControlLocalizer Localizer
-        {
-            get { return localizer ?? (localizer = new ControlLocalizer (this)); } 
+        public ControlLocalizer Localizer {
+            get { return localizer ?? (localizer = new ControlLocalizer (this)); }
         }
 
         #endregion
@@ -44,18 +41,15 @@ namespace R7.Epsilon.Skins.SkinObjects
 
         private EpsilonPortalConfig config;
 
-        public EpsilonPortalConfig Config 
-        {
+        public EpsilonPortalConfig Config {
             get { return config ?? (config = EpsilonConfig.GetInstance (PortalSettings.PortalId)); }
         }
 
         #endregion
 
-        public string HomeTabFullUrl
-        {
-            get
-            {
-                return (PortalSettings.HomeTabId != -1) ? 
+        public string HomeTabFullUrl {
+            get {
+                return (PortalSettings.HomeTabId != -1) ?
                     Globals.NavigateURL (PortalSettings.HomeTabId) : Globals.AddHTTP (PortalSettings.PortalAlias.HTTPAlias);
             }
         }

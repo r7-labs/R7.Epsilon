@@ -26,7 +26,6 @@ using DotNetNuke.Common;
 using DotNetNuke.Common.Utilities;
 using DotNetNuke.Entities.Modules;
 using DotNetNuke.Entities.Portals;
-using R7.Epsilon.Components;
 
 namespace R7.Epsilon.Skins.SkinObjects
 {

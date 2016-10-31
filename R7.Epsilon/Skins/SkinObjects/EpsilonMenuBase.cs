@@ -20,13 +20,7 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
-using System.Web;
-using System.Web.UI;
 using System.Collections.Generic;
-using DotNetNuke.Entities.Portals;
-using System.Web.UI.WebControls;
-using System.Web.Security;
-using DotNetNuke.UI.WebControls;
 using DotNetNuke.Web.DDRMenu.TemplateEngine;
 
 // aliases

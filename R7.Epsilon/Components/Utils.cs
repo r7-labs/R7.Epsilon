@@ -19,13 +19,12 @@
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-using System;
-using System.Text;
 using System.Collections.Generic;
+using System.Text;
 
 namespace R7.Epsilon.Components
 {
-	public static class Utils
+    public static class Utils
 	{
 		/// <summary>
 		/// Formats the list of arguments, excluding empty

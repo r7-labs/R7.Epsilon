@@ -19,21 +19,13 @@
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-using System;
-using System.Data;
 using System.Collections.Generic;
-using System.Text;
-using System.Xml;
-using System.Linq;
 using DotNetNuke.Collections;
 using DotNetNuke.Data;
-using DotNetNuke.Common.Utilities;
-using DotNetNuke.Entities.Modules;
-using DotNetNuke.Services.Search;
 
 namespace R7.Epsilon.Components
 {
-	public abstract class ControllerBase
+    public abstract class ControllerBase
 	{
 		#region Common methods
 
