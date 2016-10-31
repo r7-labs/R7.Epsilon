@@ -40,7 +40,7 @@ namespace R7.Epsilon.Components
 
             // skinobjects must use resources from parent (skins) directory
             if (control is SkinObjectBase) {
-                LocalResourceFile = LocalResourceFile.Replace ("/Controls", string.Empty);
+                LocalResourceFile = LocalResourceFile.Replace ("/SkinObjects", string.Empty);
             }
         }
 
