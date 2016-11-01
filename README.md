@@ -10,7 +10,7 @@ See *R7.Epsilon* skin in action at http://www.volgau.com
 
 - Admins can define portal-specific settings via <del>XML</del> YAML file.
 - Users can switch between a11y and normal theme.
-- In the a11y mode DNN modal popups are blocked (if they are enabled.
+- In the a11y mode DNN modal popups are blocked (if they are enabled).
 - Variety of containers, including DNN-style messages, Bootstrap thumbnail, callouts, etc.
 - Home, Edit, Admin + Universal skin variants, reusable through all host portals.
 - Social group icons (including a11y versions) for Facebook, Twitter, Google+, YouTube, VK.com.
