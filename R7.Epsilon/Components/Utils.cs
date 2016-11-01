@@ -34,7 +34,7 @@ namespace R7.Epsilon.Components
 		/// <param name="args">Arguments.</param>
 		public static string FormatList (string separator, params object[] args)
 		{
-			var sb = new StringBuilder (args.Length);
+			var sb = new StringBuilder (args.Length * 16);
 
 			var i = 0;
 			foreach (var a in args)
