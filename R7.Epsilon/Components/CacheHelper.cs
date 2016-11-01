@@ -38,7 +38,11 @@ namespace R7.Epsilon.Components
                 if (part == "PortalId") {
                     result.Append ("portalid=");
                     result.Append (PortalSettings.Current.PortalId);
-                } 
+                }
+                else if (part == "A11y") {
+                    result.Append ("a11y=");
+                    result.Append (A11yHelper.GetA11y (request));
+                }
                 else if (part == "UserRoles") {
                     if (request.IsAuthenticated) {
                         var user = UserController.Instance.GetCurrentUserInfo ();

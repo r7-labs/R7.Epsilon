@@ -64,21 +64,19 @@ namespace R7.Epsilon.Skins
         public bool A11yEnabled {
             get {
                 // try to get a11y mode from querystring
-                var a11yParamStr = Request.QueryString ["a11y"];
-                if (!string.IsNullOrWhiteSpace (a11yParamStr)) {
-                    bool a11yParam;
-                    if (bool.TryParse (a11yParamStr, out a11yParam)) {
-                        // store a11y mode in the cookie
-                        Response.Cookies ["a11y"].Value = a11yParam.ToString ();
-                        Response.Cookies ["a11y"].Expires = DateTime.Now.AddDays (1d);
-                        return a11yParam;
-                    }
+                var a11y = A11yHelper.TryGetA11yParam (Request);
+                if (a11y != null) {
+                    A11yHelper.SetA11yCookie (Response, a11y.Value);
+                    return a11y.Value;
+                } 
+
+                // no a11y was found in the querystring, try to get cookie value
+                a11y = A11yHelper.TryGetA11yCookie (Request);
+                if (a11y != null) {
+                    return a11y.Value;
                 }
 
-                // no a11y was found in the querystring, so return cookie value
-                var cookie = Request.Cookies ["a11y"];
-                bool a11yEnabled;
-                return (cookie != null && bool.TryParse (cookie.Value, out a11yEnabled)) ? a11yEnabled : false;
+                return false;
             }
         }
 
