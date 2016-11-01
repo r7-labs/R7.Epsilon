@@ -20,7 +20,7 @@
         <DnnBinPath>$(DnnLocalDeployPath)/bin</DnnBinPath>
         <DnnSkinsPath>$(DnnLocalDeployPath)/Portals/_default/Skins</DnnSkinsPath>
         <DnnContainersPath>$(DnnLocalDeployPath)/Portals/_default/Containers</DnnContainersPath>
-        <DnnMenusPath>$(DnnLocalDeployPath)/DesktopModules/DDRMenu</DnnMenusPath>
+        <DnnMenusPath>$(DnnSkinsPath)</DnnMenusPath>
         <DnnModulesPath>$(DnnLocalDeployPath)/DesktopModules</DnnModulesPath>
         <DnnJsLibrariesPath>$(DnnLocalDeployPath)/Resources/Libraries</DnnJsLibrariesPath>
     </PropertyGroup>
