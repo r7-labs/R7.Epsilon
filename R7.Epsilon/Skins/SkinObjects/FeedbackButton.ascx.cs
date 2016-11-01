@@ -26,6 +26,7 @@ using DotNetNuke.Common;
 using DotNetNuke.Common.Utilities;
 using DotNetNuke.Entities.Modules;
 using DotNetNuke.Entities.Portals;
+using R7.Epsilon.Components;
 
 namespace R7.Epsilon.Skins.SkinObjects
 {
@@ -54,7 +55,7 @@ namespace R7.Epsilon.Skins.SkinObjects
             
             if (feedbackModule != null) {
                 var feedbackUrl = Globals.NavigateURL (feedbackModule.TabID, "", "mid", feedbackModule.ModuleID.ToString ());
-                if (PortalSettings.Current.EnablePopUps && !((Skins.EpsilonSkinBase) this.Parent).A11yEnabled) {
+                if (PortalSettings.Current.EnablePopUps && !A11yHelper.GetA11y (Request)) {
                     feedbackUrl = UrlUtils.PopUpUrl (feedbackUrl, this, PortalSettings.Current, false, false, 550, 950, false, "");
                 }
                 else
