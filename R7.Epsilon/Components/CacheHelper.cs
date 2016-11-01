@@ -33,7 +33,7 @@ namespace R7.Epsilon.Components
                                                     HttpRequest request, 
                                                     Func<HttpContext, string, string> fallbackGetVaryByCustomString)
         {
-            var result = new StringBuilder ();
+            var result = new StringBuilder (custom.Length * 4);
             foreach (var part in custom.Split (';')) {
                 if (part == "PortalId") {
                     result.Append ("portalid=");
