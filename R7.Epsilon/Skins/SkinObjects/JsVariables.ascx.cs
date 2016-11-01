@@ -87,7 +87,7 @@ namespace R7.Epsilon.Skins.SkinObjects
         public string QueryParams
         {
             get {
-                var sb = new StringBuilder (Request.QueryString.Count);
+                var sb = new StringBuilder (Request.RawUrl.Length);
                 foreach (string key in Request.QueryString.Keys) {
                     sb.AppendFormat ("{2}{0}:'{1}'", key, Request.QueryString [key], sb.Length == 0? "" : ",");
                 }
