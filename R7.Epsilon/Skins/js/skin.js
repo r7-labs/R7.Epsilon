@@ -120,13 +120,13 @@ function skin_init_tooltips () {
 // setup feedback url
 function skin_setup_feedback_url (obj, feedbackModuleId) {
     var selection = encodeURIComponent (rangy.getSelection ().toString ().replace (/(\n|\r)/gm," ").replace (/\s+/g, " ").replace (/\"/g, "").trim ().substring (0,100));
-    var params = "&returntabid=" + epsilon.queryParams ["TabId"] + "&feedbackmid=" + feedbackModuleId + ((!!selection)? "&feedbackselection=" + selection : "");
+    var params = "returntabid=" + epsilon.queryParams ["TabId"] + "&feedbackmid=" + feedbackModuleId + ((!!selection)? "&feedbackselection=" + selection : "");
     var feedbackUrl = $(obj).attr ("data-feedback-url");
     if (feedbackUrl.includes ("?popUp=")) {
-        $(obj).attr ("href", feedbackUrl.replace (/\?popUp=(\w+)/, "?popUp=$1" + params));
+        $(obj).attr ("href", feedbackUrl.replace (/\?popUp=(\w+)/, "?popUp=$1&" + params));
     }
     else {
-        $(obj).attr ("href", feedbackUrl + params);
+        $(obj).attr ("href", feedbackUrl + (feedbackUrl.includes ("?") ? "&" : "?") + params);
     }
 
     return true;

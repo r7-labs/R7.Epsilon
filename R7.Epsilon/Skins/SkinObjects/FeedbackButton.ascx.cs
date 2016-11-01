@@ -54,12 +54,15 @@ namespace R7.Epsilon.Skins.SkinObjects
                                                  .FirstOrDefault (m => m.TabID == Config.FeedbackTabId);
             
             if (feedbackModule != null) {
-                var feedbackUrl = Globals.NavigateURL (feedbackModule.TabID, "", "mid", feedbackModule.ModuleID.ToString ());
+                string feedbackUrl;
                 if (PortalSettings.Current.EnablePopUps && !A11yHelper.GetA11y (Request)) {
-                    feedbackUrl = UrlUtils.PopUpUrl (feedbackUrl, this, PortalSettings.Current, false, false, 550, 950, false, "");
+                    // show feedback module
+                    feedbackUrl = UrlUtils.PopUpUrl (Globals.NavigateURL (feedbackModule.TabID, "", "mid", feedbackModule.ModuleID.ToString ()),
+                                                     this, PortalSettings.Current, false, false, 550, 950, false, "");
                 }
-                else
-                {
+                else {
+                    // show entire feedback page
+                    feedbackUrl = Globals.NavigateURL (feedbackModule.TabID);
                     // popups disabled, open feedback in new window
                     linkFeedback.Target = "_blank";
                 }
