@@ -55,7 +55,7 @@ ul.megamenu
         display:none;
         opacity:0;
         position:absolute;
-        z-index:1000;
+        z-index:1010; // fix module actions overlaps submenu
 
         li { display:block; }
     }
