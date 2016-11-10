@@ -93,8 +93,8 @@
     <data name="LogoTitle.Text" xml:space="preserve">
         <value></value>
     </data>
-    <data name="LogoTitle.Motto" xml:space="preserve">
-        <value>motto here</value>
+    <data name="LogoTitle.Tagline" xml:space="preserve">
+        <value>tagline</value>
     </data>
     <data xml:space="preserve" name="FooterPane1.Content">
         <value>[FooterPane1.Content]</value>

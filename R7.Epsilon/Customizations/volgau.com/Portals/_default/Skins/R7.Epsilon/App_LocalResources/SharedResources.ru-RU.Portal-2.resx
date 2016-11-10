@@ -27,7 +27,7 @@
     <data name="LogoTitle.Text" xml:space="preserve">
         <value>Система дистанционного консультирования&#13;сельских товаропроизводителей</value>
     </data>
-    <data name="LogoTitle.Motto" xml:space="preserve">
+    <data name="LogoTitle.Tagline" xml:space="preserve">
         <value>Волгоградского ГАУ</value>
     </data>
     <data xml:space="preserve" name="FooterPane1.Content">

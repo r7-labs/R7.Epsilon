@@ -27,7 +27,7 @@
     <data name="LogoTitle.Text" xml:space="preserve">
         <value>Volgograd&#13;State Agricultural University</value>
     </data>
-    <data name="LogoTitle.Motto" xml:space="preserve">
+    <data name="LogoTitle.Tagline" xml:space="preserve">
         <value>to the good ground...</value>
     </data>
 </root>

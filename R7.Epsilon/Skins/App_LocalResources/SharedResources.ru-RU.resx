@@ -90,6 +90,9 @@
     <data xml:space="preserve" name="YandexCycounter.Text">
         <value>Яндекс цитирования</value>
     </data>
+    <data name="LogoTitle.Tagline" xml:space="preserve">
+        <value>лозунг</value>
+    </data>
     <data name="GoogleTranslate.Title" xml:space="preserve">
         <value>Перевести с помощью Google</value>
     </data>

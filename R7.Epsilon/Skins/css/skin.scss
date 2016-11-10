@@ -432,25 +432,28 @@ ul.skin-socialgroups
     margin-left:40px;
     margin-top:32px;
     font-style:italic;
+    font-size:$big-font-size;
+    line-height:1.1em;
+    color:#fff;
+    text-shadow:$logo-title-text-shadow;
 
-    a { text-decoration:none; }
+    > * { white-space:pre-wrap; }
 
-    .skin-logo-title
-    {
-        white-space:pre-wrap;
-        font-size:$big-font-size;
-        line-height:1.1em;
+    a { 
+        text-decoration:none;
         color:#fff;
-        text-shadow:$logo-title-text-shadow;
-
-        &:first-line { font-size:$big-font-size + 4px; }
     }
 
-    .skin-logo-title-motto
+    &:first-line { font-size:$big-font-size + 4px; }
+
+    .tagline
     {
         color:$color-primary-4;
+        font-size:$font-size;
         font-weight:bold;
         text-shadow:$logo-title-motto-shadow;
+        
+        a { color:$color-primary-4; }
     }
 }
 
@@ -466,7 +469,7 @@ ul.skin-socialgroups
     line-height:1.1em;
     color:#fff;
     text-shadow:$logo-title-text-shadow;
-
+    
     a { text-decoration:none; }
 
     &:first-line { font-size:$big-font-size + 4px; }
