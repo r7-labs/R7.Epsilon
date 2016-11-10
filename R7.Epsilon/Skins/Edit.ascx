@@ -90,9 +90,10 @@
                 <div class="navbar-brand skin-navbar-brand-logo">
                     <dnn:LOGO runat="server" id="dnnLOGO" />
                 </div>
-                <div class="skin-logo-title-wrapper hidden-xs">
+                <div class="skin-logo-title-wrapper hidden-sm">
                     <skin:LOGOTITLE runat="server" />
                 </div>
+                <skin:FOOTERCONTENT runat="server" CssClass="skin-header-content hidden-xs" ResourceKey="HeaderPane1.Content" />
                 <div class="skin-login-full">
                     <dnn:LOGIN CssClass="LoginLink" runat="server" LegacyMode="false" />
                     <dnn:USER runat="server" LegacyMode="false" />

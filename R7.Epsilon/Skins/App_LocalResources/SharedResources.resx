@@ -135,4 +135,7 @@
     <data name="FeedbackSelection.Template" xml:space="preserve">
         <value>\nSelection: \&quot;{selection}\&quot;</value>
     </data>
+    <data name="HeaderPane1.Content" xml:space="preserve">
+        <value>Use language editor&#13;to customize this content&lt;div class=&quot;tagline&quot;&gt;by editing HeaderPane1.Content value&lt;/div&gt;</value>
+    </data>
 </root>

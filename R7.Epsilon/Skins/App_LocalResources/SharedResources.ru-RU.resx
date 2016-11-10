@@ -123,4 +123,7 @@
     <data name="FeedbackSelection.Template" xml:space="preserve">
         <value>\nВыделенный фрагмент: \&quot;{selection}\&quot;</value>
     </data>
+    <data name="HeaderPane1.Content" xml:space="preserve">
+        <value><value>Используйте редактор локализации&#13;для изменения этого содержимого&lt;div class=&quot;tagline&quot;&gt;путем изменения значения HeaderPane1.Content&lt;/div&gt;</value></value>
+    </data>
 </root>
