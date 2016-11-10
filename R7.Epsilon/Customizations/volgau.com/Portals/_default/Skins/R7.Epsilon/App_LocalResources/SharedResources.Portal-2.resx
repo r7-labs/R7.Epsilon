@@ -25,9 +25,9 @@
         <value>http://www.mcx.ru</value>
     </data>
     <data name="LogoTitle.Text" xml:space="preserve">
-        <value>Distant consulting system&#13;for argicultural commodity producers</value>
+        <value>Distant consulting system&lt;br /&gt;for argicultural commodity producers</value>
     </data>
     <data name="LogoTitle.Tagline" xml:space="preserve">
-        <value>of Volgograd&#13;SAU</value>
+        <value>of Volgograd SAU</value>
     </data>
 </root>

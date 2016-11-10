@@ -437,8 +437,6 @@ ul.skin-socialgroups
     color:#fff;
     text-shadow:$logo-title-text-shadow;
 
-    > * { white-space:pre-wrap; }
-
     a { 
         text-decoration:none;
         color:#fff;
@@ -464,7 +462,6 @@ ul.skin-socialgroups
     margin-top:32px;
     font-style:italic;
     
-    white-space:pre-wrap;               
     font-size:$big-font-size;
     line-height:1.1em;
     color:#fff;

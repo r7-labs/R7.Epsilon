@@ -25,10 +25,10 @@
         <value>http://www.mcx.ru</value>
     </data>
     <data name="LogoTitle.Text" xml:space="preserve">
-        <value>Volgograd SAU&#13;multi-language portal</value>
+        <value>Multi-language portal</value>
     </data>
     <data name="LogoTitle.Tagline" xml:space="preserve">
-        <value></value>
+        <value>of Volgograd SAU</value>
     </data>
     <data xml:space="preserve" name="FooterPane1.Content">
         <value><![CDATA[<div class="skin-footer-content-well"></div>]]></value>
