@@ -426,35 +426,6 @@ ul.skin-socialgroups
     }
 }
 
-.skin-logo-title-wrapper
-{
-    display:inline-block;
-    margin-left:40px;
-    margin-top:32px;
-    font-style:italic;
-    font-size:$big-font-size;
-    line-height:1.1em;
-    color:#fff;
-    text-shadow:$logo-title-text-shadow;
-
-    a { 
-        text-decoration:none;
-        color:#fff;
-    }
-
-    &:first-line { font-size:$big-font-size + 4px; }
-
-    .tagline
-    {
-        color:$color-primary-4;
-        font-size:$font-size;
-        font-weight:bold;
-        text-shadow:$logo-title-motto-shadow;
-        
-        a { color:$color-primary-4; }
-    }
-}
-
 .skin-header-content
 {
     display:inline-block;
@@ -465,9 +436,12 @@ ul.skin-socialgroups
     font-size:$big-font-size;
     line-height:1.1em;
     color:#fff;
-    text-shadow:$logo-title-text-shadow;
+    text-shadow:$header-content-text-shadow;
     
-    a { text-decoration:none; }
+    a { 
+        text-decoration:none;
+        color:#fff;
+    }
 
     &:first-line { font-size:$big-font-size + 4px; }
 
@@ -475,7 +449,7 @@ ul.skin-socialgroups
         color:$color-primary-4;
         font-size:$font-size;
         font-weight:bold;
-        text-shadow:$logo-title-motto-shadow;
+        text-shadow:$header-content-tagline-shadow;
         
         a { color:$color-primary-4; }
     }

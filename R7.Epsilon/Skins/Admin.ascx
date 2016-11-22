@@ -95,7 +95,7 @@
                 <div class="navbar-brand skin-navbar-brand-logo">
                     <dnn:LOGO runat="server" id="dnnLOGO" />
                 </div>
-                <div class="skin-logo-title-wrapper hidden-sm">
+                <div class="skin-header-content hidden-sm">
                     <skin:LOGOTITLE runat="server" />
                 </div>
                 <div class="skin-login-full">
