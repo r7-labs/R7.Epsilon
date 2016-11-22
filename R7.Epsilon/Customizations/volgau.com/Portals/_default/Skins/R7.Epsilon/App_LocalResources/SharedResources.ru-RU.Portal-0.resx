@@ -30,6 +30,11 @@
     <data name="LogoTitle.Tagline" xml:space="preserve">
         <value>на добрую землю...</value>
     </data>
+    <data name="HeaderPane1.Content" xml:space="preserve">
+        <value>&lt;a href=&quot;/LinkClick.aspx?link=55&quot; target=&quot;_blank&quot;&gt;Приемная комиссия:&lt;br /&gt;+7 (8442) 411-778&lt;/a&gt;
+            &lt;div class=&quot;tagline&quot;&gt;&lt;a href=&quot;mailto:pricom@volgau.com&quot;>pricom@volgau.com&lt;/a&gt;&lt;/div&gt;
+        </value>
+    </data>
     <data xml:space="preserve" name="FooterPane1.Content">
         <value><![CDATA[<div class="skin-footer-content-well"><span>Сетевое издание &quot;На добрую землю&quot;,</span> <span>свидетельство о регистрации СМИ</span> <span>Эл № ФС 77-56821</span> <span>от 05 октября 2016 года, выдано Федеральной службой по надзору в сфере связи, информационных технологий и массовых коммуникаций (Роскомнадзор)</span></div>]]></value>
     </data>
