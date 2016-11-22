@@ -1,5 +1,34 @@
 ﻿<div style="white-space:normal">
 
+<h3>Version 1.9.0</h3>
+<p>End-user changes:</p>
+<ul>
+    <li>Feedback module now opens in popup (if popups are enabled and not in a11y mode).</li>
+    <li>Feedback content now pre-filled with link to a source page and user-selected text.</li>
+    <li>New round icons for float buttons, colored according to the current theme (#27).</li>
+    <li>New customizable area in the site header right after title (HeaderPane1.Content resource).</li>
+    <li>Site logo title text now hidden starting from <em>sm</em> screens, not only for <em>xs</em> screens.</li>
+    <li>Language switcher now have round icons (#33).</li>
+    <li>Fixed open submenu ovelaps search preview, module actions overlaps submenu.</li>
+    <li>LayoutManager: Fixed manage layots button not visible to administators.</li>
+ 	<li>Fixed 'go up' button tooltip remains visible after click indefinitely.</li>
+ 	<li>Some style tweaks.</li>
+</ul>
+<p>Upgrade notes:</p>
+<ul>
+    <li>Rangy JavaScript library v1.3.0 now installed with the skin as a separate package.</li>
+    <li>'Controls' folder renamed to 'SkinObjects'. It's safe to delete old one after upgrade.</li>
+    <li>Please update your <a href="https://github.com/roman-yagodin/R7.Epsilon/blob/master/R7.Epsilon/Application/Global.asax">Global.asax</a> file!</li>
+</ul>
+<p>Developer changes:</p>
+<ul>
+    <li>Source CSS format changed from Less to SASS (SCSS) (#36).</li>
+    <li>Major build system enhancements, including VS Code support, integration with tests, etc.</li>
+    <li>Add support for VaryByCustom=&quot;A11y&quot; caching.</li>
+    
+</ul>
+<p>Note that custom layout support is still WIP.</p> 	
+
 <h3>Version 1.8.0</h3>
 <ul>
 	<li>Skin source code is re-published under terms of GNU Aferro GPL v3 or any later version (#42).</li>
