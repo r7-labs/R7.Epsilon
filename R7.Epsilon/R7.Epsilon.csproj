@@ -120,6 +120,7 @@
     <None Include="Skins\Layouts\Home.xml" />
     <None Include="Menus\Mega2Epsilon\Mega2Epsilon.xslt" />
     <None Include="Menus\Mega2Epsilon\menudef.xml" />
+    <None Include="Customizations\volgau.com\Portals\5\R7.Epsilon.yml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -316,6 +317,9 @@
     <Content Include="Skins\SkinObjects\SocialShareButtons.ascx" />
     <Content Include="Skins\SkinObjects\SocialShareScripts.ascx" />
     <Content Include="Skins\SkinObjects\YCycounter.ascx" />
+    <Content Include="Customizations\volgau.com\Portals\5\logo.png" />
+    <Content Include="Customizations\volgau.com\Portals\5\logo.svg" />
+    <Content Include="Customizations\volgau.com\Portals\5\portal.css" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
