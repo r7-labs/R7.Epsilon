@@ -142,10 +142,10 @@
     <div class="skin-footer-last">
         <div class="container">
             <div class="row">
-                <div class="col-md-2 col-sm-4 col-xs-12 skin-footer-88x31-buttons">
+                <div class="col-md-2 col-sm-3 col-xs-12 skin-footer-88x31-buttons">
                     <skin:YCYCOUNTER runat="server" />
                 </div>
-                <div class="col-md-10 col-sm-8 col-xs-12 skin-terms">
+                <div class="col-md-10 col-sm-9 col-xs-12 skin-terms">
                     <div>
                         <dnn:COPYRIGHT runat="server" /> |
                         <asp:Label runat="server" CssClass="skin-copyright" Text='<%# Localizer.GetString ("SkinCopyright.Text") %>' />
