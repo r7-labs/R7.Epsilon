@@ -118,6 +118,6 @@
         <value>\nВыделенный фрагмент: \&quot;{selection}\&quot;</value>
     </data>
     <data name="HeaderPane1.Content" xml:space="preserve">
-        <value>[HeaderPane1.Content]&lt;br /&gt;вторая строка&lt;div class=&quot;tagline&quot;&gt;лозунг&lt;/div&gt;</value>
+        <value>&lt;span class=&quot;firstline&quot;&gt;[HeaderPane1.Content]&lt;/span&gt;&lt;br /&gt;вторая строка&lt;div class=&quot;tagline&quot;&gt;лозунг&lt;/div&gt;</value>
     </data>
 </root>

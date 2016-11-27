@@ -25,13 +25,13 @@
         <value></value>
     </data>
     <data name="LogoTitle.Text" xml:space="preserve">
-        <value>Малое&lt;br /&gt;инновационное предприятие</value>
+        <value>&lt;span class=&quot;firstline&quot;&gt;Малое&lt;/span&gt;&lt;br /&gt;инновационное предприятие</value>
     </data>
     <data name="LogoTitle.Tagline" xml:space="preserve">
         <value>Волгоградского ГАУ</value>
     </data>
     <data name="HeaderPane1.Content" xml:space="preserve">
-        <value>&lt;a href=&quot;/mip/LinkClick.aspx?link=12213&quot; target=&quot;_blank&quot;&gt;Контакты МИП:&lt;br /&gt;+7 (987) 658-94-90&lt;/a&gt;
+        <value>&lt;a href=&quot;/mip/LinkClick.aspx?link=12213&quot; target=&quot;_blank&quot;&gt;&lt;span class=&quot;firstline&quot;&gt;Контакты МИП:&lt;/span&gt;&lt;br /&gt;+7 (987) 658-94-90&lt;/a&gt;
             &lt;div class=&quot;tagline&quot;&gt;&lt;a href=&quot;mailto:worldtent@yandex.ru&quot;>worldtent@yandex.ru&lt;/a&gt;&lt;/div&gt;
         </value>
     </data>

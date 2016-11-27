@@ -25,10 +25,13 @@
         <value>http://www.mcx.ru</value>
     </data>
     <data name="LogoTitle.Text" xml:space="preserve">
-        <value>Система дистанционного консультирования&lt;br /&gt;сельских товаропроизводителей</value>
+        <value>&lt;span class=&quot;firstline&quot;&gt;Система дистанционного консультирования&lt;/span&gt;&lt;br /&gt;сельских товаропроизводителей</value>
     </data>
     <data name="LogoTitle.Tagline" xml:space="preserve">
         <value>Волгоградского ГАУ</value>
+    </data>
+    <data name="HeaderPane1.Content" xml:space="preserve" >
+        <value></value>
     </data>
     <data xml:space="preserve" name="FooterPane1.Content">
         <value><![CDATA[<div class="skin-footer-content-well"></div>]]></value>

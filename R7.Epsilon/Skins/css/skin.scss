@@ -443,7 +443,10 @@ ul.skin-socialgroups
         color:#fff;
     }
 
-    &:first-line { font-size:$big-font-size + 4px; }
+    .firstline { 
+        font-size:$big-font-size + 4px;
+        white-space:nowrap;
+    }
 
     .tagline {
         color:$color-primary-4;
