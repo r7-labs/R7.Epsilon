@@ -132,8 +132,8 @@
         <div id="TopPane" runat="server" class="col-md-12" />
     </div>
     <div class="row">
-        <div id="TopLeftPane" runat="server" class="col-md-6" />
-        <div id="TopRightPane" runat="server" class="col-md-6" />
+        <div id="TopLeftPane" runat="server" class="col-md-8" />
+        <div id="TopRightPane" runat="server" class="col-md-4" />
     </div>
     <div class="row">
         <div id="TopPane11" runat="server" class="col-md-4" />
