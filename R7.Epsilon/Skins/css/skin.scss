@@ -1057,3 +1057,6 @@ a.link
 
 // Bootstrap embed-responsive extensions
 .embed-responsive-5by4 { padding-bottom:78.75%; }
+
+// fix colored background on DNN radiobuttons
+.dnnRadiobutton .mark { background-color:transparent; }
