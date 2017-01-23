@@ -4,12 +4,8 @@
 <%@ Register TagPrefix="dnn" TagName="SEARCH" Src="~/Admin/Skins/Search.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="USER" Src="~/Admin/Skins/User.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="LOGIN" Src="~/Admin/Skins/Login.ascx" %>
-<%@ Register TagPrefix="dnn" TagName="PRIVACY" Src="~/Admin/Skins/Privacy.ascx" %>
-<%@ Register TagPrefix="dnn" TagName="TERMS" Src="~/Admin/Skins/Terms.ascx" %>
-<%@ Register TagPrefix="dnn" TagName="COPYRIGHT" Src="~/Admin/Skins/Copyright.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="JQUERY" Src="~/Admin/Skins/jQuery.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="META" Src="~/Admin/Skins/Meta.ascx" %>
-<%@ Register TagPrefix="dnn" TagName="BANNER" Src="~/Admin/Skins/Banner.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="BREADCRUMB" Src="~/Admin/Skins/BreadCrumb.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="JavaScriptLibraryInclude" Src="~/admin/Skins/JavaScriptLibraryInclude.ascx" %>
 <%@ Register TagPrefix="skin" TagName="FUNCTIONS" Src="SkinObjects/Functions.ascx" %>
@@ -21,8 +17,6 @@
 <%@ Register TagPrefix="skin" TagName="LOGOTITLE" Src="SkinObjects/LogoTitle.ascx" %>
 <%@ Register TagPrefix="skin" TagName="LOGOMOBILE" Src="SkinObjects/LogoMobile.ascx" %>
 <%@ Register TagPrefix="skin" TagName="FEEDBACKBUTTON" Src="SkinObjects/FeedbackButton.ascx" %>
-<%@ Register TagPrefix="skin" TagName="FOOTERCONTENT" Src="SkinObjects/FooterContent.ascx" %>
-<%@ Register TagPrefix="skin" TagName="YCYCOUNTER" Src="SkinObjects/YCycounter.ascx" %>
 <%@ Register TagPrefix="skin" TagName="PRIMARYMENU" Src="SkinObjects/PrimaryMenu.ascx" %>
 <%@ Register TagPrefix="skin" TagName="SECONDARYMENU" Src="SkinObjects/SecondaryMenu.ascx" %>
 <%@ Register TagPrefix="skin" TagName="LOCALMENU" Src="SkinObjects/LocalMenu.ascx" %>
@@ -161,23 +155,8 @@
         </div>
     </div>
 </div>
-<footer class="footer skin-footer">
-    <div class="skin-footer-main">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-md-10 col-sm-12">
-                    <div class="row">
-                        <div class="skin-footer-buttons col-sm-6 hidden-xs">
-                            <dnn:BANNER id="dnnBanner1" runat="server" GroupName="<%# Config.FooterButtonsGroupName %>" BannerTypeId="4" BannerCount="3" Orientation="H" AllowNullBannerType="true" />    
-                        </div>
-                        <skin:FOOTERCONTENT runat="server" CssClass="skin-footer-content col-sm-6" ResourceKey="FooterPane1.Content" />
-                    </div>
-                </div>
-                <skin:FOOTERCONTENT runat="server" CssClass="col-lg-2 col-md-2 col-sm-6 skin-footer-content" ResourceKey="FooterPane2.Content" />
-                <skin:FOOTERCONTENT runat="server" CssClass="col-lg-2 col-sm-6 skin-footer-content" ResourceKey="FooterPane3.Content" />
-            </div>
-        </div>
-    </div>
+<footer class="footer skin-footer admin">
+    <div class="skin-footer-main"></div>
     <div class="skin-footer-last">
         <div class="container">
             <div class="row">
