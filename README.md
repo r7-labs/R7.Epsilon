@@ -51,6 +51,17 @@ This feature currently available only if *Custom* skin is selected for a page.
 - Optionally replace `Global.asax` file in the application root folder with one shipped alongside skin install package
 (this will enable more advanced `VaryByCustom` cache options for skin controls - by PortalId, by UserRoles).
 
+## Troubleshoting install on DNN 8/9
+
+The skin currently uses `~/admin/Skins/banner.ascx` skinobject, which was removed from DNN install since version v8.0.0.
+If you installing *R7.Epsilon* skin on DNN install which was upgraded from any pre- DNN 8 version, you should be OK.
+
+But if you installing *R7.Epsilon* skin on a clean DNN 8/9 install, you should experience a skin crash.
+The most simple way to fix it is to remove the `&lt;%@ Register TagPrefix="dnn" TagName="BANNER" Src="~/Admin/Skins/Banner.ascx" %&gt;`
+and `&lt;dnn:BANNER id="dnnBanner1" runat="server" ... /&gt;` lines from all `.ascx` files in the `~/Portals/_default/Skins/R7.Epsilon` folder.
+
+If you like to enable banners functionality, consult [Dnn.Vendors](https://github.com/DNNCommunity/DNN.Vendors/issues) issues.
+
 # Acknowledgements
 
 Project code originates from Chris Hammond's [HammerFlex](https://github.com/ChrisHammond/HammerFlex) skin 
