@@ -57,8 +57,8 @@ The skin currently uses `~/admin/Skins/banner.ascx` skinobject, which was remove
 If you installing *R7.Epsilon* skin on DNN install which was upgraded from any pre- DNN 8 version, you should be OK.
 
 But if you installing *R7.Epsilon* skin on a clean DNN 8/9 install, you should experience a skin crash.
-The most simple way to fix it is to remove the `&lt;%@ Register TagPrefix="dnn" TagName="BANNER" Src="~/Admin/Skins/Banner.ascx" %&gt;`
-and `&lt;dnn:BANNER id="dnnBanner1" runat="server" ... /&gt;` lines from all `.ascx` files in the `~/Portals/_default/Skins/R7.Epsilon` folder.
+The most simple way to fix it is to remove the `<%@ Register TagPrefix="dnn" TagName="BANNER" Src="~/Admin/Skins/Banner.ascx" %>`
+and `<dnn:BANNER id="dnnBanner1" runat="server" ... />` lines from all `.ascx` files in the `~/Portals/_default/Skins/R7.Epsilon` folder.
 
 If you like to enable banners functionality, consult [Dnn.Vendors](https://github.com/DNNCommunity/DNN.Vendors/issues) issues.
 
