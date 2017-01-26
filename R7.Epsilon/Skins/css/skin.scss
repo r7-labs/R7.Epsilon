@@ -538,21 +538,36 @@ ul.skin-socialgroups
     .skin-page-share-buttons > * { margin-top:10px !important; }
 }
 
-.breadcrumb 
-{
+.breadcrumb {
     background-color:transparent; // lighten($color-complement-1, 20%);
     padding-left:0;
     padding-right:0;
     margin-bottom:0;
     margin-top:0;
 
-    .skin-breadcrumb-link
-    {
+    a.skin-breadcrumb-link {
         margin-right:5px;
         margin-left:5px;
-        &:first-child { margin-left:inherit; }
-        &:last-child 
-        {
+    }
+
+    // for DNN 8+
+    > span > span {
+        > span:first-child > a.skin-breadcrumb-link { 
+            margin-left:inherit;
+        }
+        > span:last-child > a.skin-breadcrumb-link {
+            color:$color-secondary-1-3;;
+            font-size:$big-font-size; 
+            font-weight:bold;
+        }
+    }
+
+    // for DNN 7-
+    > span > a.skin-breadcrumb-link {
+        &:first-child { 
+            margin-left:inherit; 
+        }
+        &:last-child {
             color:$color-secondary-1-3;;
             font-size:$big-font-size; 
             font-weight:bold;

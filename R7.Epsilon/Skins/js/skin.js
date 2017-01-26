@@ -36,11 +36,24 @@ $(function() {
 
 function skin_init_breadcrumb () {
     if (epsilon.breadCrumbsRemoveLastLink) {
-        var breadcrumb = $(".breadcrumb > span").first ();
-        if (breadcrumb)
-        {
-            // remove link to current page
-            breadcrumb.children ("a").last ().remove ();   
+        // assume new style breadcrumbs with schema.org markup (DNN 8+)
+        var schemaOrg = true;
+        var breadcrumb = $(".breadcrumb > span > span").first ();
+
+        if (breadcrumb.length === 0) {
+            // it looks like an old style breadcrumbs
+            schemaOrg = false;
+            breadcrumb = $(".breadcrumb > span").first ();
+        }
+
+        // remove last link (to the current page)
+        if (breadcrumb.length > 0) {
+            if (schemaOrg) {
+                breadcrumb.find ("a").last ().parent ().remove ();
+            }
+            else {
+                breadcrumb.find ("a").last ().remove ();
+            }
         }
     }
 }
