@@ -60,11 +60,30 @@ will stop working as it cannot reference required things (namely, `BannerControl
 This if you installing *R7.Epsilon* skin on a DNN 8/9 (or upgrading website with *R7.Epsilon* skin used) - 
 you will experience a skin crash.
 
-The most simple way to fix it is to remove the `<%@ Register TagPrefix="dnn" TagName="BANNER" Src="~/Admin/Skins/Banner.ascx" %>`
-and `<dnn:BANNER id="dnnBanner1" runat="server" ... />` lines from all `.ascx` files in the `~/Portals/_default/Skins/R7.Epsilon` folder
-until you could get banners working again.
+If you don't need banners functionality, then the most simple way to fix it is to remove the 
+`<%@ Register TagPrefix="dnn" TagName="BANNER" Src="~/Admin/Skins/Banner.ascx" %>`
+and `<dnn:BANNER id="dnnBanner1" runat="server" ... />` lines from all `.ascx` files 
+in the `~/Portals/_default/Skins/R7.Epsilon` folder.
 
-If you like to enable banners functionality, consult [Dnn.Vendors](https://github.com/DNNCommunity/DNN.Vendors/issues) issues.
+If you'd like to enable banners functionality:
+
+1. Download and install [fixed Dnn.Vendors](https://github.com/roman-yagodin/DNN.Vendors/releases/tag/v8.0.0-update.1) package.
+
+2. In case of new install, get banner skinobject files from any DNN 7.x install (or platform install package).
+   These files are:
+   - `~/admin/Skins/banner.ascx`
+   - `~/admin/Skins/banner.xml`
+   - `~/admin/Skins/Banner.ascx.cs`
+
+3. Open `~/admin/Skins/Banner.ascx.cs` file in the text editor, replace
+    ```
+    using DotNetNuke.Services.Vendors;
+    ```
+    with:
+    ```
+    using Dnn.Modules.Vendors;
+    using Dnn.Modules.Vendors.Components;
+    ```
 
 # Acknowledgements
 
