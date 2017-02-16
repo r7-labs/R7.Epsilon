@@ -191,6 +191,9 @@
     <Compile Include="Skins\SkinObjects\EpsilonMenuBase.cs" />
     <Compile Include="Components\CacheHelper.cs" />
     <Compile Include="Components\A11yHelper.cs" />
+    <Compile Include="Skins\PopupSkin.ascx.cs">
+      <DependentUpon>PopupSkin.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Containers\Blank.ascx" />
