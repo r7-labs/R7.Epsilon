@@ -4,7 +4,7 @@
 //  Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2015-2016 Roman M. Yagodin
+//  Copyright (c) 2015-2017 Roman M. Yagodin
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -21,7 +21,9 @@
 
 using System.Linq;
 using System.Text;
+using System.Web.Caching;
 using DotNetNuke.Common;
+using DotNetNuke.Common.Utilities;
 using DotNetNuke.Entities.Modules;
 using DotNetNuke.Entities.Tabs;
 using R7.Epsilon.Components;
@@ -60,7 +62,7 @@ namespace R7.Epsilon.Skins.SkinObjects
         protected string LayoutManagerUrl
         {
             get {
-                var layoutManager = ModuleController.Instance.GetModuleByDefinition (PortalSettings.PortalId, "R7.Epsilon.LayoutManager");
+                var layoutManager = GetLayoutManager (PortalSettings.PortalId);
                 if (layoutManager != null) {
                     return Globals.NavigateURL (layoutManager.TabID, "Select", "mid", layoutManager.ModuleID.ToString ());
                 }
@@ -68,6 +70,16 @@ namespace R7.Epsilon.Skins.SkinObjects
                 // TODO: Log error: no LayoutManager module found, layout selection feature is disabled
                 return null;
             }
+        }
+
+        // TODO: Invalidate cache (somehow)
+        protected ModuleInfo GetLayoutManager (int portalId)
+        {
+            // GetModuleByDefinition is very slow, so cache its result
+            return DataCache.GetCachedData<ModuleInfo> (
+                new CacheItemArgs ("//r7_Epsilon/LayoutManager?data=Module&portalId=" + portalId, 1200, CacheItemPriority.Normal),
+                (c) => ModuleController.Instance.GetModuleByDefinition (portalId, "R7.Epsilon.LayoutManager")
+            );
         }
 
         public string LocalizationResources
