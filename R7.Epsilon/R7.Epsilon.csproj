@@ -178,9 +178,6 @@
     <Compile Include="Skins\SkinObjects\PageInfo.ascx.cs">
       <DependentUpon>PageInfo.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Skins\SkinObjects\Permalink.ascx.cs">
-      <DependentUpon>Permalink.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Skins\SkinObjects\PrimaryMenu.ascx.cs">
       <DependentUpon>PrimaryMenu.ascx</DependentUpon>
     </Compile>
@@ -316,7 +313,6 @@
     <Content Include="Skins\SkinObjects\LogoTitle.ascx" />
     <Content Include="Skins\SkinObjects\PageHeader.ascx" />
     <Content Include="Skins\SkinObjects\PageInfo.ascx" />
-    <Content Include="Skins\SkinObjects\Permalink.ascx" />
     <Content Include="Skins\SkinObjects\PrimaryMenu.ascx" />
     <Content Include="Skins\SkinObjects\SecondaryMenu.ascx" />
     <Content Include="Skins\SkinObjects\SocialGroups.ascx" />

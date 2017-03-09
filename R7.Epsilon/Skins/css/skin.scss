@@ -497,15 +497,9 @@ ul.skin-socialgroups
     h1 small, h2 small { display:inline-block; }
 }
 
-.page-header .skin-page-info
-{
-    padding-top:10px;
-    font-size:85%;
-    color:gray;
-
-    span.glyphicon.glyphicon-user {
-        margin-left:1em;
-    }
+.skin-page-info > div {
+    display:inline-block;
+    margin-right:1em;
 }
 
 #skin-separator-1
@@ -614,11 +608,6 @@ ul.skin-socialgroups
         background-repeat:no-repeat;
     }
     */
-}
-
-.skin-permalink
-{
-    .skin-permalink-link { color:#777 }
 }
 
 /* Footer */

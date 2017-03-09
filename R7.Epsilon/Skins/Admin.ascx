@@ -12,7 +12,6 @@
 <%@ Register TagPrefix="skin" TagName="SOCIALGROUPS" Src="SkinObjects/SocialGroups.ascx" %>
 <%@ Register TagPrefix="skin" TagName="PAGEHEADER" Src="SkinObjects/PageHeader.ascx" %>
 <%@ Register TagPrefix="skin" TagName="PAGEINFO" Src="SkinObjects/PageInfo.ascx" %>
-<%@ Register TagPrefix="skin" TagName="PERMALINK" Src="SkinObjects/Permalink.ascx" %>
 <%@ Register TagPrefix="skin" TagName="FOUNDERS" Src="SkinObjects/Founders.ascx" %>
 <%@ Register TagPrefix="skin" TagName="LOGOTITLE" Src="SkinObjects/LogoTitle.ascx" %>
 <%@ Register TagPrefix="skin" TagName="LOGOMOBILE" Src="SkinObjects/LogoMobile.ascx" %>
@@ -151,8 +150,8 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <skin:PERMALINK runat="server" />
-        </div>
+            <skin:PAGEINFO runat="server" />
+		</div>
     </div>
 </div>
 <footer class="footer skin-footer admin">

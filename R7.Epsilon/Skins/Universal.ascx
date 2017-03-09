@@ -19,7 +19,6 @@
 <%@ Register TagPrefix="skin" TagName="PAGEHEADER" Src="SkinObjects/PageHeader.ascx" %>
 <%@ Register TagPrefix="skin" TagName="PAGEINFO" Src="SkinObjects/PageInfo.ascx" %>
 <%@ Register TagPrefix="skin" TagName="SOCIALSHAREBUTTONS" Src="SkinObjects/SocialShareButtons.ascx" %>
-<%@ Register TagPrefix="skin" TagName="PERMALINK" Src="SkinObjects/Permalink.ascx" %>
 <%@ Register TagPrefix="skin" TagName="SOCIALSHARESCRIPTS" Src="SkinObjects/SocialShareScripts.ascx" %>
 <%@ Register TagPrefix="skin" TagName="FOUNDERS" Src="SkinObjects/Founders.ascx" %>
 <%@ Register TagPrefix="skin" TagName="LOGOTITLE" Src="SkinObjects/LogoTitle.ascx" %>
@@ -129,7 +128,6 @@
         <div class="container">
             <div class="page-header">
                 <skin:PAGEHEADER runat="server" />
-                <skin:PAGEINFO runat="server" />
             </div>
             <skin:LOCALMENU runat="server" />
             <skin:HEADERSMENU runat="server" PassDefaultTemplateArgs="false" />
@@ -236,9 +234,9 @@
                 <dnn:TAGS runat="server" AllowTagging="false" Separator=" " />
             </div>
         </div>
-        <div class="col-md-12">
-            <skin:PERMALINK runat="server" />
-        </div>
+		<div class="col-md-12">
+		    <skin:PAGEINFO runat="server" />
+		</div>
     </div>
 </div>
 <footer class="footer skin-footer">

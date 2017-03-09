@@ -4,7 +4,7 @@
 //  Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2015-2016 Roman M. Yagodin
+//  Copyright (c) 2015-2017 Roman M. Yagodin
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -19,6 +19,7 @@
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+using DotNetNuke.Common;
 using DotNetNuke.Entities.Portals;
 using R7.Epsilon.Models;
 
@@ -26,14 +27,6 @@ namespace R7.Epsilon.Skins.SkinObjects
 {
     public class PageInfo : EpsilonSkinObjectBase
     {
-        public bool ShowPageInfo { get; set; }
-
-        protected PageInfo ()
-        {
-            // set default values
-            ShowPageInfo = true;
-        }
-
         protected string PublishedOnDate
         {
             get
@@ -51,6 +44,18 @@ namespace R7.Epsilon.Skins.SkinObjects
                 var activeTab = PortalSettings.ActiveTab;
                 var user = activeTab.CreatedByUser (PortalSettings.PortalId);
                 return (user != null)? user.DisplayName : Localizer.SafeGetString ("SystemUser.Text", "System");
+            }
+        }
+
+        /// <summary>
+        /// Gets page permalink
+        /// </summary>
+        /// <value>The page permalink.</value>
+        protected string PagePermalink {
+            get {
+                return Globals.AddHTTP (PortalSettings.Current.PortalAlias.HTTPAlias +
+                    string.Format (Localizer.SafeGetString ("Permalink.Format", "/Default.aspx?TabId={0}"),
+                    PortalSettings.ActiveTab.TabID));
             }
         }
     }
