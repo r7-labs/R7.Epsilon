@@ -331,6 +331,12 @@
     <Content Include="Containers\Alert_Success.ascx" />
     <Content Include="Containers\Alert_Warning.ascx" />
     <Content Include="Containers\Alert_Danger.ascx" />
+    <Content Include="Containers\PanelBody_Warning.ascx" />
+    <Content Include="Containers\PanelBody_Primary.ascx" />
+    <Content Include="Containers\PanelBody_Default.ascx" />
+    <Content Include="Containers\PanelBody_Info.ascx" />
+    <Content Include="Containers\PanelBody_Success.ascx" />
+    <Content Include="Containers\PanelBody_Danger.ascx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
