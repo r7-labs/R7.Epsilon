@@ -16,7 +16,6 @@
 <%@ Register TagPrefix="skin" TagName="FUNCTIONS" Src="SkinObjects/Functions.ascx" %>
 <%@ Register TagPrefix="skin" TagName="GADSENSE" Src="SkinObjects/GAdsense.ascx" %>
 <%@ Register TagPrefix="skin" TagName="SOCIALGROUPS" Src="SkinObjects/SocialGroups.ascx" %>
-<%@ Register TagPrefix="skin" TagName="PAGEINFO" Src="SkinObjects/PageInfo.ascx" %>
 <%@ Register TagPrefix="skin" TagName="SOCIALSHAREBUTTONS" Src="SkinObjects/SocialShareButtons.ascx" %>
 <%@ Register TagPrefix="skin" TagName="SOCIALSHARESCRIPTS" Src="SkinObjects/SocialShareScripts.ascx" %>
 <%@ Register TagPrefix="skin" TagName="FOUNDERS" Src="SkinObjects/Founders.ascx" %>

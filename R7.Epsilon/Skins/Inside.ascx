@@ -18,7 +18,6 @@
 <%@ Register TagPrefix="skin" TagName="SOCIALGROUPS" Src="SkinObjects/SocialGroups.ascx" %>
 <%@ Register TagPrefix="skin" TagName="PAGEHEADER" Src="SkinObjects/PageHeader.ascx" %>
 <%@ Register TagPrefix="skin" TagName="PAGEINFO" Src="SkinObjects/PageInfo.ascx" %>
-<%@ Register TagPrefix="skin" TagName="PERMALINK" Src="SkinObjects/Permalink.ascx" %>
 <%@ Register TagPrefix="skin" TagName="FOUNDERS" Src="SkinObjects/Founders.ascx" %>
 <%@ Register TagPrefix="skin" TagName="LOGOTITLE" Src="SkinObjects/LogoTitle.ascx" %>
 <%@ Register TagPrefix="skin" TagName="LOGOMOBILE" Src="SkinObjects/LogoMobile.ascx" %>
@@ -126,7 +125,6 @@
         <div class="container">
             <div class="page-header">
                 <skin:PAGEHEADER runat="server" />
-                <skin:PAGEINFO runat="server" />
             </div>
             <skin:LOCALMENU runat="server" />
             <skin:HEADERSMENU runat="server" PassDefaultTemplateArgs="false" />
@@ -232,7 +230,7 @@
             </div>
         </div>
         <div class="col-md-12">
-            <skin:PERMALINK runat="server" />
+            <skin:PAGEINFO runat="server" />
         </div>
     </div>
 </div>
