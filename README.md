@@ -32,10 +32,6 @@ are stored in the page settings. Additional layout can be set to use in a11y mod
 
 This feature currently available only if *Custom* skin is selected for a page.
 
-## Features considered temporary (could be removed in any subsequent release):
-
-- *Flowplayer HTML5* support (must be installed to `~/Resources/Shared/components/flowplayer`).
-
 ## Some planned features:
 
 - BlueImp gallery support (at least for Home skin).
