@@ -109,7 +109,7 @@ namespace R7.Epsilon.Components
         /// <returns>The layout manager.</returns>
         public static LayoutManager GetManager ()
         {
-            // REVIEW: Need to rename LayoutManager module or LayoutManager class
+            // TODO: Need to rename LayoutManager module or LayoutManager class
             return LayoutManager.Instance;
         }
     }
