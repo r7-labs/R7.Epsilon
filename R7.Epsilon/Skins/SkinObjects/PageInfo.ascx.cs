@@ -19,32 +19,23 @@
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+using System.Linq;
 using DotNetNuke.Common;
+using DotNetNuke.Entities.Content;
 using DotNetNuke.Entities.Portals;
-using R7.Epsilon.Models;
 
 namespace R7.Epsilon.Skins.SkinObjects
 {
     public class PageInfo : EpsilonSkinObjectBase
     {
-        protected string PublishedOnDate
-        {
-            get
-            {
-                var activeTab = PortalSettings.ActiveTab;
-                return ModelHelper.PublishedOnDate (activeTab.CreatedOnDate, activeTab.StartDate)
-                    .ToString (Localizer.SafeGetString ("PublishedOnDate.Format", "MM/dd/yyyy")); 
-            }
-        }
+        readonly ContentItem lastModifiedContentItem;
 
-        protected string PublishedByUserName
+        public PageInfo ()
         {
-            get
-            {
-                var activeTab = PortalSettings.ActiveTab;
-                var user = activeTab.CreatedByUser (PortalSettings.PortalId);
-                return (user != null)? user.DisplayName : Localizer.SafeGetString ("SystemUser.Text", "System");
-            }
+            lastModifiedContentItem = new ContentController ()
+                .GetContentItemsByTabId (PortalSettings.ActiveTab.TabID)
+                .OrderByDescending (ci => ci.LastModifiedOnDate)
+                .FirstOrDefault ();
         }
 
         /// <summary>
@@ -57,6 +48,28 @@ namespace R7.Epsilon.Skins.SkinObjects
                     string.Format (Localizer.SafeGetString ("Permalink.Format", "/Default.aspx?TabId={0}"),
                     PortalSettings.ActiveTab.TabID));
             }
+        }
+
+        protected string LastContentModifiedOnDate {
+            get {
+                return GetLastModifiedContentItem ().LastModifiedOnDate.ToString (Localizer.SafeGetString ("PublishedOnDate.Format", "MM/dd/yyyy"));
+            }
+        }
+
+        protected string LastContentModifiedByUserName {
+            get {
+                var user = GetLastModifiedContentItem ().LastModifiedByUser (PortalSettings.PortalId);
+                return (user != null) ? user.DisplayName : Localizer.SafeGetString ("SystemUser.Text", "System");
+            }
+        }
+
+        protected ContentItem GetLastModifiedContentItem ()
+        {
+            if (lastModifiedContentItem != null) {
+                return lastModifiedContentItem;
+            }
+
+            return PortalSettings.ActiveTab;
         }
     }
 }

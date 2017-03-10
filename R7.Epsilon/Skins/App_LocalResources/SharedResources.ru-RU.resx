@@ -105,8 +105,8 @@
     <data name="AgeRating.Title" xml:space="preserve">
         <value>Информационная продукция для детей, достигших возраста двенадцати лет (12+)</value>
     </data>
-    <data name="Published.Text" xml:space="preserve">
-        <value>Опубликовано:</value>
+    <data name="LastModified.Text" xml:space="preserve">
+        <value>Последние изменения:</value>
     </data>
     <data name="Permalink.Text" xml:space="preserve">
         <value>Постоянная ссылка:</value>
