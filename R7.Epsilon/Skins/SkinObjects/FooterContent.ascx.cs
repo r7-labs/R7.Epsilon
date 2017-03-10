@@ -21,6 +21,7 @@
 
 namespace R7.Epsilon.Skins.SkinObjects
 {
+    // TODO: Rename class to LocalizedPanel or something
     public class FooterContent: EpsilonSkinObjectBase
     {
         public string CssClass { get; set; }
