@@ -116,6 +116,7 @@
     </nav>
     <nav class="navbar skin-local-navbar" role="navigation">
         <div class="container">
+			<h1 class="sr-only"><%# PortalSettings.ActiveTab.LocalizedTabName %></h1>
             <skin:HEADERSMENU runat="server" PassDefaultTemplateArgs="false" />
             <div id="skin-separator-1" class="hidden-xs hidden-local">&nbsp;</div>
             <skin:SOCIALSHAREBUTTONS runat="server" />
