@@ -26,47 +26,14 @@ namespace R7.Epsilon.Skins.SkinObjects
 {
     public class PageHeader : EpsilonSkinObjectBase
     {
-        // REVIEW: Convert to control attribute?
-        // chars to trim, including en and em dashes
-        private static char [] trimSeparators = { ' ', '-', '\u2013', '\u2014',  '.', ':', '/', '\\' };
-
         protected string Title
         {
-            get
-            {
-                // if Title ends with TabName, use Title instead of TabName
-                var activeTab = PortalSettings.ActiveTab;
-                if (!string.IsNullOrWhiteSpace (activeTab.Title))
-                {
-                    if (activeTab.Title.EndsWith (activeTab.TabName, StringComparison.CurrentCultureIgnoreCase))
-                        return activeTab.Title;
-                }
-
-                return activeTab.TabName;
-            }
+            get { return PortalSettings.ActiveTab.TabName; }
         }
 
         protected string TagLine
         {
-            get
-            { 
-                // if Title starts with TabName, use varying Title part as tagline,
-                // else if Title ends with TabName, return empty string,
-                // or use Title as tagline by default.
-                var activeTab = PortalSettings.ActiveTab;
-                if (!string.IsNullOrWhiteSpace (activeTab.Title))
-                {
-                    if (activeTab.Title.StartsWith (activeTab.TabName, StringComparison.CurrentCultureIgnoreCase))
-                        return activeTab.Title.Substring (activeTab.TabName.Length).TrimStart (trimSeparators);
-
-                    if (activeTab.Title.EndsWith (activeTab.TabName, StringComparison.CurrentCultureIgnoreCase))
-                        return string.Empty;
-
-                    return activeTab.Title;
-                }
-            
-                return string.Empty;
-            }
+            get { return string.Empty; }
         }
     }
 }
