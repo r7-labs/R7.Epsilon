@@ -322,6 +322,7 @@ ul.skin-socialgroups
     {
         display:inline-block;
         margin-right:3px;
+        vertical-align:middle;
 
         @include square-backgrounded-button (32px, $social-icons);
 
