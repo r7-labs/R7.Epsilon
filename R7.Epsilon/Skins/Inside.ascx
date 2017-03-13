@@ -261,7 +261,7 @@
                 <div class="col-md-10 col-sm-9 col-xs-12 skin-terms">
                     <div>
                         <dnn:COPYRIGHT runat="server" /> |
-                        <asp:Label runat="server" CssClass="skin-copyright" Text='<%# Localizer.GetString ("SkinCopyright.Text") %>' />
+                        <asp:Label runat="server" CssClass="skin-copyright" Text='<%# SkinCopyright %>' />
                         <asp:Literal runat="server" Visible='<%# Config.ShowTerms %>' Text="|" />
                         <dnn:TERMS   runat="server" Visible='<%# Config.ShowTerms %>' />
                         <asp:Literal runat="server" Visible='<%# Config.ShowPrivacy %>' Text="|" />

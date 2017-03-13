@@ -80,6 +80,14 @@ namespace R7.Epsilon.Skins
             }
         }
 
+        public string SkinCopyright
+        {
+            get {
+                return Localizer.GetString ("SkinCopyright.Text")
+                                .Replace ("{version}", System.Reflection.Assembly.GetExecutingAssembly ().GetName ().Version.ToString (3));
+            }
+        }
+
         #region ILocalizableControl implementation
 
         protected ControlLocalizer localizer;
