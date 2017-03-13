@@ -20,6 +20,7 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
+using System.Threading;
 using System.Web.UI.WebControls;
 using DotNetNuke.Services.Exceptions;
 using DotNetNuke.Services.Log.EventLog;
@@ -46,6 +47,8 @@ namespace R7.Epsilon.Skins.SkinObjects.Banners
 
         #endregion
 
+        static long logAntiSpamCounter;
+
         protected override void OnInit (EventArgs e)
         {
             base.OnInit (e);
@@ -61,7 +64,9 @@ namespace R7.Epsilon.Skins.SkinObjects.Banners
                 placeBanner.Controls.Add (bannerWrapper);
             }
             catch (Exception ex) {
-                LogException (ex);
+                if (Interlocked.Increment (ref logAntiSpamCounter) == 1L) {
+                    LogException (ex);
+                }
             }
         }
 
