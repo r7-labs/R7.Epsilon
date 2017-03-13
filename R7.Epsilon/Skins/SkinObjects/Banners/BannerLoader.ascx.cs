@@ -21,6 +21,7 @@
 
 using System;
 using System.Web.UI.WebControls;
+using DotNetNuke.Services.Exceptions;
 using DotNetNuke.Services.Log.EventLog;
 
 namespace R7.Epsilon.Skins.SkinObjects.Banners
@@ -59,12 +60,19 @@ namespace R7.Epsilon.Skins.SkinObjects.Banners
                 bannerWrapper.DataBind ();
                 placeBanner.Controls.Add (bannerWrapper);
             }
-            catch {
-                EventLogController.Instance.AddLog ("Message", GetType ().BaseType.FullName
-                                                    + " cannot load '~/admin/Skins/banner.ascx' skinobject, please check project readme for details.",
-                                                    EventLogController.EventLogType.HOST_ALERT
-                );
+            catch (Exception ex) {
+                LogException (ex);
             }
+        }
+
+        void LogException (Exception ex)
+        {
+            var logEntry = new LogInfo ();
+            logEntry.AddProperty ("Source", GetType ().BaseType.FullName);
+            logEntry.AddProperty ("Message", "Cannot load '~/admin/Skins/banner.ascx' skinobject, please check project readme for details.");
+            logEntry.LogTypeKey = EventLogController.EventLogType.HOST_ALERT.ToString ();
+            logEntry.Exception = new ExceptionInfo (ex);
+            EventLogController.Instance.AddLog (logEntry);
         }
     }
 }
