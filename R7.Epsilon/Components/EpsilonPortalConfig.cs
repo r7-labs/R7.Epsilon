@@ -49,6 +49,10 @@ namespace R7.Epsilon.Components
 
         public YoutubeConfig Youtube{ get; set; }
 
+        public InstagramConfig Instagram { get; set; }
+
+        public LinkedinConfig Linkedin { get; set; }
+
         public AdsenseConfig Adsense { get; set; }
 
         public bool ShowTerms { get; set; }
@@ -76,11 +80,14 @@ namespace R7.Epsilon.Components
         public string Slot { get; set; }
     }
 
-    public abstract class SocialNetworkConfig
+    public abstract class SimpleSocialNetworkConfig
+    {
+        public string Group { get; set; }
+    }
+
+    public abstract class SocialNetworkConfig: SimpleSocialNetworkConfig
     {
         public bool ShareEnabled { get; set; }
-
-        public string Group { get; set; }
     }
 
     public class VkConfig: SocialNetworkConfig
@@ -102,14 +109,20 @@ namespace R7.Epsilon.Components
     {
     }
 
-    public class OkConfig
+    public class OkConfig: SimpleSocialNetworkConfig
     {
-        public string Group { get; set; }
     }
 
-    public class YoutubeConfig
+    public class YoutubeConfig: SimpleSocialNetworkConfig
     {
-        public string Group { get; set; }
+    }
+
+    public class InstagramConfig : SimpleSocialNetworkConfig
+    {
+    }
+
+    public class LinkedinConfig: SimpleSocialNetworkConfig
+    {
     }
 }
 

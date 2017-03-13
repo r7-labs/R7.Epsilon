@@ -42,6 +42,12 @@ youtube:
 ok:
   group: your-ok-group
 
+instagram:
+  group: your-instagram-group
+
+linkedin:
+  group: your-linkedin-group
+
 adsense:
   client: ca-pub-0000000000000000
   slot: 0000000000
