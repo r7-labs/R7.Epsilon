@@ -47,21 +47,16 @@ This feature currently available only if *Custom* skin is selected for a page.
 - Optionally replace `Global.asax` file in the application root folder with one shipped alongside skin install package
 (this will enable more advanced `VaryByCustom` cache options for skin controls - by PortalId, by UserRoles).
 
-## Troubleshoting DNN 8/9
+## Banner skinobject support for DNN 8/9
 
 The skin currently uses `~/admin/Skins/banner.ascx` skinobject, which was removed from DNN install since version v8.0.0.
 Moreover, during upgrade from DNN 7 to DNN 8/9, the *Vendors* and *Banners* modules will be removed, so remaining banner skinobject 
 will stop working as it cannot reference required things (namely, `BannerController` class) anymore.
 
-This if you installing *R7.Epsilon* skin on a DNN 8/9 (or upgrading website with *R7.Epsilon* skin used) - 
-you will experience a skin crash.
+As a workaround, skin will try to load `~/admin/Skins/banner.ascx` dynamically, logging error message of HOST_ALERT type
+in case of failure. If you don't need banners functionality, just ignore this message.
 
-If you don't need banners functionality, then the most simple way to fix it is to remove the 
-`<%@ Register TagPrefix="dnn" TagName="BANNER" Src="~/Admin/Skins/Banner.ascx" %>`
-and `<dnn:BANNER id="dnnBanner1" runat="server" ... />` lines from all `.ascx` files 
-in the `~/Portals/_default/Skins/R7.Epsilon` folder.
-
-If you'd like to enable banners functionality:
+In case you'd like to enable banners functionality:
 
 1. Download and install [fixed Dnn.Vendors](https://github.com/roman-yagodin/DNN.Vendors/releases/tag/v8.0.0-update.1) package.
 
