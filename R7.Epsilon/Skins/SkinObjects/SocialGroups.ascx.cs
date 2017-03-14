@@ -31,6 +31,8 @@ namespace R7.Epsilon.Skins.SkinObjects
         [Obsolete]
         public bool MobileView { get; set; }
 
+        IEnumerable<SocialNetworkConfig> secondarySocialNetworks;
+
         public IEnumerable<SocialNetworkConfig> GetPrimarySocialNetworks ()
         {
             return Config.SocialNetworks.Where (n => n.IsPrimary);
@@ -38,7 +40,12 @@ namespace R7.Epsilon.Skins.SkinObjects
 
         public IEnumerable<SocialNetworkConfig> GetSecondarySocialNetworks ()
         {
-            return Config.SocialNetworks.Where (n => !n.IsPrimary);
+            return secondarySocialNetworks ?? (secondarySocialNetworks = Config.SocialNetworks.Where (n => !n.IsPrimary));
+        }
+
+        public bool ShowDropdown
+        {
+            get { return GetSecondarySocialNetworks ().Any (); }
         }
     }
 }
