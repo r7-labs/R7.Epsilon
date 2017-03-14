@@ -15,8 +15,9 @@
     	</ItemTemplate>
     </asp:ListView>
 	<li class="dropdown">
-		<a role="button" href="#" class="skin-social-button skin-social-more dropdown-toggle" type="button" id="dropdownSocialGroups" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
-		<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownSocialGroups">
+		<a id="dropdownSocialGroups" role="button" href="#" class="skin-social-button skin-social-more dropdown-toggle"
+			data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="<%: Localizer.GetString ("MoreSocialGroups.Title")%>"></a>
+	    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownSocialGroups">
 			<asp:ListView runat="server" ItemType="R7.Epsilon.Components.SocialNetworkConfig" SelectMethod="GetSecondarySocialNetworks">
                 <LayoutTemplate>
                     <div runat="server" id="itemPlaceholder"></div>

@@ -93,6 +93,9 @@
 	<data name="LinkedIn.Title" xml:space="preserve">
         <value>LinkedIn</value>
     </data>
+	<data name="MoreSocialGroups.Title" xml:space="preserve">
+        <value>Нажмите, чтобы увидеть еще социальные сети</value>
+    </data>
     <data xml:space="preserve" name="YandexCycounter.Text">
         <value>Яндекс цитирования</value>
     </data>

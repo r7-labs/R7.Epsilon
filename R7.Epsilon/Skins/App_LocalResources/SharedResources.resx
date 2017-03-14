@@ -93,6 +93,9 @@
 	<data name="LinkedIn.Title" xml:space="preserve">
         <value>LinkedIn</value>
     </data>
+	<data name="MoreSocialGroups.Title" xml:space="preserve">
+        <value>Click to see more social networks</value>
+    </data>
     <data xml:space="preserve" name="YandexCycounter.Text">
         <value>Yandex citation index</value>
     </data>
