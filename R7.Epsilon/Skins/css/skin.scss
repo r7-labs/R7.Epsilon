@@ -343,6 +343,28 @@ ul.skin-socialgroups
 
         &.skin-social-yt { background-position:-160px 0; }
         &.skin-social-yt:hover { background-position:-160px -32px; }
+
+        &.skin-social-ig { background-position:-192px 0; }
+        &.skin-social-ig:hover { background-position:-192px -32px; }
+
+        &.skin-social-in { background-position:-224px 0; }
+        &.skin-social-in:hover { background-position:-224px -32px; }
+
+        &.skin-social-more { background-position:-256px 0; }
+        &.skin-social-more:hover { background-position:-256px -32px; }
+    }
+
+    ul.dropdown-menu {
+        li:hover .skin-social-button {
+            &.skin-social-vk { background-position:0 -32px; }
+            &.skin-social-fb { background-position:-32px -32px; }
+            &.skin-social-gp { background-position:-64px -32px; }
+            &.skin-social-tw { background-position:-96px -32px; }
+            &.skin-social-ok { background-position:-128px -32px; }
+            &.skin-social-yt { background-position:-160px -32px; }
+            &.skin-social-ig { background-position:-192px -32px; }
+            &.skin-social-in { background-position:-224px -32px; }
+        }
     }
 }
 
