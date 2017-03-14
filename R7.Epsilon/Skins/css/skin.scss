@@ -326,29 +326,29 @@ ul.skin-socialgroups
 
         @include square-backgrounded-button (32px, $social-icons);
 
-        &.skin-social-vk { background-position:0 0; }
-        &.skin-social-vk:hover { background-position:0 -32px; }
+        &.skin-social-vkontakte { background-position:0 0; }
+        &.skin-social-vkontakte:hover { background-position:0 -32px; }
 
-        &.skin-social-fb { background-position:-32px 0; }
-        &.skin-social-fb:hover { background-position:-32px -32px; }
+        &.skin-social-facebook { background-position:-32px 0; }
+        &.skin-social-facebook:hover { background-position:-32px -32px; }
 
-        &.skin-social-gp { background-position:-64px 0; }
-        &.skin-social-gp:hover { background-position:-64px -32px; }
+        &.skin-social-googleplus { background-position:-64px 0; }
+        &.skin-social-googleplus:hover { background-position:-64px -32px; }
 
-        &.skin-social-tw { background-position:-96px 0; }
-        &.skin-social-tw:hover { background-position:-96px -32px; }
+        &.skin-social-twitter { background-position:-96px 0; }
+        &.skin-social-twitter:hover { background-position:-96px -32px; }
 
-        &.skin-social-ok { background-position:-128px 0; }
-        &.skin-social-ok:hover { background-position:-128px -32px; }
+        &.skin-social-odnoklassniki { background-position:-128px 0; }
+        &.skin-social-odnoklassniki:hover { background-position:-128px -32px; }
 
-        &.skin-social-yt { background-position:-160px 0; }
-        &.skin-social-yt:hover { background-position:-160px -32px; }
+        &.skin-social-youtube { background-position:-160px 0; }
+        &.skin-social-youtube:hover { background-position:-160px -32px; }
 
-        &.skin-social-ig { background-position:-192px 0; }
-        &.skin-social-ig:hover { background-position:-192px -32px; }
+        &.skin-social-instagram { background-position:-192px 0; }
+        &.skin-social-instagram:hover { background-position:-192px -32px; }
 
-        &.skin-social-in { background-position:-224px 0; }
-        &.skin-social-in:hover { background-position:-224px -32px; }
+        &.skin-social-linkedin { background-position:-224px 0; }
+        &.skin-social-linkedin:hover { background-position:-224px -32px; }
 
         &.skin-social-more { background-position:-256px 0; }
         &.skin-social-more:hover { background-position:-256px -32px; }
@@ -356,14 +356,14 @@ ul.skin-socialgroups
 
     ul.dropdown-menu {
         li:hover .skin-social-button {
-            &.skin-social-vk { background-position:0 -32px; }
-            &.skin-social-fb { background-position:-32px -32px; }
-            &.skin-social-gp { background-position:-64px -32px; }
-            &.skin-social-tw { background-position:-96px -32px; }
-            &.skin-social-ok { background-position:-128px -32px; }
-            &.skin-social-yt { background-position:-160px -32px; }
-            &.skin-social-ig { background-position:-192px -32px; }
-            &.skin-social-in { background-position:-224px -32px; }
+            &.skin-social-vkontakte { background-position:0 -32px; }
+            &.skin-social-facebook { background-position:-32px -32px; }
+            &.skin-social-googleplus { background-position:-64px -32px; }
+            &.skin-social-twitter { background-position:-96px -32px; }
+            &.skin-social-odnoklassniki { background-position:-128px -32px; }
+            &.skin-social-youtube { background-position:-160px -32px; }
+            &.skin-social-instagram { background-position:-192px -32px; }
+            &.skin-social-linkedin { background-position:-224px -32px; }
         }
     }
 }

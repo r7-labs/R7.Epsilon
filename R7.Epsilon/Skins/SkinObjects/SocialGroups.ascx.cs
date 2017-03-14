@@ -4,7 +4,7 @@
 //  Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2015 Roman M. Yagodin
+//  Copyright (c) 2015-2017 Roman M. Yagodin
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -19,10 +19,26 @@
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using R7.Epsilon.Components;
+
 namespace R7.Epsilon.Skins.SkinObjects
 {
     public class SocialGroups : EpsilonSkinObjectBase
     {
+        [Obsolete]
         public bool MobileView { get; set; }
+
+        public IEnumerable<SocialNetworkConfig> GetPrimarySocialNetworks ()
+        {
+            return Config.SocialNetworks.Where (n => n.IsPrimary);
+        }
+
+        public IEnumerable<SocialNetworkConfig> GetSecondarySocialNetworks ()
+        {
+            return Config.SocialNetworks.Where (n => !n.IsPrimary);
+        }
     }
 }

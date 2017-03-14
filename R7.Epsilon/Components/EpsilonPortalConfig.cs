@@ -4,7 +4,7 @@
 //  Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2015-2016 Roman M. Yagodin
+//  Copyright (c) 2015-2017 Roman M. Yagodin
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -18,6 +18,8 @@
 //
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+using System.Collections.Generic;
 
 namespace R7.Epsilon.Components
 {
@@ -37,22 +39,6 @@ namespace R7.Epsilon.Components
 
         public string FooterButtonsGroupName { get; set; }
 
-        public VkConfig Vk { get; set; }
-       
-        public FacebookConfig Facebook { get; set; }
-
-        public TwitterConfig Twitter { get; set; }
-
-        public GooglePlusConfig Google { get; set; }
-
-        public OkConfig Ok { get; set; }
-
-        public YoutubeConfig Youtube{ get; set; }
-
-        public InstagramConfig Instagram { get; set; }
-
-        public LinkedinConfig Linkedin { get; set; }
-
         public AdsenseConfig Adsense { get; set; }
 
         public bool ShowTerms { get; set; }
@@ -62,6 +48,8 @@ namespace R7.Epsilon.Components
         public int MenuUrlType { get; set; }
 
         public bool UseObrnadzorMicrodata { get; set; }
+
+        public List<SocialNetworkConfig> SocialNetworks { get; set; }
 
         #endregion
     }
@@ -80,49 +68,20 @@ namespace R7.Epsilon.Components
         public string Slot { get; set; }
     }
 
-    public abstract class SimpleSocialNetworkConfig
+    // TODO: Rename to SocialNetwork
+    public class SocialNetworkConfig
     {
+        public string Name { get; set; }
+
         public string Group { get; set; }
-    }
 
-    public abstract class SocialNetworkConfig: SimpleSocialNetworkConfig
-    {
-        public bool ShareEnabled { get; set; }
-    }
+        public bool ShareEnabled { get; set; } = false;
 
-    public class VkConfig: SocialNetworkConfig
-    {
-        public string ApiId { get; set; }
-    }
+        public bool IsPrimary { get; set; } = false;
 
-    public class FacebookConfig: SocialNetworkConfig
-    {
-        public string AppId { get; set; }
-    }
+        public string ApiId { get; set; } = string.Empty;
 
-    public class TwitterConfig: SocialNetworkConfig
-    {
-        public string Via { get; set; }
-    }
-
-    public class GooglePlusConfig: SocialNetworkConfig
-    {
-    }
-
-    public class OkConfig: SimpleSocialNetworkConfig
-    {
-    }
-
-    public class YoutubeConfig: SimpleSocialNetworkConfig
-    {
-    }
-
-    public class InstagramConfig : SimpleSocialNetworkConfig
-    {
-    }
-
-    public class LinkedinConfig: SimpleSocialNetworkConfig
-    {
+        public List<string> Params { get; set; }
     }
 }
 

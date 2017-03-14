@@ -16,38 +16,42 @@ secondary-menu:
 
 menu-url-type: 0
 
-vk:
-  share-enabled: false
-  api-id: your-vk-api-id
-  group: https://vk.com/your-vk-group
+social-networks:
 
-facebook:
-  share-enabled: true
-  # specify Facebook App ID for the "like" button, or leave empty (will produce messages in JS console)
-  app-id:
-  group: https://www.facebook.com/your-facebook-group
+  - name: VKontakte
+    group: https://vk.com/YOUR-VK-HERE
+    api-id: your-vk-api-id
+    is-primary: true
+    share-enabled: false
 
-twitter:
-  share-enabled: true
-  group: https://twitter.com/your-twitter-group
-  via: your-twitter-via
+  - name: Facebook
+    group: https://www.facebook.com/YOUR-FACEBOOK-HERE
+    # specify Facebook App ID for the "like" button, or leave empty (will produce messages in JS console)    
+    api-id:
+    share-enabled: false
 
-google:
-  share-enabled: true
-  group: https://plus.google.com/communities/your-google-plus-group
+  - name: Twitter
+    group: https://twitter.com/YOUR-TWITTER-HERE
+    share-enabled: true
+    params: ['YOUR-TWITTER-VIA-HERE']
 
-youtube:
-  group: https://www.youtube.com/channel/your-youtube-group
-
-ok:
-  group: https://ok.ru/group/your-ok-group
-
-instagram:
-  group: https://www.instagram.com/your-instagram-group
-
-linkedin:
-  group: https://www.linkedin.com/your-linkedin-group
-
+  - name: GooglePlus
+    group: https://plus.google.com/communities/YOUR-GOOGLE-PLUS-HERE
+    share-enabled: true
+    
+  - name: YouTube
+    group: https://www.youtube.com/channel/YOUR-YOUTUBE-HERE
+    is-primary: true
+  
+  - name: Odnoklassniki
+    group: https://ok.ru/group/YOUR-OK-HERE
+    
+  - name: Instagram
+    group: https://www.instagram.com/YOUR-INSTAGRAM-HERE
+    
+  - name: LinkedIn
+    group: https://www.linkedin.com/YOUR-LINKEDIN-HERE
+    
 adsense:
   client: ca-pub-0000000000000000
   slot: 0000000000

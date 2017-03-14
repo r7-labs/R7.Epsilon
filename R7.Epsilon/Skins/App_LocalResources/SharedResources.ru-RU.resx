@@ -84,13 +84,13 @@
     <data xml:space="preserve" name="Odnoklassniki.Title">
         <value>Одноклассники</value>
     </data>    
-    <data xml:space="preserve" name="Youtube.Title">
+    <data xml:space="preserve" name="YouTube.Title">
         <value>Youtube</value>
     </data>
 	<data name="Instagram.Title" xml:space="preserve">
         <value>Инстаграм</value>
     </data>
-	<data name="Linkedin.Title" xml:space="preserve">
+	<data name="LinkedIn.Title" xml:space="preserve">
         <value>LinkedIn</value>
     </data>
     <data xml:space="preserve" name="YandexCycounter.Text">
