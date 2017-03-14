@@ -41,7 +41,10 @@
             <asp:HyperLink runat="server" href="#content" CssClass="sr-only sr-only-focusable" Text='<%# Localizer.GetString ("SkipToContent.Text") %>' />
         </div>
         <div class="row">
-            <div class="col-md-4 col-sm-4 col-xs-10 skin-functions-wrapper">
+            <div class="col-md-4 col-md-push-4 col-sm-12 skin-search" role="search">
+                <dnn:SEARCH runat="server" ShowSite="false" ShowWeb="false" />
+            </div>
+            <div class="col-md-4 col-md-pull-4 col-sm-6 col-xs-6 skin-functions-wrapper">
                 <div class="skin-language">
                     <dnn:LANGUAGE runat="server" ShowLinks="True" ShowMenu="False" />
                 </div>
@@ -50,14 +53,8 @@
                     <asp:HyperLink id="linkA11yVersion" runat="server" CssClass="skin-functions-icon skin-functions-icon-a11y" data-toggle="tooltip" data-placement="bottom" />
                 </div>
             </div>
-            <div class="visible-xs col-xs-2 skin-socialgroups-wrapper">
-                <skin:SOCIALGROUPS runat="server" MobileView="true" />
-            </div>
-            <div class="col-md-4 col-sm-3 col-xs-12 skin-search" role="search">
-                <dnn:SEARCH runat="server" ShowSite="false" ShowWeb="false" />
-            </div>
-            <div class="col-md-4 col-sm-5 hidden-xs skin-socialgroups-wrapper">
-                <skin:SOCIALGROUPS runat="server" MobileView="false" />
+            <div class="col-md-4 col-sm-6 col-xs-6 skin-socialgroups-wrapper">
+                <skin:SOCIALGROUPS runat="server" />
             </div>
         </div>
     </div>
