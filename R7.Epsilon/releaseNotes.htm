@@ -1,5 +1,32 @@
 ﻿<div style="white-space:normal">
 
+<h3>Version 1.10.0</h3>
+<ul>
+    <li>Enable Bootstrap styling in popup skin (pass &quot;loadTheme=true&quot; in the popup URL).</li>
+    <li>Add Inside skin variant for pages which require authentification.</li>  
+    <li>Add containers for panel-body Bootstrap classes.</li>
+    <li>Add containers for Bootstap alert classes.</li>
+    <li>Don't use page title to calculate tagline (#44).</li>
+    <li>Display last modified date of page content (#58).</li>
+    <li>Make PageInfo skinobject display also permalink, move it to the bottom.</li>
+    <li>Add H1 tag for Home skins, visible for screenreaders only.</li>
+    <li>Get theme version from assembly.</li>
+    <li>Don't cache Yandex Cycounter skinobject.</li>
+    <li>Skin will try to load legacy banner skinobject dynamically and won't crash (but logs error) on DNN 8/9 (#56).</li>
+	<li>Based on profiling data, GetModuleByDefinition is very slow, so its result cached.</li>
+	<li>Drop Flowplayer support (#59).</li>
+</ul>
+<p>Revamp of social network group icons UI and config:</p>
+<ul>
+    <li>Split social network group icons into primary and secondary, move secondaries to dropdown.</li>
+    <li>Switch to use YAML collection to store social network options in config.</li>
+    <li>Fill social network button lists at runtime using new &quot;is-primary&quot; config option.</li>
+    <li>Add new clickable icons for Instagram and LinkedIn, update YouTube icon.</li>
+    <li>Use full URLs for social network group links in config.</li>
+	<li>Get rid of SocialGroups skinobject duplication in skins.</li>
+	<li>Update VK and Facebook API versions.</li>
+</ul>
+
 <h3>Version 1.9.1</h3>
 <ul>
 	<li>Fixed wrong namespace name in ErrorSkin.</li>
