@@ -12,9 +12,9 @@ var gp = Config.SocialNetworks.SingleOrDefault (n => n.Name == "GooglePlus");
     if (d.getElementById(id)) return;
     js = d.createElement(s); js.id = id;
     <% if (!string.IsNullOrWhiteSpace (fb.ApiId)) { %>
-    js.src = "//connect.facebook.net/<%= CultureInfo.CurrentCulture.Name.Replace ("-", "_") %>/sdk.js#xfbml=1&version=v2.3&appId=<%: fb.ApiId %>";
+    js.src = "//connect.facebook.net/<%= CultureInfo.CurrentCulture.Name.Replace ("-", "_") %>/sdk.js#xfbml=1&version=v2.8&appId=<%: fb.ApiId %>";
     <% } else { %>
-    js.src = "//connect.facebook.net/<%= CultureInfo.CurrentCulture.Name.Replace ("-", "_") %>/sdk.js#xfbml=1&version=v2.3";
+    js.src = "//connect.facebook.net/<%= CultureInfo.CurrentCulture.Name.Replace ("-", "_") %>/sdk.js#xfbml=1&version=v2.8";
     <% } %>
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
