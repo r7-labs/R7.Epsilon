@@ -19,34 +19,34 @@ menu-url-type: 0
 vk:
   share-enabled: false
   api-id: your-vk-api-id
-  group: your-vk-group
+  group: https://vk.com/your-vk-group
 
 facebook:
   share-enabled: true
   # specify Facebook App ID for the "like" button, or leave empty (will produce messages in JS console)
   app-id:
-  group: your-facebook-group
+  group: https://www.facebook.com/your-facebook-group
 
 twitter:
   share-enabled: true
-  group: your-twitter-group
+  group: https://twitter.com/your-twitter-group
   via: your-twitter-via
 
 google:
   share-enabled: true
-  group: your-google-plus-group
+  group: https://plus.google.com/communities/your-google-plus-group
 
 youtube:
-  group: your-youtube-group
+  group: https://www.youtube.com/channel/your-youtube-group
 
 ok:
-  group: your-ok-group
+  group: https://ok.ru/group/your-ok-group
 
 instagram:
-  group: your-instagram-group
+  group: https://www.instagram.com/your-instagram-group
 
 linkedin:
-  group: your-linkedin-group
+  group: https://www.linkedin.com/your-linkedin-group
 
 adsense:
   client: ca-pub-0000000000000000

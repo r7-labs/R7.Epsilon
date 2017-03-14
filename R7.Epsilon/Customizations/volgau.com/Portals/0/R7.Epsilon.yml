@@ -19,28 +19,28 @@ menu-url-type: 2
 vk:
   share-enabled: true
   api-id: 4754730
-  group: volgau_com
+  group: https://vk.com/volgau_com
 
 facebook:
   share-enabled: false
   # specify Facebook App ID for the "like" button, or leave empty (will produce messages in JS console)
   app-id: 413998678785585
-  group: volgau
+  group: https://www.facebook.com/volgau
 
 twitter:
   share-enabled: false
-  group: volgau_com
+  group: https://twitter.com/volgau_com
   via: volgau_com
 
 google:
   share-enabled: true
-  group: communities/113661705633931940712
+  group: https://plus.google.com/communities/113661705633931940712
 
 youtube:
-  group: UCYPMmQknVPxosuY4iPCfVDg
+  group: https://www.youtube.com/channel/UCYPMmQknVPxosuY4iPCfVDg
 
 ok:
-  group: 51992191172689
+  group: https://ok.ru/group/51992191172689
 
 instagram:
   group: https://www.instagram.com/volgau
