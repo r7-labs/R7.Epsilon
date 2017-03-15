@@ -129,8 +129,7 @@ ul.dnnAdminTabNav {
 
 /* Float Buttons */
 
-.unselectable 
-{
+.unselectable {
     -moz-user-select:-moz-none;
     -khtml-user-select:none;
     -webkit-user-select:none;
@@ -158,13 +157,14 @@ ul.dnnAdminTabNav {
     &:hover { opacity:$float-button-opacity-hover; }
 }
 
-.skin-float-button-up {
-    // FIXME: should be $primary-menu-color
-    background:$color-primary-4 url('../images/up_48x48.png') no-repeat left;
+.skin-float-button-feedback {
+    background:$footer-last-background-color url('../images/float_buttons_48x48.png') no-repeat left;
 }
 
-.skin-float-button-feedback {
-    background:$footer-last-background-color url('../images/feedback_48x48.png') no-repeat left; 
+.skin-float-button-up {
+    // FIXME: should be $primary-menu-color
+    background:$color-primary-4 url('../images/float_buttons_48x48.png') no-repeat left;
+    background-position:-48px 0;
 }
 
 header > .container 
