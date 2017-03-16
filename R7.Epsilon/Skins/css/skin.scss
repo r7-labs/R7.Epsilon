@@ -4,7 +4,7 @@
 //  Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2015-2016 Roman M. Yagodin
+//  Copyright (c) 2015-2017 Roman M. Yagodin
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -28,6 +28,17 @@
     cursor: pointer;
     background-image: $bg-image;
     background-repeat: no-repeat;
+}
+
+@mixin background-position-xy ($index-x, $index-y, $icon-size)
+{
+    background-position:(-$icon-size * $index-x) (-$icon-size * $index-y);
+}
+
+@mixin functions-background ($icon-number)
+{
+    @include background-position-xy ($icon-number, 0, 32px);
+    &:hover { @include background-position-xy ($icon-number, 1, 32px); }
 }
 
 /* Styles */
@@ -164,7 +175,7 @@ ul.dnnAdminTabNav {
 .skin-float-button-up {
     // FIXME: should be $primary-menu-color
     background:$color-primary-4 url('../images/float_buttons_48x48.png') no-repeat left;
-    background-position:-48px 0;
+    @include background-position-xy (1, 0, 48px);
 }
 
 header > .container 
@@ -230,17 +241,14 @@ header > .container > .row
 
         @include square-backgrounded-button (32px, url('../images/functions_mono_32x32.png'));
 
-        &.skin-functions-icon-gtranslate { background-position:0 0; }
-        &.skin-functions-icon-gtranslate:hover { background-position:0 -32px; }   
+        &.skin-functions-icon-gtranslate { @include functions-background (0); }
+        &.skin-functions-icon-age-rating { @include functions-background (2); }
 
         &.skin-functions-icon-a11y,
-        &.skin-functions-icon-a11y.enabled:hover { background-position:-32px 0; }
+        &.skin-functions-icon-a11y.enabled:hover { @include background-position-xy (1, 0, 32px); }
 
         &.skin-functions-icon-a11y:hover,
-        &.skin-functions-icon-a11y.enabled { background-position:-32px -32px; }
-
-        &.skin-functions-icon-age-rating { background-position:-64px 0; }
-        &.skin-functions-icon-age-rating:hover { background-position:-64px -32px; }
+        &.skin-functions-icon-a11y.enabled { @include background-position-xy (1, 1, 32px); }
     }
 }
 
@@ -311,6 +319,8 @@ header > .container > .row
     background-color:rgba($color-complement-1, 0.5);
 }
 
+
+
 ul.skin-socialgroups
 {
     text-align:right;
@@ -342,29 +352,14 @@ ul.skin-socialgroups
 
         @include square-backgrounded-button (32px, $social-icons);
 
-        &.skin-social-vkontakte {background-position:0 0; }
-        &.skin-social-vkontakte:hover { background-position:0 -32px; }
-
-        &.skin-social-facebook { background-position:-32px 0; }
-        &.skin-social-facebook:hover { background-position:-32px -32px; }
-
-        &.skin-social-googleplus { background-position:-64px 0; }
-        &.skin-social-googleplus:hover { background-position:-64px -32px; }
-
-        &.skin-social-twitter { background-position:-96px 0; }
-        &.skin-social-twitter:hover { background-position:-96px -32px; }
-
-        &.skin-social-odnoklassniki { background-position:-128px 0; }
-        &.skin-social-odnoklassniki:hover { background-position:-128px -32px; }
-
-        &.skin-social-youtube { background-position:-160px 0; }
-        &.skin-social-youtube:hover { background-position:-160px -32px; }
-
-        &.skin-social-instagram { background-position:-192px 0; }
-        &.skin-social-instagram:hover { background-position:-192px -32px; }
-
-        &.skin-social-linkedin { background-position:-224px 0; }
-        &.skin-social-linkedin:hover { background-position:-224px -32px; }
+        &.skin-social-vkontakte { @include functions-background (0); }
+        &.skin-social-facebook { @include functions-background (1); }
+        &.skin-social-googleplus { @include functions-background (2); }
+        &.skin-social-twitter { @include functions-background (3); }
+        &.skin-social-odnoklassniki { @include functions-background (4); }
+        &.skin-social-youtube { @include functions-background (5); }
+        &.skin-social-instagram { @include functions-background (6); }
+        &.skin-social-linkedin { @include functions-background (7); }
 
         &.skin-social-more {
             border-radius:16px;
@@ -378,7 +373,7 @@ ul.skin-socialgroups
 
             .glyphicon {
                 font-size:23px;
-                color:$color-primary-4;
+                color:#000;
                 position:relative;
                 top:5px;
                 left:-4px;
@@ -388,14 +383,14 @@ ul.skin-socialgroups
 
     ul.dropdown-menu {
         li:hover .skin-social-button {
-            &.skin-social-vkontakte { background-position:0 -32px; }
-            &.skin-social-facebook { background-position:-32px -32px; }
-            &.skin-social-googleplus { background-position:-64px -32px; }
-            &.skin-social-twitter { background-position:-96px -32px; }
-            &.skin-social-odnoklassniki { background-position:-128px -32px; }
-            &.skin-social-youtube { background-position:-160px -32px; }
-            &.skin-social-instagram { background-position:-192px -32px; }
-            &.skin-social-linkedin { background-position:-224px -32px; }
+            &.skin-social-vkontakte { @include background-position-xy (0, 1, 32px); }
+            &.skin-social-facebook { @include background-position-xy (1, 1, 32px); }
+            &.skin-social-googleplus { @include background-position-xy (2, 1, 32px); }
+            &.skin-social-twitter { @include background-position-xy (3, 1, 32px); }
+            &.skin-social-odnoklassniki { @include background-position-xy (4, 1, 32px); }
+            &.skin-social-youtube { @include background-position-xy (5, 1, 32px); }
+            &.skin-social-instagram { @include background-position-xy (6, 1, 32px); }
+            &.skin-social-linkedin { @include background-position-xy (7, 1, 32px); }
         }
     }
 }
@@ -476,7 +471,7 @@ ul.skin-socialgroups
     &.skin-founder-2 
     { 
         background-image:$founder-icons;
-        background-position:-48px 0;
+        @include background-position-xy (1, 0, 48px);
         // as navbar bottom gradient point
         box-shadow:2px 2px 2px $color-complement-2;
     }
@@ -879,7 +874,7 @@ ul.skin-socialgroups
         }
 
         .userNotifications > a {
-            background-position:0 -32px;
+            @include background-position-xy (0, 1, 32px);
         }
 
         // number of message next to the message icon
