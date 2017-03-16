@@ -852,12 +852,12 @@ ul.skin-socialgroups
         // number of message next to the message icon
         .userNotifications > a > span,
         .userMessages > a > span {
-            text-shadow:1px 1px 2px #000;
-            margin-left:24px;
+            font-size:85%;
+            position:relative;
+            top:-1px;
+            margin-left:26px;
             margin-right:2px;
-            &:before {
-                content:"+";
-            }
+            text-shadow:1px 1px 2px #000;
         }
 
         // hide "messages" and "notifications" labels
