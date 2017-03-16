@@ -319,8 +319,6 @@ header > .container > .row
     background-color:rgba($color-complement-1, 0.5);
 }
 
-
-
 ul.skin-socialgroups
 {
     text-align:right;
@@ -349,6 +347,7 @@ ul.skin-socialgroups
         display:inline-block;
         margin-right:3px;
         vertical-align:middle;
+        border-radius:16px;
 
         @include square-backgrounded-button (32px, $social-icons);
 
@@ -362,7 +361,6 @@ ul.skin-socialgroups
         &.skin-social-linkedin { @include functions-background (7); }
 
         &.skin-social-more {
-            border-radius:16px;
             background-image:none;
             background-color:$color-complement-1;
             border:1px solid $color-complement-1; // = background-color

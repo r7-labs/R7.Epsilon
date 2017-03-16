@@ -636,11 +636,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.3431144"
-     inkscape:cx="119.99282"
-     inkscape:cy="65.363814"
+     inkscape:zoom="3.5270441"
+     inkscape:cx="69.465771"
+     inkscape:cy="50.979017"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer4"
      showgrid="true"
      inkscape:window-width="1366"
      inkscape:window-height="713"
@@ -699,7 +699,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -707,11 +707,24 @@
      inkscape:groupmode="layer"
      id="layer3"
      inkscape:label="Dev Background"
-     style="display:none"
+     style="display:inline"
      sodipodi:insensitive="true">
     <rect
        style="opacity:1;fill:#e5e5e5;fill-opacity:0.98039216;stroke:none;stroke-width:0.94280905;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.98039216"
        id="rect4936"
+       width="256"
+       height="64"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="White Background 2"
+     sodipodi:insensitive="true">
+    <rect
+       style="display:inline;opacity:1;fill:#ffffff;fill-opacity:0.98039216;stroke:none;stroke-width:0.94280905;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.98039216;enable-background:new"
+       id="rect4936-3"
        width="256"
        height="64"
        x="0"
