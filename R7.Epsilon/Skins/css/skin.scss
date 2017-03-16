@@ -305,6 +305,14 @@ header > .container > .row
     padding-top:4px;
 }
 
+@mixin dropdown-button-active ()
+{
+    $border-width:1px;
+    border:$border-width solid $color-complement-2;
+    background-color:rgba($color-complement-1, 0.5);
+    background-position:(-256px-$border-width) (-32px-$border-width);
+}
+
 ul.skin-socialgroups
 {
     text-align:right;
@@ -316,6 +324,12 @@ ul.skin-socialgroups
         display:inline; 
         list-style-type: none; 
         &:last-child a { margin-right:0; }
+    }
+
+    & > li.dropdown.open {
+        .skin-social-button.skin-social-more {
+            @include dropdown-button-active ();
+        }
     }
 
     .skin-social-button
@@ -350,8 +364,14 @@ ul.skin-socialgroups
         &.skin-social-linkedin { background-position:-224px 0; }
         &.skin-social-linkedin:hover { background-position:-224px -32px; }
 
-        &.skin-social-more { background-position:-256px 0; }
-        &.skin-social-more:hover { background-position:-256px -32px; }
+        &.skin-social-more {
+            border-radius:16px;
+            background-position:-256px 0;
+            background-color:$color-complement-1;
+            &:hover, &:active {
+                @include dropdown-button-active ();
+            }
+        }
     }
 
     ul.dropdown-menu {
