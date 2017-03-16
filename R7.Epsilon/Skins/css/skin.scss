@@ -307,10 +307,8 @@ header > .container > .row
 
 @mixin dropdown-button-active ()
 {
-    $border-width:1px;
-    border:$border-width solid $color-complement-2;
+    border:1px solid $color-complement-2;
     background-color:rgba($color-complement-1, 0.5);
-    background-position:(-256px-$border-width) (-32px-$border-width);
 }
 
 ul.skin-socialgroups
@@ -344,7 +342,7 @@ ul.skin-socialgroups
 
         @include square-backgrounded-button (32px, $social-icons);
 
-        &.skin-social-vkontakte { background-position:0 0; }
+        &.skin-social-vkontakte {background-position:0 0; }
         &.skin-social-vkontakte:hover { background-position:0 -32px; }
 
         &.skin-social-facebook { background-position:-32px 0; }
@@ -370,10 +368,20 @@ ul.skin-socialgroups
 
         &.skin-social-more {
             border-radius:16px;
-            background-position:-256px 0;
+            background-image:none;
             background-color:$color-complement-1;
+            border:1px solid $color-complement-1; // = background-color
+
             &:hover, &:active {
                 @include dropdown-button-active ();
+            }
+
+            .glyphicon {
+                font-size:23px;
+                color:$color-primary-4;
+                position:relative;
+                top:5px;
+                left:-4px;
             }
         }
     }

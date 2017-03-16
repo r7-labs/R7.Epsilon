@@ -17,6 +17,7 @@
 	<li class="dropdown" style="<%= ShowDropdown ? string.Empty: "display:none" %>">
 		<a id="dropdownSocialGroups" role="button" href="#" class="skin-social-button skin-social-more dropdown-toggle"
 			data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="<%: Localizer.GetString ("MoreSocialGroups.Title")%>">
+			<span class="glyphicon glyphicon-option-horizontal"></span>
 		</a>
 	    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownSocialGroups">
 			<asp:ListView runat="server" ItemType="R7.Epsilon.Components.SocialNetworkConfig" SelectMethod="GetSecondarySocialNetworks">
