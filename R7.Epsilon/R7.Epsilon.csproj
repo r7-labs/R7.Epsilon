@@ -254,12 +254,6 @@
     <Content Include="Skins\images\functions_mono_32x32.png" />
     <Content Include="Skins\images\functions_mono_32x32.svg" />
     <Content Include="Skins\css\blueimp.scss" />
-    <Content Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\images\founder1_48x48.png" />
-    <Content Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\images\founder2_48x48.png" />
-    <Content Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\images\founder1_logo.svg" />
-    <Content Include="Skins\images\founder1_48x48.png" />
-    <Content Include="Skins\images\founder1_logo.svg" />
-    <Content Include="Skins\images\founder2_48x48.png" />
     <Content Include="Customizations\volgau.com\Portals\0\logo_133x100.png" />
     <Content Include="Containers\Default_H4.ascx" />
     <Content Include="Containers\Thumbnail.ascx" />
@@ -336,6 +330,8 @@
     <Content Include="Skins\images\float_buttons_48x48.svg" />
     <Content Include="Skins\images\login_icons.png" />
     <Content Include="Skins\images\login_icons.svg" />
+    <Content Include="Skins\images\founders.png" />
+    <Content Include="Skins\images\founders.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
@@ -355,7 +351,6 @@
     <Folder Include="Customizations\volgau.com\Portals\_default\Skins\" />
     <Folder Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\" />
     <Folder Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\App_LocalResources\" />
-    <Folder Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\images\" />
     <Folder Include="Application\" />
     <Folder Include="Customizations\volgau.com\Portals\2\" />
     <Folder Include="Customizations\volgau.com\Portals\3\" />

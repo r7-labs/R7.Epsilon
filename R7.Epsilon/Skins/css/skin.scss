@@ -436,14 +436,15 @@ ul.skin-socialgroups
 
     &.skin-founder-1
     { 
-        background-image:$founder-icon-1;
+        background-image:$founder-icons;
         // as navbar top gradient point
         box-shadow:2px 2px 2px $color-primary-3; 
     }
 
     &.skin-founder-2 
     { 
-        background-image:$founder-icon-2;
+        background-image:$founder-icons;
+        background-position:-48px 0;
         // as navbar bottom gradient point
         box-shadow:2px 2px 2px $color-complement-2;
     }
