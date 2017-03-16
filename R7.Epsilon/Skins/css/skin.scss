@@ -833,11 +833,12 @@ ul.skin-socialgroups
     }
     .userMessages a { 
         height: 32px;
-        background: url('../images/icon_message.png') no-repeat center center;
+        background: url('../images/login_icons.png') no-repeat left top;
     }
     .userNotifications a {
         height: 32px;
-        background: url('../images/icon_notification.png') no-repeat center center;
+        background: url('../images/login_icons.png') no-repeat left top;
+        background-position:-32px 0;
     }
     .registerGroup a span {
         display: inline-block;
@@ -880,8 +881,14 @@ ul.skin-socialgroups
         text-indent: -9999px;
         z-index: 999;
     }
-    .userNotifications span { background: url('../images/icon_notification_active.png') no-repeat center center; }
-    .userMessages span { background: url('../images/icon_message_active.png') no-repeat center center; }
+    .userMessages span {
+        background: url('../images/login_icons.png') no-repeat left top;
+        background-position:0 -32px;
+    }
+    .userNotifications span {
+        background: url('../images/login_icons.png') no-repeat left top;
+        background-position:-32px -32px;
+    }
 }
 
 /* Callout styles */
