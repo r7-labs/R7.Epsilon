@@ -46,6 +46,7 @@
 <dnn:JavaScriptLibraryInclude runat="server" Name="Rangy" />
 
 <skin:JSVARIABLES runat="server" />
+<div id="vk_api_transport"></div>
 <div id="fb-root"></div>
 <header>
     <div class="container">

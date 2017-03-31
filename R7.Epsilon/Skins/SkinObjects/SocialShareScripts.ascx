@@ -31,8 +31,16 @@ window.___gcfg = {
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
 })();
 </script><% } %>
-<%-- VK.com Widget--%><% if (vk != null && vk.ShareEnabled) { %><script type="text/javascript" src="//vk.com/js/api/openapi.js?142"></script>
-<script type="text/javascript">
-	VK.init({apiId: <%= vk.ApiId %>, onlyWidgets: true});
+<%-- VK.com Widget--%><% if (vk != null && vk.ShareEnabled) { %><script type="text/javascript">
+window.vkAsyncInit = function() {
+    VK.init({apiId: <%= vk.ApiId %>, onlyWidgets: true});
     VK.Widgets.Like("vk_like", {type: "mini", height: 20});
+};
+setTimeout(function() {
+    var el = document.createElement("script");
+    el.type = "text/javascript";
+    el.src = "https://vk.com/js/api/openapi.js?143";
+    el.async = true;
+    document.getElementById("vk_api_transport").appendChild(el);
+},0);
 </script><% } %>
