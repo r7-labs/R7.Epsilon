@@ -9,6 +9,8 @@ feedback-tab-id: 2659
 primary-menu:
   node-selector: "*,0,2"
   include-nodes: "36,104,1206,58,3985,109,9427,7384,95,1239"
+  node-manipulator-types:
+    - R7.News.Integrations.DDRMenu.NewsNodeManipulator, R7.News
 
 secondary-menu:
   node-selector: "*,0,2"

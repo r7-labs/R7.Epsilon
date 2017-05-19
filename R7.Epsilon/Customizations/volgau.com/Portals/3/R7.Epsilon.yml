@@ -8,7 +8,6 @@ feedback-tab-id: 2659
 
 primary-menu:
   node-selector: "*,0,2"
-  include-nodes:
 
 secondary-menu:
   node-selector: "*,0,2"
