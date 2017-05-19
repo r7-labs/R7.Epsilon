@@ -8,11 +8,13 @@ feedback-tab-id: 100
 
 primary-menu:
   node-selector: "*,0,2"
-  include-nodes:
+#  include-nodes:
+#  node-manipulator-types:
 
 secondary-menu:
   node-selector: "*,0,2"
-  include-nodes:
+#  include-nodes:
+#  node-manipulator-types:
 
 menu-url-type: 0
 

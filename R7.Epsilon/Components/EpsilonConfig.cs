@@ -4,7 +4,7 @@
 //  Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2016 Roman M. Yagodin
+//  Copyright (c) 2016-2017 Roman M. Yagodin
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -33,17 +33,16 @@ namespace R7.Epsilon.Components
     {
         #region Singleton implementation
 
-        private static readonly ConcurrentDictionary<int,Lazy<EpsilonPortalConfig>> portalConfigs = 
-            new ConcurrentDictionary<int,Lazy<EpsilonPortalConfig>> ();
+        static readonly ConcurrentDictionary<int, Lazy<EpsilonPortalConfig>> portalConfigs =
+            new ConcurrentDictionary<int, Lazy<EpsilonPortalConfig>> ();
 
-        public static EpsilonPortalConfig Instance
-        {
+        public static EpsilonPortalConfig Instance {
             get { return GetInstance (PortalSettings.Current.PortalId); }
         }
 
         public static EpsilonPortalConfig GetInstance (int portalId)
         {
-            var lazyPortalConfig = portalConfigs.GetOrAdd (portalId, newKey => 
+            var lazyPortalConfig = portalConfigs.GetOrAdd (portalId, newKey =>
                 new Lazy<EpsilonPortalConfig> (() => {
 
                     var portalSettings = new PortalSettings (portalId);
@@ -53,16 +52,21 @@ namespace R7.Epsilon.Components
                     if (!File.Exists (portalConfigFile)) {
                         File.Copy (Path.Combine (
                             Globals.ApplicationMapPath,
-                            "Portals\\_default\\Skins\\R7.Epsilon\\R7.Epsilon.yml"), 
+                            "Portals\\_default\\Skins\\R7.Epsilon\\R7.Epsilon.yml"),
                             portalConfigFile);
                     }
 
                     using (var configReader = new StringReader (File.ReadAllText (portalConfigFile))) {
                         var deserializer = new Deserializer (namingConvention: new HyphenatedNamingConvention ());
-                        return deserializer.Deserialize<EpsilonPortalConfig> (configReader);
+                        var portalConfig = deserializer.Deserialize<EpsilonPortalConfig> (configReader);
+
+                        portalConfig.PrimaryMenu.LoadNodeManipulators ();
+                        portalConfig.SecondaryMenu.LoadNodeManipulators ();
+
+                        return portalConfig;
                     }
-                }
-                ));
+                })
+            );
 
             return lazyPortalConfig.Value;
         }

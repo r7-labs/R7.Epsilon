@@ -4,7 +4,7 @@
 //  Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2015-2016 Roman M. Yagodin
+//  Copyright (c) 2015-2017 Roman M. Yagodin
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -20,6 +20,7 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
+using R7.Epsilon.Components;
 using DDRMenu = DotNetNuke.Web.DDRMenu;
 
 namespace R7.Epsilon.Skins.SkinObjects
@@ -37,6 +38,10 @@ namespace R7.Epsilon.Skins.SkinObjects
             Menu = menuPrimary;
             Menu.NodeSelector = Config.PrimaryMenu.NodeSelector;
             Menu.IncludeNodes = Config.PrimaryMenu.IncludeNodes;
+
+            if (Config.PrimaryMenu.NodeManipulators.Count > 0) {
+                Menu.NodeManipulator = typeof (EpsilonPrimaryMenuNodeManipulator).FullName;
+            }
 
             base.OnInit (e);
         }

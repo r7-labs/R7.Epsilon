@@ -199,6 +199,7 @@
       <DependentUpon>BannerWrapper.ascx</DependentUpon>
     </Compile>
     <Compile Include="Skins\SkinObjects\Banners\IBannerControl.cs" />
+    <Compile Include="Components\EpsilonNodeManipulator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Containers\Blank.ascx" />

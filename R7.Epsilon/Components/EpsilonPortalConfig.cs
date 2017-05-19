@@ -19,7 +19,12 @@
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Web.Compilation;
+using DotNetNuke.Services.Exceptions;
+using DotNetNuke.Web.DDRMenu;
 
 namespace R7.Epsilon.Components
 {
@@ -59,6 +64,22 @@ namespace R7.Epsilon.Components
         public string NodeSelector { get; set; }
 
         public string IncludeNodes { get; set; }
+
+        public ICollection<string> NodeManipulatorTypes { get; set; } = new Collection<string> ();
+
+        public ICollection<INodeManipulator> NodeManipulators = new Collection<INodeManipulator> ();
+
+        public void LoadNodeManipulators ()
+        {
+            foreach (var nodeManipulatorType in NodeManipulatorTypes) {
+                try {
+                    NodeManipulators.Add (((INodeManipulator) Activator.CreateInstance (BuildManager.GetType (nodeManipulatorType, true, true))));
+                }
+                catch (Exception ex) {
+                    Exceptions.LogException (ex);    
+                }
+            }
+        }
     }
 
     public class AdsenseConfig
