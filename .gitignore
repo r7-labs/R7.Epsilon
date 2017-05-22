@@ -3,9 +3,9 @@
 *.usertasks
 
 # Build output
-*/bin/*
-*/obj/*
-Packaging/output/*
+bin/
+obj/
+/Packaging/output/
 
 # Less/UglifyJS build output
 
@@ -13,9 +13,7 @@ R7.Epsilon/Skins/css/*.css
 R7.Epsilon/Skins/js/*.min.js
 
 # Downloaded NuGet packages
-packages/*
-Packages/*
+/packages/
+/Packages/
 
-# Bower components
-bower_components/*
 
