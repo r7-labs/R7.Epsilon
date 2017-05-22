@@ -10,7 +10,7 @@ primary-menu:
   node-selector: "*,0,2"
   include-nodes: "36,104,1206,58,3985,109,9427,7384,95,1239"
   node-manipulator-types:
-    - R7.News.Integrations.DDRMenu.NewsNodeManipulator, R7.News
+    - R7.News.Stream.Integrations.DDRMenu.StreamNodeManipulator, R7.News.Stream
 
 secondary-menu:
   node-selector: "*,0,2"
