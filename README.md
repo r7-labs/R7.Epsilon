@@ -43,9 +43,10 @@ This feature currently available only if *Custom* skin is selected for a page.
 
 # Install
 
-- Get latest install package from the [releases](https://github.com/roman-yagodin/R7.Epsilon/releases).
-- Go to the *DNN* &gt; *Host* &gt; *Extensions*, click *Install Extension*.
-- Optionally replace `Global.asax` file in the application root folder with one shipped alongside skin install package
+- Install [Rangy javascript library](https://github.com/roman-yagodin/R7.Dnn.JavaScriptLibraries/releases) dependency.
+- Install latest *R7.Epsilon* version from [releases](https://github.com/roman-yagodin/R7.Epsilon/releases).
+
+Optionally replace `Global.asax` file in the application root folder with one shipped alongside skin install package
 (this will enable more advanced `VaryByCustom` cache options for skin controls - by PortalId, by UserRoles).
 
 ## Banner skinobject support for DNN 8/9

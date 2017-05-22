@@ -64,14 +64,6 @@
             <DeployLayoutManagerFiles Include="../R7.Epsilon.LayoutManager/**/*.gif" />
         </ItemGroup>
 
-		<!-- Declare rangy files -->
-        <ItemGroup>
-            <DeployRangyFiles Include="../bower_components/rangy/*.min.js" />
-			<DeployRangyFiles Include="../bower_components/rangy/*.json" Exclude="../bower_components/rangy/.bower.json" />
-			<DeployRangyFiles Include="../bower_components/rangy/LICENSE" />
-			<DeployRangyFiles Include="../bower_components/rangy/*.md" />
-        </ItemGroup>
-
         <!-- Declare binaries -->
         <ItemGroup> 
             <DeployBinaryFiles Include="$(MainProjectOutputPath)/R7.Epsilon*.dll" />
@@ -87,7 +79,6 @@
 		<Copy SourceFiles="@(DeployContainerFiles)" DestinationFolder="$(TmpDir)/Containers/%(RecursiveDir)" />
 		<Copy SourceFiles="@(DeployMenuFiles)" DestinationFolder="$(TmpDir)/Menus/%(RecursiveDir)" />
         <Copy SourceFiles="@(DeployLayoutManagerFiles)" DestinationFolder="$(TmpDir)/Modules/R7.Epsilon.LayoutManager/%(RecursiveDir)" />
-		<Copy SourceFiles="@(DeployRangyFiles)" DestinationFolder="$(TmpDir)/Rangy/%(RecursiveDir)" />
 		
 		<!-- declare files to move -->
 		<ItemGroup>
@@ -106,16 +97,11 @@
             <ModuleMoveFiles Include="$(TmpDir)/Modules/**/*.*" />
         </ItemGroup>
 
-		<ItemGroup> 
-            <RangyMoveFiles Include="$(TmpDir)/Rangy/**/*.*" />
-        </ItemGroup>
-	
 		<!-- Deploy files -->
 		<Copy SourceFiles="@(SkinMoveFiles)" DestinationFolder="$(DnnSkinsPath)/R7.Epsilon/%(RecursiveDir)" SkipUnchangedFiles="true" />
 		<Copy SourceFiles="@(ContainerMoveFiles)" DestinationFolder="$(DnnContainersPath)/R7.Epsilon/%(RecursiveDir)" SkipUnchangedFiles="true" />
 		<Copy SourceFiles="@(MenuMoveFiles)" DestinationFolder="$(DnnMenusPath)/%(RecursiveDir)" SkipUnchangedFiles="true" />
 		<Copy SourceFiles="@(ModuleMoveFiles)" DestinationFolder="$(DnnModulesPath)/R7.Epsilon/%(RecursiveDir)" SkipUnchangedFiles="true" />
-		<Copy SourceFiles="@(RangyMoveFiles)" DestinationFolder="$(DnnJsLibrariesPath)/Rangy/01_03_00/%(RecursiveDir)" SkipUnchangedFiles="true" />
 
 		<!-- Copy binaries -->
 		<Copy Condition=" '$(LocalDeployIncludeBinaries)' == 'true' " SourceFiles="@(DeployBinaryFiles)" DestinationFolder="$(DnnBinPath)" SkipUnchangedFiles="true" />

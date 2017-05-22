@@ -70,15 +70,7 @@
             <InstallLayoutManagerFiles Include="../R7.Epsilon.LayoutManager/**/*.png" />
             <InstallLayoutManagerFiles Include="../R7.Epsilon.LayoutManager/**/*.gif" />
         </ItemGroup>
-
-		<!-- Declare rangy files -->
-        <ItemGroup>
-            <InstallRangyFiles Include="../bower_components/rangy/*.min.js" />
-			<InstallRangyFiles Include="../bower_components/rangy/*.json" Exclude="../bower_components/rangy/.bower.json" />
-			<InstallRangyFiles Include="../bower_components/rangy/LICENSE" />
-			<InstallRangyFiles Include="../bower_components/rangy/*.md" />
-        </ItemGroup>
-
+              
 		<!-- Declare manifest files -->
 		<ItemGroup>
 			<InstallManifestFiles Include="$(MainProjectPath)/*.dnn" />
@@ -100,8 +92,7 @@
 		<Copy SourceFiles="@(InstallContainerFiles)" DestinationFolder="$(MSBuildProjectDirectory)/$(TmpDir)/Containers/%(RecursiveDir)" />
 		<Copy SourceFiles="@(InstallMenuFiles)" DestinationFolder="$(MSBuildProjectDirectory)/$(TmpDir)/Menus/%(RecursiveDir)" />
         <Copy SourceFiles="@(InstallLayoutManagerFiles)" DestinationFolder="$(MSBuildProjectDirectory)/$(TmpDir)/Modules/R7.Epsilon.LayoutManager/%(RecursiveDir)" />
- 		<Copy SourceFiles="@(InstallRangyFiles)" DestinationFolder="$(MSBuildProjectDirectory)/$(TmpDir)/Rangy/%(RecursiveDir)" />
-
+ 		     
 		<!-- Declare zipped files -->
 		<ItemGroup>
 			<InstallSkinZipFiles Include="$(MSBuildProjectDirectory)/$(TmpDir)/Skins/**/*.*" />
@@ -119,23 +110,17 @@
             <InstallModuleZipFiles Include="$(MSBuildProjectDirectory)/$(TmpDir)/Modules/**/*.*" />
         </ItemGroup>
 
-		<ItemGroup>
-            <InstallRangyZipFiles Include="$(MSBuildProjectDirectory)/$(TmpDir)/Rangy/**/*.*" />
-        </ItemGroup>
-  
 		<!-- Create resource archives  -->
 		<Zip Condition=" '$(OS)' != 'Unix' " Files="@(InstallSkinZipFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\bin\tmp\Skins" ZipFileName="Resources_Skins.zip" />
 		<Zip Condition=" '$(OS)' != 'Unix' " Files="@(InstallContainerZipFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\bin\tmp\Containers" ZipFileName="Resources_Containers.zip" />
 		<Zip Condition=" '$(OS)' != 'Unix' " Files="@(InstallMenuZipFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\bin\tmp\Menus" ZipFileName="Resources_Menus.zip" />
         <Zip Condition=" '$(OS)' != 'Unix' " Files="@(InstallModuleZipFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\bin\tmp\Modules" ZipFileName="Resources_Modules.zip" />
-		<Zip Condition=" '$(OS)' != 'Unix' " Files="@(InstallRangyZipFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\bin\tmp\Rangy" ZipFileName="Resources_Rangy.zip" />
-
+		      
         <Exec Condition=" '$(OS)' == 'Unix' " Command="zip -r -6 -UN=UTF8 &quot;Resources_Skins.zip&quot; ." WorkingDirectory="$(TmpDir)/Skins" />
         <Exec Condition=" '$(OS)' == 'Unix' " Command="zip -r -6 -UN=UTF8 &quot;Resources_Containers.zip&quot; ." WorkingDirectory="$(TmpDir)/Containers" />
 		<Exec Condition=" '$(OS)' == 'Unix' " Command="zip -r -6 -UN=UTF8 &quot;Resources_Menus.zip&quot; ." WorkingDirectory="$(TmpDir)/Menus" />
         <Exec Condition=" '$(OS)' == 'Unix' " Command="zip -r -6 -UN=UTF8 &quot;Resources_Modules.zip&quot; ." WorkingDirectory="$(TmpDir)/Modules" />
-		<Exec Condition=" '$(OS)' == 'Unix' " Command="zip -r -6 -UN=UTF8 &quot;Resources_Rangy.zip&quot; ." WorkingDirectory="$(TmpDir)/Rangy" />
-
+		      
 		<!-- Copy binaries -->
 		<Copy SourceFiles="@(InstallBinaryFiles)" DestinationFolder="$(TmpDir)/Package/bin" />
 
@@ -147,13 +132,11 @@
         <Copy SourceFiles="$(TmpDir)/Containers/Resources_Containers.zip" DestinationFolder="$(TmpDir)/Package" />
 		<Copy SourceFiles="$(TmpDir)/Menus/Resources_Menus.zip" DestinationFolder="$(TmpDir)/Package" />
 		<Copy SourceFiles="$(TmpDir)/Modules/Resources_Modules.zip" DestinationFolder="$(TmpDir)/Package" />
-		<Copy SourceFiles="$(TmpDir)/Rangy/Resources_Rangy.zip" DestinationFolder="$(TmpDir)/Package" />
 		<Delete Files="$(TmpDir)/Skins/Resources_Skins.zip" />
         <Delete Files="$(TmpDir)/Containers/Resources_Containers.zip" />
 		<Delete Files="$(TmpDir)/Containers/Resources_Menus.zip" />
         <Delete Files="$(TmpDir)/Modules/Resources_Modules.zip" />
-		<Delete Files="$(TmpDir)/Rangy/Resources_Rangy.zip" />
-
+		      
 		<!-- Declare tmp package folder -->
 		<ItemGroup>
 			<InstallPackageFiles Include="$(TmpDir)/Package/**/*.*" />
