@@ -112,13 +112,13 @@
 	</xsl:template>
     <xsl:template name="menuLink">
         <xsl:param name="enabled"><xsl:value-of select="true()"/></xsl:param>
-        <xsl:choose>
+	    <xsl:choose>
             <xsl:when test="@enabled = 1 and $enabled">
                 <xsl:choose>
-                    <xsl:when test="$urlType = 1">
+                    <xsl:when test="$urlType = 1 and @id &gt; 0">
                         <xsl:attribute name="href">/Default.aspx?TabId=<xsl:value-of select="@id"/></xsl:attribute>
                     </xsl:when>
-                    <xsl:when test="$urlType = 2">
+                    <xsl:when test="$urlType = 2 and @id &gt; 0">
                         <xsl:attribute name="href">/TabId/<xsl:value-of select="@id"/></xsl:attribute>
                     </xsl:when>
                     <xsl:otherwise>
@@ -130,7 +130,7 @@
                 <xsl:attribute name="href">#</xsl:attribute>
                 <xsl:attribute name="onclick">return false</xsl:attribute>
             </xsl:otherwise>
-        </xsl:choose>
-        <xsl:attribute name="data-id"><xsl:value-of select="@id"/></xsl:attribute>
+		</xsl:choose>
+		<xsl:attribute name="data-id"><xsl:value-of select="@id"/></xsl:attribute>
     </xsl:template>
 </xsl:stylesheet>
