@@ -100,7 +100,7 @@
 		<!-- Deploy files -->
 		<Copy SourceFiles="@(SkinMoveFiles)" DestinationFolder="$(DnnSkinsPath)/R7.Epsilon/%(RecursiveDir)" SkipUnchangedFiles="true" />
 		<Copy SourceFiles="@(ContainerMoveFiles)" DestinationFolder="$(DnnContainersPath)/R7.Epsilon/%(RecursiveDir)" SkipUnchangedFiles="true" />
-		<Copy SourceFiles="@(MenuMoveFiles)" DestinationFolder="$(DnnMenusPath)/%(RecursiveDir)" SkipUnchangedFiles="true" />
+		<Copy SourceFiles="@(MenuMoveFiles)" DestinationFolder="$(DnnMenusPath)/R7.Epsilon/%(RecursiveDir)" SkipUnchangedFiles="true" />
 		<Copy SourceFiles="@(ModuleMoveFiles)" DestinationFolder="$(DnnModulesPath)/R7.Epsilon/%(RecursiveDir)" SkipUnchangedFiles="true" />
 
 		<!-- Copy binaries -->
