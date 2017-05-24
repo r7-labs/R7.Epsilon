@@ -736,7 +736,10 @@ ul.skin-socialgroups
 @media only screen and (max-width : 767px) 
 {
     // align terms left on xs screens
-    .skin-footer-last .skin-terms { text-align:inherit; }
+    .skin-footer-last .skin-terms {
+        text-align:inherit;
+        margin-top:1em;
+    }
 }
 
 /* Login */
