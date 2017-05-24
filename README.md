@@ -10,20 +10,17 @@ See *R7.Epsilon* skin in action at http://www.volgau.com
 # Features
 
 - Admins can define portal-specific settings via <del>XML</del> YAML file.
-- Users can switch between a11y and normal theme.
-- In the a11y mode DNN modal popups are blocked (if they are enabled).
-- Variety of containers, including DNN-style messages, Bootstrap thumbnail, callouts, etc.
+- Users can switch between a11y and normal theme. In the a11y mode DNN modal popups are blocked (if they are enabled).
+- Variety of containers, including DNN-style messages, Bootstrap alerts, panels, thumbnails, callouts, etc.
 - Home, Edit, Admin + Universal skin variants, reusable through all host portals.
-- Social group icons (including a11y versions) for Facebook, Twitter, Google+, YouTube, VK.com.
+- Social group icons (including a11y versions) for Facebook, Twitter, Google+, YouTube, VK.com, Instagram, Linkedin.
 - Social share buttons for Facebook, Twitter, Google+, VK.com.
 - Completely localizable parts (full Russian translation included).
 - Portal / host admins can customize footer content using language editor.
 - Devs can define styles using <del>Less</del> SCSS.
-- SCSS and JS preprocessing integrated into the build process.
 - Devs can use [Paletton.com](http://paletton.com) to create and customize palettes.
-- Various adjustments for mobile screens.
-- Google Adsense 728x90 banners support.
-- Feedback link with user-selected content (uses [Rangy](https://github.com/timdown/rangy) JavaScript library).
+- Feedback module integration with passing user-selected content to feedback form.
+- Google Adsense adaptive banners support for different screen sizes with automatic loading on window resize.
 
 ## Custom pane layouts feature
 
@@ -43,7 +40,8 @@ This feature currently available only if *Custom* skin is selected for a page.
 
 # Install
 
-- Install [Rangy javascript library](https://github.com/roman-yagodin/R7.Dnn.JavaScriptLibraries/releases) dependency.
+- Install [LazyAds javascript library](https://github.com/roman-yagodin/R7.Dnn.JavaScriptLibraries/releases/tag/lazyads-v1.1.10) dependency.
+- Install [Rangy javascript library](https://github.com/roman-yagodin/R7.Dnn.JavaScriptLibraries/releases/tag/rangy-v1.3.0) dependency.
 - Install latest *R7.Epsilon* version from [releases](https://github.com/roman-yagodin/R7.Epsilon/releases).
 
 Optionally replace `Global.asax` file in the application root folder with one shipped alongside skin install package

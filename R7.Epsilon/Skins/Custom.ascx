@@ -43,6 +43,7 @@
 <dnn:DnnJsInclude ID="bootstrapJS" runat="server" FilePath="js/bootstrap.min.js" PathNameAlias="SkinPath" Priority="10" ForceProvider="DnnFormBottomProvider" />
 <dnn:DnnJsInclude ID="menuJS" runat="server" FilePath="js/menu.min.js" PathNameAlias="SkinPath" ForceProvider="DnnFormBottomProvider" />
 <dnn:DnnJsInclude ID="skinJS" runat="server" FilePath="js/skin.min.js" PathNameAlias="SkinPath" ForceProvider="DnnFormBottomProvider" />
+<dnn:JavaScriptLibraryInclude runat="server" Name="LazyAds" />
 <dnn:JavaScriptLibraryInclude runat="server" Name="Rangy" />
 
 <skin:JSVARIABLES runat="server" />
@@ -152,7 +153,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-md-10 col-sm-12">
-                    <div class="skin-banner-large hidden-xs">
+                    <div class="skin-banner">
                         <skin:GADSENSE runat="server" />
                     </div>
                     <div class="row">
