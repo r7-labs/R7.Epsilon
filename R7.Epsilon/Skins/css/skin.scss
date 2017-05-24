@@ -566,19 +566,24 @@ ul.skin-socialgroups
 {
     display:inline-block;
 
-    & > * { display:inline-block; }
+    & > * {
+        display:inline-block;
+        margin-top:1em !important; // overriding inline style!
+    }
 
-    #___plusone_0 { vertical-align:bottom !important; } // overriding inline style!
+    #___plusone_0 {
+        vertical-align:bottom !important; // overriding inline style!
+        font-size:inherit !important; // overriding inline style!
+    }
     .twitter-share-button, #vk_like { vertical-align:bottom; }
     .fb-like, .twitter-share-button { margin-right:30px; }
     .fb-like, #vk_like { min-width:110px; }
 }
 
-
-@media only screen and (max-width : 767px) 
+@media only screen and (max-width : 991px) 
 {
-    // separate rows on xs screens
-    .skin-page-share-buttons > * { margin-top:10px !important; }
+    // separate from menus on md- screens
+    .skin-social-share-buttons { margin-top:1em }
 }
 
 .breadcrumb {
