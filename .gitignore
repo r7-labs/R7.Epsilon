@@ -12,8 +12,8 @@ obj/
 R7.Epsilon/Skins/css/*.css
 R7.Epsilon/Skins/js/*.min.js
 
-# Downloaded NuGet packages
+# Packages
 /packages/
 /Packages/
-
+/node_modules/
 

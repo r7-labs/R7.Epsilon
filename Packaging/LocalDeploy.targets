@@ -71,6 +71,12 @@
             <DeployBinaryFiles Include="$(MainProjectOutputPath)/YamlDotNet.dll" />
 		</ItemGroup>
 
+		<ItemGroup>
+            <DeployLazyAdLoaderFiles Include="$(MSBuildProjectDirectory)/../node_modules/lazyad-loader/dist/lazyad-loader.min.js" />
+		</ItemGroup>
+
+
+
 		<!-- Cleanup -->
 		<RemoveDir Directories="$(TmpDir)" />
 
@@ -79,6 +85,8 @@
 		<Copy SourceFiles="@(DeployContainerFiles)" DestinationFolder="$(TmpDir)/Containers/%(RecursiveDir)" />
 		<Copy SourceFiles="@(DeployMenuFiles)" DestinationFolder="$(TmpDir)/Menus/%(RecursiveDir)" />
         <Copy SourceFiles="@(DeployLayoutManagerFiles)" DestinationFolder="$(TmpDir)/Modules/R7.Epsilon.LayoutManager/%(RecursiveDir)" />
+
+		<Copy SourceFiles="@(DeployLazyAdLoaderFiles)" DestinationFolder="$(TmpDir)/Skins/js" />
 		
 		<!-- declare files to move -->
 		<ItemGroup>

@@ -41,6 +41,7 @@
 <dnn:DnnCssInclude id="skinCSS" runat="server" FilePath="<%# Config.SkinCss %>" PathNameAlias="SkinPath" />
 <dnn:JQUERY ID="dnnjQuery" runat="server" jQueryHoverIntent="true" />
 <dnn:DnnJsInclude ID="bootstrapJS" runat="server" FilePath="js/bootstrap.min.js" PathNameAlias="SkinPath" Priority="10" ForceProvider="DnnFormBottomProvider" />
+<dnn:DnnJsInclude ID="lazyAdLoaderJs" runat="server" FilePath="js/lazyad-loader.min.js" PathNameAlias="SkinPath" ForceProvider="DnnFormBottomProvider" />
 <dnn:DnnJsInclude ID="menuJS" runat="server" FilePath="js/menu.min.js" PathNameAlias="SkinPath" ForceProvider="DnnFormBottomProvider" />
 <dnn:DnnJsInclude ID="skinJS" runat="server" FilePath="js/skin.min.js" PathNameAlias="SkinPath" ForceProvider="DnnFormBottomProvider" />
 <dnn:JavaScriptLibraryInclude runat="server" Name="Rangy" />
@@ -240,10 +241,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-md-10 col-sm-12">
-                    <div class="skin-banner-large hidden-xs">
+                    <div class="skin-banner-large">
                         <skin:GADSENSE runat="server" />
                     </div>
-                    <div class="row">
+                    <div class="row hidden-xs">
                         <div class="skin-footer-buttons col-sm-6 hidden-xs">
                             <skin:BANNER runat="server" GroupName="<%# Config.FooterButtonsGroupName %>" BannerTypeId="4" BannerCount="3" Orientation="H" />
                         </div>
