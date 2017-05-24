@@ -37,7 +37,7 @@ function megaHoverOver() {
     // show only if not showed
     if (sub.not(':visible')) {
         sub.stop().fadeTo('fast', 1).show()
-            .prev().addClass("megahover");
+            .prev().addClass("megahover").focus ();
     }
 
     // hide other submenus - in all menus!
@@ -52,11 +52,8 @@ function megaHoverOver() {
 
 // called by hoverIntent
 function megaHoverOut() {
-    // hide only if not focused
-    if (jQuery(this).find(":focus").length === 0) {
-        jQuery(this).find(".sub").stop().css("opacity", 0).hide()
-            .prev().removeClass("megahover");
-    }
+    jQuery(this).find(".sub").stop().css("opacity", 0).hide()
+        .prev().removeClass("megahover");
 }
 
 jQuery(document).ready(function () {
