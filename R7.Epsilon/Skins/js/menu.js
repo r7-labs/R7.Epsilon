@@ -37,7 +37,7 @@ function megaHoverOver() {
     // show only if not showed
     if (sub.not(':visible')) {
         sub.stop().fadeTo('fast', 1).show()
-            .prev().addClass("megahover"); // TODO: fix recursion! .focus ();
+            .prev().addClass("megahover").focus ();
     }
 
     // hide other submenus - in all menus!
@@ -74,8 +74,10 @@ jQuery(document).ready(function () {
 
     // open submenu by focusing
     jQuery('li.level0 > a').focus(function () {
-        // TODO: check if already open
-        jQuery(this).parent().each (function () { megaHoverOver.call(this); });
+        var jqThis = jQuery(this);
+        if (!jqThis.hasClass ('megahover')) {
+            jqThis.parent().each (function () { megaHoverOver.call(this); });
+        }
     });
 
     // close by close button
