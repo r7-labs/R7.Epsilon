@@ -37,7 +37,7 @@ function megaHoverOver() {
     // show only if not showed
     if (sub.not(':visible')) {
         sub.stop().fadeTo('fast', 1).show()
-            .prev().addClass("megahover").focus ();
+            .prev().addClass("megahover"); // TODO: fix recursion! .focus ();
     }
 
     // hide other submenus - in all menus!
@@ -57,6 +57,8 @@ function megaHoverOut() {
 }
 
 jQuery(document).ready(function () {
+    skin_init_localmenu ();
+    skin_init_modulesmenu ();
 
 	// calculate height of top level menu and set top style for menu placement
 	jQuery('ul.megamenu .sub').css('top', jQuery('ul.megamenu > li').height());
@@ -72,7 +74,14 @@ jQuery(document).ready(function () {
 
     // open submenu by focusing
     jQuery('li.level0 > a').focus(function () {
+        // TODO: check if already open
         jQuery(this).parent().each (function () { megaHoverOver.call(this); });
+    });
+
+    // close by close button
+    jQuery('li.level0 > .sub > .sub-close > a').click(function (e) {
+        e.preventDefault();
+        jQuery(this).parent().parent().parent().each (function () { megaHoverOut.call(this); });
     });
 
     // hoverIntent options
@@ -94,3 +103,41 @@ jQuery(document).ready(function () {
         }).addClass ("current");
     }
 });
+
+function skin_init_modulesmenu () {
+    var li0 = $('.skin-headers-menu li.level0').first();
+    li0.append ('<div class="sub"><div class="sub-close"><a href="#" aria-label="close">&#215;</a></div><div class="megarow"></div></div>');
+    var pageContents = li0.find('div.megarow').first();
+    var thisH = pageContents.parents('.DnnModule').find('h2,h3,h4').first();
+    var menuItems = [];
+    $('h2,h3,h4').each(function () {
+        if (!$(this).is(thisH)) {
+            var title = $(this).text().trim();
+            if (title) {
+                var anchor = $(this).children('a').attr('name');
+                if (!anchor) {
+                    anchor = $(this).parents('.DnnModule').find('a').first().attr('name');
+                }
+                if (anchor) {
+                    menuItems.push('<ul><li><a href="#' + anchor + '">' + title + '</a></li><ul>');
+                } 
+            }
+        }
+    });
+    if (menuItems.length >= 3) {
+        pageContents.append(menuItems);
+    }
+    else {
+        $('.skin-headers-menu').first().addClass('hidden');
+        $('#skin-separator-1').first().addClass('hidden-headers');
+    }
+}
+
+function skin_init_localmenu () {
+    var localMenu = $(".skin-local-menu").first ();
+    if (localMenu.find (".sub").length === 0)
+    {
+        localMenu.addClass ("hidden");
+        $('#skin-separator-1').first().addClass('hidden-local');
+    }
+}

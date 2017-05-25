@@ -28,20 +28,19 @@
     <xsl:param name="enableTopLinks">1</xsl:param>
     <xsl:param name="hamburgerMenu">0</xsl:param>
     <xsl:param name="resourceKey">LocalMenu</xsl:param>
-    <xsl:param name="urlType">0</xsl:param>
+	<xsl:param name="urlType">0</xsl:param>
 	<xsl:param name="subMenuColumns">3</xsl:param>
     <xsl:param name="pointer"></xsl:param>
     <xsl:template match="/*">
 		<xsl:apply-templates select="root" />
 	</xsl:template>
 	<xsl:template match="root">
-        <xsl:if test="$subMenuColumns > 1">
-            <script type="text/javascript">
-    			jQuery(document).ready(function() {
-    				splitSubMenu(&quot;<xsl:value-of select="$ControlID" />&quot;, <xsl:value-of select="$subMenuColumns"/>);
-    			});
-    	    </script>
-        </xsl:if>
+        <script type="text/javascript">
+			<!-- TODO: Move to menu.js, pass subMenuColumns via data attribute -->
+			jQuery(document).ready(function() {
+				splitSubMenu(&quot;<xsl:value-of select="$ControlID" />&quot;, <xsl:value-of select="$subMenuColumns"/>);
+			});
+	    </script>
         <ul class="megamenu">
             <xsl:attribute name="id"><xsl:value-of select="$ControlID" /></xsl:attribute>
             <xsl:apply-templates select="node">
@@ -73,6 +72,13 @@
 					</a>
 					<xsl:if test="node">
 						<div class="sub">
+							<div class="sub-close">
+								<a>
+									<xsl:attribute name="href">#</xsl:attribute>
+									<xsl:attribute name="aria-label"><xsl:value-of select="ddr:GetString('Close.Text','Portals/_default/Skins/R7.Epsilon/App_LocalResources/SharedResources.resx')" disable-output-escaping="yes" /></xsl:attribute>
+									&#215;
+								</a>
+							</div>
 							<xsl:apply-templates select="node">
 								<xsl:with-param name="level" select="$level + 1" />
 							</xsl:apply-templates>
