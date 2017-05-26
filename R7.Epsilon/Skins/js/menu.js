@@ -61,7 +61,7 @@ function skinSplitSubMenu($, controlId, columns) {
     function initModulesMenu () {
         var li0 = $('.skin-headers-menu li.level0').first();
         // TODO: Localize aria-label attribute
-        li0.append ('<div class="sub"><div class="sub-close"><a href="#" aria-label="close">&#215;</a></div><div class="megarow"></div></div>');
+        li0.append ('<div class="sub"><a class="sub-close" href="#" aria-label="close">&#215;</a><div class="megarow"></div></div>');
         var pageContents = li0.find('div.megarow').first();
         var thisH = pageContents.parents('.DnnModule').find('h2,h3,h4').first();
         var menuItems = [];
