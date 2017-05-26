@@ -34,6 +34,18 @@ $submenu-border-top-width: 4px;
     }
 }
 
+@mixin submenu-style ($background-color, $border-color, $shadow-color) {
+    background-color: $background-color;
+    border-color: $border-color;
+    border-bottom-left-radius: $submenu-border-radius;
+    border-bottom-right-radius: $submenu-border-radius;
+    box-shadow: 2px 2px 2px $shadow-color;
+
+    li:first-child a {
+        border-color: darken($background-color, 5%);
+    }
+}
+
 // menu font size
 ul.megamenu * { font-size:$menu-font-size; }
 
@@ -207,14 +219,8 @@ ul.megamenu
         
             .sub
             {
-                border-color:$color-complement-1;
-                background-color:$color-primary-2;
-                border-bottom-left-radius:$submenu-border-radius;
-                border-bottom-right-radius:$submenu-border-radius;
-                box-shadow:2px 2px 2px $color-primary-4;
-
-                li:first-child a { border-color:darken($color-primary-2, 5%); }
-
+                @include submenu-style ($color-primary-2, $color-complement-1, $color-primary-4);
+                
                 .megarow a {
                     &.current { background-color:$color-primary-3; }
                     &:hover, &.megahover, &:focus {
@@ -261,19 +267,12 @@ ul.megamenu
 
             .sub
             {
-                border-color:$secondary-menu-highlight-color-1;
-                background-color:$secondary-menu-base-color-2;
-                border-bottom-left-radius:$submenu-border-radius;
-                border-bottom-right-radius:$submenu-border-radius;
-                box-shadow:2px 2px 2px $secondary-menu-base-color-4;
-
-                a:hover, a:focus
-                { 
+                @include submenu-style ($secondary-menu-base-color-2, $secondary-menu-highlight-color-1, $secondary-menu-base-color-4);
+                
+                a:hover, a:focus {
                     color:$secondary-menu-base-color-4;
                     background-color:$secondary-menu-highlight-color-1; 
                 }
-
-                li:first-child a { border-color:darken($secondary-menu-base-color-2, 5%); }
 
                 .megarow > a { 
 	                &.current { background-color:$secondary-menu-base-color-2; }
@@ -337,12 +336,9 @@ ul.megamenu
             {
                 width:100%;
                 max-width:320px;
-                border-color:$secondary-menu-highlight-color-1;
-                background-color:$secondary-menu-base-color-2;
-                border-bottom-left-radius:$submenu-border-radius;
-                border-bottom-right-radius:$submenu-border-radius;
-                box-shadow:2px 2px 2px $secondary-menu-base-color-4;
 
+                @include submenu-style ($secondary-menu-base-color-2, $secondary-menu-highlight-color-1, $secondary-menu-base-color-4);
+     
                 .megarow {
                     a:hover, a:focus {
                         color:$secondary-menu-base-color-4;
@@ -351,11 +347,6 @@ ul.megamenu
                 }
 
                 ul { width:100%; }
-
-                li:first-child a { border-color:darken($secondary-menu-base-color-2, 5%); }
-
-                // don't overline menu top items
-                ul:first-child li:first-child a { border-top:none; }
 
                 @include submenu-close-link ($secondary-menu-base-color-4, $secondary-menu-base-color-2, $secondary-menu-highlight-color-1);
             }
