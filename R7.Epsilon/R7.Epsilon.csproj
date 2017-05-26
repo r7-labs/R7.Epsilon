@@ -227,7 +227,6 @@
     <Content Include="Skins\images\logo-template.svg" />
     <Content Include="Skins\images\button_100x100.png" />
     <Content Include="Skins\images\button_100x100.svg" />
-    <Content Include="Skins\js\npm.js" />
     <Content Include="Skins\Universal.ascx" />
     <Content Include="Containers\Default_H3.ascx" />
     <Content Include="Containers\Message_Warning.ascx" />
