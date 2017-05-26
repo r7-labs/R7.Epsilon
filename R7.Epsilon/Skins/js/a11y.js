@@ -4,7 +4,7 @@
 //  Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2015-2016 Roman M. Yagodin
+//  Copyright (c) 2015-2017 Roman M. Yagodin
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -19,19 +19,21 @@
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-$(function() {
-    // replace all popup links with simple ones
-    $("a[href^='javascript:dnnModal']").each (function () {
-        var url = $(this).attr ("href");
-        var urlEnd = url.indexOf ("?popUp=");
-        var urlStart = url.indexOf ("http://");
-        if (urlStart >= 0 && urlEnd >= 0) {
-            $(this).attr ("href", url.substring (urlStart, urlEnd));
-        }
-    });
+(function ($, window, document) {
+    $(function() {
+        // replace all popup links with simple ones
+        $("a[href^='javascript:dnnModal']").each (function () {
+            var url = $(this).attr ("href");
+            var urlEnd = url.indexOf ("?popUp=");
+            var urlStart = url.indexOf ("http://");
+            if (urlStart >= 0 && urlEnd >= 0) {
+                $(this).attr ("href", url.substring (urlStart, urlEnd));
+            }
+        });
 
-    // remove onclick handlers from login/register links
-    $("a[id$='_loginLink']").prop ("onclick", null).off ("click");
-    $("a[id$='_enhancedLoginLink']").prop ("onclick", null).off ("click");
-    $("a[id$='_enhancedRegisterLink']").prop ("onclick", null).off ("click");
-});
+        // remove onclick handlers from login/register links
+        $("a[id$='_loginLink']").prop ("onclick", null).off ("click");
+        $("a[id$='_enhancedLoginLink']").prop ("onclick", null).off ("click");
+        $("a[id$='_enhancedRegisterLink']").prop ("onclick", null).off ("click");
+    });
+}) (jQuery, window, document);

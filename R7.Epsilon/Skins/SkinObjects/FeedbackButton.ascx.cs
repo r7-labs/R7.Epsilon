@@ -71,7 +71,7 @@ namespace R7.Epsilon.Skins.SkinObjects
                 linkFeedback.ToolTip = Localizer.GetString ("FeedBackButton.Tooltip");
                 linkFeedback.Text = Localizer.GetString  ("FeedBackButton.Text");
                 linkFeedback.Attributes.Add ("data-feedback-url", feedbackUrl);
-                linkFeedback.Attributes.Add ("onclick", string.Format ("javascript:return skin_setup_feedback_url(this,{0})",
+                linkFeedback.Attributes.Add ("onclick", string.Format ("javascript:return skinSetupFeedbackUrl(jQuery,this,{0})",
                                                                        feedbackModule.ModuleID));
             }
             else {

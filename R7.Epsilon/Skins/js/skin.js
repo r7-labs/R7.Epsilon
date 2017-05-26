@@ -4,7 +4,7 @@
 //  Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2015-2016 Roman M. Yagodin
+//  Copyright (c) 2015-2017 Roman M. Yagodin
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -19,124 +19,118 @@
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-function skin_gtranslate (fromLang) {
+function skinGoogleTranslatePage (fromLang) {
     window.open ("http://translate.google.com/translate?hl=en&sl=" + fromLang + "&u=" + encodeURI (document.location));
 }
 
-$(function() {
-    skin_empty_layout_rows ();
-    skin_init_search ();
-    skin_init_breadcrumb ();
-    skin_init_upbutton ();
-    skin_init_tooltips ();
-    skin_setup_feedback_module ();
-});
-
-function skin_init_breadcrumb () {
-    if (epsilon.breadCrumbsRemoveLastLink) {
-        // assume new style breadcrumbs with schema.org markup (DNN 8+)
-        var schemaOrg = true;
-        var breadcrumb = $(".breadcrumb > span > span").first ();
-
-        if (breadcrumb.length === 0) {
-            // it looks like an old style breadcrumbs
-            schemaOrg = false;
-            breadcrumb = $(".breadcrumb > span").first ();
-        }
-
-        // remove last link (to the current page)
-        if (breadcrumb.length > 0) {
-            if (schemaOrg) {
-                breadcrumb.find ("a").last ().parent ().remove ();
-            }
-            else {
-                breadcrumb.find ("a").last ().remove ();
-            }
-        }
-    }
-}
-
-function skin_init_search () {
-    // "Bootstrapify" search
-    var search = $(".skin-search > span").first ();
-    search.children (".searchInputContainer").attr("style", "display:table-cell !important")
-        .children ("input").removeClass ("NormalTextBox").addClass ("form-control");
-    search.children ("a").removeClass ("SkinObject").addClass ("btn btn-default");
-    search.show ();
-}
-
-// Up Button
-function skin_init_upbutton () {
-    var offset = 320;
-    var duration = 500;
-    jQuery(window).scroll(function() {
-        if (jQuery(this).scrollTop() > offset) {
-            jQuery('.skin-float-button-up').fadeIn(duration);
-        } else {
-            jQuery('.skin-float-button-up').fadeOut(duration);
-        }
-    });
-    
-    jQuery('.skin-float-button-up').click(function(event) {
-        event.preventDefault();
-        $(this).tooltip ('hide');
-        jQuery('html, body').animate({scrollTop: 0}, duration);
-        return false;
-    });
-}
-
-// init tooltips
-function skin_init_tooltips () {
-  $('[data-toggle="tooltip"]').tooltip();
-}
-
-// setup feedback url
-function skin_setup_feedback_url (obj, feedbackModuleId) {
+function skinSetupFeedbackUrl ($, obj, feedbackModuleId) {
     var selection = encodeURIComponent (rangy.getSelection ().toString ().replace (/(\n|\r)/gm," ").replace (/\s+/g, " ").replace (/\"/g, "").trim ().substring (0,100));
     var params = "returntabid=" + epsilon.queryParams ["TabId"] + "&feedbackmid=" + feedbackModuleId + ((!!selection)? "&feedbackselection=" + selection : "");
     var feedbackUrl = $(obj).attr ("data-feedback-url");
     if (feedbackUrl.includes ("?popUp=")) {
         $(obj).attr ("href", feedbackUrl.replace (/\?popUp=(\w+)/, "?popUp=$1&" + params));
-    }
-    else {
+    } else {
         $(obj).attr ("href", feedbackUrl + (feedbackUrl.includes ("?") ? "&" : "?") + params);
     }
 
     return true;
 }
 
-function getLocationOrigin (location) {
-    return (!!location.origin) 
-        ? location.origin
-        : location.protocol + "//" + location.hostname + (location.port ? ":" + location.port: "");
-}
+(function ($, window, document) {
 
-function skin_setup_feedback_module () {
-    if (!!epsilon.queryParams ["feedbackmid"]) {
-        var feedbackContent = "";
-        if (!!epsilon.queryParams ["returntabid"]) {
-            feedbackContent += epsilon.localization ["feedbackPageTemplate"]
-                .replace (/\{origin\}/, getLocationOrigin (window.location))
-                .replace (/\{page\}/, epsilon.queryParams ["returntabid"]);
+    function bootstrapifySearch () {
+        var search = $(".skin-search > span").first ();
+        search.children (".searchInputContainer").attr("style", "display:table-cell !important")
+            .children ("input").removeClass ("NormalTextBox").addClass ("form-control");
+        search.children ("a").removeClass ("SkinObject").addClass ("btn btn-default");
+        search.show ();
+    }
 
-            if (!!epsilon.queryParams ["feedbackselection"]) {
-                feedbackContent += epsilon.localization ["feedbackSelectionTemplate"].replace (/\{selection\}/, epsilon.queryParams ["feedbackselection"]);
+    function initBreadcrumb () {
+        if (epsilon.breadCrumbsRemoveLastLink) {
+            // assume new style breadcrumbs with schema.org markup (DNN 8+)
+            var schemaOrg = true;
+            var breadcrumb = $(".breadcrumb > span > span").first ();
+
+            if (breadcrumb.length === 0) {
+                // it looks like an old style breadcrumbs
+                schemaOrg = false;
+                breadcrumb = $(".breadcrumb > span").first ();
             }
 
-            $("#dnn_ctr" + epsilon.queryParams ["feedbackmid"] + "_Feedback_txtBody")
-                .val (epsilon.localization ["feedbackTemplate"].replace (/\{content\}/, feedbackContent))
-                .trigger ("change").trigger ("keyup");
+            // remove last link (to the current page)
+            if (breadcrumb.length > 0) {
+                if (schemaOrg) {
+                    breadcrumb.find ("a").last ().parent ().remove ();
+                } else {
+                    breadcrumb.find ("a").last ().remove ();
+                }
+            }
         }
     }
-}
 
-// done with empty layout rows
-function skin_empty_layout_rows ()
-{
-    $('.row').each (function () {
-        if ($(this).children ().length ===
-            $(this).children ('.DNNEmptyPane').not ('.dnnSortable').length) {
-            $(this).addClass ('hidden');
+    function initUpButton (offset, duration) {
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > offset) {
+                $('.skin-float-button-up').fadeIn(duration);
+            } else {
+                $('.skin-float-button-up').fadeOut(duration);
+            }
+        });
+        
+        $('.skin-float-button-up').click(function(event) {
+            event.preventDefault();
+            $(this).tooltip ('hide');
+            $('html, body').animate({scrollTop: 0}, duration);
+            return false;
+        });
+    }
+
+    function initTooltips () {
+        $('[data-toggle="tooltip"]').tooltip();
+    }
+
+    function getLocationOrigin (location) {
+        return (!!location.origin) 
+            ? location.origin
+            : location.protocol + "//" + location.hostname + (location.port ? ":" + location.port: "");
+    }
+    
+    function setupFeedbackModule () {
+        if (!!epsilon.queryParams ["feedbackmid"]) {
+            var feedbackContent = "";
+            if (!!epsilon.queryParams ["returntabid"]) {
+                feedbackContent += epsilon.localization ["feedbackPageTemplate"]
+                    .replace (/\{origin\}/, getLocationOrigin (window.location))
+                    .replace (/\{page\}/, epsilon.queryParams ["returntabid"]);
+
+                if (!!epsilon.queryParams ["feedbackselection"]) {
+                    feedbackContent += epsilon.localization ["feedbackSelectionTemplate"].replace (/\{selection\}/, epsilon.queryParams ["feedbackselection"]);
+                }
+
+                $("#dnn_ctr" + epsilon.queryParams ["feedbackmid"] + "_Feedback_txtBody")
+                    .val (epsilon.localization ["feedbackTemplate"].replace (/\{content\}/, feedbackContent))
+                    .trigger ("change").trigger ("keyup");
+            }
         }
+    }
+
+    function emptyLayoutRows () {
+        $('.row').each (function () {
+            if ($(this).children ().length ===
+                $(this).children ('.DNNEmptyPane').not ('.dnnSortable').length) {
+                $(this).addClass ('hidden');
+            }
+        });
+    }
+
+    $(function () {
+        emptyLayoutRows ();
+        bootstrapifySearch ();
+        initBreadcrumb ();
+        initUpButton (320, 500);
+        initTooltips ();
+        setupFeedbackModule ();
     });
-}
+
+}) (jQuery, window, document);

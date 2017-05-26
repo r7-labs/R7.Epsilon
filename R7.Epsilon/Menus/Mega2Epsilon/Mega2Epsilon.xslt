@@ -38,7 +38,7 @@
         <script type="text/javascript">
 			<!-- TODO: Move to menu.js, pass subMenuColumns via data attribute -->
 			jQuery(document).ready(function() {
-				splitSubMenu(&quot;<xsl:value-of select="$ControlID" />&quot;, <xsl:value-of select="$subMenuColumns"/>);
+				skinSplitSubMenu(jQuery, &quot;<xsl:value-of select="$ControlID" />&quot;, <xsl:value-of select="$subMenuColumns"/>);
 			});
 	    </script>
         <ul class="megamenu">
