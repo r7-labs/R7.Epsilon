@@ -72,13 +72,13 @@
 					</a>
 					<xsl:if test="node">
 						<div class="sub">
+							<xsl:apply-templates select="node">
+								<xsl:with-param name="level" select="$level + 1" />
+							</xsl:apply-templates>
 							<a href="#" role="button" class="sub-close">
 								<xsl:attribute name="title"><xsl:value-of select="ddr:GetString('SubMenuClose.Text','Portals/_default/Skins/R7.Epsilon/App_LocalResources/SharedResources.resx')" disable-output-escaping="yes" /></xsl:attribute>
 								&#215;
 							</a>
-							<xsl:apply-templates select="node">
-								<xsl:with-param name="level" select="$level + 1" />
-							</xsl:apply-templates>
 						</div>
 					</xsl:if>
 				</li>

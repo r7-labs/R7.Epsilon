@@ -41,7 +41,7 @@ $submenu-border-top-width: 4px;
     border-bottom-right-radius: $submenu-border-radius;
     box-shadow: 2px 2px 2px $shadow-color;
 
-    li:first-child a {
+    li:first-child > a {
         border-color: darken($background-color, 5%);
     }
 }
@@ -274,7 +274,7 @@ ul.megamenu
                     background-color:$secondary-menu-highlight-color-1; 
                 }
 
-                .megarow > a { 
+                .megarow a { 
 	                &.current { background-color:$secondary-menu-base-color-2; }
 	                &:hover, &.megahover, &:focus {
 	                    color:#000;

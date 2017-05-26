@@ -60,29 +60,30 @@ function skinSplitSubMenu($, controlId, columns) {
 
     function initModulesMenu () {
         var li0 = $('.skin-headers-menu li.level0').first();
-        li0.append ('<div class="sub"><a href="#" role="button" class="sub-close" ' +
-            'title="' + epsilon.localization.subMenuCloseButtonTitle + '"' +
-            '>&times;</a><div class="megarow"></div></div>'
-        );
-        var pageContents = li0.find('div.megarow').first();
-        var thisH = pageContents.parents('.DnnModule').find('h2,h3,h4').first();
-        var menuItems = [];
+        var thisH = li0.parents('.DnnModule').find('h2,h3,h4').first();
+        var menuItems = "";
+        var menuItemsCount = 0;
         $('h2,h3,h4').each(function () {
             if (!$(this).is(thisH)) {
                 var title = $(this).text().trim();
-                if (title) {
+                if (!!title) {
                     var anchor = $(this).children('a').attr('name');
                     if (!anchor) {
                         anchor = $(this).parents('.DnnModule').find('a').first().attr('name');
                     }
                     if (anchor) {
-                        menuItems.push('<ul><li><a href="#' + anchor + '">' + title + '</a></li><ul>');
+                        menuItems += '<div class="megarow"><ul><li><a href="#' + anchor + '">' + title + '</a></li><ul></div>';
+                        menuItemsCount++;
                     } 
                 }
             }
         });
-        if (menuItems.length >= 3) {
-            pageContents.append(menuItems);
+        if (menuItemsCount >= 3) {
+            li0.append ('<div class="sub">'
+                + menuItems
+                + '<a href="#" role="button" class="sub-close" title="' + epsilon.localization.subMenuCloseButtonTitle + '">&times;</a>'
+                + '</div>'
+            );
         } else {
             $('.skin-headers-menu').first().addClass('hidden');
             $('#skin-separator-1').first().addClass('hidden-headers');
