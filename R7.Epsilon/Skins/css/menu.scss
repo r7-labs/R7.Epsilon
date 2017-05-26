@@ -63,7 +63,7 @@ ul.megamenu
 
         & > .sub-close {
             position:absolute;
-            top: (-$submenu-border-top-width);
+            top:0;
             right:0;
             z-index:1020;
             padding:0 .5em .5em .5em;
@@ -221,6 +221,7 @@ ul.megamenu
                         &:hover, &:focus { color: $color-primary-2; }
                     }
                     background-color:$color-complement-1;
+                    box-shadow:0 2px 2px $color-primary-4;
                 }
             }
         }
@@ -286,6 +287,7 @@ ul.megamenu
                         color:$secondary-menu-base-color-4;
                         &:hover, &:focus { color: $secondary-menu-base-color-2; }
                     }
+                    box-shadow:0 2px 2px $secondary-menu-base-color-4;
                     background-color:$secondary-menu-highlight-color-1;
                 }
             }
@@ -366,6 +368,7 @@ ul.megamenu
                         color:$secondary-menu-base-color-4;
                         &:hover, &:focus { color: $secondary-menu-base-color-2; }
                     }
+                    box-shadow:0 2px 2px $secondary-menu-base-color-4;
                     background-color:$secondary-menu-highlight-color-1;
                 }
             }
@@ -408,6 +411,10 @@ ul.megamenu
                         float:none;
                         display:block;
                         width:100%;
+                    }
+
+                    & > .sub-close {
+                        border-radius: $submenu-border-radius 0 0 $submenu-border-radius;
                     }
                 }
             }
