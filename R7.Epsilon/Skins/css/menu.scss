@@ -25,11 +25,13 @@
 $submenu-border-radius: 16px;
 $submenu-border-top-width: 4px;
 
-@mixin submenu-close-link-color ($color, $hover-color, $background-color) {
-    color: $color;
-    &:hover, &:focus { color: $hover-color; }
-    background-color: $background-color;
-    box-shadow: 0 2px 2px $color;
+@mixin submenu-close-link ($color, $hover-color, $background-color) {
+    & > a.sub-close {
+        color: $color;
+        &:hover, &:focus { color: $hover-color; }
+        background-color: $background-color;
+        box-shadow: 0 2px 2px $color;
+    }
 }
 
 // menu font size
@@ -221,9 +223,7 @@ ul.megamenu
                     }
                 }
             
-                & > a.sub-close { 
-                    @include submenu-close-link-color ($color-primary-4, $color-primary-2, $color-complement-1);
-                }
+                @include submenu-close-link ($color-primary-4, $color-primary-2, $color-complement-1);
             }
         }
     }
@@ -283,9 +283,7 @@ ul.megamenu
 	                }
 	            }
 
-                & > a.sub-close {
-                    @include submenu-close-link-color ($secondary-menu-base-color-4, $secondary-menu-base-color-2, $secondary-menu-highlight-color-1);
-                }
+                @include submenu-close-link ($secondary-menu-base-color-4, $secondary-menu-base-color-2, $secondary-menu-highlight-color-1);
             }
         }
     }
@@ -359,9 +357,7 @@ ul.megamenu
                 // don't overline menu top items
                 ul:first-child li:first-child a { border-top:none; }
 
-                & > a.sub-close {
-                    @include submenu-close-link-color ($secondary-menu-base-color-4, $secondary-menu-base-color-2, $secondary-menu-highlight-color-1);
-                }
+                @include submenu-close-link ($secondary-menu-base-color-4, $secondary-menu-base-color-2, $secondary-menu-highlight-color-1);
             }
         }
     }
