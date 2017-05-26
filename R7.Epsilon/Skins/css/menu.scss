@@ -4,7 +4,7 @@
 //  Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2015-016 Roman M. Yagodin
+//  Copyright (c) 2015-2017 Roman M. Yagodin
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -24,6 +24,13 @@
 // menu variables
 $submenu-border-radius: 16px;
 $submenu-border-top-width: 4px;
+
+@mixin submenu-close-link-color ($color, $hover-color, $background-color) {
+    color: $color;
+    &:hover, &:focus { color: $hover-color; }
+    background-color: $background-color;
+    box-shadow: 0 2px 2px $color;
+}
 
 // menu font size
 ul.megamenu * { font-size:$menu-font-size; }
@@ -214,11 +221,8 @@ ul.megamenu
                     }
                 }
             
-                & > a.sub-close {
-                    color:$color-primary-4;
-                    &:hover, &:focus { color: $color-primary-2; }
-                    background-color:$color-complement-1;
-                    box-shadow:0 2px 2px $color-primary-4;
+                & > a.sub-close { 
+                    @include submenu-close-link-color ($color-primary-4, $color-primary-2, $color-complement-1);
                 }
             }
         }
@@ -280,10 +284,7 @@ ul.megamenu
 	            }
 
                 & > a.sub-close {
-                    color:$secondary-menu-base-color-4;
-                    &:hover, &:focus { color: $secondary-menu-base-color-2; }
-                    box-shadow:0 2px 2px $secondary-menu-base-color-4;
-                    background-color:$secondary-menu-highlight-color-1;
+                    @include submenu-close-link-color ($secondary-menu-base-color-4, $secondary-menu-base-color-2, $secondary-menu-highlight-color-1);
                 }
             }
         }
@@ -359,10 +360,7 @@ ul.megamenu
                 ul:first-child li:first-child a { border-top:none; }
 
                 & > a.sub-close {
-                    color:$secondary-menu-base-color-4;
-                    &:hover, &:focus { color: $secondary-menu-base-color-2; }
-                    box-shadow:0 2px 2px $secondary-menu-base-color-4;
-                    background-color:$secondary-menu-highlight-color-1;
+                    @include submenu-close-link-color ($secondary-menu-base-color-4, $secondary-menu-base-color-2, $secondary-menu-highlight-color-1);
                 }
             }
         }
