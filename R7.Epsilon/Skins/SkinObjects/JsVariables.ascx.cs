@@ -90,7 +90,8 @@ namespace R7.Epsilon.Skins.SkinObjects
                 sb.AppendFormat ("selectLayout:'{0}',", Localizer.GetString ("SelectLayout.Text"));
                 sb.AppendFormat ("feedbackTemplate:'{0}',", Localizer.GetString ("Feedback.Template"));
                 sb.AppendFormat ("feedbackPageTemplate:'{0}',", Localizer.GetString ("FeedbackPage.Template"));
-                sb.AppendFormat ("feedbackSelectionTemplate:'{0}'", Localizer.GetString ("FeedbackSelection.Template"));
+                sb.AppendFormat ("feedbackSelectionTemplate:'{0}',", Localizer.GetString ("FeedbackSelection.Template"));
+                sb.AppendFormat ("subMenuCloseButtonTitle:'{0}'", Localizer.GetString ("SubMenuClose.Text"));
 
                 return sb.ToString ();
             }

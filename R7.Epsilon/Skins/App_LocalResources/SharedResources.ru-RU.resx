@@ -63,6 +63,9 @@
     <data name="Close.Text" xml:space="preserve">
         <value>Закрыть</value>
     </data>
+    <data name="SubMenuClose.Text" xml:space="preserve">
+        <value>Закрыть меню</value>
+    </data>
     <data xml:space="preserve" name="FeedBackButton.Text">
         <value></value>
     </data>

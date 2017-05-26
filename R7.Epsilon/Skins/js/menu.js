@@ -60,8 +60,10 @@ function skinSplitSubMenu($, controlId, columns) {
 
     function initModulesMenu () {
         var li0 = $('.skin-headers-menu li.level0').first();
-        // TODO: Localize aria-label attribute
-        li0.append ('<div class="sub"><a class="sub-close" href="#" aria-label="close">&#215;</a><div class="megarow"></div></div>');
+        li0.append ('<div class="sub"><a href="#" role="button" class="sub-close" ' +
+            'title="' + epsilon.localization.subMenuCloseButtonTitle + '"' +
+            '>&times;</a><div class="megarow"></div></div>'
+        );
         var pageContents = li0.find('div.megarow').first();
         var thisH = pageContents.parents('.DnnModule').find('h2,h3,h4').first();
         var menuItems = [];
@@ -106,7 +108,7 @@ function skinSplitSubMenu($, controlId, columns) {
     }
 
     function initCloseButton () {
-        $('li.level0 > .sub > .sub-close > a').click(function (e) {
+        $('li.level0 > .sub > a.sub-close').click(function (e) {
             e.preventDefault();
             $(this).parent().parent().parent().each (function () { megaHoverOut.call(this); });
         });
