@@ -9,7 +9,7 @@
 	},
 	"args": [
 		// active build configuration
-		"/p:Configuration=Release",
+		"/p:Configuration=Debug",
 		// ask msbuild to generate full paths for file names
 		"/p:GenerateFullPaths=true"
 	],
