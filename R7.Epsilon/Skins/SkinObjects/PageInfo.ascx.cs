@@ -22,6 +22,7 @@
 using System.Linq;
 using DotNetNuke.Common;
 using DotNetNuke.Entities.Content;
+using DotNetNuke.Entities.Modules;
 using DotNetNuke.Entities.Portals;
 
 namespace R7.Epsilon.Skins.SkinObjects
@@ -32,10 +33,18 @@ namespace R7.Epsilon.Skins.SkinObjects
 
         public PageInfo ()
         {
-            lastModifiedContentItem = new ContentController ()
-                .GetContentItemsByTabId (PortalSettings.ActiveTab.TabID)
-                .OrderByDescending (ci => ci.LastModifiedOnDate)
-                .FirstOrDefault ();
+            lastModifiedContentItem = GetLastModifiedContentItem (PortalSettings.ActiveTab.TabID);
+        }
+
+        protected ContentItem GetLastModifiedContentItem (int tabId)
+        {
+            var contentController = new ContentController ();
+            var contentItems = contentController.GetContentItemsByTabId (tabId);
+            foreach (var module in ModuleController.Instance.GetTabModules (tabId)) {
+                contentItems.Concat (contentController.GetContentItemsByModuleId (module.Value.ModuleID));
+            }
+            
+            return contentItems.OrderByDescending (ci => ci.LastModifiedOnDate).FirstOrDefault ();
         }
 
         /// <summary>
@@ -52,18 +61,18 @@ namespace R7.Epsilon.Skins.SkinObjects
 
         protected string LastContentModifiedOnDate {
             get {
-                return GetLastModifiedContentItem ().LastModifiedOnDate.ToString (Localizer.SafeGetString ("PublishedOnDate.Format", "MM/dd/yyyy"));
+                return SafeGetLastModifiedContentItem ().LastModifiedOnDate.ToString (Localizer.SafeGetString ("PublishedOnDate.Format", "MM/dd/yyyy"));
             }
         }
 
         protected string LastContentModifiedByUserName {
             get {
-                var user = GetLastModifiedContentItem ().LastModifiedByUser (PortalSettings.PortalId);
+                var user = SafeGetLastModifiedContentItem ().LastModifiedByUser (PortalSettings.PortalId);
                 return (user != null) ? user.DisplayName : Localizer.SafeGetString ("SystemUser.Text", "System");
             }
         }
 
-        protected ContentItem GetLastModifiedContentItem ()
+        protected ContentItem SafeGetLastModifiedContentItem ()
         {
             if (lastModifiedContentItem != null) {
                 return lastModifiedContentItem;
