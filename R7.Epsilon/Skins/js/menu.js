@@ -34,29 +34,39 @@ function skinSplitSubMenu($, controlId, columns) {
 
     // called by hoverIntent and on top level menu links focus
     function megaHoverOver() {
-
+        // show submenu only if it is not showed
         var sub = $(this).children (".sub");
-
-        // show only if not showed
-        if (sub.length !== 0 && sub.not (':visible')) {
-            sub.stop ().fadeTo ('fast', 1).show ()
-                .prev ("a").addClass ("megahover").focus ();
+        if (sub.length !== 0 && !sub.is (":visible")) {
+            sub.stop ().fadeTo ("fast", 1).show ();
         }
 
-        // hide other submenus - in all menus!
-        // $(this).parents ("ul.megamenu") - only this menu
-        $("ul.megamenu").find ('.sub').each (function () {
-            if (!sub.is (this)) {
-                $(this).stop ().css ("opacity", 0).hide ()
-                    .prev ("a").removeClass ("megahover");
+        // focus and mark hovered top-level menu item
+        $(this).children ("a").addClass ("megahover").not ("a:focus").focus ();
+    
+        megaHoverOutAllExcept (this);
+    }
+
+    // hide / unhover other submenus - in all menus!
+    function megaHoverOutAllExcept (li0) {
+        $("ul.megamenu > li.level0").each (function () {
+            if (!$(this).is (li0)) {
+                megaHoverOut.call (this);
             }
         });
     }
 
     // called by hoverIntent
     function megaHoverOut () {
-        $(this).children (".sub").stop ().css ("opacity", 0).hide ()
-            .prev ("a").removeClass ("megahover");
+        $(this).children ("a").removeClass ("megahover")
+            .next (".sub").stop ().css ("opacity", 0).hide ();
+    }
+
+    function initOpenSubmenuOnFocus () {
+        $("ul.megamenu > li.level0 > a").focus (function () {
+            if (!$(this).hasClass ("megahover")) {
+                 megaHoverOver.call ($(this).parent ().get (0));
+            }
+        });
     }
 
     function initModulesMenu () {
@@ -99,15 +109,6 @@ function skinSplitSubMenu($, controlId, columns) {
         }
     }
 
-    function initOpenSubmenuOnFocus () {
-        $('li.level0 > a').focus(function () {
-            var a = $(this);
-            if (!a.hasClass ('megahover')) {
-                a.parent ().each (function () { megaHoverOver.call (this); });
-            }
-        });
-    }
-
     function initCloseButton () {
         $('li.level0 > .sub > a.sub-close').click (function (e) {
             e.preventDefault ();
@@ -120,16 +121,7 @@ function skinSplitSubMenu($, controlId, columns) {
         initModulesMenu ();
 
         // calculate height of top level menu and set top style for menu placement
-        $('ul.megamenu .sub').css('top', $('ul.megamenu > li').height());
-
-        // set hover class to parent item
-        // REVIEW: Move to megaHoverOver/Out?
-        /*
-        $('li.level0 > .sub').mouseover(function () {
-            $(this).closest('li.level0 > a').addClass("megahover")
-        }).mouseout(function () {
-            $(this).closest('li.level0 > a').removeClass("megahover")
-        });*/
+        $("ul.megamenu .sub").css ("top", $("ul.megamenu > li").height ());
 
         initOpenSubmenuOnFocus ();
         initCloseButton ();
