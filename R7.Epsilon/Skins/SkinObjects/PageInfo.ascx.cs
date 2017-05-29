@@ -69,6 +69,7 @@ namespace R7.Epsilon.Skins.SkinObjects
                 return lastModifiedContentItem;
             }
 
+            // should be already among content items
             return PortalSettings.ActiveTab;
         }
     }
