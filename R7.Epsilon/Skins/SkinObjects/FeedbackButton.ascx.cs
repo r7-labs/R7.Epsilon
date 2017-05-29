@@ -55,7 +55,7 @@ namespace R7.Epsilon.Skins.SkinObjects
             
             if (feedbackModule != null) {
                 string feedbackUrl;
-                if (PortalSettings.Current.EnablePopUps && !A11yHelper.GetA11y (Request)) {
+                if (PortalSettings.Current.EnablePopUps && !A11yHelper.GetA11y (Request) && !EpsilonUrlHelper.IsOldIE (Request)) {
                     // show feedback module
                     feedbackUrl = UrlUtils.PopUpUrl (Globals.NavigateURL (feedbackModule.TabID, "", "mid", feedbackModule.ModuleID.ToString ()),
                                                      this, PortalSettings.Current, false, false, 550, 950, false, "");
