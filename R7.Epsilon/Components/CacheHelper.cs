@@ -48,6 +48,7 @@ namespace R7.Epsilon.Components
                         var user = UserController.Instance.GetCurrentUserInfo ();
                         if (user != null) {
                             result.Append ("userroles=");
+                            // TODO: Use role ids?
                             result.Append (Utils.FormatList (",", (Array)user.Roles));
                         }
                     }
