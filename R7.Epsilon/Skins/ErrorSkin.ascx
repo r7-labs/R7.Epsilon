@@ -8,6 +8,7 @@
 <%@ Register TagPrefix="dnn" TagName="JQUERY" Src="~/Admin/Skins/jQuery.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="META" Src="~/Admin/Skins/Meta.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="BREADCRUMB" Src="~/Admin/Skins/BreadCrumb.ascx" %>
+<%@ Register TagPrefix="dnn" TagName="JavaScriptLibraryInclude" Src="~/admin/Skins/JavaScriptLibraryInclude.ascx" %>
 <%@ Register TagPrefix="skin" TagName="FUNCTIONS" Src="SkinObjects/Functions.ascx" %>
 <%@ Register TagPrefix="skin" TagName="GADSENSE" Src="SkinObjects/GAdsense.ascx" %>
 <%@ Register TagPrefix="skin" TagName="SOCIALGROUPS" Src="SkinObjects/SocialGroups.ascx" %>
