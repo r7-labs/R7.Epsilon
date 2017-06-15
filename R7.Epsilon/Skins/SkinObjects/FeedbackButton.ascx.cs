@@ -4,7 +4,7 @@
 //  Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2015-2016 Roman M. Yagodin
+//  Copyright (c) 2015-2017 Roman M. Yagodin
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -55,7 +55,7 @@ namespace R7.Epsilon.Skins.SkinObjects
             
             if (feedbackModule != null) {
                 string feedbackUrl;
-                if (PortalSettings.Current.EnablePopUps && !A11yHelper.GetA11y (Request) && !EpsilonUrlHelper.IsOldIE (Request)) {
+                if (PortalSettings.Current.EnablePopUps && !A11yHelper.GetA11y (Request) && !(EpsilonUrlHelper.IsIeBrowser (Request) && !EpsilonUrlHelper.IsEdgeBrowser (Request))) {
                     // show feedback module
                     feedbackUrl = UrlUtils.PopUpUrl (Globals.NavigateURL (feedbackModule.TabID, "", "mid", feedbackModule.ModuleID.ToString ()),
                                                      this, PortalSettings.Current, false, false, 550, 950, false, "");

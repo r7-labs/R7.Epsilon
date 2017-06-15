@@ -4,7 +4,7 @@
 //  Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2015 Roman M. Yagodin
+//  Copyright (c) 2015-2017 Roman M. Yagodin
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -18,6 +18,8 @@
 //
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+using R7.Epsilon.Components;
 
 namespace R7.Epsilon.Skins.SkinObjects
 {
@@ -34,16 +36,12 @@ namespace R7.Epsilon.Skins.SkinObjects
         protected bool IsCompatibleBrowser
         {
             get
-            { 
-                // get browser
-                var browser = Request.Browser;
-                var browserName = browser.Browser.ToUpperInvariant();
-
+            {
                 // default is compatible
                 var compatible = true;
 
                 // check for browser type and version 
-                if (browserName.StartsWith ("IE") || browserName.Contains ("MSIE"))
+                if (EpsilonUrlHelper.IsIeBrowser (Request))
                 {
                     compatible = Request.Browser.MajorVersion >= MinIeVersion;
                 }
