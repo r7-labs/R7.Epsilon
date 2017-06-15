@@ -26,6 +26,7 @@ namespace R7.Epsilon.Components
 {
     public static class EpsilonUrlHelper
     {
+        // TODO: Move to the base library
         /// <summary>
         /// Checks if browser is InternetExplorer
         /// </summary>
