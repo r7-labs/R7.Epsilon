@@ -34,11 +34,11 @@
 
 <dnn:META ID="bootstrapIECompat" runat="server" Name="X-UA-Compatible" Content="IE=edge" />
 <dnn:META ID="mobileScale" runat="server" Name="viewport" Content="width=device-width,initial-scale=1" />
-<dnn:DnnCssInclude ID="bootStrapCSS" runat="server" FilePath="css/bootstrap.min.css" PathNameAlias="SkinPath" Priority="14" />
-<dnn:DnnCssInclude ID="bootStrapThemeCSS" runat="server" FilePath="css/bootstrap-theme.min.css" PathNameAlias="SkinPath" Priority="14" />
+<dnn:DnnCssInclude ID="bootStrapCSS" runat="server" Name="bootstrap" Version="3.3.7"  FilePath="css/bootstrap.min.css" PathNameAlias="SkinPath" Priority="14" />
+<dnn:DnnCssInclude ID="bootStrapThemeCSS" runat="server" Name="bootstrap.theme" Version="3.3.7" FilePath="css/bootstrap-theme.min.css" PathNameAlias="SkinPath" Priority="14" />
 <dnn:DnnCssInclude id="skinCSS" runat="server" FilePath="<%# Config.SkinCss %>" PathNameAlias="SkinPath" />
 <dnn:JQUERY ID="dnnjQuery" runat="server" jQueryHoverIntent="true" />
-<dnn:DnnJsInclude ID="bootstrapJS" runat="server" FilePath="js/bootstrap.min.js" PathNameAlias="SkinPath" Priority="10" ForceProvider="DnnFormBottomProvider" />
+<dnn:DnnJsInclude ID="bootstrapJS" runat="server" Name="bootstrap" Version="3.3.7" FilePath="js/bootstrap.min.js" PathNameAlias="SkinPath" Priority="10" ForceProvider="DnnFormBottomProvider" />
 <dnn:DnnJsInclude ID="menuJS" runat="server" FilePath="js/menu.min.js" PathNameAlias="SkinPath" ForceProvider="DnnFormBottomProvider" />
 <dnn:DnnJsInclude ID="skinJS" runat="server" FilePath="js/skin.min.js" PathNameAlias="SkinPath" ForceProvider="DnnFormBottomProvider" />
 <dnn:JavaScriptLibraryInclude runat="server" Name="LazyAds" />
