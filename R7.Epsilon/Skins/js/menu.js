@@ -69,7 +69,7 @@ function skinSplitSubMenu($, controlId, columns) {
         });
     }
 
-    function initModulesMenu () {
+    function initModulesMenu (minHeaders) {
         var li0 = $('.skin-headers-menu li.level0').first();
         var thisH = li0.parents('.DnnModule').find('h2,h3,h4').first();
         var menuItems = "";
@@ -89,7 +89,7 @@ function skinSplitSubMenu($, controlId, columns) {
                 }
             }
         });
-        if (menuItemsCount >= 3) {
+        if (menuItemsCount >= minHeaders) {
             li0.append ('<div class="sub">'
                 + menuItems
                 + '<a href="#" role="button" class="sub-close" title="' + epsilon.localization.subMenuCloseButtonTitle + '">&times;</a>'
@@ -118,7 +118,8 @@ function skinSplitSubMenu($, controlId, columns) {
 
     $(function() {
         initLocalMenu ();
-        initModulesMenu ();
+        // TODO: Move to epsilon object and configuration
+        initModulesMenu (7);
 
         // calculate height of top level menu and set top style for menu placement
         $("ul.megamenu .sub").css ("top", $("ul.megamenu > li").height ());
