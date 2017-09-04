@@ -90,6 +90,10 @@ function skinSetupFeedbackUrl ($, obj, feedbackModuleId) {
         $('[data-toggle="tooltip"]').tooltip();
     }
 
+    function initPopovers () {
+        $('[data-toggle="popover"]').popover();
+    }
+
     function getLocationOrigin (location) {
         return (!!location.origin) 
             ? location.origin
@@ -130,6 +134,7 @@ function skinSetupFeedbackUrl ($, obj, feedbackModuleId) {
         initBreadcrumb ();
         initUpButton (320, 500);
         initTooltips ();
+        initPopovers ();
         setupFeedbackModule ();
     });
 
