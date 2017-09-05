@@ -86,39 +86,6 @@ function skinSetupFeedbackUrl ($, obj, feedbackModuleId) {
         });
     }
 
-    function initTooltips () {
-        $('[data-toggle="tooltip"]').tooltip();
-    }
-
-    function initPopovers () {
-        $('[data-toggle="popover"]').popover();
-    }
-
-    function getLocationOrigin (location) {
-        return (!!location.origin) 
-            ? location.origin
-            : location.protocol + "//" + location.hostname + (location.port ? ":" + location.port: "");
-    }
-    
-    function setupFeedbackModule () {
-        if (!!epsilon.queryParams ["feedbackmid"]) {
-            var feedbackContent = "";
-            if (!!epsilon.queryParams ["returntabid"]) {
-                feedbackContent += epsilon.localization ["feedbackPageTemplate"]
-                    .replace (/\{origin\}/, getLocationOrigin (window.location))
-                    .replace (/\{page\}/, epsilon.queryParams ["returntabid"]);
-
-                if (!!epsilon.queryParams ["feedbackselection"]) {
-                    feedbackContent += epsilon.localization ["feedbackSelectionTemplate"].replace (/\{selection\}/, epsilon.queryParams ["feedbackselection"]);
-                }
-
-                $("#dnn_ctr" + epsilon.queryParams ["feedbackmid"] + "_Feedback_txtBody")
-                    .val (epsilon.localization ["feedbackTemplate"].replace (/\{content\}/, feedbackContent))
-                    .trigger ("change").trigger ("keyup");
-            }
-        }
-    }
-
     function emptyLayoutRows () {
         $('.row').each (function () {
             if ($(this).children ().length ===
@@ -133,9 +100,6 @@ function skinSetupFeedbackUrl ($, obj, feedbackModuleId) {
         bootstrapifySearch ();
         initBreadcrumb ();
         initUpButton (320, 500);
-        initTooltips ();
-        initPopovers ();
-        setupFeedbackModule ();
     });
 
 }) (jQuery, window, document);
