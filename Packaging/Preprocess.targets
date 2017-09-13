@@ -12,7 +12,7 @@
     <ItemGroup>
         <JsFiles Include="$(MainProjectPath)\Skins\js\menu.js" />
         <JsFiles Include="$(MainProjectPath)\Skins\js\skin.js" />
-        <JsFiles Include="$(MainProjectPath)\Skins\js\popup-skin.js" />
+        <JsFiles Include="$(MainProjectPath)\Skins\js\feedback.js" />
 		<JsFiles Include="$(MainProjectPath)\Skins\js\bootstrap-init.js" />
         <JsFiles Include="$(MainProjectPath)\Skins\js\a11y.js" />
     </ItemGroup>

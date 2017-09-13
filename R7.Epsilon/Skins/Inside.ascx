@@ -42,6 +42,7 @@
 <dnn:DnnJsInclude runat="server" FilePath="js/bootstrap-init.min.js" PathNameAlias="SkinPath" ForceProvider="DnnFormBottomProvider" />
 <dnn:DnnJsInclude ID="menuJS" runat="server" FilePath="js/menu.min.js" PathNameAlias="SkinPath" ForceProvider="DnnFormBottomProvider" />
 <dnn:DnnJsInclude ID="skinJS" runat="server" FilePath="js/skin.min.js" PathNameAlias="SkinPath" ForceProvider="DnnFormBottomProvider" />
+<dnn:DnnJsInclude runat="server" FilePath="js/feedback.min.js" PathNameAlias="SkinPath" ForceProvider="DnnFormBottomProvider" />
 <dnn:JavaScriptLibraryInclude runat="server" Name="LazyAds" />
 <dnn:JavaScriptLibraryInclude runat="server" Name="Rangy" />
 
