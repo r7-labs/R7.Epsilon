@@ -118,8 +118,7 @@ function skinSplitSubMenu($, controlId, columns) {
 
     $(function() {
         initLocalMenu ();
-        // TODO: Move to epsilon object and configuration
-        initModulesMenu (7);
+        initModulesMenu (epsilon.menuMinHeaders);
 
         // calculate height of top level menu and set top style for menu placement
         $("ul.megamenu .sub").css ("top", $("ul.megamenu > li").height ());

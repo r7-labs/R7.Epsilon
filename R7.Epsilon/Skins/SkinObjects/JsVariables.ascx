@@ -9,6 +9,7 @@ var epsilon = {
     breadCrumbsRemoveLastLink:<%= JsBreadCrumbsRemoveLastLink %>,
 	layoutManagerUrl:'<%= LayoutManagerUrl %>',
     localization:{<%= LocalizationResources %>},
-    queryParams:{<%= QueryParams %>}
+    queryParams:{<%= QueryParams %>},
+	menuMinHeaders:<%= R7.Epsilon.Components.EpsilonConfig.Instance.MenuMinHeaders %>
 };
 </script>

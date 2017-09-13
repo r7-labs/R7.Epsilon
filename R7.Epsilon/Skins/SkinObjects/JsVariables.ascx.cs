@@ -30,6 +30,7 @@ using R7.Epsilon.Components;
 
 namespace R7.Epsilon.Skins.SkinObjects
 {
+    // TODO: Introduce ClientConfig class, serialize it to JSON
     public class JsVariables: EpsilonSkinObjectBase
     {
         #region Control properties

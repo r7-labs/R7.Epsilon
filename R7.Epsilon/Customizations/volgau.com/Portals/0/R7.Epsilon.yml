@@ -18,6 +18,8 @@ secondary-menu:
 
 menu-url-type: 2
 
+menu-min-headers: 7
+
 social-networks:
 
   - name: VKontakte

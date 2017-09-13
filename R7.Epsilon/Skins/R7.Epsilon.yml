@@ -18,6 +18,10 @@ secondary-menu:
 
 menu-url-type: 0
 
+# "On this page" menu will show up if number of headers on the page
+# is greater or equal to menu-min-headers value. Set to 0 to disable "On this page" menu.
+menu-min-headers: 7
+
 social-networks:
 
   - name: VKontakte

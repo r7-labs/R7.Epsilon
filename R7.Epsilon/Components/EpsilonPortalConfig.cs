@@ -52,6 +52,8 @@ namespace R7.Epsilon.Components
 
         public int MenuUrlType { get; set; }
 
+        public int MenuMinHeaders { get; set; } = 7;
+
         public bool UseObrnadzorMicrodata { get; set; }
 
         public List<SocialNetworkConfig> SocialNetworks { get; set; }
