@@ -57,7 +57,7 @@ namespace R7.Epsilon.Components
                     }
 
                     using (var configReader = new StringReader (File.ReadAllText (portalConfigFile))) {
-                        var deserializer = new Deserializer (namingConvention: new HyphenatedNamingConvention ());
+                        var deserializer = new DeserializerBuilder ().WithNamingConvention (new HyphenatedNamingConvention ()).Build ();
                         var portalConfig = deserializer.Deserialize<EpsilonPortalConfig> (configReader);
 
                         portalConfig.PrimaryMenu.LoadNodeManipulators ();
