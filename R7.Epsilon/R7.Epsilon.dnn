@@ -20,6 +20,19 @@
 				<dependency type="package">Rangy</dependency>
             </dependencies>
 			<components>
+				<component type="Cleanup" version="01.13.00">
+					<files>
+                        <basePath>Portals\_default\Skins\R7.Epsilon</basePath>
+						<file><name>Admin.doctype.xml</name></file>
+						<file><name>Custom.doctype.xml</name></file>
+						<file><name>Edit.doctype.xml</name></file>
+						<file><name>ErrorSkin.doctype.xml</name></file>
+						<file><name>Home.doctype.xml</name></file>
+						<file><name>Inside.doctype.xml</name></file>
+						<file><name>PopupSkin.doctype.xml</name></file>
+						<file><name>Universal.doctype.xml</name></file>
+					</files>
+				</component>	
 				<component type="Skin">
 					<skinFiles>
 						<skinName>R7.Epsilon</skinName>
