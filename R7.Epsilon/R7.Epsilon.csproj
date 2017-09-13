@@ -66,28 +66,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Skins\Edit.doctype.xml">
-      <DependentUpon>Edit.ascx</DependentUpon>
-    </None>
-    <None Include="Skins\Home.doctype.xml">
-      <DependentUpon>Home.ascx</DependentUpon>
-    </None>
     <None Include="Skins\App_LocalResources\SharedResources.resx" />
     <None Include="Skins\App_LocalResources\SharedResources.ru-RU.resx" />
-    <None Include="Skins\Universal.doctype.xml">
-      <DependentUpon>Universal.ascx</DependentUpon>
-    </None>
     <None Include="R7.Epsilon.csproj" />
     <None Include="R7.Epsilon.dnn" />
     <None Include="Skins\fonts\glyphicons-halflings-regular.woff2" />
-    <None Include="Skins\PopupSkin.doctype.xml">
-      <DependentUpon>PopupSkin.ascx</DependentUpon>
-    </None>
     <None Include="Customizations\volgau.com\README.md" />
     <None Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\App_LocalResources\SharedResources.Portal-0.resx" />
     <None Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\App_LocalResources\SharedResources.ru-RU.Portal-0.resx" />
-    <None Include="Skins\Admin.doctype.xml">
-      <DependentUpon>Admin.ascx</DependentUpon>
+    <None Include="Skins\skin.doctype.xml">
     </None>
     <None Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\App_LocalResources\SharedResources.Portal-2.resx" />
     <None Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\App_LocalResources\SharedResources.ru-RU.Portal-2.resx" />
@@ -100,25 +87,13 @@
     <None Include="Customizations\volgau.com\Portals\2\R7.Epsilon.yml" />
     <None Include="Customizations\volgau.com\Portals\3\R7.Epsilon.yml" />
     <None Include="lib\README.md" />
-    <None Include="Skins\Custom.doctype.xml">
-      <DependentUpon>Custom.ascx</DependentUpon>
-    </None>
     <None Include="Skins\Layouts\Universal.xml" />
     <None Include="Skins\Layouts\Default.xml" />
     <None Include="Skins\Layouts\Default_A11y.xml" />
-    <None Include="Skins\ErrorSkin.doctype.xml">
-      <DependentUpon>ErrorSkin.ascx</DependentUpon>
-    </None>
-    <None Include="Skins\HomeCustom.doctype.xml">
-      <DependentUpon>HomeCustom.ascx</DependentUpon>
-    </None>
     <None Include="Skins\Layouts\Home.xml" />
     <None Include="Menus\Mega2Epsilon\Mega2Epsilon.xslt" />
     <None Include="Menus\Mega2Epsilon\menudef.xml" />
     <None Include="Customizations\volgau.com\Portals\5\R7.Epsilon.yml" />
-    <None Include="Skins\Inside.doctype.xml">
-      <DependentUpon>Inside.ascx</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
