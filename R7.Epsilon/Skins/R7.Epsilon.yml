@@ -26,14 +26,14 @@ social-networks:
 
   - name: VKontakte
     group: https://vk.com/YOUR-VK-HERE
-    api-id: your-vk-api-id
+    api-id: 0000000
     is-primary: true
     share-enabled: false
 
   - name: Facebook
     group: https://www.facebook.com/YOUR-FACEBOOK-HERE
     # specify Facebook App ID for the "like" button, or leave empty (will produce messages in JS console)    
-    api-id:
+    api-id: 000000000000000
     share-enabled: false
 
   - name: Twitter
