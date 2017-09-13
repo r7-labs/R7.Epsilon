@@ -19,10 +19,11 @@ See *R7.Epsilon* skin in action at http://www.volgau.com
 - Portal / host admins can customize footer content using language editor.
 - Devs can define styles using <del>Less</del> SCSS.
 - Devs can use [Paletton.com](http://paletton.com) to create and customize palettes.
-- Feedback module integration with passing user-selected content to feedback form.
+- [Feedback module](https://github.com/DNNCommunity/DNN.Feedback) integration with passing user-selected content to feedback form.
 - Google Adsense adaptive banners support for different screen sizes with automatic loading on window resize.
+- Persistable a11y mode.
 
-## Custom pane layouts feature
+## Custom pane layouts feature (WIP)
 
 Admins can create and modify custom pane layouts using *LayoutManager* module, then apply them to the page 
 using new *Select Layout* command from *Edit Page* menu in the control panel. Selected layout name and kind (host or portal)
@@ -33,10 +34,7 @@ This feature currently available only if *Custom* skin is selected for a page.
 ## Some planned features:
 
 - BlueImp gallery support (at least for Home skin).
-- Ability to add (some) skin panes dynamically.
-- Switch from Less to SASS (SCSS).
 - Integration of Bootstrap into skin build process.
-- Google Adsense mobile-friendly banners support. 
 
 # Install
 
