@@ -32,7 +32,7 @@
 			"problemMatcher": "$msCompile"
 		},
 		{
-			"taskName": "Do Local Deploy",
+			"taskName": "Build & Deploy",
 			"args": ["/t:Build", "/p:EnableTests=false", "/p:EnableInstallPackage=false", "/p:EnableLocalDeploy=true"],
 			// use the standard MS compiler pattern to detect errors, warnings and infos
 			"problemMatcher": "$msCompile"

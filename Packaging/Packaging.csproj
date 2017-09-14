@@ -28,7 +28,7 @@
         </Command>
         <Command>
           <type>Custom</type>
-          <name>Do Local Deploy</name>
+          <name>Build &amp; Deploy</name>
           <command>msbuild /t:Build /p:Configuration=${ProjectConfigName} /p:EnableTests=false /p:EnableInstallPackage=false /p:EnableLocalDeploy=true ../R7.Epsilon.sln</command>
         </Command>
 	    <Command>
