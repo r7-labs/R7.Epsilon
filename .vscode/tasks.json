@@ -5,7 +5,7 @@
 		"command": "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\MSBuild.exe"
 	},
 	"linux": {
-		"command": "xbuild"
+		"command": "msbuild"
 	},
 	"args": [
 		// active build configuration
