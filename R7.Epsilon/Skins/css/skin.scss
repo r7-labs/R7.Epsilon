@@ -891,7 +891,12 @@ ul.skin-socialgroups
             top:-1px;
             margin-left:26px;
             margin-right:2px;
-            text-shadow:1px 1px 2px #000;
+            text-shadow: 1px 1px 1px $color-primary-4,
+                         -1px -1px 1px $color-primary-4,
+                         1px -1px 1px $color-primary-4,
+                         -1px 1px 1px $color-primary-4;
+            color:$color-secondary-2-1;
+            font-weight:bold;
         }
 
         // hide "messages" and "notifications" labels
