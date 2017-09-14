@@ -37,6 +37,10 @@
 			// use the standard MS compiler pattern to detect errors, warnings and infos
 			"problemMatcher": "$msCompile"
 		},
+        {
+            "taskName": "Re-deploy",
+            "args": ["/p:EnableTests=false", "Packaging/LocalDeploy.targets"]
+        },
 		{
 			"taskName": "Make Install Package",
 			"args": ["/t:Build", "/p:EnableTests=true", "/p:EnableInstallPackage=true", "/p:EnableLocalDeploy=false"],
@@ -49,10 +53,6 @@
 			"args": ["/t:Build", "/p:EnableTests=true", "/p:EnableInstallPackage=false", "/p:EnableLocalDeploy=false"],
 			// use the standard MS compiler pattern to detect errors, warnings and infos
 			"problemMatcher": "$msCompile"
-		},
-		{
-			"taskName": "Re-deploy Assets",
-			"args": ["/p:LocalDeployIncludeBinaries=false", "/p:EnableTests=false", "Packaging/LocalDeploy.targets"]
 		},
 		{
 			"taskName": "Make Customizations Package",
