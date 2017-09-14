@@ -36,7 +36,7 @@ namespace R7.Epsilon.Tests
             var defaultConfigFile = Path.Combine ("..", "..", "..", "R7.Epsilon", "Skins", "R7.Epsilon.yml");
 
             using (var configReader = new StringReader (File.ReadAllText (defaultConfigFile))) {
-                var deserializer = new Deserializer (namingConvention: new HyphenatedNamingConvention ());
+                var deserializer = new DeserializerBuilder ().WithNamingConvention (new HyphenatedNamingConvention ()).Build ();
                 Assert.NotNull (deserializer.Deserialize<EpsilonPortalConfig> (configReader));
             } 
         }

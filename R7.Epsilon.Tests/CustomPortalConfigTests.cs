@@ -40,7 +40,7 @@ namespace R7.Epsilon.Tests
                 "volgau.com", "Portals", portalNumber.ToString (), "R7.Epsilon.yml");
 
             using (var configReader = new StringReader (File.ReadAllText (configFile))) {
-                var deserializer = new Deserializer (namingConvention: new HyphenatedNamingConvention ());
+                var deserializer = new DeserializerBuilder ().WithNamingConvention (new HyphenatedNamingConvention ()).Build ();
                 Assert.NotNull (deserializer.Deserialize<EpsilonPortalConfig> (configReader));
             } 
         }
