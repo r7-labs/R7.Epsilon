@@ -28,6 +28,7 @@
 						<file><name>Edit.doctype.xml</name></file>
 						<file><name>ErrorSkin.doctype.xml</name></file>
 						<file><name>Home.doctype.xml</name></file>
+						<file><name>HomeCustom.doctype.xml</name></file>
 						<file><name>Inside.doctype.xml</name></file>
 						<file><name>PopupSkin.doctype.xml</name></file>
 						<file><name>Universal.doctype.xml</name></file>
