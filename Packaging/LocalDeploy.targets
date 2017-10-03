@@ -7,8 +7,6 @@
 	<PropertyGroup>
 		<!-- Enable local deploy by default (standalone) -->
     	<EnableLocalDeploy Condition=" '$(EnableLocalDeploy)' == '' ">true</EnableLocalDeploy>
-		<!-- Include binary files in local deploy by default -->
-		<LocalDeployIncludeBinaries Condition=" '$(LocalDeployIncludeBinaries)' == '' ">true</LocalDeployIncludeBinaries>
 	</PropertyGroup>
 	<Target Name="LocalDeploy" Condition=" '$(EnableLocalDeploy)' == 'true' " DependsOnTargets="CompileScss;MinifyJS;Tests">
  		
@@ -104,7 +102,7 @@
 		<Copy SourceFiles="@(ModuleMoveFiles)" DestinationFolder="$(DnnModulesPath)/R7.Epsilon/%(RecursiveDir)" SkipUnchangedFiles="true" />
 
 		<!-- Copy binaries -->
-		<Copy Condition=" '$(LocalDeployIncludeBinaries)' == 'true' " SourceFiles="@(DeployBinaryFiles)" DestinationFolder="$(DnnBinPath)" SkipUnchangedFiles="true" />
+		<Copy SourceFiles="@(DeployBinaryFiles)" DestinationFolder="$(DnnBinPath)" SkipUnchangedFiles="true" />
         
 		<!-- Cleanup -->
 		<RemoveDir Directories="$(TmpDir)" />
