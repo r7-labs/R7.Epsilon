@@ -14,7 +14,7 @@ primary-menu:
 
 secondary-menu:
   node-selector: "*,0,2"
-  include-nodes: "55,94,96,2769,89,2014"
+  include-nodes: "55,94,96,2769,89,2014,15089"
 
 menu-url-type: 2
 
