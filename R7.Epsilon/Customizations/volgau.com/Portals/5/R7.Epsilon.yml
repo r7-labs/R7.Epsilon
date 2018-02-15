@@ -61,3 +61,6 @@ show-terms: false
 show-privacy: false
 
 use-obrnadzor-microdata: false
+
+analytics:
+  use-sputnik: false

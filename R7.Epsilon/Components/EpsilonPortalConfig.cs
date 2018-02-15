@@ -58,6 +58,8 @@ namespace R7.Epsilon.Components
 
         public List<SocialNetworkConfig> SocialNetworks { get; set; }
 
+        public AnalyticsConfig Analytics { get; set; }
+
         #endregion
     }
 
@@ -105,6 +107,11 @@ namespace R7.Epsilon.Components
         public string ApiId { get; set; } = string.Empty;
 
         public List<string> Params { get; set; }
+    }
+
+    public class AnalyticsConfig
+    {
+        public bool UseSputnik { get; set; } = false;
     }
 }
 
