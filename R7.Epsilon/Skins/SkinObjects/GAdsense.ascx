@@ -1,6 +1,8 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.Skins.SkinObjects.EpsilonSkinObjectBase" %>
 
 <%
+// HACK: GH-77 Try to resolve Google Adsense complaints about missing content
+if (!Request.RawUrl.ToLowerInvariant ().Contains ("/login?returnurl=")) {
 var adsenseScript = "<script async src=\"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"></script>" +
 "<ins class=\"adsbygoogle\" " +
 "style=\"display:block\" " +
@@ -24,3 +26,4 @@ var adsenseScript = "<script async src=\"//pagead2.googlesyndication.com/pagead/
 <div class="ad skin-banner" data-lazyad="" data-matchmedia="only screen and (max-width : 359px)">
     <script type="text/lazyad"><!-- <%= adsenseScript %> --></script>
 </div>
+<% } %>
