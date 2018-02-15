@@ -16,7 +16,7 @@
 <%@ Register TagPrefix="skin" TagName="GADSENSE" Src="SkinObjects/GAdsense.ascx" %>
 <%@ Register TagPrefix="skin" TagName="SOCIALGROUPS" Src="SkinObjects/SocialGroups.ascx" %>
 <%@ Register TagPrefix="skin" TagName="SOCIALSHAREBUTTONS" Src="SkinObjects/SocialShareButtons.ascx" %>
-<%@ Register TagPrefix="skin" TagName="SOCIALSHARESCRIPTS" Src="SkinObjects/SocialShareScripts.ascx" %>
+<%@ Register TagPrefix="skin" TagName="SHAREDSCRIPTS" Src="SkinObjects/SharedScripts.ascx" %>
 <%@ Register TagPrefix="skin" TagName="FOUNDERS" Src="SkinObjects/Founders.ascx" %>
 <%@ Register TagPrefix="skin" TagName="LOGOTITLE" Src="SkinObjects/LogoTitle.ascx" %>
 <%@ Register TagPrefix="skin" TagName="LOGOMOBILE" Src="SkinObjects/LogoMobile.ascx" %>
@@ -271,4 +271,4 @@
     <asp:HyperLink runat="server" href="#" CssClass="skin-float-button skin-float-button-up" Style="display:none" ToolTip='<%# Localizer.GetString ("ButtonUp.Title") %>' data-toggle="tooltip" data-placement="left" data-container="body" />
     <skin:FEEDBACKBUTTON runat="server" CssClass="skin-float-button skin-float-button-feedback" />
 </div>
-<skin:SOCIALSHARESCRIPTS runat="server" />
+<skin:SHAREDSCRIPTS runat="server" />

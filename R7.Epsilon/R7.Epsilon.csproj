@@ -281,7 +281,7 @@
     <Content Include="Skins\SkinObjects\SecondaryMenu.ascx" />
     <Content Include="Skins\SkinObjects\SocialGroups.ascx" />
     <Content Include="Skins\SkinObjects\SocialShareButtons.ascx" />
-    <Content Include="Skins\SkinObjects\SocialShareScripts.ascx" />
+    <Content Include="Skins\SkinObjects\SharedScripts.ascx" />
     <Content Include="Skins\SkinObjects\YCycounter.ascx" />
     <Content Include="Customizations\volgau.com\Portals\5\logo.png" />
     <Content Include="Customizations\volgau.com\Portals\5\logo.svg" />
