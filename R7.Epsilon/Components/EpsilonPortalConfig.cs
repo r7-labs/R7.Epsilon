@@ -32,42 +32,43 @@ namespace R7.Epsilon.Components
     {
         #region Portal config properties
 
-        public string SkinCss { get; set; }
+        public string SkinCss { get; set; } = "css/default-skin.min.css";
 
-        public string SkinA11yCss { get; set; }
+        public string SkinA11yCss { get; set; } = "css/a11y-skin.min.css";
 
-        public int FeedbackTabId { get; set; }
+        // TODO: Should be -1?
+        public int FeedbackTabId { get; set; } = 100;
 
-        public MenuConfig PrimaryMenu { get; set; }
+        public MenuConfig PrimaryMenu { get; set; } = new MenuConfig ();
 
-        public MenuConfig SecondaryMenu { get; set; }
+        public MenuConfig SecondaryMenu { get; set; } = new MenuConfig ();
 
         public string FooterButtonsGroupName { get; set; }
 
-        public AdsenseConfig Adsense { get; set; }
+        public AdsenseConfig Adsense { get; set; } = new AdsenseConfig ();
 
         public bool ShowTerms { get; set; }
 
         public bool ShowPrivacy { get; set; }
 
-        public int MenuUrlType { get; set; }
+        public int MenuUrlType { get; set; } = 0;
 
         public int MenuMinHeaders { get; set; } = 7;
 
         public bool UseObrnadzorMicrodata { get; set; }
 
-        public List<SocialNetworkConfig> SocialNetworks { get; set; }
+        public List<SocialNetworkConfig> SocialNetworks { get; set; } = new List<SocialNetworkConfig> ();
 
-        public AnalyticsConfig Analytics { get; set; }
+        public AnalyticsConfig Analytics { get; set; } = new AnalyticsConfig ();
 
         #endregion
     }
 
     public class MenuConfig
     {
-        public string NodeSelector { get; set; }
+        public string NodeSelector { get; set; } = "*,0,2";
 
-        public string IncludeNodes { get; set; }
+        public string IncludeNodes { get; set; } = string.Empty;
 
         public ICollection<string> NodeManipulatorTypes { get; set; } = new Collection<string> ();
 
@@ -88,9 +89,11 @@ namespace R7.Epsilon.Components
 
     public class AdsenseConfig
     {
-        public string Client { get; set; }
+        // TODO: Should be empty string?
+        public string Client { get; set; } = "ca-pub-0000000000000000";
 
-        public string Slot { get; set; }
+        // TODO: Should be empty string?
+        public string Slot { get; set; } = "0000000000";
     }
 
     // TODO: Rename to SocialNetwork
@@ -106,8 +109,8 @@ namespace R7.Epsilon.Components
 
         public string ApiId { get; set; } = string.Empty;
 
-        public List<string> Params { get; set; }
-    }
+        public List<string> Params { get; set; } = new List<string> ();
+    } 
 
     public class AnalyticsConfig
     {
