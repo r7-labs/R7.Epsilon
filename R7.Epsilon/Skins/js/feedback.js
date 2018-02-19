@@ -18,7 +18,7 @@
                     feedbackContent += epsilon.localization ["feedbackSelectionTemplate"].replace (/\{selection\}/, epsilon.queryParams ["feedbackselection"]);
                 }
 
-                $("#dnn_ctr" + epsilon.queryParams ["feedbackmid"] + "_Feedback_txtBody")
+                $("#dnn_ContentPane textarea").first ()
                     .val (epsilon.localization ["feedbackTemplate"].replace (/\{content\}/, feedbackContent))
                     .trigger ("change").trigger ("keyup");
             }
