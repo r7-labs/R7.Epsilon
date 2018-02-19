@@ -4,7 +4,7 @@
 //  Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2015-2017 Roman M. Yagodin
+//  Copyright (c) 2015-2018 Roman M. Yagodin
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -49,10 +49,10 @@ namespace R7.Epsilon.Skins.SkinObjects
             base.OnInit (e);
 
             // find feedback module
-            var feedbackModule = ModuleController.Instance.GetModulesByDefinition (PortalSettings.PortalId, Config.Feedback.ModuleDefinitionName)
-                                                 .Cast<ModuleInfo> ()
-                                                 .FirstOrDefault (m => m.TabID == Config.Feedback.TabId);
-			if (feedbackModule != null) {
+            var feedbackModule = ModuleController.Instance.GetTabModules (Config.Feedback.TabId)
+                                                 .Select (entry => entry.Value)
+                                                 .FirstOrDefault (module => module.ModuleDefinition.DefinitionName == Config.Feedback.ModuleDefinitionName);
+            if (feedbackModule != null) {
                 string feedbackUrl;
                 if (Config.Feedback.OpenInPopup && PortalSettings.Current.EnablePopUps && !A11yHelper.GetA11y(Request) && !(EpsilonUrlHelper.IsIeBrowser (Request) && !EpsilonUrlHelper.IsEdgeBrowser (Request))) {
                     // show feedback module
