@@ -4,8 +4,6 @@ skin-a11y-css: css/a11y-skin.min.css
 
 footer-buttons-group-name: FooterButtons
 
-feedback-tab-id: 100
-
 primary-menu:
   node-selector: "*,0,2"
 #  include-nodes:
@@ -70,3 +68,8 @@ use-obrnadzor-microdata: false
 
 analytics:
   use-sputnik: false
+
+feedback:
+  tab-id: -1
+  module-definition-name: "Feedback"
+  open-in-popup: true

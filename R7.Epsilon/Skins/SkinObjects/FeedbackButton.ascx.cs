@@ -1,4 +1,4 @@
-﻿//
+//
 //  FeedbackButton.ascx.cs
 //
 //  Author:
@@ -49,13 +49,12 @@ namespace R7.Epsilon.Skins.SkinObjects
             base.OnInit (e);
 
             // find feedback module
-            var feedbackModule = ModuleController.Instance.GetModulesByDefinition (PortalSettings.PortalId, "Feedback")
+            var feedbackModule = ModuleController.Instance.GetModulesByDefinition (PortalSettings.PortalId, Config.Feedback.ModuleDefinitionName)
                                                  .Cast<ModuleInfo> ()
-                                                 .FirstOrDefault (m => m.TabID == Config.FeedbackTabId);
-            
-            if (feedbackModule != null) {
+                                                 .FirstOrDefault (m => m.TabID == Config.Feedback.TabId);
+			if (feedbackModule != null) {
                 string feedbackUrl;
-                if (PortalSettings.Current.EnablePopUps && !A11yHelper.GetA11y (Request) && !(EpsilonUrlHelper.IsIeBrowser (Request) && !EpsilonUrlHelper.IsEdgeBrowser (Request))) {
+                if (Config.Feedback.OpenInPopup && PortalSettings.Current.EnablePopUps && !A11yHelper.GetA11y(Request) && !(EpsilonUrlHelper.IsIeBrowser (Request) && !EpsilonUrlHelper.IsEdgeBrowser (Request))) {
                     // show feedback module
                     feedbackUrl = UrlUtils.PopUpUrl (Globals.NavigateURL (feedbackModule.TabID, "", "mid", feedbackModule.ModuleID.ToString ()),
                                                      this, PortalSettings.Current, false, false, 550, 950, false, "");
@@ -66,12 +65,12 @@ namespace R7.Epsilon.Skins.SkinObjects
                     // popups disabled, open feedback in new window
                     linkFeedback.Target = "_blank";
                 }
- 
+
                 linkFeedback.CssClass = "unselectable " + CssClass;
-                linkFeedback.ToolTip = Localizer.GetString ("FeedBackButton.Tooltip");
-                linkFeedback.Text = Localizer.GetString  ("FeedBackButton.Text");
-                linkFeedback.Attributes.Add ("data-feedback-url", feedbackUrl);
-                linkFeedback.Attributes.Add ("onclick", string.Format ("javascript:return skinSetupFeedbackUrl(jQuery,this,{0})",
+                linkFeedback.ToolTip = Localizer.GetString("FeedBackButton.Tooltip");
+                linkFeedback.Text = Localizer.GetString("FeedBackButton.Text");
+                linkFeedback.Attributes.Add("data-feedback-url", feedbackUrl);
+                linkFeedback.Attributes.Add("onclick", string.Format("javascript:return skinSetupFeedbackUrl(jQuery,this,{0})",
                                                                        feedbackModule.ModuleID));
             }
             else {

@@ -36,8 +36,7 @@ namespace R7.Epsilon.Components
 
         public string SkinA11yCss { get; set; } = "css/a11y-skin.min.css";
 
-        // TODO: Should be -1?
-        public int FeedbackTabId { get; set; } = 100;
+        public FeedbackConfig Feedback { get; set; } = new FeedbackConfig ();
 
         public MenuConfig PrimaryMenu { get; set; } = new MenuConfig ();
 
@@ -115,6 +114,15 @@ namespace R7.Epsilon.Components
     public class AnalyticsConfig
     {
         public bool UseSputnik { get; set; } = false;
+    }
+
+    public class FeedbackConfig
+    {
+        public int TabId { get; set; } = -1;
+
+        public string ModuleDefinitionName { get; set; } = "Feedback";
+
+        public bool OpenInPopup { get; set; } = true;
     }
 }
 
