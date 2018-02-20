@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "R7.Epsilon", "R7.Epsilon\R7.Epsilon.csproj", "{F7F17F2A-6F32-4AC4-B2EE-1C637D0A26EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Packaging", "Packaging\Packaging.csproj", "{1FAE1B00-5E10-4B95-A656-423A8DBB08B9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deploy", "Deploy\Deploy.csproj", "{1FAE1B00-5E10-4B95-A656-423A8DBB08B9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "R7.Epsilon.Tests", "R7.Epsilon.Tests\R7.Epsilon.Tests.csproj", "{46155C3C-2950-4AA1-AEDD-B5A0C4F4C421}"
 EndProject

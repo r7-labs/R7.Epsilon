@@ -341,6 +341,6 @@
     <Folder Include="Skins\SkinObjects\Banners\" />
     <Folder Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\images\" />
   </ItemGroup>
-  <Import Project="../Packaging/Preprocess.targets" />
+  <Import Project="../Deploy/Preprocess.targets" />
   <Target Name="BeforeBuild" DependsOnTargets="CompileScss;MinifyJS" />
 </Project>

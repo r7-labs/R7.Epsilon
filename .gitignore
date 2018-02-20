@@ -5,7 +5,7 @@
 # Build output
 bin/
 obj/
-/Packaging/output/
+/Deploy/output/
 
 # Less/UglifyJS build output
 

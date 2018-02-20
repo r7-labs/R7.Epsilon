@@ -5,8 +5,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{1FAE1B00-5E10-4B95-A656-423A8DBB08B9}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Packaging</RootNamespace>
-    <AssemblyName>Packaging</AssemblyName>
+    <RootNamespace>Deploy</RootNamespace>
+    <AssemblyName>Deploy</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <ReleaseVersion>1.13.0</ReleaseVersion>
   </PropertyGroup>
@@ -69,7 +69,7 @@
     <None Include="BuildSettings.targets" />
     <None Include="BuildDefaults.targets" />
     <None Include="LocalDeploy.targets" />
-    <None Include="Packaging.csproj" />
+    <None Include="Deploy.csproj" />
     <None Include="InstallPackage.targets" />
     <None Include="Customizations.targets" />
     <None Include="Preprocess.targets" />

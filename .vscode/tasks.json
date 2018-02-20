@@ -39,7 +39,7 @@
 		},
         {
             "taskName": "Re-deploy",
-            "args": ["/p:EnableTests=false", "Packaging/LocalDeploy.targets"]
+            "args": ["/p:EnableTests=false", "Deploy/LocalDeploy.targets"]
         },
 		{
 			"taskName": "Make Install Package",
@@ -56,7 +56,7 @@
 		},
 		{
 			"taskName": "Make Customizations Package",
-			"args": ["Packaging/Customizations.targets"]
+			"args": ["Deploy/Customizations.targets"]
 		}
 	]
 }
