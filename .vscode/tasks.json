@@ -53,10 +53,6 @@
 			"args": ["/t:Build", "/p:EnableTests=true", "/p:EnableInstallPackage=false", "/p:EnableLocalDeploy=false"],
 			// use the standard MS compiler pattern to detect errors, warnings and infos
 			"problemMatcher": "$msCompile"
-		},
-		{
-			"taskName": "Make Customizations Package",
-			"args": ["Deploy/Customizations.targets"]
 		}
-	]
+    ]
 }

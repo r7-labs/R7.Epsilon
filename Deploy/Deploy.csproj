@@ -31,20 +31,15 @@
           <name>Build &amp; Deploy</name>
           <command>msbuild /t:Build /p:Configuration=${ProjectConfigName} /p:EnableTests=false /p:EnableInstallPackage=false /p:EnableLocalDeploy=true ../R7.Epsilon.sln</command>
         </Command>
-	    <Command>
+        <Command>
           <type>Custom</type>
           <name>Re-deploy</name>
           <command>msbuild /p:Configuration=${ProjectConfigName} /p:EnableTests=false LocalDeploy.targets</command>
         </Command>
         <Command>
-		  <type>Custom</type>
+          <type>Custom</type>
           <name>Make Install Package</name>
           <command>msbuild /t:Build /p:Configuration=${ProjectConfigName} /p:EnableTests=true /p:EnableInstallPackage=true /p:EnableLocalDeploy=false ../R7.Epsilon.sln</command>
-        </Command>
-        <Command>
-          <type>Custom</type>
-          <name>Make Customizations Package</name>
-          <command>msbuild /p:Configuration=${ProjectConfigName} Customizations.targets</command>
         </Command>
         <Command>
           <type>Custom</type>
@@ -71,7 +66,6 @@
     <None Include="LocalDeploy.targets" />
     <None Include="Deploy.csproj" />
     <None Include="InstallPackage.targets" />
-    <None Include="Customizations.targets" />
     <None Include="Preprocess.targets" />
     <None Include="Tests.targets" />
     <None Include="packages.config" />

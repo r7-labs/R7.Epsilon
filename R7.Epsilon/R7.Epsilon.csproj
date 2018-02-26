@@ -71,21 +71,11 @@
     <None Include="R7.Epsilon.csproj" />
     <None Include="R7.Epsilon.dnn" />
     <None Include="Skins\fonts\glyphicons-halflings-regular.woff2" />
-    <None Include="Customizations\volgau.com\README.md" />
-    <None Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\App_LocalResources\SharedResources.Portal-0.resx" />
-    <None Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\App_LocalResources\SharedResources.ru-RU.Portal-0.resx" />
     <None Include="Skins\skin.doctype.xml">
     </None>
-    <None Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\App_LocalResources\SharedResources.Portal-2.resx" />
-    <None Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\App_LocalResources\SharedResources.ru-RU.Portal-2.resx" />
-    <None Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\App_LocalResources\SharedResources.Portal-3.resx" />
-    <None Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\App_LocalResources\SharedResources.ru-RU.Portal-3.resx" />
     <None Include="lib\ClientDependency.Core.dll" />
     <None Include="lib\DotNetNuke.Web.DDRMenu.dll" />
     <None Include="Skins\R7.Epsilon.yml" />
-    <None Include="Customizations\volgau.com\Portals\0\R7.Epsilon.yml" />
-    <None Include="Customizations\volgau.com\Portals\2\R7.Epsilon.yml" />
-    <None Include="Customizations\volgau.com\Portals\3\R7.Epsilon.yml" />
     <None Include="lib\README.md" />
     <None Include="Skins\Layouts\Universal.xml" />
     <None Include="Skins\Layouts\Default.xml" />
@@ -93,7 +83,6 @@
     <None Include="Skins\Layouts\Home.xml" />
     <None Include="Menus\Mega2Epsilon\Mega2Epsilon.xslt" />
     <None Include="Menus\Mega2Epsilon\menudef.xml" />
-    <None Include="Customizations\volgau.com\Portals\5\R7.Epsilon.yml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -227,7 +216,6 @@
     <Content Include="Skins\images\functions_mono_32x32.png" />
     <Content Include="Skins\images\functions_mono_32x32.svg" />
     <Content Include="Skins\css\blueimp.scss" />
-    <Content Include="Customizations\volgau.com\Portals\0\logo_133x100.png" />
     <Content Include="Containers\Default_H4.ascx" />
     <Content Include="Containers\Thumbnail.ascx" />
     <Content Include="Containers\Thumbnail_H.ascx" />
@@ -247,11 +235,9 @@
     <Content Include="Skins\css\consulting-palette.scss" />
     <Content Include="Skins\css\consulting-layout.scss" />
     <Content Include="Skins\css\consulting-skin.scss" />
-    <Content Include="Customizations\volgau.com\Portals\2\logo_133x100.png" />
     <Content Include="Skins\css\world-layout.scss" />
     <Content Include="Skins\css\world-palette.scss" />
     <Content Include="Skins\css\world-skin.scss" />
-    <Content Include="Customizations\volgau.com\Portals\3\logo_133x100.png" />
     <Content Include="packages.config" />
     <Content Include="license.htm" />
     <Content Include="releaseNotes.htm" />
@@ -283,9 +269,6 @@
     <Content Include="Skins\SkinObjects\SocialShareButtons.ascx" />
     <Content Include="Skins\SkinObjects\SharedScripts.ascx" />
     <Content Include="Skins\SkinObjects\YCycounter.ascx" />
-    <Content Include="Customizations\volgau.com\Portals\5\logo.png" />
-    <Content Include="Customizations\volgau.com\Portals\5\logo.svg" />
-    <Content Include="Customizations\volgau.com\Portals\5\portal.css" />
     <Content Include="Skins\Inside.ascx" />
     <Content Include="Containers\Alert_Info.ascx" />
     <Content Include="Containers\Alert_Success.ascx" />
@@ -305,8 +288,6 @@
     <Content Include="Skins\images\login_icons.svg" />
     <Content Include="Skins\images\founders.png" />
     <Content Include="Skins\images\founders.svg" />
-    <Content Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\images\founders.png" />
-    <Content Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\images\founders.svg" />
     <Content Include="Skins\js\feedback.js" />
     <Content Include="Skins\js\bootstrap-init.js" />
   </ItemGroup>
@@ -320,17 +301,7 @@
     </MonoDevelop>
   </ProjectExtensions>
   <ItemGroup>
-    <Folder Include="Customizations\" />
-    <Folder Include="Customizations\volgau.com\" />
-    <Folder Include="Customizations\volgau.com\Portals\" />
-    <Folder Include="Customizations\volgau.com\Portals\0\" />
-    <Folder Include="Customizations\volgau.com\Portals\_default\" />
-    <Folder Include="Customizations\volgau.com\Portals\_default\Skins\" />
-    <Folder Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\" />
-    <Folder Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\App_LocalResources\" />
     <Folder Include="Application\" />
-    <Folder Include="Customizations\volgau.com\Portals\2\" />
-    <Folder Include="Customizations\volgau.com\Portals\3\" />
     <Folder Include="Models\" />
     <Folder Include="Components\" />
     <Folder Include="Skins\Layouts\" />
@@ -339,7 +310,6 @@
     <Folder Include="Menus\" />
     <Folder Include="Menus\Mega2Epsilon\" />
     <Folder Include="Skins\SkinObjects\Banners\" />
-    <Folder Include="Customizations\volgau.com\Portals\_default\Skins\R7.Epsilon\images\" />
   </ItemGroup>
   <Import Project="../Deploy/Preprocess.targets" />
   <Target Name="BeforeBuild" DependsOnTargets="CompileScss;MinifyJS" />
