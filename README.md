@@ -94,3 +94,14 @@ published under the terms of [CC BY-CA](http://creativecommons.org/licenses/by-s
 
 Google translate and A11y icons based on Xaviju's [Inkscape Open Symbols](https://github.com/Xaviju/inkscape-open-symbols),
 the source of which is published under [GPLv2](http://opensource.org/licenses/GPL-2.0) license.
+
+# Customization
+
+As you should already know, any website skin is more like a template which should be customized (sometimes very heavily)
+before using it in production. The *R7.Epsilon* skin developed with per-DNN-portal reuse, configuration and customization in mind,
+so (hopefully) you can configure and customize it for your website pretty fast.
+
+Some links to allow you to get started:
+
+- The section about customization in the [project wiki](https://github.com/roman-yagodin/R7.Epsilon/wiki/Customization)
+- Example of customization project: [volgau/R7.Epsilon.Customizations](https://github.com/volgau/R7.Epsilon.Customizations)
