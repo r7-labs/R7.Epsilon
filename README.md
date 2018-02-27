@@ -3,25 +3,24 @@
 [![BCH compliance](https://bettercodehub.com/edge/badge/roman-yagodin/R7.Epsilon)](https://bettercodehub.com/)
 [![Join the chat at https://gitter.im/roman-yagodin/R7.Epsilon](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/roman-yagodin/R7.Epsilon?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-*R7.Epsilon* is a opensource responsive skin for DNN Platform based on Bootstrap 3.
-
-See *R7.Epsilon* skin in action at http://www.volgau.com
+*R7.Epsilon* is an opensource responsive skin (theme) for DNN Platform based on Bootstrap 3.
+See it in action at http://www.volgau.com!
 
 # Features
 
-- Admins can define portal-specific settings via <del>XML</del> YAML file.
+- Admins can define website-specific configuration options via <del>XML</del> YAML file.
 - Users can switch between a11y and normal theme. In the a11y mode DNN modal popups are blocked (if they are enabled).
 - Variety of containers, including DNN-style messages, Bootstrap alerts, panels, thumbnails, callouts, etc.
 - Home, Edit, Admin + Universal skin variants, reusable through all host portals.
 - Social group icons (including a11y versions) for Facebook, Twitter, Google+, YouTube, VK.com, Instagram, Linkedin.
 - Social share buttons for Facebook, Twitter, Google+, VK.com.
 - Completely localizable parts (full Russian translation included).
-- Portal / host admins can customize footer content using language editor.
+- Website and host admins can customize and website-wide and host-wide content using language editor.
 - Devs can define styles using <del>Less</del> SCSS.
 - Devs can use [Paletton.com](http://paletton.com) to create and customize palettes.
-- [Feedback module](https://github.com/DNNCommunity/DNN.Feedback) integration with passing user-selected content to feedback form.
+- Integration with feedback forms including passing user-selected content.
 - Google Adsense adaptive banners support for different screen sizes with automatic loading on window resize.
-- Persistable a11y mode.
+- Optional [cnt.sputnik.ru](https://cnt.sputnik.ru/) analytics support.
 
 ## Custom pane layouts feature (WIP)
 
