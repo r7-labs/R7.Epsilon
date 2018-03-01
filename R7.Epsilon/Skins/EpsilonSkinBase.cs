@@ -20,6 +20,7 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
+using System.Reflection;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using DotNetNuke.Common;
@@ -80,12 +81,17 @@ namespace R7.Epsilon.Skins
             }
         }
 
-        public string SkinCopyright
+        public string SkinCopyright => Localizer.GetString ("SkinCopyright.Text").Replace ("{version}", GetVersionString ());
+
+        string GetVersionString ()
         {
-            get {
-                return Localizer.GetString ("SkinCopyright.Text")
-                                .Replace ("{version}", System.Reflection.Assembly.GetExecutingAssembly ().GetName ().Version.ToString (3));
+            var assembly = System.Reflection.Assembly.GetExecutingAssembly ();
+            var assemblyInformationalVersion = assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute> ();
+            if (assemblyInformationalVersion != null) {
+                return assemblyInformationalVersion.InformationalVersion;
             }
+
+            return assembly.GetName ().Version.ToString (3);
         }
 
         #region ILocalizableControl implementation
