@@ -74,9 +74,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="js\" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="module.css" />
     <Content Include="admin.css" />
     <Content Include="packages.config" />
