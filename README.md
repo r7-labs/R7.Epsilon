@@ -46,32 +46,7 @@ Optionally replace `Global.asax` file in the application root folder with one sh
 
 ## Banner skinobject support for DNN 8/9
 
-The skin currently uses `~/admin/Skins/banner.ascx` skinobject, which was removed from DNN install since version v8.0.0.
-Moreover, during upgrade from DNN 7 to DNN 8/9, the *Vendors* and *Banners* modules will be removed, so remaining banner skinobject 
-will stop working as it cannot reference required things (namely, `BannerController` class) anymore.
-
-As a workaround, skin will try to load `~/admin/Skins/banner.ascx` dynamically, logging error message of HOST_ALERT type
-in case of failure. If you don't need banners functionality, just ignore this message.
-
-In case you'd like to enable banners functionality:
-
-1. Download and install [fixed Dnn.Vendors](https://github.com/roman-yagodin/DNN.Vendors/releases/tag/v8.0.0-update.1) package.
-
-2. In case of new install, get banner skinobject files from any DNN 7.x install (or platform install package).
-   These files are:
-   - `~/admin/Skins/banner.ascx`
-   - `~/admin/Skins/banner.xml`
-   - `~/admin/Skins/Banner.ascx.cs`
-
-3. Open `~/admin/Skins/Banner.ascx.cs` file in the text editor, replace
-    ```
-    using DotNetNuke.Services.Vendors;
-    ```
-    with:
-    ```
-    using Dnn.Modules.Vendors;
-    using Dnn.Modules.Vendors.Components;
-    ```
+Please see [this wiki page](https://github.com/roman-yagodin/R7.Epsilon/wiki/Install:-Banner-skinobject-support-for-DNN-8-and-9)
 
 # Acknowledgements
 
