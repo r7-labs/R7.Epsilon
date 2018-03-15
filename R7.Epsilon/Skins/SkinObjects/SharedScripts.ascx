@@ -44,7 +44,7 @@ setTimeout(function() {
     document.getElementById("vk_api_transport").appendChild(el);
 },0);
 </script><% } %>
-><% if (Config.Analytics.UseSputnik) { %>
+<% if (Config.Analytics.UseSputnik) { %>
 <script type="text/javascript">
   (function(d, t, p) {
     var j = d.createElement(t); j.async = true; j.type = "text/javascript";
