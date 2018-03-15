@@ -20,6 +20,12 @@
 				<dependency type="package">Rangy</dependency>
             </dependencies>
 			<components>
+				<component type="Cleanup" version="01.14.00">
+					<files>
+                        <basePath>Portals\_default\Skins\R7.Epsilon\SkinObjects</basePath>
+						<file><name>SocialShareScripts.ascx</name></file>
+					</files>
+				</component>
 				<component type="Cleanup" version="01.13.00">
 					<files>
                         <basePath>Portals\_default\Skins\R7.Epsilon</basePath>
