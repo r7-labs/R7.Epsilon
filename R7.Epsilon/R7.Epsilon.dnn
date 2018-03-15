@@ -5,7 +5,7 @@
 			<description>Highly customizable, multiportal, responsive skin for DNN Platfrom using Bootstrap 3. Requires installation via the Host/Extensions page.</description>
 			<owner>
 				<name>Roman M. Yagodin</name>
-				<organization>R7.Solutions</organization>
+				<organization>R7.Labs</organization>
 				<url>https://github.com/roman-yagodin/R7.Epsilon</url>
 				<email>roman.yagodin@gmail.com</email>
 			</owner>
@@ -84,7 +84,7 @@
 			<description>Containers for the R7.Epsilon Skin package.</description>
 			<owner>
 				<name>Roman M. Yagodin</name>
-				<organization>R7.Solutions</organization>
+				<organization>R7.Labs</organization>
 				<url>https://github.com/roman-yagodin/R7.Epsilon</url>
 				<email>roman.yagodin@gmail.com</email>
 			</owner>
@@ -112,7 +112,7 @@
             <description>Module to manage R7.Epsilon skin layouts.</description>
             <owner>
                 <name>Roman M. Yagodin</name>
-                <organization>R7.Solutions</organization>
+                <organization>R7.Labs</organization>
                 <url>https://github.com/roman-yagodin/R7.Epsilon</url>
                 <email>roman.yagodin@gmail.com</email>
             </owner>
