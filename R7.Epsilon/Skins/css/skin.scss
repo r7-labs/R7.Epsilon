@@ -243,6 +243,20 @@ header > .container > .row
 
         &.skin-functions-icon-gtranslate { @include functions-background (0); }
         &.skin-functions-icon-age-rating { @include functions-background (2); }
+        &.skin-functions-icon-alt-website {
+            @include functions-background (3);
+            font-weight:bold;
+            color:#000;
+            line-height:32px;
+            position:relative;
+			top:-12px;
+			text-align:center;
+        }
+
+        &.skin-functions-icon-alt-website:hover {
+            color:#fff;
+            text-decoration:none;
+        }
 
         &.skin-functions-icon-a11y,
         &.skin-functions-icon-a11y.enabled:hover { @include background-position-xy (1, 0, 32px); }

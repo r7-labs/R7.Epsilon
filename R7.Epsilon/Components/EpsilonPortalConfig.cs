@@ -60,6 +60,8 @@ namespace R7.Epsilon.Components
 
         public AnalyticsConfig Analytics { get; set; } = new AnalyticsConfig ();
 
+        public FunctionsConfig Functions { get; set; } = new FunctionsConfig ();
+
         #endregion
     }
 
@@ -124,5 +126,14 @@ namespace R7.Epsilon.Components
 
         public bool OpenInPopup { get; set; } = true;
     }
+
+    public class FunctionsConfig
+    {
+        public bool EnableAltWebsite { get; set; } = false;
+
+        public string AltWebsiteUrl { get; set; } = string.Empty;
+
+        public string AltWebsiteCulture { get; set; } = string.Empty;
+    } 
 }
 
