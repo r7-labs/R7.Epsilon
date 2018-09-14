@@ -10,8 +10,10 @@
 	<Target Name="InstallPackage" Condition=" '$(EnableInstallPackage)' == 'true' " DependsOnTargets="Tests">
 
 		<!-- Read package version from the manifest -->
-		<XmlPeek Query="/dotnetnuke/packages/package[1]/@version" XmlInputPath="$(MainProjectPath)/R7.Epsilon.dnn">
-        	<Output TaskParameter="Result" PropertyName="Version" />
+		<XmlPeek Query="/msb:Project/msb:PropertyGroup[1]/msb:ReleaseVersion/text()"
+				 XmlInputPath="$(MainProjectPath)/R7.Epsilon.csproj"
+				 Namespaces="&lt;Namespace Prefix='msb' Uri='http://schemas.microsoft.com/developer/msbuild/2003'/&gt;">
+			<Output TaskParameter="Result" PropertyName="Version" />
     	</XmlPeek>
 
 		<!-- Package file name -->
