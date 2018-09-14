@@ -32,6 +32,7 @@
 <%@ Register TagPrefix="skin" TagName="HEADERSMENU" Src="SkinObjects/HeadersMenu.ascx" %>
 <%@ Register TagPrefix="skin" TagName="JSVARIABLES" Src="SkinObjects/JsVariables.ascx" %>
 <%@ Register TagPrefix="skin" TagName="BANNER" Src="SkinObjects/Banners/BannerLoader.ascx" %>
+<%@ Register TagPrefix="skin" TagName="PARTIALCONTENTALERT" Src="SkinObjects/PartialContentAlert.ascx" %>
 <%@ Register TagPrefix="dnn" Namespace="DotNetNuke.Web.Client.ClientResourceManagement" Assembly="DotNetNuke.Web.Client" %>
 
 <dnn:META ID="bootstrapIECompat" runat="server" Name="X-UA-Compatible" Content="IE=edge" />
@@ -136,7 +137,7 @@
     </nav>
 </header>
 <a id="content" name="content"></a>
-<%-- <asp:Button id="buttonTestPostBack" runat="server" OnClick="buttonTestPostBack_Click" Text="Test PostBack" /> --%>
+<skin:PARTIALCONTENTALERT runat="server" />
 <asp:PlaceHolder id="placeDynamicPanes" runat="server"></asp:PlaceHolder>
 <div class="container">
     <div class="row">

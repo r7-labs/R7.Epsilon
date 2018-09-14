@@ -159,4 +159,12 @@
     <data name="AltWebsite.Title" xml:space="preserve">
         <value>[AltWebsite.Title]</value>
     </data>
+	<data name="PartialContentAlert.Title" xml:space="preserve">
+        <value><![CDATA[<i class="glyphicon glyphicon-info-sign"></i> Note]]></value>
+    </data>
+	<data name="PartialContentAlert.Content" xml:space="preserve">
+        <value><![CDATA[<p>Here is shown the one of many blocks of information on the <a class="alert-link" href="[TabUrl]">[TabName]</a> page.</p>
+			<p>You can <a class="alert-link" href="[TabUrl]#[ModuleId]">navigate to this block</a> on the full page version.</p>]]>
+		</value>
+    </data>
 </root>

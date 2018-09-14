@@ -21,6 +21,7 @@
 <%@ Register TagPrefix="skin" TagName="LOCALMENU" Src="SkinObjects/LocalMenu.ascx" %>
 <%@ Register TagPrefix="skin" TagName="HEADERSMENU" Src="SkinObjects/HeadersMenu.ascx" %>
 <%@ Register TagPrefix="skin" TagName="JSVARIABLES" Src="SkinObjects/JsVariables.ascx" %>
+<%@ Register TagPrefix="skin" TagName="PARTIALCONTENTALERT" Src="SkinObjects/PartialContentAlert.ascx" %>
 <%@ Register TagPrefix="dnn" Namespace="DotNetNuke.Web.Client.ClientResourceManagement" Assembly="DotNetNuke.Web.Client" %>
 
 <dnn:META ID="bootstrapIECompat" runat="server" Name="X-UA-Compatible" Content="IE=edge" />
@@ -120,6 +121,7 @@
 </header>
 <a id="content" name="content"></a>
 <div class="container">
+	<skin:PARTIALCONTENTALERT runat="server" />
     <div class="row">
         <div id="ContentPane" runat="server" class="col-md-12" />
     </div>
