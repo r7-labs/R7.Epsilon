@@ -1091,6 +1091,9 @@ a.link
 	height: 35px !important;
 }
 
+// fix for text colors in Bootstrap alerts
+.alert .Normal { color:inherit !important }
+
 /* fix for coloring on DNN Check boxes */
 .dnnCheckbox .mark { background:none; }
 
