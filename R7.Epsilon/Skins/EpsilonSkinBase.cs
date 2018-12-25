@@ -126,7 +126,7 @@ namespace R7.Epsilon.Skins
 
                 // use obrnadzor.gov.ru microdata
                 if (Config.UseObrnadzorMicrodata)
-                    linkA11yVersion.Attributes.Add ("itemprop", "Copy");
+                    linkA11yVersion.Attributes.Add ("itemprop", "copy");
             }
 
             // add canonical URL link
