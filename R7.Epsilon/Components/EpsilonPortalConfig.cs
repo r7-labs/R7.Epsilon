@@ -36,6 +36,14 @@ namespace R7.Epsilon.Components
 
         public string SkinA11yCss { get; set; } = "css/a11y-skin.min.css";
 
+        public List<CdnConfig> Cdns { get; set; } = new List<CdnConfig> {
+            new CdnConfig {
+                Location = "PageHead",
+                Href = "https://use.fontawesome.com/releases/v5.6.3/css/all.css",
+                Integrity = "sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+            }
+        };
+
         public FeedbackConfig Feedback { get; set; } = new FeedbackConfig ();
 
         public MenuConfig PrimaryMenu { get; set; } = new MenuConfig ();
@@ -82,7 +90,7 @@ namespace R7.Epsilon.Components
                     NodeManipulators.Add (((INodeManipulator) Activator.CreateInstance (BuildManager.GetType (nodeManipulatorType, true, true))));
                 }
                 catch (Exception ex) {
-                    Exceptions.LogException (ex);    
+                    Exceptions.LogException (ex);
                 }
             }
         }
@@ -111,7 +119,7 @@ namespace R7.Epsilon.Components
         public string ApiId { get; set; } = string.Empty;
 
         public List<string> Params { get; set; } = new List<string> ();
-    } 
+    }
 
     public class AnalyticsConfig
     {
@@ -134,6 +142,15 @@ namespace R7.Epsilon.Components
         public string AltWebsiteUrl { get; set; } = string.Empty;
 
         public string AltWebsiteCulture { get; set; } = string.Empty;
-    } 
+    }
+
+    public class CdnConfig
+    {
+        public string Href { get; set; }
+
+        public string Integrity { get; set; }
+
+        public string Location { get; set; }
+    }
 }
 

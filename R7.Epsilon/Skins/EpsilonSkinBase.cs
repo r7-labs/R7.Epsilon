@@ -20,6 +20,7 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
+using System.Linq;
 using System.Reflection;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
@@ -135,6 +136,22 @@ namespace R7.Epsilon.Skins
             linkCanonicalUrl.Attributes.Add ("rel", "canonical");
             linkCanonicalUrl.Href = Globals.NavigateURL ();
             Page.Header.Controls.Add (linkCanonicalUrl);
+
+            RegisterCdns ();
+        }
+
+        protected void RegisterCdns ()
+        {
+            foreach (var cdn in Config.Cdns.Where (c => c.Location == "PageHead")) {
+                if (cdn.Href.EndsWith (".css")) {
+                    var link = new HtmlLink ();
+                    link.Attributes.Add ("rel", "stylesheet");
+                    link.Attributes.Add ("crossorigin", "anonymous");
+                    link.Attributes.Add ("integrity", cdn.Integrity);
+                    link.Href = cdn.Href;
+                    Page.Header.Controls.Add (link);
+                }
+            }
         }
 
         protected override void OnLoad (EventArgs e)

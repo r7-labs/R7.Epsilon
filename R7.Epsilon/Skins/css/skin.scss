@@ -1135,3 +1135,7 @@ a.link
 
 // fix colored background on DNN radiobuttons
 .dnnRadiobutton .mark { background-color:transparent; }
+
+// fix for DNN action menu icons with Font Awesome 5
+.fa-pencil::before { content: "\f303"; }
+.fa-arrows::before { content: "\f0b2"; }
