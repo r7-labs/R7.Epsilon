@@ -292,6 +292,11 @@
     <Content Include="Skins\js\feedback.js" />
     <Content Include="Skins\js\bootstrap-init.js" />
     <Content Include="Skins\SkinObjects\PartialContentAlert.ascx" />
+    <Content Include="Default_H3.ascx" />
+    <Content Include="Containers\Well.ascx" />
+    <Content Include="Containers\Well_Small.ascx" />
+    <Content Include="Containers\Well_Large.ascx" />
+    <Content Include="Containers\Blank_Well.ascx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

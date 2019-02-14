@@ -989,8 +989,15 @@ ul.skin-socialgroups
 .cnt-thumbnail-h,
 .cnt-panel,
 .cnt-message,
-.cnt-alert { 
+.cnt-alert,
+.cnt-well { 
     margin-top:20px; // like h2 & h3
+}
+
+.well.cnt-well h2,
+.well.cnt-well h3,
+.well.cnt-well h4 {
+	margin-top:0
 }
 
 // header visible in edit mode
