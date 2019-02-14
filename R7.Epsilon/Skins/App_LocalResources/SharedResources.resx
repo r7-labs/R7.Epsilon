@@ -81,9 +81,6 @@
     <data xml:space="preserve" name="Twitter.Title">
         <value>Twitter</value>
     </data>
-    <data xml:space="preserve" name="GooglePlus.Title">
-        <value>Google+</value>
-    </data>
     <data xml:space="preserve" name="Odnoklassniki.Title">
         <value>Odnoklassniki</value>
     </data>

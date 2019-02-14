@@ -45,10 +45,6 @@ social-networks:
     share-enabled: true
     params: ['YOUR-TWITTER-VIA-HERE']
 
-  - name: GooglePlus
-    group: https://plus.google.com/communities/YOUR-GOOGLE-PLUS-HERE
-    share-enabled: true
-    
   - name: YouTube
     group: https://www.youtube.com/channel/YOUR-YOUTUBE-HERE
     is-primary: true

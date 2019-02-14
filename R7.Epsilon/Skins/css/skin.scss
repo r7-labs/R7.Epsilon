@@ -367,7 +367,6 @@ ul.skin-socialgroups
 
         &.skin-social-vkontakte { @include functions-background (0); }
         &.skin-social-facebook { @include functions-background (1); }
-        &.skin-social-googleplus { @include functions-background (2); }
         &.skin-social-twitter { @include functions-background (3); }
         &.skin-social-odnoklassniki { @include functions-background (4); }
         &.skin-social-youtube { @include functions-background (5); }
@@ -397,7 +396,6 @@ ul.skin-socialgroups
         li:hover .skin-social-button {
             &.skin-social-vkontakte { @include background-position-xy (0, 1, 32px); }
             &.skin-social-facebook { @include background-position-xy (1, 1, 32px); }
-            &.skin-social-googleplus { @include background-position-xy (2, 1, 32px); }
             &.skin-social-twitter { @include background-position-xy (3, 1, 32px); }
             &.skin-social-odnoklassniki { @include background-position-xy (4, 1, 32px); }
             &.skin-social-youtube { @include background-position-xy (5, 1, 32px); }
