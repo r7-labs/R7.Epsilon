@@ -6,6 +6,7 @@
 	<PropertyGroup>
 		<!-- Enable install package creation by default (standalone) -->
     	<EnableInstallPackage Condition=" '$(EnableInstallPackage)' == '' ">true</EnableInstallPackage>
+		<NodeModulesPath>../node_modules</NodeModulesPath>
   	</PropertyGroup>
 	<Target Name="InstallPackage" Condition=" '$(EnableInstallPackage)' == 'true' " DependsOnTargets="Tests">
 
@@ -29,6 +30,7 @@
 			<InstallSkinFiles Include="$(MainProjectPath)/Skins/**/*.css" />
 			<InstallSkinFiles Include="$(MainProjectPath)/Skins/**/*.resx" />
 			<InstallSkinFiles Include="$(MainProjectPath)/Skins/**/*.js" />
+			<InstallSkinFiles Include="$(MainProjectPath)/Skins/**/*.map" />
 			<InstallSkinFiles Include="$(MainProjectPath)/Skins/**/*.jpg" />
 			<InstallSkinFiles Include="$(MainProjectPath)/Skins/**/*.png" />
 			<InstallSkinFiles Include="$(MainProjectPath)/Skins/**/*.gif" />
@@ -85,6 +87,18 @@
 			<InstallBinaryFiles Include="$(MainProjectOutputPath)/R7.Epsilon*.pdb" Condition=" '$(Configuration)' == 'Debug' "/>
             <InstallBinaryFiles Include="$(MainProjectOutputPath)/YamlDotNet.dll" />
 		</ItemGroup>
+
+		<!-- Declare external JS files -->
+		<ItemGroup>
+			<InstallExternalJsFiles Include="$(NodeModulesPath)/bootstrap/dist/js/bootstrap.min.js" />
+			<InstallExternalJsFiles Include="$(NodeModulesPath)/bootstrap/dist/js/bootstrap.min.js.map"  Condition=" '$(Configuration)' == 'Debug' " />
+		</ItemGroup>
+
+		<!-- Declare external CSS files -->
+		<ItemGroup>
+			<InstallExternalCssFiles Include="$(NodeModulesPath)/bootstrap/dist/css/bootstrap.min.css" />
+			<InstallExternalCssFiles Include="$(NodeModulesPath)/bootstrap/dist/css/bootstrap.min.css.map" Condition=" '$(Configuration)' == 'Debug' "/>
+		</ItemGroup>
 	
 		<!-- Cleanup -->
 		<RemoveDir Directories="$(TmpDir)" />
@@ -95,6 +109,10 @@
 		<Copy SourceFiles="@(InstallMenuFiles)" DestinationFolder="$(MSBuildProjectDirectory)/$(TmpDir)/Menus/%(RecursiveDir)" />
         <Copy SourceFiles="@(InstallLayoutManagerFiles)" DestinationFolder="$(MSBuildProjectDirectory)/$(TmpDir)/Modules/R7.Epsilon.LayoutManager/%(RecursiveDir)" />
  		     
+		<!-- Copy external files to tmp dir -->
+		<Copy SourceFiles="@(InstallExternalJsFiles)" DestinationFolder="$(MSBuildProjectDirectory)/$(TmpDir)/Skins/js/" />
+		<Copy SourceFiles="@(InstallExternalCssFiles)" DestinationFolder="$(MSBuildProjectDirectory)/$(TmpDir)/Skins/css/" />
+
 		<!-- Declare zipped files -->
 		<ItemGroup>
 			<InstallSkinZipFiles Include="$(MSBuildProjectDirectory)/$(TmpDir)/Skins/**/*.*" />

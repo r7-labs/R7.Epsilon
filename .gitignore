@@ -1,4 +1,6 @@
 # User-specific
+/.vs/
+*.user
 *.userprefs
 *.usertasks
 
@@ -15,5 +17,7 @@ R7.Epsilon/Skins/js/*.min.js
 # Downloaded NuGet packages
 /packages/
 /Packages/
+/node_modules/
 
-
+# Various
+yarn-error.log

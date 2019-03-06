@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>R7.Epsilon</RootNamespace>
     <AssemblyName>R7.Epsilon</AssemblyName>
-    <ReleaseVersion>1.16</ReleaseVersion>
+    <ReleaseVersion>2.0</ReleaseVersion>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -170,12 +170,6 @@
     <Content Include="Skins\Edit.ascx" />
     <Content Include="Skins\Home.ascx" />
     <Content Include="Skins\PopupSkin.ascx" />
-    <Content Include="Skins\css\bootstrap-theme.min.css" />
-    <Content Include="Skins\css\bootstrap.min.css" />
-    <Content Include="Skins\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Skins\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Skins\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Skins\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Skins\images\error.png" />
     <Content Include="Skins\images\error.svg" />
     <Content Include="Skins\images\loading.gif" />
@@ -184,7 +178,6 @@
     <Content Include="Skins\images\video-play.png" />
     <Content Include="Skins\images\video-play.svg" />
     <Content Include="Skins\js\bootstrap-image-gallery.min.js" />
-    <Content Include="Skins\js\bootstrap.min.js" />
     <Content Include="Skins\js\jquery.blueimp-gallery.min.js" />
     <Content Include="Skins\images\logo-template.png" />
     <Content Include="Skins\images\logo-template.svg" />

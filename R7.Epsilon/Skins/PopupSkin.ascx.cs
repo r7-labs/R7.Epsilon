@@ -36,10 +36,9 @@ namespace R7.Epsilon.Skins
                 bool loadTheme;
                 if (bool.TryParse (loadThemeParam, out loadTheme)) {
                     if (loadTheme) {
-                        ClientResourceManager.RegisterStyleSheet (Page, SkinPath + "css/bootstrap.min.css", (int) FileOrder.Css.SkinCss - 1, "DnnPageHeaderProvider", "bootstrap", "3.3.7");
-                        ClientResourceManager.RegisterStyleSheet (Page, SkinPath + "css/bootstrap-theme.min.css", (int) FileOrder.Css.SkinCss - 1, "DnnPageHeaderProvider", "bootstrap.theme", "3.3.7");
+                        ClientResourceManager.RegisterStyleSheet (Page, SkinPath + "css/bootstrap.min.css", (int) FileOrder.Css.SkinCss - 1, "DnnPageHeaderProvider", "bootstrap", "4.3.1");
                         ClientResourceManager.RegisterStyleSheet (Page, SkinPath + Config.SkinCss);
-                        ClientResourceManager.RegisterScript (Page, SkinPath + "js/bootstrap.min.js", (int) FileOrder.Js.jQueryUI, "DnnFormBottomProvider", "bootstrap", "3.3.7");
+                        ClientResourceManager.RegisterScript (Page, SkinPath + "js/bootstrap.min.js", (int) FileOrder.Js.jQueryUI, "DnnFormBottomProvider", "bootstrap", "4.3.1");
                     }
                 }
             }

@@ -7,6 +7,7 @@
 	<PropertyGroup>
 		<!-- Enable local deploy by default (standalone) -->
     	<EnableLocalDeploy Condition=" '$(EnableLocalDeploy)' == '' ">true</EnableLocalDeploy>
+		<NodeModulesPath>../node_modules</NodeModulesPath>
 	</PropertyGroup>
 	<Target Name="LocalDeploy" Condition=" '$(EnableLocalDeploy)' == 'true' " DependsOnTargets="CompileScss;MinifyJS;Tests">
  		
@@ -69,6 +70,18 @@
             <DeployBinaryFiles Include="$(MainProjectOutputPath)/YamlDotNet.dll" />
 		</ItemGroup>
 
+		<!-- Declare external JS files -->
+		<ItemGroup>
+			<DeployExternalJsFiles Include="$(NodeModulesPath)/bootstrap/dist/js/bootstrap.min.js" />
+			<DeployExternalJsFiles Include="$(NodeModulesPath)/bootstrap/dist/js/bootstrap.min.js.map" Condition=" '$(Configuration)' == 'Debug' " />
+		</ItemGroup>
+
+		<!-- Declare external CSS files -->
+		<ItemGroup>
+			<DeployExternalCssFiles Include="$(NodeModulesPath)/bootstrap/dist/css/bootstrap.min.css" />
+			<DeployExternalCssFiles Include="$(NodeModulesPath)/bootstrap/dist/css/bootstrap.min.css.map" Condition=" '$(Configuration)' == 'Debug' " />
+		</ItemGroup>
+
 		<!-- Cleanup -->
 		<RemoveDir Directories="$(TmpDir)" />
 
@@ -96,10 +109,16 @@
         </ItemGroup>
 
 		<!-- Deploy files -->
+
 		<Copy SourceFiles="@(SkinMoveFiles)" DestinationFolder="$(DnnSkinsPath)/R7.Epsilon/%(RecursiveDir)" SkipUnchangedFiles="true" />
 		<Copy SourceFiles="@(ContainerMoveFiles)" DestinationFolder="$(DnnContainersPath)/R7.Epsilon/%(RecursiveDir)" SkipUnchangedFiles="true" />
 		<Copy SourceFiles="@(MenuMoveFiles)" DestinationFolder="$(DnnMenusPath)/R7.Epsilon/%(RecursiveDir)" SkipUnchangedFiles="true" />
 		<Copy SourceFiles="@(ModuleMoveFiles)" DestinationFolder="$(DnnModulesPath)/R7.Epsilon/%(RecursiveDir)" SkipUnchangedFiles="true" />
+		
+		<!-- Deploy external files -->
+
+		<Copy SourceFiles="@(DeployExternalJsFiles)" DestinationFolder="$(DnnSkinsPath)/R7.Epsilon/js/" SkipUnchangedFiles="true" />
+		<Copy SourceFiles="@(DeployExternalCssFiles)" DestinationFolder="$(DnnSkinsPath)/R7.Epsilon/css/" SkipUnchangedFiles="true" />	
 
 		<!-- Copy binaries -->
 		<Copy SourceFiles="@(DeployBinaryFiles)" DestinationFolder="$(DnnBinPath)" SkipUnchangedFiles="true" />

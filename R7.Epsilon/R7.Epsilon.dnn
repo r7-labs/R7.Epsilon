@@ -1,6 +1,6 @@
 ﻿<dotnetnuke type="Package" version="5.0">
 	<packages>
-		<package name="R7.Epsilon Skin" type="Skin" version="01.16.00">
+		<package name="R7.Epsilon Skin" type="Skin" version="02.00.00">
 			<friendlyName>R7.Epsilon</friendlyName>
 			<description>Highly customizable, multiportal, responsive skin for DNN Platfrom using Bootstrap 3. Requires installation via the Host/Extensions page.</description>
 			<owner>
@@ -20,6 +20,20 @@
 				<dependency type="package">Rangy</dependency>
             </dependencies>
 			<components>
+                <component type="Cleanup" version="02.00.00">
+					<files>
+                        <basePath>Portals\_default\Skins\R7.Epsilon\Skins\css</basePath>
+						<file><name>boostrap-theme.min.css</name></file>
+					</files>
+                    <files>
+                        <basePath>Portals\_default\Skins\R7.Epsilon\Skins\fonts</basePath>
+						<file><name>glyphicons-halflings-regular.eot</name></file>
+                        <file><name>glyphicons-halflings-regular.svg</name></file>
+                        <file><name>glyphicons-halflings-regular.ttf</name></file>
+                        <file><name>glyphicons-halflings-regular.woff</name></file>
+                        <file><name>glyphicons-halflings-regular.woff2</name></file>
+					</files>
+				</component>
 				<component type="Cleanup" version="01.14.00">
 					<files>
                         <basePath>Portals\_default\Skins\R7.Epsilon\SkinObjects</basePath>
@@ -85,7 +99,7 @@
 				</component>
 			</components>
 		</package>
-		<package name="R7.Epsilon Containers" type="Container" version="01.16.00">
+		<package name="R7.Epsilon Containers" type="Container" version="02.00.00">
 			<friendlyName>R7.Epsilon</friendlyName>
 			<description>Containers for the R7.Epsilon Skin package.</description>
 			<owner>
@@ -113,7 +127,7 @@
 				</component>
 			</components>
 		</package>
-         <package name="R7.Epsilon.LayoutManager" type="Module" version="01.16.00">
+         <package name="R7.Epsilon.LayoutManager" type="Module" version="02.00.00">
             <friendlyName>R7.Epsilon.LayoutManager</friendlyName>
             <description>Module to manage R7.Epsilon skin layouts.</description>
             <owner>
