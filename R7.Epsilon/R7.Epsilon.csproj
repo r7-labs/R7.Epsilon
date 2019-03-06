@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -285,7 +285,6 @@
     <Content Include="Skins\js\feedback.js" />
     <Content Include="Skins\js\bootstrap-init.js" />
     <Content Include="Skins\SkinObjects\PartialContentAlert.ascx" />
-    <Content Include="Default_H3.ascx" />
     <Content Include="Containers\Well.ascx" />
     <Content Include="Containers\Well_Small.ascx" />
     <Content Include="Containers\Well_Large.ascx" />
