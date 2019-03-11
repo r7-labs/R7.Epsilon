@@ -27,24 +27,12 @@ using System.Web.UI.WebControls;
 using DotNetNuke.Common;
 using DotNetNuke.Framework.JavaScriptLibraries;
 using DotNetNuke.UI.Skins;
-using DotNetNuke.Web.Client;
-using DotNetNuke.Web.Client.ClientResourceManagement;
 using R7.Epsilon.Components;
 
 namespace R7.Epsilon.Skins
 {
     public class EpsilonSkinBase : Skin, ILocalizableControl, IConfigurableControl
     {
-        #region Controls
-
-        // each skin should have this!
-
-        protected DnnCssInclude skinCss;
-
-        protected HyperLink linkA11yVersion;
-
-        #endregion
-
         protected bool IsErrorPage {
             get {
                 var activeTabId = PortalSettings.ActiveTab.TabID;
@@ -120,6 +108,7 @@ namespace R7.Epsilon.Skins
             base.OnInit (e);
 
             // init accessibility button
+            var linkA11yVersion = (HyperLink) FindControl ("linkA11yVersion");
             if (linkA11yVersion != null) {
                 var a11yLabel = Localizer.GetString ("A11y.Title");
                 linkA11yVersion.ToolTip = a11yLabel;
@@ -160,21 +149,16 @@ namespace R7.Epsilon.Skins
 
             RegisterJavaScript ();
 
+            var linkA11yVersion = (HyperLink) FindControl ("linkA11yVersion");
             if (linkA11yVersion != null) {
                 // make link to toggle a11y mode
                 linkA11yVersion.NavigateUrl = Globals.NavigateURL (
                     PortalSettings.ActiveTab.TabID, "", "a11y", (!A11yEnabled).ToString ());
-            }
 
-            if (skinCss != null && A11yEnabled) {
-                // replace current skin
-                skinCss.FilePath = Config.SkinA11yCss;
-
-                // load a11y script
-                ClientResourceManager.RegisterScript (Page, "/Portals/_default/Skins/R7.Epsilon/js/a11y.min.js", FileOrder.Js.DefaultPriority, "DnnFormBottomProvider");
-
-                // alter look of accessibility button
-                linkA11yVersion.CssClass = linkA11yVersion.CssClass + " enabled";
+                if (A11yEnabled) {
+                    // alter look of accessibility button
+                    linkA11yVersion.CssClass = linkA11yVersion.CssClass + " enabled";
+                }
             }
         }
 

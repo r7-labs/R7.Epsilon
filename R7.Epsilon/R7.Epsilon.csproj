@@ -158,6 +158,9 @@
     <Compile Include="Skins\SkinObjects\Banners\BannerWrapper.ascx.cs">
       <DependentUpon>BannerWrapper.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Skins\SkinObjects\Includes.ascx.cs">
+      <DependentUpon>Includes.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Skins\SkinObjects\Banners\IBannerControl.cs" />
     <Compile Include="Components\EpsilonNodeManipulator.cs" />
   </ItemGroup>
@@ -308,6 +311,7 @@
     <Folder Include="Menus\Mega2Epsilon\" />
     <Folder Include="Skins\SkinObjects\Banners\" />
     <Content Include="Skins\css\dnn.scss" />
+    <Content Include="Skins\SkinObjects\Includes.ascx" />
   </ItemGroup>
   <Import Project="../Deploy/Preprocess.targets" />
   <Target Name="BeforeBuild" DependsOnTargets="CompileScss;MinifyJS" />
