@@ -39,7 +39,7 @@ namespace R7.Epsilon.Skins
 
         // each skin should have this!
 
-        protected DnnCssInclude skinCSS;
+        protected DnnCssInclude skinCss;
 
         protected HyperLink linkA11yVersion;
 
@@ -166,9 +166,9 @@ namespace R7.Epsilon.Skins
                     PortalSettings.ActiveTab.TabID, "", "a11y", (!A11yEnabled).ToString ());
             }
 
-            if (skinCSS != null && A11yEnabled) {
+            if (skinCss != null && A11yEnabled) {
                 // replace current skin
-                skinCSS.FilePath = Config.SkinA11yCss;
+                skinCss.FilePath = Config.SkinA11yCss;
 
                 // load a11y script
                 ClientResourceManager.RegisterScript (Page, "/Portals/_default/Skins/R7.Epsilon/js/a11y.min.js", FileOrder.Js.DefaultPriority, "DnnFormBottomProvider");
