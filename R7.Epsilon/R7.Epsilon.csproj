@@ -312,6 +312,7 @@
     <Folder Include="Skins\SkinObjects\Banners\" />
     <Content Include="Skins\css\dnn.scss" />
     <Content Include="Skins\SkinObjects\Includes.ascx" />
+    <Content Include="Skins\SkinObjects\Meta.ascx" />
   </ItemGroup>
   <Import Project="../Deploy/Preprocess.targets" />
   <Target Name="BeforeBuild" DependsOnTargets="CompileScss;MinifyJS" />
