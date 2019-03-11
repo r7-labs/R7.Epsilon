@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" Inherits="R7.Epsilon.Skins.EpsilonSkinBase" %>
+<%@ Import Namespace="DotNetNuke.Web.Client" %>
 <%@ Register TagPrefix="dnn" TagName="LOGO" Src="~/Admin/Skins/Logo.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="LANGUAGE" Src="~/Admin/Skins/Language.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="SEARCH" Src="~/Admin/Skins/Search.ascx" %>
@@ -35,10 +36,14 @@
 <%@ Register TagPrefix="skin" TagName="PARTIALCONTENTALERT" Src="SkinObjects/PartialContentAlert.ascx" %>
 <%@ Register TagPrefix="dnn" Namespace="DotNetNuke.Web.Client.ClientResourceManagement" Assembly="DotNetNuke.Web.Client" %>
 
+<dnn:DnnCssInclude runat="server" Name="dnndefault" FilePath="~/Resources/Shared/stylesheets/dnndefault/8.0.0/default.css"
+    Priority="<%# FileOrder.Css.DefaultCss %>" Version="8.0.0" />
+
 <dnn:META ID="bootstrapIECompat" runat="server" Name="X-UA-Compatible" Content="IE=edge" />
 <dnn:META ID="mobileScale" runat="server" Name="viewport" Content="width=device-width,initial-scale=1" />
 <dnn:DnnCssInclude ID="bootStrapCSS" runat="server" Name="bootstrap" Version="4.3.1" FilePath="css/bootstrap.min.css" PathNameAlias="SkinPath" Priority="14" />
 <dnn:DnnCssInclude id="skinCSS" runat="server" FilePath="<%# Config.SkinCss %>" PathNameAlias="SkinPath" />
+
 <dnn:JQUERY ID="dnnjQuery" runat="server" jQueryHoverIntent="true" />
 <dnn:DnnJsInclude ID="bootstrapJS" runat="server" Name="bootstrap" Version="4.3.1" FilePath="js/bootstrap.min.js" PathNameAlias="SkinPath" Priority="10" ForceProvider="DnnFormBottomProvider" />
 <dnn:DnnJsInclude runat="server" FilePath="js/bootstrap-init.min.js" PathNameAlias="SkinPath" ForceProvider="DnnFormBottomProvider" />
@@ -77,7 +82,7 @@
     </div>
     <nav class="navbar skin-primary-navbar">
         <div class="container">
-            <div class="navbar-brand skin-navbar-brand-link visible-xs">
+            <div class="navbar-brand skin-navbar-brand-link d-xs-block">
                 <skin:LOGOMOBILE runat="server" />
             </div>
             <button type="button" class="navbar-toggle skin-top-menu-toggle" data-toggle="collapse" data-target=".skin-top-menu">
@@ -86,7 +91,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <div class="skin-login-simple visible-xs">
+            <div class="skin-login-simple d-xs-block">
                 <dnn:USER runat="server" LegacyMode="false" />
                 <dnn:LOGIN runat="server" CssClass="skin-login-link" />
             </div>
@@ -100,10 +105,10 @@
                 <div class="navbar-brand skin-navbar-brand-logo">
                     <dnn:LOGO runat="server" id="dnnLOGO" />
                 </div>
-                <div class="skin-header-content hidden-sm">
+                <div class="skin-header-content d-sm-none">
                     <skin:LOGOTITLE runat="server" />
                 </div>
-                <skin:FOOTERCONTENT runat="server" CssClass="skin-header-content hidden-xs" ResourceKey="HeaderPane1.Content" />
+                <skin:FOOTERCONTENT runat="server" CssClass="skin-header-content d-xs-none" ResourceKey="HeaderPane1.Content" />
                 <div class="skin-login-full">
                     <dnn:LOGIN CssClass="LoginLink" runat="server" LegacyMode="false" />
                     <dnn:USER runat="server" LegacyMode="false" />
@@ -130,7 +135,7 @@
             </div>
             <skin:LOCALMENU runat="server" />
             <skin:HEADERSMENU runat="server" PassDefaultTemplateArgs="false" />
-            <div id="skin-separator-1" class="hidden-xs">&nbsp;</div>
+            <div id="skin-separator-1" class="d-xs-none">&nbsp;</div>
             <skin:SOCIALSHAREBUTTONS runat="server" />
         </div>
     </nav>
@@ -246,7 +251,7 @@
                 <div class="col-lg-8 col-md-10 col-sm-12">
                     <skin:GADSENSE runat="server" />
                     <div class="row">
-                        <div class="skin-footer-buttons col-sm-6 hidden-xs">
+                        <div class="skin-footer-buttons col-sm-6 d-xs-none">
                             <skin:BANNER runat="server" GroupName="<%# Config.FooterButtonsGroupName %>" BannerTypeId="4" BannerCount="3" Orientation="H" />
                         </div>
                         <skin:FOOTERCONTENT runat="server" CssClass="skin-footer-content col-sm-6" ResourceKey="FooterPane1.Content" />

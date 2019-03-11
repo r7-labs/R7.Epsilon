@@ -1,0 +1,97 @@
+ul.dnnAdminTabNav {
+    height: 40px;
+    border-radius: 0 !important;
+}
+
+/* styling for the Edit Profile and My Account links in User Profiles */
+.dnnActions {
+    display: inline-block;
+}
+
+.dnnActions li {
+    margin-right: 5px;
+    list-style: none;
+    float: left;
+}
+
+/*override for dnnLabels in the bootstrap */
+.form-group .dnnLabel {
+    text-align: left;
+    width: auto;
+}
+
+.dnnLabel + span {
+    white-space: normal;
+}
+
+/* ADMIN */
+#ControlBar,
+#ControlBar:before,
+#ControlBar:after,
+#ControlBar *:before,
+#ControlBar *:after,
+#ControlBar li,
+#ControlBar li:before,
+#ControlBar li:after,
+#ControlBar a,
+#ControlBar a:before,
+#ControlBar a:after,
+.dnn_mact,
+.dnn_mact:before,
+.dnn_mact:after,
+.dnn_mact *:before,
+.dnn_mact *:after,
+.dnn_mact li,
+.dnn_mact li:before,
+.dnn_mact li:after {
+    -webkit-box-sizing: content-box !important;
+    /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: content-box !important;
+    /* Firefox, other Gecko */
+    box-sizing: content-box !important;
+    /* Opera/IE 8+ */
+}
+
+// box-sizing fix for some DNN core modules
+.ModDotNetNukeModulesDigitalAssetsC *,
+.ModDotNetNukeModulesCoreMessagingC *,
+.ModDotNetNukeModulesMemberDirectoryC *,
+.ModViewProfileC *,
+.ModSearchResultsC *,
+.ModConsoleC * { 
+    box-sizing: unset;
+}
+
+// Bootstrap embed-responsive extensions
+.embed-responsive-5by4 { padding-bottom:78.75%; }
+
+// fix colored background on DNN radiobuttons
+.dnnRadiobutton .mark { background-color:transparent; }
+
+// fix for DNN action menu icons with Font Awesome 5
+.fa-pencil::before { content: "\f303"; }
+.fa-arrows::before { content: "\f0b2"; }
+
+/* fix for coloring on DNN Check boxes */
+.dnnCheckbox .mark { background:none; }
+
+.dnnSortable { 
+    // restore value, overriden by col-*
+    min-height:110px!important;
+
+    // use col-* value instead
+    &.ui-sortable { padding:0 15px; }
+}
+
+// panes look in layout mode
+.paneOutline 
+{ 
+    border:0;
+    span.SubHead center 
+    {
+        border:1px #ccc dotted;
+        border-left:0;
+        border-right:0;
+        line-height:2.5em;
+    }
+}

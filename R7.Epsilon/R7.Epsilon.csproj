@@ -152,9 +152,6 @@
     <Compile Include="Components\CacheHelper.cs" />
     <Compile Include="Components\A11yHelper.cs" />
     <Compile Include="Components\EpsilonUrlHelper.cs" />
-    <Compile Include="Skins\PopupSkin.ascx.cs">
-      <DependentUpon>PopupSkin.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Skins\SkinObjects\Banners\BannerLoader.ascx.cs">
       <DependentUpon>BannerLoader.ascx</DependentUpon>
     </Compile>
@@ -310,6 +307,7 @@
     <Folder Include="Menus\" />
     <Folder Include="Menus\Mega2Epsilon\" />
     <Folder Include="Skins\SkinObjects\Banners\" />
+    <Content Include="Skins\css\dnn.scss" />
   </ItemGroup>
   <Import Project="../Deploy/Preprocess.targets" />
   <Target Name="BeforeBuild" DependsOnTargets="CompileScss;MinifyJS" />
