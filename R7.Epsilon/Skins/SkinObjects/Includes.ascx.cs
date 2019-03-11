@@ -38,8 +38,6 @@ namespace R7.Epsilon.Skins.SkinObjects
     {
         protected string SkinPath => Skin.SkinPath;
 
-        protected EpsilonSkinBase Skin => (EpsilonSkinBase) Parent;
-
         protected override void OnLoad (EventArgs e)
         {
             ClientResourceManager.RegisterStyleSheet (Page, SkinPath + "/css/bootstrap.min.css", (int) FileOrder.Css.SkinCss, "DnnPageHeaderProvider", "bootstrap", "4.3.1");

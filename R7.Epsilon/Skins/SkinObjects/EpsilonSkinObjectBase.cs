@@ -19,6 +19,7 @@
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+using System.Web.UI;
 using DotNetNuke.Common;
 using DotNetNuke.UI.Skins;
 using R7.Epsilon.Components;
@@ -51,6 +52,16 @@ namespace R7.Epsilon.Skins.SkinObjects
             get {
                 return (PortalSettings.HomeTabId != -1) ?
                     Globals.NavigateURL (PortalSettings.HomeTabId) : Globals.AddHTTP (PortalSettings.PortalAlias.HTTPAlias);
+            }
+        }
+
+        public EpsilonSkinBase Skin {
+            get {
+                Control control = this;
+                while (!(control.Parent is EpsilonSkinBase)) {
+                    control = control.Parent;
+                }
+                return (EpsilonSkinBase) control.Parent; 
             }
         }
     }
