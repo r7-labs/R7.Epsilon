@@ -3,7 +3,7 @@
 <%@ Register TagPrefix="dnn" TagName="TERMS" Src="~/Admin/Skins/Terms.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="COPYRIGHT" Src="~/Admin/Skins/Copyright.ascx" %>
 <%@ Register TagPrefix="skin" TagName="GADSENSE" Src="../SkinObjects/GAdsense.ascx" %>
-<%@ Register TagPrefix="skin" TagName="FOOTERCONTENT" Src="../SkinObjects/FooterContent.ascx" %>
+<%@ Register TagPrefix="skin" TagName="CUSTOMCONTENT" Src="../SkinObjects/CustomContent.ascx" %>
 <%@ Register TagPrefix="skin" TagName="YCYCOUNTER" Src="../SkinObjects/YCycounter.ascx" %>
 <%@ Register TagPrefix="skin" TagName="BANNER" Src="../SkinObjects/Banners/BannerLoader.ascx" %>
 
@@ -16,11 +16,11 @@
                     <div class="skin-footer-buttons col-sm-6 d-xs-none">
                         <skin:BANNER runat="server" GroupName="<%# Config.FooterButtonsGroupName %>" BannerTypeId="4" BannerCount="3" Orientation="H" />
                     </div>
-                    <skin:FOOTERCONTENT runat="server" CssClass="skin-footer-content col-sm-6" ResourceKey="FooterPane1.Content" />
+                    <skin:CUSTOMCONTENT runat="server" CssClass="skin-footer-content col-sm-6" ResourceKey="FooterPane1.Content" />
                 </div>
             </div>
-            <skin:FOOTERCONTENT runat="server" CssClass="col-lg-2 col-md-2 col-sm-6 skin-footer-content" ResourceKey="FooterPane2.Content" />
-            <skin:FOOTERCONTENT runat="server" CssClass="col-lg-2 col-sm-6 skin-footer-content" ResourceKey="FooterPane3.Content" />
+            <skin:CUSTOMCONTENT runat="server" CssClass="col-lg-2 col-md-2 col-sm-6 skin-footer-content" ResourceKey="FooterPane2.Content" />
+            <skin:CUSTOMCONTENT runat="server" CssClass="col-lg-2 col-sm-6 skin-footer-content" ResourceKey="FooterPane3.Content" />
         </div>
     </div>
 </div>

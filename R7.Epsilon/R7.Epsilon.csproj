@@ -117,8 +117,8 @@
     <Compile Include="Skins\SkinObjects\FeedbackButton.ascx.cs">
       <DependentUpon>FeedbackButton.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Skins\SkinObjects\FooterContent.ascx.cs">
-      <DependentUpon>FooterContent.ascx</DependentUpon>
+    <Compile Include="Skins\SkinObjects\CustomContent.ascx.cs">
+      <DependentUpon>CustomContent.ascx</DependentUpon>
     </Compile>
     <Compile Include="Skins\SkinObjects\Founders.ascx.cs">
       <DependentUpon>Founders.ascx</DependentUpon>
@@ -246,7 +246,7 @@
     <Content Include="Skins\SkinObjects\AdminPageInfo.ascx" />
     <Content Include="Skins\SkinObjects\BrowserCheck.ascx" />
     <Content Include="Skins\SkinObjects\FeedbackButton.ascx" />
-    <Content Include="Skins\SkinObjects\FooterContent.ascx" />
+    <Content Include="Skins\SkinObjects\CustomContent.ascx" />
     <Content Include="Skins\SkinObjects\Founders.ascx" />
     <Content Include="Skins\SkinObjects\Functions.ascx" />
     <Content Include="Skins\SkinObjects\GAdsense.ascx" />

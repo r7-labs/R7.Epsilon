@@ -24,7 +24,7 @@
 <%@ Register TagPrefix="skin" TagName="LOGOMOBILE" Src="SkinObjects/LogoMobile.ascx" %>
 <%@ Register TagPrefix="skin" TagName="BROWSERCHECK" Src="SkinObjects/BrowserCheck.ascx" %>
 <%@ Register TagPrefix="skin" TagName="FEEDBACKBUTTON" Src="SkinObjects/FeedbackButton.ascx" %>
-<%@ Register TagPrefix="skin" TagName="FOOTERCONTENT" Src="SkinObjects/FooterContent.ascx" %>
+<%@ Register TagPrefix="skin" TagName="CUSTOMCONTENT" Src="SkinObjects/CustomContent.ascx" %>
 <%@ Register TagPrefix="skin" TagName="YCYCOUNTER" Src="SkinObjects/YCycounter.ascx" %>
 <%@ Register TagPrefix="skin" TagName="PRIMARYMENU" Src="SkinObjects/PrimaryMenu.ascx" %>
 <%@ Register TagPrefix="skin" TagName="SECONDARYMENU" Src="SkinObjects/SecondaryMenu.ascx" %>
@@ -103,7 +103,7 @@
                 <div class="skin-header-content hidden-sm">
                     <skin:LOGOTITLE runat="server" />
                 </div>
-                <skin:FOOTERCONTENT runat="server" CssClass="skin-header-content hidden-xs" ResourceKey="HeaderPane1.Content" />
+                <skin:CUSTOMCONTENT runat="server" CssClass="skin-header-content hidden-xs" ResourceKey="HeaderPane1.Content" />
                 <div class="skin-login-full">
                     <dnn:LOGIN CssClass="LoginLink" runat="server" LegacyMode="false" />
                     <dnn:USER runat="server" LegacyMode="false" />
@@ -162,11 +162,11 @@
                         <div class="skin-footer-buttons col-sm-6 hidden-xs">
                             <skin:BANNER runat="server" GroupName="<%# Config.FooterButtonsGroupName %>" BannerTypeId="4" BannerCount="3" Orientation="H" />
                         </div>
-                        <skin:FOOTERCONTENT runat="server" CssClass="skin-footer-content col-sm-6" ResourceKey="FooterPane1.Content" />
+                        <skin:CUSTOMCONTENT runat="server" CssClass="skin-footer-content col-sm-6" ResourceKey="FooterPane1.Content" />
                     </div>
                 </div>
-                <skin:FOOTERCONTENT runat="server" CssClass="col-lg-2 col-md-2 col-sm-6 skin-footer-content" ResourceKey="FooterPane2.Content" />
-                <skin:FOOTERCONTENT runat="server" CssClass="col-lg-2 col-sm-6 skin-footer-content" ResourceKey="FooterPane3.Content" />
+                <skin:CUSTOMCONTENT runat="server" CssClass="col-lg-2 col-md-2 col-sm-6 skin-footer-content" ResourceKey="FooterPane2.Content" />
+                <skin:CUSTOMCONTENT runat="server" CssClass="col-lg-2 col-sm-6 skin-footer-content" ResourceKey="FooterPane3.Content" />
             </div>
         </div>
     </div>

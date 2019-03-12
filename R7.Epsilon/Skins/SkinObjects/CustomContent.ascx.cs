@@ -1,5 +1,5 @@
 ﻿//
-//  FooterContent.ascx.cs
+//  CustomContent.ascx.cs
 //
 //  Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
@@ -21,8 +21,7 @@
 
 namespace R7.Epsilon.Skins.SkinObjects
 {
-    // TODO: Rename class to LocalizedPanel or something
-    public class FooterContent: EpsilonSkinObjectBase
+    public class CustomContent: EpsilonSkinObjectBase
     {
         public string CssClass { get; set; }
 

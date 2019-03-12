@@ -17,7 +17,7 @@
 <%@ Register TagPrefix="skin" TagName="FOUNDERS" Src="../SkinObjects/Founders.ascx" %>
 <%@ Register TagPrefix="skin" TagName="LOGOTITLE" Src="../SkinObjects/LogoTitle.ascx" %>
 <%@ Register TagPrefix="skin" TagName="LOGOMOBILE" Src="../SkinObjects/LogoMobile.ascx" %>
-<%@ Register TagPrefix="skin" TagName="FOOTERCONTENT" Src="../SkinObjects/FooterContent.ascx" %>
+<%@ Register TagPrefix="skin" TagName="CUSTOMCONTENT" Src="../SkinObjects/CustomContent.ascx" %>
 
 <div class="container">
     <div class="row">
@@ -70,7 +70,7 @@
             <div class="skin-header-content d-sm-none">
                 <skin:LOGOTITLE runat="server" />
             </div>
-            <skin:FOOTERCONTENT runat="server" CssClass="skin-header-content d-xs-none" ResourceKey="HeaderPane1.Content" />
+            <skin:CUSTOMCONTENT runat="server" CssClass="skin-header-content d-xs-none" ResourceKey="HeaderPane1.Content" />
             <div class="skin-login-full">
                 <dnn:LOGIN CssClass="LoginLink" runat="server" LegacyMode="false" />
                 <dnn:USER runat="server" LegacyMode="false" />
