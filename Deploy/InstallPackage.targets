@@ -85,8 +85,7 @@
 		<ItemGroup>	
 			<InstallBinaryFiles Include="$(MainProjectOutputPath)/R7.Epsilon*.dll" />
 			<InstallBinaryFiles Include="$(MainProjectOutputPath)/R7.Epsilon*.pdb" Condition=" '$(Configuration)' == 'Debug' "/>
-            <InstallBinaryFiles Include="$(MainProjectOutputPath)/YamlDotNet.dll" />
-		</ItemGroup>
+        </ItemGroup>
 
 		<!-- Declare external JS files -->
 		<ItemGroup>
