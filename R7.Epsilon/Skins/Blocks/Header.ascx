@@ -42,50 +42,73 @@
         </div>
     </div>
 </div>
-<nav class="navbar skin-primary-navbar">
+<nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top navbar-1 ---skin-primary-navbar">
     <div class="container">
-        <div class="navbar-brand skin-navbar-brand-link d-xs-block">
-            <skin:LOGOMOBILE runat="server" />
-        </div>
-        <button type="button" class="navbar-toggle skin-top-menu-toggle" data-toggle="collapse" data-target=".skin-top-menu">
-            <asp:Label runat="server" CssClass="sr-only" Text='<%# Localizer.GetString ("ToggleNavigation.Text") %>' />
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <div class="skin-login-simple d-xs-block">
+              
+        <div class="skin-login-simple d-md-none">
             <dnn:USER runat="server" LegacyMode="false" />
             <dnn:LOGIN runat="server" CssClass="skin-login-link" />
         </div>
-        <div class="navbar-collapse collapse dnnClear skin-top-menu" role="navigation">
+
+        <div class="navbar-brand skin-navbar-brand-link d-md-none">
+            <skin:LOGOMOBILE runat="server" />
+        </div>
+        
+        <button type="button" class="navbar-toggler skin-top-menu-toggle" data-toggle="collapse" data-target=".skin-top-menu">
+            <asp:Label runat="server" CssClass="sr-only" Text='<%# Localizer.GetString ("ToggleNavigation.Text") %>' />
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse skin-top-menu" role="navigation">
             <skin:PRIMARYMENU runat="server" />
         </div>
-        <div class="navbar-collapse collapse skin-primary-navbar-main">
-            <div class="skin-founders-wrapper">
+<!--
+        <div class="navbar-brand skin-navbar-brand-logo d-xs-none">
+            <dnn:LOGO runat="server" id="dnnLOGO" />
+        </div>
+        <div class="collapse navbar-collapse skin-top-menu" role="navigation">
+            <skin:SECONDARYMENU runat="server" />
+        </div>
+        <div class="collapse navbar-collapse skin-primary-navbar-main d-none">
+            <div class="skin-founders-wrapper d-none">
                 <skin:FOUNDERS runat="server" Target="_blank" />
-            </div>
-            <div class="navbar-brand skin-navbar-brand-logo">
-                <dnn:LOGO runat="server" id="dnnLOGO" />
             </div>
             <div class="skin-header-content d-sm-none">
                 <skin:LOGOTITLE runat="server" />
             </div>
-            <skin:CUSTOMCONTENT runat="server" CssClass="skin-header-content d-xs-none" ResourceKey="HeaderPane1.Content" />
-            <div class="skin-login-full">
-                <dnn:LOGIN CssClass="LoginLink" runat="server" LegacyMode="false" />
-                <dnn:USER runat="server" LegacyMode="false" />
-            </div>
+            <skin:CUSTOMCONTENT runat="server" CssClass="skin-header-content d-none" ResourceKey="HeaderPane1.Content" />
         </div>
+        -->
     </div>
 </nav>
-<nav class="navbar skin-secondary-navbar" role="navigation">
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top navbar-2 ---skin-primary-navbar">
     <div class="container">
-        <div class="navbar-collapse collapse dnnClear skin-top-menu">
-            <skin:SECONDARYMENU runat="server" /> 
+        <div class="collapse navbar-collapse skin-top-menu" role="navigation">
+            <skin:SECONDARYMENU runat="server" />
         </div>
+<!--
+        <div class="collapse navbar-collapse skin-primary-navbar-main d-none">
+            <div class="skin-founders-wrapper d-none">
+                <skin:FOUNDERS runat="server" Target="_blank" />
+            </div>
+          
+            <div class="skin-header-content d-sm-none">
+                <skin:LOGOTITLE runat="server" />
+            </div>
+            <skin:CUSTOMCONTENT runat="server" CssClass="skin-header-content d-none" ResourceKey="HeaderPane1.Content" />
+        </div>
+        -->
     </div>
 </nav>
-<nav class="navbar skin-local-navbar" role="navigation">
+
+
+
+<div class="skin-login-full">
+    <dnn:LOGIN CssClass="LoginLink" runat="server" LegacyMode="false" />
+    <dnn:USER runat="server" LegacyMode="false" />
+</div>
+<nav class="skin-local-navbar" role="navigation">
     <div class="container">
         <div class="breadcrumb">
             <dnn:BREADCRUMB id="dnnBREADCRUMB" runat="server" CssClass="skin-breadcrumb-link" RootLevel="-1" Separator="/" />

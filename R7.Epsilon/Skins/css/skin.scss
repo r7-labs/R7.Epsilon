@@ -57,6 +57,15 @@
   text-align: center;
 }
 
+.navbar-1 {
+    background-color: $color-primary-4 !important
+}
+
+.navbar-2 {
+    background-color: $color-primary-3 !important
+}
+
+/*
 .navbar-collapse 
 { 
   padding-left:0; 
@@ -70,6 +79,7 @@
 .navbar > .container .navbar-brand { margin-left:0; }
 
 .navbar-right { margin-right:0 }
+*/
 
 .carousel-inner > .active.left {
   float: none;

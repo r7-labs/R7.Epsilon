@@ -11,7 +11,7 @@
 <%@ Register TagPrefix="dnn" TagName="TAGS" Src="~/Admin/Skins/Tags.ascx" %>
 
 <skin:META runat="server" />
-<skin:INCLUDES runat="server" />
+<skin:INCLUDES runat="server" SkinJs="false" />
 <skin:JSVARIABLES runat="server" />
 <div id="vk_api_transport"></div>
 <div id="fb-root"></div>
