@@ -49,7 +49,7 @@ namespace R7.Epsilon.Skins.SkinObjects
                 ClientResourceManager.RegisterStyleSheet (Page, SkinPath + "/" + Config.SkinCss, (int) FileOrder.Css.SkinCss, "DnnPageHeaderProvider", "skin", "0.0.0");
             }
 
-            ClientResourceManager.RegisterScript (Page, SkinPath + "/js/bootstrap.min.js", (int) FileOrder.Js.DefaultPriority, "DnnFormBottomProvider", "bootstrap", "4.3.1");
+            ClientResourceManager.RegisterScript (Page, SkinPath + "/js/bootstrap.bundle.min.js", (int) FileOrder.Js.DefaultPriority, "DnnFormBottomProvider", "bootstrap", "4.3.1");
             ClientResourceManager.RegisterScript (Page, SkinPath + "/js/bootstrap-init.min.js", (int) FileOrder.Js.DefaultPriority, "DnnFormBottomProvider", "bootstrap-init", "0.0.0");
 
             if (Attributes ["MenuJs"] != "false") {

@@ -71,8 +71,8 @@
 
 		<!-- Declare external JS files -->
 		<ItemGroup>
-			<DeployExternalJsFiles Include="$(NodeModulesPath)/bootstrap/dist/js/bootstrap.min.js" />
-			<DeployExternalJsFiles Include="$(NodeModulesPath)/bootstrap/dist/js/bootstrap.min.js.map" Condition=" '$(Configuration)' == 'Debug' " />
+			<DeployExternalJsFiles Include="$(NodeModulesPath)/bootstrap/dist/js/bootstrap.bundle.min.js" />
+			<DeployExternalJsFiles Include="$(NodeModulesPath)/bootstrap/dist/js/bootstrap.bundle.min.js.map" Condition=" '$(Configuration)' == 'Debug' " />
 		</ItemGroup>
 
 		<!-- Declare external CSS files -->

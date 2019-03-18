@@ -89,8 +89,8 @@
 
 		<!-- Declare external JS files -->
 		<ItemGroup>
-			<InstallExternalJsFiles Include="$(NodeModulesPath)/bootstrap/dist/js/bootstrap.min.js" />
-			<InstallExternalJsFiles Include="$(NodeModulesPath)/bootstrap/dist/js/bootstrap.min.js.map"  Condition=" '$(Configuration)' == 'Debug' " />
+			<InstallExternalJsFiles Include="$(NodeModulesPath)/bootstrap/dist/js/bootstrap.bundle.min.js" />
+			<InstallExternalJsFiles Include="$(NodeModulesPath)/bootstrap/dist/js/bootstrap.bundle.min.js.map"  Condition=" '$(Configuration)' == 'Debug' " />
 		</ItemGroup>
 
 		<!-- Declare external CSS files -->
