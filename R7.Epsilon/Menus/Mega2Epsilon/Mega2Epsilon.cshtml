@@ -1,0 +1,51 @@
+﻿@using System.Dynamic;
+@using DotNetNuke.Web.DDRMenu;
+@inherits DotNetNuke.Web.Razor.DotNetNukeWebPage<dynamic>
+
+@{ 
+    var root = Model.Source.root; 
+}
+
+@helper RenderNodes(IList<MenuNode> nodes) {
+    if (nodes.Count > 0) {
+        <ul class="navbar-nav">
+            @foreach (var node in nodes) {
+                var isActive = "";
+                var isDisabled = "";
+                if (node.Selected) { isActive = "active"; }
+                if (!node.Enabled) { isDisabled = "disabled"; }
+
+                if (node.HasChildren()) {
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle @isActive @isDisabled" data-toggle="dropdown">@node.Text</a>
+                        @RenderChildNodes(node.Children)
+                    </li>                 
+                } else {
+                    <li class="nav-item"><a href="@node.Url" class="nav-link @isActive @isDisabled">@node.Text</a></li>                    
+                }
+            }
+        </ul>
+	}
+}
+
+@helper RenderChildNodes(IList<MenuNode> nodes) {
+    if (nodes.Count > 0) {
+        <div class="dropdown-menu">
+            @foreach (var node in nodes) {
+                var isActive = "";
+                var isDisabled = "";
+                if (node.Selected) { isActive = "active"; }
+                if (!node.Enabled) { isDisabled = "disabled"; }
+
+                if (node.HasChildren()) {
+                    <a href="@node.Url" class="dropdown-item @isActive @isDisabled">@node.Text</a>
+                    @RenderChildNodes(node.Children)
+                } else {
+                    <a href="@node.Url" class="dropdown-item @isActive @isDisabled">@node.Text</a>
+                }
+            }
+        </div>
+    }
+}
+
+@RenderNodes(root.Children)
