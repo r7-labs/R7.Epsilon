@@ -95,3 +95,13 @@ ul.dnnAdminTabNav {
         line-height:2.5em;
     }
 }
+
+// fix .sticky-top then controlbar is visible
+.showControlBar .sticky-top {
+    top: 53px !important
+}
+
+// fix controlbar z-index
+body > form #ControlBar_ControlPanel {
+    z-index: 1030 !important;
+}
