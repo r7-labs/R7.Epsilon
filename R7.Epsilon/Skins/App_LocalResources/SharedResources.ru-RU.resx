@@ -143,4 +143,13 @@
 			<p>Вы можете <a class="alert-link" href="[TabUrl]#[ModuleId]">перейти к этому блоку</a> на полной версии страницы.</p>]]>
 		</value>
     </data>
+    <data name="SearchModalButton.Text" xml:space="preserve">
+        <value>Поиск</value>
+    </data>
+    <data name="SearchModalTitle.Text" xml:space="preserve">
+        <value>Поиск</value>
+    </data>
+    <data name="ModalClose.Text" xml:space="preserve">
+        <value>Закрыть</value>
+    </data>
 </root>

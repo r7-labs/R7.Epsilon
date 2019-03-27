@@ -2,7 +2,6 @@
 <%@ Register TagPrefix="dnn" TagName="BREADCRUMB" Src="~/Admin/Skins/BreadCrumb.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="LOGO" Src="~/Admin/Skins/Logo.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="LANGUAGE" Src="~/Admin/Skins/Language.ascx" %>
-<%@ Register TagPrefix="dnn" TagName="SEARCH" Src="~/Admin/Skins/Search.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="USER" Src="~/Admin/Skins/User.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="LOGIN" Src="~/Admin/Skins/Login.ascx" %>
 <%@ Register TagPrefix="skin" TagName="BROWSERCHECK" Src="../SkinObjects/BrowserCheck.ascx" %>
@@ -32,7 +31,7 @@
                 <dnn:LOGO runat="server" id="dnnLOGO" />
             </div>
         </div>
-        <div class="col-md-3 col-md-pull-4 col-sm-4 col-xs-6 skin-functions-wrapper">
+        <div class="col-md-3 col-sm-4 col-xs-6 skin-functions-wrapper">
             <div class="skin-language">
                 <dnn:LANGUAGE runat="server" ShowLinks="True" ShowMenu="False" />
             </div>
@@ -41,8 +40,12 @@
                 <asp:HyperLink id="linkA11yVersion" runat="server" CssClass="skin-functions-icon skin-functions-icon-a11y" data-toggle="tooltip" data-placement="bottom" />
             </div>
         </div>
-        <div class="col-md-3 col-md-push-4 col-sm-12 skin-search" role="search">
-            <dnn:SEARCH runat="server" ShowSite="false" ShowWeb="false" />
+        <div class="col-md-3 col-sm-12">
+            <button type="button" role="search" class="btn btn-outline-secondary skin-search-btn"
+                data-toggle="modal" data-target="#searchModal"
+                title='<%: Localizer.GetString("SearchModalButton.Text") %>'>
+                <i class="fas fa-search"></i>
+            </button>
         </div>
         <div class="col-md-3 col-sm-6 col-xs-4 skin-socialgroups-wrapper">
             <skin:SOCIALGROUPS runat="server" />

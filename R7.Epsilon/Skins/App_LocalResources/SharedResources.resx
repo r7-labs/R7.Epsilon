@@ -164,4 +164,13 @@
 			<p>You can <a class="alert-link" href="[TabUrl]#[ModuleId]">navigate to this block</a> on the full page version.</p>]]>
 		</value>
     </data>
+    <data name="SearchModalButton.Text" xml:space="preserve">
+        <value>Search</value>
+    </data>
+    <data name="SearchModalTitle.Text" xml:space="preserve">
+        <value>Search</value>
+    </data>
+    <data name="ModalClose.Text" xml:space="preserve">
+        <value>Close</value>
+    </data>
 </root>

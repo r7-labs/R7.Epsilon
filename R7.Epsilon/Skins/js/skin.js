@@ -38,14 +38,6 @@ function skinSetupFeedbackUrl ($, obj, feedbackModuleId) {
 
 (function ($, window, document) {
 
-    function bootstrapifySearch () {
-        var search = $(".skin-search > span").first ();
-        search.children (".searchInputContainer").attr("style", "display:table-cell !important")
-            .children ("input").removeClass ("NormalTextBox").addClass ("form-control");
-        search.children ("a").removeClass ("SkinObject").addClass ("btn btn-default");
-        search.show ();
-    }
-
     function initBreadcrumb () {
         if (epsilon.breadCrumbsRemoveLastLink) {
             // assume new style breadcrumbs with schema.org markup (DNN 8+)
@@ -97,7 +89,6 @@ function skinSetupFeedbackUrl ($, obj, feedbackModuleId) {
 
     $(function () {
         emptyLayoutRows ();
-        bootstrapifySearch ();
         initBreadcrumb ();
         initUpButton (320, 500);
     });

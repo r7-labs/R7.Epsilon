@@ -223,49 +223,34 @@ header > .container > .row
     }
 }
 
-.skin-search
-{
-    padding:3px 0 0 0;
-
-    // hide search until jQuery rework
-    & > span:first-child { display:none; }
-
-    // workaround for #16
-    & > span > a.btn
-    {
-        display:table-cell;
-        border-top-left-radius:0;
-        border-bottom-left-radius:0;
-        border-top-right-radius:20px;
-        border-bottom-right-radius:20px;
-    }
-
-    .searchInputContainer
-    {
-        width:100%;
-        input 
-        { 
-            // workaround for #16
-            border-right:none;
-            border-top-left-radius:20px;
-            border-bottom-left-radius:20px;
-            border-top-right-radius:0;
-            border-bottom-right-radius:0;
+// Search
+.skin-search-box {
+    text-align: center;
+    .searchInputContainer {
+        width: 100%;
+        a.dnnSearchBoxClearText.dnnShow {
+            position: absolute;
+            top: 7px;
         }
     }
-   
-    .dnnSearchBoxClearText
-    {
-        // fix clear button position
-        position:relative;
-        top:2px;
+    .skin-search-btn { display: none; }
+    input {
+        width: 100%;
+        height: 45px;
     }
-
-    .searchSkinObjectPreview
-    {
-        left:16px; // ~ border-radius of .searchInputContainer
-        box-shadow:2px 2px 2px #333;
-        z-index:1020; // fix open submenu ovelaps search preview
+    ul.searchSkinObjectPreview {
+        border-top: none;
+        width: 100%;
+        & > li {
+            width: 100%;
+            text-align: left;
+        }
+        & > li.searchSkinObjectPreview_group {
+            width: 100%;
+            text-align: center;
+            font-weight: normal;
+            border-bottom: none;
+        }
     }
 }
 

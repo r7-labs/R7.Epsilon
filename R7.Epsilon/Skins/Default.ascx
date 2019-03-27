@@ -8,10 +8,11 @@
 <%@ Register TagPrefix="skin" TagName="SHAREDSCRIPTS" Src="SkinObjects/SharedScripts.ascx" %>
 <%@ Register TagPrefix="skin" TagName="FEEDBACKBUTTON" Src="SkinObjects/FeedbackButton.ascx" %>
 <%@ Register TagPrefix="skin" TagName="PARTIALCONTENTALERT" Src="SkinObjects/PartialContentAlert.ascx" %>
+<%@ Register TagPrefix="skin" TagName="SEARCHMODAL" Src="SkinObjects/SearchModal.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="TAGS" Src="~/Admin/Skins/Tags.ascx" %>
 
 <skin:META runat="server" />
-<skin:INCLUDES runat="server" SkinJs="false" />
+<skin:INCLUDES runat="server" />
 <skin:JSVARIABLES runat="server" />
 <div id="vk_api_transport"></div>
 <div id="fb-root"></div>
@@ -129,4 +130,5 @@
     <asp:HyperLink runat="server" href="#" CssClass="skin-float-button skin-float-button-up" Style="display:none" ToolTip='<%# Localizer.GetString ("ButtonUp.Title") %>' data-toggle="tooltip" data-placement="left" data-container="body" />
     <skin:FEEDBACKBUTTON runat="server" CssClass="skin-float-button skin-float-button-feedback" />
 </div>
+<skin:SEARCHMODAL runat="server" />
 <skin:SHAREDSCRIPTS runat="server" />
