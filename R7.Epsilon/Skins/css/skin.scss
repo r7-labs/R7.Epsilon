@@ -387,24 +387,10 @@ ul.skin-socialgroups
     a { color:#fff; }
 }
 
+// TODO: Remove empty rule
 .navbar-brand.skin-navbar-brand-logo 
 {
-    // reset navbar-brand styles 
-    height:inherit;
-    padding:inherit;
-    margin-bottom:12px;
-    margin-top:12px;
-
-    // navbar-brand-logo styles
-    float:left;
-    position:relative;
-    left:24px;
-
-    img 
-    { 
-        border-radius:4px;
-        box-shadow:2px 2px 2px $color-primary-4;
-    }
+    img {}
 }
 
 .skin-founders-wrapper

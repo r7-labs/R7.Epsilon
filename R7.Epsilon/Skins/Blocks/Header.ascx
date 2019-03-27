@@ -24,11 +24,15 @@
         <asp:HyperLink runat="server" href="#content" CssClass="sr-only sr-only-focusable" Text='<%# Localizer.GetString ("SkipToContent.Text") %>' />
         <skin:BROWSERCHECK runat="server" />
     </div>
+</div>
+<div class="container sticky-top">
     <div class="row">
-        <div class="col-md-4 col-md-push-4 col-sm-12 skin-search" role="search">
-            <dnn:SEARCH runat="server" ShowSite="false" ShowWeb="false" />
+        <div class="col-md-3 col-sm-4 d-xs-none">
+            <div class="navbar-brand skin-navbar-brand-logo">
+                <dnn:LOGO runat="server" id="dnnLOGO" />
+            </div>
         </div>
-        <div class="col-md-4 col-md-pull-4 col-sm-6 col-xs-6 skin-functions-wrapper">
+        <div class="col-md-3 col-md-pull-4 col-sm-4 col-xs-6 skin-functions-wrapper">
             <div class="skin-language">
                 <dnn:LANGUAGE runat="server" ShowLinks="True" ShowMenu="False" />
             </div>
@@ -37,7 +41,10 @@
                 <asp:HyperLink id="linkA11yVersion" runat="server" CssClass="skin-functions-icon skin-functions-icon-a11y" data-toggle="tooltip" data-placement="bottom" />
             </div>
         </div>
-        <div class="col-md-4 col-sm-6 col-xs-6 skin-socialgroups-wrapper">
+        <div class="col-md-3 col-md-push-4 col-sm-12 skin-search" role="search">
+            <dnn:SEARCH runat="server" ShowSite="false" ShowWeb="false" />
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-4 skin-socialgroups-wrapper">
             <skin:SOCIALGROUPS runat="server" />
         </div>
     </div>
@@ -63,9 +70,6 @@
             <skin:PRIMARYMENU runat="server" />
         </div>
 <!--
-        <div class="navbar-brand skin-navbar-brand-logo d-xs-none">
-            <dnn:LOGO runat="server" id="dnnLOGO" />
-        </div>
         <div class="collapse navbar-collapse skin-top-menu" role="navigation">
             <skin:SECONDARYMENU runat="server" />
         </div>
