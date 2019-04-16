@@ -1,7 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.Skins.SkinObjects.EpsilonSkinObjectBase" %>
 <%@ Register TagPrefix="dnn" TagName="BREADCRUMB" Src="~/Admin/Skins/BreadCrumb.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="LOGO" Src="~/Admin/Skins/Logo.ascx" %>
-<%@ Register TagPrefix="dnn" TagName="LANGUAGE" Src="~/Admin/Skins/Language.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="USER" Src="~/Admin/Skins/User.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="LOGIN" Src="~/Admin/Skins/Login.ascx" %>
 <%@ Register TagPrefix="skin" TagName="BROWSERCHECK" Src="../SkinObjects/BrowserCheck.ascx" %>
@@ -17,6 +16,7 @@
 <%@ Register TagPrefix="skin" TagName="LOGOTITLE" Src="../SkinObjects/LogoTitle.ascx" %>
 <%@ Register TagPrefix="skin" TagName="LOGOMOBILE" Src="../SkinObjects/LogoMobile.ascx" %>
 <%@ Register TagPrefix="skin" TagName="CUSTOMCONTENT" Src="../SkinObjects/CustomContent.ascx" %>
+<%@ Register TagPrefix="skin" TagName="LANGUAGES" Src="../SkinObjects/Languages.ascx" %>
 
 <div class="container">
     <div class="row">
@@ -32,15 +32,20 @@
             </div>
         </div>
         <div class="col-md-3 col-sm-4 col-xs-6 skin-functions-wrapper">
-            <div class="skin-language">
-                <dnn:LANGUAGE runat="server" ShowLinks="True" ShowMenu="False" />
-            </div>
             <div class="skin-functions">
                 <skin:FUNCTIONS runat="server" />
                 <asp:HyperLink id="linkA11yVersion" runat="server" CssClass="skin-functions-icon skin-functions-icon-a11y" data-toggle="tooltip" data-placement="bottom" />
             </div>
         </div>
         <div class="col-md-3 col-sm-12">
+            <div class="dropdown">
+                <button type="button" class="btn btn-outline-secondary skin-languages-btn dropdown-toggle"
+                    data-toggle="dropdown"
+                    title='<%: Localizer.GetString("Languages.Text") %>'>
+                    <i class="fas fa-globe"></i>
+                </button>
+                <skin:LANGUAGES runat="server" />
+            </div>
             <button type="button" role="search" class="btn btn-outline-secondary skin-search-btn"
                 data-toggle="modal" data-target="#searchModal"
                 title='<%: Localizer.GetString("SearchModalButton.Text") %>'>
@@ -52,7 +57,7 @@
         </div>
     </div>
 </div>
-<nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top navbar-1 ---skin-primary-navbar">
+<nav class="navbar navbar-expand-md bg-dark navbar-dark --sticky-top navbar-1 --skin-primary-navbar">
     <div class="container">
               
         <div class="skin-login-simple d-md-none">
@@ -89,7 +94,7 @@
     </div>
 </nav>
 
-<nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top navbar-2 ---skin-primary-navbar">
+<nav class="navbar navbar-expand-md bg-dark navbar-dark --sticky-top navbar-2 --skin-primary-navbar">
     <div class="container">
         <div class="collapse navbar-collapse skin-top-menu" role="navigation">
             <skin:SECONDARYMENU runat="server" />

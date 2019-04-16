@@ -114,10 +114,16 @@
     <data xml:space="preserve" name="FooterPane3.Content">
         <value>[FooterPane3.Content]</value>
     </data>
-    <data name="GoogleTranslate.Title" xml:space="preserve">
-        <value>Translate with Google</value>
+    <data name="Languages.Text" xml:space="preserve">
+        <value>Languages</value>
     </data>
-    <data name="GoogleTranslate.Alt" xml:space="preserve">
+    <data name="AltWebsite.Text" xml:space="preserve">
+        <value>[AltWebsite.Text]</value>
+    </data>
+    <data name="AltWebsite.Icon" xml:space="preserve">
+        <value><![CDATA[<i class="fas fa-globe"></i>]]></value>
+    </data>
+	<data name="GoogleTranslate.Text" xml:space="preserve">
         <value>Translate with Google</value>
     </data>
     <data name="AgeRating.Text" xml:space="preserve">
@@ -153,10 +159,7 @@
     <data name="HeaderPane1.Content" xml:space="preserve">
         <value>&lt;span class=&quot;firstline&quot;&gt;[HeaderPane1.Content]&lt;/span&gt;&lt;br /&gt;second line&lt;div class=&quot;tagline&quot;&gt;tagline&lt;/div&gt;</value>
     </data>
-    <data name="AltWebsite.Title" xml:space="preserve">
-        <value>[AltWebsite.Title]</value>
-    </data>
-	<data name="PartialContentAlert.Title" xml:space="preserve">
+    <data name="PartialContentAlert.Title" xml:space="preserve">
         <value><![CDATA[<i class="glyphicon glyphicon-info-sign"></i> Note]]></value>
     </data>
 	<data name="PartialContentAlert.Content" xml:space="preserve">

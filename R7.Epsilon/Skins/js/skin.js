@@ -87,10 +87,19 @@ function skinSetupFeedbackUrl ($, obj, feedbackModuleId) {
         });
     }
 
+    function initLanguage () {
+        $(".skin-languages .language-object a").each (function () { 
+            var lang = $(this).parent (".Language").attr ("title");
+            var langCode = lang.substr (0, 2).toUpperCase ();   
+            $(this).addClass ("dropdown-item").html ("<strong>" + langCode + "</strong> " + lang);
+        });
+    }
+
     $(function () {
         emptyLayoutRows ();
         initBreadcrumb ();
         initUpButton (320, 500);
+        initLanguage ();
     });
 
 }) (jQuery, window, document);

@@ -102,10 +102,10 @@
     <data name="LogoTitle.Tagline" xml:space="preserve">
         <value>лозунг</value>
     </data>
-    <data name="GoogleTranslate.Title" xml:space="preserve">
-        <value>Перевести с помощью Google</value>
+    <data name="Languages.Text" xml:space="preserve">
+        <value>Языки</value>
     </data>
-    <data name="GoogleTranslate.Alt" xml:space="preserve">
+    <data name="GoogleTranslate.Title" xml:space="preserve">
         <value>Перевести с помощью Google</value>
     </data>
     <data name="AgeRating.Text" xml:space="preserve">

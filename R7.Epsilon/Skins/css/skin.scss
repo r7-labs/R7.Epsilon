@@ -149,40 +149,9 @@ header > .container > .row
 
 .skin-functions-wrapper { padding-left:0 }
 
-.skin-language
-{
-    float:left; // fix language switcher not completely hidden if empty
-    padding-top:4px;
-   
-    & > .language-object 
-    {
-        & > .Language 
-        { 
-            display:inline-block;
-            margin-right:8px;
-            
-            & img {
-                opacity:0.33;
-                width:32px;
-                height:32px;
-                padding:2px;
-                border-radius:16px;
-                border:2px solid black;
-            }
-        }
-
-        & > .Language:hover,
-        & > .Language.selected {
-            img { 
-                opacity:1;
-                }
-            }
-
-        & > .Language:last-child {
-            padding-right:10px;
-            border-right:1px solid #ccc; // separator 
-        }
-    }
+.skin-languages {
+    .Language.selected { display: none }
+    img { display: none }
 }
 
 .skin-functions

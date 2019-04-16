@@ -318,6 +318,7 @@
     <Content Include="Menus\Mega2Epsilon\Mega2Epsilon.cshtml" />
     <Content Include="Skins\SkinObjects\SearchModal.ascx" />
     <Content Include="Skins\Blocks\SubFooter.ascx" />
+    <Content Include="Skins\SkinObjects\Languages.ascx" />
   </ItemGroup>
   <Import Project="../Deploy/Preprocess.targets" />
   <Target Name="BeforeBuild" DependsOnTargets="CompileScss;MinifyJS" />
