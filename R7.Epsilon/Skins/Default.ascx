@@ -3,12 +3,10 @@
 <%@ Register TagPrefix="skin" TagName="INCLUDES" Src="SkinObjects/Includes.ascx" %>
 <%@ Register TagPrefix="skin" TagName="HEADER" Src="Blocks/Header.ascx" %>
 <%@ Register TagPrefix="skin" TagName="FOOTER" Src="Blocks/Footer.ascx" %>
+<%@ Register TagPrefix="skin" TagName="SUBFOOTER" Src="Blocks/SubFooter.ascx" %>
 <%@ Register TagPrefix="skin" TagName="PAGEINFO" Src="SkinObjects/PageInfo.ascx" %>
 <%@ Register TagPrefix="skin" TagName="JSVARIABLES" Src="SkinObjects/JsVariables.ascx" %>
-<%@ Register TagPrefix="skin" TagName="SHAREDSCRIPTS" Src="SkinObjects/SharedScripts.ascx" %>
-<%@ Register TagPrefix="skin" TagName="FEEDBACKBUTTON" Src="SkinObjects/FeedbackButton.ascx" %>
 <%@ Register TagPrefix="skin" TagName="PARTIALCONTENTALERT" Src="SkinObjects/PartialContentAlert.ascx" %>
-<%@ Register TagPrefix="skin" TagName="SEARCHMODAL" Src="SkinObjects/SearchModal.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="TAGS" Src="~/Admin/Skins/Tags.ascx" %>
 
 <skin:META runat="server" />
@@ -124,11 +122,6 @@
     </div>
 </div>
 <footer class="footer skin-footer">
-    <skin:FOOTER runat="server" />    
+    <skin:FOOTER runat="server" />
 </footer>
-<div class="skin-float-button-wrapper">
-    <asp:HyperLink runat="server" href="#" CssClass="skin-float-button skin-float-button-up" Style="display:none" ToolTip='<%# Localizer.GetString ("ButtonUp.Title") %>' data-toggle="tooltip" data-placement="left" data-container="body" />
-    <skin:FEEDBACKBUTTON runat="server" CssClass="skin-float-button skin-float-button-feedback" />
-</div>
-<skin:SEARCHMODAL runat="server" />
-<skin:SHAREDSCRIPTS runat="server" />
+<skin:SUBFOOTER runat="server" />
