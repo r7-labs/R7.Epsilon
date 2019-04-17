@@ -319,6 +319,8 @@
     <Content Include="Skins\SkinObjects\SearchModal.ascx" />
     <Content Include="Skins\Blocks\SubFooter.ascx" />
     <Content Include="Skins\SkinObjects\Languages.ascx" />
+    <Content Include="Skins\Blocks\SubHeader.ascx" />
+    <Content Include="Skins\Blocks\SupFooter.ascx" />
   </ItemGroup>
   <Import Project="../Deploy/Preprocess.targets" />
   <Target Name="BeforeBuild" DependsOnTargets="CompileScss;MinifyJS" />

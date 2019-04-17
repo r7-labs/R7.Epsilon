@@ -1,23 +1,20 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.Skins.SkinObjects.EpsilonSkinObjectBase" %>
-<%@ Register TagPrefix="dnn" TagName="BREADCRUMB" Src="~/Admin/Skins/BreadCrumb.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="LOGO" Src="~/Admin/Skins/Logo.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="USER" Src="~/Admin/Skins/User.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="LOGIN" Src="~/Admin/Skins/Login.ascx" %>
 <%@ Register TagPrefix="skin" TagName="BROWSERCHECK" Src="../SkinObjects/BrowserCheck.ascx" %>
 <%@ Register TagPrefix="skin" TagName="FUNCTIONS" Src="../SkinObjects/Functions.ascx" %>
 <%@ Register TagPrefix="skin" TagName="SOCIALGROUPS" Src="../SkinObjects/SocialGroups.ascx" %>
-<%@ Register TagPrefix="skin" TagName="PAGEHEADER" Src="../SkinObjects/PageHeader.ascx" %>
 <%@ Register TagPrefix="skin" TagName="PRIMARYMENU" Src="../SkinObjects/PrimaryMenu.ascx" %>
 <%@ Register TagPrefix="skin" TagName="SECONDARYMENU" Src="../SkinObjects/SecondaryMenu.ascx" %>
-<%@ Register TagPrefix="skin" TagName="LOCALMENU" Src="../SkinObjects/LocalMenu.ascx" %>
-<%@ Register TagPrefix="skin" TagName="HEADERSMENU" Src="../SkinObjects/HeadersMenu.ascx" %>
-<%@ Register TagPrefix="skin" TagName="SOCIALSHAREBUTTONS" Src="../SkinObjects/SocialShareButtons.ascx" %>
 <%@ Register TagPrefix="skin" TagName="FOUNDERS" Src="../SkinObjects/Founders.ascx" %>
 <%@ Register TagPrefix="skin" TagName="LOGOTITLE" Src="../SkinObjects/LogoTitle.ascx" %>
 <%@ Register TagPrefix="skin" TagName="LOGOMOBILE" Src="../SkinObjects/LogoMobile.ascx" %>
 <%@ Register TagPrefix="skin" TagName="CUSTOMCONTENT" Src="../SkinObjects/CustomContent.ascx" %>
 <%@ Register TagPrefix="skin" TagName="LANGUAGES" Src="../SkinObjects/Languages.ascx" %>
 
+<div id="vk_api_transport"></div>
+<div id="fb-root"></div>
 <div class="container">
     <div class="row">
         <asp:HyperLink runat="server" href="#content" CssClass="sr-only sr-only-focusable" Text='<%# Localizer.GetString ("SkipToContent.Text") %>' />
@@ -120,19 +117,3 @@
     <dnn:LOGIN CssClass="LoginLink" runat="server" LegacyMode="false" />
     <dnn:USER runat="server" LegacyMode="false" />
 </div>
-<nav class="skin-local-navbar" role="navigation">
-    <div class="container">
-        <div class="breadcrumb">
-            <dnn:BREADCRUMB id="dnnBREADCRUMB" runat="server" CssClass="skin-breadcrumb-link" RootLevel="-1" Separator="/" />
-        </div>
-    </div>
-    <div class="container">
-        <div class="page-header">
-            <skin:PAGEHEADER runat="server" />
-        </div>
-        <skin:LOCALMENU runat="server" />
-        <skin:HEADERSMENU runat="server" PassDefaultTemplateArgs="false" />
-        <div id="skin-separator-1" class="d-xs-none">&nbsp;</div>
-        <skin:SOCIALSHAREBUTTONS runat="server" />
-    </div>
-</nav>
