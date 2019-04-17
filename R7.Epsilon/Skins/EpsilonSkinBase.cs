@@ -147,8 +147,6 @@ namespace R7.Epsilon.Skins
         {
             base.OnLoad (e);
 
-            RegisterJavaScript ();
-
             var linkA11yVersion = (HyperLink) FindControl ("linkA11yVersion");
             if (linkA11yVersion != null) {
                 // make link to toggle a11y mode
@@ -160,11 +158,6 @@ namespace R7.Epsilon.Skins
                     linkA11yVersion.CssClass = linkA11yVersion.CssClass + " enabled";
                 }
             }
-        }
-
-        private void RegisterJavaScript ()
-        {
-            JavaScript.RequestRegistration (CommonJs.jQuery);
         }
     }
 }
