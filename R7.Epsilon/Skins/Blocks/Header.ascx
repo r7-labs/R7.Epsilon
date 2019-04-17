@@ -37,7 +37,7 @@
                 <button type="button" class="btn btn-outline-secondary skin-languages-btn dropdown-toggle"
                     data-toggle="dropdown"
                     title='<%: Localizer.GetString("Languages.Text") %>'>
-                    <i class="fas fa-globe"></i>
+                    <strong><%: System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName.ToUpperInvariant() %></strong>
                 </button>
                 <skin:LANGUAGES runat="server" />
             </div>
