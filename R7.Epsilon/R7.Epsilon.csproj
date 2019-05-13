@@ -200,11 +200,9 @@
     <Content Include="Skins\images\social_32x32.png" />
     <Content Include="Skins\images\social_32x32.svg" />
     <Content Include="Skins\images\logo_template_178x100.xcf" />
-    <Content Include="Skins\css\a11y-palette.scss" />
     <Content Include="Skins\css\a11y-skin.scss" />
     <Content Include="Skins\js\a11y.js" />
     <Content Include="Skins\js\menu.js" />
-    <Content Include="Skins\css\a11y-layout.scss" />
     <Content Include="Skins\images\social_mono_32x32.png" />
     <Content Include="Skins\images\social_mono_32x32.svg" />
     <Content Include="Skins\images\functions_mono_32x32.png" />
@@ -226,11 +224,7 @@
     <Content Include="Containers\Panel_Warning.ascx" />
     <Content Include="Containers\Panel_Danger.ascx" />
     <Content Include="Application\Global.asax" />
-    <Content Include="Skins\css\consulting-palette.scss" />
-    <Content Include="Skins\css\consulting-layout.scss" />
     <Content Include="Skins\css\consulting-skin.scss" />
-    <Content Include="Skins\css\world-layout.scss" />
-    <Content Include="Skins\css\world-palette.scss" />
     <Content Include="Skins\css\world-skin.scss" />
     <Content Include="packages.config" />
     <Content Include="license.htm" />
@@ -239,10 +233,6 @@
     <Content Include="Skins\ErrorSkin.ascx" />
     <Content Include="Skins\HomeCustom.ascx" />
     <Content Include="Skins\css\default-skin.scss" />
-    <Content Include="Skins\css\default-palette.scss" />
-    <Content Include="Skins\css\default-layout.scss" />
-    <Content Include="Skins\css\skin.scss" />
-    <Content Include="Skins\css\menu.scss" />
     <Content Include="Skins\SkinObjects\AdminPageInfo.ascx" />
     <Content Include="Skins\SkinObjects\BrowserCheck.ascx" />
     <Content Include="Skins\SkinObjects\FeedbackButton.ascx" />
@@ -310,7 +300,6 @@
     <Folder Include="Menus\" />
     <Folder Include="Menus\Mega2Epsilon\" />
     <Folder Include="Skins\SkinObjects\Banners\" />
-    <Content Include="Skins\css\dnn.scss" />
     <Content Include="Skins\SkinObjects\Includes.ascx" />
     <Content Include="Skins\SkinObjects\Meta.ascx" />
     <Content Include="Skins\Blocks\Header.ascx" />
@@ -322,6 +311,17 @@
     <Content Include="Skins\Blocks\SupFooter.ascx" />
     <Content Include="Skins\Blocks\Start.ascx" />
     <Content Include="Skins\Blocks\End.ascx" />
+    <Content Include="Skins\css\_a11y-layout.scss" />
+    <Content Include="Skins\css\_a11y-palette.scss" />
+    <Content Include="Skins\css\_consulting-layout.scss" />
+    <Content Include="Skins\css\_consulting-palette.scss" />
+    <Content Include="Skins\css\_default-layout.scss" />
+    <Content Include="Skins\css\_default-palette.scss" />
+    <Content Include="Skins\css\_dnn.scss" />
+    <Content Include="Skins\css\_menu.scss" />
+    <Content Include="Skins\css\_skin.scss" />
+    <Content Include="Skins\css\_world-layout.scss" />
+    <Content Include="Skins\css\_world-palette.scss" />
   </ItemGroup>
   <Import Project="../Deploy/Bundle.targets" />
   <Target Name="BeforeBuild" DependsOnTargets="Bundle" />
