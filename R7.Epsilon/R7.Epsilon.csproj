@@ -323,6 +323,6 @@
     <Content Include="Skins\Blocks\Start.ascx" />
     <Content Include="Skins\Blocks\End.ascx" />
   </ItemGroup>
-  <Import Project="../Deploy/Preprocess.targets" />
-  <Target Name="BeforeBuild" DependsOnTargets="CompileScss;MinifyJS" />
+  <Import Project="../Deploy/Bundle.targets" />
+  <Target Name="BeforeBuild" DependsOnTargets="Bundle" />
 </Project>

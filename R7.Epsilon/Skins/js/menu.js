@@ -4,7 +4,7 @@
 //  Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2015-2017 Roman M. Yagodin
+//  Copyright (c) 2015-2019 Roman M. Yagodin
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -19,7 +19,7 @@
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-function skinSplitSubMenu($, controlId, columns) {
+window.skinSplitSubMenu = function ($, controlId, columns) {
 	$("ul#" + controlId + " .sub").each(function (i) {
 		var items = $(this).find('ul');
 		var blockCount = columns;
@@ -28,7 +28,7 @@ function skinSplitSubMenu($, controlId, columns) {
 			slice.wrapAll("<div class=\"megarow\"></div>");
 		}
 	});
-}
+};
 
 (function ($, window, document) {
 

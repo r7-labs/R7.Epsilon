@@ -4,7 +4,7 @@
 //  Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2015-2017 Roman M. Yagodin
+//  Copyright (c) 2015-2019 Roman M. Yagodin
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -19,11 +19,11 @@
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-function skinGoogleTranslatePage (fromLang) {
+window.skinGoogleTranslatePage = function (fromLang) {
     window.open ("http://translate.google.com/translate?hl=en&sl=" + fromLang + "&u=" + encodeURI (document.location));
-}
+};
 
-function skinSetupFeedbackUrl ($, obj, feedbackModuleId) {
+window.skinSetupFeedbackUrl = function ($, obj, feedbackModuleId) {
     var selection = encodeURIComponent (rangy.getSelection ().toString ().replace (/(\n|\r)/gm," ").replace (/\s+/g, " ").replace (/\"/g, "").trim ().substring (0,100));
     var params = "returntabid=" + epsilon.queryParams ["TabId"] + "&feedbackmid=" + feedbackModuleId + ((!!selection)? "&feedbackselection=" + selection : "");
     var feedbackUrl = $(obj).attr ("data-feedback-url");
@@ -34,7 +34,7 @@ function skinSetupFeedbackUrl ($, obj, feedbackModuleId) {
     }
 
     return true;
-}
+};
 
 (function ($, window, document) {
 
