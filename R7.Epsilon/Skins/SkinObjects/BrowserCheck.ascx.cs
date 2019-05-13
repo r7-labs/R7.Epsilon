@@ -55,7 +55,7 @@ namespace R7.Epsilon.Skins.SkinObjects
         protected BrowserCheck ()
         {
             // default value
-            MinIeVersion = 9;
+            MinIeVersion = 10;
         }
     }
 }
