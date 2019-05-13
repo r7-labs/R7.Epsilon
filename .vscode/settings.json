@@ -13,7 +13,7 @@
         "copyrightHolder": "Roman M. Yagodin",
         "authorEmail": "roman.yagodin@gmail.com",
         "company": "R7.Labs",
-        "license": "AGPLv3",
+        "license": "AGPL-3.0-or-later",
         "forceToTop": true,
         "blankLinesAfter": 1
     },
