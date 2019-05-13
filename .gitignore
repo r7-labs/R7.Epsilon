@@ -9,6 +9,7 @@ bin/
 obj/
 /Deploy/output/
 .webpack
+yarn-error.log
 
 # Less/UglifyJS build output
 
@@ -19,6 +20,3 @@ R7.Epsilon/Skins/js/*.min.js
 /packages/
 /Packages/
 /node_modules/
-
-# Various
-yarn-error.log
