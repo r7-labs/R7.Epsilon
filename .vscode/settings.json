@@ -2,7 +2,9 @@
     "files.exclude": {
         "**/.git": true,
         "packages": true,
+        "node_modules": true,
         "bower_components": true,
+        ".vs": true,
         "**/bin": true,
         "**/obj": true,
         "**/*.min.css": true,
