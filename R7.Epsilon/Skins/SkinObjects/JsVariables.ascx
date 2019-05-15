@@ -11,6 +11,7 @@ var epsilon = {
     localization:{<%= LocalizationResources %>},
     queryParams:{<%= QueryParams %>},
 	menuMinHeaders:<%= R7.Epsilon.Components.EpsilonConfig.Instance.MenuMinHeaders %>,
-	enablePopups:<%= PortalSettings.EnablePopUps.ToString ().ToLowerInvariant() %>
+	enablePopups:<%= PortalSettings.EnablePopUps.ToString ().ToLowerInvariant() %>,
+	inPopup:<%= DotNetNuke.Common.Utilities.UrlUtils.InPopUp ().ToString ().ToLowerInvariant () %>
 };
 </script>

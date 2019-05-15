@@ -97,13 +97,29 @@ window.skinSetupFeedbackUrl = function ($, obj, feedbackModuleId) {
         });
     }
 
-    $(function () {
-        emptyLayoutRows ();
-        initBreadcrumb ();
-        initUpButton (320, 500);
-        initLanguage ();
+    function initBootstrapTooltips () {
+        if (typeof ($.fn.tooltip) !== "undefined") {
+            $("[data-toggle='tooltip']").tooltip ();
+        }
+    }
 
-        window.skinA11y = new A11y ().init ();
+    function initBootstrapPopovers () {
+        if (typeof ($.fn.popover) !== "undefined") {
+            $("[data-toggle='popover']").popover ();
+        }
+    }
+
+    $(function () {
+        initBootstrapTooltips ();
+        initBootstrapPopovers ();
+
+        if (! epsilon.inPopup) {
+            emptyLayoutRows ();
+            initBreadcrumb ();
+            initUpButton (320, 500);
+            initLanguage ();
+            window.skinA11y = new A11y ().init ();
+        }
     });
 
 }) (jQuery, window, document);

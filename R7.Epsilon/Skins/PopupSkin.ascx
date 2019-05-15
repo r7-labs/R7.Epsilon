@@ -4,7 +4,6 @@
 <%@ Register TagPrefix="skin" TagName="JSVARIABLES" Src="SkinObjects/JsVariables.ascx" %>
 
 <skin:META runat="server" />
-<skin:INCLUDES runat="server" SkinJs="false" MenuJs="false" LazyAds="false" Rangy="false" />
-
+<skin:INCLUDES runat="server" MenuJs="false" LazyAds="false" Rangy="false" />
 <skin:JSVARIABLES runat="server" />
 <div id="ContentPane" runat="server" class="col-md-12" />

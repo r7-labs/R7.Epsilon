@@ -42,8 +42,7 @@ var jsConfig = {
     entry: {
         skin: "./R7.Epsilon/Skins/js/skin.js",
         menu: "./R7.Epsilon/Skins/js/menu.js",
-        feedback: "./R7.Epsilon/Skins/js/feedback.js",
-        "bootstrap-init": "./R7.Epsilon/Skins/js/bootstrap-init.js"
+        feedback: "./R7.Epsilon/Skins/js/feedback.js"
     },
     output: {
         // TODO: suppress JS output somehow?
