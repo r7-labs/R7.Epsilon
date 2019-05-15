@@ -16,10 +16,19 @@
         <value>Система</value>
     </data>
     <data name="A11y.Text" xml:space="preserve">
-        <value><![CDATA[<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>]]></value>
+        <value>Возможности повышенной доступности</value>
     </data>
-    <data name="A11y.Title" xml:space="preserve">
-        <value>Включить (выключить) возможности сайта для слабовидящих</value>
+	<data name="A11yDisablePopups.Text" xml:space="preserve">
+        <value>Отключить всплывающие диалоги</value>
+    </data>
+	<data name="A11yIncreaseFontSize.Text" xml:space="preserve">
+        <value>Увеличить размер шрифта</value>
+    </data>
+	<data name="A11yDecreaseFontSize.Text" xml:space="preserve">
+        <value>Уменьшить размер шрифта</value>
+    </data>
+	<data name="A11yRestoreDefaults.Text" xml:space="preserve">
+        <value>Восстановить умолчания</value>
     </data>
     <data name="SkinCopyright.Text" xml:space="preserve">
         <value><![CDATA[<a href="https://github.com/roman-yagodin/R7.Epsilon" target="_blank">Тема R7.Epsilon v{version}</a>]]></value>
@@ -83,7 +92,7 @@
     </data>
     <data xml:space="preserve" name="Odnoklassniki.Title">
         <value>Одноклассники</value>
-    </data>    
+    </data>
     <data xml:space="preserve" name="YouTube.Title">
         <value>Youtube</value>
     </data>

@@ -1,10 +1,10 @@
 ﻿//
-//  skin.js
+//  File: skin.js
+//  Project: R7.Epsilon
 //
-//  Author:
-//       Roman M. Yagodin <roman.yagodin@gmail.com>
+//  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2015-2019 Roman M. Yagodin
+//  Copyright (c) 2015-2019 Roman M. Yagodin, R7.Labs
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -18,6 +18,8 @@
 //
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+import A11y from "./a11y";
 
 window.skinGoogleTranslatePage = function (fromLang) {
     window.open ("http://translate.google.com/translate?hl=en&sl=" + fromLang + "&u=" + encodeURI (document.location));
@@ -69,7 +71,7 @@ window.skinSetupFeedbackUrl = function ($, obj, feedbackModuleId) {
                 $('.skin-float-button-up').fadeOut(duration);
             }
         });
-        
+
         $('.skin-float-button-up').click(function(event) {
             event.preventDefault();
             $(this).tooltip ('hide');
@@ -88,9 +90,9 @@ window.skinSetupFeedbackUrl = function ($, obj, feedbackModuleId) {
     }
 
     function initLanguage () {
-        $(".skin-languages .language-object a").each (function () { 
+        $(".skin-languages .language-object a").each (function () {
             var lang = $(this).parent (".Language").attr ("title");
-            var langCode = lang.substr (0, 2).toUpperCase ();   
+            var langCode = lang.substr (0, 2).toUpperCase ();
             $(this).addClass ("dropdown-item").html ("<strong>" + langCode + "</strong> " + lang);
         });
     }
@@ -100,6 +102,8 @@ window.skinSetupFeedbackUrl = function ($, obj, feedbackModuleId) {
         initBreadcrumb ();
         initUpButton (320, 500);
         initLanguage ();
+
+        window.skinA11y = new A11y ().init ();
     });
 
 }) (jQuery, window, document);

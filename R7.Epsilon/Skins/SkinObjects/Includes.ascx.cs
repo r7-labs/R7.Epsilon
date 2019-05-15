@@ -33,7 +33,7 @@ using DotNetNuke.Web.Client.ClientResourceManagement;
 using DotNetNuke.Framework.JavaScriptLibraries;
 
 namespace R7.Epsilon.Skins.SkinObjects
-{    
+{
     public class Includes: EpsilonSkinObjectBase
     {
         protected string SkinPath => Skin.SkinPath;
@@ -61,10 +61,6 @@ namespace R7.Epsilon.Skins.SkinObjects
             }
 
             ClientResourceManager.RegisterScript (Page, SkinPath + "/js/feedback.min.js", (int) FileOrder.Js.DefaultPriority, "DnnFormBottomProvider", "feedback", "0.0.0");
-
-            if (Skin.A11yEnabled) {
-                ClientResourceManager.RegisterScript (Page, SkinPath + "/js/a11y.min.js", (int) FileOrder.Js.DefaultPriority, "DnnFormBottomProvider", "a11y", "0.0.0");
-            }
 
             if (Attributes ["LazyAds"] != "false") {
                 JavaScript.RequestRegistration ("LazyAds");

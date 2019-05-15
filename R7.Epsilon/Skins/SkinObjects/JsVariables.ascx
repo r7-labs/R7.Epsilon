@@ -10,6 +10,7 @@ var epsilon = {
 	layoutManagerUrl:'<%= LayoutManagerUrl %>',
     localization:{<%= LocalizationResources %>},
     queryParams:{<%= QueryParams %>},
-	menuMinHeaders:<%= R7.Epsilon.Components.EpsilonConfig.Instance.MenuMinHeaders %>
+	menuMinHeaders:<%= R7.Epsilon.Components.EpsilonConfig.Instance.MenuMinHeaders %>,
+	enablePopups:<%= PortalSettings.EnablePopUps.ToString ().ToLowerInvariant() %>
 };
 </script>

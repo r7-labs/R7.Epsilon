@@ -42,7 +42,6 @@ var jsConfig = {
     entry: {
         skin: "./R7.Epsilon/Skins/js/skin.js",
         menu: "./R7.Epsilon/Skins/js/menu.js",
-        a11y: "./R7.Epsilon/Skins/js/a11y.js",
         feedback: "./R7.Epsilon/Skins/js/feedback.js",
         "bootstrap-init": "./R7.Epsilon/Skins/js/bootstrap-init.js"
     },
@@ -67,4 +66,4 @@ var jsConfig = {
     },
 };
 
-module.exports = [scssConfig, jsConfig]; 
+module.exports = [scssConfig, jsConfig];

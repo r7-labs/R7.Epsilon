@@ -53,10 +53,10 @@ namespace R7.Epsilon.Skins.SkinObjects
 
         protected string JsBreadCrumbsList
         {
-            get 
+            get
             {
                 return "[" + Utils.FormatList<int> (",", PortalSettings.ActiveTab.BreadCrumbs
-                    .ToArray ().Select (b => ((TabInfo) b).TabID)) + "]"; 
+                    .ToArray ().Select (b => ((TabInfo) b).TabID)) + "]";
             }
         }
 
