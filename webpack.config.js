@@ -4,10 +4,10 @@ var path = require ("path");
 var scssConfig = {
     mode: "production",
     entry: {
-        green: "./R7.Epsilon/Skins/css/green-skin.scss",
-        blue: "./R7.Epsilon/Skins/css/blue-skin.scss",
-        brown: "./R7.Epsilon/Skins/css/brown-skin.scss",
-        a11y: "./R7.Epsilon/Skins/css/a11y-skin.scss"
+        green: "./R7.Epsilon/Skins/css/green-theme.scss",
+        blue: "./R7.Epsilon/Skins/css/blue-theme.scss",
+        brown: "./R7.Epsilon/Skins/css/brown-theme.scss",
+        a11y: "./R7.Epsilon/Skins/css/a11y-theme.scss"
     },
     output: {
         // TODO: suppress JS output somehow?
@@ -31,7 +31,7 @@ var scssConfig = {
     },
     plugins: [
         new ExtractTextPlugin ({
-            filename: "[name]-skin.min.css",
+            filename: "[name]-theme.min.css",
             allChunks: true
         })
     ]

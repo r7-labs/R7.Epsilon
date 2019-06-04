@@ -32,9 +32,9 @@ namespace R7.Epsilon.Components
     {
         #region Portal config properties
 
-        public string SkinCss { get; set; } = "css/green-skin.min.css";
+        public string SkinCss { get; set; } = "css/green-theme.min.css";
 
-        public string SkinA11yCss { get; set; } = "css/a11y-skin.min.css";
+        public string SkinA11yCss { get; set; } = "css/a11y-theme.min.css";
 
         public List<CdnConfig> Cdns { get; set; } = new List<CdnConfig> {
             new CdnConfig {

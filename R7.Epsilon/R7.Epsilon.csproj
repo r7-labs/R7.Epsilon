@@ -200,7 +200,7 @@
     <Content Include="Skins\images\social_32x32.png" />
     <Content Include="Skins\images\social_32x32.svg" />
     <Content Include="Skins\images\logo_template_178x100.xcf" />
-    <Content Include="Skins\css\a11y-skin.scss" />
+    <Content Include="Skins\css\a11y-theme.scss" />
     <Content Include="Skins\js\a11y.js" />
     <Content Include="Skins\js\menu.js" />
     <Content Include="Skins\images\social_mono_32x32.png" />
@@ -313,15 +313,15 @@
     <Content Include="Skins\css\_dnn.scss" />
     <Content Include="Skins\css\_menu.scss" />
     <Content Include="Skins\css\_skin.scss" />
-    <Content Include="Skins\css\brown-skin.scss" />
+    <Content Include="Skins\css\brown-theme.scss" />
     <Content Include="Skins\css\_brown-layout.scss" />
     <Content Include="Skins\css\_brown-palette.scss" />
     <Content Include="Skins\css\_green-layout.scss" />
     <Content Include="Skins\css\_green-palette.scss" />
-    <Content Include="Skins\css\green-skin.scss" />
+    <Content Include="Skins\css\green-theme.scss" />
     <Content Include="Skins\css\_blue-layout.scss" />
     <Content Include="Skins\css\_blue-palette.scss" />
-    <Content Include="Skins\css\blue-skin.scss" />
+    <Content Include="Skins\css\blue-theme.scss" />
   </ItemGroup>
   <Import Project="../Deploy/Bundle.targets" />
   <Target Name="BeforeBuild" DependsOnTargets="Bundle" />
