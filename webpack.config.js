@@ -4,10 +4,10 @@ var path = require ("path");
 var scssConfig = {
     mode: "production",
     entry: {
-        default: "./R7.Epsilon/Skins/css/default-skin.scss",
-        a11y: "./R7.Epsilon/Skins/css/a11y-skin.scss",
-        consulting: "./R7.Epsilon/Skins/css/consulting-skin.scss",
-        world: "./R7.Epsilon/Skins/css/world-skin.scss"
+        green: "./R7.Epsilon/Skins/css/green-skin.scss",
+        blue: "./R7.Epsilon/Skins/css/blue-skin.scss",
+        brown: "./R7.Epsilon/Skins/css/brown-skin.scss",
+        a11y: "./R7.Epsilon/Skins/css/a11y-skin.scss"
     },
     output: {
         // TODO: suppress JS output somehow?

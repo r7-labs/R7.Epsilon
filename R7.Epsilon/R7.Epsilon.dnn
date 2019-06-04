@@ -34,6 +34,14 @@
                         <file><name>glyphicons-halflings-regular.woff2</name></file>
 					</files>
 				</component>
+				<component type="Cleanup" version="02.00.00">
+					<files>
+                        <basePath>Portals\_default\Skins\R7.Epsilon\css</basePath>
+						<file><name>default-skin.min.css</name></file>
+						<file><name>consulting-skin.min.css</name></file>
+						<file><name>world-skin.min.css</name></file>
+					</files>
+				</component>
 				<component type="Cleanup" version="01.14.00">
 					<files>
                         <basePath>Portals\_default\Skins\R7.Epsilon\SkinObjects</basePath>
@@ -53,7 +61,7 @@
 						<file><name>PopupSkin.doctype.xml</name></file>
 						<file><name>Universal.doctype.xml</name></file>
 					</files>
-				</component>	
+				</component>
 				<component type="Skin">
 					<skinFiles>
 						<skinName>R7.Epsilon</skinName>

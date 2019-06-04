@@ -224,15 +224,12 @@
     <Content Include="Containers\Panel_Warning.ascx" />
     <Content Include="Containers\Panel_Danger.ascx" />
     <Content Include="Application\Global.asax" />
-    <Content Include="Skins\css\consulting-skin.scss" />
-    <Content Include="Skins\css\world-skin.scss" />
     <Content Include="packages.config" />
     <Content Include="license.htm" />
     <Content Include="releaseNotes.htm" />
     <Content Include="Skins\Custom.ascx" />
     <Content Include="Skins\ErrorSkin.ascx" />
     <Content Include="Skins\HomeCustom.ascx" />
-    <Content Include="Skins\css\default-skin.scss" />
     <Content Include="Skins\SkinObjects\AdminPageInfo.ascx" />
     <Content Include="Skins\SkinObjects\BrowserCheck.ascx" />
     <Content Include="Skins\SkinObjects\FeedbackButton.ascx" />
@@ -313,15 +310,18 @@
     <Content Include="Skins\Blocks\End.ascx" />
     <Content Include="Skins\css\_a11y-layout.scss" />
     <Content Include="Skins\css\_a11y-palette.scss" />
-    <Content Include="Skins\css\_consulting-layout.scss" />
-    <Content Include="Skins\css\_consulting-palette.scss" />
-    <Content Include="Skins\css\_default-layout.scss" />
-    <Content Include="Skins\css\_default-palette.scss" />
     <Content Include="Skins\css\_dnn.scss" />
     <Content Include="Skins\css\_menu.scss" />
     <Content Include="Skins\css\_skin.scss" />
-    <Content Include="Skins\css\_world-layout.scss" />
-    <Content Include="Skins\css\_world-palette.scss" />
+    <Content Include="Skins\css\brown-skin.scss" />
+    <Content Include="Skins\css\_brown-layout.scss" />
+    <Content Include="Skins\css\_brown-palette.scss" />
+    <Content Include="Skins\css\_green-layout.scss" />
+    <Content Include="Skins\css\_green-palette.scss" />
+    <Content Include="Skins\css\green-skin.scss" />
+    <Content Include="Skins\css\_blue-layout.scss" />
+    <Content Include="Skins\css\_blue-palette.scss" />
+    <Content Include="Skins\css\blue-skin.scss" />
   </ItemGroup>
   <Import Project="../Deploy/Bundle.targets" />
   <Target Name="BeforeBuild" DependsOnTargets="Bundle" />
