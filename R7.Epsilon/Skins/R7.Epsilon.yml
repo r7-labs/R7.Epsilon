@@ -1,6 +1,9 @@
-﻿skin-css: css/green-theme.min.css
+﻿themes:
+  - name: green
+    css: css/green-theme.min.css
 
-skin-a11y-css: css/a11y-theme.min.css
+  - name: a11y
+    css: css/a11y-theme.min.css
 
 footer-buttons-group-name: FooterButtons
 

@@ -1,10 +1,10 @@
 ﻿//
-//  JsVariables.ascx.cs
+//  File: Includes.ascx.cs
+//  Project: R7.Epsilon
 //
-//  Author:
-//       Roman M. Yagodin <roman.yagodin@gmail.com>
+//  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2015-2017 Roman M. Yagodin
+//  Copyright (c) 2015-2019 Roman M. Yagodin, R7.Labs
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -43,10 +43,10 @@ namespace R7.Epsilon.Skins.SkinObjects
             ClientResourceManager.RegisterStyleSheet (Page, SkinPath + "/css/bootstrap.min.css", (int) FileOrder.Css.SkinCss, "DnnPageHeaderProvider", "bootstrap", "4.3.1");
 
             if (Skin.A11yEnabled) {
-                ClientResourceManager.RegisterStyleSheet (Page, SkinPath + "/" + Config.SkinA11yCss, (int) FileOrder.Css.SkinCss, "DnnPageHeaderProvider", "skin", "0.0.0");
+                ClientResourceManager.RegisterStyleSheet (Page, SkinPath + "/" + Config.Themes [1].Css, (int) FileOrder.Css.SkinCss, "DnnPageHeaderProvider", "skin", "0.0.0");
             }
             else {
-                ClientResourceManager.RegisterStyleSheet (Page, SkinPath + "/" + Config.SkinCss, (int) FileOrder.Css.SkinCss, "DnnPageHeaderProvider", "skin", "0.0.0");
+                ClientResourceManager.RegisterStyleSheet (Page, SkinPath + "/" + Config.Themes [0].Css, (int) FileOrder.Css.SkinCss, "DnnPageHeaderProvider", "skin", "0.0.0");
             }
 
             ClientResourceManager.RegisterScript (Page, SkinPath + "/js/bootstrap.bundle.min.js", (int) FileOrder.Js.DefaultPriority, "DnnFormBottomProvider", "bootstrap", "4.3.1");

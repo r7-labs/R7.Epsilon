@@ -1,10 +1,10 @@
 ﻿//
-//  EpsilonPortalConfig.cs
+//  File: EpsilonPortalConfig.cs
+//  Project: R7.Epsilon
 //
-//  Author:
-//       Roman M. Yagodin <roman.yagodin@gmail.com>
+//  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2015-2017 Roman M. Yagodin
+//  Copyright (c) 2015-2019 Roman M. Yagodin, R7.Labs
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -32,9 +32,16 @@ namespace R7.Epsilon.Components
     {
         #region Portal config properties
 
-        public string SkinCss { get; set; } = "css/green-theme.min.css";
-
-        public string SkinA11yCss { get; set; } = "css/a11y-theme.min.css";
+        public List<ThemeConfig> Themes { get; set; } = new List<ThemeConfig> {
+            new ThemeConfig {
+                Name = "green",
+                Css = "css/green-theme.min.css"
+            },
+            new ThemeConfig {
+                Name = "a11y",
+                Css = "css/a11y-theme.min.css"
+            }
+        };
 
         public List<CdnConfig> Cdns { get; set; } = new List<CdnConfig> {
             new CdnConfig {
@@ -151,6 +158,13 @@ namespace R7.Epsilon.Components
         public string Integrity { get; set; }
 
         public string Location { get; set; }
+    }
+
+    public class ThemeConfig
+    {
+        public string Name { get; set; }
+
+        public string Css { get; set; }
     }
 }
 
