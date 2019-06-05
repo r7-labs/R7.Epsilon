@@ -1,14 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0" DefaultTargets="InstallPackage">
 	<Import Project="BuildSettings.targets" Condition=" '$(BuildSettingsImported)' == '' " />
+	<Import Project="Bundle.targets" Condition=" '$(BundleImported)' == '' " />
     <Import Project="Tests.targets" Condition=" '$(TestsImported)' == '' "/>
-	
+
 	<PropertyGroup>
 		<!-- Enable install package creation by default (standalone) -->
     	<EnableInstallPackage Condition=" '$(EnableInstallPackage)' == '' ">true</EnableInstallPackage>
 		<NodeModulesPath>../node_modules</NodeModulesPath>
   	</PropertyGroup>
-	<Target Name="InstallPackage" Condition=" '$(EnableInstallPackage)' == 'true' " DependsOnTargets="Tests">
+	<Target Name="InstallPackage" Condition=" '$(EnableInstallPackage)' == 'true' " DependsOnTargets="Bundle;Tests">
 
 		<!-- Read package version from the manifest -->
 		<XmlPeek Query="/msb:Project/msb:PropertyGroup[1]/msb:ReleaseVersion/text()"
@@ -74,15 +75,15 @@
             <InstallLayoutManagerFiles Include="../R7.Epsilon.LayoutManager/**/*.png" />
             <InstallLayoutManagerFiles Include="../R7.Epsilon.LayoutManager/**/*.gif" />
         </ItemGroup>
-              
+
 		<!-- Declare manifest files -->
 		<ItemGroup>
 			<InstallManifestFiles Include="$(MainProjectPath)/*.dnn" />
 			<InstallManifestFiles Include="$(MainProjectPath)/*.htm" />
 		</ItemGroup>
-			
+
 		<!-- Declare binaries -->
-		<ItemGroup>	
+		<ItemGroup>
 			<InstallBinaryFiles Include="$(MainProjectOutputPath)/R7.Epsilon*.dll" />
 			<InstallBinaryFiles Include="$(MainProjectOutputPath)/R7.Epsilon*.pdb" Condition=" '$(Configuration)' == 'Debug' "/>
         </ItemGroup>
@@ -98,7 +99,7 @@
 			<InstallExternalCssFiles Include="$(NodeModulesPath)/bootstrap/dist/css/bootstrap.min.css" />
 			<InstallExternalCssFiles Include="$(NodeModulesPath)/bootstrap/dist/css/bootstrap.min.css.map" Condition=" '$(Configuration)' == 'Debug' "/>
 		</ItemGroup>
-	
+
 		<!-- Cleanup -->
 		<RemoveDir Directories="$(TmpDir)" />
 
@@ -107,7 +108,7 @@
 		<Copy SourceFiles="@(InstallContainerFiles)" DestinationFolder="$(MSBuildProjectDirectory)/$(TmpDir)/Containers/%(RecursiveDir)" />
 		<Copy SourceFiles="@(InstallMenuFiles)" DestinationFolder="$(MSBuildProjectDirectory)/$(TmpDir)/Menus/%(RecursiveDir)" />
         <Copy SourceFiles="@(InstallLayoutManagerFiles)" DestinationFolder="$(MSBuildProjectDirectory)/$(TmpDir)/Modules/R7.Epsilon.LayoutManager/%(RecursiveDir)" />
- 		     
+
 		<!-- Copy external files to tmp dir -->
 		<Copy SourceFiles="@(InstallExternalJsFiles)" DestinationFolder="$(MSBuildProjectDirectory)/$(TmpDir)/Skins/js/" />
 		<Copy SourceFiles="@(InstallExternalCssFiles)" DestinationFolder="$(MSBuildProjectDirectory)/$(TmpDir)/Skins/css/" />
@@ -116,7 +117,7 @@
 		<ItemGroup>
 			<InstallSkinZipFiles Include="$(MSBuildProjectDirectory)/$(TmpDir)/Skins/**/*.*" />
 		</ItemGroup>
-	
+
 		<ItemGroup>
 			<InstallContainerZipFiles Include="$(MSBuildProjectDirectory)/$(TmpDir)/Containers/**/*.*" />
 		</ItemGroup>
@@ -134,18 +135,18 @@
 		<Zip Condition=" '$(OS)' != 'Unix' " Files="@(InstallContainerZipFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\bin\tmp\Containers" ZipFileName="Resources_Containers.zip" />
 		<Zip Condition=" '$(OS)' != 'Unix' " Files="@(InstallMenuZipFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\bin\tmp\Menus" ZipFileName="Resources_Menus.zip" />
         <Zip Condition=" '$(OS)' != 'Unix' " Files="@(InstallModuleZipFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\bin\tmp\Modules" ZipFileName="Resources_Modules.zip" />
-		      
+
         <Exec Condition=" '$(OS)' == 'Unix' " Command="zip -r -6 -UN=UTF8 &quot;Resources_Skins.zip&quot; ." WorkingDirectory="$(TmpDir)/Skins" />
         <Exec Condition=" '$(OS)' == 'Unix' " Command="zip -r -6 -UN=UTF8 &quot;Resources_Containers.zip&quot; ." WorkingDirectory="$(TmpDir)/Containers" />
 		<Exec Condition=" '$(OS)' == 'Unix' " Command="zip -r -6 -UN=UTF8 &quot;Resources_Menus.zip&quot; ." WorkingDirectory="$(TmpDir)/Menus" />
         <Exec Condition=" '$(OS)' == 'Unix' " Command="zip -r -6 -UN=UTF8 &quot;Resources_Modules.zip&quot; ." WorkingDirectory="$(TmpDir)/Modules" />
-		      
+
 		<!-- Copy binaries -->
 		<Copy SourceFiles="@(InstallBinaryFiles)" DestinationFolder="$(TmpDir)/Package/bin" />
 
 		<!-- Copy manifest files -->
 		<Copy SourceFiles="@(InstallManifestFiles)" DestinationFolder="$(TmpDir)/Package" />
-	
+
 		<!--- Move resource archives to $(TmpDir)/Package folder -->
 		<Copy SourceFiles="$(TmpDir)/Skins/Resources_Skins.zip" DestinationFolder="$(TmpDir)/Package" />
         <Copy SourceFiles="$(TmpDir)/Containers/Resources_Containers.zip" DestinationFolder="$(TmpDir)/Package" />
@@ -155,12 +156,12 @@
         <Delete Files="$(TmpDir)/Containers/Resources_Containers.zip" />
 		<Delete Files="$(TmpDir)/Containers/Resources_Menus.zip" />
         <Delete Files="$(TmpDir)/Modules/Resources_Modules.zip" />
-		      
+
 		<!-- Declare tmp package folder -->
 		<ItemGroup>
 			<InstallPackageFiles Include="$(TmpDir)/Package/**/*.*" />
 		</ItemGroup>
-		
+
 		<!-- Create the install package -->
 		<Zip Condition=" '$(OS)' != 'Unix' " Files="@(InstallPackageFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\bin\tmp\Package" ZipFileName="$(PackageFileName)" />
 		<Exec Condition=" '$(OS)' == 'Unix' " Command="zip -r -6 -UN=UTF8 &quot;$(PackageFileName)&quot; ." WorkingDirectory="$(TmpDir)/Package" />
@@ -168,7 +169,7 @@
 		<!-- Copy the install package to the output directory -->
 		<Copy SourceFiles="$(TmpDir)/Package/$(PackageFileName)" DestinationFolder="$(PackageOutputPath)" />
         <Delete Files="$(TmpDir)/Package/$(PackageFileName)" />
-		
+
 		<!-- Cleanup -->
 		<RemoveDir Directories="$(TmpDir)" />
 	</Target>
