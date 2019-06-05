@@ -323,6 +323,4 @@
     <Content Include="Skins\css\_blue-palette.scss" />
     <Content Include="Skins\css\blue-theme.scss" />
   </ItemGroup>
-  <Import Project="../Deploy/Bundle.targets" />
-  <Target Name="BeforeBuild" DependsOnTargets="Bundle" />
 </Project>
