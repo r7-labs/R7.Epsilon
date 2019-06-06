@@ -29,6 +29,10 @@
         {
             "language": "javascript",
             "mapTo": "csharp"
+        },
+        {
+            "language": "scss",
+            "mapTo": "csharp"
         }
     ],
     "psi-header.changes-tracking": {
@@ -68,6 +72,10 @@
         },
         {
             "language": "javascript",
+            "mapTo": "csharp"
+        },
+        {
+            "language": "scss",
             "mapTo": "csharp"
         }
     ]
