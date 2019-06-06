@@ -197,4 +197,7 @@
 	<data name="Theme_a11y.Text" xml:space="preserve">
         <value>Contrast theme</value>
     </data>
+	<data name="DefaultTheme.Text" xml:space="preserve">
+        <value>(default)</value>
+    </data>
 </root>

@@ -1,9 +1,13 @@
 ﻿themes:
   - name: green
     css: green-theme.min.css
+    color: green
+    is-a11y-theme: false
 
   - name: a11y
     css: a11y-theme.min.css
+    color: black
+    is-a11y-theme: true
 
 footer-buttons-group-name: FooterButtons
 

@@ -54,9 +54,20 @@
                 </button>
 				<div class="dropdown-menu">
 					<% if (Config.Themes.Count > 1) { %>
-						<% foreach (var theme in Config.Themes) { %>
-							<a class='<%: theme.Name == (Config.GetTheme (Request) ?? Config.Themes [0]).Name ? "dropdown-item disabled" : "dropdown-item"  %>'
-								href="?theme=<%: theme.Name %>"><%: Localizer.GetString ("Theme_" + theme.Name + ".Text") %></a>
+						<% for (var i = 0; i < Config.Themes.Count; i++) {
+							var theme = Config.Themes [i];
+							var isCurrentTheme = (Config.GetTheme (Request) ?? Config.Themes [0]).Name;
+							%>
+							<a class='<%: theme.Name == isCurrentTheme ? "dropdown-item disabled" : "dropdown-item"  %>'
+								href="?theme=<%: theme.Name %>">
+								<span style="color: <%: theme.Color %>">
+									<i class='<%: theme.IsA11yTheme ? "fas fa-adjust" : "fas fa-circle" %>'></i>
+								</span>
+								<%: Localizer.GetString ("Theme_" + theme.Name + ".Text") %>
+								<% if (i == 0) { %>
+									<%: Localizer.GetString ("DefaultTheme.Text") %>
+								<% } %>
+							</a>
 						<% } %>
 						<div class="dropdown-divider"></div>
 					<% } %>

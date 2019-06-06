@@ -197,6 +197,10 @@ namespace R7.Epsilon.Components
         public string Name { get; set; }
 
         public string Css { get; set; }
+
+        public string Color { get; set; }
+
+        public bool IsA11yTheme { get; set; }
     }
 }
 

@@ -173,4 +173,7 @@
 	<data name="Theme_a11y.Text" xml:space="preserve">
         <value>Контрастная тема</value>
     </data>
+	<data name="DefaultTheme.Text" xml:space="preserve">
+        <value>(по умолчанию)</value>
+    </data>
 </root>
