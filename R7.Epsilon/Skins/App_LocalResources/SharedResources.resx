@@ -185,4 +185,16 @@
     <data name="ModalClose.Text" xml:space="preserve">
         <value>Close</value>
     </data>
+	<data name="Theme_green.Text" xml:space="preserve">
+        <value>Green theme</value>
+    </data>
+	<data name="Theme_blue.Text" xml:space="preserve">
+        <value>Blue theme</value>
+    </data>
+	<data name="Theme_brown.Text" xml:space="preserve">
+        <value>Brown theme</value>
+    </data>
+	<data name="Theme_a11y.Text" xml:space="preserve">
+        <value>Contrast theme</value>
+    </data>
 </root>

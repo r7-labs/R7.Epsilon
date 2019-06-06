@@ -161,4 +161,16 @@
     <data name="ModalClose.Text" xml:space="preserve">
         <value>Закрыть</value>
     </data>
+	<data name="Theme_green.Text" xml:space="preserve">
+        <value>Зеленая тема</value>
+    </data>
+	<data name="Theme_blue.Text" xml:space="preserve">
+        <value>Синяя тема</value>
+    </data>
+	<data name="Theme_brown.Text" xml:space="preserve">
+        <value>Коричневая тема</value>
+    </data>
+	<data name="Theme_a11y.Text" xml:space="preserve">
+        <value>Контрастная тема</value>
+    </data>
 </root>

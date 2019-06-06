@@ -53,6 +53,13 @@
                     <i class="fas fa-universal-access"></i>
                 </button>
 				<div class="dropdown-menu">
+					<% if (Config.Themes.Count > 1) { %>
+						<% foreach (var theme in Config.Themes) { %>
+							<a class='<%: theme.Name == (Config.GetTheme (Request) ?? Config.Themes [0]).Name ? "dropdown-item disabled" : "dropdown-item"  %>'
+								href="?theme=<%: theme.Name %>"><%: Localizer.GetString ("Theme_" + theme.Name + ".Text") %></a>
+						<% } %>
+						<div class="dropdown-divider"></div>
+					<% } %>
 					<a class="dropdown-item" href="javascript:skinA11y.increaseFontSize()">
 						<i class="fas fa-font"></i><i class="fas fa-arrow-up"></i> <%: Localizer.GetString("A11yIncreaseFontSize.Text") %></a>
 					<a class="dropdown-item" href="javascript:skinA11y.decreaseFontSize()">

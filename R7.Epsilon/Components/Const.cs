@@ -33,6 +33,8 @@ namespace R7.Epsilon.Components
 
         public const string A11Y_LAYOUT_TAB_SETTING_NAME = LAYOUT_TAB_SETTING_NAME + "_A11y";
 
+        public const string COOKIE_PREFIX = "R7.Epsilon.";
+
         /// <summary>
         /// Returns layout name prefix which is used in tab settings
         /// </summary>
