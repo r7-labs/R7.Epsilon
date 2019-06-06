@@ -37,11 +37,16 @@ namespace R7.Epsilon.Components
         public List<ThemeConfig> Themes { get; set; } = new List<ThemeConfig> {
             new ThemeConfig {
                 Name = "green",
-                Css = "green-theme.min.css"
+                Css = "green-theme.min.css",
+                Color = "green",
+                IsA11yTheme = false
+
             },
             new ThemeConfig {
-                Name = "a11y",
-                Css = "a11y-theme.min.css"
+                Name = "contrast",
+                Css = "contrast-theme.min.css",
+                Color = "black",
+                IsA11yTheme = true
             }
         };
 

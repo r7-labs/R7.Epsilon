@@ -4,8 +4,8 @@
     color: green
     is-a11y-theme: false
 
-  - name: a11y
-    css: a11y-theme.min.css
+  - name: contrast
+    css: contrast-theme.min.css
     color: black
     is-a11y-theme: true
 

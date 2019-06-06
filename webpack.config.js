@@ -7,7 +7,7 @@ var scssConfig = {
         green: "./R7.Epsilon/Skins/css/green-theme.scss",
         blue: "./R7.Epsilon/Skins/css/blue-theme.scss",
         brown: "./R7.Epsilon/Skins/css/brown-theme.scss",
-        a11y: "./R7.Epsilon/Skins/css/a11y-theme.scss"
+        contrast: "./R7.Epsilon/Skins/css/contrast-theme.scss"
     },
     output: {
         // TODO: suppress JS output somehow?

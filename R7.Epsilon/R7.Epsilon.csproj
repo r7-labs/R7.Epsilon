@@ -200,7 +200,6 @@
     <Content Include="Skins\images\social_32x32.png" />
     <Content Include="Skins\images\social_32x32.svg" />
     <Content Include="Skins\images\logo_template_178x100.xcf" />
-    <Content Include="Skins\css\a11y-theme.scss" />
     <Content Include="Skins\js\a11y.js" />
     <Content Include="Skins\js\menu.js" />
     <Content Include="Skins\images\social_mono_32x32.png" />
@@ -308,8 +307,6 @@
     <Content Include="Skins\Blocks\SupFooter.ascx" />
     <Content Include="Skins\Blocks\Start.ascx" />
     <Content Include="Skins\Blocks\End.ascx" />
-    <Content Include="Skins\css\_a11y-layout.scss" />
-    <Content Include="Skins\css\_a11y-palette.scss" />
     <Content Include="Skins\css\_dnn.scss" />
     <Content Include="Skins\css\_menu.scss" />
     <Content Include="Skins\css\_skin.scss" />
@@ -322,5 +319,8 @@
     <Content Include="Skins\css\_blue-layout.scss" />
     <Content Include="Skins\css\_blue-palette.scss" />
     <Content Include="Skins\css\blue-theme.scss" />
+    <Content Include="Skins\css\_contrast-layout.scss" />
+    <Content Include="Skins\css\_contrast-palette.scss" />
+    <Content Include="Skins\css\contrast-theme.scss" />
   </ItemGroup>
 </Project>
