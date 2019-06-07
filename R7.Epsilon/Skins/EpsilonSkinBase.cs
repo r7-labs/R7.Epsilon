@@ -1,10 +1,10 @@
 ﻿//
-//  EpsilonSkinBase.cs
+//  File: EpsilonSkinBase.cs
+//  Project: R7.Epsilon
 //
-//  Author:
-//       Roman M. Yagodin <roman.yagodin@gmail.com>
+//  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2015-2016 Roman M. Yagodin
+//  Copyright (c) 2015-2019 Roman M. Yagodin, R7.Labs
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -51,25 +51,6 @@ namespace R7.Epsilon.Skins
             }
         }
 
-        public bool A11yEnabled {
-            get {
-                // try to get a11y mode from querystring
-                var a11y = A11yHelper.TryGetA11yParam (Request);
-                if (a11y != null) {
-                    A11yHelper.SetA11yCookie (Response, a11y.Value);
-                    return a11y.Value;
-                } 
-
-                // no a11y was found in the querystring, try to get cookie value
-                a11y = A11yHelper.TryGetA11yCookie (Request);
-                if (a11y != null) {
-                    return a11y.Value;
-                }
-
-                return false;
-            }
-        }
-
         public string SkinCopyright => Localizer.GetString ("SkinCopyright.Text").Replace ("{version}", GetVersionString ());
 
         string GetVersionString ()
@@ -107,18 +88,10 @@ namespace R7.Epsilon.Skins
         {
             base.OnInit (e);
 
-            // init accessibility button
-            var linkA11yVersion = (HyperLink) FindControl ("linkA11yVersion");
-            if (linkA11yVersion != null) {
-                var a11yLabel = Localizer.GetString ("A11y.Title");
-                linkA11yVersion.ToolTip = a11yLabel;
-                linkA11yVersion.Attributes.Add ("aria-label", a11yLabel);
-
-                // use obrnadzor.gov.ru microdata
-                if (Config.UseObrnadzorMicrodata)
-                    linkA11yVersion.Attributes.Add ("itemprop", "copy");
+            if (SetCookiesByQueryString ()) {
+                Response.Redirect (Globals.NavigateURL (), false);
+                return;
             }
-
             // add canonical URL link
             // TODO: Add support for blogs and forums
             var linkCanonicalUrl = new HtmlLink ();
@@ -127,6 +100,29 @@ namespace R7.Epsilon.Skins
             Page.Header.Controls.Add (linkCanonicalUrl);
 
             RegisterCdns ();
+        }
+
+        protected bool SetCookiesByQueryString ()
+        {
+            var themeArg = Request.QueryString ["theme"];
+            if (themeArg != null) {
+                A11yHelper.SetThemeCookie (Response, themeArg);
+                return true;
+            }
+
+            var a11yArg = Request.QueryString ["quickA11y"];
+            if (a11yArg != null) {
+                if (a11yArg == "enable" || a11yArg == "true") {
+                    A11yHelper.SetA11yCookies (Response, Config.Themes);
+                    return true;
+                }
+                if (a11yArg == "reset" || a11yArg == "false") {
+                    A11yHelper.ResetA11yCookies (Response, Config.Themes);
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         protected void RegisterCdns ()
@@ -147,17 +143,6 @@ namespace R7.Epsilon.Skins
         {
             base.OnLoad (e);
 
-            var linkA11yVersion = (HyperLink) FindControl ("linkA11yVersion");
-            if (linkA11yVersion != null) {
-                // make link to toggle a11y mode
-                linkA11yVersion.NavigateUrl = Globals.NavigateURL (
-                    PortalSettings.ActiveTab.TabID, "", "a11y", (!A11yEnabled).ToString ());
-
-                if (A11yEnabled) {
-                    // alter look of accessibility button
-                    linkA11yVersion.CssClass = linkA11yVersion.CssClass + " enabled";
-                }
-            }
         }
     }
 }

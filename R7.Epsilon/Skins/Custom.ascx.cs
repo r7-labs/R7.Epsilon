@@ -46,10 +46,12 @@ namespace R7.Epsilon.Skins
 
                     object layoutSetting = null;
 
+                    /*
                     // try use a11y layout in a11y mode
                     if (A11yEnabled) {
                         layoutSetting = tabSettings [Const.A11Y_LAYOUT_TAB_SETTING_NAME];
                     }
+                    */
 
                     // try use standard layout (not in a11y mode or no a11y layout set)
                     if (layoutSetting == null) {

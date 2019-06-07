@@ -86,34 +86,15 @@ namespace R7.Epsilon.Components
 
         #endregion
 
-        public string GetThemeName (HttpRequest request)
-        {
-            var themeArg = request.QueryString ["theme"];
-            if (themeArg != null) {
-                return themeArg;
-            }
-            var themeCookie = request.Cookies [Const.COOKIE_PREFIX + "Theme"];
-            if (themeCookie != null) {
-                return themeCookie.Value;
-            }
-            return null;
-        }
-
         public ThemeConfig GetTheme (HttpRequest request)
         {
             var theme = default (ThemeConfig);
-            var themeName = GetThemeName (request);
+            var themeName = A11yHelper.GetThemeCookie (request);
             if (themeName != null) {
                 theme = Themes.FirstOrDefault (t => t.Name == themeName);
             }
 
             return theme;
-        }
-
-        public void SetThemeCookie (HttpResponse response, string value)
-        {
-            response.Cookies [Const.COOKIE_PREFIX + "Theme"].Value = value;
-            response.Cookies [Const.COOKIE_PREFIX + "Theme"].Expires = DateTime.Now.AddDays (1d);
         }
     }
 

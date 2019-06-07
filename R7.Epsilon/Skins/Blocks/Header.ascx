@@ -15,8 +15,10 @@
 
 <div class="container">
     <div class="row">
-        <asp:HyperLink runat="server" href="#content" CssClass="sr-only sr-only-focusable" Text='<%# Localizer.GetString ("SkipToContent.Text") %>' />
-        <skin:BROWSERCHECK runat="server" />
+		<!-- TODO: Use full url -->
+		<a href="?quickA11y=enable" class="sr-only sr-only-focusable" itemprop="copy"><%: Localizer.GetString ("A11yWebsiteVersion.Text") %></a>
+		<a href="#content" class="sr-only sr-only-focusable"><%: Localizer.GetString ("SkipToContent.Text") %></a>
+		<skin:BROWSERCHECK runat="server" />
     </div>
 </div>
 <div class="container sticky-top">
@@ -29,7 +31,7 @@
         <div class="col-md-3 col-sm-4 col-xs-6 skin-functions-wrapper">
             <div class="skin-functions">
                 <skin:FUNCTIONS runat="server" />
-                <asp:HyperLink id="linkA11yVersion" runat="server" CssClass="skin-functions-icon skin-functions-icon-a11y" data-toggle="tooltip" data-placement="bottom" />
+
             </div>
         </div>
         <div class="col-md-3 col-sm-12">
@@ -58,6 +60,7 @@
 							var theme = Config.Themes [i];
 							var isCurrentTheme = (Config.GetTheme (Request) ?? Config.Themes [0]).Name;
 							%>
+							<!-- TODO: Use full url -->
 							<a class='<%: theme.Name == isCurrentTheme ? "dropdown-item disabled" : "dropdown-item"  %>'
 								href="?theme=<%: theme.Name %>">
 								<span style="color: <%: theme.Color %>">
@@ -81,7 +84,8 @@
 					<a id="lnkReEnablePopups" role="checkbox" class="dropdown-item d-none" href="javascript:skinA11y.reEnablePopups()">
 						<i class="fas fa-check-square"></i>	<%: Localizer.GetString("A11yDisablePopups.Text") %></a>
 					<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="javascript:skinA11y.restoreDefaults()">
+						<!-- TODO: Use full url -->
+						<a class="dropdown-item" href="?quickA11y=reset">
 						<i class="fas fa-undo"></i></i> <%: Localizer.GetString("A11yRestoreDefaults.Text") %></a>
   				</div>
 			</div>

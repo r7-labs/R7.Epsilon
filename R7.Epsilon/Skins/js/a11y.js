@@ -26,8 +26,9 @@ export default class A11y {
     get defaultFontSize () { return 16; }
 
     init () {
+
         if (epsilon.enablePopups) {
-            if (Cookies.get ("r7Epsilon_A11yDisablePopups") === "true") {
+            if (Cookies.get (epsilon.cookiePrefix + "DisablePopups") === "true") {
                 this.disablePopups ();
             }
         }
@@ -41,16 +42,19 @@ export default class A11y {
     }
 
     getFontSize () {
-        const fontSize = Cookies.get ("r7Epsilon_A11yFontSize");
-        if (typeof fontSize === "undefined" || fontSize < 2 || fontSize > 64) {
-            return this.defaultFontSize;
+        const fontSize = Cookies.get (epsilon.cookiePrefix + "FontSize");
+        if (typeof fontSize !== "undefined") {
+            const fontSizeInt = parseInt (fontSize);
+            if (fontSizeInt >= 2 || fontSizeInt <= 64) {
+                return fontSizeInt;
+            }
         }
-        return parseInt (fontSize);
+        return this.defaultFontSize;
     }
 
     setFontSize (fontSize) {
         document.documentElement.style = "font-size:" + fontSize + "px;";
-        Cookies.set ("r7Epsilon_A11yFontSize", fontSize, {expires: 1});
+        Cookies.set (epsilon.cookiePrefix + "FontSize", fontSize, {expires: 1});
     }
 
     increaseFontSize () {
@@ -62,6 +66,8 @@ export default class A11y {
     }
 
     disablePopups () {
+        // TODO: Also disable popups for feedback button
+
         // replace all popup links with simple ones
         $("a[href^='javascript:dnnModal']").each (function () {
             const url = $(this).attr ("href");
@@ -88,9 +94,16 @@ export default class A11y {
         $("a#lnkDisablePopups").addClass ("d-none");
         $("a#lnkReEnablePopups").removeClass ("d-none");
 
-        Cookies.set ("r7Epsilon_A11yDisablePopups", true, {expires: 1});
+        Cookies.set (epsilon.cookiePrefix + "DisablePopups", true, {expires: 1});
     }
 
+    disableTooglePopups () {
+        $("a#lnkDisablePopups").addClass ("d-none")
+            .prev ("div.dropdown-divider").addClass ("d-none");
+        $("a#lnkReEnablePopups").addClass ("d-none");
+    }
+
+    /** @deprecated Unused */
     reEnablePopups () {
         $("a.popup-href-link").each (function () {
             $(this).attr ("href", $(this).data ("popupHref")).removeData ("popupHref");
@@ -102,15 +115,10 @@ export default class A11y {
         $("a#lnkDisablePopups").removeClass ("d-none");
         $("a#lnkReEnablePopups").addClass ("d-none");
 
-        Cookies.remove ("r7Epsilon_A11yDisablePopups");
+        Cookies.remove (epsilon.cookiePrefix + "DisablePopups");
     }
 
-    disableTooglePopups () {
-        $("a#lnkDisablePopups").addClass ("d-none")
-            .prev ("div.dropdown-divider").addClass ("d-none");
-        $("a#lnkReEnablePopups").addClass ("d-none");
-    }
-
+    /** @deprecated Unused */
     restoreDefaults () {
         this.setFontSize (this.defaultFontSize);
         this.reEnablePopups ();

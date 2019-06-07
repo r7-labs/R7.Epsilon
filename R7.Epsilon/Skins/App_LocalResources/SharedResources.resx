@@ -30,6 +30,9 @@
 	<data name="A11yRestoreDefaults.Text" xml:space="preserve">
         <value>Restore defaults</value>
     </data>
+	<data name="A11yWebsiteVersion.Text" xml:space="preserve">
+        <value>Accessible website version</value>
+    </data>
     <data name="SkinCopyright.Text" xml:space="preserve">
         <value><![CDATA[<a href="https://github.com/roman-yagodin/R7.Epsilon" target="_blank">R7.Epsilon Theme v{version}</a>]]></value>
     </data>
@@ -194,7 +197,7 @@
 	<data name="Theme_brown.Text" xml:space="preserve">
         <value>Brown theme</value>
     </data>
-	<data name="Theme_a11y.Text" xml:space="preserve">
+	<data name="Theme_contrast.Text" xml:space="preserve">
         <value>Contrast theme</value>
     </data>
 	<data name="DefaultTheme.Text" xml:space="preserve">

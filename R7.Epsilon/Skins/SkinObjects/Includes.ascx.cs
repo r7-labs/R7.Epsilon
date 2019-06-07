@@ -38,21 +38,11 @@ namespace R7.Epsilon.Skins.SkinObjects
     {
         protected string SkinPath => Skin.SkinPath;
 
-        private ThemeConfig GetTheme ()
-        {
-            var theme = Config.GetTheme (Request);
-            if (theme != null) {
-                Config.SetThemeCookie (Response, theme.Name);
-                return theme;
-            }
-            return Config.Themes [0];
-        }
-
         protected override void OnLoad (EventArgs e)
         {
             ClientResourceManager.RegisterStyleSheet (Page, SkinPath + "css/bootstrap.min.css", (int) FileOrder.Css.SkinCss, "DnnPageHeaderProvider", "bootstrap", "4.3.1");
 
-            ClientResourceManager.RegisterStyleSheet (Page, SkinPath + "css/" + GetTheme ().Css, (int) FileOrder.Css.SkinCss, "DnnPageHeaderProvider", "skin", "0.0.0");
+            ClientResourceManager.RegisterStyleSheet (Page, SkinPath + "css/" + (Config.GetTheme (Request) ?? Config.Themes [0]).Css, (int) FileOrder.Css.SkinCss, "DnnPageHeaderProvider", "skin", "0.0.0");
 
             ClientResourceManager.RegisterScript (Page, SkinPath + "js/bootstrap.bundle.min.js", (int) FileOrder.Js.DefaultPriority, "DnnFormBottomProvider", "bootstrap", "4.3.1");
 

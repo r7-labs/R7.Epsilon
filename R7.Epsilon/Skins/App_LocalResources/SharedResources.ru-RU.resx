@@ -30,6 +30,9 @@
 	<data name="A11yRestoreDefaults.Text" xml:space="preserve">
         <value>Восстановить умолчания</value>
     </data>
+	<data name="A11yWebsiteVersion.Text" xml:space="preserve">
+        <value>Версия сайта для слабовидящих</value>
+    </data>
     <data name="SkinCopyright.Text" xml:space="preserve">
         <value><![CDATA[<a href="https://github.com/roman-yagodin/R7.Epsilon" target="_blank">Тема R7.Epsilon v{version}</a>]]></value>
     </data>
@@ -170,7 +173,7 @@
 	<data name="Theme_brown.Text" xml:space="preserve">
         <value>Коричневая тема</value>
     </data>
-	<data name="Theme_a11y.Text" xml:space="preserve">
+	<data name="Theme_contrast.Text" xml:space="preserve">
         <value>Контрастная тема</value>
     </data>
 	<data name="DefaultTheme.Text" xml:space="preserve">

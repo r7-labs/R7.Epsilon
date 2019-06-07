@@ -54,7 +54,7 @@ namespace R7.Epsilon.Skins.SkinObjects
                                                  .FirstOrDefault (module => module.ModuleDefinition.DefinitionName == Config.Feedback.ModuleDefinitionName);
             if (feedbackModule != null) {
                 string feedbackUrl;
-                if (Config.Feedback.OpenInPopup && PortalSettings.Current.EnablePopUps && !A11yHelper.GetA11y(Request) && !(EpsilonUrlHelper.IsIeBrowser (Request) && !EpsilonUrlHelper.IsEdgeBrowser (Request))) {
+                if (Config.Feedback.OpenInPopup && PortalSettings.Current.EnablePopUps && !(EpsilonUrlHelper.IsIeBrowser (Request) && !EpsilonUrlHelper.IsEdgeBrowser (Request))) {
                     // show feedback module
                     feedbackUrl = UrlUtils.PopUpUrl (Globals.NavigateURL (feedbackModule.TabID, "", "mid", feedbackModule.ModuleID.ToString ()),
                                                      this, PortalSettings.Current, false, false, 550, 950, false, "");

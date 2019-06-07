@@ -1,10 +1,10 @@
 ﻿//
-//  CacheHelper.cs
+//  File: CacheHelper.cs
+//  Project: R7.Epsilon
 //
-//  Author:
-//       Roman M. Yagodin <roman.yagodin@gmail.com>
+//  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2016 Roman M. Yagodin
+//  Copyright (c) 2016-2019 Roman M. Yagodin, R7.Labs
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -30,7 +30,7 @@ namespace R7.Epsilon.Components
     public static class CacheHelper
     {
         public static string GetVaryByCustomString (HttpContext context, string custom,
-                                                    HttpRequest request, 
+                                                    HttpRequest request,
                                                     Func<HttpContext, string, string> fallbackGetVaryByCustomString)
         {
             var result = new StringBuilder (custom.Length * 4);
@@ -38,10 +38,6 @@ namespace R7.Epsilon.Components
                 if (part == "PortalId") {
                     result.Append ("portalid=");
                     result.Append (PortalSettings.Current.PortalId);
-                }
-                else if (part == "A11y") {
-                    result.Append ("a11y=");
-                    result.Append (A11yHelper.GetA11y (request));
                 }
                 else if (part == "UserRoles") {
                     if (request.IsAuthenticated) {

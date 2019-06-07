@@ -51,7 +51,7 @@
     font-weight: inherit;
     line-height: inherit;
 }
-.SkinLink 
+.SkinLink
 {
   margin-top: 15px;
   text-align: center;
@@ -66,11 +66,11 @@
 }
 
 /*
-.navbar-collapse 
-{ 
-  padding-left:0; 
+.navbar-collapse
+{
+  padding-left:0;
   padding-right:0;
-  border:none; 
+  border:none;
 }
 
 // important to xs submenu positioning!
@@ -135,7 +135,7 @@ a.btn-primary:visited {
     @include background-position-xy (1, 0, 48px);
 }
 
-header > .container 
+header > .container
 {
     padding-top:9px;
     padding-bottom:5px;
@@ -155,7 +155,7 @@ header > .container > .row
 }
 
 .skin-functions
-{   
+{
     display:inline-block;
     padding-top:4px;
 
@@ -183,12 +183,6 @@ header > .container > .row
             color:#fff;
             text-decoration:none;
         }
-
-        &.skin-functions-icon-a11y,
-        &.skin-functions-icon-a11y.enabled:hover { @include background-position-xy (1, 0, 32px); }
-
-        &.skin-functions-icon-a11y:hover,
-        &.skin-functions-icon-a11y.enabled { @include background-position-xy (1, 1, 32px); }
     }
 }
 
@@ -223,7 +217,7 @@ header > .container > .row
     }
 }
 
-@media only screen and (max-width : 767px) 
+@media only screen and (max-width : 767px)
 {
     .skin-search
     {
@@ -250,10 +244,10 @@ ul.skin-socialgroups
     margin:0;
     list-style: none;
     list-style-type: none;
-    & > li 
-    { 
-        display:inline; 
-        list-style-type: none; 
+    & > li
+    {
+        display:inline;
+        list-style-type: none;
         &:last-child a { margin-right:0; }
     }
 
@@ -323,18 +317,18 @@ ul.skin-socialgroups
 .navbar-toggle { margin-right:inherit }
 
 .skin-top-menu-toggle.navbar-toggle
-{ 
+{
     float:right;
     border-color:transparent;
     background-color:transparent;
     &:hover
-    { 
+    {
         background-color:$color-primary-3;
     }
     .icon-bar { background-color:#fff; }
 }
 
-.navbar-brand.skin-navbar-brand-link 
+.navbar-brand.skin-navbar-brand-link
 {
     float:left;
     padding-left:0;
@@ -342,7 +336,7 @@ ul.skin-socialgroups
 }
 
 // TODO: Remove empty rule
-.navbar-brand.skin-navbar-brand-logo 
+.navbar-brand.skin-navbar-brand-logo
 {
     img {}
 }
@@ -352,11 +346,11 @@ ul.skin-socialgroups
     float:left;
     width:48px;
     height:100px;
-   
+
     // cover logo
     position:absolute;
     top:5px;
-    z-index:10; 
+    z-index:10;
 }
 
 .skin-founder-link
@@ -369,14 +363,14 @@ ul.skin-socialgroups
     &:first-child { margin-bottom:5px; }
 
     &.skin-founder-1
-    { 
+    {
         background-image:$founder-icons;
         // as navbar top gradient point
-        box-shadow:2px 2px 2px $color-primary-3; 
+        box-shadow:2px 2px 2px $color-primary-3;
     }
 
-    &.skin-founder-2 
-    { 
+    &.skin-founder-2
+    {
         background-image:$founder-icons;
         @include background-position-xy (1, 0, 48px);
         // as navbar bottom gradient point
@@ -390,18 +384,18 @@ ul.skin-socialgroups
     margin-left:40px;
     margin-top:30px;
     font-style:italic;
-    
+
     font-size:$big-font-size;
     line-height:1.2em;
     color:#fff;
     text-shadow:$header-content-text-shadow;
-    
-    a { 
+
+    a {
         text-decoration:none;
         color:#fff;
     }
 
-    .firstline { 
+    .firstline {
         font-size:$big-font-size + 4px;
         white-space:nowrap;
     }
@@ -411,7 +405,7 @@ ul.skin-socialgroups
         font-size:$font-size;
         font-weight:bold;
         text-shadow:$header-content-tagline-shadow;
-        
+
         a { color:$color-primary-4; }
     }
 }
@@ -424,10 +418,10 @@ ul.skin-socialgroups
     background-image:$header-background-image;
 }
 
-@media only screen and (max-width: 767px) 
+@media only screen and (max-width: 767px)
 {
     .skin-primary-navbar
-    { 
+    {
         background-image:none; // reset gradient
         background-color:$color-primary-4;
     }
@@ -436,19 +430,19 @@ ul.skin-socialgroups
 // for login positioning
 .skin-primary-navbar-main { position:relative; }
 
-.skin-secondary-navbar 
-{ 
-    min-height:0; 
+.skin-secondary-navbar
+{
+    min-height:0;
     border:none; // override navbar 1px border
 }
 
 .page-header
-{ 
+{
     margin-top:5px;
     padding-bottom:5px;
 
     h1, h2
-    { 
+    {
         margin-top:0;
         a { color:$color-secondary-1-3; }
     }
@@ -489,7 +483,7 @@ ul.skin-socialgroups
     .fb-like, #vk_like { min-width:110px; }
 }
 
-@media only screen and (max-width : 991px) 
+@media only screen and (max-width : 991px)
 {
     // separate from menus on md- screens
     .skin-social-share-buttons { margin-top:1em }
@@ -509,26 +503,26 @@ ul.skin-socialgroups
 
     // for DNN 8+
     > span > span {
-        > span:first-child > a.skin-breadcrumb-link { 
+        > span:first-child > a.skin-breadcrumb-link {
             margin-left:inherit;
         }
         > span:last-child > a.skin-breadcrumb-link {
             color:$color-secondary-1-3;;
-            font-size:$big-font-size; 
+            font-size:$big-font-size;
             font-weight:bold;
         }
     }
 
     // for DNN 7-
     > span > a.skin-breadcrumb-link {
-        &:first-child { 
-            margin-left:inherit; 
+        &:first-child {
+            margin-left:inherit;
         }
         &:last-child {
             color:$color-secondary-1-3;;
-            font-size:$big-font-size; 
+            font-size:$big-font-size;
             font-weight:bold;
-        }    
+        }
     }
 }
 
@@ -540,7 +534,7 @@ ul.skin-socialgroups
     margin-top:20px;
 
     ul.categories, ul.tags
-    { 
+    {
         display:inline-block;
         margin-left:0;
         margin-bottom:0;
@@ -606,14 +600,14 @@ ul.skin-socialgroups
 
 .skin-banner { margin-bottom:10px; }
 
-.skin-footer-content 
+.skin-footer-content
 {
     display:inline-block;
 
     .skin-footer-content-element { margin-right:15px; }
 
     .skin-footer-content-well
-    { 
+    {
         font-size:85%;
         margin-bottom:10px;
         border-radius:5px;
@@ -624,13 +618,13 @@ ul.skin-socialgroups
     }
 }
 
-.skin-footer-last 
+.skin-footer-last
 {
     padding:10px 0;
     background-color:$footer-last-background-color;
 
     .skin-footer-88x31-buttons
-    { 
+    {
         padding-top:2px;
         img
         {
@@ -640,14 +634,14 @@ ul.skin-socialgroups
         }
     }
 
-    .skin-terms 
-    { 
+    .skin-terms
+    {
         font-size:85%;
         text-align:right;
     }
 }
 
-@media only screen and (max-width : 767px) 
+@media only screen and (max-width : 767px)
 {
     // align terms left on xs screens
     .skin-footer-last .skin-terms {
@@ -658,7 +652,7 @@ ul.skin-socialgroups
 
 /* Login */
 
-.skin-login-simple 
+.skin-login-simple
 {
     float:right;
     padding-top: 9px;
@@ -674,15 +668,15 @@ ul.skin-socialgroups
         padding-right: 10px;
     }
 
-    .registerGroup 
-    { 
+    .registerGroup
+    {
         display:inline-block;
         padding-right:5px;
 
-        .userProfileImg 
+        .userProfileImg
         {
             padding-right:4px;
-            a { 
+            a {
                 padding:0;
                 img {
                     width:32px;
@@ -692,8 +686,8 @@ ul.skin-socialgroups
             }
         }
 
-        .buttonGroup 
-        { 
+        .buttonGroup
+        {
             list-style:none;
             margin: 0px;
             float: left;
@@ -770,7 +764,7 @@ ul.skin-socialgroups
                 }
             }
         }
-    
+
         .userMessages { margin-right:8px; }
         .userNotifications { margin-right:4px; }
 
@@ -783,7 +777,7 @@ ul.skin-socialgroups
         }
 
         .userMessages > a,
-        .userNotifications > a { 
+        .userNotifications > a {
             height: 32px;
             background: url('../images/login_icons.png') no-repeat left top;
         }
@@ -885,7 +879,7 @@ ul.skin-socialgroups
 .cnt-panel,
 .cnt-message,
 .cnt-alert,
-.cnt-well { 
+.cnt-well {
     margin-top:20px; // like h2 & h3
 }
 
@@ -929,10 +923,10 @@ ul.skin-socialgroups
 /* TODO: 32x32 links! */
 
 a.link
-{ 
+{
     background-repeat:no-repeat;
     background-position:center left;
-    padding:0 18px 0 0; 
+    padding:0 18px 0 0;
 
     /* by category */
 
