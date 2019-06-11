@@ -36,20 +36,20 @@
         </div>
         <div class="col-md-3 col-sm-12">
             <div class="dropdown">
-                <button type="button" class="btn btn-outline-secondary skin-languages-btn dropdown-toggle"
+                <button type="button" class="btn btn-lg skin-languages-btn dropdown-toggle"
                     data-toggle="dropdown"
                     title='<%: Localizer.GetString("Languages.Text") %>'>
                     <strong><%: System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName.ToUpperInvariant() %></strong>
                 </button>
                 <skin:LANGUAGES runat="server" />
             </div>
-            <button type="button" role="search" class="btn btn-outline-secondary skin-search-btn"
+            <button type="button" role="search" class="btn btn-lg skin-search-btn"
                 data-toggle="modal" data-target="#searchModal"
                 title='<%: Localizer.GetString("SearchModalButton.Text") %>'>
                 <i class="fas fa-search"></i>
             </button>
 			<div class="dropdown">
-                <button type="button" class="btn btn-outline-secondary skin-a11y-btn dropdown-toggle"
+                <button type="button" class="btn btn-lg skin-a11y-btn dropdown-toggle"
                     data-toggle="dropdown"
                     title='<%: Localizer.GetString("A11y.Text") %>'>
                     <i class="fas fa-universal-access"></i>
