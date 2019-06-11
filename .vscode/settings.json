@@ -1,6 +1,7 @@
 {
     "files.exclude": {
         "**/.git": true,
+        "**/tmp": true,
         "packages": true,
         "node_modules": true,
         "bower_components": true,
