@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.Skins.SkinObjects.EpsilonSkinObjectBase" %>
+<%@ Import Namespace="DnnGlobals=DotNetNuke.Common.Globals" %>
 <%@ Register TagPrefix="dnn" TagName="LOGO" Src="~/Admin/Skins/Logo.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="USER" Src="~/Admin/Skins/User.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="LOGIN" Src="~/Admin/Skins/Login.ascx" %>
@@ -15,8 +16,7 @@
 
 <div class="container">
     <div class="row">
-		<!-- TODO: Use full url -->
-		<a href="?quickA11y=enable" class="sr-only sr-only-focusable" itemprop="copy"><%: Localizer.GetString ("A11yWebsiteVersion.Text") %></a>
+		<a href='<%= DnnGlobals.NavigateURL ("", "quickA11y", "enable") %>' class="sr-only sr-only-focusable" itemprop="copy"><%: Localizer.GetString ("A11yWebsiteVersion.Text") %></a>
 		<a href="#content" class="sr-only sr-only-focusable"><%: Localizer.GetString ("SkipToContent.Text") %></a>
 		<skin:BROWSERCHECK runat="server" />
     </div>
@@ -60,9 +60,8 @@
 							var theme = Config.Themes [i];
 							var isCurrentTheme = (Config.GetTheme (Request) ?? Config.Themes [0]).Name;
 							%>
-							<!-- TODO: Use full url -->
 							<a class='<%: theme.Name == isCurrentTheme ? "dropdown-item disabled" : "dropdown-item"  %>'
-								href="?theme=<%: theme.Name %>">
+								href='<%= DnnGlobals.NavigateURL ("", "theme", theme.Name) %>'>
 								<span style="color: <%: theme.Color %>">
 									<i class='<%: theme.IsA11yTheme ? "fas fa-adjust" : "fas fa-circle" %>'></i>
 								</span>
@@ -84,8 +83,7 @@
 					<a id="lnkReEnablePopups" role="checkbox" class="dropdown-item d-none" href="javascript:skinA11y.reEnablePopups()">
 						<i class="fas fa-check-square"></i>	<%: Localizer.GetString("A11yDisablePopups.Text") %></a>
 					<div class="dropdown-divider"></div>
-						<!-- TODO: Use full url -->
-						<a class="dropdown-item" href="?quickA11y=reset">
+						<a class="dropdown-item" href='<%= DnnGlobals.NavigateURL ("", "quickA11y", "reset") %>'>
 						<i class="fas fa-undo"></i></i> <%: Localizer.GetString("A11yRestoreDefaults.Text") %></a>
   				</div>
 			</div>
