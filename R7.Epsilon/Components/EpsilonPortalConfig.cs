@@ -157,6 +157,7 @@ namespace R7.Epsilon.Components
 
         public string ModuleDefinitionName { get; set; } = "Feedback";
 
+        // TODO: Rename to AllowOpenInPopup
         public bool OpenInPopup { get; set; } = true;
     }
 

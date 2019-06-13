@@ -1,7 +1,7 @@
 ﻿(function ($, window, document) {
 
     function getLocationOrigin (location) {
-        return (!!location.origin) 
+        return (!!location.origin)
             ? location.origin
             : location.protocol + "//" + location.hostname + (location.port ? ":" + location.port: "");
     }

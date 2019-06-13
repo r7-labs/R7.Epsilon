@@ -25,17 +25,21 @@ window.skinGoogleTranslatePage = function (fromLang) {
     window.open ("http://translate.google.com/translate?hl=en&sl=" + fromLang + "&u=" + encodeURI (document.location));
 };
 
-window.skinSetupFeedbackUrl = function ($, obj, feedbackModuleId) {
-    var selection = encodeURIComponent (rangy.getSelection ().toString ().replace (/(\n|\r)/gm," ").replace (/\s+/g, " ").replace (/\"/g, "").trim ().substring (0,100));
-    var params = "returntabid=" + epsilon.queryParams ["TabId"] + "&feedbackmid=" + feedbackModuleId + ((!!selection)? "&feedbackselection=" + selection : "");
-    var feedbackUrl = $(obj).attr ("data-feedback-url");
-    if (feedbackUrl.includes ("?popUp=")) {
-        $(obj).attr ("href", feedbackUrl.replace (/\?popUp=(\w+)/, "?popUp=$1&" + params));
-    } else {
-        $(obj).attr ("href", feedbackUrl + (feedbackUrl.includes ("?") ? "&" : "?") + params);
-    }
+window.skinOpenFeedback = function (button, $, feedbackModuleId) {
+    const selection = encodeURIComponent (rangy.getSelection ().toString ().replace (/(\n|\r)/gm," ").replace (/\s+/g, " ").replace (/\"/g, "").trim ().substring (0,100));
+    const baseFeedbackUrl = $(button).data ("feedback-url");
+    const feedbackParams = "returntabid=" + epsilon.queryParams ["TabId"] + "&feedbackmid=" + feedbackModuleId;
 
-    return true;
+    const feedbackSelection = ((!!selection)? "&feedbackselection=" + selection : "");
+
+    if (epsilon.enablePopups && window.skinA11y.getPopupsDisabled () === false && $(button).data ("feedback-open-in-popup") === true) {
+        const popupFeedbackUrl = baseFeedbackUrl + "/mid/" + feedbackModuleId + "?" + feedbackParams + "&popup=true" + feedbackSelection;
+        dnnModal.show (popupFeedbackUrl, false, 550, 950, false, "");
+    }
+    else {
+        const rawFeedbackUrl = baseFeedbackUrl + "?" + feedbackParams + "&" + feedbackSelection;
+        window.open (rawFeedbackUrl, "_blank");
+    }
 };
 
 (function ($, window, document) {

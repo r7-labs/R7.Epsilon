@@ -28,7 +28,7 @@ export default class A11y {
     init () {
 
         if (epsilon.enablePopups) {
-            if (Cookies.get (epsilon.cookiePrefix + "DisablePopups") === "true") {
+            if (this.getPopupsDisabled ()) {
                 this.disablePopups ();
             }
         }
@@ -63,6 +63,10 @@ export default class A11y {
 
     decreaseFontSize () {
         this.setFontSize (this.getFontSize () - 2);
+    }
+
+    getPopupsDisabled () {
+        return Cookies.get (epsilon.cookiePrefix + "DisablePopups") === "true";
     }
 
     disablePopups () {
