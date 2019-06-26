@@ -650,166 +650,6 @@ ul.skin-socialgroups
     }
 }
 
-/* Login */
-
-.skin-login-simple
-{
-    float:right;
-    padding-top: 9px;
-    color:#fff;
-
-    a { color:#fff; }
-
-    .skin-login-link
-    {
-        display:inline-block;
-        vertical-align: top;
-        padding-top: 5px;
-        padding-right: 10px;
-    }
-
-    .registerGroup
-    {
-        display:inline-block;
-        padding-right:5px;
-
-        .userProfileImg
-        {
-            padding-right:4px;
-            a {
-                padding:0;
-                img {
-                    width:32px;
-                    height:32px;
-                    border-radius:16px;
-                }
-            }
-        }
-
-        .buttonGroup
-        {
-            list-style:none;
-            margin: 0px;
-            float: left;
-        }
-
-        .userMessages, .userNotifications, .userDisplayName { display:none; }
-    }
-}
-
-.skin-login-full {
-    position:absolute;
-    right:0;
-    top:0;
-
-    // background-color:lighten($color-complement-1, 10%);
-    background-color:$color-primary-4;
-    padding:8px;
-    border-bottom-left-radius:16px;
-    border-bottom-right-radius:16px;
-    box-shadow:2px 2px 2px $color-primary-3;
-
-    a { color:#fff; }
-
-    .loginGroup {
-        padding-left:4px;
-        .LoginLink {
-            height:32px;
-            color:#000;
-            background-color:$color-complement-1;
-            padding-right:16px;
-            padding-left:16px;
-            border-radius:16px;
-        }
-    }
-
-    .registerGroup, .registerGroup *, .loginGroup, .loginGroup * { display: inline; }
-    .registerGroup, .loginGroup { float: right; }
-    .registerGroup {
-        li:first-child:hover { border-left: #222; }
-        li { float: left; }
-        .buttonGroup { margin-left:0; }
-    }
-
-    .registerGroup a, .loginGroup a {
-        display: block;
-        position: relative;
-        min-width: 12px;
-        padding: 5px;
-        vertical-align: middle;
-    }
-
-    .registerGroup a:hover, .loginGroup a:hover { text-decoration: none; }
-    .registerGroup a strong, .loginGroup a strong {
-        display: block;
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        overflow: hidden;
-    }
-
-    .registerGroup {
-        .userDisplayName {
-            margin-right:4px;
-        }
-        .userProfileImg {
-            padding-right:4px;
-            a {
-                padding:0;
-                img {
-                    width:32px;
-                    height:32px;
-                    border-radius:16px;
-                }
-            }
-        }
-
-        .userMessages { margin-right:8px; }
-        .userNotifications { margin-right:4px; }
-
-        .userMessages,
-        .userNotifications {
-            min-width:32px;
-            height:32px;
-            border-radius:16px;
-            background-color:$color-complement-1;
-        }
-
-        .userMessages > a,
-        .userNotifications > a {
-            height: 32px;
-            background: url('../images/login_icons.png') no-repeat left top;
-        }
-
-        .userNotifications > a {
-            @include background-position-xy (0, 1, 32px);
-        }
-
-        // number of message next to the message icon
-        .userNotifications > a > span,
-        .userMessages > a > span {
-            font-size:85%;
-            position:relative;
-            top:-1px;
-            margin-left:26px;
-            margin-right:2px;
-            text-shadow: 1px 1px 1px $color-primary-4,
-                         -1px -1px 1px $color-primary-4,
-                         1px -1px 1px $color-primary-4,
-                         -1px 1px 1px $color-primary-4;
-            color:$color-secondary-2-1;
-            font-weight:bold;
-        }
-
-        // hide "messages" and "notifications" labels
-        .userMessages > a > strong,
-        .userNotifications > a > strong {
-            display:none;
-        }
-    }
-}
-
 /* Callout styles */
 
 // TODO: Sync with Bootstrap theme
@@ -989,3 +829,22 @@ a.link
 
 // fix for text colors in Bootstrap alerts
 .alert .Normal { color:inherit !important }
+
+.skin-login {
+    .registerGroup {
+        ul.buttonGroup {
+            padding-left: 0;
+            margin-bottom: 0;
+            li {
+                list-style: none;
+                padding-left: 0;
+            }
+            .userMessages strong {
+                font-weight: normal;
+            }
+            .userNotifications strong {
+                font-weight: normal;
+            }
+        }
+    }
+}

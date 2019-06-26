@@ -113,6 +113,37 @@ window.skinOpenFeedback = function (button, $, feedbackModuleId) {
         }
     }
 
+    function alterLogin () {
+        $(".skin-login li.userDisplayName > a").addClass ("dropdown-item");
+        $(".skin-login div.loginGroup > a").addClass ("dropdown-item");
+        $(".skin-login li.userMessages > a").addClass ("dropdown-item");
+        $(".skin-login li.userNotifications > a").addClass ("dropdown-item");
+        $(".skin-login li.userProfileImg > a").addClass ("dropdown-item");
+
+        const loginGroup = $(".skin-login .loginGroup").first ().detach ();
+        const divider = "<li class='dropdown-divider'></li>";
+
+        const profileImg = $(".skin-login li.userProfileImg > a > img");
+        if (profileImg.length > 0) {
+            profileImg.attr ("src", profileImg.attr ("src").replace ("h=32&w=32", "h=64&w=64"));
+
+            const profileLinkBlock = $(".skin-login li.userDisplayName").first ().detach ();
+            const profileImgBlock = $(".skin-login li.userProfileImg").first ().detach ();
+
+            $(".skin-login ul.buttonGroup")
+                .prepend (divider)
+                .prepend (profileLinkBlock)
+                .prepend (profileImgBlock)
+                .append (divider)
+                .append (loginGroup);
+        }
+        else {
+            $(".skin-login ul.buttonGroup")
+                .append (divider)
+                .append (loginGroup);
+        }
+    }
+
     $(function () {
         initBootstrapTooltips ();
         initBootstrapPopovers ();
@@ -122,6 +153,7 @@ window.skinOpenFeedback = function (button, $, feedbackModuleId) {
             initBreadcrumb ();
             initUpButton (320, 500);
             initLanguage ();
+            alterLogin ();
             window.skinA11y = new A11y ().init ();
         }
     });

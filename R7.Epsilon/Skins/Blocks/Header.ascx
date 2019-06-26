@@ -79,13 +79,23 @@
   				</div>
 			</div>
 			<div class="dropdown" style="display:inline-block">
-                <button type="button" class="btn btn-lg skin-languages-btn dropdown-toggle"
-                    data-toggle="dropdown"
+                <button type="button" class="btn btn-lg skin-languages-btn dropdown-toggle" data-toggle="dropdown"
                     title='<%: Localizer.GetString("Languages.Text") %>'>
                     <strong><%: System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName.ToUpperInvariant() %></strong>
                 </button>
                 <skin:LANGUAGES runat="server" />
             </div>
+
+			<div class="dropdown skin-login" style="display:inline-block">
+				<button type="button" class="btn btn-lg skin-user-btn dropdown-toggle" data-toggle="dropdown"
+					title="User &amp; login">
+					<i class="fas fa-user"></i>
+				</button>
+				<div class="dropdown-menu">
+			 		<dnn:LOGIN runat="server" LegacyMode="false" />
+    				<dnn:USER runat="server" LegacyMode="false" />
+				</div>
+			</div>
         </div>
         <div class="col-md-2 col-sm-4 col-xs-4 skin-socialgroups-wrapper">
             <skin:SOCIALGROUPS runat="server" />
@@ -95,12 +105,7 @@
 <nav class="navbar navbar-expand-md bg-dark navbar-dark --sticky-top navbar-1 --skin-primary-navbar">
     <div class="container">
 
-        <div class="skin-login-simple d-md-none">
-            <dnn:USER runat="server" LegacyMode="false" />
-            <dnn:LOGIN runat="server" CssClass="skin-login-link" />
-        </div>
-
-        <div class="navbar-brand skin-navbar-brand-link d-md-none">
+		<div class="navbar-brand skin-navbar-brand-link d-md-none">
             <skin:LOGOMOBILE runat="server" />
         </div>
 
@@ -151,7 +156,3 @@
 
 
 
-<div class="skin-login-full">
-    <dnn:LOGIN CssClass="LoginLink" runat="server" LegacyMode="false" />
-    <dnn:USER runat="server" LegacyMode="false" />
-</div>
