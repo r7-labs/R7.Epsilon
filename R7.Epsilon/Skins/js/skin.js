@@ -135,12 +135,12 @@ window.skinOpenFeedback = function (button, $, feedbackModuleId) {
                 .prepend (profileLinkBlock)
                 .prepend (profileImgBlock)
                 .append (divider)
-                .append (loginGroup);
+                .append (loginGroup.children ("a").prepend ("<i class='fas fa-lock'></i> "));
         }
         else {
             $(".skin-login ul.buttonGroup")
                 .append (divider)
-                .append (loginGroup);
+                .append (loginGroup.children ("a").prepend ("<i class='fas fa-unlock-alt'></i> "));
         }
     }
 
