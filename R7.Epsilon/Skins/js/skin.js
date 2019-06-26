@@ -114,7 +114,7 @@ window.skinOpenFeedback = function (button, $, feedbackModuleId) {
         });
     }
 
-    function initLanguage () {
+    function alterLanguage () {
         $(".skin-languages .language-object a").each (function () {
             var lang = $(this).parent (".Language").attr ("title");
             var langCode = lang.substr (0, 2).toUpperCase ();
@@ -176,7 +176,7 @@ window.skinOpenFeedback = function (button, $, feedbackModuleId) {
             emptyLayoutRows ();
             initBreadcrumb ();
             initUpButton (320, 500);
-            initLanguage ();
+            alterLanguage ();
             alterLogin ();
             window.skinA11y = new A11y ().init ();
         }
