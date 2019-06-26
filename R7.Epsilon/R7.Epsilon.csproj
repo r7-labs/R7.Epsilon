@@ -70,7 +70,6 @@
     <None Include="Skins\App_LocalResources\SharedResources.ru-RU.resx" />
     <None Include="R7.Epsilon.csproj" />
     <None Include="R7.Epsilon.dnn" />
-    <None Include="Skins\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Skins\skin.doctype.xml">
     </None>
     <None Include="lib\ClientDependency.Core.dll" />
