@@ -43,10 +43,10 @@
         <value>Нажми меня, чтобы перейти наверх</value>
     </data>
     <data name="LocalMenu.Text" xml:space="preserve">
-        <value><![CDATA[Содержание <span class="glyphicon glyphicon-menu-down"></span>]]></value>
+        <value><![CDATA[Содержание <span class="fas fa-chevron-down"></span>]]></value>
     </data>
     <data name="HeadersMenu.Text" xml:space="preserve">
-        <value><![CDATA[На этой странице <span class="glyphicon glyphicon-menu-down"></span>]]></value>
+        <value><![CDATA[На этой странице <span class="fas fa-chevron-down"></span>]]></value>
     </data>
     <data name="ToggleNavigation.Text" xml:space="preserve">
         <value>Включить/выключить навигационное меню</value>
@@ -148,7 +148,7 @@
         <value>&lt;span class=&quot;firstline&quot;&gt;[HeaderPane1.Content]&lt;/span&gt;&lt;br /&gt;вторая строка&lt;div class=&quot;tagline&quot;&gt;лозунг&lt;/div&gt;</value>
     </data>
 	<data name="PartialContentAlert.Title" xml:space="preserve">
-        <value><![CDATA[<i class="glyphicon glyphicon-info-sign"></i> Примечание]]></value>
+        <value><![CDATA[<i class="fas fa-info-circle"></i> Примечание]]></value>
     </data>
 	<data name="PartialContentAlert.Content" xml:space="preserve">
         <value><![CDATA[<p>Здесь показан только один из блоков информации на странице <a class="alert-link" href="[TabUrl]">[TabName]</a>.</p>
