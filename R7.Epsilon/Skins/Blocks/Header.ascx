@@ -21,34 +21,25 @@
 		<skin:BROWSERCHECK runat="server" />
     </div>
 </div>
-<div class="container sticky-top">
+<div class="container --sticky-top">
     <div class="row">
         <div class="col-md-3 col-sm-4 d-xs-none">
             <div class="navbar-brand skin-navbar-brand-logo">
                 <dnn:LOGO runat="server" id="dnnLOGO" />
             </div>
         </div>
-        <div class="col-md-3 col-sm-4 col-xs-6 skin-functions-wrapper">
+		<div class="col-md-2 col-sm-4 col-xs-6 skin-functions-wrapper">
             <div class="skin-functions">
-                <skin:FUNCTIONS runat="server" />
-
+				<skin:FUNCTIONS runat="server" />
             </div>
         </div>
-        <div class="col-md-3 col-sm-12">
-            <div class="dropdown">
-                <button type="button" class="btn btn-lg skin-languages-btn dropdown-toggle"
-                    data-toggle="dropdown"
-                    title='<%: Localizer.GetString("Languages.Text") %>'>
-                    <strong><%: System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName.ToUpperInvariant() %></strong>
-                </button>
-                <skin:LANGUAGES runat="server" />
-            </div>
-            <button type="button" role="search" class="btn btn-lg skin-search-btn"
+        <div class="col-md-5 col-sm-12 text-md-right text-sm-center">
+			<button type="button" role="search" class="btn btn-lg skin-search-btn" style="display:inline-block"
                 data-toggle="modal" data-target="#searchModal"
                 title='<%: Localizer.GetString("SearchModalButton.Text") %>'>
                 <i class="fas fa-search"></i>
             </button>
-			<div class="dropdown">
+            <div class="dropdown" style="display:inline-block">
                 <button type="button" class="btn btn-lg skin-a11y-btn dropdown-toggle"
                     data-toggle="dropdown"
                     title='<%: Localizer.GetString("A11y.Text") %>'>
@@ -87,8 +78,16 @@
 						<i class="fas fa-undo"></i></i> <%: Localizer.GetString("A11yRestoreDefaults.Text") %></a>
   				</div>
 			</div>
+			<div class="dropdown" style="display:inline-block">
+                <button type="button" class="btn btn-lg skin-languages-btn dropdown-toggle"
+                    data-toggle="dropdown"
+                    title='<%: Localizer.GetString("Languages.Text") %>'>
+                    <strong><%: System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName.ToUpperInvariant() %></strong>
+                </button>
+                <skin:LANGUAGES runat="server" />
+            </div>
         </div>
-        <div class="col-md-3 col-sm-6 col-xs-4 skin-socialgroups-wrapper">
+        <div class="col-md-2 col-sm-4 col-xs-4 skin-socialgroups-wrapper">
             <skin:SOCIALGROUPS runat="server" />
         </div>
     </div>
