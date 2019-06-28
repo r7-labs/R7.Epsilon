@@ -1,0 +1,89 @@
+﻿@using System.Dynamic;
+@using System.Linq;
+@using System.Collections.Generic;
+@using DotNetNuke.Web.DDRMenu;
+@inherits DotNetNuke.Web.Razor.DotNetNukeWebPage<dynamic>
+
+@{
+	var root = Model.Source.root;
+}
+
+@functions {
+
+	MenuNode FindCurrentNodeRecursive (MenuNode node)
+	{
+		if (node.Selected) {
+			return node;
+		}
+
+		foreach (var node1 in node.Children) {
+			var node2 = FindCurrentNodeRecursive (node1);
+			if (node2 != null) {
+				return node2;
+			}
+		}
+
+		return null;
+	}
+
+	// TODO: Implement via NodeManipulator?
+	IList<MenuNode> BreadcrumbNodes (MenuNode root)
+	{
+		var currentNode = FindCurrentNodeRecursive (root);
+		var nodes = new List<MenuNode> ();
+		while (currentNode != null) {
+			nodes.Insert (0, currentNode);
+			currentNode = currentNode.Parent;
+		}
+
+		return nodes;
+	}
+}
+
+@helper RenderNodes(MenuNode root) {
+	// TODO: Implement schema.org markup
+	var nodes = BreadcrumbNodes (root);
+	if (nodes.Count > 0) {
+        <nav aria-label="breadcrumb">
+			<ol class="breadcrumb">
+				@foreach (var node in nodes) {
+					var isActive = "";
+					var isDisabled = "";
+					if (node.Selected) { isActive = "active"; }
+					if (!node.Enabled) { isDisabled = "disabled"; }
+					// TODO: Localize home icon to be able to replace with text or different icon
+					// TODO: Make link to the home page
+					var text = !string.IsNullOrEmpty (node.Text) ? node.Text : "<i class='fas fa-home'></i>";
+
+					<li class="breadcrumb-item @isActive @isDisabled">
+						@if (!node.Selected) {
+							<a href="@node.Url">@Html.Raw(text)</a>
+						}
+						else if (node.Children.Count > 0) {
+							// TODO: Extract helper
+							<span class="dropdown">
+								<a class="dropdown-toggle" href="#" type="button" role="button" id="dropcrumbButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									@Html.Raw(text)
+								</a>
+								<div class="dropdown-menu" aria-labelledby="dropcrumbButton">
+									@foreach (var node1 in node.Children) {
+										var isDisabled1 = (!node1.Enabled) ? "disabled" : "";
+										<a class="dropdown-item @isDisabled1" href="@node1.Url">@node1.Text</a>
+									}
+								</div>
+							</span>
+						}
+						else {
+							@Html.Raw(text)
+						}
+
+					</li>
+				}
+			</ol>
+		</nav>
+	}
+}
+
+<!-- https://getbootstrap.com/docs/4.0/components/breadcrumb/ -->
+
+@RenderNodes(root)

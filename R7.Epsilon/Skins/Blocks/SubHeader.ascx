@@ -1,5 +1,8 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.Skins.SkinObjects.EpsilonSkinObjectBase" %>
 <%@ Register TagPrefix="dnn" TagName="BREADCRUMB" Src="~/Admin/Skins/BreadCrumb.ascx" %>
+<%@ Register TagPrefix="dnn" TagName="MENU" Src="~/DesktopModules/DDRMenu/Menu.ascx" %>
+<%@ Register TagPrefix="dnn" Namespace="DotNetNuke.Web.DDRMenu.TemplateEngine" Assembly="DotNetNuke.Web.DDRMenu" %>
+
 <%@ Register TagPrefix="skin" TagName="PAGEHEADER" Src="../SkinObjects/PageHeader.ascx" %>
 <%@ Register TagPrefix="skin" TagName="LOCALMENU" Src="../SkinObjects/LocalMenu.ascx" %>
 <%@ Register TagPrefix="skin" TagName="HEADERSMENU" Src="../SkinObjects/HeadersMenu.ascx" %>
@@ -7,9 +10,12 @@
 
 <nav class="skin-local-navbar" role="navigation">
     <div class="container">
-        <div class="breadcrumb">
-            <dnn:BREADCRUMB id="dnnBREADCRUMB" runat="server" CssClass="skin-breadcrumb-link" RootLevel="-1" Separator="/" />
+		<dnn:MENU id="breadcrumb" runat="server" MenuStyle="DropCrumb" NodeSelector="*,0,5" />
+		<%--
+		<div class="breadcrumb">
+        	<dnn:BREADCRUMB id="dnnBREADCRUMB" runat="server" CssClass="skin-breadcrumb-link" RootLevel="-1" Separator="/" />
         </div>
+		--%>
     </div>
     <div class="container">
         <div class="page-header">
