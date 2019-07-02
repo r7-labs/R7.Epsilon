@@ -324,5 +324,6 @@
     <Content Include="Menus\DropCrumb\DropCrumb.cshtml" />
     <Content Include="Menus\DropCrumb\menudef.xml" />
     <Content Include="Skins\Layouts\_default.ascx" />
+    <Content Include="Skins\css\_colors.scss" />
   </ItemGroup>
 </Project>
