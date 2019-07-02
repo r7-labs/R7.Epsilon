@@ -323,5 +323,6 @@
     <Content Include="Skins\css\contrast-theme.scss" />
     <Content Include="Menus\DropCrumb\DropCrumb.cshtml" />
     <Content Include="Menus\DropCrumb\menudef.xml" />
+    <Content Include="Skins\Layouts\_default.ascx" />
   </ItemGroup>
 </Project>
