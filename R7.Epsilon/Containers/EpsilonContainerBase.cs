@@ -37,6 +37,7 @@ namespace R7.Epsilon.Containers
 
         private bool? _isEditable;
 
+        // TODO: Replace with DotNetNuke.Common.Globals.IsEditMode()
         // Source: https://github.com/dnnsoftware/Dnn.Platform/blob/development/DNN%20Platform/Library/UI/Modules/ModuleInstanceContext.cs
         public bool IsEditable
         {
