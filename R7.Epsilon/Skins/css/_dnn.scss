@@ -58,7 +58,7 @@ ul.dnnAdminTabNav {
 .ModDotNetNukeModulesMemberDirectoryC *,
 .ModViewProfileC *,
 .ModSearchResultsC *,
-.ModConsoleC * { 
+.ModConsoleC * {
     box-sizing: unset;
 }
 
@@ -75,7 +75,7 @@ ul.dnnAdminTabNav {
 /* fix for coloring on DNN Check boxes */
 .dnnCheckbox .mark { background:none; }
 
-.dnnSortable { 
+.dnnSortable {
     // restore value, overriden by col-*
     min-height:110px!important;
 
@@ -84,10 +84,10 @@ ul.dnnAdminTabNav {
 }
 
 // panes look in layout mode
-.paneOutline 
-{ 
+.paneOutline
+{
     border:0;
-    span.SubHead center 
+    span.SubHead center
     {
         border:1px #ccc dotted;
         border-left:0;
@@ -104,4 +104,8 @@ ul.dnnAdminTabNav {
 // fix controlbar z-index
 body > form #ControlBar_ControlPanel {
     z-index: 1030 !important;
+}
+
+div.actionMenu ul.dnn_mact {
+    padding-left: 0;
 }
