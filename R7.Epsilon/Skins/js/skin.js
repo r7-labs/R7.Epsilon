@@ -168,6 +168,21 @@ window.skinOpenFeedback = function (button, $, feedbackModuleId) {
         }
     }
 
+    function initCustomContent () {
+        // TODO: Also check for superusers and admins
+        if (epsilon.isEditable) {
+            $(".skin-custom-content").each (function () {
+                $(this).prepend ("<div class='actionMenu'>"
+                                + "<ul class='dnn_mact'>"
+                                // TODO: Localize label
+                                // TODO: Generate actual edit URL
+                                + "<li class='actionMenuEdit'><a href='#' aria-label='edit'><i class='fas fa-pencil-alt'></i></a></li>"
+                                + "</ul>"
+                                + "</div>");
+            });
+        }
+    }
+
     $(function () {
         initBootstrapTooltips ();
         initBootstrapPopovers ();
@@ -176,6 +191,7 @@ window.skinOpenFeedback = function (button, $, feedbackModuleId) {
             emptyLayoutRows ();
             initBreadcrumb ();
             initUpButton (320, 500);
+            initCustomContent ();
             alterLanguage ();
             alterLogin ();
             window.skinA11y = new A11y ().init ();

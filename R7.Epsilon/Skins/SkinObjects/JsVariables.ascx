@@ -13,6 +13,7 @@ var epsilon = {
 	menuMinHeaders:<%= R7.Epsilon.Components.EpsilonConfig.Instance.MenuMinHeaders %>,
 	enablePopups:<%= PortalSettings.EnablePopUps.ToString ().ToLowerInvariant() %>,
 	inPopup:<%= DotNetNuke.Common.Utilities.UrlUtils.InPopUp ().ToString ().ToLowerInvariant () %>,
-	cookiePrefix: '<%= R7.Epsilon.Components.Const.COOKIE_PREFIX %>'
+	cookiePrefix: '<%= R7.Epsilon.Components.Const.COOKIE_PREFIX %>',
+	isEditable:<%= DotNetNuke.Common.Globals.IsEditMode ().ToString().ToLowerInvariant () %>
 };
 </script>
