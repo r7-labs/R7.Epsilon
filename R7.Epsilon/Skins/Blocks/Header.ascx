@@ -106,8 +106,8 @@
 					</div>
 				</div>
 			<% } %>
-			<div class="dropdown" style="display:inline-block">
-				<button type="button" class="btn btn-lg dropdown-toggle skin-user-btn" data-toggle="dropdown" title='<%: Localizer.GetString ("UserProfile.Text") %>'>
+			<div class="dropdown skin-user-profile" style="display:inline-block">
+				<button type="button" class="btn btn-lg dropdown-toggle skin-user-profile-btn" data-toggle="dropdown" title='<%: Localizer.GetString ("UserProfile.Text") %>'>
 					<i class="fas fa-user"></i>
 				</button>
 				<div class="dropdown-menu">
