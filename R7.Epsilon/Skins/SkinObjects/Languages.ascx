@@ -2,7 +2,7 @@
 <%@ Register TagPrefix="dnn" TagName="LANGUAGE" Src="~/Admin/Skins/Language.ascx" %>
 <%@ Import Namespace="R7.Epsilon.Components" %>
 <div class="dropdown-menu skin-languages">
-	<dnn:LANGUAGE runat="server" ShowLinks="true" ShowMenu="false" />
+	<dnn:LANGUAGE runat="server" ShowLinks="true" ShowMenu="true" />
 	<% var altWebsites = Config.Websites.Where (s => s.IsAltWebsite).ToList (); %>
 	<% if (altWebsites.Count > 0) { %>
 		<div class="dropdown-divider"></div>

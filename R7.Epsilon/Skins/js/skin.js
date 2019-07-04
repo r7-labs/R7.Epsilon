@@ -116,9 +116,9 @@ window.skinOpenFeedback = function (button, $, feedbackModuleId) {
 
     function alterLanguage () {
         $(".skin-languages .language-object a").each (function () {
-            var lang = $(this).parent (".Language").attr ("title");
-            var langCode = lang.substr (0, 2).toUpperCase ();
-            $(this).addClass ("dropdown-item").html ("<strong>" + langCode + "</strong> " + lang);
+            const lang = $(this).parent (".Language").attr ("title");
+            const langCode = $(this).closest (".language-object").find ("option").filter (function () { return $(this).text() == lang; }).val ();
+            $(this).addClass ("dropdown-item").html ("<strong>" + langCode.toUpperCase () + "</strong> " + lang);
         });
     }
 

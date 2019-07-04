@@ -150,8 +150,11 @@ header > .container > .row
 .skin-functions-wrapper { padding-left:0 }
 
 .skin-languages {
-    .Language.selected { display: none }
-    img { display: none }
+    .language-object > select,
+    .Language.selected,
+    .Language > img {
+        display: none;
+    }
 }
 
 .skin-functions
