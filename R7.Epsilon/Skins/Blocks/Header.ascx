@@ -81,7 +81,11 @@
 			<div class="dropdown" style="display:inline-block">
                 <button type="button" class="btn btn-lg dropdown-toggle skin-languages-btn" data-toggle="dropdown"
                     title='<%: Localizer.GetString("Languages.Text") %>'>
-                    <strong><%: System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName.ToUpperInvariant() %></strong>
+					<% var langCodeParts = CultureInfo.CurrentCulture.IetfLanguageTag.Split (new char [] {'-'}, StringSplitOptions.RemoveEmptyEntries); %>
+                    <strong><%: langCodeParts [0].ToUpperInvariant () %></strong>
+					<% if (langCodeParts.Length == 2) { %>
+						<sup><%: langCodeParts [1].ToLowerInvariant () %></sup>
+					<% } %>
                 </button>
                 <skin:LANGUAGES runat="server" />
             </div>
