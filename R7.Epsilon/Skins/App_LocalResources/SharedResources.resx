@@ -129,13 +129,10 @@
     <data name="Languages.Text" xml:space="preserve">
         <value>Languages</value>
     </data>
-    <data name="AltWebsite.Text" xml:space="preserve">
-        <value>[AltWebsite.Text]</value>
+    <data name="Websites.Text" xml:space="preserve">
+        <value>Our Websites</value>
     </data>
-    <data name="AltWebsite.Icon" xml:space="preserve">
-        <value><![CDATA[<i class="fas fa-globe"></i>]]></value>
-    </data>
-	<data name="GoogleTranslate.Text" xml:space="preserve">
+    <data name="GoogleTranslate.Text" xml:space="preserve">
         <value>Translate with Google</value>
     </data>
     <data name="AgeRating.Text" xml:space="preserve">

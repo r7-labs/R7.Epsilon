@@ -58,6 +58,8 @@ namespace R7.Epsilon.Components
             }
         };
 
+        public List<WebsiteConfig> Websites { get; set; } = new List<WebsiteConfig> ();
+
         public FeedbackConfig Feedback { get; set; } = new FeedbackConfig ();
 
         public MenuConfig PrimaryMenu { get; set; } = new MenuConfig ();
@@ -81,8 +83,6 @@ namespace R7.Epsilon.Components
         public List<SocialNetworkConfig> SocialNetworks { get; set; } = new List<SocialNetworkConfig> ();
 
         public AnalyticsConfig Analytics { get; set; } = new AnalyticsConfig ();
-
-        public FunctionsConfig Functions { get; set; } = new FunctionsConfig ();
 
         #endregion
 
@@ -161,15 +161,6 @@ namespace R7.Epsilon.Components
         public bool OpenInPopup { get; set; } = true;
     }
 
-    public class FunctionsConfig
-    {
-        public bool EnableAltWebsite { get; set; } = false;
-
-        public string AltWebsiteUrl { get; set; } = string.Empty;
-
-        public string AltWebsiteCulture { get; set; } = string.Empty;
-    }
-
     public class CdnConfig
     {
         public string Href { get; set; }
@@ -188,6 +179,17 @@ namespace R7.Epsilon.Components
         public string Color { get; set; }
 
         public bool IsA11yTheme { get; set; }
+    }
+
+    public class WebsiteConfig
+    {
+        public string Name { get; set; }
+
+        public string Url { get; set; }
+
+        public string Hreflang { get; set; }
+
+        public bool IsAltWebsite { get; set; }
     }
 }
 

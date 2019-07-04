@@ -85,8 +85,25 @@
                 </button>
                 <skin:LANGUAGES runat="server" />
             </div>
-
+			<% if (Config.Websites.Count > 0) { %>
+				<div class="dropdown skin-our-sites" style="display:inline-block">
+					<button type="button" class="btn btn-lg skin-user-btn dropdown-toggle" data-toggle="dropdown" title='<%: Localizer.GetString ("Websites.Text") %>'>
+						<i class="fas fa-globe"></i>
+					</button>
+					<div class="dropdown-menu">
+						<% foreach (var site in Config.Websites) { %>
+							<a class="dropdown-item" href="<%: site.Url %>" hreflang="<%: site.Hreflang %>" target="_blank">
+								<span class="skin-custom-content" data-resource-key="<%: site.Name %>">
+									<i class="fas fa-globe"></i>
+									<%: Localizer.GetStringOrKey (site.Name) %>
+								</span>
+							</a>
+						<% } %>
+					</div>
+				</div>
+			<% } %>
 			<div class="dropdown skin-login" style="display:inline-block">
+				<!-- TODO: Localize title -->
 				<button type="button" class="btn btn-lg skin-user-btn dropdown-toggle" data-toggle="dropdown"
 					title="User &amp; login">
 					<i class="fas fa-user"></i>

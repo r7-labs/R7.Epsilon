@@ -1,10 +1,10 @@
 ﻿//
-//  ControlLocalizer.cs
+//  File: ControlLocalizer.cs
+//  Project: R7.Epsilon
 //
-//  Author:
-//       Roman M. Yagodin <roman.yagodin@gmail.com>
+//  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2015-2016 Roman M. Yagodin
+//  Copyright (c) 2015-2019 Roman M. Yagodin, R7.Labs
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -64,6 +64,13 @@ namespace R7.Epsilon.Components
             var localizedValue = GetString (key);
 
             return !string.IsNullOrWhiteSpace (localizedValue) ? localizedValue : defaultValue;
+        }
+
+        public string GetStringOrKey (string key)
+        {
+            var localizedValue = GetString (key);
+
+            return !string.IsNullOrWhiteSpace (localizedValue) ? localizedValue : key;
         }
 
         #endregion
