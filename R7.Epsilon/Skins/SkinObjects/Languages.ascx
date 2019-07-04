@@ -9,7 +9,7 @@
 		<% foreach (var site in altWebsites) { %>
 			<a class="dropdown-item" href="<%: site.Url %>" hreflang="<%: site.Hreflang %>"	target="_blank">
 				<span class="skin-custom-content" data-resource-key="<%: site.Name %>">
-					<strong><%: site.Hreflang.ToUpperInvariant () %></strong>
+					<strong><%: site.Hreflang %></strong>
 					<%: Localizer.GetStringOrKey (site.Name) %>
 				</span>
 			</a>
