@@ -40,7 +40,7 @@
                 <i class="fas fa-search"></i>
             </button>
             <div class="dropdown" style="display:inline-block">
-                <button type="button" class="btn btn-lg skin-a11y-btn dropdown-toggle"
+                <button type="button" class="btn btn-lg dropdown-toggle skin-a11y-btn"
                     data-toggle="dropdown"
                     title='<%: Localizer.GetString("A11y.Text") %>'>
                     <i class="fas fa-universal-access"></i>
@@ -79,15 +79,15 @@
   				</div>
 			</div>
 			<div class="dropdown" style="display:inline-block">
-                <button type="button" class="btn btn-lg skin-languages-btn dropdown-toggle" data-toggle="dropdown"
+                <button type="button" class="btn btn-lg dropdown-toggle skin-languages-btn" data-toggle="dropdown"
                     title='<%: Localizer.GetString("Languages.Text") %>'>
                     <strong><%: System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName.ToUpperInvariant() %></strong>
                 </button>
                 <skin:LANGUAGES runat="server" />
             </div>
 			<% if (Config.Websites.Count > 0) { %>
-				<div class="dropdown skin-our-sites" style="display:inline-block">
-					<button type="button" class="btn btn-lg skin-user-btn dropdown-toggle" data-toggle="dropdown" title='<%: Localizer.GetString ("Websites.Text") %>'>
+				<div class="dropdown" style="display:inline-block">
+					<button type="button" class="btn btn-lg dropdown-toggle skin-websites-btn" data-toggle="dropdown" title='<%: Localizer.GetString ("Websites.Text") %>'>
 						<i class="fas fa-globe"></i>
 					</button>
 					<div class="dropdown-menu">
@@ -102,8 +102,8 @@
 					</div>
 				</div>
 			<% } %>
-			<div class="dropdown skin-login" style="display:inline-block">
-				<button type="button" class="btn btn-lg skin-user-btn dropdown-toggle" data-toggle="dropdown" title='<%: Localizer.GetString ("UserProfile.Text") %>'>
+			<div class="dropdown" style="display:inline-block">
+				<button type="button" class="btn btn-lg dropdown-toggle skin-user-btn" data-toggle="dropdown" title='<%: Localizer.GetString ("UserProfile.Text") %>'>
 					<i class="fas fa-user"></i>
 				</button>
 				<div class="dropdown-menu">
