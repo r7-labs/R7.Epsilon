@@ -103,9 +103,7 @@
 				</div>
 			<% } %>
 			<div class="dropdown skin-login" style="display:inline-block">
-				<!-- TODO: Localize title -->
-				<button type="button" class="btn btn-lg skin-user-btn dropdown-toggle" data-toggle="dropdown"
-					title="User &amp; login">
+				<button type="button" class="btn btn-lg skin-user-btn dropdown-toggle" data-toggle="dropdown" title='<%: Localizer.GetString ("UserProfile.Text") %>'>
 					<i class="fas fa-user"></i>
 				</button>
 				<div class="dropdown-menu">

@@ -132,6 +132,9 @@
     <data name="Websites.Text" xml:space="preserve">
         <value>Our Websites</value>
     </data>
+	<data name="UserProfile.Text" xml:space="preserve">
+        <value>User Profile</value>
+    </data>
     <data name="GoogleTranslate.Text" xml:space="preserve">
         <value>Translate with Google</value>
     </data>
