@@ -118,7 +118,9 @@ window.skinOpenFeedback = function (button, $, feedbackModuleId) {
         $(".skin-languages .language-object a").each (function () {
             const lang = $(this).parent (".Language").attr ("title");
             const langCode = $(this).closest (".language-object").find ("option").filter (function () { return $(this).text() == lang; }).val ();
-            $(this).addClass ("dropdown-item").html ("<strong>" + langCode + "</strong> " + lang);
+            $(this).addClass ("dropdown-item")
+                .html ("<strong>" + langCode + "</strong> " + lang)
+                .attr ("hreflang", langCode);
         });
     }
 
