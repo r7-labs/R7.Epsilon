@@ -42,8 +42,8 @@
             <div class="dropdown" style="display:inline-block">
                 <button type="button" class="btn btn-lg dropdown-toggle skin-a11y-btn"
                     data-toggle="dropdown"
-                    title='<%: Localizer.GetString("A11y.Text") %>'>
-                    <i class="fas fa-universal-access"></i>
+                    title='<%: Localizer.GetString ("A11y.Text") %>'>
+                    <%= Localizer.GetString ("A11yIcon.Text") %>
                 </button>
 				<div class="dropdown-menu">
 					<% if (Config.Themes.Count > 1) { %>
