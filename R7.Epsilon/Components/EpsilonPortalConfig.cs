@@ -101,7 +101,7 @@ namespace R7.Epsilon.Components
 
         public bool UseObrnadzorMicrodata { get; set; }
 
-        public List<SocialNetworkConfig> SocialNetworks { get; set; } = new List<SocialNetworkConfig> ();
+        public List<SocialGroupConfig> SocialGroups { get; set; } = new List<SocialGroupConfig> ();
 
         public AnalyticsConfig Analytics { get; set; } = new AnalyticsConfig ();
 
@@ -151,12 +151,15 @@ namespace R7.Epsilon.Components
         public string Slot { get; set; } = "0000000000";
     }
 
-    // TODO: Rename to SocialNetwork
-    public class SocialNetworkConfig
+    public class SocialGroupConfig
     {
+        public SocialGroupType Type { get; set; }
+
         public string Name { get; set; }
 
-        public string Group { get; set; }
+        public string Color { get; set; }
+
+        public string Url { get; set; }
 
         public bool ShareEnabled { get; set; } = false;
 

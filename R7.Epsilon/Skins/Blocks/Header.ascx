@@ -33,7 +33,7 @@
 				<skin:FUNCTIONS runat="server" />
             </div>
         </div>
-        <div class="col-md-5 col-sm-12 text-md-right text-sm-center">
+        <div class="col-md-7 col-sm-12 text-md-right text-sm-center">
 			<button type="button" role="search" class="btn btn-lg skin-search-btn" style="display:inline-block"
                 data-toggle="modal" data-target="#searchModal"
                 title='<%: Localizer.GetString("SearchModalButton.Text") %>'>
@@ -106,6 +106,11 @@
 					</div>
 				</div>
 			<% } %>
+			<% if (Config.SocialGroups.Count > 0) { %>
+				<div class="dropdown skin-social-groups" style="display:inline-block">
+					<skin:SOCIALGROUPS runat="server" />
+				</div>
+			<% } %>
 			<div class="dropdown skin-login" style="display:inline-block">
 				<button type="button" class="btn btn-lg dropdown-toggle" data-toggle="dropdown" title='<%: Localizer.GetString ("UserProfile.Text") %>'>
 					<i class="fas fa-user"></i>
@@ -115,9 +120,6 @@
     				<dnn:USER runat="server" LegacyMode="false" />
 				</div>
 			</div>
-        </div>
-        <div class="col-md-2 col-sm-4 col-xs-4 skin-socialgroups-wrapper">
-            <skin:SOCIALGROUPS runat="server" />
         </div>
     </div>
 </div>

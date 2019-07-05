@@ -94,6 +94,8 @@
     <Compile Include="Components\Utils.cs" />
     <Compile Include="Components\EpsilonPortalConfig.cs" />
     <Compile Include="Components\EpsilonConfig.cs" />
+    <Compile Include="Components\SocialGroupType.cs" />
+    <Compile Include="Components\SocialGroupHelper.cs" />
     <Compile Include="Models\DynamicPane.cs" />
     <Compile Include="Models\Layout.cs" />
     <Compile Include="Components\MarkupParser.cs" />
@@ -142,9 +144,6 @@
     </Compile>
     <Compile Include="Skins\SkinObjects\SecondaryMenu.ascx.cs">
       <DependentUpon>SecondaryMenu.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Skins\SkinObjects\SocialGroups.ascx.cs">
-      <DependentUpon>SocialGroups.ascx</DependentUpon>
     </Compile>
     <Compile Include="Skins\SkinObjects\EpsilonSkinObjectBase.cs" />
     <Compile Include="Skins\SkinObjects\EpsilonMenuBase.cs" />
@@ -325,5 +324,6 @@
     <Content Include="Menus\DropCrumb\menudef.xml" />
     <Content Include="Skins\Layouts\_default.ascx" />
     <Content Include="Skins\css\_colors.scss" />
+    <Content Include="Skins\css\_brand-colors.scss" />
   </ItemGroup>
 </Project>

@@ -87,29 +87,32 @@
     <data xml:space="preserve" name="FeedBackButton.Tooltip">
         <value>Select error with mouse and click me to open feedback form</value>
     </data>
-    <data xml:space="preserve" name="VKontakte.Title">
+	<data name="SocialGroups.Text" xml:space="preserve">
+        <value>Follow Us!</value>
+    </data>
+    <data name="VKontakte.Text" xml:space="preserve">
         <value>VKontakte</value>
     </data>
-    <data xml:space="preserve" name="Facebook.Title">
+    <data name="Facebook.Text" xml:space="preserve">
         <value>Facebook</value>
     </data>
-    <data xml:space="preserve" name="Twitter.Title">
+    <data name="Twitter.Text" xml:space="preserve">
         <value>Twitter</value>
     </data>
-    <data xml:space="preserve" name="Odnoklassniki.Title">
+    <data name="Odnoklassniki.Text" xml:space="preserve">
         <value>Odnoklassniki</value>
     </data>
-    <data xml:space="preserve" name="YouTube.Title">
+    <data name="YouTube.Text" xml:space="preserve">
         <value>YouTube</value>
     </data>
-	<data name="Instagram.Title" xml:space="preserve">
+	<data name="Instagram.Text" xml:space="preserve">
         <value>Instagram</value>
     </data>
-	<data name="LinkedIn.Title" xml:space="preserve">
+	<data name="LinkedIn.Text" xml:space="preserve">
         <value>LinkedIn</value>
     </data>
-	<data name="MoreSocialGroups.Title" xml:space="preserve">
-        <value>Click to see more social networks</value>
+	<data name="Reddit.Text" xml:space="preserve">
+        <value>Reddit</value>
     </data>
     <data xml:space="preserve" name="YandexCycounter.Text">
         <value>Yandex website quality index</value>

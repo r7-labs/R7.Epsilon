@@ -234,90 +234,6 @@ header > .container > .row
     }
 }
 
-.skin-socialgroups-wrapper
-{
-    padding-right:0;
-    padding-top:4px;
-}
-
-@mixin dropdown-button-active ()
-{
-    border:1px solid $color-complement-2;
-    background-color:rgba($color-complement-1, 0.5);
-}
-
-ul.skin-socialgroups
-{
-    text-align:right;
-    margin:0;
-    list-style: none;
-    list-style-type: none;
-    & > li
-    {
-        display:inline;
-        list-style-type: none;
-        &:last-child a { margin-right:0; }
-    }
-
-    & > li.dropdown.open {
-        .skin-social-button.skin-social-more {
-            @include dropdown-button-active ();
-        }
-    }
-
-    ul.dropdown-menu {
-        top:32px;
-    }
-
-    .skin-social-button
-    {
-        display:inline-block;
-        margin-right:3px;
-        vertical-align:middle;
-        border-radius:16px;
-
-        @include square-backgrounded-button (32px, $social-icons);
-
-        &.skin-social-vkontakte { @include functions-background (0); }
-        &.skin-social-facebook { @include functions-background (1); }
-        &.skin-social-twitter { @include functions-background (3); }
-        &.skin-social-odnoklassniki { @include functions-background (4); }
-        &.skin-social-youtube { @include functions-background (5); }
-        &.skin-social-instagram { @include functions-background (6); }
-        &.skin-social-linkedin { @include functions-background (7); }
-
-        &.skin-social-more {
-            background-image:none;
-            background-color:$color-complement-1;
-            border:1px solid $color-complement-1; // = background-color
-
-            &:hover, &:active {
-                @include dropdown-button-active ();
-            }
-
-            .fas {
-                font-size:23px;
-                color:#000;
-                position:relative;
-                top:5px;
-                left:-4px;
-            }
-        }
-    }
-
-    ul.dropdown-menu {
-        li:hover .skin-social-button {
-            &.skin-social-vkontakte { @include background-position-xy (0, 1, 32px); }
-            &.skin-social-facebook { @include background-position-xy (1, 1, 32px); }
-            &.skin-social-twitter { @include background-position-xy (3, 1, 32px); }
-            &.skin-social-odnoklassniki { @include background-position-xy (4, 1, 32px); }
-            &.skin-social-youtube { @include background-position-xy (5, 1, 32px); }
-            &.skin-social-instagram { @include background-position-xy (6, 1, 32px); }
-            &.skin-social-linkedin { @include background-position-xy (7, 1, 32px); }
-        }
-    }
-}
-
 /* Main Header */
 
 .navbar { margin-bottom:0 }
@@ -864,4 +780,17 @@ a.link
 
 .skin-custom-content div.actionMenu {
     display: inline-block;
+}
+
+.skin-social-groups {
+    .skin-social-group-icon {
+        font-size: 2rem;
+        line-height: 2rem;
+        vertical-align: middle;
+        margin-right: 0.25rem;
+
+        &.fa-vk, &.fa-youtube {
+            font-size: 1.55rem;
+        }
+    }
 }

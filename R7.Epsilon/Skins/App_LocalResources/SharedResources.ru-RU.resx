@@ -84,31 +84,34 @@
     <data xml:space="preserve" name="FeedBackButton.Tooltip">
         <value>Выдели место ошибки мышкой и нажми меня, чтобы открыть форму обратной связи</value>
     </data>
-    <data xml:space="preserve" name="VKontakte.Title">
+	<data name="SocialGroups.Text" xml:space="preserve">
+        <value>Присоединяйтесь!</value>
+    </data>
+    <data name="VKontakte.Text" xml:space="preserve">
         <value>ВКонтакте</value>
     </data>
-    <data xml:space="preserve" name="Facebook.Title">
+    <data name="Facebook.Text" xml:space="preserve">
         <value>Facebook</value>
     </data>
-    <data xml:space="preserve" name="Twitter.Title">
+    <data name="Twitter.Text" xml:space="preserve">
         <value>Twitter</value>
     </data>
-    <data xml:space="preserve" name="Odnoklassniki.Title">
+    <data name="Odnoklassniki.Text" xml:space="preserve">
         <value>Одноклассники</value>
     </data>
-    <data xml:space="preserve" name="YouTube.Title">
-        <value>Youtube</value>
+    <data name="YouTube.Text" xml:space="preserve">
+        <value>YouTube</value>
     </data>
-	<data name="Instagram.Title" xml:space="preserve">
+	<data name="Instagram.Text" xml:space="preserve">
         <value>Инстаграм</value>
     </data>
-	<data name="LinkedIn.Title" xml:space="preserve">
+	<data name="LinkedIn.Text" xml:space="preserve">
         <value>LinkedIn</value>
     </data>
-	<data name="MoreSocialGroups.Title" xml:space="preserve">
-        <value>Нажмите, чтобы увидеть еще социальные сети</value>
+	<data name="Reddit.Text" xml:space="preserve">
+        <value>Reddit</value>
     </data>
-    <data xml:space="preserve" name="YandexCycounter.Text">
+	<data xml:space="preserve" name="YandexCycounter.Text">
         <value>Индекс качества сайта Яндекс</value>
     </data>
     <data name="LogoTitle.Tagline" xml:space="preserve">
