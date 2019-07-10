@@ -11,7 +11,7 @@
 			<div class="dropdown-divider"></div>
 		<% } %>
 		<a class="dropdown-item" href="<%: group.Url %>" target="_blank">
-			<i class="fab fa-<%: SocialGroupHelper.GetFAIconName (group.Type) %> brand-<%: group.Type.ToString ().ToLowerInvariant () %> skin-social-group-icon"
+			<i class="fab fa-<%: SocialGroupHelper.GetFAIconName (group.Type) %> brand-text brand-text-<%: group.Type.ToString ().ToLowerInvariant () %> skin-social-group-icon"
 				style="<%: SocialGroupHelper.GetCustomColorStyle (group.Color) %>">
 			</i>
 			<% if (!string.IsNullOrEmpty (group.Name)) { %>

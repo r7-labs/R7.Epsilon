@@ -1,21 +1,25 @@
 // https://brandcolors.net/
 
-.brand-facebook { color: #3b5998 }
-.brand-twitter { color: #1da1f2 }
-.brand-youtube { color: #ff0000 }
-.brand-vkontakte { color: #45668e }
-.brand-odnoklassniki { color: #ed812b }
-.brand-linkedin { color: #0077b5 }
-.brand-reddit { color: #ff4500 }
-.brand-instagram { color: #833ab4 }
+@import '../../../node_modules/brand-colors/dist/latest/scss/brand-colors.latest.scss';
 
-.brand-bg-facebook { background-color: #3b5998 }
-.brand-bg-twitter { background-color: #1da1f2 }
-.brand-bg-youtube { background-color: #ff0000 }
-.brand-bg-vkontakte { background-color: #45668e }
-.brand-bg-odnoklassniki { background-color: #ed812b }
-.brand-bg-linkedin { background-color: #0077b5 }
-.brand-bg-reddit { background-color: #ff4500 }
-.brand-bg-instagram { background-color: #833ab4 }
+.brand-text {
+    &.brand-text-facebook { color: $bc-facebook }
+    &.brand-text-twitter { color: $bc-twitter }
+    &.brand-text-youtube { color: $bc-youtube }
+    &.brand-text-vkontakte { color: $bc-vkontakte }
+    &.brand-text-odnoklassniki { color: $bc-odnoklassniki }
+    &.brand-text-linkedin { color: $bc-linkedin }
+    &.brand-text-reddit { color: $bc-reddit }
+    &.brand-text-instagram { color: $bc-instagram-3 }
+}
 
-
+.brand-bg {
+    &.brand-bg-facebook { background-color: $bc-facebook }
+    &.brand-bg-twitter { background-color: $bc-twitter }
+    &.brand-bg-youtube { background-color: $bc-youtube }
+    &.brand-bg-vkontakte { background-color: $bc-vkontakte }
+    &.brand-bg-odnoklassniki { background-color: $bc-odnoklassniki }
+    &.brand-bg-linkedin { background-color: $bc-linkedin }
+    &.brand-bg-reddit { background-color: $bc-reddit  }
+    &.brand-bg-instagram { background-color: $bc-instagram-3 }
+}

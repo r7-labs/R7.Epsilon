@@ -6,6 +6,7 @@
     "@babel/preset-env": "^7.4.4",
     "babel-loader": "^8.0.6",
     "bootstrap": "^4.3.1",
+    "brand-colors": "^2.0.1",
     "css-loader": "^2.1.1",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "js-cookie": "^2.2.0",
