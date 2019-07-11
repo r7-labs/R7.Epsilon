@@ -20,7 +20,7 @@
 
 	string subnavItemCssClass ()
 	{
-		return "col-lg-3 col-md-4 col-sm-6";
+		return "col-lg-4 col-md-6";
 	}
 }
 
@@ -62,8 +62,7 @@
 			<div class="@subnavItemCssClass()">
 				@if (node.HasChildren ()) {
 					<div class="nav-item dropdown">
-						<!-- TODO: Missing a@id -->
-						<a href="#" role="button" data-toggle="dropdown"
+						<a id="@(Model.ControlID)_subnav_dropdown_@node.TabId" href="#" role="button" data-toggle="dropdown"
 							aria-expanded="false" aria-haspopup="true"
 							class="nav-link dropdown-toggle @NodeCssClasses(node)">@node.Text</a>
 						@RenderDropdownFor(node)
@@ -80,8 +79,7 @@
 }
 
 @helper RenderDropdownFor(MenuNode parentNode) {
-	<!-- TODO: Missing aria-labelledby a@id -->
-	<div class="dropdown-menu">
+	<div class="dropdown-menu" aria-labelledby="@(Model.ControlID)_subnav_dropdown_@parentNode.TabId">
 		<a class="dropdown-item @NodeCssClasses(parentNode)" href="@parentNode.Url"><i class="fas fa-list"></i> @parentNode.Text</a>
 		<div class="dropdown-divider"></div>
 		@foreach (var node in parentNode.Children) {
