@@ -13,7 +13,7 @@
 				var theme = Config.Themes [i];
 				var isCurrentTheme = (Config.GetTheme (Request) ?? Config.Themes [0]).Name;
 				%>
-				<a class='<%: theme.Name == isCurrentTheme ? "dropdown-item disabled" : "dropdown-item"  %>'
+				<a class='<%: theme.Name == isCurrentTheme ? "dropdown-item active disabled" : "dropdown-item"  %>'
 					href='<%= DnnGlobals.NavigateURL ("", "theme", theme.Name) %>'>
 					<span style="color: <%: theme.Color %>">
 						<i class='<%: theme.IsA11yTheme ? "fas fa-adjust" : "fas fa-circle" %>'></i>
