@@ -6,13 +6,15 @@
 <%@ Register TagPrefix="skin" TagName="BROWSERCHECK" Src="../SkinObjects/BrowserCheck.ascx" %>
 <%@ Register TagPrefix="skin" TagName="FUNCTIONS" Src="../SkinObjects/Functions.ascx" %>
 <%@ Register TagPrefix="skin" TagName="SOCIALGROUPS" Src="../SkinObjects/SocialGroups.ascx" %>
+<%@ Register TagPrefix="skin" TagName="A11YFUNCTIONS" Src="../SkinObjects/A11yFunctions.ascx" %>
+<%@ Register TagPrefix="skin" TagName="LANGUAGES" Src="../SkinObjects/Languages.ascx" %>
+<%@ Register TagPrefix="skin" TagName="WEBSITES" Src="../SkinObjects/Websites.ascx" %>
 <%@ Register TagPrefix="skin" TagName="PRIMARYMENU" Src="../SkinObjects/PrimaryMenu.ascx" %>
 <%@ Register TagPrefix="skin" TagName="SECONDARYMENU" Src="../SkinObjects/SecondaryMenu.ascx" %>
 <%@ Register TagPrefix="skin" TagName="FOUNDERS" Src="../SkinObjects/Founders.ascx" %>
 <%@ Register TagPrefix="skin" TagName="LOGOTITLE" Src="../SkinObjects/LogoTitle.ascx" %>
 <%@ Register TagPrefix="skin" TagName="LOGOMOBILE" Src="../SkinObjects/LogoMobile.ascx" %>
 <%@ Register TagPrefix="skin" TagName="CUSTOMCONTENT" Src="../SkinObjects/CustomContent.ascx" %>
-<%@ Register TagPrefix="skin" TagName="LANGUAGES" Src="../SkinObjects/Languages.ascx" %>
 
 <div class="container">
     <div class="row">
@@ -39,77 +41,13 @@
                 title='<%: Localizer.GetString("SearchModalButton.Text") %>'>
                 <i class="fas fa-search"></i>
             </button>
-            <div class="dropdown" style="display:inline-block">
-                <button type="button" class="btn btn-lg dropdown-toggle skin-a11y-btn"
-                    data-toggle="dropdown"
-                    title='<%: Localizer.GetString ("A11y.Text") %>'>
-                    <%= Localizer.GetString ("A11yIcon.Text") %>
-                </button>
-				<div class="dropdown-menu">
-					<% if (Config.Themes.Count > 1) { %>
-						<% for (var i = 0; i < Config.Themes.Count; i++) {
-							var theme = Config.Themes [i];
-							var isCurrentTheme = (Config.GetTheme (Request) ?? Config.Themes [0]).Name;
-							%>
-							<a class='<%: theme.Name == isCurrentTheme ? "dropdown-item disabled" : "dropdown-item"  %>'
-								href='<%= DnnGlobals.NavigateURL ("", "theme", theme.Name) %>'>
-								<span style="color: <%: theme.Color %>">
-									<i class='<%: theme.IsA11yTheme ? "fas fa-adjust" : "fas fa-circle" %>'></i>
-								</span>
-								<%: Localizer.GetString ("Theme_" + theme.Name + ".Text") %>
-								<% if (i == 0) { %>
-									<%: Localizer.GetString ("DefaultTheme.Text") %>
-								<% } %>
-							</a>
-						<% } %>
-						<div class="dropdown-divider"></div>
-					<% } %>
-					<a class="dropdown-item" href="javascript:skinA11y.increaseFontSize()">
-						<i class="fas fa-font"></i><i class="fas fa-arrow-up"></i> <%: Localizer.GetString("A11yIncreaseFontSize.Text") %></a>
-					<a class="dropdown-item" href="javascript:skinA11y.decreaseFontSize()">
-						<i class="fas fa-font"></i><i class="fas fa-arrow-down"></i> <%: Localizer.GetString("A11yDecreaseFontSize.Text") %></a>
-					<div class="dropdown-divider"></div>
-    				<a id="lnkDisablePopups" role="checkbox" class="dropdown-item" href="javascript:skinA11y.disablePopups()">
-						<i class="far fa-square"></i> <%: Localizer.GetString("A11yDisablePopups.Text") %></a>
-					<a id="lnkReEnablePopups" role="checkbox" class="dropdown-item d-none" href="javascript:skinA11y.reEnablePopups()">
-						<i class="fas fa-check-square"></i>	<%: Localizer.GetString("A11yDisablePopups.Text") %></a>
-					<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href='<%= DnnGlobals.NavigateURL ("", "quickA11y", "reset") %>'>
-						<i class="fas fa-undo"></i></i> <%: Localizer.GetString("A11yRestoreDefaults.Text") %></a>
-  				</div>
-			</div>
-			<div class="dropdown" style="display:inline-block">
-                <button type="button" class="btn btn-lg dropdown-toggle skin-languages-btn" data-toggle="dropdown"
-                    title='<%: Localizer.GetString("Languages.Text") %>'>
-					<% var langCodeParts = CultureInfo.CurrentCulture.IetfLanguageTag.Split (new char [] {'-'}, StringSplitOptions.RemoveEmptyEntries); %>
-                    <strong><%: langCodeParts [0].ToUpperInvariant () %></strong>
-					<% if (langCodeParts.Length == 2) { %>
-						<sup><%: langCodeParts [1].ToLowerInvariant () %></sup>
-					<% } %>
-                </button>
-                <skin:LANGUAGES runat="server" />
-            </div>
-			<% if (Config.Websites.Count > 0) { %>
-				<div class="dropdown" style="display:inline-block">
-					<button type="button" class="btn btn-lg dropdown-toggle skin-websites-btn" data-toggle="dropdown" title='<%: Localizer.GetString ("Websites.Text") %>'>
-						<i class="fas fa-globe"></i>
-					</button>
-					<div class="dropdown-menu">
-						<% foreach (var site in Config.Websites) { %>
-							<a class="dropdown-item" href="<%: site.Url %>" hreflang="<%: site.Hreflang %>" target="_blank">
-								<span class="skin-custom-content" data-resource-key="<%: site.Name %>">
-									<i class="fas fa-globe"></i>
-									<%: Localizer.GetStringOrKey (site.Name) %>
-								</span>
-							</a>
-						<% } %>
-					</div>
-				</div>
+            <skin:A11YFUNCTIONS runat="server" />
+			<skin:LANGUAGES runat="server" />
+            <% if (Config.Websites.Count > 0) { %>
+				<skin:WEBSITES runat="server" />
 			<% } %>
 			<% if (Config.SocialGroups.Count > 0) { %>
-				<div class="dropdown skin-social-groups" style="display:inline-block">
-					<skin:SOCIALGROUPS runat="server" />
-				</div>
+				<skin:SOCIALGROUPS runat="server" />
 			<% } %>
 			<div class="dropdown skin-login" style="display:inline-block">
 				<button type="button" class="btn btn-lg dropdown-toggle" data-toggle="dropdown" title='<%: Localizer.GetString ("UserProfile.Text") %>'>
