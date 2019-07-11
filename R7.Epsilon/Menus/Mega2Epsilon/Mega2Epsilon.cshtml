@@ -41,7 +41,7 @@
                 }
             }
         </ul>
-		<div class="navbar-nav skin-navbar-subnav">
+		<div class="navbar-nav skin-navbar-subnav row">
 			@foreach (var node in nodes) {
 				if (node.HasChildren ()) {
 					@RenderSubnavFor(node)
