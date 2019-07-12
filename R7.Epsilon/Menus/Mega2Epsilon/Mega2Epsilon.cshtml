@@ -53,9 +53,12 @@
 
 @helper RenderSubnavFor(MenuNode parentNode) {
 	<div class="collapse row" id="@(Model.ControlID)_subnav_@parentNode.TabId" data-parent="#@Model.ControlID">
-		<div class="@subnavItemCssClass()">
-			<div class="nav-item skin-subnav-item-parent">
-				<a href="@parentNode.Url" class="nav-link @NodeCssClasses(parentNode)"><i class="fas fa-list"></i> @parentNode.Text</a>
+		<div class="col-md-12">
+			<div class="nav-item">
+				<a href="@parentNode.Url" class="h4 nav-link @NodeCssClasses(parentNode)"
+						title="Перейти в раздел @parentNode.Text">
+					@parentNode.Text <i class="fas fa-caret-right"></i><i class="fas fa-caret-right"></i>
+				</a>
 			</div>
 		</div>
 		@foreach (var node in parentNode.Children) {
@@ -80,7 +83,10 @@
 
 @helper RenderDropdownFor(MenuNode parentNode) {
 	<div class="dropdown-menu" aria-labelledby="@(Model.ControlID)_subnav_dropdown_@parentNode.TabId">
-		<a class="dropdown-item @NodeCssClasses(parentNode)" href="@parentNode.Url"><i class="fas fa-list"></i> @parentNode.Text</a>
+		<a class="h5 dropdown-item @NodeCssClasses(parentNode) dropdown-item-parent" href="@parentNode.Url"
+				title="Перейти в раздел @parentNode.Text">
+			@parentNode.Text <i class="fas fa-caret-right"></i><i class="fas fa-caret-right"></i>
+		</a>
 		<div class="dropdown-divider"></div>
 		@foreach (var node in parentNode.Children) {
     		<a class="dropdown-item @NodeCssClasses(node)" href="@node.Url">@node.Text</a>
