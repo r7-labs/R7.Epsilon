@@ -65,7 +65,7 @@ ul.megamenu
     li
     {
         // a should always take 100% of li!
-        padding:0 !important; 
+        padding:0 !important;
         margin:0;
 
         a { display:block; }
@@ -103,7 +103,7 @@ ul.megamenu
     // place submenu relative to menu wrappers
     position:relative;
 
-    ul.megamenu 
+    ul.megamenu
     {
         li a { color:#fff; }
 
@@ -117,51 +117,51 @@ ul.megamenu
                 &:hover, &:focus { color:#fff; }
             }
 
-            .megarow 
-            { 
-                clear:both; 
+            .megarow
+            {
+                clear:both;
 
                 // don't overline menu top items
                 &:first-child li:first-child a { border-top:none; }
 
                 ul
-                { 
+                {
                     float:left;
                     padding-left:5px;
                     padding-right:5px;
                 }
 
-                li 
-	            { 
-	                display:block; 
+                li
+	            {
+	                display:block;
 	                min-height:24px;
 
 	                // extra space below menu block
 	                &:last-child { margin-bottom:1em; }
 	                &:first-child { margin-bottom:0; }
 
-	                a 
-	                { 
+	                a
+	                {
 	                    border-radius:3px;
 	                    padding:2px 8px;
-	                    font-size:$smaller-menu-font-size; 
+	                    font-size:$smaller-menu-font-size;
 
-	                    &:before 
+	                    &:before
 	                    {
 	                        content:"•";
 	                        padding-right:0.5em;
 	                    }
 	                }
 
-	                &:first-child a 
-	                { 
+	                &:first-child a
+	                {
 	                    padding:4px 8px;
 	                    border-top:1px solid;
 	                    font-weight:bold;
 	                    font-size:$menu-font-size;
 
-	                    &:before 
-	                    { 
+	                    &:before
+	                    {
 	                        content:none;
 	                        padding-right:0;
 	                    }
@@ -176,22 +176,22 @@ ul.megamenu
 
 .skin-primary-menu, .skin-secondary-menu
 {
-    ul.megamenu 
+    ul.megamenu
     {
         li.level0
-        { 
+        {
             display:inline-block; // for horizontal menus
 
             & > a { padding:5px; }
-        
-            .sub 
-            { 
+
+            .sub
+            {
                 position:absolute;
                 top:($menu-font-size * 2 - 2px) !important;
                 left:0;
 
                 // fill all menu wrapper width
-                width:100%!important; 
+                width:100%!important;
 
                 ul { width:33%; }
             }
@@ -213,23 +213,23 @@ ul.megamenu
                 &.current { background-color:$color-primary-3; }
                 &:hover, &.megahover, &:focus {
                     color:$color-primary-4;
-                    background-color:$color-complement-1; 
+                    background-color:$color-secondary-1-1;
                 }
             }
-        
+
             .sub
             {
-                @include submenu-style ($color-primary-2, $color-complement-1, $color-primary-4);
-                
+                @include submenu-style ($color-primary-2, $color-secondary-1-1, $color-primary-4);
+
                 .megarow a {
                     &.current { background-color:$color-primary-3; }
                     &:hover, &.megahover, &:focus {
                         color:$color-primary-4;
-                        background-color:$color-complement-1; 
+                        background-color:$color-secondary-1-1;
                     }
                 }
-            
-                @include submenu-close-link ($color-primary-4, $color-primary-2, $color-complement-1);
+
+                @include submenu-close-link ($color-primary-4, $color-primary-2, $color-secondary-1-1);
             }
         }
     }
@@ -250,11 +250,11 @@ ul.megamenu
             // make some space between menu rows
             margin-bottom:4px;
 
-            & > a { 
+            & > a {
                 &.current { background-color:$secondary-menu-base-color-2; }
                 &:hover, &.megahover, &:focus {
                     color:#000;
-                    background-color:$secondary-menu-highlight-color-1; 
+                    background-color:$secondary-menu-highlight-color-1;
                 }
 
                 // compensate external spacing
@@ -268,17 +268,17 @@ ul.megamenu
             .sub
             {
                 @include submenu-style ($secondary-menu-base-color-2, $secondary-menu-highlight-color-1, $secondary-menu-base-color-4);
-                
+
                 a:hover, a:focus {
                     color:$secondary-menu-base-color-4;
-                    background-color:$secondary-menu-highlight-color-1; 
+                    background-color:$secondary-menu-highlight-color-1;
                 }
 
-                .megarow a { 
+                .megarow a {
 	                &.current { background-color:$secondary-menu-base-color-2; }
 	                &:hover, &.megahover, &:focus {
 	                    color:#000;
-	                    background-color:$secondary-menu-highlight-color-1; 
+	                    background-color:$secondary-menu-highlight-color-1;
 	                }
 	            }
 
@@ -296,12 +296,12 @@ ul.megamenu
     margin-right:10px;
     margin-bottom:5px;
 
-    ul.megamenu 
-    { 
+    ul.megamenu
+    {
         display:block;
         background-color:transparent;
 
-        li.level0 
+        li.level0
         {
             & > a
             {
@@ -313,8 +313,8 @@ ul.megamenu
                 background-color:$secondary-menu-base-color-2;
                 padding:.5em 1em;
 
-                .icon-bar 
-                { 
+                .icon-bar
+                {
                     display:block;
                     background-color:#fff;
                     width:22px;
@@ -324,9 +324,9 @@ ul.megamenu
                 }
 
                 &:hover, &.megahover, &:focus
-                { 
+                {
                     color:#000;
-                    background-color:$secondary-menu-highlight-color-1; 
+                    background-color:$secondary-menu-highlight-color-1;
 
                     .icon-bar { background-color:#000; }
                 }
@@ -337,11 +337,11 @@ ul.megamenu
                 width:320px;
 
                 @include submenu-style ($secondary-menu-base-color-2, $secondary-menu-highlight-color-1, $secondary-menu-base-color-4);
-     
+
                 .megarow {
                     a:hover, a:focus {
                         color:$secondary-menu-base-color-4;
-                        background-color:$secondary-menu-highlight-color-1; 
+                        background-color:$secondary-menu-highlight-color-1;
                     }
                 }
 
@@ -353,22 +353,22 @@ ul.megamenu
     }
 }
 
-/* Menus for extra small devices */ 
+/* Menus for extra small devices */
 
-@media only screen and (max-width : 767px) 
+@media only screen and (max-width : 767px)
 {
     .skin-primary-menu, .skin-secondary-menu
     {
-        ul.megamenu 
-        {   
+        ul.megamenu
+        {
             li.level0
             {
                 float:none;
                 display:block;
 
                 // place submenus relative to menu items
-                position:relative; 
-            
+                position:relative;
+
                 .sub
                 {
                     position:absolute;
@@ -384,7 +384,7 @@ ul.megamenu
                     padding-top:0;
 
                     ul
-                    { 
+                    {
                         float:none;
                         display:block;
                         width:100%;
@@ -400,10 +400,10 @@ ul.megamenu
 
     .skin-primary-menu
     {
-        ul.megamenu 
-        { 
-            background-color:$color-primary-2; 
-            li.level0 .sub { border-color:$color-complement-1; }
+        ul.megamenu
+        {
+            background-color:$color-primary-2;
+            li.level0 .sub { border-color:$color-secondary-1-1; }
         }
     }
 
@@ -411,15 +411,15 @@ ul.megamenu
     {
         margin-top:0;
 
-        ul.megamenu 
+        ul.megamenu
         {
             li.level0
-            {  
+            {
                 // remove space between menu rows
                 margin-bottom:0;
 
                 & > a
-                { 
+                {
                     border-radius:0; // disable rounded borders
                     background-color:$secondary-menu-base-color-2;
                 }

@@ -4,7 +4,7 @@
 //
 //  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2015-2016 Roman M. Yagodin, R7.Labs
+//  Copyright (c) 2015-2019 Roman M. Yagodin, R7.Labs
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -19,31 +19,52 @@
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-/* Current Palette */
+/* Shades of gray, high contrast */
 
+/*
 // http://paletton.com/#uid=c332A3x1E0k00lP00++02ua01dK191C
-// shades of gray, high contrast
 
-$color-primary-0: #777777;  /* Main Primary color */
+$color-primary-0: #777777;  // Main Primary color
 $color-primary-1: #FFFFFF;
 $color-primary-2: #A5A5A5;
 $color-primary-3: #4B4B4B;
 $color-primary-4: #080909;
 
-$color-secondary-1-0: #707070;  /* Main Secondary color (1) */
+$color-secondary-1-0: #707070;  // Main Secondary color (1)
 $color-secondary-1-1: #FFFFFF;
 $color-secondary-1-2: #9B9B9B;
 $color-secondary-1-3: #464646;
 $color-secondary-1-4: #080808;
 
-$color-secondary-2-0: #AEAEAE;  /* Main Secondary color (2) */
+$color-secondary-2-0: #AEAEAE;  // Main Secondary color (2)
 $color-secondary-2-1: #FFFFFF;
 $color-secondary-2-2: #F0F0F0;
 $color-secondary-2-3: #6D6D6D;
 $color-secondary-2-4: #0D0D0C;
 
-$color-complement-0: #9B9B9B;   /* Main Complement color */
+$color-complement-0: #9B9B9B;   // Main Complement color
 $color-complement-1: #FFFFFF;
 $color-complement-2: #D6D6D6;
 $color-complement-3: #616261;
 $color-complement-4: #0B0B0B;
+*/
+
+// Palette URL: http://paletton.com/#uid=3340H0k00lW00++08xX00bZ8o06
+
+$color-primary-0: #777777;	// Main Primary color
+$color-primary-1: #FFFFFF;
+$color-primary-2: #B2B3B2;
+$color-primary-3: #414141;
+$color-primary-4: #000000;
+
+$color-secondary-1-0: #AFAFAF;	// Main Secondary color (1)
+$color-secondary-1-1: #FFFFFF;
+$color-secondary-1-2: #FFFFFE;
+$color-secondary-1-3: #5F5F5F;
+$color-secondary-1-4: #010101;
+
+$color-secondary-2-0: #8E8E8E;	// Main Secondary color (2)
+$color-secondary-2-1: #FFFFFF;
+$color-secondary-2-2: #D3D2D2;
+$color-secondary-2-3: #4E4E4E;
+$color-secondary-2-4: #010000;
