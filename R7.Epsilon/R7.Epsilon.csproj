@@ -328,5 +328,6 @@
     <Content Include="Skins\css\_contrast-brand-colors.scss" />
     <Content Include="Skins\SkinObjects\A11yFunctions.ascx" />
     <Content Include="Skins\SkinObjects\Websites.ascx" />
+    <Content Include="Skins\css\_bootstrap.scss" />
   </ItemGroup>
 </Project>
