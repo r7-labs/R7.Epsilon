@@ -3,14 +3,14 @@
 	<Import Project="BuildSettings.targets" Condition=" '$(BuildSettingsImported)' == '' " />
 	<Import Project="Bundle.targets" Condition=" '$(BundleImported)' == '' " />
 	<Import Project="Tests.targets" Condition=" '$(TestsImported)' == '' "/>
-	
+
 	<PropertyGroup>
 		<!-- Enable local deploy by default (standalone) -->
     	<EnableLocalDeploy Condition=" '$(EnableLocalDeploy)' == '' ">true</EnableLocalDeploy>
 		<NodeModulesPath>../node_modules</NodeModulesPath>
 	</PropertyGroup>
 	<Target Name="LocalDeploy" Condition=" '$(EnableLocalDeploy)' == 'true' " DependsOnTargets="Bundle;Tests">
- 		
+
 		<!-- Declare skin files -->
 		<ItemGroup>
 			<DeploySkinFiles Include="$(MainProjectPath)/Skins/**/*.ascx" />
@@ -64,7 +64,7 @@
         </ItemGroup>
 
         <!-- Declare binaries -->
-        <ItemGroup> 
+        <ItemGroup>
             <DeployBinaryFiles Include="$(MainProjectOutputPath)/R7.Epsilon*.dll" />
             <DeployBinaryFiles Include="$(MainProjectOutputPath)/R7.Epsilon*.pdb" Condition=" '$(Configuration)' == 'Debug' "/>
 		</ItemGroup>
@@ -89,21 +89,21 @@
 		<Copy SourceFiles="@(DeployContainerFiles)" DestinationFolder="$(TmpDir)/Containers/%(RecursiveDir)" />
 		<Copy SourceFiles="@(DeployMenuFiles)" DestinationFolder="$(TmpDir)/Menus/%(RecursiveDir)" />
         <Copy SourceFiles="@(DeployLayoutManagerFiles)" DestinationFolder="$(TmpDir)/Modules/R7.Epsilon.LayoutManager/%(RecursiveDir)" />
-		
+
 		<!-- declare files to move -->
 		<ItemGroup>
-			<SkinMoveFiles Include="$(TmpDir)/Skins/**/*.*" />	
+			<SkinMoveFiles Include="$(TmpDir)/Skins/**/*.*" />
 		</ItemGroup>
-	
-		<ItemGroup>	
+
+		<ItemGroup>
 			<ContainerMoveFiles Include="$(TmpDir)/Containers/**/*.*" />
 		</ItemGroup>
 
-		<ItemGroup>   
+		<ItemGroup>
             <MenuMoveFiles Include="$(TmpDir)/Menus/**/*.*" />
         </ItemGroup>
 
-        <ItemGroup> 
+        <ItemGroup>
             <ModuleMoveFiles Include="$(TmpDir)/Modules/**/*.*" />
         </ItemGroup>
 
@@ -113,15 +113,18 @@
 		<Copy SourceFiles="@(ContainerMoveFiles)" DestinationFolder="$(DnnContainersPath)/R7.Epsilon/%(RecursiveDir)" SkipUnchangedFiles="true" />
 		<Copy SourceFiles="@(MenuMoveFiles)" DestinationFolder="$(DnnMenusPath)/R7.Epsilon/%(RecursiveDir)" SkipUnchangedFiles="true" />
 		<Copy SourceFiles="@(ModuleMoveFiles)" DestinationFolder="$(DnnModulesPath)/R7.Epsilon/%(RecursiveDir)" SkipUnchangedFiles="true" />
-		
+
 		<!-- Deploy external files -->
 
 		<Copy SourceFiles="@(DeployExternalJsFiles)" DestinationFolder="$(DnnSkinsPath)/R7.Epsilon/js/" SkipUnchangedFiles="true" />
-		<Copy SourceFiles="@(DeployExternalCssFiles)" DestinationFolder="$(DnnSkinsPath)/R7.Epsilon/css/" SkipUnchangedFiles="true" />	
+		<Copy SourceFiles="@(DeployExternalCssFiles)" DestinationFolder="$(DnnSkinsPath)/R7.Epsilon/css/" SkipUnchangedFiles="true" />
+
+		<!-- Deploy config files -->
+		<Copy SourceFiles="$(MainProjectPath)/Skins/R7.Epsilon.yml" DestinationFolder="$(DnnLocalDeployPath)/Portals/0/" SkipUnchangedFiles="true" />
 
 		<!-- Copy binaries -->
 		<Copy SourceFiles="@(DeployBinaryFiles)" DestinationFolder="$(DnnBinPath)" SkipUnchangedFiles="true" />
-        
+
 		<!-- Cleanup -->
 		<RemoveDir Directories="$(TmpDir)" />
 

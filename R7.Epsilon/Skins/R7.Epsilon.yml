@@ -1,7 +1,17 @@
-﻿themes:
+themes:
   - name: green
     css: green-theme.min.css
     color: green
+    is-a11y-theme: false
+
+  - name: blue
+    css: blue-theme.min.css
+    color: blue
+    is-a11y-theme: false
+
+  - name: brown
+    css: brown-theme.min.css
+    color: brown
     is-a11y-theme: false
 
   - name: contrast
@@ -11,59 +21,92 @@
 
 footer-buttons-group-name: FooterButtons
 
-cdns:
-
-  - href: https://use.fontawesome.com/releases/v5.6.3/css/all.css
-    integrity: sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/
-    location: PageHead # BodyTop, BodyBottom
-
 primary-menu:
   node-selector: "*,0,2"
-#  include-nodes:
-#  node-manipulator-types:
+  node-manipulator-types:
+    - R7.News.Stream.Integrations.DDRMenu.StreamNodeManipulator, R7.News.Stream
 
 secondary-menu:
   node-selector: "*,0,2"
-#  include-nodes:
-#  node-manipulator-types:
 
 menu-url-type: 0
 
-# "On this page" menu will show up if number of headers on the page
-# is greater or equal to menu-min-headers value. Set to 0 to disable "On this page" menu.
-menu-min-headers: 7
+social-groups:
 
-social-networks:
-
-  - name: VKontakte
-    group: https://vk.com/YOUR-VK-HERE
+  - type: VKontakte
+    name: VKontakte1
+    url: https://vk.com/your-vk-group
     api-id: 0000000
     is-primary: true
-    share-enabled: false
-
-  - name: Facebook
-    group: https://www.facebook.com/YOUR-FACEBOOK-HERE
-    # specify Facebook App ID for the "like" button, or leave empty (will produce messages in JS console)
-    api-id: 000000000000000
-    share-enabled: false
-
-  - name: Twitter
-    group: https://twitter.com/YOUR-TWITTER-HERE
     share-enabled: true
-    params: ['YOUR-TWITTER-VIA-HERE']
 
-  - name: YouTube
-    group: https://www.youtube.com/channel/YOUR-YOUTUBE-HERE
+  - type: VKontakte
+    name: VKontakte2
+    color: '#458e66'
+    url: https://vk.com/your-vk-group
+    api-id: 0000000
+    is-primary: false
+    share-enabled: true
+
+  - type: Facebook
+    url: https://www.facebook.com/your-facebook-group
+    # specify Facebook App ID for the "like" button, or leave empty (will produce messages in JS console)
+    api-id:
+    share-enabled: true
+
+  - type: Twitter
+    url: https://twitter.com/your-twitter-group
+    share-enabled: true
+    params: ['your-twitter-via']
+
+  - type: YouTube
+    url: https://www.youtube.com/channel/your-youtube-group
     is-primary: true
 
-  - name: Odnoklassniki
-    group: https://ok.ru/group/YOUR-OK-HERE
+  - type: Odnoklassniki
+    url: https://ok.ru/group/your-ok-group
 
-  - name: Instagram
-    group: https://www.instagram.com/YOUR-INSTAGRAM-HERE
+  - type: Instagram
+    url: https://www.instagram.com/your-instagram-group
 
-  - name: LinkedIn
-    group: https://www.linkedin.com/YOUR-LINKEDIN-HERE
+  - type: LinkedIn
+    url: https://www.linkedin.com/your-linkedin-group
+
+  - type: Reddit
+    url: https://reddit.com
+
+adsense:
+  client: ca-pub-9311000650074319
+  slot: 6593885688
+
+show-terms: true
+
+show-privacy: true
+
+use-obrnadzor-microdata: false
+
+analytics:
+  use-sputnik: true
+
+feedback:
+#  tab-id: 1100
+#  module-definition-name: "Form and List"
+#  open-in-popup: false
+  tab-id: 1090
+  module-definition-name: "Feedback"
+  open-in-popup: true
+
+websites:
+
+  - name: site1
+    url: http://consulting.volgau.com
+    hreflang: ru
+
+  - name: altsite1
+    url: http://consulting.volgau.com
+    hreflang: en-US
+    is-alt-website: true
+
 
 search-engines:
 
@@ -79,20 +122,3 @@ search-engines:
     type: DuckDuckGo
     url-format: https://duckduckgo.com/search?q=site:{website}%20{searchText}
 
-adsense:
-  client: ca-pub-0000000000000000
-  slot: 0000000000
-
-show-terms: true
-
-show-privacy: true
-
-use-obrnadzor-microdata: false
-
-analytics:
-  use-sputnik: false
-
-feedback:
-  tab-id: -1
-  module-definition-name: "Feedback"
-  open-in-popup: true
