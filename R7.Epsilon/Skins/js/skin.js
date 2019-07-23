@@ -170,6 +170,12 @@ window.skinSearchExternalClick = function (e, link) {
         }
     }
 
+    function initSearch () {
+        $("#searchModal").on ("shown.bs.modal", function (e) {
+            $("#searchModal input[id$='_dnnSearch_txtSearch']").focus ();
+        });
+    }
+
     $(function () {
         initBootstrapTooltips ();
         initBootstrapPopovers ();
@@ -179,6 +185,7 @@ window.skinSearchExternalClick = function (e, link) {
             initBreadcrumb ();
             initUpButton (320, 500);
             initCustomContent ();
+            initSearch ();
             alterLanguage ();
             alterLogin ();
             window.skinA11y = new A11y ().init ();
