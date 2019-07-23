@@ -107,18 +107,14 @@ websites:
     hreflang: en-US
     is-alt-website: true
 
-
 search-engines:
 
-  - name: Google
+  - name: Google1
     type: Google
     url-format: https://google.com/search?q=site:{website}%20{searchText}
 
-  - name: Yandex
-    type: Yandex
+  - type: Yandex
     url-format: https://yandex.ru/search?site={website}&text={searchText}
 
-  - name: DuckDuckGo
-    type: DuckDuckGo
+  - type: DuckDuckGo
     url-format: https://duckduckgo.com/search?q=site:{website}%20{searchText}
-

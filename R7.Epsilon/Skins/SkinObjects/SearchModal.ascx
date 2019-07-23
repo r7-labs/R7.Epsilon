@@ -27,7 +27,13 @@
 								<a href="#" target="_blank" data-url-format="<%: engine.UrlFormat %>" onclick="skinSearchExternalClick(event,this)">
 									<i class='fab fa-<%: SearchEngineHelper.GetFAIconName (engine.Type) %>'></i>
 									<%: Localizer.GetString ("SearchWith.Text") %>
-									<%: Localizer.GetStringOrKey ("SearchEngineType_" + engine.Type + ".Text") %>
+									<% if (!string.IsNullOrEmpty (engine.Name)) { %>
+										<span class="skin-custom-content" data-resource-key='<%: "SearchEngineType_" + engine.Name + ".Text" %>'>
+											<%: Localizer.GetStringOrKey ("SearchEngineType_" + engine.Name + ".Text") %>
+										</span>
+									<% } else { %>
+										<%: Localizer.GetString ("SearchEngineType_" + engine.Type + ".Text") %>
+									<% } %>
 								</a>
 							</li>
 						<% } %>
