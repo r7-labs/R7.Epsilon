@@ -96,6 +96,8 @@
     <Compile Include="Components\EpsilonConfig.cs" />
     <Compile Include="Components\SocialGroupType.cs" />
     <Compile Include="Components\SocialGroupHelper.cs" />
+    <Compile Include="Components\SearchEngineType.cs" />
+    <Compile Include="Components\SearchEngineHelper.cs" />
     <Compile Include="Models\DynamicPane.cs" />
     <Compile Include="Models\Layout.cs" />
     <Compile Include="Components\MarkupParser.cs" />

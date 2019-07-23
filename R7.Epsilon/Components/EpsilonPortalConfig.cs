@@ -103,6 +103,8 @@ namespace R7.Epsilon.Components
 
         public List<SocialGroupConfig> SocialGroups { get; set; } = new List<SocialGroupConfig> ();
 
+        public List<SearchEngineConfig> SearchEngines { get; set; } = new List<SearchEngineConfig> ();
+
         public AnalyticsConfig Analytics { get; set; } = new AnalyticsConfig ();
 
         #endregion
@@ -215,5 +217,18 @@ namespace R7.Epsilon.Components
 
         public bool IsAltWebsite { get; set; }
     }
-}
 
+    public class SearchEngineConfig
+    {
+        public string Name { get; set; }
+
+        public SearchEngineType Type { get; set; }
+
+        public string UrlFormat { get; set; }
+
+        public string GetUrl (string website, string searchText)
+        {
+            return UrlFormat.Replace ("{website}", website).Replace ("{searchText}", HttpUtility.UrlEncode (searchText));
+        }
+    }
+}

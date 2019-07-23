@@ -5,6 +5,7 @@ var epsilon = {
     tabId:<%= PortalSettings.ActiveTab.TabID %>,
     tabName:'<%= PortalSettings.ActiveTab.TabName %>',
     portalId:<%= PortalSettings.Current.PortalId %>,
+	portalAlias:'<%= PortalSettings.Current.PortalAlias.HTTPAlias %>',
     breadCrumbs:<%= JsBreadCrumbsList %>,
     breadCrumbsRemoveLastLink:<%= JsBreadCrumbsRemoveLastLink %>,
 	layoutManagerUrl:'<%= LayoutManagerUrl %>',

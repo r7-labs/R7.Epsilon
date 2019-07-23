@@ -170,6 +170,21 @@
     <data name="SearchModalTitle.Text" xml:space="preserve">
         <value>Поиск</value>
     </data>
+	<data name="SearchEngines.Text" xml:space="preserve">
+        <value>Не нашли того, что искали? Используйте внешние поисковые системы для поиска по нашему сайту:</value>
+    </data>
+	<data name="SearchWith.Text" xml:space="preserve">
+        <value>Искать с помощью</value>
+    </data>
+	<data name="SearchEngineType_Google.Text" xml:space="preserve">
+        <value>Google</value>
+    </data>
+	<data name="SearchEngineType_Yandex.Text" xml:space="preserve">
+        <value>Яндекс</value>
+    </data>
+	<data name="SearchEngineType_DuckDuckGo.Text" xml:space="preserve">
+        <value>DuckDuckGo</value>
+    </data>
     <data name="ModalClose.Text" xml:space="preserve">
         <value>Закрыть</value>
     </data>

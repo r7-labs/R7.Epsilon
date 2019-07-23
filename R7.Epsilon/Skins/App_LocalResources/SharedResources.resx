@@ -191,6 +191,21 @@
     <data name="SearchModalTitle.Text" xml:space="preserve">
         <value>Search</value>
     </data>
+	<data name="SearchEngines.Text" xml:space="preserve">
+        <value>Not found you have looked for? Use web search engines to find content on our site:</value>
+    </data>
+	<data name="SearchWith.Text" xml:space="preserve">
+        <value>Search with</value>
+    </data>
+	<data name="SearchEngineType_Google.Text" xml:space="preserve">
+        <value>Google</value>
+    </data>
+	<data name="SearchEngineType_Yandex.Text" xml:space="preserve">
+        <value>Yandex</value>
+    </data>
+	<data name="SearchEngineType_DuckDuckGo.Text" xml:space="preserve">
+        <value>DuckDuckGo</value>
+    </data>
     <data name="ModalClose.Text" xml:space="preserve">
         <value>Close</value>
     </data>

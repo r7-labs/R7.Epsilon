@@ -213,6 +213,7 @@ header > .container > .row
     }
     ul.searchSkinObjectPreview {
         border-top: none;
+        position: static;
         width: 100%;
         & > li {
             width: 100%;
@@ -220,8 +221,6 @@ header > .container > .row
         }
         & > li.searchSkinObjectPreview_group {
             width: 100%;
-            text-align: center;
-            font-weight: normal;
             border-bottom: none;
         }
     }
@@ -249,7 +248,7 @@ header > .container > .row
     background-color:transparent;
     &:hover
     {
-        background-color:$color-primary-3;
+        background-color:$color-primary-4;
     }
     .icon-bar { background-color:#fff; }
 }

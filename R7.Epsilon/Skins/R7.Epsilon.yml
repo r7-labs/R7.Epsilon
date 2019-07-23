@@ -65,6 +65,20 @@ social-networks:
   - name: LinkedIn
     group: https://www.linkedin.com/YOUR-LINKEDIN-HERE
 
+search-engines:
+
+  - name: Google
+    type: Google
+    url-format: https://google.com/search?q=site:{website}%20{searchText}
+
+  - name: Yandex
+    type: Yandex
+    url-format: https://yandex.ru/search?site={website}&text={searchText}
+
+  - name: DuckDuckGo
+    type: DuckDuckGo
+    url-format: https://duckduckgo.com/search?q=site:{website}%20{searchText}
+
 adsense:
   client: ca-pub-0000000000000000
   slot: 0000000000

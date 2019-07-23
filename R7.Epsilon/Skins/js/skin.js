@@ -42,6 +42,12 @@ window.skinOpenFeedback = function (button, $, feedbackModuleId) {
     }
 };
 
+window.skinSearchExternalClick = function (e, link) {
+    const searchText = $("input[id$='_dnnSearch_txtSearch']").val ();
+    const urlFormat = $(link).data ("url-format");
+    $(link).attr ("href", urlFormat.replace ("{website}", encodeURIComponent (epsilon.portalAlias)).replace ("{searchText}", encodeURIComponent (searchText)));
+};
+
 (function ($, window, document) {
 
     function initBreadcrumb () {
