@@ -10,54 +10,38 @@
 	// always show output window
 	"presentation": {
 		"reveal": "always"
-	},
+  },
+  "command": "msbuild",
+  "windows": {
+    "command": "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\MSBuild.exe"
+  },
 	"tasks": [
 		{
 			"label": "Build",
 			"group": "build",
-			"command": "msbuild",
-			"windows": {
-				"command": "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\MSBuild.exe"
-			},
 			"args": ["/t:Build"],
 			// use the standard MS compiler pattern to detect errors, warnings and infos
 			"problemMatcher": "$msCompile"
 		},
 		{
 			"label": "Build Only",
-			"command": "msbuild",
-			"windows": {
-				"command": "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\MSBuild.exe"
-			},
 			"args": ["/t:Build", "/p:EnableAfterBuild=false"],
 			// use the standard MS compiler pattern to detect errors, warnings and infos
 			"problemMatcher": "$msCompile"
 		},
 		{
 			"label": "Build & Deploy",
-			"command": "msbuild",
-			"windows": {
-				"command": "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\MSBuild.exe"
-			},
 			"args": ["/t:Build", "/p:EnableTests=false", "/p:EnableInstallPackage=false", "/p:EnableLocalDeploy=true"],
 			// use the standard MS compiler pattern to detect errors, warnings and infos
 			"problemMatcher": "$msCompile"
 		},
-        {
+    {
 			"label": "Re-deploy",
-			"command": "msbuild",
-			"windows": {
-				"command": "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\MSBuild.exe"
-			},
 			"args": ["/p:EnableTests=false", "Deploy/LocalDeploy.targets"],
 			"problemMatcher": []
-        },
+    },
 		{
 			"label": "Make Install Package",
-			"command": "msbuild",
-			"windows": {
-				"command": "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\MSBuild.exe"
-			},
 			"args": ["/t:Build", "/p:EnableTests=true", "/p:EnableInstallPackage=true", "/p:EnableLocalDeploy=false"],
 			// use the standard MS compiler pattern to detect errors, warnings and infos
 			"problemMatcher": "$msCompile"
@@ -65,13 +49,9 @@
 		{
 			"label": "Run Tests",
 			"group": "test",
-			"command": "msbuild",
-			"windows": {
-				"command": "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\MSBuild.exe"
-			},
 			"args": ["/t:Build", "/p:EnableTests=true", "/p:EnableInstallPackage=false", "/p:EnableLocalDeploy=false"],
 			// use the standard MS compiler pattern to detect errors, warnings and infos
 			"problemMatcher": "$msCompile"
-		}
-    ]
+    }
+  ]
 }
