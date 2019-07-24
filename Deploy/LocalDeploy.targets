@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0" DefaultTargets="LocalDeploy">
-	<Import Project="BuildSettings.targets" Condition=" '$(BuildSettingsImported)' == '' " />
+	<Import Project="__Settings.targets" Condition=" '$(BuildSettingsImported)' == '' " />
 	<Import Project="Bundle.targets" Condition=" '$(BundleImported)' == '' " />
 	<Import Project="Tests.targets" Condition=" '$(TestsImported)' == '' "/>
 
 	<PropertyGroup>
 		<!-- Enable local deploy by default (standalone) -->
     	<EnableLocalDeploy Condition=" '$(EnableLocalDeploy)' == '' ">true</EnableLocalDeploy>
-		<NodeModulesPath>../node_modules</NodeModulesPath>
 	</PropertyGroup>
+
 	<Target Name="LocalDeploy" Condition=" '$(EnableLocalDeploy)' == 'true' " DependsOnTargets="Bundle;Tests">
 
 		<!-- Declare skin files -->
@@ -65,8 +65,8 @@
 
         <!-- Declare binaries -->
         <ItemGroup>
-            <DeployBinaryFiles Include="$(MainProjectOutputPath)/R7.Epsilon*.dll" />
-            <DeployBinaryFiles Include="$(MainProjectOutputPath)/R7.Epsilon*.pdb" Condition=" '$(Configuration)' == 'Debug' "/>
+            <DeployBinaryFiles Include="$(MainProjectOutputPath)/$(MainProjectName)*.dll" />
+            <DeployBinaryFiles Include="$(MainProjectOutputPath)/$(MainProjectName)*.pdb" Condition=" '$(Configuration)' == 'Debug' "/>
 		</ItemGroup>
 
 		<!-- Declare external JS files -->
@@ -90,34 +90,29 @@
 		<Copy SourceFiles="@(DeployMenuFiles)" DestinationFolder="$(TmpDir)/Menus/%(RecursiveDir)" />
         <Copy SourceFiles="@(DeployLayoutManagerFiles)" DestinationFolder="$(TmpDir)/Modules/R7.Epsilon.LayoutManager/%(RecursiveDir)" />
 
-		<!-- declare files to move -->
+		<!-- Declare files to move -->
 		<ItemGroup>
 			<SkinMoveFiles Include="$(TmpDir)/Skins/**/*.*" />
 		</ItemGroup>
-
 		<ItemGroup>
 			<ContainerMoveFiles Include="$(TmpDir)/Containers/**/*.*" />
 		</ItemGroup>
-
 		<ItemGroup>
             <MenuMoveFiles Include="$(TmpDir)/Menus/**/*.*" />
         </ItemGroup>
-
         <ItemGroup>
             <ModuleMoveFiles Include="$(TmpDir)/Modules/**/*.*" />
         </ItemGroup>
 
 		<!-- Deploy files -->
-
-		<Copy SourceFiles="@(SkinMoveFiles)" DestinationFolder="$(DnnSkinsPath)/R7.Epsilon/%(RecursiveDir)" SkipUnchangedFiles="true" />
-		<Copy SourceFiles="@(ContainerMoveFiles)" DestinationFolder="$(DnnContainersPath)/R7.Epsilon/%(RecursiveDir)" SkipUnchangedFiles="true" />
-		<Copy SourceFiles="@(MenuMoveFiles)" DestinationFolder="$(DnnMenusPath)/R7.Epsilon/%(RecursiveDir)" SkipUnchangedFiles="true" />
-		<Copy SourceFiles="@(ModuleMoveFiles)" DestinationFolder="$(DnnModulesPath)/R7.Epsilon/%(RecursiveDir)" SkipUnchangedFiles="true" />
+		<Copy SourceFiles="@(SkinMoveFiles)" DestinationFolder="$(ProjectSkinsPath)/%(RecursiveDir)" SkipUnchangedFiles="true" />
+		<Copy SourceFiles="@(ContainerMoveFiles)" DestinationFolder="$(ProjectContainersPath)/%(RecursiveDir)" SkipUnchangedFiles="true" />
+		<Copy SourceFiles="@(MenuMoveFiles)" DestinationFolder="$(ProjectMenusPath)/%(RecursiveDir)" SkipUnchangedFiles="true" />
+		<Copy SourceFiles="@(ModuleMoveFiles)" DestinationFolder="$(ProjectModulesPath)/%(RecursiveDir)" SkipUnchangedFiles="true" />
 
 		<!-- Deploy external files -->
-
-		<Copy SourceFiles="@(DeployExternalJsFiles)" DestinationFolder="$(DnnSkinsPath)/R7.Epsilon/js/" SkipUnchangedFiles="true" />
-		<Copy SourceFiles="@(DeployExternalCssFiles)" DestinationFolder="$(DnnSkinsPath)/R7.Epsilon/css/" SkipUnchangedFiles="true" />
+		<Copy SourceFiles="@(DeployExternalJsFiles)" DestinationFolder="$(ProjectSkinsPath)/js/" SkipUnchangedFiles="true" />
+		<Copy SourceFiles="@(DeployExternalCssFiles)" DestinationFolder="$(ProjectSkinsPath)/css/" SkipUnchangedFiles="true" />
 
 		<!-- Deploy config files -->
 		<Copy SourceFiles="$(MainProjectPath)/Skins/R7.Epsilon.yml" DestinationFolder="$(DnnLocalDeployPath)/Portals/0/" SkipUnchangedFiles="true" />
