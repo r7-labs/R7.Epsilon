@@ -42,8 +42,8 @@
     <data name="CopyrightNote.Text" xml:space="preserve">
         <value>By copying the text and photos the reference to the site is mandatory</value>
     </data>
-    <data name="ButtonUp.Title" xml:space="preserve">
-        <value>Click me to go up</value>
+    <data name="ButtonUp_Title.Text" xml:space="preserve">
+        <value>Click here to go to the top of the page.</value>
     </data>
     <data name="LocalMenu.Text" xml:space="preserve">
         <value><![CDATA[Contents <span class="fas fa-chevron-down"></span>]]></value>
@@ -81,11 +81,8 @@
     <data name="SubMenuClose.Text" xml:space="preserve">
         <value>Close Menu</value>
     </data>
-    <data xml:space="preserve" name="FeedBackButton.Text">
-        <value></value>
-    </data>
-    <data xml:space="preserve" name="FeedBackButton.Tooltip">
-        <value>Select error with mouse and click me to open feedback form</value>
+    <data xml:space="preserve" name="FeedbackButton_Title.Text">
+        <value>Click the button to open feedback form. You also can preliminarily select fragment of text on the page to pass it to the feedback form.</value>
     </data>
 	<data name="SocialGroups.Text" xml:space="preserve">
         <value>Follow Us!</value>
@@ -145,11 +142,17 @@
         <value>Translate with Google</value>
     </data>
     <data name="AgeRating.Text" xml:space="preserve">
-        <value>12+</value>
+        <value>12</value>
     </data>
-    <data name="AgeRating.Title" xml:space="preserve">
-        <value>Information products for children since the age of twelve years (12+)</value>
+    <data name="AgeRating_Title.Text" xml:space="preserve">
+        <value>Information product for children since the age of twelve years - PEGI 12 (unless otherwise specified). Click the button to get more info.</value>
     </data>
+	<data name="AgeRating_Color.Text" xml:space="preserve">
+		<value>#f4a100</value>
+	</data>
+	<data name="AgeRating_Link.Text" xml:space="preserve">
+		<value>https://pegi.info/</value>
+	</data>
 	<data name="LastModified.Text" xml:space="preserve">
         <value>Last Modified:</value>
     </data>

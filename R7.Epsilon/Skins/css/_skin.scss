@@ -23,24 +23,9 @@
 
 /* Mixins */
 
-@mixin square-backgrounded-button ($width, $bg-image)
-{
-    width: $width;
-    height: $width;
-    cursor: pointer;
-    background-image: $bg-image;
-    background-repeat: no-repeat;
-}
-
 @mixin background-position-xy ($index-x, $index-y, $icon-size)
 {
     background-position:(-$icon-size * $index-x) (-$icon-size * $index-y);
-}
-
-@mixin functions-background ($icon-number)
-{
-    @include background-position-xy ($icon-number, 0, 32px);
-    &:hover { @include background-position-xy ($icon-number, 1, 32px); }
 }
 
 /* Styles */
@@ -97,8 +82,6 @@ a.btn-primary:visited {
   color: #fff;
 }
 
-/* Float Buttons */
-
 .unselectable {
     -moz-user-select:-moz-none;
     -khtml-user-select:none;
@@ -107,34 +90,38 @@ a.btn-primary:visited {
     user-select:none;
 }
 
-.skin-float-button-wrapper
-{
-    position:fixed;
-    bottom:1em;
-    right:1.5em;
-    z-index:10;
-    width:50px; // for vertical buttons
+/* Float Buttons */
+
+.skin-float-box-vertical {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 4.5rem;
+    z-index: 10;
 }
 
-.skin-float-button {
-    display:inline-block;
-    width:48px+4px;
-    height:48px+4px;
-    border:2px solid #fff;
-    border-radius:(48px + 4px)/2;
+.skin-float-btn {
+    display: inline-block;
+    width: 4rem;
+    height: 4rem;
+    margin: 0.25rem;
+    line-height: 3.4rem;
+    color: #fff;
+    font-size: 2rem;
+    text-align: center;
+    border: 3px solid #fff;
+    border-radius: 50%;
     cursor:pointer;
-    opacity:$float-button-opacity;
-    &:hover { opacity:$float-button-opacity-hover; }
+    opacity: $float-button-opacity;
+    &:hover { opacity: 1;  }
+    color: #fff;
+    & > i { color: #fff; }
+    &:link, &:hover, &:visited { color: #fff; }
+    &:hover { text-decoration: none; }
 }
 
-.skin-float-button-feedback {
-    background:$footer-last-background-color url('../images/float_buttons_48x48.png') no-repeat left;
-}
-
-.skin-float-button-up {
-    // FIXME: should be $primary-menu-color
-    background:$color-primary-4 url('../images/float_buttons_48x48.png') no-repeat left;
-    @include background-position-xy (1, 0, 48px);
+.skin-float-btn-age-rating {
+    font-weight: bolder;
 }
 
 header > .container
@@ -149,8 +136,6 @@ header > .container > .row
     margin-left:0;
 }
 
-.skin-functions-wrapper { padding-left:0 }
-
 .skin-languages {
     .language-object > select,
     .Language.selected,
@@ -162,38 +147,6 @@ header > .container > .row
 .skin-languages-btn > sup {
 	position: relative;
 	left: -0.2rem;
-}
-
-.skin-functions
-{
-    display:inline-block;
-    padding-top:4px;
-
-    .skin-functions-icon
-    {
-        display:inline-block;
-        margin-left:3px;
-        &:first-child a { margin-left:0; }
-
-        @include square-backgrounded-button (32px, url('../images/functions_mono_32x32.png'));
-
-        &.skin-functions-icon-gtranslate { @include functions-background (0); }
-        &.skin-functions-icon-age-rating { @include functions-background (2); }
-        &.skin-functions-icon-alt-website {
-            @include functions-background (3);
-            font-weight:bold;
-            color:#000;
-            line-height:32px;
-            position:relative;
-			top:-12px;
-			text-align:center;
-        }
-
-        &.skin-functions-icon-alt-website:hover {
-            color:#fff;
-            text-decoration:none;
-        }
-    }
 }
 
 // Search

@@ -39,8 +39,8 @@
     <data name="CopyrightNote.Text" xml:space="preserve">
         <value>При перепечатке текстовой информации и фотографий ссылка на сайт обязательна</value>
     </data>
-    <data name="ButtonUp.Title" xml:space="preserve">
-        <value>Нажми меня, чтобы перейти наверх</value>
+    <data name="ButtonUp_Title.Text" xml:space="preserve">
+        <value>Нажмите здесь, чтобы перейти к началу страницы.</value>
     </data>
     <data name="LocalMenu.Text" xml:space="preserve">
         <value><![CDATA[Содержание <span class="fas fa-chevron-down"></span>]]></value>
@@ -78,11 +78,8 @@
     <data name="SubMenuClose.Text" xml:space="preserve">
         <value>Закрыть меню</value>
     </data>
-    <data xml:space="preserve" name="FeedBackButton.Text">
-        <value></value>
-    </data>
-    <data xml:space="preserve" name="FeedBackButton.Tooltip">
-        <value>Выдели место ошибки мышкой и нажми меня, чтобы открыть форму обратной связи</value>
+    <data xml:space="preserve" name="FeedbackButton_Title.Text">
+        <value>Нажмите на кнопку, чтобы открыть форму обратной связи. Вы также можете предварительно выделить фрагмент текста на странице, чтобы передать его в форму обратной связи.</value>
     </data>
 	<data name="SocialGroups.Text" xml:space="preserve">
         <value>Присоединяйтесь!</value>
@@ -132,9 +129,15 @@
     <data name="AgeRating.Text" xml:space="preserve">
         <value>12+</value>
     </data>
-    <data name="AgeRating.Title" xml:space="preserve">
-        <value>Информационная продукция для детей, достигших возраста двенадцати лет (12+)</value>
+    <data name="AgeRating_Title.Text" xml:space="preserve">
+        <value>Информационная продукция для детей старше 12 лет (если иное не указано дополнительно). Нажмите на кнопку для получения подробной информации.</value>
     </data>
+	<data name="AgeRating_Link.Text" xml:space="preserve">
+		<value>https://base.garant.ru/77680092/948c9c0734b6e944a4727660f2d5a027/</value>
+	</data>
+	<data name="AgeRating_Color.Text" xml:space="preserve">
+		<value>#f4a100</value>
+	</data>
     <data name="LastModified.Text" xml:space="preserve">
         <value>Последние изменения:</value>
     </data>

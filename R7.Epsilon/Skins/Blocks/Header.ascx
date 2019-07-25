@@ -30,12 +30,7 @@
                 <dnn:LOGO runat="server" id="dnnLOGO" />
             </div>
         </div>
-		<div class="col-md-2 col-sm-4 col-xs-6 skin-functions-wrapper">
-            <div class="skin-functions">
-				<skin:FUNCTIONS runat="server" />
-            </div>
-        </div>
-        <div class="col-md-7 col-sm-12 text-md-right text-sm-center">
+        <div class="col-md-9 col-sm-12 text-md-right text-sm-center">
 			<button type="button" role="search" class="btn btn-lg skin-search-btn" style="display:inline-block"
                 data-toggle="modal" data-target="#searchModal"
                 title='<%: Localizer.GetString("SearchModalButton.Text") %>'>

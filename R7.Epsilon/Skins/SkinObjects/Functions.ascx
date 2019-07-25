@@ -1,3 +1,0 @@
-﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.Skins.SkinObjects.EpsilonSkinObjectBase" %>
-<%@ OutputCache Duration="1200" VaryByParam="TabId;Language" %>
-<div class="skin-functions-icon skin-functions-icon-age-rating" data-toggle="tooltip" data-placement="bottom" title="<%: Localizer.GetString("AgeRating.Title") %>" aria-label="<%: Localizer.GetString("AgeRating.Title") %>"></div>

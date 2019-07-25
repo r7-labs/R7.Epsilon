@@ -182,7 +182,6 @@
     <Content Include="Skins\images\logo-template.png" />
     <Content Include="Skins\images\logo-template.svg" />
     <Content Include="Skins\images\button_100x100.png" />
-    <Content Include="Skins\images\button_100x100.svg" />
     <Content Include="Skins\Universal.ascx" />
     <Content Include="Containers\Default_H3.ascx" />
     <Content Include="Containers\Message_Warning.ascx" />
@@ -202,10 +201,6 @@
     <Content Include="Skins\images\logo_template_178x100.xcf" />
     <Content Include="Skins\js\a11y.js" />
     <Content Include="Skins\js\menu.js" />
-    <Content Include="Skins\images\social_mono_32x32.png" />
-    <Content Include="Skins\images\social_mono_32x32.svg" />
-    <Content Include="Skins\images\functions_mono_32x32.png" />
-    <Content Include="Skins\images\functions_mono_32x32.svg" />
     <Content Include="Skins\css\blueimp.scss" />
     <Content Include="Containers\Default_H4.ascx" />
     <Content Include="Containers\Thumbnail.ascx" />
@@ -234,7 +229,6 @@
     <Content Include="Skins\SkinObjects\FeedbackButton.ascx" />
     <Content Include="Skins\SkinObjects\CustomContent.ascx" />
     <Content Include="Skins\SkinObjects\Founders.ascx" />
-    <Content Include="Skins\SkinObjects\Functions.ascx" />
     <Content Include="Skins\SkinObjects\GAdsense.ascx" />
     <Content Include="Skins\SkinObjects\HeadersMenu.ascx" />
     <Content Include="Skins\SkinObjects\JsVariables.ascx" />
@@ -262,8 +256,6 @@
     <Content Include="Containers\PanelBody_Danger.ascx" />
     <Content Include="Skins\SkinObjects\Banners\BannerLoader.ascx" />
     <Content Include="Skins\SkinObjects\Banners\BannerWrapper.ascx" />
-    <Content Include="Skins\images\float_buttons_48x48.png" />
-    <Content Include="Skins\images\float_buttons_48x48.svg" />
     <Content Include="Skins\images\login_icons.png" />
     <Content Include="Skins\images\login_icons.svg" />
     <Content Include="Skins\images\founders.png" />
@@ -331,5 +323,6 @@
     <Content Include="Skins\SkinObjects\A11yFunctions.ascx" />
     <Content Include="Skins\SkinObjects\Websites.ascx" />
     <Content Include="Skins\css\_bootstrap.scss" />
+    <Content Include="Skins\SkinObjects\FloatButtons.ascx" />
   </ItemGroup>
 </Project>

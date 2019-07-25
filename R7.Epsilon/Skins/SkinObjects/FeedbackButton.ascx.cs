@@ -60,12 +60,12 @@ namespace R7.Epsilon.Skins.SkinObjects
                     openInPopup = false;
                 }
 
-                linkFeedback.CssClass = "unselectable " + CssClass;
-                linkFeedback.ToolTip = Localizer.GetString("FeedBackButton.Tooltip");
-                linkFeedback.Text = Localizer.GetString("FeedBackButton.Text");
+                linkFeedback.CssClass = CssClass;
+                linkFeedback.ToolTip = Localizer.GetString ("FeedbackButton_Title.Text");
+                linkFeedback.Attributes.Add ("href", "#");
                 linkFeedback.Attributes.Add ("data-feedback-url", feedbackUrl);
                 linkFeedback.Attributes.Add ("data-feedback-open-in-popup", openInPopup.ToString ().ToLowerInvariant ());
-                linkFeedback.Attributes.Add ("onclick", $"skinOpenFeedback(this,jQuery,{feedbackModule.ModuleID})");
+                linkFeedback.Attributes.Add ("onclick", $"skinOpenFeedback(event,this,jQuery,{feedbackModule.ModuleID})");
             }
             else {
                 // no feedback module found, hide the button

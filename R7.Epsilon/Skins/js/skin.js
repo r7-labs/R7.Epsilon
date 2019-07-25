@@ -25,7 +25,8 @@ window.skinGoogleTranslatePage = function (fromLang) {
     window.open ("http://translate.google.com/translate?hl=en&sl=" + fromLang + "&u=" + encodeURI (document.location));
 };
 
-window.skinOpenFeedback = function (button, $, feedbackModuleId) {
+window.skinOpenFeedback = function (e, button, $, feedbackModuleId) {
+    e.preventDefault ();
     const selection = encodeURIComponent (rangy.getSelection ().toString ().replace (/(\n|\r)/gm," ").replace (/\s+/g, " ").replace (/\"/g, "").trim ().substring (0,100));
     const baseFeedbackUrl = $(button).data ("feedback-url");
     const feedbackParams = "returntabid=" + epsilon.queryParams ["TabId"] + "&feedbackmid=" + feedbackModuleId;
@@ -76,13 +77,13 @@ window.skinSearchExternalClick = function (e, link) {
     function initUpButton (offset, duration) {
         $(window).scroll(function() {
             if ($(this).scrollTop() > offset) {
-                $('.skin-float-button-up').fadeIn(duration);
+                $('.skin-float-btn-up').fadeIn(duration);
             } else {
-                $('.skin-float-button-up').fadeOut(duration);
+                $('.skin-float-btn-up').fadeOut(duration);
             }
         });
 
-        $('.skin-float-button-up').click(function(event) {
+        $('.skin-float-btn-up').click(function(event) {
             event.preventDefault();
             $(this).tooltip ('hide');
             $('html, body').animate({scrollTop: 0}, duration);
