@@ -157,7 +157,7 @@ window.skinSearchExternalClick = function (e, link) {
 
     function initCustomContent () {
         // TODO: Also check for superusers and admins
-        if (epsilon.isEditable) {
+        if (epsilon.isEditMode) {
             $(".skin-custom-content").each (function () {
                 $(this).prepend ("<div class='actionMenu'>"
                                 + "<ul class='dnn_mact'>"
