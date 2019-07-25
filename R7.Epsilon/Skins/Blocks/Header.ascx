@@ -41,21 +41,25 @@
                 title='<%: Localizer.GetString("SearchModalButton.Text") %>'>
                 <i class="fas fa-search"></i>
             </button>
-            <skin:A11YFUNCTIONS runat="server" />
-			<skin:LANGUAGES runat="server" />
-            <% if (Config.Websites.Count > 0) { %>
-				<skin:WEBSITES runat="server" />
-			<% } %>
-			<% if (Config.SocialGroups.Count > 0) { %>
-				<skin:SOCIALGROUPS runat="server" />
-			<% } %>
+			<div class="card card-body bg-light p-2 mr-2 mb-2" style="display:inline-block">
+            	<skin:A11YFUNCTIONS runat="server" />
+				<skin:LANGUAGES runat="server" />
+			</div>
+			<div class="card card-body bg-light p-2 mb-2" style="display:inline-block">
+				<% if (Config.Websites.Count > 0) { %>
+					<skin:WEBSITES runat="server" />
+				<% } %>
+				<% if (Config.SocialGroups.Count > 0) { %>
+					<skin:SOCIALGROUPS runat="server" />
+				<% } %>
+			</div>
 			<div class="dropdown skin-login" style="display:inline-block">
 				<button type="button" class="btn btn-lg dropdown-toggle" data-toggle="dropdown" title='<%: Localizer.GetString ("UserProfile.Text") %>'>
 					<i class="fas fa-user"></i>
 				</button>
 				<div class="dropdown-menu">
-			 		<dnn:LOGIN runat="server" LegacyMode="false" />
-    				<dnn:USER runat="server" LegacyMode="false" />
+					<dnn:LOGIN runat="server" LegacyMode="false" />
+					<dnn:USER runat="server" LegacyMode="false" />
 				</div>
 			</div>
         </div>
