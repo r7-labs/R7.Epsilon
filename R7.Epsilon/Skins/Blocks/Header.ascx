@@ -93,19 +93,5 @@
         <div class="collapse navbar-collapse skin-top-menu" role="navigation">
             <skin:SECONDARYMENU runat="server" />
         </div>
-<!--
-        <div class="collapse navbar-collapse skin-primary-navbar-main d-none">
-            <div class="skin-founders-wrapper d-none">
-                <skin:FOUNDERS runat="server" Target="_blank" />
-            </div>
-
-            <div class="skin-header-content d-sm-none">
-                <skin:LOGOTITLE runat="server" />
-            </div>
-            <skin:CUSTOMCONTENT runat="server" CssClass="skin-header-content d-none" ResourceKey="HeaderPane1.Content" />
-        </div>
-        -->
     </div>
 </nav>
-
-
