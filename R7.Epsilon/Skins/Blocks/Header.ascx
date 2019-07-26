@@ -25,29 +25,17 @@
 </div>
 <div class="container --sticky-top">
     <div class="row">
-        <div class="col-md-3 col-sm-4 d-xs-none">
+        <div class="col-xs-12 col-md col-sm-6 col-lg-3">
             <div class="navbar-brand skin-navbar-brand-logo">
                 <dnn:LOGO runat="server" id="dnnLOGO" />
             </div>
         </div>
-        <div class="col-md-9 col-sm-12 text-md-right text-sm-center">
+        <div class="col-xs-12 col-sm-6 col-md col-lg-3 order-md-last text-sm-right">
 			<button type="button" role="search" class="btn btn-lg skin-search-btn" style="display:inline-block"
                 data-toggle="modal" data-target="#searchModal"
                 title='<%: Localizer.GetString("SearchModalButton.Text") %>'>
                 <i class="fas fa-search"></i>
             </button>
-			<div class="card card-body bg-light p-2 mr-2 mb-2" style="display:inline-block">
-            	<skin:A11YFUNCTIONS runat="server" />
-				<skin:LANGUAGES runat="server" />
-			</div>
-			<div class="card card-body bg-light p-2 mb-2" style="display:inline-block">
-				<% if (Config.Websites.Count > 0) { %>
-					<skin:WEBSITES runat="server" />
-				<% } %>
-				<% if (Config.SocialGroups.Count > 0) { %>
-					<skin:SOCIALGROUPS runat="server" />
-				<% } %>
-			</div>
 			<div class="dropdown skin-login" style="display:inline-block">
 				<button type="button" class="btn btn-lg dropdown-toggle" data-toggle="dropdown" title='<%: Localizer.GetString ("UserProfile.Text") %>'>
 					<i class="fas fa-user"></i>
@@ -58,6 +46,17 @@
 				</div>
 			</div>
         </div>
+		<hr class="w-100 d-md-none" />
+		<div class="col-xs-12 col-sm-12 col-md col-lg-6 text-lg-center">
+			<skin:A11YFUNCTIONS runat="server" />
+			<skin:LANGUAGES runat="server" />
+			<% if (Config.Websites.Count > 0) { %>
+				<skin:WEBSITES runat="server" />
+			<% } %>
+			<% if (Config.SocialGroups.Count > 0) { %>
+				<skin:SOCIALGROUPS runat="server" />
+			<% } %>
+		</div>
     </div>
 </div>
 <nav class="navbar navbar-expand-md bg-dark navbar-dark --sticky-top navbar-1 --skin-primary-navbar">
