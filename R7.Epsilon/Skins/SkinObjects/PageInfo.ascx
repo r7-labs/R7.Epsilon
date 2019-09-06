@@ -1,13 +1,13 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.Skins.SkinObjects.PageInfo" %>
 <%@ OutputCache Duration="1200" VaryByParam="TabId;Language" %>
-<div class="text-muted small skin-page-info">
-	<div>
+<ul class="list-inline text-muted small skin-page-info">
+	<li class="list-inline-item">
         <span class="fas fa-calendar-alt"></span> <%= Localizer.GetString ("LastModified.Text") %> <%: LastContentModifiedOnDate %>
-	</div>
-    <div>
+	</li>
+    <li class="list-inline-item">
 	    <span class="fas fa-user"></span> <%: LastContentModifiedByUserName %>
-	</div>
-    <div>
+	</li>
+    <li class="list-inline-item">
 	    <span class="fas fa-globe"></span> <%= Localizer.GetString ("Permalink.Text") %> <%: PagePermalink %>
-	</div>
-</div>
+	</li>
+</ul>
