@@ -298,22 +298,24 @@ header > .container > .row
     border:none; // override navbar 1px border
 }
 
-.page-header
+.skin-page-header
 {
     margin-top:5px;
     padding-bottom:5px;
 
-    h1, h2
+    &h1, &h2
     {
         margin-top:0;
         a { color:$color-secondary-1-3; }
     }
-    h1 small, h2 small { display:inline-block; }
+    &h1 small, &h2 small { display:inline-block; }
 }
 
-.skin-page-info > div {
-    display:inline-block;
-    margin-right:1em;
+.skin-home {
+    // hide (but not remove) page header for the home page
+    .skin-page-header {
+        display: none;
+    }
 }
 
 #skin-separator-1

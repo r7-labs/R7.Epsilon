@@ -7,14 +7,16 @@
 <%@ Register TagPrefix="skin" TagName="FOOTER" Src="Blocks/Footer.ascx" %>
 <%@ Register TagPrefix="skin" TagName="END" Src="Blocks/End.ascx" %>
 
-<skin:START runat="server" />
-<header>
-    <skin:HEADER runat="server" />
-</header>
-<skin:SUBHEADER runat="server" />
-<!--#include file="Layouts/_default.ascx" -->
-<skin:SUPFOOTER runat="server" />
-<footer class="footer skin-footer">
-    <skin:FOOTER runat="server" />
-</footer>
-<skin:END runat="server" />
+<div class="skin-default">
+	<skin:START runat="server" />
+	<header>
+		<skin:HEADER runat="server" />
+	</header>
+	<skin:SUBHEADER runat="server" />
+	<!--#include file="Layouts/_default.ascx" -->
+	<skin:SUPFOOTER runat="server" />
+	<footer class="footer skin-footer">
+		<skin:FOOTER runat="server" />
+	</footer>
+	<skin:END runat="server" />
+</div>

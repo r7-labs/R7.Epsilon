@@ -168,7 +168,6 @@
     <Content Include="Containers\Blank.ascx" />
     <Content Include="Containers\Default.ascx" />
     <Content Include="Skins\Edit.ascx" />
-    <Content Include="Skins\Home.ascx" />
     <Content Include="Skins\PopupSkin.ascx" />
     <Content Include="Skins\images\error.png" />
     <Content Include="Skins\images\error.svg" />
@@ -324,5 +323,7 @@
     <Content Include="Skins\SkinObjects\Websites.ascx" />
     <Content Include="Skins\css\_bootstrap.scss" />
     <Content Include="Skins\SkinObjects\FloatButtons.ascx" />
+    <Content Include="Skins\Layouts\_home.ascx" />
+    <Content Include="Skins\Home.ascx" />
   </ItemGroup>
 </Project>
