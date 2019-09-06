@@ -748,3 +748,22 @@ a.link
     margin-left: 0;
     margin-right: 0;
 }
+
+.navbar-1 .skin-navbar-subnav {
+    background-color: $color-primary-4
+}
+
+.navbar-2 .skin-navbar-subnav {
+    background-color: $color-primary-3
+}
+
+@media (max-width: 767px) {
+    .skin-navbar-subnav {
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 100;
+        width: 50%;
+        min-height: 100%;
+    }
+}
