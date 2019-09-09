@@ -744,8 +744,11 @@ a.link
 }
 
 .skin-navbar-subnav > .row {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
+	width: 100%;
 }
 
+// disable "broken" menu animation on small screens
+@media (max-width: 767px) {
+	.skin-navbar-subnav { transition: none; }
+	.skin-navbar-subnav.collapsing { display: none; }
+}

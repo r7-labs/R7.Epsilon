@@ -42,44 +42,44 @@
 					}
 				}
 			</ul>
-			<div class="navbar-nav skin-navbar-subnav col-6 col-md-12">
-				@foreach (var node in nodes) {
-					if (node.HasChildren ()) {
-						@RenderSubnavFor(node)
-					}
+			@foreach (var node in nodes) {
+				if (node.HasChildren ()) {
+					@RenderSubnavFor(node)
 				}
-			</div>
+			}
 		</div>
 	}
 }
 
 @helper RenderSubnavFor(MenuNode parentNode) {
-	<div class="collapse row" id="@(Model.ControlID)_subnav_@parentNode.TabId" data-parent="#@Model.ControlID">
-		<div class="col-md-12 p-0">
-			<div class="nav-item">
-				<a href="@parentNode.Url" class="h4 nav-link @NodeCssClasses(parentNode)"
-						title="Перейти на страницу &quot;@parentNode.Text&quot;">
-					@parentNode.Text <i class="fas fa-caret-right"></i><i class="fas fa-caret-right"></i>
-				</a>
+	<div class="navbar-nav skin-navbar-subnav col-6 col-md-12 collapse" id="@(Model.ControlID)_subnav_@parentNode.TabId" data-parent="#@Model.ControlID">
+		<div class="row no-gutters">
+			<div class="col-12 p-0">
+				<div class="nav-item">
+					<a href="@parentNode.Url" class="h4 nav-link @NodeCssClasses(parentNode)"
+							title="Перейти на страницу &quot;@parentNode.Text&quot;">
+						@parentNode.Text <i class="fas fa-caret-right"></i><i class="fas fa-caret-right"></i>
+					</a>
+				</div>
 			</div>
+			@foreach (var node in parentNode.Children) {
+				<div class="@subnavItemCssClass()">
+					@if (node.HasChildren ()) {
+						<div class="nav-item dropdown">
+							<a id="@(Model.ControlID)_subnav_dropdown_@node.TabId" href="#" role="button" data-toggle="dropdown"
+								aria-expanded="false" aria-haspopup="true"
+								class="nav-link dropdown-toggle @NodeCssClasses(node)">@node.Text</a>
+							@RenderDropdownFor(node)
+						</div>
+					}
+					else {
+						<div class="nav-item">
+							<a href="@node.Url" class="nav-link @NodeCssClasses(node)">@node.Text</a>
+						</div>
+					}
+				</div>
+			}
 		</div>
-		@foreach (var node in parentNode.Children) {
-			<div class="@subnavItemCssClass()">
-				@if (node.HasChildren ()) {
-					<div class="nav-item dropdown">
-						<a id="@(Model.ControlID)_subnav_dropdown_@node.TabId" href="#" role="button" data-toggle="dropdown"
-							aria-expanded="false" aria-haspopup="true"
-							class="nav-link dropdown-toggle @NodeCssClasses(node)">@node.Text</a>
-						@RenderDropdownFor(node)
-					</div>
-				}
-				else {
-					<div class="nav-item">
-						<a href="@node.Url" class="nav-link @NodeCssClasses(node)">@node.Text</a>
-					</div>
-				}
-			</div>
-		}
 	</div>
 }
 
