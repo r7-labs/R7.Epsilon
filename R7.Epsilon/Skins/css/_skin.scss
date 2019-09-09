@@ -272,32 +272,6 @@ header > .container > .row
     }
 }
 
-.skin-primary-navbar
-{
-    border:none;
-    border-radius:0;
-    background-color:$header-background-color;
-    background-image:$header-background-image;
-}
-
-@media only screen and (max-width: 767px)
-{
-    .skin-primary-navbar
-    {
-        background-image:none; // reset gradient
-        background-color:$color-primary-4;
-    }
-}
-
-// for login positioning
-.skin-primary-navbar-main { position:relative; }
-
-.skin-secondary-navbar
-{
-    min-height:0;
-    border:none; // override navbar 1px border
-}
-
 .skin-page-header
 {
     margin-top:5px;
@@ -736,6 +710,32 @@ a.link
 }
 
 // TODO: Move to menu
+.skin-primary-navbar
+{
+    border:none;
+    border-radius:0;
+    background-color:$header-background-color;
+    background-image:$header-background-image;
+}
+
+@media only screen and (max-width: 767px)
+{
+    .skin-primary-navbar
+    {
+        background-image:none; // reset gradient
+        background-color:$color-primary-4;
+    }
+}
+
+// for login positioning
+.skin-primary-navbar-main { position:relative; }
+
+.skin-secondary-navbar
+{
+    min-height:0;
+    border:none; // override navbar 1px border
+}
+
 .skin-main-nav {
     width: 100%;
     .dropdown-item.dropdown-item-parent {
@@ -749,21 +749,3 @@ a.link
     margin-right: 0;
 }
 
-.navbar-1 .skin-navbar-subnav {
-    background-color: $color-primary-4
-}
-
-.navbar-2 .skin-navbar-subnav {
-    background-color: $color-primary-3
-}
-
-@media (max-width: 767px) {
-    .skin-navbar-subnav {
-        position: absolute;
-        right: 0;
-        top: 0;
-        z-index: 100;
-        width: 50%;
-        min-height: 100%;
-    }
-}
