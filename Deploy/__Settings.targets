@@ -24,12 +24,12 @@
         <DnnBinPath>$(DnnLocalDeployPath)/bin</DnnBinPath>
         <DnnSkinsPath>$(DnnLocalDeployPath)/Portals/_default/Skins</DnnSkinsPath>
         <DnnContainersPath>$(DnnLocalDeployPath)/Portals/_default/Containers</DnnContainersPath>
-        <DnnMenusPath>$(DnnSkinsPath)</DnnMenusPath>
+        <DnnMenusPath>$(DnnLocalDeployPath)/DesktopModules/DDRMenu</DnnMenusPath>
         <DnnModulesPath>$(DnnLocalDeployPath)/DesktopModules</DnnModulesPath>
         <DnnJsLibrariesPath>$(DnnLocalDeployPath)/Resources/Libraries</DnnJsLibrariesPath>
         <ProjectSkinsPath>$(DnnSkinsPath)/$(MainProjectName)</ProjectSkinsPath>
         <ProjectContainersPath>$(DnnContainersPath)/$(MainProjectName)</ProjectContainersPath>
-        <ProjectMenusPath>$(DnnMenusPath)/$(MainProjectName)</ProjectMenusPath>
+        <ProjectMenusPath>$(DnnMenusPath)</ProjectMenusPath>
         <ProjectModulesPath>$(DnnModulesPath)$(ProjectModulesPathPrefix)</ProjectModulesPath>
     </PropertyGroup>
 

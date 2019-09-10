@@ -86,7 +86,7 @@
                 </component>
 				<component type="ResourceFile">
                     <resourceFiles>
-                        <basePath>Portals\_default\Skins\R7.Epsilon</basePath>
+                        <basePath>DesktopModules\DDRMenu</basePath>
                         <resourceFile>
                             <name>Resources_Menus.zip</name>
                         </resourceFile>

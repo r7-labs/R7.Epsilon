@@ -2,10 +2,10 @@
 <%@ Register TagPrefix="dnn" TagName="BREADCRUMB" Src="~/Admin/Skins/BreadCrumb.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="MENU" Src="~/DesktopModules/DDRMenu/Menu.ascx" %>
 <%@ Register TagPrefix="dnn" Namespace="DotNetNuke.Web.DDRMenu.TemplateEngine" Assembly="DotNetNuke.Web.DDRMenu" %>
-<%@ Register TagPrefix="skin" TagName="PAGEHEADER" Src="../SkinObjects/PageHeader.ascx" %>
-<%@ Register TagPrefix="skin" TagName="LOCALMENU" Src="../SkinObjects/LocalMenu.ascx" %>
-<%@ Register TagPrefix="skin" TagName="HEADERSMENU" Src="../SkinObjects/HeadersMenu.ascx" %>
-<%@ Register TagPrefix="skin" TagName="SOCIALSHAREBUTTONS" Src="../SkinObjects/SocialShareButtons.ascx" %>
+<%@ Register TagPrefix="skin" TagName="PAGEHEADER" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/PageHeader.ascx" %>
+<%@ Register TagPrefix="skin" TagName="LOCALMENU" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/LocalMenu.ascx" %>
+<%@ Register TagPrefix="skin" TagName="HEADERSMENU" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/HeadersMenu.ascx" %>
+<%@ Register TagPrefix="skin" TagName="SOCIALSHAREBUTTONS" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/SocialShareButtons.ascx" %>
 
 <nav class="skin-local-navbar" role="navigation">
     <div class="container">

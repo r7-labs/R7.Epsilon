@@ -2,10 +2,10 @@
 <%@ Register TagPrefix="dnn" TagName="PRIVACY" Src="~/Admin/Skins/Privacy.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="TERMS" Src="~/Admin/Skins/Terms.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="COPYRIGHT" Src="~/Admin/Skins/Copyright.ascx" %>
-<%@ Register TagPrefix="skin" TagName="GADSENSE" Src="../SkinObjects/GAdsense.ascx" %>
-<%@ Register TagPrefix="skin" TagName="CUSTOMCONTENT" Src="../SkinObjects/CustomContent.ascx" %>
-<%@ Register TagPrefix="skin" TagName="YCYCOUNTER" Src="../SkinObjects/YCycounter.ascx" %>
-<%@ Register TagPrefix="skin" TagName="BANNER" Src="../SkinObjects/Banners/BannerLoader.ascx" %>
+<%@ Register TagPrefix="skin" TagName="GADSENSE" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/GAdsense.ascx" %>
+<%@ Register TagPrefix="skin" TagName="CUSTOMCONTENT" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/CustomContent.ascx" %>
+<%@ Register TagPrefix="skin" TagName="YCYCOUNTER" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/YCycounter.ascx" %>
+<%@ Register TagPrefix="skin" TagName="BANNER" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/Banners/BannerLoader.ascx" %>
 
 <div class="skin-footer-main">
     <div class="container">

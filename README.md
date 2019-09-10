@@ -22,18 +22,25 @@ See it in action at http://www.volgau.com!
 - Google Adsense adaptive banners support for different screen sizes with automatic loading on window resize.
 - Optional [cnt.sputnik.ru](https://cnt.sputnik.ru/) analytics support.
 
-## Custom pane layouts feature (WIP)
+## Site-specific (portal level) custom skins (WIP)
 
-Admins can create and modify custom pane layouts using *LayoutManager* module, then apply them to the page 
-using new *Select Layout* command from *Edit Page* menu in the control panel. Selected layout name and kind (host or portal)
-are stored in the page settings. Additional layout can be set to use in a11y mode.
+With *R7.Epsilon*, you can create custom skins/layouts based on stock ones, adopted and available for specific website only:
 
-This feature currently available only if *Custom* skin is selected for a page.
+1. Copy selected skin files (e.g. `Home.ascx`) and corresponding layout files (`Layouts/_home.ascx`) from `~/Portals/_default/Skins/R7.Epsilon` host skin folder to the `~/Portals/X-System/Skins/R7.Epsilon` folder, there `X` is a portal number for your website.
+2. Copy also `skin.doctype.xml` to set proper HTML Doctype, or make sure that *Fallback Theme Doctype* in Host settings is set to HTML5.
+3. Now, if you just want to change panes layout, you can do that by editing layout file contents.
+5. Select your custom skin from *Appearance* tab in *Page Settings*. It will be something like *Site: R7.Epsilon - Home*.
+
+Do not copy entire `~/Portals/_default/Skins/R7.Epsilon` folder - your site-specific skins will still reference JS, CSS, images and will use localization resources from host skin folder.
+
+Note that layout files are reusable - any number of skin files could reference single layout file. So it's probably better to make a copy of layout file and reference it in your custom skin if you planning to do any changes.
+
+Note also then you update *R7.Epsilon* package, there is a chance that some things in your custom skin will break.
+Please always test updates in non-production environment first!
 
 ## Some planned features:
 
 - BlueImp gallery support (at least for Home skin).
-- Integration of Bootstrap into skin build process.
 
 # Install
 
@@ -50,20 +57,20 @@ Please see [this wiki page](https://github.com/roman-yagodin/R7.Epsilon/wiki/Ins
 
 # Acknowledgements
 
-Project code originates from Chris Hammond's [HammerFlex](https://github.com/ChrisHammond/HammerFlex) skin 
+Project code originates from Chris Hammond's [HammerFlex](https://github.com/ChrisHammond/HammerFlex) skin
 and utilizes some ideas from [Tidy](http://tidy.codeplex.com/) skin. You should really try them too!
 
 # License
 
 [![AGPLv3](https://www.gnu.org/graphics/agplv3-155x51.png)](https://www.gnu.org/licenses/agpl-3.0.html)
 
-The *R7.Epsilon* is free software: you can redistribute it and/or modify it under the terms of 
-the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, 
+The *R7.Epsilon* is free software: you can redistribute it and/or modify it under the terms of
+the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License,
 or (at your option) any later version.
 
 ## License for assets
 
-Social icons based on Stephen Hutchings's [Typicons](https://github.com/stephenhutchings/typicons.font), 
+Social icons based on Stephen Hutchings's [Typicons](https://github.com/stephenhutchings/typicons.font),
 published under the terms of [CC BY-CA](http://creativecommons.org/licenses/by-sa/3.0/) license.
 
 Google translate and A11y icons based on Xaviju's [Inkscape Open Symbols](https://github.com/Xaviju/inkscape-open-symbols),

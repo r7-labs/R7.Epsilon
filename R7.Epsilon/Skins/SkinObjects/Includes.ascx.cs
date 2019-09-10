@@ -36,7 +36,7 @@ namespace R7.Epsilon.Skins.SkinObjects
 {
     public class Includes: EpsilonSkinObjectBase
     {
-        protected string SkinPath => Skin.SkinPath;
+        protected string SkinPath => "~/Portals/_default/Skins/R7.Epsilon/";
 
         protected override void OnLoad (EventArgs e)
         {
