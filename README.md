@@ -48,9 +48,6 @@ Please always test updates in non-production environment first!
 - Install [Rangy javascript library](https://github.com/roman-yagodin/R7.Dnn.JavaScriptLibraries/releases/tag/rangy-v1.3.0) dependency.
 - Install latest *R7.Epsilon* version from [releases](https://github.com/roman-yagodin/R7.Epsilon/releases).
 
-Optionally replace `Global.asax` file in the application root folder with one shipped alongside skin install package
-(this will enable more advanced `VaryByCustom` cache options for skin controls - by PortalId, by UserRoles).
-
 ## Banner skinobject support for DNN 8/9
 
 Please see [this wiki page](https://github.com/roman-yagodin/R7.Epsilon/wiki/Install:-Banner-skinobject-support-for-DNN-8-and-9)

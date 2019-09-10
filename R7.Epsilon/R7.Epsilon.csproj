@@ -149,7 +149,6 @@
     </Compile>
     <Compile Include="Skins\SkinObjects\EpsilonSkinObjectBase.cs" />
     <Compile Include="Skins\SkinObjects\EpsilonMenuBase.cs" />
-    <Compile Include="Components\CacheHelper.cs" />
     <Compile Include="Components\A11yHelper.cs" />
     <Compile Include="Components\EpsilonUrlHelper.cs" />
     <Compile Include="Skins\SkinObjects\Banners\BannerLoader.ascx.cs">
@@ -216,7 +215,6 @@
     <Content Include="Containers\Panel_Success.ascx" />
     <Content Include="Containers\Panel_Warning.ascx" />
     <Content Include="Containers\Panel_Danger.ascx" />
-    <Content Include="Application\Global.asax" />
     <Content Include="packages.config" />
     <Content Include="license.htm" />
     <Content Include="releaseNotes.htm" />

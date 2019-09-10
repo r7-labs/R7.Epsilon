@@ -1,5 +1,4 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.Skins.SkinObjects.PageInfo" %>
-<%@ OutputCache Duration="1200" VaryByParam="TabId;Language" %>
 <ul class="list-inline text-muted small skin-page-info">
 	<li class="list-inline-item">
         <span class="fas fa-calendar-alt"></span> <%= Localizer.GetString ("LastModified.Text") %> <%: LastContentModifiedOnDate %>
