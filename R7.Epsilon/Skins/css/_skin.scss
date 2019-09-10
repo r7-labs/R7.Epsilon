@@ -203,43 +203,6 @@ header > .container > .row
     img {}
 }
 
-.skin-founders-wrapper
-{
-    float:left;
-    width:48px;
-    height:100px;
-
-    // cover logo
-    position:absolute;
-    top:5px;
-    z-index:10;
-}
-
-.skin-founder-link
-{
-    float:left;
-    width:48px;
-    height:48px;
-    border-radius:24px;
-
-    &:first-child { margin-bottom:5px; }
-
-    &.skin-founder-1
-    {
-        background-image:$founder-icons;
-        // as navbar top gradient point
-        box-shadow:2px 2px 2px $color-primary-3;
-    }
-
-    &.skin-founder-2
-    {
-        background-image:$founder-icons;
-        @include background-position-xy (1, 0, 48px);
-        // as navbar bottom gradient point
-        box-shadow:2px 2px 2px $color-secondary-1-2;
-    }
-}
-
 .skin-header-content
 {
     display:inline-block;

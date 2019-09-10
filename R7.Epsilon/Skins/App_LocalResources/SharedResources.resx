@@ -60,18 +60,6 @@
     <data name="PublishedOnDate.Format" xml:space="preserve">
         <value>dd MMM yyyy</value>
     </data>
-    <data name="Founder1.Title" xml:space="preserve">
-        <value>Website of Founder 1</value>
-    </data>
-    <data name="Founder1.Href" xml:space="preserve">
-        <value>http://www.founder1.com</value>
-    </data>
-    <data name="Founder2.Title" xml:space="preserve">
-        <value>Website of Founder 2</value>
-    </data>
-    <data name="Founder2.Href" xml:space="preserve">
-        <value>http://www.founder2.com</value>
-    </data>
     <data name="BrowserCheck.Warning" xml:space="preserve">
         <value><![CDATA[<strong>Warning!</strong> We have determined that you are using an outdated version of the browser, which doesn't provide proper support for the modern Internet standards. As a result, the website may be displayed incorrectly, some of its features may not work properly or will not be available. Please update browser!]]></value>
     </data>

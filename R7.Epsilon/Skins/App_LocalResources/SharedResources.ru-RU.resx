@@ -57,18 +57,6 @@
     <data name="PublishedOnDate.Format" xml:space="preserve">
         <value>dd MMMM yyyy</value>
     </data>
-    <data name="Founder1.Title" xml:space="preserve">
-        <value>Сайт учредителя 1</value>
-    </data>
-    <data name="Founder1.Href" xml:space="preserve">
-        <value>http://www.founder1.ru</value>
-    </data>
-    <data name="Founder2.Title" xml:space="preserve">
-        <value>Сайт учредителя 2</value>
-    </data>
-    <data name="Founder2.Href" xml:space="preserve">
-        <value>http://www.founder2.ru</value>
-    </data>
     <data name="BrowserCheck.Warning" xml:space="preserve">
         <value><![CDATA[<strong>Внимание!</strong> Мы определили, что Вы используете устаревшую версию браузера, не поддерживающую в должной мере современные стандарты Интернет. Как следствие, сайт может отображаться неправильно, а отдельные его функции могут работать некорректно или будут недоступны. Пожалуйста, обновите браузер!]]></value>
     </data>

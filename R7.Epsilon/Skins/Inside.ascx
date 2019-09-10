@@ -17,7 +17,6 @@
 <%@ Register TagPrefix="skin" TagName="SOCIALGROUPS" Src="SkinObjects/SocialGroups.ascx" %>
 <%@ Register TagPrefix="skin" TagName="PAGEHEADER" Src="SkinObjects/PageHeader.ascx" %>
 <%@ Register TagPrefix="skin" TagName="PAGEINFO" Src="SkinObjects/PageInfo.ascx" %>
-<%@ Register TagPrefix="skin" TagName="FOUNDERS" Src="SkinObjects/Founders.ascx" %>
 <%@ Register TagPrefix="skin" TagName="LOGOTITLE" Src="SkinObjects/LogoTitle.ascx" %>
 <%@ Register TagPrefix="skin" TagName="LOGOMOBILE" Src="SkinObjects/LogoMobile.ascx" %>
 <%@ Register TagPrefix="skin" TagName="BROWSERCHECK" Src="SkinObjects/BrowserCheck.ascx" %>
@@ -90,9 +89,6 @@
                 <skin:PRIMARYMENU runat="server" />
             </div>
             <div class="navbar-collapse collapse skin-primary-navbar-main">
-                <div class="skin-founders-wrapper">
-                    <skin:FOUNDERS runat="server" Target="_blank" />
-                </div>
                 <div class="navbar-brand skin-navbar-brand-logo">
                     <dnn:LOGO runat="server" id="dnnLOGO" />
                 </div>
@@ -110,7 +106,7 @@
     <nav class="navbar skin-secondary-navbar" role="navigation">
         <div class="container">
             <div class="navbar-collapse collapse dnnClear skin-top-menu">
-                <skin:SECONDARYMENU runat="server" /> 
+                <skin:SECONDARYMENU runat="server" />
             </div>
         </div>
     </nav>
@@ -159,7 +155,7 @@
         <div id="ContentPane" runat="server" class="col-md-9 col-sm-7" />
         <div id="RightPane" runat="server" class="col-md-3 col-sm-5" />
     </div>
-    <div class="row"> 
+    <div class="row">
         <div id="LeftPane" runat="server" class="col-md-3 col-sm-5" />
         <div id="ContentLeftPane" runat="server" class="col-md-9 col-sm-7" />
     </div>
@@ -167,7 +163,7 @@
         <div id="ContentPane2" runat="server" class="col-md-9 col-sm-7" />
         <div id="RightPane2" runat="server" class="col-md-3 col-sm-5" />
     </div>
-    <div class="row"> 
+    <div class="row">
         <div id="LeftPane2" runat="server" class="col-md-3 col-sm-5" />
         <div id="ContentLeftPane2" runat="server" class="col-md-9 col-sm-7" />
     </div>
@@ -188,7 +184,7 @@
         <div id="ContentPane3" runat="server" class="col-md-9 col-sm-7" />
         <div id="RightPane3" runat="server" class="col-md-3 col-sm-5" />
     </div>
-    <div class="row"> 
+    <div class="row">
         <div id="LeftPane3" runat="server" class="col-md-3 col-sm-5" />
         <div id="ContentLeftPane3" runat="server" class="col-md-9 col-sm-7" />
     </div>
@@ -196,7 +192,7 @@
         <div id="ContentPane4" runat="server" class="col-md-9 col-sm-7" />
         <div id="RightPane4" runat="server" class="col-md-3 col-sm-5" />
     </div>
-    <div class="row"> 
+    <div class="row">
         <div id="LeftPane4" runat="server" class="col-md-3 col-sm-5" />
         <div id="ContentLeftPane4" runat="server" class="col-md-9 col-sm-7" />
     </div>

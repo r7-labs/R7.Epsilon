@@ -123,9 +123,6 @@
     <Compile Include="Skins\SkinObjects\CustomContent.ascx.cs">
       <DependentUpon>CustomContent.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Skins\SkinObjects\Founders.ascx.cs">
-      <DependentUpon>Founders.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Skins\SkinObjects\HeadersMenu.ascx.cs">
       <DependentUpon>HeadersMenu.ascx</DependentUpon>
     </Compile>
@@ -225,7 +222,6 @@
     <Content Include="Skins\SkinObjects\BrowserCheck.ascx" />
     <Content Include="Skins\SkinObjects\FeedbackButton.ascx" />
     <Content Include="Skins\SkinObjects\CustomContent.ascx" />
-    <Content Include="Skins\SkinObjects\Founders.ascx" />
     <Content Include="Skins\SkinObjects\GAdsense.ascx" />
     <Content Include="Skins\SkinObjects\HeadersMenu.ascx" />
     <Content Include="Skins\SkinObjects\JsVariables.ascx" />
@@ -255,8 +251,6 @@
     <Content Include="Skins\SkinObjects\Banners\BannerWrapper.ascx" />
     <Content Include="Skins\images\login_icons.png" />
     <Content Include="Skins\images\login_icons.svg" />
-    <Content Include="Skins\images\founders.png" />
-    <Content Include="Skins\images\founders.svg" />
     <Content Include="Skins\js\feedback.js" />
     <Content Include="Skins\js\bootstrap-init.js" />
     <Content Include="Skins\SkinObjects\PartialContentAlert.ascx" />

@@ -19,7 +19,6 @@
 <%@ Register TagPrefix="skin" TagName="PAGEINFO" Src="SkinObjects/PageInfo.ascx" %>
 <%@ Register TagPrefix="skin" TagName="SOCIALSHAREBUTTONS" Src="SkinObjects/SocialShareButtons.ascx" %>
 <%@ Register TagPrefix="skin" TagName="SHAREDSCRIPTS" Src="SkinObjects/SharedScripts.ascx" %>
-<%@ Register TagPrefix="skin" TagName="FOUNDERS" Src="SkinObjects/Founders.ascx" %>
 <%@ Register TagPrefix="skin" TagName="LOGOTITLE" Src="SkinObjects/LogoTitle.ascx" %>
 <%@ Register TagPrefix="skin" TagName="LOGOMOBILE" Src="SkinObjects/LogoMobile.ascx" %>
 <%@ Register TagPrefix="skin" TagName="BROWSERCHECK" Src="SkinObjects/BrowserCheck.ascx" %>
@@ -94,9 +93,6 @@
                 <skin:PRIMARYMENU runat="server" />
             </div>
             <div class="navbar-collapse collapse skin-primary-navbar-main">
-                <div class="skin-founders-wrapper">
-                    <skin:FOUNDERS runat="server" Target="_blank" />
-                </div>
                 <div class="navbar-brand skin-navbar-brand-logo">
                     <dnn:LOGO runat="server" id="dnnLOGO" />
                 </div>
@@ -114,7 +110,7 @@
     <nav class="navbar skin-secondary-navbar" role="navigation">
         <div class="container">
             <div class="navbar-collapse collapse dnnClear skin-top-menu">
-                <skin:SECONDARYMENU runat="server" /> 
+                <skin:SECONDARYMENU runat="server" />
             </div>
         </div>
     </nav>

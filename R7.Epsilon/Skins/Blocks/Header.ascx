@@ -11,7 +11,6 @@
 <%@ Register TagPrefix="skin" TagName="WEBSITES" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/Websites.ascx" %>
 <%@ Register TagPrefix="skin" TagName="PRIMARYMENU" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/PrimaryMenu.ascx" %>
 <%@ Register TagPrefix="skin" TagName="SECONDARYMENU" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/SecondaryMenu.ascx" %>
-<%@ Register TagPrefix="skin" TagName="FOUNDERS" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/Founders.ascx" %>
 <%@ Register TagPrefix="skin" TagName="LOGOTITLE" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/LogoTitle.ascx" %>
 <%@ Register TagPrefix="skin" TagName="LOGOMOBILE" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/LogoMobile.ascx" %>
 <%@ Register TagPrefix="skin" TagName="CUSTOMCONTENT" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/CustomContent.ascx" %>
@@ -76,9 +75,6 @@
         </div>
 <!--
         <div class="collapse navbar-collapse skin-primary-navbar-main d-none">
-            <div class="skin-founders-wrapper d-none">
-                <skin:FOUNDERS runat="server" Target="_blank" />
-            </div>
             <div class="skin-header-content d-sm-none">
                 <skin:LOGOTITLE runat="server" />
             </div>
