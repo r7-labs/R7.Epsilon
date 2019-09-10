@@ -191,8 +191,6 @@
     <Content Include="Skins\js\skin.js" />
     <Content Include="Skins\images\logo_template_133x100.png" />
     <Content Include="Skins\images\logo_template_133x100.svg" />
-    <Content Include="Skins\images\social_32x32.png" />
-    <Content Include="Skins\images\social_32x32.svg" />
     <Content Include="Skins\images\logo_template_178x100.xcf" />
     <Content Include="Skins\js\a11y.js" />
     <Content Include="Skins\js\menu.js" />
