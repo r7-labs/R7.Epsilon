@@ -249,8 +249,6 @@
     <Content Include="Containers\PanelBody_Danger.ascx" />
     <Content Include="Skins\SkinObjects\Banners\BannerLoader.ascx" />
     <Content Include="Skins\SkinObjects\Banners\BannerWrapper.ascx" />
-    <Content Include="Skins\images\login_icons.png" />
-    <Content Include="Skins\images\login_icons.svg" />
     <Content Include="Skins\js\feedback.js" />
     <Content Include="Skins\js\bootstrap-init.js" />
     <Content Include="Skins\SkinObjects\PartialContentAlert.ascx" />
