@@ -139,10 +139,17 @@ namespace R7.Epsilon.Skins
             }
         }
 
+        protected void SetBodyCssClassForTheme ()
+        {
+            var body = (HtmlGenericControl) this.Page.FindControl ("Body");
+            body.Attributes.Add ("class", "theme-" + (Config.GetTheme (Request) ?? Config.Themes [0]).Name + " " + body.Attributes ["class"]);
+        }
+
         protected override void OnLoad (EventArgs e)
         {
             base.OnLoad (e);
 
+            SetBodyCssClassForTheme ();
         }
     }
 }
