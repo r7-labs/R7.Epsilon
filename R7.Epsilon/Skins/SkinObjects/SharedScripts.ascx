@@ -1,5 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.Skins.SkinObjects.EpsilonSkinObjectBase" %>
 <%@ Import Namespace="R7.Epsilon.Components" %>
+
+<% if (!Skin.Options.DisableSocialShare) { %>
 <%
 var vk = Config.SocialGroups.FirstOrDefault (g => g.Type == SocialGroupType.VKontakte && g.ShareEnabled);
 var fb = Config.SocialGroups.FirstOrDefault (g => g.Type == SocialGroupType.Facebook && g.ShareEnabled);
@@ -32,6 +34,8 @@ setTimeout(function() {
     document.getElementById("vk_api_transport").appendChild(el);
 },0);
 </script><% } %>
+<% } %>
+
 <% if (Config.Analytics.UseSputnik) { %>
 <script type="text/javascript">
   (function(d, t, p) {

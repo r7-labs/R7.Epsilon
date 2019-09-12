@@ -1,5 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.Skins.SkinObjects.EpsilonSkinObjectBase" %>
 <%@ Import Namespace="R7.Epsilon.Components" %>
+<% if (!Skin.Options.DisableSocialShare) { %>
 <div class="skin-social-share-buttons">
 	<% var vk = Config.SocialGroups.FirstOrDefault (g => g.Type == SocialGroupType.VKontakte && g.ShareEnabled);
     if (vk != null) { %>
@@ -15,3 +16,4 @@
 			data-lang="<%= CultureInfo.CurrentCulture.TwoLetterISOLanguageName %>" data-via="<%= tw.Params [0] %>">Tweet</a>
 	<% } %>
 </div>
+<% } %>

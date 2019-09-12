@@ -162,6 +162,7 @@
     <Compile Include="Skins\Blocks\SubHeader.ascx.cs">
       <DependentUpon>SubHeader.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Skins\EpsilonSkinOptions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Containers\Blank.ascx" />

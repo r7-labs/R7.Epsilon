@@ -21,7 +21,7 @@
         <skin:LOCALMENU runat="server" />
         <skin:HEADERSMENU runat="server" PassDefaultTemplateArgs="false" />
         <div id="skin-separator-1" class="d-xs-none">&nbsp;</div>
-        <skin:SOCIALSHAREBUTTONS runat="server" />
+        <skin:SOCIALSHAREBUTTONS runat="server" Visible="<%# !Skin.Options.DisableSocialShare %>" />
     </div>
 </nav>
 <a id="content" name="content"></a>

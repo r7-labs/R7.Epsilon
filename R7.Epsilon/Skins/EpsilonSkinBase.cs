@@ -33,6 +33,8 @@ namespace R7.Epsilon.Skins
 {
     public class EpsilonSkinBase : Skin, ILocalizableControl, IConfigurableControl
     {
+        public EpsilonSkinOptions Options  { get; set; } = new EpsilonSkinOptions ();
+
         protected bool IsErrorPage {
             get {
                 var activeTabId = PortalSettings.ActiveTab.TabID;
