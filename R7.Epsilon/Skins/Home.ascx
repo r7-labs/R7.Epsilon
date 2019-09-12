@@ -7,12 +7,13 @@
 <%@ Register TagPrefix="skin" TagName="FOOTER" Src="~/Portals/_default/Skins/R7.Epsilon/Blocks/Footer.ascx" %>
 <%@ Register TagPrefix="skin" TagName="END" Src="~/Portals/_default/Skins/R7.Epsilon/Blocks/End.ascx" %>
 
+<% Options.DisableBreadCrumb = true; %>
 <div class="skin-home">
 	<skin:START runat="server" />
 	<header>
 		<skin:HEADER runat="server" />
 	</header>
-	<skin:SUBHEADER runat="server" BreadCrumb="false" />
+	<skin:SUBHEADER runat="server" />
 	<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_home.ascx" -->
 	<footer class="footer skin-footer">
 		<skin:FOOTER runat="server" />

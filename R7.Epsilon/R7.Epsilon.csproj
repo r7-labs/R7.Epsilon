@@ -159,9 +159,6 @@
     </Compile>
     <Compile Include="Skins\SkinObjects\Banners\IBannerControl.cs" />
     <Compile Include="Components\EpsilonNodeManipulator.cs" />
-    <Compile Include="Skins\Blocks\SubHeader.ascx.cs">
-      <DependentUpon>SubHeader.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Skins\EpsilonSkinOptions.cs" />
   </ItemGroup>
   <ItemGroup>

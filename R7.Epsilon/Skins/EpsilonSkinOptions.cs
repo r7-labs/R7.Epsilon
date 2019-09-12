@@ -23,6 +23,8 @@ namespace R7.Epsilon.Skins
 {
     public class EpsilonSkinOptions
     {
+        public bool DisableBreadCrumb { get; set; }
+
         public bool DisableSocialShare { get; set; }
     }
 }
