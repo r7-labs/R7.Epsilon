@@ -314,5 +314,6 @@
     <Content Include="Skins\SkinObjects\FloatButtons.ascx" />
     <Content Include="Skins\Layouts\_home.ascx" />
     <Content Include="Skins\Home.ascx" />
+    <Content Include="Skins\Layouts\_edit.ascx" />
   </ItemGroup>
 </Project>
