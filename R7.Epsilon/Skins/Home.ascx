@@ -12,7 +12,7 @@
 	<header>
 		<skin:HEADER runat="server" />
 	</header>
-	<skin:SUBHEADER runat="server" />
+	<skin:SUBHEADER runat="server" BreadCrumb="false" />
 	<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_home.ascx" -->
 	<footer class="footer skin-footer">
 		<skin:FOOTER runat="server" />
