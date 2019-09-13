@@ -9,7 +9,7 @@
 
 <div class="skin-default">
 	<skin:START runat="server" />
-	<header>
+	<header class="skin-header">
 		<skin:HEADER runat="server" />
 	</header>
 	<skin:SUBHEADER runat="server" />
