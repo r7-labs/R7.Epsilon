@@ -315,5 +315,6 @@
     <Content Include="Skins\Layouts\_home.ascx" />
     <Content Include="Skins\Home.ascx" />
     <Content Include="Skins\Layouts\_edit.ascx" />
+    <Content Include="Skins\Layouts\_one_pane.ascx" />
   </ItemGroup>
 </Project>

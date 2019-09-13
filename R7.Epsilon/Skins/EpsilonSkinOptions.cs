@@ -26,5 +26,7 @@ namespace R7.Epsilon.Skins
         public bool DisableBreadCrumb { get; set; }
 
         public bool DisableSocialShare { get; set; }
+
+        public bool DisableLogin { get; set; }
     }
 }

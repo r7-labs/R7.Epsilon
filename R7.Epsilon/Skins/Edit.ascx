@@ -8,13 +8,13 @@
 <%@ Register TagPrefix="skin" TagName="END" Src="~/Portals/_default/Skins/R7.Epsilon/Blocks/End.ascx" %>
 
 <% Options.DisableSocialShare = true; %>
-<div class="skin-default">
+<div class="skin-edit">
 	<skin:START runat="server" />
 	<header>
 		<skin:HEADER runat="server" />
 	</header>
 	<skin:SUBHEADER runat="server" />
-	<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_edit.ascx" -->
+	<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_one_pane.ascx" -->
 	<footer class="footer skin-footer">
 		<skin:FOOTER runat="server" />
 	</footer>

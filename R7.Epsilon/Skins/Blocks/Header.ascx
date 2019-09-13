@@ -35,15 +35,17 @@
                 title='<%: Localizer.GetString("SearchModalButton.Text") %>'>
                 <i class="fas fa-search"></i>
             </button>
-			<div class="dropdown skin-login" style="display:inline-block">
-				<button type="button" class="btn btn-lg dropdown-toggle" data-toggle="dropdown" title='<%: Localizer.GetString ("UserProfile.Text") %>'>
-					<i class="fas fa-user"></i>
-				</button>
-				<div class="dropdown-menu">
-					<dnn:LOGIN runat="server" LegacyMode="false" />
-					<dnn:USER runat="server" LegacyMode="false" />
+			<% if (!Skin.Options.DisableLogin) { %>
+				<div class="dropdown skin-login" style="display:inline-block">
+					<button type="button" class="btn btn-lg dropdown-toggle" data-toggle="dropdown" title='<%: Localizer.GetString ("UserProfile.Text") %>'>
+						<i class="fas fa-user"></i>
+					</button>
+					<div class="dropdown-menu">
+						<dnn:LOGIN runat="server" LegacyMode="false" />
+						<dnn:USER runat="server" LegacyMode="false" />
+					</div>
 				</div>
-			</div>
+			<% } %>
         </div>
 		<hr class="w-100 d-md-none" />
 		<div class="col-xs-12 col-sm-12 col-md col-lg-6 text-lg-center">
