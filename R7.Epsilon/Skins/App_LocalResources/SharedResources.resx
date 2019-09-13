@@ -135,9 +135,6 @@
     <data name="AgeRating_Title.Text" xml:space="preserve">
         <value>Information product for children since the age of twelve years - PEGI 12 (unless otherwise specified). Click the button to get more info.</value>
     </data>
-	<data name="AgeRating_Color.Text" xml:space="preserve">
-		<value>#f4a100</value>
-	</data>
 	<data name="AgeRating_Link.Text" xml:space="preserve">
 		<value>https://pegi.info/</value>
 	</data>

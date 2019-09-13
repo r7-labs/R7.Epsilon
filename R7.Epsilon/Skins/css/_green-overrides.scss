@@ -1,5 +1,5 @@
 //
-//  blue-layout.scss
+//  green-layout.scss
 //
 //  Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
@@ -28,27 +28,24 @@ $big-font-size:($font-size + 4px);
 $menu-font-size:$font-size;
 $smaller-menu-font-size: ($menu-font-size - 2px);
 
-// border radius
+// border-radius
 $borderRadius: 4px;
 
 // secondary, local and headers menu color adaptors
-$secondary-menu-base-color-1:$color-primary-1;
-$secondary-menu-base-color-2:$color-primary-2;
-$secondary-menu-base-color-3:$color-primary-3;
-$secondary-menu-base-color-4:$color-primary-4;
-$secondary-menu-highlight-color-1:$color-secondary-1-1;
-$secondary-menu-highlight-color-2:$color-secondary-1-2;
-$secondary-menu-highlight-color-3:$color-secondary-1-3;
-$secondary-menu-highlight-color-4:$color-secondary-1-4;
+$secondary-menu-base-color-1:$color-secondary-1-1;
+$secondary-menu-base-color-2:$color-secondary-1-2;
+$secondary-menu-base-color-3:$color-secondary-1-3;
+$secondary-menu-base-color-4:$color-secondary-1-4;
+$secondary-menu-highlight-color-1:$color-secondary-2-1;
+$secondary-menu-highlight-color-2:$color-secondary-2-2;
+$secondary-menu-highlight-color-3:$color-secondary-2-3;
+$secondary-menu-highlight-color-4:$color-secondary-2-4;
 
 // header and footer
-$header-content-text-shadow:0 0 5px $color-secondary-2-2;
-$header-content-tagline-shadow:0 0 1px $color-secondary-2-2;
-$header-background-image:linear-gradient(to bottom, $color-primary-4 0%, $color-primary-4 ($font-size * 2 + 2px), $color-primary-3 ($font-size * 2 + 2px), $color-secondary-2-2 100%);
-$header-background-color:mix($color-primary-3, $color-secondary-2-2);
+$header-content-text-shadow:0 0 5px $color-secondary-1-2;
+$header-content-tagline-shadow:0 0 1px $color-secondary-1-2;
+$header-background-image:linear-gradient(to bottom, $color-primary-4 0%, $color-primary-4 ($font-size * 2 + 2px), $color-primary-3 ($font-size * 2 + 2px), $color-secondary-1-2 100%);
+$header-background-color:mix($color-primary-3, $color-secondary-1-2);
 $footer-line-background-color:$color-secondary-1-1;
-$footer-main-background-color:mix($color-secondary-2-1, $color-secondary-2-3);
-$footer-last-background-color:$color-secondary-2-4;
-
-// float buttons
-$float-button-opacity:0.55;
+$footer-main-background-color:mix($color-secondary-1-1, $color-secondary-1-3);
+$footer-last-background-color:$color-secondary-1-4;

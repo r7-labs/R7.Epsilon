@@ -291,23 +291,16 @@
     <Content Include="Skins\css\_menu.scss" />
     <Content Include="Skins\css\_skin.scss" />
     <Content Include="Skins\css\brown-theme.scss" />
-    <Content Include="Skins\css\_brown-layout.scss" />
     <Content Include="Skins\css\_brown-palette.scss" />
-    <Content Include="Skins\css\_green-layout.scss" />
     <Content Include="Skins\css\_green-palette.scss" />
     <Content Include="Skins\css\green-theme.scss" />
-    <Content Include="Skins\css\_blue-layout.scss" />
     <Content Include="Skins\css\_blue-palette.scss" />
     <Content Include="Skins\css\blue-theme.scss" />
-    <Content Include="Skins\css\_contrast-layout.scss" />
     <Content Include="Skins\css\_contrast-palette.scss" />
     <Content Include="Skins\css\contrast-theme.scss" />
     <Content Include="Menus\DropCrumb\DropCrumb.cshtml" />
     <Content Include="Menus\DropCrumb\menudef.xml" />
     <Content Include="Skins\Layouts\_default.ascx" />
-    <Content Include="Skins\css\_colors.scss" />
-    <Content Include="Skins\css\_brand-colors.scss" />
-    <Content Include="Skins\css\_contrast-brand-colors.scss" />
     <Content Include="Skins\SkinObjects\A11yFunctions.ascx" />
     <Content Include="Skins\SkinObjects\Websites.ascx" />
     <Content Include="Skins\css\_bootstrap.scss" />
@@ -320,5 +313,13 @@
     <Content Include="Skins\Layouts\_footer-3cols.ascx" />
     <Content Include="Skins\Layouts\_footer-4cols.ascx" />
     <Content Include="Skins\Layouts\_single-pane.ascx" />
+    <Content Include="Skins\css\_shared-palette.scss" />
+    <Content Include="Skins\css\_default-variables.scss" />
+    <Content Include="Skins\css\_contrast-overrides.scss" />
+    <Content Include="Skins\css\_green-overrides.scss" />
+    <Content Include="Skins\css\_brown-overrides.scss" />
+    <Content Include="Skins\css\_blue-overrides.scss" />
+    <Content Include="Skins\css\_color-classes.scss" />
+    <Content Include="Skins\css\_brand-color-classes.scss" />
   </ItemGroup>
 </Project>

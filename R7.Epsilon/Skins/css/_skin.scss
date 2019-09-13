@@ -96,7 +96,7 @@ a.btn-primary:visited {
     border: 3px solid #fff;
     border-radius: 50%;
     cursor:pointer;
-    opacity: $float-button-opacity;
+    opacity: $float-btn-opacity;
     &:hover { opacity: 1;  }
     color: #fff;
     & > i { color: #fff; }
@@ -106,6 +106,15 @@ a.btn-primary:visited {
 
 .skin-float-btn-age-rating {
     font-weight: bolder;
+    background-color: $float-btn-age-rating-bg-color;
+}
+
+.skin-float-btn-up {
+    background-color: $float-btn-up-bg-color;
+}
+
+.skin-float-btn-feedback {
+    background-color: $float-btn-feedback-bg-color;
 }
 
 .skin-header > .container

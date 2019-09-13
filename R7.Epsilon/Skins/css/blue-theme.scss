@@ -1,7 +1,9 @@
-﻿@import "blue-palette";
-@import "blue-layout";
-@import "colors";
-@import "brand-colors";
+﻿@import "shared-palette";
+@import "blue-palette";
+@import "default-variables";
+@import "color-classes";
+@import "brand-color-classes";
+@import "blue-overrides";
 @import "skin";
 @import "menu";
 @import "dnn";

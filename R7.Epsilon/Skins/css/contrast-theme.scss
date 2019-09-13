@@ -1,7 +1,9 @@
-﻿@import "contrast-palette";
-@import "contrast-layout";
-@import "colors";
-@import "contrast-brand-colors";
+﻿@import "shared-palette";
+@import "contrast-palette";
+@import "default-variables";
+@import "color-classes";
+@import "brand-color-classes";
+@import "contrast-overrides";
 @import "skin";
 @import "menu";
 @import "dnn";
