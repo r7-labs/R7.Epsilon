@@ -315,10 +315,10 @@
     <Content Include="Skins\Layouts\_home.ascx" />
     <Content Include="Skins\Home.ascx" />
     <Content Include="Skins\Layouts\_edit.ascx" />
-    <Content Include="Skins\Layouts\_one_pane.ascx" />
     <Content Include="Skins\Simple.ascx" />
     <Content Include="Skins\Layouts\_simple.ascx" />
     <Content Include="Skins\Layouts\_footer-3cols.ascx" />
     <Content Include="Skins\Layouts\_footer-4cols.ascx" />
+    <Content Include="Skins\Layouts\_single-pane.ascx" />
   </ItemGroup>
 </Project>
