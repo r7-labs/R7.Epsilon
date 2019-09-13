@@ -150,7 +150,7 @@
 </div>
 <footer class="footer skin-footer admin">
     <div class="skin-footer-main"></div>
-    <div class="skin-footer-last">
+    <div class="skin-footer-lastrow">
         <div class="container">
             <div class="row">
                 <div class="col-md-2 col-sm-3 col-xs-12 skin-footer-88x31-buttons"></div>

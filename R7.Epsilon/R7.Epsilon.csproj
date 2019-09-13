@@ -318,5 +318,7 @@
     <Content Include="Skins\Layouts\_one_pane.ascx" />
     <Content Include="Skins\Simple.ascx" />
     <Content Include="Skins\Layouts\_simple.ascx" />
+    <Content Include="Skins\Layouts\_footer-3cols.ascx" />
+    <Content Include="Skins\Layouts\_footer-4cols.ascx" />
   </ItemGroup>
 </Project>

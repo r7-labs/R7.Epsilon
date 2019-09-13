@@ -15,7 +15,8 @@
 	<skin:SUBHEADER runat="server" />
 	<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_simple.ascx" -->
 	<skin:SUPFOOTER runat="server" />
-	<footer class="footer skin-footer">
+	<footer class="skin-footer">
+		<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_footer-3cols.ascx" -->
 		<skin:FOOTER runat="server" />
 	</footer>
 	<skin:END runat="server" />
