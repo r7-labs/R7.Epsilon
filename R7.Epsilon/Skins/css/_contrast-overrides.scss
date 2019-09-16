@@ -60,3 +60,47 @@ $float-btn-feedback-bg-color: $color-primary-4;
 .brand-text { color: #000 !important }
 .brand-bg { background-color: #000 !important }
 .brand-border { border-color: #000 !important }
+
+.text-primary,
+.text-secondary,
+.text-success,
+.text-info,
+.text-warning,
+.text-danger,
+.text-dark {
+    color: #000 !important;
+}
+
+.bg-primary,
+.bg-secondary,
+.bg-success,
+.bg-info,
+.bg-warning,
+.bg-danger,
+.bg-dark {
+    background-color: #000 !important;
+}
+
+.border-primary,
+.border-secondary,
+.border-success,
+.border-info,
+.border-warning,
+.border-danger,
+.border-dark {
+    border-color: #000 !important;
+}
+
+.card-body {
+    &.border-primary,
+    &.border-warning {
+        border-width: 3px
+    }
+    &.border-danger {
+        border-width: 5px
+    }
+}
+
+.skin-callout {
+    border-left-width: 9px !important;
+}
