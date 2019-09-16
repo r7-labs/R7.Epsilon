@@ -163,10 +163,6 @@
     <Content Include="Skins\images\logo-template.svg" />
     <Content Include="Skins\images\button_100x100.png" />
     <Content Include="Containers\Default_H3.ascx" />
-    <Content Include="Containers\Message_Warning.ascx" />
-    <Content Include="Containers\Message_Info.ascx" />
-    <Content Include="Containers\Message_Success.ascx" />
-    <Content Include="Containers\Message_Danger.ascx" />
     <Content Include="Containers\Callout_Info.ascx" />
     <Content Include="Skins\images\logo-template-150x150.png" />
     <Content Include="Skins\images\logo-template-150x150.svg" />
@@ -302,5 +298,9 @@
     <Content Include="Skins\css\_color-classes.scss" />
     <Content Include="Skins\css\_brand-color-classes.scss" />
     <Content Include="Skins\css\_containers.scss" />
+    <Content Include="Containers\DnnAlert_Warning.ascx" />
+    <Content Include="Containers\DnnAlert_Success.ascx" />
+    <Content Include="Containers\DnnAlert_Info.ascx" />
+    <Content Include="Containers\DnnAlert_Danger.ascx" />
   </ItemGroup>
 </Project>
