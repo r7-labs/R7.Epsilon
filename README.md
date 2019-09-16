@@ -11,7 +11,7 @@ See it in action at http://www.volgau.com!
 - Admins can define website-specific configuration options via <del>XML</del> YAML file.
 - Users can switch between a11y and normal theme. In the a11y mode DNN modal popups are blocked (if they are enabled).
 - Variety of containers, including DNN-style messages, Bootstrap alerts, panels, thumbnails, callouts, etc.
-- Home, Edit, Admin + Universal skin variants, reusable through all host portals.
+- Default, Simple, Home, Edit, Inside, Popup and Error skin variants, reusable through all portals.
 - Social group icons (including a11y versions) for Facebook, Twitter, Google+, YouTube, VK.com, Instagram, Linkedin.
 - Social share buttons for Facebook, Twitter, Google+, VK.com.
 - Completely localizable parts (full Russian translation included).
@@ -47,6 +47,9 @@ Please always test updates in non-production environment first!
 - Install [LazyAds javascript library](https://github.com/roman-yagodin/R7.Dnn.JavaScriptLibraries/releases/tag/lazyads-v1.1.10) dependency.
 - Install [Rangy javascript library](https://github.com/roman-yagodin/R7.Dnn.JavaScriptLibraries/releases/tag/rangy-v1.3.0) dependency.
 - Install latest *R7.Epsilon* version from [releases](https://github.com/roman-yagodin/R7.Epsilon/releases).
+
+Note that though you can use *R7.Epsilon* for Admin/Host pages, we strongly recommend to use one of the pre-installed DNN themes for that -
+just to be sure that you will always have access to Admin/Host pages.
 
 ## Banner skinobject support for DNN 8/9
 
