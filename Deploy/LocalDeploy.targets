@@ -53,7 +53,8 @@
         </ItemGroup>
 
         <!-- Declare module files -->
-        <ItemGroup>
+        <!--
+		<ItemGroup>
             <DeployLayoutManagerFiles Include="../R7.Epsilon.LayoutManager/**/*.ascx" />
             <DeployLayoutManagerFiles Include="../R7.Epsilon.LayoutManager/**/*.css" />
             <DeployLayoutManagerFiles Include="../R7.Epsilon.LayoutManager/**/*.resx" />
@@ -62,6 +63,7 @@
             <DeployLayoutManagerFiles Include="../R7.Epsilon.LayoutManager/**/*.png" />
             <DeployLayoutManagerFiles Include="../R7.Epsilon.LayoutManager/**/*.gif" />
         </ItemGroup>
+ 		-->
 
         <!-- Declare binaries -->
         <ItemGroup>
@@ -88,7 +90,7 @@
 		<Copy SourceFiles="@(DeploySkinFiles)" DestinationFolder="$(TmpDir)/Skins/%(RecursiveDir)" />
 		<Copy SourceFiles="@(DeployContainerFiles)" DestinationFolder="$(TmpDir)/Containers/%(RecursiveDir)" />
 		<Copy SourceFiles="@(DeployMenuFiles)" DestinationFolder="$(TmpDir)/Menus/%(RecursiveDir)" />
-        <Copy SourceFiles="@(DeployLayoutManagerFiles)" DestinationFolder="$(TmpDir)/Modules/R7.Epsilon.LayoutManager/%(RecursiveDir)" />
+        <!-- <Copy SourceFiles="@(DeployLayoutManagerFiles)" DestinationFolder="$(TmpDir)/Modules/R7.Epsilon.LayoutManager/%(RecursiveDir)" /> -->
 
 		<!-- Declare files to move -->
 		<ItemGroup>
@@ -100,15 +102,17 @@
 		<ItemGroup>
             <MenuMoveFiles Include="$(TmpDir)/Menus/**/*.*" />
         </ItemGroup>
+		<!--
         <ItemGroup>
             <ModuleMoveFiles Include="$(TmpDir)/Modules/**/*.*" />
         </ItemGroup>
+		-->
 
 		<!-- Deploy files -->
 		<Copy SourceFiles="@(SkinMoveFiles)" DestinationFolder="$(ProjectSkinsPath)/%(RecursiveDir)" SkipUnchangedFiles="true" />
 		<Copy SourceFiles="@(ContainerMoveFiles)" DestinationFolder="$(ProjectContainersPath)/%(RecursiveDir)" SkipUnchangedFiles="true" />
 		<Copy SourceFiles="@(MenuMoveFiles)" DestinationFolder="$(ProjectMenusPath)/%(RecursiveDir)" SkipUnchangedFiles="true" />
-		<Copy SourceFiles="@(ModuleMoveFiles)" DestinationFolder="$(ProjectModulesPath)/%(RecursiveDir)" SkipUnchangedFiles="true" />
+		<!-- <Copy SourceFiles="@(ModuleMoveFiles)" DestinationFolder="$(ProjectModulesPath)/%(RecursiveDir)" SkipUnchangedFiles="true" /> -->
 
 		<!-- Deploy external files -->
 		<Copy SourceFiles="@(DeployExternalJsFiles)" DestinationFolder="$(ProjectSkinsPath)/js/" SkipUnchangedFiles="true" />

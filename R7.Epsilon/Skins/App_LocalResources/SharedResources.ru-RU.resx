@@ -129,10 +129,7 @@
     <data name="Permalink.Text" xml:space="preserve">
         <value>Постоянная ссылка:</value>
     </data>
-	<data name="SelectLayout.Text" xml:space="preserve">
-        <value>Выбрать лейаут</value>
-    </data>
-    <data name="FeedbackPage.Template" xml:space="preserve">
+	<data name="FeedbackPage.Template" xml:space="preserve">
         <value>\nСтраница: {origin}/linkclick.aspx?link={page}</value>
     </data>
     <data name="FeedbackSelection.Template" xml:space="preserve">

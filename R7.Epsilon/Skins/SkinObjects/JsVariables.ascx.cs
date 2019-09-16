@@ -60,35 +60,11 @@ namespace R7.Epsilon.Skins.SkinObjects
             }
         }
 
-        protected string LayoutManagerUrl
-        {
-            get {
-                var layoutManager = GetLayoutManager (PortalSettings.PortalId);
-                if (layoutManager != null) {
-                    return Globals.NavigateURL (layoutManager.TabID, "Select", "mid", layoutManager.ModuleID.ToString ());
-                }
-
-                // TODO: Log error: no LayoutManager module found, layout selection feature is disabled
-                return null;
-            }
-        }
-
-        // TODO: Invalidate cache (somehow)
-        protected ModuleInfo GetLayoutManager (int portalId)
-        {
-            // GetModuleByDefinition is very slow, so cache its result
-            return DataCache.GetCachedData<ModuleInfo> (
-                new CacheItemArgs ("//r7_Epsilon/LayoutManager?data=Module&portalId=" + portalId, 1200, CacheItemPriority.Normal),
-                (c) => ModuleController.Instance.GetModuleByDefinition (portalId, "R7.Epsilon.LayoutManager")
-            );
-        }
-
         public string LocalizationResources
         {
             get {
                 var sb = new StringBuilder ();
 
-                sb.AppendFormat ("selectLayout:'{0}',", Localizer.GetString ("SelectLayout.Text"));
                 sb.AppendFormat ("feedbackTemplate:'{0}',", Localizer.GetString ("Feedback.Template"));
                 sb.AppendFormat ("feedbackPageTemplate:'{0}',", Localizer.GetString ("FeedbackPage.Template"));
                 sb.AppendFormat ("feedbackSelectionTemplate:'{0}',", Localizer.GetString ("FeedbackSelection.Template"));

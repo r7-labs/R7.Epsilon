@@ -147,10 +147,7 @@
     <data name="Permalink.Format" xml:space="preserve">
         <value>/LinkClick.aspx?link={0}</value>
     </data>
-	<data name="SelectLayout.Text" xml:space="preserve">
-        <value>Select Layout</value>
-    </data>
-    <data name="Feedback.Template" xml:space="preserve">
+	<data name="Feedback.Template" xml:space="preserve">
         <value>\n\n---{content}</value>
     </data>
     <data name="FeedbackPage.Template" xml:space="preserve">

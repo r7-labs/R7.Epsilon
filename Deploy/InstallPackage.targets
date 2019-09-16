@@ -59,7 +59,8 @@
         </ItemGroup>
 
         <!-- Declare module files -->
-        <ItemGroup>
+		<!--
+		<ItemGroup>
             <InstallLayoutManagerFiles Include="../R7.Epsilon.LayoutManager/**/*.ascx" />
             <InstallLayoutManagerFiles Include="../R7.Epsilon.LayoutManager/**/*.css" />
             <InstallLayoutManagerFiles Include="../R7.Epsilon.LayoutManager/**/*.resx" />
@@ -68,6 +69,7 @@
             <InstallLayoutManagerFiles Include="../R7.Epsilon.LayoutManager/**/*.png" />
             <InstallLayoutManagerFiles Include="../R7.Epsilon.LayoutManager/**/*.gif" />
         </ItemGroup>
+		-->
 
 		<!-- Declare manifest files -->
 		<ItemGroup>
@@ -101,7 +103,7 @@
 		<Copy SourceFiles="@(InstallSkinFiles)" DestinationFolder="$(MSBuildProjectDirectory)/$(TmpDir)/Skins/%(RecursiveDir)" />
 		<Copy SourceFiles="@(InstallContainerFiles)" DestinationFolder="$(MSBuildProjectDirectory)/$(TmpDir)/Containers/%(RecursiveDir)" />
 		<Copy SourceFiles="@(InstallMenuFiles)" DestinationFolder="$(MSBuildProjectDirectory)/$(TmpDir)/Menus/%(RecursiveDir)" />
-        <Copy SourceFiles="@(InstallLayoutManagerFiles)" DestinationFolder="$(MSBuildProjectDirectory)/$(TmpDir)/Modules/R7.Epsilon.LayoutManager/%(RecursiveDir)" />
+  		<!-- <Copy SourceFiles="@(InstallLayoutManagerFiles)" DestinationFolder="$(MSBuildProjectDirectory)/$(TmpDir)/Modules/R7.Epsilon.LayoutManager/%(RecursiveDir)" /> -->
 
 		<!-- Copy external files to tmp dir -->
 		<Copy SourceFiles="@(InstallExternalJsFiles)" DestinationFolder="$(MSBuildProjectDirectory)/$(TmpDir)/Skins/js/" />
@@ -117,20 +119,22 @@
 		<ItemGroup>
             <InstallMenuZipFiles Include="$(MSBuildProjectDirectory)/$(TmpDir)/Menus/**/*.*" />
         </ItemGroup>
+		<!--
         <ItemGroup>
             <InstallModuleZipFiles Include="$(MSBuildProjectDirectory)/$(TmpDir)/Modules/**/*.*" />
         </ItemGroup>
+		-->
 
 		<!-- Create resource archives  -->
 		<Zip Condition=" '$(OS)' != 'Unix' " Files="@(InstallSkinZipFiles)" WorkingDirectory="$(TmpDir)\Skins" ZipFileName="Resources_Skins.zip" />
 		<Zip Condition=" '$(OS)' != 'Unix' " Files="@(InstallContainerZipFiles)" WorkingDirectory="$(TmpDir)\Containers" ZipFileName="Resources_Containers.zip" />
 		<Zip Condition=" '$(OS)' != 'Unix' " Files="@(InstallMenuZipFiles)" WorkingDirectory="$(TmpDir)\Menus" ZipFileName="Resources_Menus.zip" />
-        <Zip Condition=" '$(OS)' != 'Unix' " Files="@(InstallModuleZipFiles)" WorkingDirectory="$(TmpDir)\Modules" ZipFileName="Resources_Modules.zip" />
+        <!-- <Zip Condition=" '$(OS)' != 'Unix' " Files="@(InstallModuleZipFiles)" WorkingDirectory="$(TmpDir)\Modules" ZipFileName="Resources_Modules.zip" /> -->
 
         <Exec Condition=" '$(OS)' == 'Unix' " Command="zip -r -6 -UN=UTF8 &quot;Resources_Skins.zip&quot; ." WorkingDirectory="$(TmpDir)/Skins" />
         <Exec Condition=" '$(OS)' == 'Unix' " Command="zip -r -6 -UN=UTF8 &quot;Resources_Containers.zip&quot; ." WorkingDirectory="$(TmpDir)/Containers" />
 		<Exec Condition=" '$(OS)' == 'Unix' " Command="zip -r -6 -UN=UTF8 &quot;Resources_Menus.zip&quot; ." WorkingDirectory="$(TmpDir)/Menus" />
-        <Exec Condition=" '$(OS)' == 'Unix' " Command="zip -r -6 -UN=UTF8 &quot;Resources_Modules.zip&quot; ." WorkingDirectory="$(TmpDir)/Modules" />
+        <!-- <Exec Condition=" '$(OS)' == 'Unix' " Command="zip -r -6 -UN=UTF8 &quot;Resources_Modules.zip&quot; ." WorkingDirectory="$(TmpDir)/Modules" /> -->
 
 		<!-- Copy binaries -->
 		<Copy SourceFiles="@(InstallBinaryFiles)" DestinationFolder="$(TmpDir)/Package/bin" />
@@ -142,12 +146,12 @@
 		<Copy SourceFiles="$(TmpDir)/Skins/Resources_Skins.zip" DestinationFolder="$(TmpDir)/Package" />
         <Copy SourceFiles="$(TmpDir)/Containers/Resources_Containers.zip" DestinationFolder="$(TmpDir)/Package" />
 		<Copy SourceFiles="$(TmpDir)/Menus/Resources_Menus.zip" DestinationFolder="$(TmpDir)/Package" />
-		<Copy SourceFiles="$(TmpDir)/Modules/Resources_Modules.zip" DestinationFolder="$(TmpDir)/Package" />
+		<!-- <Copy SourceFiles="$(TmpDir)/Modules/Resources_Modules.zip" DestinationFolder="$(TmpDir)/Package" /> -->
 
 		<Delete Files="$(TmpDir)/Skins/Resources_Skins.zip" />
         <Delete Files="$(TmpDir)/Containers/Resources_Containers.zip" />
 		<Delete Files="$(TmpDir)/Containers/Resources_Menus.zip" />
-        <Delete Files="$(TmpDir)/Modules/Resources_Modules.zip" />
+        <!-- <Delete Files="$(TmpDir)/Modules/Resources_Modules.zip" /> -->
 
 		<!-- Declare tmp package folder -->
 		<ItemGroup>

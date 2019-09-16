@@ -76,10 +76,6 @@
     <None Include="lib\DotNetNuke.Web.DDRMenu.dll" />
     <None Include="Skins\R7.Epsilon.yml" />
     <None Include="lib\README.md" />
-    <None Include="Skins\Layouts\Universal.xml" />
-    <None Include="Skins\Layouts\Default.xml" />
-    <None Include="Skins\Layouts\Default_A11y.xml" />
-    <None Include="Skins\Layouts\Home.xml" />
     <None Include="Menus\Mega2Epsilon\Mega2Epsilon.xslt" />
     <None Include="Menus\Mega2Epsilon\menudef.xml" />
     <None Include="Skins\koi.json" />
@@ -98,19 +94,7 @@
     <Compile Include="Components\SocialGroupHelper.cs" />
     <Compile Include="Components\SearchEngineType.cs" />
     <Compile Include="Components\SearchEngineHelper.cs" />
-    <Compile Include="Models\DynamicPane.cs" />
-    <Compile Include="Models\Layout.cs" />
-    <Compile Include="Components\MarkupParser.cs" />
-    <Compile Include="Components\LayoutValidator.cs" />
-    <Compile Include="Models\PaneEqualityComparer.cs" />
-    <Compile Include="Components\LayoutManager.cs" />
-    <Compile Include="Skins\Custom.ascx.cs">
-      <DependentUpon>Custom.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Components\Const.cs" />
-    <Compile Include="Components\LayoutHelper.cs" />
-    <Compile Include="Models\LayoutFile.cs" />
-    <Compile Include="Models\LayoutFileEqualityComparer.cs" />
     <Compile Include="ControlExtensions\GridViewExtensions.cs" />
     <Compile Include="Skins\EpsilonSkinBase.cs" />
     <Compile Include="Containers\EpsilonContainerBase.cs" />
@@ -178,7 +162,6 @@
     <Content Include="Skins\images\logo-template.png" />
     <Content Include="Skins\images\logo-template.svg" />
     <Content Include="Skins\images\button_100x100.png" />
-    <Content Include="Skins\Universal.ascx" />
     <Content Include="Containers\Default_H3.ascx" />
     <Content Include="Containers\Message_Warning.ascx" />
     <Content Include="Containers\Message_Info.ascx" />
@@ -204,7 +187,6 @@
     <Content Include="Containers\Callout_Success.ascx" />
     <Content Include="Containers\Callout_Primary.ascx" />
     <Content Include="Containers\Callout_Default.ascx" />
-    <Content Include="Skins\Admin.ascx" />
     <Content Include="Containers\Panel_Default.ascx" />
     <Content Include="Containers\Panel_Primary.ascx" />
     <Content Include="Containers\Panel_Info.ascx" />
@@ -214,9 +196,7 @@
     <Content Include="packages.config" />
     <Content Include="license.htm" />
     <Content Include="releaseNotes.htm" />
-    <Content Include="Skins\Custom.ascx" />
     <Content Include="Skins\ErrorSkin.ascx" />
-    <Content Include="Skins\HomeCustom.ascx" />
     <Content Include="Skins\SkinObjects\AdminPageInfo.ascx" />
     <Content Include="Skins\SkinObjects\BrowserCheck.ascx" />
     <Content Include="Skins\SkinObjects\FeedbackButton.ascx" />
