@@ -1,10 +1,10 @@
 ﻿//
-//  DefaultPortalConfigTests.cs
+//  File: DevPortalConfigTests.cs
+//  Project: R7.Epsilon
 //
-//  Author:
-//       Roman M. Yagodin <roman.yagodin@gmail.com>
+//  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2016 Roman M. Yagodin
+//  Copyright (c) 2016-2019 Roman M. Yagodin, R7.Labs
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -19,7 +19,6 @@
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-using System;
 using R7.Epsilon.Components;
 using Xunit;
 using System.IO;
@@ -28,17 +27,17 @@ using YamlDotNet.Serialization;
 
 namespace R7.Epsilon.Tests
 {
-    public class DefaultPortalConfigTests
+    public class DevPortalConfigTests
     {
         [Fact]
         public void PortalConfigDeserializationTest ()
         {
-            var defaultConfigFile = Path.Combine ("..", "..", "..", "R7.Epsilon", "Skins", "R7.Epsilon.yml");
+            var devConfigFile = Path.Combine ("..", "..", "..", "R7.Epsilon", "Skins", "R7.Epsilon.yml");
 
-            using (var configReader = new StringReader (File.ReadAllText (defaultConfigFile))) {
+            using (var configReader = new StringReader (File.ReadAllText (devConfigFile))) {
                 var deserializer = new DeserializerBuilder ().WithNamingConvention (new HyphenatedNamingConvention ()).Build ();
                 Assert.NotNull (deserializer.Deserialize<EpsilonPortalConfig> (configReader));
-            } 
+            }
         }
     }
 }

@@ -59,7 +59,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DefaultPortalConfigTests.cs" />
+    <Compile Include="DevPortalConfigTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Skins\" />
