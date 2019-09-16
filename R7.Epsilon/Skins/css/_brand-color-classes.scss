@@ -23,3 +23,14 @@
     &.brand-bg-reddit { background-color: $bc-reddit  }
     &.brand-bg-instagram { background-color: $bc-instagram-3 }
 }
+
+.brand-border {
+    &.brand-border-facebook { border-color: $bc-facebook }
+    &.brand-border-twitter { border-color: $bc-twitter }
+    &.brand-border-youtube { border-color: $bc-youtube }
+    &.brand-border-vkontakte { border-color: $bc-vkontakte }
+    &.brand-border-odnoklassniki { border-color: $bc-odnoklassniki }
+    &.brand-border-linkedin { border-color: $bc-linkedin }
+    &.brand-border-reddit { border-color: $bc-reddit  }
+    &.brand-border-instagram { border-color: $bc-instagram-3 }
+}
