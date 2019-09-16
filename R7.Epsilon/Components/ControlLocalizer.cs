@@ -44,9 +44,14 @@ namespace R7.Epsilon.Components
             if (control is SkinObjectBase) {
                 resourceFile = resourceFile.Replace ("/SkinObjects", string.Empty).Replace ("/Blocks", string.Empty);
             }
-            // skin files can be located in Portals/X-System/Skins, but must use resources from Portals/_default/Skins
+            // skin files can be located in Portals/X-System/Skins or Portals/X/Skins, but must use resources from Portals/_default/Skins
             else if (resourceFile.IndexOf ("/_default/", StringComparison.InvariantCultureIgnoreCase) < 0) {
-                resourceFile = Regex.Replace (resourceFile, @"/Portals/\d+-System/", "/Portals/_default/", RegexOptions.IgnoreCase);
+                if (resourceFile.IndexOf ("-System/", StringComparison.InvariantCultureIgnoreCase) >= 0) {
+                    resourceFile = Regex.Replace (resourceFile, @"/Portals/\d+-System/", "/Portals/_default/", RegexOptions.IgnoreCase);
+                }
+                else {
+                    resourceFile = Regex.Replace (resourceFile, @"/Portals/\d+/", "/Portals/_default/", RegexOptions.IgnoreCase);
+                }
             }
 
             LocalResourceFile = resourceFile;

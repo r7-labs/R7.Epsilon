@@ -26,7 +26,7 @@ See it in action at http://www.volgau.com!
 
 With *R7.Epsilon*, you can create custom skins/layouts based on stock ones, adopted and available for specific website only:
 
-1. Copy selected skin files (e.g. `Home.ascx`) and corresponding layout files (`Layouts/_home.ascx`) from `~/Portals/_default/Skins/R7.Epsilon` host skin folder to the `~/Portals/X-System/Skins/R7.Epsilon` folder, there `X` is a portal number for your website.
+1. Copy selected skin files (e.g. `Home.ascx`) and corresponding layout files (`Layouts/_home.ascx`) from `~/Portals/_default/Skins/R7.Epsilon` host skin folder to the `~/Portals/X-System/Skins/R7.Epsilon` folder (or `~/Portals/X/Skins/R7.Epsilon` folder), there `X` is a portal number for your website.
 2. Copy also `skin.doctype.xml` to set proper HTML Doctype, or make sure that *Fallback Theme Doctype* in Host settings is set to HTML5.
 3. Now, if you just want to change panes layout, you can do that by editing layout file contents.
 5. Select your custom skin from *Appearance* tab in *Page Settings*. It will be something like *Site: R7.Epsilon - Home*.
