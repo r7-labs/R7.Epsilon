@@ -53,6 +53,7 @@
 						<file><name>Message_Info.ascx</name></file>
 						<file><name>Message_Warning.ascx</name></file>
 						<file><name>Message_Danger.ascx</name></file>
+						<file><name>Callout_Default.ascx</name></file>
 					</files>
 				</component>
 				<component type="Cleanup" version="01.14.00">

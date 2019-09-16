@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="false" Inherits="R7.Epsilon.Containers.EpsilonContainerBase" %>
 <%@ Register TagPrefix="dnn" TagName="TITLE" Src="~/Admin/Containers/Title.ascx" %>
-<div class="dnnClear bs-callout bs-callout-primary">
-    <h4><dnn:TITLE ID="dnnTITLE" runat="server" CssClass="h4" /></h4>
+<div class="clearfix card card-body border-primary skin-callout cnt-callout">
+    <h4 class="card-title text-primary"><dnn:TITLE ID="dnnTITLE" runat="server" CssClass="h4 card-title text-primary" /></h4>
     <div id="ContentPane" runat="server"></div>
 </div>
