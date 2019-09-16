@@ -1,0 +1,57 @@
+//
+//  File: _containers.scss
+//  Project: R7.Epsilon
+//
+//  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
+//
+//  Copyright (c) 2014-2019 Roman M. Yagodin, R7.Labs
+//
+//  This program is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU Affero General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  This program is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU Affero General Public License for more details.
+//
+//  You should have received a copy of the GNU Affero General Public License
+//  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+.cnt-blank,
+.cnt-thumbnail,
+.cnt-thumbnail-h,
+.cnt-panel,
+.cnt-message,
+.cnt-alert,
+.cnt-well {
+    margin-top:20px; // like h2 & h3
+}
+
+.well.cnt-well h2,
+.well.cnt-well h3,
+.well.cnt-well h4 {
+	margin-top:0
+}
+
+// header visible in edit mode
+.cnt-blank > h4, .cnt-thumbnail > h4 { color:#ccc }
+.cnt-blank > h4 { margin-top:0 }
+
+// fix message containers max width
+.cnt-message.dnnFormMessage { max-width:inherit; }
+
+.cnt-message, .cnt-thumbnail-h
+{
+    padding:10px 20px;
+    margin-bottom:0;
+}
+
+.cnt-thumbnail { margin-bottom:0; }
+
+// fix panel containers headings
+.cnt-panel .Head { margin-bottom:inherit; }
+
+// fix white-on-white text when editing module title
+.cnt-panel input.LabelEditTextClass { color:#000; }
