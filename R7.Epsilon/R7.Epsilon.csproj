@@ -159,8 +159,6 @@
     <Content Include="Skins\images\video-play.svg" />
     <Content Include="Skins\js\bootstrap-image-gallery.min.js" />
     <Content Include="Skins\js\jquery.blueimp-gallery.min.js" />
-    <Content Include="Skins\images\logo-template.png" />
-    <Content Include="Skins\images\logo-template.svg" />
     <Content Include="Skins\images\button_100x100.png" />
     <Content Include="Containers\Default_H3.ascx" />
     <Content Include="Containers\Message_Warning.ascx" />
@@ -168,14 +166,7 @@
     <Content Include="Containers\Message_Success.ascx" />
     <Content Include="Containers\Message_Danger.ascx" />
     <Content Include="Containers\Callout_Info.ascx" />
-    <Content Include="Skins\images\logo-template-150x150.png" />
-    <Content Include="Skins\images\logo-template-150x150.svg" />
-    <Content Include="Skins\images\logo-template-350x75.png" />
-    <Content Include="Skins\images\logo-template-350x75.svg" />
     <Content Include="Skins\js\skin.js" />
-    <Content Include="Skins\images\logo_template_133x100.png" />
-    <Content Include="Skins\images\logo_template_133x100.svg" />
-    <Content Include="Skins\images\logo_template_178x100.xcf" />
     <Content Include="Skins\js\a11y.js" />
     <Content Include="Skins\js\menu.js" />
     <Content Include="Skins\css\blueimp.scss" />
