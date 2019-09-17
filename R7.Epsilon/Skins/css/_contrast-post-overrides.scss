@@ -1,0 +1,102 @@
+//
+//  File: _contrast-post-overrides.scss
+//  Project: R7.Epsilon
+//
+//  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
+//
+//  Copyright (c) 2014-2019 Roman M. Yagodin, R7.Labs
+//
+//  This program is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU Affero General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  This program is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU Affero General Public License for more details.
+//
+//  You should have received a copy of the GNU Affero General Public License
+//  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+/* CSS classes */
+
+// brand colors classes
+.brand-text { color: #000 !important }
+.brand-bg { background-color: #000 !important }
+.brand-border { border-color: #000 !important }
+
+.text-primary,
+.text-secondary,
+.text-success,
+.text-info,
+.text-warning,
+.text-danger,
+.text-dark {
+    color: #000 !important;
+}
+
+.bg-primary,
+.bg-secondary,
+.bg-success,
+.bg-info,
+.bg-warning,
+.bg-danger,
+.bg-dark {
+    background-color: #000 !important;
+}
+
+.border-primary,
+.border-secondary,
+.border-success,
+.border-info,
+.border-warning,
+.border-danger,
+.border-dark {
+    border-color: #000 !important;
+}
+
+.card-body {
+    &.border-primary,
+    &.border-warning,
+    &.border-dark {
+        border-width: 3px;
+    }
+    &.border-danger {
+        border-width: 5px;
+    }
+    &.border-light {
+        border-style: dashed;
+        border-left-style: solid;
+    }
+}
+
+.skin-callout {
+    border-left-width: 9px !important;
+}
+
+.skin-callout {
+    &.border-light {
+        border-color:#000 !important;
+    }
+    & > .card-title.text-light {
+        color: #000 !important;
+    }
+}
+
+/* Links */
+
+a, .btn.btn-link {
+    text-decoration: underline;
+}
+
+a.bold-link:hover {
+    text-decoration: underline;
+}
+
+a.nav-link,
+a.dropdown-item,
+a.underline-link,
+a.underline-link.bold-link {
+    text-decoration: none;
+}

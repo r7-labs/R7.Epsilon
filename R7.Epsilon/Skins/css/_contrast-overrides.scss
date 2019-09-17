@@ -1,10 +1,10 @@
 //
-//  File: _contrast-layout.scss
+//  File: _contrast-overrides.scss
 //  Project: R7.Epsilon
 //
 //  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2015-2016 Roman M. Yagodin, R7.Labs
+//  Copyright (c) 2014-2019 Roman M. Yagodin, R7.Labs
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -56,67 +56,6 @@ $float-btn-up-bg-color: $color-primary-4;
 $float-btn-age-rating-bg-color: $color-primary-4;
 $float-btn-feedback-bg-color: $color-primary-4;
 
-// brand colors classes
-.brand-text { color: #000 !important }
-.brand-bg { background-color: #000 !important }
-.brand-border { border-color: #000 !important }
-
-.text-primary,
-.text-secondary,
-.text-success,
-.text-info,
-.text-warning,
-.text-danger,
-.text-dark {
-    color: #000 !important;
-}
-
-.bg-primary,
-.bg-secondary,
-.bg-success,
-.bg-info,
-.bg-warning,
-.bg-danger,
-.bg-dark {
-    background-color: #000 !important;
-}
-
-.border-primary,
-.border-secondary,
-.border-success,
-.border-info,
-.border-warning,
-.border-danger,
-.border-dark {
-    border-color: #000 !important;
-}
-
-.card-body {
-    &.border-primary,
-    &.border-warning,
-    &.border-dark {
-        border-width: 3px;
-    }
-    &.border-danger {
-        border-width: 5px;
-    }
-    &.border-light {
-        border-style: dashed;
-        border-left-style: solid;
-    }
-}
-
-.skin-callout {
-    border-left-width: 9px !important;
-}
-
-.theme-contrast {
-    .skin-callout {
-        &.border-light {
-            border-color:#000 !important;
-        }
-        & > .card-title.text-light {
-            color: #000 !important;
-        }
-    }
-}
+// links
+$link-color: $color-primary-4;
+$link-hover-color: $color-primary-0;
