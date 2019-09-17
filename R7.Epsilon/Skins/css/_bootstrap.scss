@@ -25,3 +25,9 @@
 .dropdown-item:active {
     background-color: $color-secondary-1-0;
 }
+
+/* Alerts */
+
+.alert.alert-light {
+    border-color: rgba(0,0,0,.125) !important; // from .card
+}
