@@ -187,6 +187,8 @@
     <Content Include="Containers\Callout_Success.ascx" />
     <Content Include="Containers\Callout_Primary.ascx" />
     <Content Include="Containers\Callout_Secondary.ascx" />
+    <Content Include="Containers\Callout_Dark.ascx" />
+    <Content Include="Containers\Callout_Light.ascx" />
     <Content Include="Containers\Panel_Default.ascx" />
     <Content Include="Containers\Panel_Primary.ascx" />
     <Content Include="Containers\Panel_Info.ascx" />

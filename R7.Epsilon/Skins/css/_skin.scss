@@ -462,8 +462,19 @@ a.btn-primary:visited {
     }
 }
 
+/* Callouts */
+
 .skin-callout {
     border-left-width: 4px;
+}
+
+.skin-callout {
+    &.border-light {
+        border-color: rgba(0,0,0,.125) !important; // from .card
+    }
+    & > .card-title.text-light {
+        color: #818182 !important; // from .alert-light
+    }
 }
 
 /* fix for carousel for large resolution displays */

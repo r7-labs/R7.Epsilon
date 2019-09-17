@@ -93,14 +93,30 @@ $float-btn-feedback-bg-color: $color-primary-4;
 
 .card-body {
     &.border-primary,
-    &.border-warning {
-        border-width: 3px
+    &.border-warning,
+    &.border-dark {
+        border-width: 3px;
     }
     &.border-danger {
-        border-width: 5px
+        border-width: 5px;
+    }
+    &.border-light {
+        border-style: dashed;
+        border-left-style: solid;
     }
 }
 
 .skin-callout {
     border-left-width: 9px !important;
+}
+
+.theme-contrast {
+    .skin-callout {
+        &.border-light {
+            border-color:#000 !important;
+        }
+        & > .card-title.text-light {
+            color: #000 !important;
+        }
+    }
 }
