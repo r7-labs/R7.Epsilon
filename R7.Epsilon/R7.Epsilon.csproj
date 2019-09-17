@@ -220,6 +220,10 @@
     <Content Include="Containers\Alert_Success.ascx" />
     <Content Include="Containers\Alert_Warning.ascx" />
     <Content Include="Containers\Alert_Danger.ascx" />
+    <Content Include="Containers\Alert_Primary.ascx" />
+    <Content Include="Containers\Alert_Secondary.ascx" />
+    <Content Include="Containers\Alert_Dark.ascx" />
+    <Content Include="Containers\Alert_Light.ascx" />
     <Content Include="Containers\PanelBody_Warning.ascx" />
     <Content Include="Containers\PanelBody_Primary.ascx" />
     <Content Include="Containers\PanelBody_Default.ascx" />
