@@ -50,10 +50,17 @@
     .dropdown-item.dropdown-item-parent {
         font-weight: bold;
     }
+    .navbar-nav {
+        flex-wrap: wrap;
+    }
 }
 
 .skin-navbar-subnav > .row {
 	width: 100%;
+}
+
+.skin-navbar-subnav .nav-link {
+    white-space: normal;
 }
 
 // disable "broken" menu animation on small screens
