@@ -19,15 +19,16 @@
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+// TODO: Review top and bottom margins
 .cnt-blank,
 .cnt-callout,
 .cnt-thumbnail,
 .cnt-thumbnail-h,
-.cnt-panel,
+.cnt-card,
 .cnt-alert,
 .cnt-dnn-alert,
 .cnt-well {
-    margin-top:20px; // like h2 & h3
+    margin-top: 20px; // like h2 & h3
 }
 
 .well.cnt-well h2,
@@ -50,9 +51,3 @@
 }
 
 .cnt-thumbnail { margin-bottom:0; }
-
-// fix panel containers headings
-.cnt-panel .Head { margin-bottom:inherit; }
-
-// fix white-on-white text when editing module title
-.cnt-panel input.LabelEditTextClass { color:#000; }
