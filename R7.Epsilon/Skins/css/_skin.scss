@@ -4,7 +4,7 @@
 //  Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2015-2017 Roman M. Yagodin
+//  Copyright (c) 2015-2019 Roman M. Yagodin
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -549,5 +549,76 @@ a.bold-link {
     font-weight: bold;
     &:hover {
         text-decoration: none;
+    }
+}
+
+/* Buttons */
+
+.dnnPrimaryAction, .dnnSecondaryAction, .dnnTertiaryAction,
+a.dnnPrimaryAction, a.dnnSecondaryAction, a.dnnTertiaryAction {
+    font-weight: normal;
+    border-radius: 4px;
+    text-shadow: none;
+    box-shadow: none;
+    background: none;
+    padding: .375rem .75rem;
+    margin: 0;
+    outline: none !important;
+    &:hover {
+        background: none;
+    }
+}
+
+.dnnPrimaryAction, .dnnSecondaryAction,
+a.dnnPrimaryAction, a.dnnSecondaryAction {
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.dnnPrimaryAction,
+a.dnnPrimaryAction,
+.btn.btn-primary {
+    background-color: $btn-primary-bg-color;
+    border-color: $btn-primary-border-color;
+    color: $btn-primary-text-color;
+    &:hover {
+        background-color: $btn-primary-bg-hover-color;
+        border-color: $btn-primary-border-hover-color;
+        color: $btn-primary-text-color;
+    }
+    &:focus, &.focus {
+        box-shadow: 0 0 0 .2rem $btn-primary-focus-shadow-color;
+    }
+}
+
+.dnnSecondaryAction,
+a.dnnSecondaryAction {
+    background-color: $btn-secondary-bg-color;
+    border-color: $btn-secondary-border-color;
+    color: $btn-secondary-text-color;
+    &:hover {
+        background-color: $btn-secondary-bg-hover-color;
+        border-color: $btn-secondary-border-hover-color;
+        color: $btn-secondary-text-color;
+    }
+    &:focus, &.focus {
+        box-shadow: 0 0 0 .2rem $btn-secondary-focus-shadow-color;
+    }
+}
+
+.btn-link, a.btn-link,
+.dnnTertiaryAction, a.dnnTertiaryAction {
+    &:focus, &.focus {
+        box-shadow: 0 0 0 .2rem $btn-secondary-focus-shadow-color;
+    }
+}
+
+.dnnTertiaryAction,
+a.dnnTertiaryAction {
+    color: $link-color;
+    text-decoration: underline;
+    &:hover {
+        color: $link-hover-color;
     }
 }

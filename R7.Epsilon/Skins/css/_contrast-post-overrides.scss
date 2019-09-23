@@ -86,6 +86,10 @@
 
 /* Links */
 
+a.btn {
+    text-decoration: none;
+}
+
 a, .btn.btn-link {
     text-decoration: underline;
 }
@@ -99,4 +103,26 @@ a.dropdown-item,
 a.underline-link,
 a.underline-link.bold-link {
     text-decoration: none;
+}
+
+/* Buttons */
+
+.btn.btn-secondary {
+    background-color: $btn-secondary-bg-color;
+    border-color: $btn-secondary-border-color;
+    color: $btn-secondary-text-color;
+    &:hover {
+        background-color: $btn-secondary-bg-hover-color;
+        border-color: $btn-secondary-border-hover-color;
+        color: $btn-secondary-text-color;
+    }
+}
+
+.btn-primary, .btn.btn-secondary,
+.dnnPrimaryAction, a.dnnPrimaryAction,
+.dnnSecondaryAction, a.dnnSecondaryAction {
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
 }

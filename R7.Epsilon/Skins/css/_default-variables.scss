@@ -1,3 +1,24 @@
+//
+//  File: _default-variables.scss
+//  Project: R7.Epsilon
+//
+//  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
+//
+//  Copyright (c) 2019 Roman M. Yagodin, R7.Labs
+//
+//  This program is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU Affero General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  This program is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU Affero General Public License for more details.
+//
+//  You should have received a copy of the GNU Affero General Public License
+//  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 // float buttons
 $float-btn-opacity:0.55;
 $float-btn-up-bg-color: $color-primary-3;
@@ -7,3 +28,17 @@ $float-btn-feedback-bg-color: $color-secondary-1-3;
 // links
 $link-color: $color-secondary-1-3;
 $link-hover-color: $color-secondary-1-0;
+
+// buttons
+$btn-primary-bg-color: $color-primary-0;
+$btn-primary-bg-hover-color: $color-primary-3;
+$btn-primary-border-color: $color-primary-0;
+$btn-primary-border-hover-color: $color-primary-3;
+$btn-primary-text-color: #fff;
+$btn-primary-focus-shadow-color: $color-primary-2;
+$btn-secondary-bg-color: #6c757d; // like .btn-secondary
+$btn-secondary-bg-hover-color: #5a6268; // like .btn-secondary
+$btn-secondary-border-color: #6c757d; // like .btn-secondary
+$btn-secondary-border-hover-color: #5a6268; // like .btn-secondary
+$btn-secondary-text-color: #fff;
+$btn-secondary-focus-shadow-color: rgba(130,138,145,.5); // like .btn-secondary
