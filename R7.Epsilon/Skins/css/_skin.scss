@@ -634,6 +634,12 @@ a.dnnPrimaryAction:active, a.dnnPrimaryAction.active {
     border-color: $btn-primary-active-border-color;
 }
 
+.btn-primary:not(:disabled):not(.disabled).active:focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 .2rem $btn-primary-focus-shadow-color;
+}
+
 .btn-secondary:not(:disabled):not(.disabled).active,
 .btn-secondary:not(:disabled):not(.disabled):active,
 .show > .btn-secondary.dropdown-toggle,
