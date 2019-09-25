@@ -554,6 +554,7 @@ a.bold-link {
 
 /* Buttons */
 
+// reset DNN styles
 .dnnPrimaryAction, .dnnSecondaryAction, .dnnTertiaryAction,
 a.dnnPrimaryAction, a.dnnSecondaryAction, a.dnnTertiaryAction {
     font-weight: normal;
@@ -566,13 +567,11 @@ a.dnnPrimaryAction, a.dnnSecondaryAction, a.dnnTertiaryAction {
     outline: none !important;
     &:hover {
         background: none;
-    }
-}
-
-.dnnPrimaryAction, .dnnSecondaryAction,
-a.dnnPrimaryAction, a.dnnSecondaryAction {
-    &:hover {
         text-decoration: none;
+    }
+    &:active, &.active {
+        background: none;
+        box-shadow: none;
     }
 }
 
@@ -617,8 +616,29 @@ a.dnnSecondaryAction {
 .dnnTertiaryAction,
 a.dnnTertiaryAction {
     color: $link-color;
-    text-decoration: underline;
     &:hover {
         color: $link-hover-color;
+        text-decoration: underline;
     }
+    &:focus, &.focus {
+        text-decoration: underline;
+    }
+}
+
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.show > .btn-primary.dropdown-toggle,
+.dnnPrimaryAction:active, .dnnPrimaryAction.active,
+a.dnnPrimaryAction:active, a.dnnPrimaryAction.active {
+    background-color: $btn-primary-active-bg-color;
+    border-color: $btn-primary-active-border-color;
+}
+
+.btn-secondary:not(:disabled):not(.disabled).active,
+.btn-secondary:not(:disabled):not(.disabled):active,
+.show > .btn-secondary.dropdown-toggle,
+.dnnSecondaryAction:active, .dnnSecondaryAction.active,
+a.dnnSecondaryAction:active, a.dnnSecondaryAction.active {
+    background-color: $btn-secondary-active-bg-color;
+    border-color: $btn-secondary-active-border-color;
 }

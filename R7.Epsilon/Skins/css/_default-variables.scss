@@ -36,9 +36,15 @@ $btn-primary-border-color: $color-primary-0;
 $btn-primary-border-hover-color: $color-primary-3;
 $btn-primary-text-color: #fff;
 $btn-primary-focus-shadow-color: $color-primary-2;
-$btn-secondary-bg-color: #6c757d; // like .btn-secondary
-$btn-secondary-bg-hover-color: #5a6268; // like .btn-secondary
-$btn-secondary-border-color: #6c757d; // like .btn-secondary
-$btn-secondary-border-hover-color: #5a6268; // like .btn-secondary
+$btn-primary-active-bg-color: darken($color-primary-0,10%);
+$btn-primary-active-border-color: darken($color-primary-3,5%);
+
+// like .btn-secondary
+$btn-secondary-bg-color: #6c757d;
+$btn-secondary-bg-hover-color: #5a6268;
+$btn-secondary-border-color: #6c757d;
+$btn-secondary-border-hover-color: #5a6268;
 $btn-secondary-text-color: #fff;
-$btn-secondary-focus-shadow-color: rgba(130,138,145,.5); // like .btn-secondary
+$btn-secondary-focus-shadow-color: rgba(130,138,145,.5);
+$btn-secondary-active-bg-color: #545b62;
+$btn-secondary-active-border-color: #4e555b;
