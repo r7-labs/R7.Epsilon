@@ -74,7 +74,7 @@
     </None>
     <None Include="lib\ClientDependency.Core.dll" />
     <None Include="lib\DotNetNuke.Web.DDRMenu.dll" />
-    <None Include="Skins\R7.Epsilon.yml" />
+    <None Include="Skins\R7.Epsilon.development.yml" />
     <None Include="lib\README.md" />
     <None Include="Menus\Mega2Epsilon\Mega2Epsilon.xslt" />
     <None Include="Menus\Mega2Epsilon\menudef.xml" />
