@@ -45,12 +45,6 @@
     <data name="ButtonUp_Title.Text" xml:space="preserve">
         <value>Click here to go to the top of the page.</value>
     </data>
-    <data name="LocalMenu.Text" xml:space="preserve">
-        <value><![CDATA[Contents <span class="fas fa-chevron-down"></span>]]></value>
-    </data>
-    <data name="HeadersMenu.Text" xml:space="preserve">
-        <value><![CDATA[On this page <span class="fas fa-chevron-down"></span>]]></value>
-    </data>
     <data name="ToggleNavigation.Text" xml:space="preserve">
         <value>Toggle navigation</value>
     </data>

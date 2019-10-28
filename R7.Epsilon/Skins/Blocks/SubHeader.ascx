@@ -3,8 +3,6 @@
 <%@ Register TagPrefix="dnn" TagName="MENU" Src="~/DesktopModules/DDRMenu/Menu.ascx" %>
 <%@ Register TagPrefix="dnn" Namespace="DotNetNuke.Web.DDRMenu.TemplateEngine" Assembly="DotNetNuke.Web.DDRMenu" %>
 <%@ Register TagPrefix="skin" TagName="PAGEHEADER" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/PageHeader.ascx" %>
-<%@ Register TagPrefix="skin" TagName="LOCALMENU" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/LocalMenu.ascx" %>
-<%@ Register TagPrefix="skin" TagName="HEADERSMENU" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/HeadersMenu.ascx" %>
 <%@ Register TagPrefix="skin" TagName="SOCIALSHAREBUTTONS" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/SocialShareButtons.ascx" %>
 
 <nav class="skin-local-navbar" role="navigation">
@@ -20,8 +18,6 @@
 	<% } %>
     <div class="container">
         <skin:PAGEHEADER runat="server" />
-        <skin:LOCALMENU runat="server" />
-        <skin:HEADERSMENU runat="server" PassDefaultTemplateArgs="false" />
         <div id="skin-separator-1" class="d-xs-none">&nbsp;</div>
         <skin:SOCIALSHAREBUTTONS runat="server" Visible="<%# !Skin.Options.DisableSocialShare %>" />
     </div>

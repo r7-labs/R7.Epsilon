@@ -42,7 +42,7 @@ window.skinSplitSubMenu = function ($, controlId, columns) {
 
         // focus and mark hovered top-level menu item
         $(this).children ("a").addClass ("megahover").not ("a:focus").focus ();
-    
+
         megaHoverOutAllExcept (this);
     }
 
@@ -69,46 +69,6 @@ window.skinSplitSubMenu = function ($, controlId, columns) {
         });
     }
 
-    function initModulesMenu (minHeaders) {
-        var li0 = $('.skin-headers-menu li.level0').first();
-        var thisH = li0.parents('.DnnModule').find('h2,h3,h4').first();
-        var menuItems = "";
-        var menuItemsCount = 0;
-        $('h2,h3,h4').each(function () {
-            if (!$(this).is(thisH)) {
-                var title = $(this).text().trim();
-                if (!!title) {
-                    var anchor = $(this).children('a').attr('name');
-                    if (!anchor) {
-                        anchor = $(this).parents('.DnnModule').find('a').first().attr('name');
-                    }
-                    if (anchor) {
-                        menuItems += '<div class="megarow"><ul><li><a href="#' + anchor + '">' + title + '</a></li><ul></div>';
-                        menuItemsCount++;
-                    } 
-                }
-            }
-        });
-        if (menuItemsCount >= minHeaders) {
-            li0.append ('<div class="sub">'
-                + menuItems
-                + '<a href="#" role="button" class="sub-close" title="' + epsilon.localization.subMenuCloseButtonTitle + '">&times;</a>'
-                + '</div>'
-            );
-        } else {
-            $('.skin-headers-menu').first().addClass('hidden');
-            $('#skin-separator-1').first().addClass('hidden-headers');
-        }
-    }
-
-    function initLocalMenu () {
-        var localMenu = $(".skin-local-menu").first ();
-        if (localMenu.find (".sub").length === 0) {
-            localMenu.addClass ("hidden");
-            $('#skin-separator-1').first().addClass('hidden-local');
-        }
-    }
-
     function initCloseButton () {
         $('li.level0 > .sub > a.sub-close').click (function (e) {
             e.preventDefault ();
@@ -117,9 +77,6 @@ window.skinSplitSubMenu = function ($, controlId, columns) {
     }
 
     $(function() {
-        initLocalMenu ();
-        initModulesMenu (epsilon.menuMinHeaders);
-
         // calculate height of top level menu and set top style for menu placement
         $("ul.megamenu .sub").css ("top", $("ul.megamenu > li").height ());
 
@@ -128,11 +85,11 @@ window.skinSplitSubMenu = function ($, controlId, columns) {
 
         // invoke hoverIntent
         $("ul.megamenu > li.level0").hoverIntent({
-            sensitivity: 2, // number = sensitivity threshold (must be 1 or higher)    
-            interval: 100, // number = milliseconds for onMouseOver polling interval    
-            over: megaHoverOver, // function = onMouseOver callback (REQUIRED)    
-            timeout: 500, // number = milliseconds delay before onMouseOut    
-            out: megaHoverOut // function = onMouseOut callback (REQUIRED)    
+            sensitivity: 2, // number = sensitivity threshold (must be 1 or higher)
+            interval: 100, // number = milliseconds for onMouseOver polling interval
+            over: megaHoverOver, // function = onMouseOver callback (REQUIRED)
+            timeout: 500, // number = milliseconds delay before onMouseOut
+            out: megaHoverOut // function = onMouseOut callback (REQUIRED)
         });
 
         // mark current tab link

@@ -42,12 +42,6 @@
     <data name="ButtonUp_Title.Text" xml:space="preserve">
         <value>Нажмите здесь, чтобы перейти к началу страницы.</value>
     </data>
-    <data name="LocalMenu.Text" xml:space="preserve">
-        <value><![CDATA[Содержание <span class="fas fa-chevron-down"></span>]]></value>
-    </data>
-    <data name="HeadersMenu.Text" xml:space="preserve">
-        <value><![CDATA[На этой странице <span class="fas fa-chevron-down"></span>]]></value>
-    </data>
     <data name="ToggleNavigation.Text" xml:space="preserve">
         <value>Включить/выключить навигационное меню</value>
     </data>

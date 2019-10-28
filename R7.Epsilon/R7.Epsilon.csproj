@@ -107,14 +107,8 @@
     <Compile Include="Skins\SkinObjects\CustomContent.ascx.cs">
       <DependentUpon>CustomContent.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Skins\SkinObjects\HeadersMenu.ascx.cs">
-      <DependentUpon>HeadersMenu.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Skins\SkinObjects\JsVariables.ascx.cs">
       <DependentUpon>JsVariables.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Skins\SkinObjects\LocalMenu.ascx.cs">
-      <DependentUpon>LocalMenu.ascx</DependentUpon>
     </Compile>
     <Compile Include="Skins\SkinObjects\PageHeader.ascx.cs">
       <DependentUpon>PageHeader.ascx</DependentUpon>
@@ -198,9 +192,7 @@
     <Content Include="Skins\SkinObjects\FeedbackButton.ascx" />
     <Content Include="Skins\SkinObjects\CustomContent.ascx" />
     <Content Include="Skins\SkinObjects\GAdsense.ascx" />
-    <Content Include="Skins\SkinObjects\HeadersMenu.ascx" />
     <Content Include="Skins\SkinObjects\JsVariables.ascx" />
-    <Content Include="Skins\SkinObjects\LocalMenu.ascx" />
     <Content Include="Skins\SkinObjects\LogoMobile.ascx" />
     <Content Include="Skins\SkinObjects\LogoTitle.ascx" />
     <Content Include="Skins\SkinObjects\PageHeader.ascx" />
