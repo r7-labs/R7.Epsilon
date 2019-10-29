@@ -97,7 +97,6 @@ namespace R7.Epsilon.Components
 
         public int MenuUrlType { get; set; } = 0;
 
-
         [Obsolete]
         public int MenuMinHeaders { get; set; } = 7;
 
@@ -108,6 +107,23 @@ namespace R7.Epsilon.Components
         public List<SearchEngineConfig> SearchEngines { get; set; } = new List<SearchEngineConfig> ();
 
         public AnalyticsConfig Analytics { get; set; } = new AnalyticsConfig ();
+
+        public IList<string> PermalinkFormats { get; set; } = new List<string> {
+            "/tabid/{tabid}",
+            "/default.aspx?tabid={tabid}",
+            "/linkclick.aspx?link={tabid}&portalid={portalid}"
+        };
+
+        public IList<UrlShortenerConfig> UrlShorteners { get; set; } = new List<UrlShortenerConfig> {
+            new UrlShortenerConfig {
+                Label = "tinyurl.com",
+                UrlFormat = "https://tinyurl.com/create.php?url={url}"
+            },
+            new UrlShortenerConfig {
+                Label = "clck.ru",
+                UrlFormat = "https://clck.ru?url={url}"
+            }
+        };
 
         #endregion
 
@@ -232,5 +248,12 @@ namespace R7.Epsilon.Components
         {
             return UrlFormat.Replace ("{website}", website).Replace ("{searchText}", HttpUtility.UrlEncode (searchText));
         }
+    }
+
+    public class UrlShortenerConfig
+    {
+        public string Label { get; set; }
+
+        public string UrlFormat { get; set; }
     }
 }

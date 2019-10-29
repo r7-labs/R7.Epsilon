@@ -342,6 +342,25 @@ a.btn-primary:visited {
     border-top-right-radius: 0;
 }
 
+// style it like breadbrumb
+.skin-page-info {
+    padding: .75rem 1rem;
+    background-color: #e9ecef;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    font-size: 85%;
+    & > ul {
+        margin-bottom: 0;
+        & > li {
+            padding-right: 1rem;
+        }
+    }
+}
+
+.skin-permalink {
+    font-size: 85%;
+}
+
 .skin-tags
 {
     border-top:1px solid #EEE;
@@ -396,7 +415,7 @@ a.btn-primary:visited {
 
 .skin-footer
 {
-    margin-top:20px;
+    //margin-top:20px;
     color:#fff;
     a { color:#fff; }
 

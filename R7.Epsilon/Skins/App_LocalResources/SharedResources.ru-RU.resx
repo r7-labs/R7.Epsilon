@@ -120,8 +120,17 @@
 	<data name="LastModified.Text" xml:space="preserve">
         <value>Последние изменения:</value>
     </data>
-    <data name="Permalink.Text" xml:space="preserve">
-        <value>Постоянная ссылка:</value>
+    <data name="Permalinks.Text" xml:space="preserve">
+        <value>Постоянные ссылки</value>
+    </data>
+	<data name="CopyPermalink.Text" xml:space="preserve">
+        <value>копировать</value>
+    </data>
+	<data name="CopyPermalink_Title.Text" xml:space="preserve">
+        <value>Нажмите, чтобы скопировать постоянную ссылку в буфер обмена.</value>
+    </data>
+	<data name="CreateShortUrl_Title.Text" xml:space="preserve">
+        <value>Создать короткую ссылку с использованием </value>
     </data>
 	<data name="FeedbackPage.Template" xml:space="preserve">
         <value>\nСтраница: {origin}/linkclick.aspx?link={page}</value>

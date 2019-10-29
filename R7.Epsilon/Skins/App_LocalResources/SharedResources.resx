@@ -135,11 +135,17 @@
 	<data name="LastModified.Text" xml:space="preserve">
         <value>Last Modified:</value>
     </data>
-    <data name="Permalink.Text" xml:space="preserve">
-        <value>Permalink:</value>
+    <data name="Permalinks.Text" xml:space="preserve">
+        <value>Permalinks</value>
     </data>
-    <data name="Permalink.Format" xml:space="preserve">
-        <value>/LinkClick.aspx?link={0}</value>
+	<data name="CopyPermalink.Text" xml:space="preserve">
+        <value>copy</value>
+    </data>
+	<data name="CopyPermalink_Title.Text" xml:space="preserve">
+        <value>Click to copy permalink to the clipboard.</value>
+    </data>
+	<data name="CreateShortUrl_Title.Text" xml:space="preserve">
+        <value>Create short URL with </value>
     </data>
 	<data name="Feedback.Template" xml:space="preserve">
         <value>\n\n---{content}</value>

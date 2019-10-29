@@ -3,14 +3,16 @@
 <%@ Register TagPrefix="skin" TagName="PAGEINFO" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/PageInfo.ascx" %>
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="skin-tags">
-                <dnn:TAGS runat="server" AllowTagging="false" Separator=" " />
-            </div>
-        </div>
-        <div class="col-md-12">
-            <skin:PAGEINFO runat="server" />
-        </div>
-    </div>
+	<div class="row">
+		<div class="col">
+			<div class="skin-tags">
+				<dnn:TAGS runat="server" AllowTagging="false" Separator=" " />
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<skin:PAGEINFO runat="server" />
+		</div>
+	</div>
 </div>
