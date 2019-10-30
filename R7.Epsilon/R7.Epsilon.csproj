@@ -138,6 +138,9 @@
     <Compile Include="Skins\SkinObjects\Banners\IBannerControl.cs" />
     <Compile Include="Components\EpsilonNodeManipulator.cs" />
     <Compile Include="Skins\EpsilonSkinOptions.cs" />
+    <Compile Include="Skins\SkinObjects\Permalinks.ascx.cs">
+      <DependentUpon>Permalinks.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Containers\Blank.ascx" />
@@ -230,6 +233,7 @@
     <Content Include="Containers\HeaderCard_Danger.ascx" />
     <Content Include="Skins\SkinObjects\Banners\BannerLoader.ascx" />
     <Content Include="Skins\SkinObjects\Banners\BannerWrapper.ascx" />
+    <Content Include="Skins\SkinObjects\Permalinks.ascx" />
     <Content Include="Skins\js\feedback.js" />
     <Content Include="Skins\js\bootstrap-init.js" />
     <Content Include="Skins\SkinObjects\PartialContentAlert.ascx" />

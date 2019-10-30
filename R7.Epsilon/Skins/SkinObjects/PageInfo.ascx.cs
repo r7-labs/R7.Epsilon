@@ -20,7 +20,6 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System.Linq;
-using DotNetNuke.Common;
 using DotNetNuke.Entities.Content;
 using DotNetNuke.Entities.Modules;
 using DotNetNuke.Entities.Portals;
@@ -47,10 +46,6 @@ namespace R7.Epsilon.Skins.SkinObjects
             return contentItems.OrderByDescending (ci => ci.LastModifiedOnDate).FirstOrDefault ();
         }
 
-        protected string FullUrl (string url)
-        {
-            return Globals.AddHTTP (PortalSettings.Current.PortalAlias.HTTPAlias + url);
-        }
         protected string LastContentModifiedOnDate {
             get {
                 return SafeGetLastModifiedContentItem ().LastModifiedOnDate.ToString (Localizer.SafeGetString ("PublishedOnDate.Format", "MM/dd/yyyy"));
