@@ -19,6 +19,7 @@
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+using System.Text.RegularExpressions;
 using DotNetNuke.Common;
 using DotNetNuke.Entities.Portals;
 
@@ -29,6 +30,30 @@ namespace R7.Epsilon.Skins.SkinObjects
         protected string FullUrl (string url)
         {
             return Globals.AddHTTP (PortalSettings.Current.PortalAlias.HTTPAlias + url);
+        }
+
+        // TODO: Test this
+        // TODO: Support first args (? instead of &)
+        /// <summary>
+        /// Replaces "{?arg}" in permalink format strings with the &amp;arg=value in resulting permalink
+        /// if current querystring contains this argument
+        /// </summary>
+        protected string ReplaceOptionalArguments (string url)
+        {
+            var argFormats = Regex.Matches (url, @"\{\?\w+\}", RegexOptions.IgnoreCase);
+            foreach (Match argFormat in argFormats) {
+                if (argFormat.Success) {
+                    var arg = argFormat.Value.Substring (2, argFormat.Value.Length - 3);
+                    if (Request.QueryString [arg] != null) {
+                        url = url.Replace (argFormat.Value, "&" + arg + "=" + Request.QueryString [arg].ToString ());
+                    }
+                    else {
+                        url = url.Replace (argFormat.Value, string.Empty);
+                    }
+                }
+            }
+
+            return url;
         }
     }
 }
