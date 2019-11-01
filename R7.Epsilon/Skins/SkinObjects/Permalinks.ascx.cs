@@ -27,11 +27,6 @@ namespace R7.Epsilon.Skins.SkinObjects
 {
     public class Permalinks : EpsilonSkinObjectBase
     {
-        protected string FullUrl (string url)
-        {
-            return Globals.AddHTTP (PortalSettings.Current.PortalAlias.HTTPAlias + url);
-        }
-
         // TODO: Test this
         // TODO: Support first args (? instead of &)
         /// <summary>

@@ -21,11 +21,18 @@
 
 using System;
 using System.Web;
+using DotNetNuke.Common;
+using DotNetNuke.Entities.Portals;
 
 namespace R7.Epsilon.Components
 {
     public static class EpsilonUrlHelper
     {
+        public static string FullUrl (string url)
+        {
+            return Globals.AddHTTP (PortalSettings.Current.PortalAlias.HTTPAlias + url);
+        }
+
         // TODO: Move to the base library
         /// <summary>
         /// Checks if browser is InternetExplorer

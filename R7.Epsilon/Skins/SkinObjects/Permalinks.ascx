@@ -1,4 +1,5 @@
 <%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.Skins.SkinObjects.Permalinks" %>
+<%@ Import Namespace="R7.Epsilon.Components" %>
 <!-- TODO: Implement copy with https://clipboardjs.com -->
 <div class="dropdown">
 	<button class="dropdown-toggle btn btn-sm text-muted" id="btnPermalinks"
@@ -8,7 +9,7 @@
 	</button>
 	<div class="dropdown-menu" aria-labelledby="btnPermalinks">
 		<% foreach (var permalinkFormat in Config.PermalinkFormats) {
-			var permalink = FullUrl (ReplaceOptionalArguments (permalinkFormat
+			var permalink = EpsilonUrlHelper.FullUrl (ReplaceOptionalArguments (permalinkFormat
 				.Replace ("{tabid}", PortalSettings.ActiveTab.TabID.ToString ())
 				.Replace ("{portalid}", PortalSettings.PortalId.ToString ())
 			)); %>
