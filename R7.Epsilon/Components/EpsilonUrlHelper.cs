@@ -35,7 +35,6 @@ namespace R7.Epsilon.Components
             return Globals.AddHTTP (PortalSettings.Current.PortalAlias.HTTPAlias + url);
         }
 
-        // TODO: Test this
         /// <summary>
         /// Replaces "{?arg}" in link format strings with the &amp;arg=value or ?arg=value
         /// if current querystring contains this argument

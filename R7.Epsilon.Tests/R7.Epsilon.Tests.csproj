@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DevPortalConfigTests.cs" />
+    <Compile Include="Components\EpsilonUrlHelperTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Skins\" />
