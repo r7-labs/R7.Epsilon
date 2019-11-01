@@ -1,7 +1,9 @@
 <%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.Skins.SkinObjects.Permalinks" %>
 <!-- TODO: Implement copy with https://clipboardjs.com -->
 <div class="dropdown">
-	<button class="dropdown-toggle btn btn-sm text-muted" type="button" id="btnPermalinks" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	<button class="dropdown-toggle btn btn-sm text-muted" id="btnPermalinks"
+			title='<%: Localizer.GetString ("Permalinks_Title.Text") %>'
+			data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		<span class="fas fa-globe"></span> <%= Localizer.GetString ("Permalinks.Text") %>
 	</button>
 	<div class="dropdown-menu" aria-labelledby="btnPermalinks">
