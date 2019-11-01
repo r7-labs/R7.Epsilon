@@ -118,3 +118,16 @@ search-engines:
 
   - type: DuckDuckGo
     url-format: https://duckduckgo.com/search?q=site:{website}%20{searchText}
+
+permalink-formats:
+
+  - "/tabid/{tabid}{?language}"
+  - "/default.aspx?tabid={tabid}{?forumid}{?scope}"
+  - "/linkclick.aspx?link={tabid}&portalid={portalid}"
+
+url-shorteners:
+
+  - label: "tinyurl.com"
+    url-format: "https://tinyurl.com/create.php?url={url}"
+  - label: "clck.ru"
+    url-format: "https://clck.ru?url={url}"

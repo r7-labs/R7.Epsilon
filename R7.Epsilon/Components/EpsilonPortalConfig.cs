@@ -109,19 +109,13 @@ namespace R7.Epsilon.Components
         public AnalyticsConfig Analytics { get; set; } = new AnalyticsConfig ();
 
         public IList<string> PermalinkFormats { get; set; } = new List<string> {
-            "/tabid/{tabid}",
-            "/default.aspx?tabid={tabid}",
-            "/linkclick.aspx?link={tabid}&portalid={portalid}"
+            "/tabid/{tabid}"
         };
 
         public IList<UrlShortenerConfig> UrlShorteners { get; set; } = new List<UrlShortenerConfig> {
             new UrlShortenerConfig {
                 Label = "tinyurl.com",
                 UrlFormat = "https://tinyurl.com/create.php?url={url}"
-            },
-            new UrlShortenerConfig {
-                Label = "clck.ru",
-                UrlFormat = "https://clck.ru?url={url}"
             }
         };
 

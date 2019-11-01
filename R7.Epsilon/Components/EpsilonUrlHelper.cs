@@ -20,7 +20,9 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
+using System.Collections.Specialized;
 using System.Web;
+using System.Text.RegularExpressions;
 using DotNetNuke.Common;
 using DotNetNuke.Entities.Portals;
 
@@ -31,6 +33,37 @@ namespace R7.Epsilon.Components
         public static string FullUrl (string url)
         {
             return Globals.AddHTTP (PortalSettings.Current.PortalAlias.HTTPAlias + url);
+        }
+
+        // TODO: Test this
+        /// <summary>
+        /// Replaces "{?arg}" in link format strings with the &amp;arg=value or ?arg=value
+        /// if current querystring contains this argument
+        /// </summary>
+        public static string ReplaceOptionalArguments (NameValueCollection queryString, string url)
+        {
+            var argFormats = Regex.Matches (url, @"\{\?\w+\}", RegexOptions.IgnoreCase);
+            foreach (Match argFormat in argFormats) {
+                if (argFormat.Success) {
+                    var arg = argFormat.Value.Substring (2, argFormat.Value.Length - 3);
+                    if (queryString [arg] != null) {
+                        url = url.Replace (argFormat.Value, "&" + arg + "=" + queryString [arg].ToString ());
+                    }
+                    else {
+                        url = url.Replace (argFormat.Value, string.Empty);
+                    }
+                }
+            }
+
+            if (!url.Contains ("?")) {
+                // replace first & with ?
+                var ampIndex = url.IndexOf ("&");
+                if (ampIndex >= 0) {
+                    url = url.Substring (0, ampIndex) + "?" + url.Substring (ampIndex + 1);
+                }
+            }
+
+            return url;
         }
 
         // TODO: Move to the base library
