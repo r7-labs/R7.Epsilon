@@ -75,6 +75,7 @@
 		<ItemGroup>
 			<DeployExternalJsFiles Include="$(NodeModulesPath)/bootstrap/dist/js/bootstrap.bundle.min.js" />
 			<DeployExternalJsFiles Include="$(NodeModulesPath)/bootstrap/dist/js/bootstrap.bundle.min.js.map" Condition=" '$(Configuration)' == 'Debug' " />
+      <DeployExternalJsFiles Include="$(NodeModulesPath)/clipboard/dist/clipboard.min.js" />
 		</ItemGroup>
 
 		<!-- Declare external CSS files -->

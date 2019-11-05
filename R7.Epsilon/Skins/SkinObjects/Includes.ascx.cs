@@ -20,14 +20,6 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
-using System.Linq;
-using System.Text;
-using System.Web.Caching;
-using DotNetNuke.Common;
-using DotNetNuke.Common.Utilities;
-using DotNetNuke.Entities.Modules;
-using DotNetNuke.Entities.Tabs;
-using R7.Epsilon.Components;
 using DotNetNuke.Web.Client;
 using DotNetNuke.Web.Client.ClientResourceManagement;
 using DotNetNuke.Framework.JavaScriptLibraries;
@@ -61,6 +53,8 @@ namespace R7.Epsilon.Skins.SkinObjects
             if (Attributes ["Rangy"] != "false") {
                 JavaScript.RequestRegistration ("Rangy");
             }
+
+            ClientResourceManager.RegisterScript (Page, SkinPath + "js/clipboard.min.js", (int) FileOrder.Js.DefaultPriority, "DnnFormBottomProvider", "clipboard", "2.0.4");
         }
     }
 }

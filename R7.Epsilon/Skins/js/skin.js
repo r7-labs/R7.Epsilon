@@ -177,6 +177,10 @@ window.skinSearchExternalClick = function (e, link) {
         });
     }
 
+    function initClipboard () {
+        epsilon.clipboard = new ClipboardJS('.btn.btn-clipboard');
+    }
+
     $(function () {
         initBootstrapTooltips ();
         initBootstrapPopovers ();
@@ -187,6 +191,7 @@ window.skinSearchExternalClick = function (e, link) {
             initUpButton (320, 500);
             initCustomContent ();
             initSearch ();
+            initClipboard ();
             alterLanguage ();
             alterLogin ();
             window.skinA11y = new A11y ().init ();

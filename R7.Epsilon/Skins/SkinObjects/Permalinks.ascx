@@ -8,16 +8,18 @@
 		<span class="fas fa-globe"></span> <%= Localizer.GetString ("Permalinks.Text") %>
 	</button>
 	<div class="dropdown-menu" aria-labelledby="btnPermalinks">
-		<% foreach (var permalinkFormat in Config.PermalinkFormats) {
+		<% var permalinkIndex = 1;
+		foreach (var permalinkFormat in Config.PermalinkFormats) {
 			var permalink = EpsilonUrlHelper.FullUrl (EpsilonUrlHelper.ReplaceOptionalArguments (Request.QueryString, permalinkFormat
 				.Replace ("{tabid}", PortalSettings.ActiveTab.TabID.ToString ())
 				.Replace ("{portalid}", PortalSettings.PortalId.ToString ())
 			)); %>
 			<div class="dropdown-item d-flex justify-content-between skin-permalink-item" >
-				<div class="pr-2 pt-1 skin-permalink"><%: permalink %></div>
+				<div class="pr-2 pt-1 skin-permalink" id="skin-permalink-<%: permalinkIndex %>"><%: permalink %></div>
 				<div class="skin-permalink-buttons">
-					<button class="btn btn-sm btn-outline-primary" title='<%: Localizer.GetString ("CopyPermalink_Title.Text") %>'
-							onclick="alert('Not implemented!')">
+					<button class="btn btn-sm btn-outline-primary btn-clipboard"
+							title='<%: Localizer.GetString ("CopyPermalink_Title.Text") %>'
+							data-clipboard-target="#skin-permalink-<%: permalinkIndex %>">
 						<i class="fas fa-copy"></i> <%: Localizer.GetString ("CopyPermalink.Text") %>
 					</button>
 					<% foreach (var urlShortener in Config.UrlShorteners) { %>
@@ -28,6 +30,8 @@
 					<% } %>
 				</div>
 			</div>
-		<% } %>
+		<%
+		permalinkIndex++;
+		} %>
 	</div>
 </div>
