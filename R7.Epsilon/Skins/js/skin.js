@@ -181,6 +181,10 @@ window.skinSearchExternalClick = function (e, link) {
         epsilon.clipboard = new ClipboardJS('.btn.btn-clipboard');
     }
 
+    function initTags () {
+        $(".skin-tags ul.categories > li > a").addClass ("badge badge-secondary");
+    }
+
     $(function () {
         initBootstrapTooltips ();
         initBootstrapPopovers ();
@@ -192,6 +196,7 @@ window.skinSearchExternalClick = function (e, link) {
             initCustomContent ();
             initSearch ();
             initClipboard ();
+            initTags ();
             alterLanguage ();
             alterLogin ();
             window.skinA11y = new A11y ().init ();

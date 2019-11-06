@@ -357,17 +357,13 @@ a.btn-primary:visited {
     background-color: #e9ecef;
     border-top-left-radius: .25rem;
     border-top-right-radius: .25rem;
-    font-size: 85%;
     & > ul {
+        font-size: 85%;
         margin-bottom: 0;
         & > li {
             padding-right: 1rem;
         }
     }
-}
-
-.skin-permalink {
-    font-size: 85%;
 }
 
 .skin-tags {
@@ -379,11 +375,12 @@ a.btn-primary:visited {
         li {
             display: inline-block;
             padding-right: 1rem;
-            &:before {
-                @include fa-icon-before("\f02b");
-            }
         }
     }
+}
+
+.skin-permalink {
+    font-size: 85%;
 }
 
 /* Footer */

@@ -2,7 +2,7 @@
 <%@ Register TagPrefix="dnn" TagName="TAGS" Src="~/Admin/Skins/Tags.ascx" %>
 <div class="skin-page-info text-muted">
 	<div class="skin-tags">
-		<dnn:TAGS runat="server" AllowTagging="false" Separator=" " />
+		<dnn:TAGS runat="server" CssClass="test" ShowCategories="true" ShowTags="false" AllowTagging="false" Separator=" " />
 	</div>
 	<hr />
 	<ul class="list-inline">
