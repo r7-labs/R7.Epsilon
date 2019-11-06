@@ -127,10 +127,17 @@
         <value>Пользователь, последним вносивший изменения в содержимое или настройки страницы.</value>
     </data>
     <data name="Permalinks.Text" xml:space="preserve">
+        <value>Постоянные ссылки&#8230;</value>
+    </data>
+	<data name="Permalinks_Tooltip.Text" xml:space="preserve">
+        <value>Получить постоянную ссылку для цитирования содержимого сайта.</value>
+    </data>
+	<data name="Permalinks_ModalTitle.Text" xml:space="preserve">
         <value>Постоянные ссылки</value>
     </data>
-	<data name="Permalinks_Title.Text" xml:space="preserve">
-        <value>Если вы хотите процитировать страницу, используйте одну из предоставленных постоянных ссылок.</value>
+	<data name="Permalinks_Help.Text" xml:space="preserve">
+		<value>Пожалуйста, используйте одну из представленных ниже постоянных ссылок для цитирования содержимого нашего сайта.
+		Не используйте для этого ссылку, скопированную непосредственно из адресной строки вашего браузера - она очень скоро изменится, и поэтому скопированная ссылка быстро станет битой!</value>
     </data>
 	<data name="CopyPermalink.Text" xml:space="preserve">
         <value>копировать</value>

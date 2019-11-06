@@ -142,10 +142,17 @@
         <value>The last user who was modified the page contents or settings.</value>
     </data>
     <data name="Permalinks.Text" xml:space="preserve">
+        <value>Permalinks&#8230;</value>
+    </data>
+	<data name="Permalinks_Tooltip.Text" xml:space="preserve">
+        <value>Get permalink to share site content.</value>
+    </data>
+	<data name="Permalinks_ModalTitle.Text" xml:space="preserve">
         <value>Permalinks</value>
     </data>
-	<data name="Permalinks_Title.Text" xml:space="preserve">
-        <value>If you want to share page content, use one of the provided permalinks.</value>
+	<data name="Permalinks_Help.Text" xml:space="preserve">
+        <value>Please use one of the permalinks provided below to share our website content.
+		Do not use the URL copied from your browser address line for that - it could easily change and so the copied link will get broken soon! </value>
     </data>
 	<data name="CopyPermalink.Text" xml:space="preserve">
         <value>copy</value>
