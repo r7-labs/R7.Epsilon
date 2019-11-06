@@ -29,6 +29,15 @@
     background-position:(-$icon-size * $index-x) (-$icon-size * $index-y);
 }
 
+@mixin fa-icon-before ($icon) {
+    content: $icon;
+    font-family: "Font Awesome 5 Free";
+    display: inline-block;
+    padding-right: 3px;
+    vertical-align: middle;
+    font-weight: 900;
+}
+
 /* Styles */
 
 .Normal,
@@ -361,45 +370,20 @@ a.btn-primary:visited {
     font-size: 85%;
 }
 
-.skin-tags
-{
-    border-top:1px solid #EEE;
-    padding-bottom:20px;
-    padding-top:10px;
-    margin-top:20px;
-
-    ul.categories, ul.tags
-    {
+.skin-tags {
+    ul.categories, ul.tags {
         display:inline-block;
-        margin-left:0;
-        margin-bottom:0;
-
-        li
-        {
-            display:inline-block;
-            padding-left:20px;
-            padding-right:0.5em;
-            background-image:url('/icons/Sigma/Tag_16X16_Standard.png');
-            background-repeat:no-repeat;
+        margin-left: 0;
+        margin-bottom: 0;
+        padding-left: 0;
+        li {
+            display: inline-block;
+            padding-right: 1rem;
+            &:before {
+                @include fa-icon-before("\f02b");
+            }
         }
     }
-
-    /*
-    ul.tags li:last-child
-    {
-        display:block;
-        background:none;
-        padding-left:0;
-    }
-
-    ul.tags li:first-child
-    {
-        display:inline-block;
-        padding-left:20px;
-        background-image:url('/icons/Sigma/Tag_16X16_Standard.png');
-        background-repeat:no-repeat;
-    }
-    */
 }
 
 /* Footer */
