@@ -1,10 +1,12 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.Skins.SkinObjects.PageInfo" %>
 <%@ Register TagPrefix="dnn" TagName="TAGS" Src="~/Admin/Skins/Tags.ascx" %>
 <div class="skin-page-info text-muted">
-	<div class="skin-tags">
-		<dnn:TAGS runat="server" CssClass="test" ShowCategories="true" ShowTags="false" AllowTagging="false" Separator=" " />
-	</div>
-	<hr />
+	<% if (ActiveTab.Terms != null && ActiveTab.Terms.Count > 0) { %>
+		<div class="skin-tags">
+			<dnn:TAGS runat="server" CssClass="test" ShowCategories="true" ShowTags="false" AllowTagging="false" Separator=" " />
+		</div>
+		<hr />
+	<% } %>
 	<ul class="list-inline">
 		<li class="list-inline-item" title='<%: T.GetString ("LastModified_Title.Text") %>'>
 			<span class="fas fa-calendar-alt"></span> <%: T.GetString ("LastModified.Text") %> <%: LastContentModifiedOnDate %>
