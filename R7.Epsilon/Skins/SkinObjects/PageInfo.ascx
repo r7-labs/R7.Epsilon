@@ -8,10 +8,10 @@
 		<hr />
 	<% } %>
 	<ul class="list-inline">
-		<li class="list-inline-item" title='<%: T.GetString ("LastModified_Title.Text") %>'>
+		<li class="list-inline-item" title='<%: T.GetString ("LastModified_Tooltip.Text") %>'>
 			<span class="fas fa-calendar-alt"></span> <%: T.GetString ("LastModified.Text") %> <%: LastContentModifiedOnDate %>
 		</li>
-		<li class="list-inline-item" title='<%: T.GetString ("LastModifiedByUser_Title.Text") %>'>
+		<li class="list-inline-item" title='<%: T.GetString ("LastModifiedByUser_Tooltip.Text") %>'>
 			<span class="fas fa-user"></span> <%: LastContentModifiedByUserName %>
 		</li>
 		<li class="list-inline-item">

@@ -22,12 +22,12 @@
 							<li class="mb-2 skin-permalink" id="skinPermalink<%: permalinkIndex %>"><%: permalink %></li>
 							<li>
 								<button type="button" class="btn btn-sm btn-clipboard btn-outline-primary"
-										title='<%: T.GetString ("CopyPermalink_Title.Text") %>'
+										title='<%: T.GetString ("CopyPermalink_Tooltip.Text") %>'
 										data-clipboard-target="#skinPermalink<%: permalinkIndex %>">
 									<i class="fas fa-copy"></i> <%: T.GetString ("CopyPermalink.Text") %>
 								</button>
 								<% foreach (var urlShortener in Config.UrlShorteners) { %>
-									<button type="button" class="btn btn-sm btn-outline-secondary" title='<%: T.GetString ("CreateShortUrl_Title.Text") %><%: urlShortener.Label %>'
+									<button type="button" class="btn btn-sm btn-outline-secondary" title='<%: T.GetString ("CreateShortUrl_Tooltip.Text") %><%: urlShortener.Label %>'
 											onclick="window.open('<%= urlShortener.UrlFormat %>'.replace('{url}', encodeURIComponent('<%= permalink %>')), '_blank');">
 										<%: urlShortener.Label %>
 									</button>

@@ -61,7 +61,7 @@ namespace R7.Epsilon.Skins.SkinObjects
                 }
 
                 linkFeedback.CssClass = CssClass;
-                linkFeedback.ToolTip = T.GetString ("FeedbackButton_Title.Text");
+                linkFeedback.ToolTip = T.GetString ("FeedbackButton_Tooltip.Text");
                 linkFeedback.Attributes.Add ("href", "#");
                 linkFeedback.Attributes.Add ("data-feedback-url", feedbackUrl);
                 linkFeedback.Attributes.Add ("data-feedback-open-in-popup", openInPopup.ToString ().ToLowerInvariant ());

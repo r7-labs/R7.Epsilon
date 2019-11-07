@@ -39,7 +39,7 @@
     <data name="CopyrightNote.Text" xml:space="preserve">
         <value>При перепечатке текстовой информации и фотографий ссылка на сайт обязательна</value>
     </data>
-    <data name="ButtonUp_Title.Text" xml:space="preserve">
+    <data name="ButtonUp_Tooltip.Text" xml:space="preserve">
         <value>Нажмите здесь, чтобы перейти к началу страницы.</value>
     </data>
     <data name="ToggleNavigation.Text" xml:space="preserve">
@@ -60,7 +60,7 @@
     <data name="SubMenuClose.Text" xml:space="preserve">
         <value>Закрыть меню</value>
     </data>
-    <data xml:space="preserve" name="FeedbackButton_Title.Text">
+    <data xml:space="preserve" name="FeedbackButton_Tooltip.Text">
         <value>Нажмите на кнопку, чтобы открыть форму обратной связи. Вы также можете предварительно выделить фрагмент текста на странице, чтобы передать его в форму обратной связи.</value>
     </data>
 	<data name="SocialGroups.Text" xml:space="preserve">
@@ -111,7 +111,7 @@
     <data name="AgeRating.Text" xml:space="preserve">
         <value>12+</value>
     </data>
-    <data name="AgeRating_Title.Text" xml:space="preserve">
+    <data name="AgeRating_Tooltip.Text" xml:space="preserve">
         <value>Информационная продукция для детей старше 12 лет (если иное не указано дополнительно). Нажмите на кнопку для получения подробной информации.</value>
     </data>
 	<data name="AgeRating_Link.Text" xml:space="preserve">
@@ -120,10 +120,10 @@
 	<data name="LastModified.Text" xml:space="preserve">
         <value>Последние изменения:</value>
     </data>
-	<data name="LastModified_Title.Text" xml:space="preserve">
+	<data name="LastModified_Tooltip.Text" xml:space="preserve">
         <value>Дата последних изменений содержимого или настроек страницы.</value>
     </data>
-	<data name="LastModifiedByUser_Title.Text" xml:space="preserve">
+	<data name="LastModifiedByUser_Tooltip.Text" xml:space="preserve">
         <value>Пользователь, последним вносивший изменения в содержимое или настройки страницы.</value>
     </data>
     <data name="Permalinks.Text" xml:space="preserve">
@@ -142,10 +142,10 @@
 	<data name="CopyPermalink.Text" xml:space="preserve">
         <value>копировать</value>
     </data>
-	<data name="CopyPermalink_Title.Text" xml:space="preserve">
+	<data name="CopyPermalink_Tooltip.Text" xml:space="preserve">
         <value>Нажмите, чтобы скопировать постоянную ссылку в буфер обмена.</value>
     </data>
-	<data name="CreateShortUrl_Title.Text" xml:space="preserve">
+	<data name="CreateShortUrl_Tooltip.Text" xml:space="preserve">
         <value>Создать короткую ссылку с использованием </value>
     </data>
 	<data name="FeedbackPage.Template" xml:space="preserve">
