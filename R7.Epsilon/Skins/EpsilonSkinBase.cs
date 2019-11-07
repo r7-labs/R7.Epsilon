@@ -25,6 +25,7 @@ using System.Reflection;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using DotNetNuke.Common;
+using DotNetNuke.Entities.Tabs;
 using DotNetNuke.Framework.JavaScriptLibraries;
 using DotNetNuke.UI.Skins;
 using R7.Epsilon.Components;
@@ -37,21 +38,12 @@ namespace R7.Epsilon.Skins
 
         protected bool IsErrorPage {
             get {
-                var activeTabId = PortalSettings.ActiveTab.TabID;
+                var activeTabId = ActiveTab.TabID;
                 return activeTabId == PortalSettings.ErrorPage404 || activeTabId == PortalSettings.ErrorPage500;
             }
         }
 
-        private int? tabId;
-        protected int TabId {
-            get {
-                if (tabId == null) {
-                    tabId = PortalSettings.ActiveTab.TabID;
-                }
-
-                return tabId.Value;
-            }
-        }
+        protected TabInfo ActiveTab => PortalSettings.ActiveTab;
 
         public string SkinCopyright => T.GetString ("SkinCopyright.Text").Replace ("{version}", GetVersionString ());
 

@@ -32,7 +32,7 @@ namespace R7.Epsilon.Skins.SkinObjects
 
         public PageInfo ()
         {
-            lastModifiedContentItem = GetLastModifiedContentItem (PortalSettings.ActiveTab.TabID);
+            lastModifiedContentItem = GetLastModifiedContentItem (ActiveTab.TabID);
         }
 
         protected ContentItem GetLastModifiedContentItem (int tabId)
@@ -66,7 +66,7 @@ namespace R7.Epsilon.Skins.SkinObjects
             }
 
             // should be already among content items
-            return PortalSettings.ActiveTab;
+            return ActiveTab;
         }
     }
 }

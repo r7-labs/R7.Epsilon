@@ -8,11 +8,11 @@
 	<% } %>
 	<% var fb = Config.SocialGroups.FirstOrDefault (g => g.Type == SocialGroupType.Facebook && g.ShareEnabled);
     if (fb != null) { %>
-		<div class="fb-like" data-href="<%= PortalSettings.ActiveTab.FullUrl %>" data-layout="button_count"
+		<div class="fb-like" data-href="<%= ActiveTab.FullUrl %>" data-layout="button_count"
 			data-action="like" data-show-faces="false" data-share="false"></div>
 	<% } %>
 	<% foreach (var tw in Config.SocialGroups.Where (g => g.Type == SocialGroupType.Twitter && g.ShareEnabled)) { %>
-	    <a class="twitter-share-button" href="https://twitter.com/share" data-url="<%= PortalSettings.ActiveTab.FullUrl %>"
+	    <a class="twitter-share-button" href="https://twitter.com/share" data-url="<%= ActiveTab.FullUrl %>"
 			data-lang="<%= CultureInfo.CurrentCulture.TwoLetterISOLanguageName %>" data-via="<%= tw.Params [0] %>">Tweet</a>
 	<% } %>
 </div>

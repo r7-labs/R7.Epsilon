@@ -9,8 +9,8 @@ else if (!string.IsNullOrEmpty (Request.QueryString ["moduleid"])) {
 }
 if (moduleId != null && string.IsNullOrEmpty (Request.QueryString ["ctl"])) {
 	var content = T.GetString ("PartialContentAlert.Content");
-	content = content.Replace ("[TabUrl]",  DotNetNuke.Common.Globals.NavigateURL (PortalSettings.ActiveTab.TabID));
-	content = content.Replace ("[TabName]", PortalSettings.ActiveTab.TabName);
+	content = content.Replace ("[TabUrl]",  DotNetNuke.Common.Globals.NavigateURL (ActiveTab.TabID));
+	content = content.Replace ("[TabName]", ActiveTab.TabName);
 	content = content.Replace ("[ModuleId]", moduleId.ToString ());
 %>
 <div class="row">

@@ -54,7 +54,7 @@ namespace R7.Epsilon.Skins.SkinObjects.Banners
             base.OnInit (e);
 
             try {
-                var bannerWrapper = (BannerWrapper) LoadControl (PortalSettings.ActiveTab.SkinPath
+                var bannerWrapper = (BannerWrapper) LoadControl (ActiveTab.SkinPath
                                                                  + "/SkinObjects/Banners/BannerWrapper.ascx");
                 bannerWrapper.GroupName = GroupName;
                 bannerWrapper.BannerTypeId = BannerTypeId;

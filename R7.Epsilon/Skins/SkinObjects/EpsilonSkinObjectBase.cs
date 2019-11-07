@@ -21,6 +21,7 @@
 
 using System.Web.UI;
 using DotNetNuke.Common;
+using DotNetNuke.Entities.Tabs;
 using DotNetNuke.UI.Skins;
 using R7.Epsilon.Components;
 
@@ -72,6 +73,8 @@ namespace R7.Epsilon.Skins.SkinObjects
                 return skin;
             }
         }
+
+        protected TabInfo ActiveTab => PortalSettings.ActiveTab;
     }
 }
 
