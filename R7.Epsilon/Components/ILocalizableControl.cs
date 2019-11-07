@@ -23,7 +23,7 @@ namespace R7.Epsilon.Components
 {
     public interface ILocalizableControl
     {
-        ControlLocalizer Localizer { get; }
+        ControlLocalizer T { get; }
     }
 }
 

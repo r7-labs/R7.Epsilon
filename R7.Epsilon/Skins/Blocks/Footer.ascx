@@ -38,7 +38,7 @@
 					<dnn:PRIVACY runat="server" Visible='<%# Config.ShowPrivacy %>' />
 				</div>
 				<div>
-					<asp:Label runat="server" Text='<%# Localizer.GetString ("CopyrightNote.Text") %>' />
+					<asp:Label runat="server" Text='<%# T.GetString ("CopyrightNote.Text") %>' />
 				</div>
 			</div>
 		</div>

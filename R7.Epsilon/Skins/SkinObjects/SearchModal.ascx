@@ -5,8 +5,8 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="searchModalLabel"><%: Localizer.GetString("SearchModalTitle.Text") %></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label='<%: Localizer.GetString("ModalClose.Text") %>'>
+                <h5 class="modal-title" id="searchModalLabel"><%: T.GetString("SearchModalTitle.Text") %></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label='<%: T.GetString("ModalClose.Text") %>'>
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -20,19 +20,19 @@
 				</div>
 				<% if (Config.SearchEngines.Count > 0) { %>
 					<hr />
-					<p><%: Localizer.GetString ("SearchEngines.Text") %></p>
+					<p><%: T.GetString ("SearchEngines.Text") %></p>
 					<ul class="list-inline">
 						<% foreach (var engine in Config.SearchEngines) { %>
 							<li class="list-inline-item mb-2">
 								<a href="#" target="_blank" data-url-format="<%: engine.UrlFormat %>" onclick="skinSearchExternalClick(event,this)">
 									<i class='fab fa-<%: SearchEngineHelper.GetFAIconName (engine.Type) %>'></i>
-									<%: Localizer.GetString ("SearchWith.Text") %>
+									<%: T.GetString ("SearchWith.Text") %>
 									<% if (!string.IsNullOrEmpty (engine.Name)) { %>
 										<span class="skin-custom-content" data-resource-key='<%: "SearchEngineType_" + engine.Name + ".Text" %>'>
-											<%: Localizer.GetStringOrKey ("SearchEngineType_" + engine.Name + ".Text") %>
+											<%: T.GetStringOrKey ("SearchEngineType_" + engine.Name + ".Text") %>
 										</span>
 									<% } else { %>
-										<%: Localizer.GetString ("SearchEngineType_" + engine.Type + ".Text") %>
+										<%: T.GetString ("SearchEngineType_" + engine.Type + ".Text") %>
 									<% } %>
 								</a>
 							</li>

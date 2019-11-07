@@ -4,7 +4,6 @@
 <%@ Register TagPrefix="dnn" TagName="USER" Src="~/Admin/Skins/User.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="LOGIN" Src="~/Admin/Skins/Login.ascx" %>
 <%@ Register TagPrefix="skin" TagName="BROWSERCHECK" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/BrowserCheck.ascx" %>
-<%@ Register TagPrefix="skin" TagName="FUNCTIONS" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/Functions.ascx" %>
 <%@ Register TagPrefix="skin" TagName="SOCIALGROUPS" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/SocialGroups.ascx" %>
 <%@ Register TagPrefix="skin" TagName="A11YFUNCTIONS" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/A11yFunctions.ascx" %>
 <%@ Register TagPrefix="skin" TagName="LANGUAGES" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/Languages.ascx" %>
@@ -17,8 +16,8 @@
 
 <div class="container">
     <div class="row">
-		<a href='<%= DnnGlobals.NavigateURL ("", "quickA11y", "enable") %>' class="sr-only sr-only-focusable" itemprop="copy"><%: Localizer.GetString ("A11yWebsiteVersion.Text") %></a>
-		<a href="#content" class="sr-only sr-only-focusable"><%: Localizer.GetString ("SkipToContent.Text") %></a>
+		<a href='<%= DnnGlobals.NavigateURL ("", "quickA11y", "enable") %>' class="sr-only sr-only-focusable" itemprop="copy"><%: T.GetString ("A11yWebsiteVersion.Text") %></a>
+		<a href="#content" class="sr-only sr-only-focusable"><%: T.GetString ("SkipToContent.Text") %></a>
 		<skin:BROWSERCHECK runat="server" />
     </div>
 </div>
@@ -32,12 +31,12 @@
         <div class="col-xs-12 col-sm-6 col-md col-lg-3 order-md-last text-sm-right">
 			<button type="button" role="search" class="btn btn-lg skin-search-btn" style="display:inline-block"
                 data-toggle="modal" data-target="#searchModal"
-                title='<%: Localizer.GetString("SearchModalButton.Text") %>'>
+                title='<%: T.GetString("SearchModalButton.Text") %>'>
                 <i class="fas fa-search"></i>
             </button>
 			<% if (!Skin.Options.DisableLogin) { %>
 				<div class="dropdown skin-login" style="display:inline-block">
-					<button type="button" class="btn btn-lg dropdown-toggle" data-toggle="dropdown" title='<%: Localizer.GetString ("UserProfile.Text") %>'>
+					<button type="button" class="btn btn-lg dropdown-toggle" data-toggle="dropdown" title='<%: T.GetString ("UserProfile.Text") %>'>
 						<i class="fas fa-user"></i>
 					</button>
 					<div class="dropdown-menu">
@@ -68,7 +67,7 @@
         </div>
 
         <button type="button" class="navbar-toggler skin-top-menu-toggle" data-toggle="collapse" data-target=".skin-top-menu">
-            <asp:Label runat="server" CssClass="sr-only" Text='<%# Localizer.GetString ("ToggleNavigation.Text") %>' />
+            <asp:Label runat="server" CssClass="sr-only" Text='<%# T.GetString ("ToggleNavigation.Text") %>' />
             <span class="navbar-toggler-icon"></span>
         </button>
 

@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.Skins.SkinObjects.EpsilonSkinObjectBase" %>
 <%@ Import Namespace="R7.Epsilon.Components" %>
 <div class="dropdown skin-social-groups" style="display:inline-block">
-	<button type="button" class="btn btn-lg dropdown-toggle" data-toggle="dropdown" title='<%: Localizer.GetString ("SocialGroups.Text") %>'>
+	<button type="button" class="btn btn-lg dropdown-toggle" data-toggle="dropdown" title='<%: T.GetString ("SocialGroups.Text") %>'>
 		<% var primaryGroup = Config.SocialGroups.FirstOrDefault (g => g.IsPrimary) ?? Config.SocialGroups.First (); %>
 		<i class="fab fa-<%: SocialGroupHelper.GetFAIconName (primaryGroup.Type) %>"></i><sup>+</sup>
 	</button>
@@ -17,10 +17,10 @@
 				</i>
 				<% if (!string.IsNullOrEmpty (group.Name)) { %>
 					<span class="skin-custom-content" data-resource-key="<%: group.Name %>">
-						<%: Localizer.GetStringOrKey (group.Name + ".Text") %>
+						<%: T.GetStringOrKey (group.Name + ".Text") %>
 					</span>
 				<% } else { %>
-					<%: Localizer.GetString (group.Type + ".Text") %>
+					<%: T.GetString (group.Type + ".Text") %>
 				<% } %>
 				<% prevGroup = group; %>
 			</a>

@@ -32,7 +32,7 @@ namespace R7.Epsilon.Skins.SkinObjects
 
         private ControlLocalizer localizer;
 
-        public ControlLocalizer Localizer {
+        public ControlLocalizer T {
             get { return localizer ?? (localizer = new ControlLocalizer (this)); }
         }
 

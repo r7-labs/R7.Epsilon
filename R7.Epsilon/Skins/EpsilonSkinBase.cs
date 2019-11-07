@@ -53,7 +53,7 @@ namespace R7.Epsilon.Skins
             }
         }
 
-        public string SkinCopyright => Localizer.GetString ("SkinCopyright.Text").Replace ("{version}", GetVersionString ());
+        public string SkinCopyright => T.GetString ("SkinCopyright.Text").Replace ("{version}", GetVersionString ());
 
         string GetVersionString ()
         {
@@ -70,7 +70,7 @@ namespace R7.Epsilon.Skins
 
         protected ControlLocalizer localizer;
 
-        public ControlLocalizer Localizer {
+        public ControlLocalizer T {
             get { return localizer ?? (localizer = new ControlLocalizer (this)); }
         }
 

@@ -6,17 +6,17 @@
 	</div>
 	<hr />
 	<ul class="list-inline">
-		<li class="list-inline-item" title='<%: Localizer.GetString ("LastModified_Title.Text") %>'>
-			<span class="fas fa-calendar-alt"></span> <%: Localizer.GetString ("LastModified.Text") %> <%: LastContentModifiedOnDate %>
+		<li class="list-inline-item" title='<%: T.GetString ("LastModified_Title.Text") %>'>
+			<span class="fas fa-calendar-alt"></span> <%: T.GetString ("LastModified.Text") %> <%: LastContentModifiedOnDate %>
 		</li>
-		<li class="list-inline-item" title='<%: Localizer.GetString ("LastModifiedByUser_Title.Text") %>'>
+		<li class="list-inline-item" title='<%: T.GetString ("LastModifiedByUser_Title.Text") %>'>
 			<span class="fas fa-user"></span> <%: LastContentModifiedByUserName %>
 		</li>
 		<li class="list-inline-item">
 			<button type="button" id="btnPermalinks" class="btn btn-sm text-muted"
-					title='<%: Localizer.GetString ("Permalinks_Tooltip.Text") %>'
+					title='<%: T.GetString ("Permalinks_Tooltip.Text") %>'
 					data-toggle="modal" data-target="#skinPermalinksModal">
-				<i class="fas fa-globe"></i> <%: Localizer.GetString ("Permalinks.Text") %>
+				<i class="fas fa-globe"></i> <%: T.GetString ("Permalinks.Text") %>
 			</button>
 		</li>
 	</ul>
