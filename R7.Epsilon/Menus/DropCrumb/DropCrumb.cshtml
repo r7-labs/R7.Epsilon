@@ -2,6 +2,9 @@
 @using System.Linq;
 @using System.Collections.Generic;
 @using DotNetNuke.Web.DDRMenu;
+@using DotNetNuke.Common;
+@using DotNetNuke.Entities.Portals;
+@using DotNetNuke.Services.Localization;
 @inherits DotNetNuke.Web.Razor.DotNetNukeWebPage<dynamic>
 
 @{
@@ -38,6 +41,22 @@
 
 		return nodes;
 	}
+
+	string GetString (string resourceKey)
+	{
+		var resourceFileRoot = "~/Portals/_default/Skins/R7.Epsilon/App_LocalResources/Fake.ascx.resx";
+		return Localization.GetString (resourceKey, resourceFileRoot);
+	}
+
+	string GetNodeUrl (MenuNode node)
+	{
+		// TODO: Apply URL formats here
+		if (string.IsNullOrEmpty (node.Url) && node.TabId == -1) {
+			return Globals.NavigateURL (PortalSettings.Current.HomeTabId);
+		}
+
+		return node.Url;
+	}
 }
 
 @helper RenderNodes(MenuNode root) {
@@ -49,41 +68,43 @@
 				@foreach (var node in nodes) {
 					var isActive = "";
 					var isDisabled = "";
+
 					if (node.Selected) { isActive = "active"; }
 					if (!node.Enabled) { isDisabled = "disabled"; }
-					// TODO: Localize home icon to be able to replace with text or different icon
-					// TODO: Make link to the home page
-					var text = !string.IsNullOrEmpty (node.Text) ? node.Text : "<i class='fas fa-home'></i>";
+
+					var text = node.Text;
+					if (node == root) {
+						text = GetString ("DropCrumb_Home.Text");
+					}
 
 					<li class="breadcrumb-item @isActive @isDisabled">
-						@if (!node.Selected) {
-							<a href="@node.Url">@Html.Raw(text)</a>
-						}
-						else if (node.Children.Count > 0) {
-							// TODO: Extract helper
-							<span class="dropdown">
-								<a class="dropdown-toggle" href="#" type="button" role="button" id="dropcrumbButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									@Html.Raw(text)
-								</a>
-								<div class="dropdown-menu" aria-labelledby="dropcrumbButton">
-									@foreach (var node1 in node.Children) {
-										var isDisabled1 = (!node1.Enabled) ? "disabled" : "";
-										<a class="dropdown-item @isDisabled1" href="@node1.Url">@node1.Text</a>
-									}
-								</div>
-							</span>
+						@if (node.Selected) {
+							if (node.Children.Count == 0) {
+								@Html.Raw(text)
+							}
+							else {
+								// TODO: Extract helper
+								<span class="dropdown">
+									<a class="dropdown-toggle" href="#" type="button" role="button" id="dropcrumbButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										@Html.Raw(text)
+									</a>
+									<div class="dropdown-menu" aria-labelledby="dropcrumbButton">
+										@foreach (var node1 in node.Children) {
+											var isDisabled1 = (!node1.Enabled) ? "disabled" : "";
+											<a class="dropdown-item @isDisabled1" href="@GetNodeUrl(node1)">@node1.Text</a>
+										}
+									</div>
+								</span>
+							}
 						}
 						else {
-							@Html.Raw(text)
+							<a href="@GetNodeUrl(node)">@Html.Raw(text)</a>
 						}
-
 					</li>
 				}
 			</ol>
 		</nav>
 	}
 }
-
-<!-- https://getbootstrap.com/docs/4.0/components/breadcrumb/ -->
 
 @RenderNodes(root)

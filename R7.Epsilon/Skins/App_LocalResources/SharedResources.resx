@@ -225,4 +225,7 @@
 	<data name="DefaultTheme.Text" xml:space="preserve">
         <value>(default)</value>
     </data>
+	<data name="DropCrumb_Home.Text" xml:space="preserve">
+		<value><![CDATA[<i class='fas fa-home'></i>]]></value>
+	</data>
 </root>
