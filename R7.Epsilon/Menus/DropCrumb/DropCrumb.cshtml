@@ -7,11 +7,21 @@
 @using DotNetNuke.Services.Localization;
 @inherits DotNetNuke.Web.Razor.DotNetNukeWebPage<dynamic>
 
-@{
-	var root = Model.Source.root;
-}
-
 @functions {
+	string NodeActiveCssClass (MenuNode node)
+	{
+		return (node.Selected) ? "active" : string.Empty;
+	}
+
+	string NodeDisabledCssClass (MenuNode node)
+	{
+		return !node.Enabled ? "disabled" : string.Empty;
+	}
+
+	string NodeCssClasses (MenuNode node)
+	{
+		return (NodeActiveCssClass (node) + " " + NodeDisabledCssClass (node)).Trim ();
+	}
 
 	MenuNode FindCurrentNodeRecursive (MenuNode node)
 	{
@@ -59,46 +69,41 @@
 	}
 }
 
-@helper RenderNodes(MenuNode root) {
+@helper RenderDropdownFor(MenuNode node) {
+	<span class="dropdown">
+		<a class="dropdown-toggle" href="#" type="button" role="button" id="btnDropCrumb" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			@Html.Raw(node.Text)
+		</a>
+		<div class="dropdown-menu" aria-labelledby="btnDropCrumb">
+			@foreach (var node1 in node.Children) {
+				<a class="dropdown-item @NodeCssClasses(node1)" href="@GetNodeUrl(node1)">@node1.Text</a>
+			}
+		</div>
+	</span>
+}
+
+@helper RenderBreadcrumb(MenuNode root) {
 	// TODO: Implement schema.org markup
 	var nodes = BreadcrumbNodes (root);
 	if (nodes.Count > 0) {
         <nav aria-label="breadcrumb">
 			<ol class="breadcrumb">
 				@foreach (var node in nodes) {
-					var isActive = "";
-					var isDisabled = "";
-
-					if (node.Selected) { isActive = "active"; }
-					if (!node.Enabled) { isDisabled = "disabled"; }
-
 					var text = node.Text;
 					if (node == root) {
 						text = GetString ("DropCrumb_Home.Text");
 					}
-
-					<li class="breadcrumb-item @isActive @isDisabled">
+					<li class="breadcrumb-item @NodeCssClasses(node)">
 						@if (node.Selected) {
-							if (node.Children.Count == 0) {
-								@Html.Raw(text)
+							if (node.Children.Count > 0) {
+								@RenderDropdownFor(node)
 							}
 							else {
-								// TODO: Extract helper
-								<span class="dropdown">
-									<a class="dropdown-toggle" href="#" type="button" role="button" id="dropcrumbButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-										@Html.Raw(text)
-									</a>
-									<div class="dropdown-menu" aria-labelledby="dropcrumbButton">
-										@foreach (var node1 in node.Children) {
-											var isDisabled1 = (!node1.Enabled) ? "disabled" : "";
-											<a class="dropdown-item @isDisabled1" href="@GetNodeUrl(node1)">@node1.Text</a>
-										}
-									</div>
-								</span>
+								@Html.Raw(text)
 							}
 						}
 						else {
-							<a href="@GetNodeUrl(node)">@Html.Raw(text)</a>
+							<a class="@NodeCssClasses(node)" href="@GetNodeUrl(node)">@Html.Raw(text)</a>
 						}
 					</li>
 				}
@@ -107,4 +112,4 @@
 	}
 }
 
-@RenderNodes(root)
+@RenderBreadcrumb(Model.Source.root)
