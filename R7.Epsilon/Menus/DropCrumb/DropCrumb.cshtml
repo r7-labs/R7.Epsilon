@@ -69,17 +69,12 @@
 	}
 }
 
-@helper RenderDropdownFor(MenuNode node) {
-	<span class="dropdown">
-		<a class="dropdown-toggle" href="#" type="button" role="button" id="btnDropCrumb" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			@Html.Raw(node.Text)
-		</a>
-		<div class="dropdown-menu" aria-labelledby="btnDropCrumb">
-			@foreach (var node1 in node.Children) {
-				<a class="dropdown-item @NodeCssClasses(node1)" href="@GetNodeUrl(node1)">@node1.Text</a>
-			}
-		</div>
-	</span>
+@helper RenderDropdownFor(MenuNode parentNode) {
+	<div class="dropdown-menu" aria-labelledby="btnDropCrumb">
+		@foreach (var node in parentNode.Children) {
+			<a class="dropdown-item @NodeCssClasses(node)" href="@GetNodeUrl(node)">@node.Text</a>
+		}
+	</div>
 }
 
 @helper RenderBreadcrumb(MenuNode root) {
@@ -96,7 +91,12 @@
 					<li class="breadcrumb-item @NodeCssClasses(node)">
 						@if (node.Selected) {
 							if (node.Children.Count > 0) {
-								@RenderDropdownFor(node)
+								<span class="dropdown">
+									<a class="dropdown-toggle" href="#" type="button" role="button" id="btnDropCrumb" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										@Html.Raw(node.Text)
+									</a>
+									@RenderDropdownFor(node)
+								</span>
 							}
 							else {
 								@Html.Raw(text)
