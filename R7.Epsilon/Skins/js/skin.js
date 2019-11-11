@@ -21,6 +21,8 @@
 
 import A11y from "./a11y";
 
+// TODO: Move global functions to eplilon object
+
 window.skinGoogleTranslatePage = function (fromLang) {
     window.open ("http://translate.google.com/translate?hl=en&sl=" + fromLang + "&u=" + encodeURI (document.location));
 };
