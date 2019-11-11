@@ -207,4 +207,7 @@
 	<data name="DefaultTheme.Text" xml:space="preserve">
         <value>(по умолчанию)</value>
     </data>
+	<data name="Mega2Epsilon_GoToPage.Text" xml:space="preserve">
+		<value>Перейти на страницу </value>
+	</data>
 </root>
