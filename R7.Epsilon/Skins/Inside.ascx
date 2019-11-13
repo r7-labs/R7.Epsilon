@@ -9,8 +9,8 @@
 <%
 Options.DisableSocialShare = true;
 %>
-<div class="skin-default">
-	<skin:START runat="server" />
+<skin:START runat="server" />
+<div class="skin">
 	<header class="skin-header">
 		<skin:HEADER runat="server" />
 	</header>

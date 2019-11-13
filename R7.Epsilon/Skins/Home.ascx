@@ -9,8 +9,8 @@
 <%
 Options.DisableBreadCrumb = true;
 %>
-<div class="skin-home">
-	<skin:START runat="server" />
+<skin:START runat="server" />
+<div class="skin skin-home">
 	<header class="skin-header">
 		<skin:HEADER runat="server" />
 	</header>

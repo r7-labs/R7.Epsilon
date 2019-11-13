@@ -12,8 +12,8 @@ Options.DisableBreadCrumb = true;
 Options.DisableLogin = true;
 Options.DisablePageInfo = true;
 %>
-<div class="skin-error">
-	<skin:START runat="server" />
+<skin:START runat="server" />
+<div class="skin skin-error">
 	<header class="skin-header">
 		<skin:HEADER runat="server" />
 	</header>

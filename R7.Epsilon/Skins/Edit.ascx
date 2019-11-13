@@ -10,8 +10,8 @@
 Options.DisableSocialShare = true;
 Options.DisablePageInfo = true;
 %>
-<div class="skin-edit">
-	<skin:START runat="server" />
+<skin:START runat="server" />
+<div class="skin skin-edit">
 	<header class="skin-header">
 		<skin:HEADER runat="server" />
 	</header>
