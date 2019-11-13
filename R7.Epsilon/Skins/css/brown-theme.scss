@@ -1,8 +1,8 @@
-﻿@import "shared-palette";
-@import "brown-palette";
+﻿@import "palettes/shared-palette";
+@import "palettes/brown-palette";
 @import "default-variables";
-@import "color-classes";
-@import "brand-color-classes";
+@import "color-classes/color-classes";
+@import "color-classes/brand-color-classes";
 @import "brown-overrides";
 @import "skin";
 @import "menu";

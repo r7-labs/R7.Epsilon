@@ -1,8 +1,8 @@
-﻿@import "shared-palette";
-@import "contrast-palette";
+﻿@import "palettes/shared-palette";
+@import "palettes/contrast-palette";
 @import "default-variables";
-@import "color-classes";
-@import "brand-color-classes";
+@import "color-classes/color-classes";
+@import "color-classes/brand-color-classes";
 @import "contrast-overrides";
 @import "skin";
 @import "menu";
