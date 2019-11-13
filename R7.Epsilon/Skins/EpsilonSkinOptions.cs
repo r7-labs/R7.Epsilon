@@ -28,5 +28,7 @@ namespace R7.Epsilon.Skins
         public bool DisableSocialShare { get; set; }
 
         public bool DisableLogin { get; set; }
+
+        public bool DisablePageInfo { get; set; }
     }
 }

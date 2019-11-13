@@ -1,5 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.Skins.SkinObjects.PageInfo" %>
 <%@ Register TagPrefix="dnn" TagName="TAGS" Src="~/Admin/Skins/Tags.ascx" %>
+<% if (!Skin.Options.DisablePageInfo) { %>
 <div class="skin-page-info text-muted">
 	<% if (ActiveTab.Terms != null && ActiveTab.Terms.Count > 0) { %>
 		<div class="skin-tags">
@@ -23,3 +24,4 @@
 		</li>
 	</ul>
 </div>
+<% } %>

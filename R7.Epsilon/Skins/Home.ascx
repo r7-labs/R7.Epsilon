@@ -6,8 +6,9 @@
 <%@ Register TagPrefix="skin" TagName="SUPFOOTER" Src="~/Portals/_default/Skins/R7.Epsilon/Blocks/SupFooter.ascx" %>
 <%@ Register TagPrefix="skin" TagName="FOOTER" Src="~/Portals/_default/Skins/R7.Epsilon/Blocks/Footer.ascx" %>
 <%@ Register TagPrefix="skin" TagName="END" Src="~/Portals/_default/Skins/R7.Epsilon/Blocks/End.ascx" %>
-
-<% Options.DisableBreadCrumb = true; %>
+<%
+Options.DisableBreadCrumb = true;
+%>
 <div class="skin-home">
 	<skin:START runat="server" />
 	<header class="skin-header">
@@ -15,6 +16,7 @@
 	</header>
 	<skin:SUBHEADER runat="server" />
 	<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_home.ascx" -->
+	<skin:SUPFOOTER runat="server" />
 	<footer class="skin-footer">
 		<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_footer-3cols.ascx" -->
 		<skin:FOOTER runat="server" />
