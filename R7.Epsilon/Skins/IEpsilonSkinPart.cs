@@ -1,10 +1,10 @@
-﻿//
-//  ILocalizableControl.cs
 //
-//  Author:
-//       Roman M. Yagodin <roman.yagodin@gmail.com>
+//  File: IEpsilonSkinPart.cs
+//  Project: R7.Epsilon
 //
-//  Copyright (c) 2015 Roman M. Yagodin
+//  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
+//
+//  Copyright (c) 2019 Roman M. Yagodin, R7.Labs
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -19,11 +19,17 @@
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-namespace R7.Epsilon.Components
+using DotNetNuke.Entities.Tabs;
+using R7.Epsilon.Components;
+
+namespace R7.Epsilon.Skins
 {
-    public interface ILocalizableControl
+    public interface IEpsilonSkinPart
     {
+        TabInfo ActiveTab { get; }
+
         ControlLocalizer T { get; }
+
+        EpsilonPortalConfig Config { get; }
     }
 }
-

@@ -27,19 +27,17 @@ using R7.Epsilon.Components;
 
 namespace R7.Epsilon.Skins.SkinObjects
 {
-    public class EpsilonSkinObjectBase : SkinObjectBase, ILocalizableControl, IConfigurableControl
+    public class EpsilonSkinObjectBase : SkinObjectBase, IEpsilonSkinPart
     {
-        #region ILocalizableControl implementation
+        #region IEpsilonSkinPart implementation
+
+        public TabInfo ActiveTab => PortalSettings.ActiveTab;
 
         private ControlLocalizer localizer;
 
         public ControlLocalizer T {
             get { return localizer ?? (localizer = new ControlLocalizer (this)); }
         }
-
-        #endregion
-
-        #region IConfigurableControl implementation
 
         private EpsilonPortalConfig config;
 
@@ -73,8 +71,5 @@ namespace R7.Epsilon.Skins.SkinObjects
                 return skin;
             }
         }
-
-        protected TabInfo ActiveTab => PortalSettings.ActiveTab;
     }
 }
-

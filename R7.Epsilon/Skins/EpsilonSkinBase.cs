@@ -32,7 +32,7 @@ using R7.Epsilon.Components;
 
 namespace R7.Epsilon.Skins
 {
-    public class EpsilonSkinBase : Skin, ILocalizableControl, IConfigurableControl
+    public class EpsilonSkinBase : Skin, IEpsilonSkinPart
     {
         public EpsilonSkinOptions Options  { get; set; } = new EpsilonSkinOptions ();
 
@@ -42,8 +42,6 @@ namespace R7.Epsilon.Skins
                 return activeTabId == PortalSettings.ErrorPage404 || activeTabId == PortalSettings.ErrorPage500;
             }
         }
-
-        protected TabInfo ActiveTab => PortalSettings.ActiveTab;
 
         public string SkinCopyright => T.GetString ("SkinCopyright.Text").Replace ("{version}", GetVersionString ());
 
@@ -58,17 +56,15 @@ namespace R7.Epsilon.Skins
             return assembly.GetName ().Version.ToString (3);
         }
 
-        #region ILocalizableControl implementation
+        #region IEpsilonSkinPart implementation
+
+        public TabInfo ActiveTab => PortalSettings.ActiveTab;
 
         protected ControlLocalizer localizer;
 
         public ControlLocalizer T {
             get { return localizer ?? (localizer = new ControlLocalizer (this)); }
         }
-
-        #endregion
-
-        #region IConfigurableControl implementation
 
         protected EpsilonPortalConfig config;
 
