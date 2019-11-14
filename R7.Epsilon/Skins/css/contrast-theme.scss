@@ -1,10 +1,10 @@
 ﻿@import "palettes/shared-palette";
 @import "palettes/contrast-palette";
-@import "default-variables";
+@import "variables";
 @import "color-classes/color-classes";
 @import "color-classes/brand-color-classes";
-@import "contrast-overrides";
+@import "contrast-variables";
 @import "skin";
 @import "menu";
 @import "dnn";
-@import "contrast-post-overrides";
+@import "contrast-overrides";
