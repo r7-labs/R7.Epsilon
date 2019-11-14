@@ -1,10 +1,10 @@
 ﻿//
-//  EpsilonConfig.cs
+//  File: EpsilonConfig.cs
+//  Project: R7.Epsilon
 //
-//  Author:
-//       Roman M. Yagodin <roman.yagodin@gmail.com>
+//  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2016-2017 Roman M. Yagodin
+//  Copyright (c) 2016-2019 Roman M. Yagodin, R7.Labs
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -22,7 +22,9 @@
 using System;
 using System.Collections.Concurrent;
 using System.IO;
+using System.Web.Caching;
 using DotNetNuke.Common;
+using DotNetNuke.Common.Utilities;
 using DotNetNuke.Entities.Portals;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
@@ -36,11 +38,21 @@ namespace R7.Epsilon.Components
         static readonly ConcurrentDictionary<int, Lazy<EpsilonPortalConfig>> portalConfigs =
             new ConcurrentDictionary<int, Lazy<EpsilonPortalConfig>> ();
 
-        public static EpsilonPortalConfig Instance {
-            get { return GetInstance (PortalSettings.Current.PortalId); }
-        }
+        static readonly ConcurrentDictionary<int, CacheItemArgs> cacheItemArgs =
+            new ConcurrentDictionary<int, CacheItemArgs> ();
+
+        public static EpsilonPortalConfig Instance => GetInstance (PortalSettings.Current.PortalId);
 
         public static EpsilonPortalConfig GetInstance (int portalId)
+        {
+            return DataCache.GetCachedData<EpsilonPortalConfig> (
+                cacheItemArgs.GetOrAdd (PortalSettings.Current.PortalId,
+                    (pid) => new CacheItemArgs ("//r7_Epsilon/config?portalId=" + pid, 3600, CacheItemPriority.Normal)),
+                (cia) => LoadPortalConfig (PortalSettings.Current.PortalId)
+            );
+        }
+
+        private static EpsilonPortalConfig LoadPortalConfig (int portalId)
         {
             var lazyPortalConfig = portalConfigs.GetOrAdd (portalId, newKey =>
                 new Lazy<EpsilonPortalConfig> (() => {

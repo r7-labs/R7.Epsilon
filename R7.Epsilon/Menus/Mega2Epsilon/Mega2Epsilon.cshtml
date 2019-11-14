@@ -1,0 +1,106 @@
+﻿@using System.Dynamic;
+@using DotNetNuke.Web.DDRMenu;
+@using DotNetNuke.Services.Localization;
+@inherits DotNetNuke.Web.Razor.DotNetNukeWebPage<dynamic>
+
+@functions {
+	string NodeActiveCssClass (MenuNode node)
+	{
+		return (node.Selected || node.Breadcrumb) ? "active" : string.Empty;
+	}
+
+	string NodeDisabledCssClass (MenuNode node)
+	{
+		return !node.Enabled ? "disabled" : string.Empty;
+	}
+
+	string NodeCssClasses (MenuNode node)
+	{
+		return (NodeActiveCssClass (node) + " " + NodeDisabledCssClass (node)).Trim ();
+	}
+
+	string subnavItemCssClass ()
+	{
+		return "col-lg-4 col-md-6 p-0";
+	}
+
+	string GetString (string resourceKey)
+	{
+		var resourceFileRoot = "~/Portals/_default/Skins/R7.Epsilon/App_LocalResources/Fake.ascx.resx";
+		return Localization.GetString (resourceKey, resourceFileRoot);
+	}
+}
+
+@helper RenderNodes(IList<MenuNode> nodes) {
+    if (nodes.Count > 0) {
+		<div class="row no-gutters">
+			<ul class="navbar-nav col-6 col-md-12">
+				@foreach (var node in nodes) {
+					if (node.HasChildren()) {
+						<li class="nav-item dropdown">
+							<a href="#@(Model.ControlID)_subnav_@node.TabId" aria-controls="@(Model.ControlID)_subnav_@node.TabId"
+								role="button" data-toggle="collapse" aria-expanded="false"
+								class="nav-link dropdown-toggle @NodeCssClasses(node)">@node.Text</a>
+						</li>
+					} else {
+						<li class="nav-item">
+							<a href="@node.Url" class="nav-link @NodeCssClasses(node)">@node.Text</a>
+						</li>
+					}
+				}
+			</ul>
+			@foreach (var node in nodes) {
+				if (node.HasChildren ()) {
+					@RenderSubnavFor(node)
+				}
+			}
+		</div>
+	}
+}
+
+@helper RenderSubnavFor(MenuNode parentNode) {
+	<div class="navbar-nav skin-navbar-subnav col-6 col-md-12 collapse" id="@(Model.ControlID)_subnav_@parentNode.TabId" data-parent="#@Model.ControlID">
+		<div class="row no-gutters">
+			<div class="col-12 p-0">
+				<div class="nav-item">
+					<a href="@parentNode.Url" class="h4 nav-link @NodeCssClasses(parentNode)"
+							title='@(GetString("Mega2Epsilon_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
+						@parentNode.Text <i class="fas fa-caret-right"></i><i class="fas fa-caret-right"></i>
+					</a>
+				</div>
+			</div>
+			@foreach (var node in parentNode.Children) {
+				<div class="@subnavItemCssClass()">
+					@if (node.HasChildren ()) {
+						<div class="nav-item dropdown">
+							<a id="@(Model.ControlID)_subnav_dropdown_@node.TabId" href="#" role="button" data-toggle="dropdown"
+								aria-expanded="false" aria-haspopup="true"
+								class="nav-link dropdown-toggle @NodeCssClasses(node)">@node.Text</a>
+							@RenderDropdownFor(node)
+						</div>
+					}
+					else {
+						<div class="nav-item">
+							<a href="@node.Url" class="nav-link @NodeCssClasses(node)">@node.Text</a>
+						</div>
+					}
+				</div>
+			}
+		</div>
+	</div>
+}
+
+@helper RenderDropdownFor(MenuNode parentNode) {
+	<div class="dropdown-menu" aria-labelledby="@(Model.ControlID)_subnav_dropdown_@parentNode.TabId">
+		<a class="h5 dropdown-item @NodeCssClasses(parentNode) dropdown-item-parent" href="@parentNode.Url"
+				title='@(GetString("Mega2Epsilon_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
+			@parentNode.Text <i class="fas fa-caret-right"></i><i class="fas fa-caret-right"></i>
+		</a>
+		<div class="dropdown-divider"></div>
+		@foreach (var node in parentNode.Children) {
+    		<a class="dropdown-item @NodeCssClasses(node)" href="@node.Url">@node.Text</a>
+		}
+	</div>
+}
+
+@RenderNodes(Model.Source.root.Children)

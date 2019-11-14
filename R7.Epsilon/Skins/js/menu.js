@@ -4,7 +4,7 @@
 //  Author:
 //       Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2015-2017 Roman M. Yagodin
+//  Copyright (c) 2015-2019 Roman M. Yagodin
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -19,7 +19,7 @@
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-function skinSplitSubMenu($, controlId, columns) {
+window.skinSplitSubMenu = function ($, controlId, columns) {
 	$("ul#" + controlId + " .sub").each(function (i) {
 		var items = $(this).find('ul');
 		var blockCount = columns;
@@ -28,7 +28,7 @@ function skinSplitSubMenu($, controlId, columns) {
 			slice.wrapAll("<div class=\"megarow\"></div>");
 		}
 	});
-}
+};
 
 (function ($, window, document) {
 
@@ -42,7 +42,7 @@ function skinSplitSubMenu($, controlId, columns) {
 
         // focus and mark hovered top-level menu item
         $(this).children ("a").addClass ("megahover").not ("a:focus").focus ();
-    
+
         megaHoverOutAllExcept (this);
     }
 
@@ -69,46 +69,6 @@ function skinSplitSubMenu($, controlId, columns) {
         });
     }
 
-    function initModulesMenu (minHeaders) {
-        var li0 = $('.skin-headers-menu li.level0').first();
-        var thisH = li0.parents('.DnnModule').find('h2,h3,h4').first();
-        var menuItems = "";
-        var menuItemsCount = 0;
-        $('h2,h3,h4').each(function () {
-            if (!$(this).is(thisH)) {
-                var title = $(this).text().trim();
-                if (!!title) {
-                    var anchor = $(this).children('a').attr('name');
-                    if (!anchor) {
-                        anchor = $(this).parents('.DnnModule').find('a').first().attr('name');
-                    }
-                    if (anchor) {
-                        menuItems += '<div class="megarow"><ul><li><a href="#' + anchor + '">' + title + '</a></li><ul></div>';
-                        menuItemsCount++;
-                    } 
-                }
-            }
-        });
-        if (menuItemsCount >= minHeaders) {
-            li0.append ('<div class="sub">'
-                + menuItems
-                + '<a href="#" role="button" class="sub-close" title="' + epsilon.localization.subMenuCloseButtonTitle + '">&times;</a>'
-                + '</div>'
-            );
-        } else {
-            $('.skin-headers-menu').first().addClass('hidden');
-            $('#skin-separator-1').first().addClass('hidden-headers');
-        }
-    }
-
-    function initLocalMenu () {
-        var localMenu = $(".skin-local-menu").first ();
-        if (localMenu.find (".sub").length === 0) {
-            localMenu.addClass ("hidden");
-            $('#skin-separator-1').first().addClass('hidden-local');
-        }
-    }
-
     function initCloseButton () {
         $('li.level0 > .sub > a.sub-close').click (function (e) {
             e.preventDefault ();
@@ -117,9 +77,6 @@ function skinSplitSubMenu($, controlId, columns) {
     }
 
     $(function() {
-        initLocalMenu ();
-        initModulesMenu (epsilon.menuMinHeaders);
-
         // calculate height of top level menu and set top style for menu placement
         $("ul.megamenu .sub").css ("top", $("ul.megamenu > li").height ());
 
@@ -128,11 +85,11 @@ function skinSplitSubMenu($, controlId, columns) {
 
         // invoke hoverIntent
         $("ul.megamenu > li.level0").hoverIntent({
-            sensitivity: 2, // number = sensitivity threshold (must be 1 or higher)    
-            interval: 100, // number = milliseconds for onMouseOver polling interval    
-            over: megaHoverOver, // function = onMouseOver callback (REQUIRED)    
-            timeout: 500, // number = milliseconds delay before onMouseOut    
-            out: megaHoverOut // function = onMouseOut callback (REQUIRED)    
+            sensitivity: 2, // number = sensitivity threshold (must be 1 or higher)
+            interval: 100, // number = milliseconds for onMouseOver polling interval
+            over: megaHoverOver, // function = onMouseOver callback (REQUIRED)
+            timeout: 500, // number = milliseconds delay before onMouseOut
+            out: megaHoverOut // function = onMouseOut callback (REQUIRED)
         });
 
         // mark current tab link

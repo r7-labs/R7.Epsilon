@@ -1,0 +1,650 @@
+//
+//  skin.scss
+//
+//  Author:
+//       Roman M. Yagodin <roman.yagodin@gmail.com>
+//
+//  Copyright (c) 2015-2019 Roman M. Yagodin
+//
+//  This program is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU Affero General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  This program is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU Affero General Public License for more details.
+//
+//  You should have received a copy of the GNU Affero General Public License
+//  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+@import "bootstrap";
+@import "containers";
+
+/* Mixins */
+
+@mixin background-position-xy ($index-x, $index-y, $icon-size)
+{
+    background-position:(-$icon-size * $index-x) (-$icon-size * $index-y);
+}
+
+@mixin fa-icon-before ($icon) {
+    content: $icon;
+    font-family: "Font Awesome 5 Free";
+    display: inline-block;
+    padding-right: 3px;
+    vertical-align: middle;
+    font-weight: 900;
+}
+
+/* Styles */
+
+.Normal,
+.NormalDisabled,
+.NormalDeleted {
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+.SkinLink
+{
+  margin-top: 15px;
+  text-align: center;
+}
+
+.navbar-1 {
+    background-color: $color-primary-4 !important
+}
+
+.navbar-2 {
+    background-color: $color-primary-3 !important
+}
+
+.carousel-inner > .active.left {
+  float: none;
+}
+.carousel-caption h1 {
+  color: #fff;
+}
+
+a.btn-info,
+a.btn-info:visited,
+a.btn-primary,
+a.btn-primary:visited {
+  color: #fff;
+}
+
+.unselectable {
+    -moz-user-select:-moz-none;
+    -khtml-user-select:none;
+    -webkit-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+
+/* Float Buttons */
+
+.skin-float-box-vertical {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 4.5rem;
+    z-index: 10;
+}
+
+.skin-float-btn {
+    display: inline-block;
+    width: 4rem;
+    height: 4rem;
+    margin: 0.25rem;
+    line-height: 3.4rem;
+    color: #fff;
+    font-size: 2rem;
+    text-align: center;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    cursor:pointer;
+    opacity: $float-btn-opacity;
+    &:hover { opacity: 1;  }
+    color: #fff;
+    & > i { color: #fff; }
+    &:link, &:hover, &:visited { color: #fff; }
+    &:hover { text-decoration: none; }
+}
+
+.skin-float-btn-age-rating {
+    font-weight: bolder;
+    background-color: $float-btn-age-rating-bg-color;
+}
+
+.skin-float-btn-up {
+    background-color: $float-btn-up-bg-color;
+}
+
+.skin-float-btn-feedback {
+    background-color: $float-btn-feedback-bg-color;
+}
+
+.skin-header > .container
+{
+    padding-top:9px;
+    padding-bottom:5px;
+}
+
+.skin-header > .container > .row
+{
+    margin-right:0;
+    margin-left:0;
+}
+
+.skin-languages {
+    .language-object > select,
+    .Language.selected,
+    .Language > img {
+        display: none;
+    }
+}
+
+.skin-languages-btn > sup {
+	position: relative;
+	left: -0.2rem;
+}
+
+// Search
+.skin-search-box {
+    text-align: center;
+    .searchInputContainer {
+        width: 100%;
+        a.dnnSearchBoxClearText.dnnShow {
+            position: absolute;
+            top: 7px;
+        }
+    }
+    .skin-search-btn { display: none; }
+    input {
+        width: 100%;
+        height: 45px;
+    }
+    ul.searchSkinObjectPreview {
+        border-top: none;
+        position: static;
+        width: 100%;
+        & > li {
+            width: 100%;
+            text-align: left;
+        }
+        & > li.searchSkinObjectPreview_group {
+            width: 100%;
+            border-bottom: none;
+        }
+    }
+}
+
+@media only screen and (max-width : 767px)
+{
+    .skin-search
+    {
+        padding-top:4px;
+        padding-bottom:4px;
+    }
+}
+
+/* Main Header */
+
+.navbar { margin-bottom:0 }
+
+.navbar-toggle { margin-right:inherit }
+
+.skin-top-menu-toggle.navbar-toggle
+{
+    float:right;
+    border-color:transparent;
+    background-color:transparent;
+    &:hover
+    {
+        background-color:$color-primary-4;
+    }
+    .icon-bar { background-color:#fff; }
+}
+
+.navbar-brand.skin-navbar-brand-link
+{
+    float:left;
+    padding-left:0;
+    a { color:#fff; }
+}
+
+// TODO: Remove empty rule
+.navbar-brand.skin-navbar-brand-logo
+{
+    img {}
+}
+
+.skin-header-content
+{
+    display:inline-block;
+    margin-left:40px;
+    margin-top:30px;
+    font-style:italic;
+
+    font-size:$big-font-size;
+    line-height:1.2em;
+    color:#fff;
+    text-shadow:$header-content-text-shadow;
+
+    a {
+        text-decoration:none;
+        color:#fff;
+    }
+
+    .firstline {
+        font-size:$big-font-size + 4px;
+        white-space:nowrap;
+    }
+
+    .tagline {
+        color:$color-primary-4;
+        font-size:$font-size;
+        font-weight:bold;
+        text-shadow:$header-content-tagline-shadow;
+
+        a { color:$color-primary-4; }
+    }
+}
+
+.skin-page-header
+{
+    margin-top:5px;
+    padding-bottom:5px;
+
+    &h1, &h2
+    {
+        margin-top:0;
+        a { color:$color-secondary-1-3; }
+    }
+    &h1 small, &h2 small { display:inline-block; }
+}
+
+.skin-home {
+    // hide (but not remove) page header for the home page
+    .skin-page-header {
+        display: none;
+    }
+}
+
+#skin-separator-1
+{
+    display:inline-block;
+    width:50px;
+
+    &.hidden-local.hidden-headers
+    {
+        display:none;
+    }
+}
+
+.skin-social-share-buttons
+{
+    display:inline-block;
+
+    & > * {
+        display:inline-block;
+        margin-top:1em !important; // overriding inline style!
+    }
+
+    #___plusone_0 {
+        vertical-align:bottom !important; // overriding inline style!
+        font-size:inherit !important; // overriding inline style!
+    }
+    .twitter-share-button, #vk_like { vertical-align:bottom; }
+    .fb-like, .twitter-share-button { margin-right:30px; }
+    .fb-like, #vk_like { min-width:110px; }
+}
+
+@media only screen and (max-width : 991px)
+{
+    // separate from menus on md- screens
+    .skin-social-share-buttons { margin-top:1em }
+}
+
+.breadcrumb {
+    /*
+    background-color:transparent; // lighten($color-secondary-1-1, 20%);
+    padding-left:0;
+    padding-right:0;
+    margin-bottom:0;
+    margin-top:0;
+
+    a.skin-breadcrumb-link {
+        margin-right:5px;
+        margin-left:5px;
+    }
+
+    // for DNN 8+
+    > span > span {
+        > span:first-child > a.skin-breadcrumb-link {
+            margin-left:inherit;
+        }
+        > span:last-child > a.skin-breadcrumb-link {
+            color:$color-secondary-1-3;;
+            font-size:$big-font-size;
+            font-weight:bold;
+        }
+    }
+
+    // for DNN 7-
+    > span > a.skin-breadcrumb-link {
+        &:first-child {
+            margin-left:inherit;
+        }
+        &:last-child {
+            color:$color-secondary-1-3;;
+            font-size:$big-font-size;
+            font-weight:bold;
+        }
+    }
+    */
+
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+// style it like breadbrumb
+.skin-page-info {
+    padding: .75rem 1rem;
+    background-color: #e9ecef;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    & > ul {
+        font-size: 85%;
+        margin-bottom: 0;
+        & > li {
+            padding-right: 1rem;
+        }
+    }
+}
+
+.skin-tags {
+    ul.categories, ul.tags {
+        display:inline-block;
+        margin-left: 0;
+        margin-bottom: 0;
+        padding-left: 0;
+        li {
+            display: inline-block;
+            padding-right: 1rem;
+        }
+    }
+}
+
+.skin-permalink {
+    font-size: 85%;
+}
+
+/* Footer */
+
+.skin-footer-buttons
+{
+    display:inline-block;
+    vertical-align:top;
+    margin-bottom:15px;
+
+    td { padding-right:10px }
+}
+
+.skin-footer
+{
+    //margin-top:20px;
+    color:#fff;
+    a { color:#fff; }
+
+    padding-top:12px;
+    background-color:$footer-main-background-color;
+    border-top:4px solid $footer-line-background-color;
+}
+
+.admin .skin-footer {
+    padding-top:0;
+    padding-bottom:0;
+}
+
+.skin-banner { margin-bottom:10px; }
+
+.skin-footer-content
+{
+    display:inline-block;
+
+    .skin-footer-content-element { margin-right:15px; }
+
+    .skin-footer-content-well
+    {
+        font-size:85%;
+        margin-bottom:10px;
+        border-radius:5px;
+        border-left:3px solid #fff;
+        padding-left:10px;
+
+        span { display:inline-block; }
+    }
+}
+
+.skin-footer-lastrow
+{
+    padding:10px 0;
+    background-color:$footer-last-background-color;
+
+    .skin-footer-88x31-buttons
+    {
+        padding-top:2px;
+        img
+        {
+            width:88px;
+            height:31px;
+            border:none;
+        }
+    }
+
+    .skin-terms
+    {
+        font-size:85%;
+        text-align:right;
+    }
+}
+
+@media only screen and (max-width : 767px)
+{
+    // align terms left on xs screens
+    .skin-footer-lastrow .skin-terms {
+        text-align:inherit;
+        margin-top:1em;
+    }
+}
+
+/* Callouts */
+
+.skin-callout {
+    border-left-width: 4px;
+}
+
+.skin-callout {
+    &.border-light {
+        border-color: rgba(0,0,0,.125) !important; // from .card
+    }
+    & > .card-title.text-light {
+        color: #818182 !important; // from .alert-light
+    }
+}
+
+/* fix for carousel for large resolution displays */
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* fix for DNN dropdown lists being cut off*/
+.dnnDropDownList .selected-item, .dnnDropDownList .selected-item a {
+	height: 35px !important;
+}
+
+// fix for text colors in Bootstrap alerts
+.alert .Normal { color:inherit !important }
+
+.skin-login {
+    .registerGroup {
+        ul.buttonGroup {
+            padding-left: 0;
+            margin-bottom: 0;
+            li {
+                list-style: none;
+                padding-left: 0;
+            }
+            .userMessages strong {
+                font-weight: normal;
+            }
+            .userNotifications strong {
+                font-weight: normal;
+            }
+        }
+    }
+}
+
+.skin-custom-content div.actionMenu {
+    display: inline-block;
+}
+
+.skin-social-groups {
+    .skin-social-group-icon {
+        font-size: 2rem;
+        line-height: 2rem;
+        vertical-align: middle;
+        margin-right: 0.25rem;
+
+        &.fa-vk, &.fa-youtube {
+            font-size: 1.55rem;
+        }
+    }
+}
+
+/* Links */
+
+a, .btn.btn-link {
+    color: $link-color;
+    &:hover {
+        color: $link-hover-color;
+    }
+}
+
+a.underline-link {
+    border-bottom: 3px solid $link-color;
+    &:hover {
+        border-bottom-color: $link-hover-color;
+        text-decoration: none;
+    }
+}
+
+a.bold-link {
+    font-weight: bold;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+/* Buttons */
+
+// reset DNN styles
+.dnnPrimaryAction, .dnnSecondaryAction, .dnnTertiaryAction,
+a.dnnPrimaryAction, a.dnnSecondaryAction, a.dnnTertiaryAction {
+    font-weight: normal;
+    border-radius: 4px;
+    text-shadow: none;
+    box-shadow: none;
+    background: none;
+    padding: .375rem .75rem;
+    margin: 0;
+    outline: none !important;
+    &:hover {
+        background: none;
+        text-decoration: none;
+    }
+    &:active, &.active {
+        background: none;
+        box-shadow: none;
+    }
+}
+
+.dnnPrimaryAction,
+a.dnnPrimaryAction,
+.btn.btn-primary {
+    background-color: $btn-primary-bg-color;
+    border-color: $btn-primary-border-color;
+    color: $btn-primary-text-color;
+    &:hover {
+        background-color: $btn-primary-bg-hover-color;
+        border-color: $btn-primary-border-hover-color;
+        color: $btn-primary-text-color;
+    }
+    &:focus, &.focus {
+        box-shadow: 0 0 0 .2rem $btn-primary-focus-shadow-color;
+    }
+}
+
+.dnnSecondaryAction,
+a.dnnSecondaryAction {
+    background-color: $btn-secondary-bg-color;
+    border-color: $btn-secondary-border-color;
+    color: $btn-secondary-text-color;
+    &:hover {
+        background-color: $btn-secondary-bg-hover-color;
+        border-color: $btn-secondary-border-hover-color;
+        color: $btn-secondary-text-color;
+    }
+    &:focus, &.focus {
+        box-shadow: 0 0 0 .2rem $btn-secondary-focus-shadow-color;
+    }
+}
+
+.btn-link, a.btn-link,
+.dnnTertiaryAction, a.dnnTertiaryAction {
+    &:focus, &.focus {
+        box-shadow: 0 0 0 .2rem $btn-secondary-focus-shadow-color;
+    }
+}
+
+.dnnTertiaryAction,
+a.dnnTertiaryAction {
+    color: $link-color;
+    &:hover {
+        color: $link-hover-color;
+        text-decoration: underline;
+    }
+    &:focus, &.focus {
+        text-decoration: underline;
+    }
+}
+
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.show > .btn-primary.dropdown-toggle,
+.dnnPrimaryAction:active, .dnnPrimaryAction.active,
+a.dnnPrimaryAction:active, a.dnnPrimaryAction.active {
+    background-color: $btn-primary-active-bg-color;
+    border-color: $btn-primary-active-border-color;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active:focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 .2rem $btn-primary-focus-shadow-color;
+}
+
+.btn-secondary:not(:disabled):not(.disabled).active,
+.btn-secondary:not(:disabled):not(.disabled):active,
+.show > .btn-secondary.dropdown-toggle,
+.dnnSecondaryAction:active, .dnnSecondaryAction.active,
+a.dnnSecondaryAction:active, a.dnnSecondaryAction.active {
+    background-color: $btn-secondary-active-bg-color;
+    border-color: $btn-secondary-active-border-color;
+}

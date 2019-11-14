@@ -1,10 +1,10 @@
 ﻿//
-//  PageHeader.ascx.cs
+//  File: PageHeader.ascx.cs
+//  Project: R7.Epsilon
 //
-//  Author:
-//       Roman M. Yagodin <roman.yagodin@gmail.com>
+//  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2015-2017 Roman M. Yagodin
+//  Copyright (c) 2015-2019 Roman M. Yagodin, R7.Labs
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -19,17 +19,10 @@
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-using DotNetNuke.Entities.Portals;
-
 namespace R7.Epsilon.Skins.SkinObjects
 {
     public class PageHeader : EpsilonSkinObjectBase
     {
-        protected string Title
-        {
-            get { return PortalSettings.ActiveTab.LocalizedTabName; }
-        }
-
         protected string TagLine
         {
             get { return string.Empty; }

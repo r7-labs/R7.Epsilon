@@ -1,111 +1,112 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0" DefaultTargets="LocalDeploy">
-	<Import Project="BuildSettings.targets" Condition=" '$(BuildSettingsImported)' == '' " />
-	<Import Project="Preprocess.targets" Condition=" '$(PreprocessImported)' == '' " />
-	<Import Project="Tests.targets" Condition=" '$(TestsImported)' == '' "/>
-	
-	<PropertyGroup>
-		<!-- Enable local deploy by default (standalone) -->
-    	<EnableLocalDeploy Condition=" '$(EnableLocalDeploy)' == '' ">true</EnableLocalDeploy>
-	</PropertyGroup>
-	<Target Name="LocalDeploy" Condition=" '$(EnableLocalDeploy)' == 'true' " DependsOnTargets="CompileScss;MinifyJS;Tests">
- 		
-		<!-- Declare skin files -->
-		<ItemGroup>
-			<DeploySkinFiles Include="$(MainProjectPath)/Skins/**/*.ascx" />
-            <DeploySkinFiles Include="$(MainProjectPath)/Skins/**/*.xml" />
-            <DeploySkinFiles Include="$(MainProjectPath)/Skins/**/*.xslt" />
-			<DeploySkinFiles Include="$(MainProjectPath)/Skins/**/*.css" />
-			<DeploySkinFiles Include="$(MainProjectPath)/Skins/**/*.resx" />
-			<DeploySkinFiles Include="$(MainProjectPath)/Skins/**/*.js" />
-			<DeploySkinFiles Include="$(MainProjectPath)/Skins/**/*.jpg" />
-			<DeploySkinFiles Include="$(MainProjectPath)/Skins/**/*.png" />
-			<DeploySkinFiles Include="$(MainProjectPath)/Skins/**/*.gif" />
-            <DeploySkinFiles Include="$(MainProjectPath)/Skins/**/*.yml" />
-			<DeploySkinFiles Include="$(MainProjectPath)/Skins/**/*.json" />
-            <DeploySkinFiles Include="$(MainProjectPath)/Skins/**/fonts/*.eot" />
-            <DeploySkinFiles Include="$(MainProjectPath)/Skins/**/fonts/*.svg" />
-            <DeploySkinFiles Include="$(MainProjectPath)/Skins/**/fonts/*.ttf" />
-            <DeploySkinFiles Include="$(MainProjectPath)/Skins/**/fonts/*.woff" />
-            <DeploySkinFiles Include="$(MainProjectPath)/Skins/**/fonts/*.woff2" />
-		</ItemGroup>
+  <Import Project="__Settings.targets" Condition=" '$(BuildSettingsImported)' == '' " />
+  <Import Project="Bundle.targets" Condition=" '$(BundleImported)' == '' " />
+  <Import Project="Tests.targets" Condition=" '$(TestsImported)' == '' "/>
 
-		<!-- Declare container files -->
-		<ItemGroup>
-			<DeployContainerFiles Include="$(MainProjectPath)/Containers/**/*.ascx" />
-			<DeployContainerFiles Include="$(MainProjectPath)/Containers/**/*.css" />
-			<DeployContainerFiles Include="$(MainProjectPath)/Containers/**/*.resx" />
-			<DeployContainerFiles Include="$(MainProjectPath)/Containers/**/*.js" />
-			<DeployContainerFiles Include="$(MainProjectPath)/Containers/**/*.jpg" />
-			<DeployContainerFiles Include="$(MainProjectPath)/Containers/**/*.png" />
-			<DeployContainerFiles Include="$(MainProjectPath)/Containers/**/*.gif" />
-		</ItemGroup>
+  <PropertyGroup>
+    <!-- Enable local deploy by default (standalone) -->
+    <EnableLocalDeploy Condition=" '$(EnableLocalDeploy)' == '' ">true</EnableLocalDeploy>
+  </PropertyGroup>
 
-		<!-- Declare menu files -->
-        <ItemGroup>
-            <DeployMenuFiles Include="$(MainProjectPath)/Menus/**/*.xslt" />
-			<DeployMenuFiles Include="$(MainProjectPath)/Menus/**/*.cshtml" />
-            <DeployMenuFiles Include="$(MainProjectPath)/Menus/**/*.txt" />
+  <Target Name="LocalDeploy" Condition=" '$(EnableLocalDeploy)' == 'true' " DependsOnTargets="Bundle;Tests">
+
+    <!-- Declare skin files -->
+    <ItemGroup>
+      <DeploySkinFiles Include="$(MainProjectPath)/Skins/**/*.ascx" />
+      <DeploySkinFiles Include="$(MainProjectPath)/Skins/**/*.xml" />
+      <DeploySkinFiles Include="$(MainProjectPath)/Skins/**/*.xslt" />
+      <DeploySkinFiles Include="$(MainProjectPath)/Skins/**/*.css" />
+      <DeploySkinFiles Include="$(MainProjectPath)/Skins/**/*.resx" />
+      <DeploySkinFiles Include="$(MainProjectPath)/Skins/**/*.js" />
+      <DeploySkinFiles Include="$(MainProjectPath)/Skins/**/*.jpg" />
+      <DeploySkinFiles Include="$(MainProjectPath)/Skins/**/*.png" />
+      <DeploySkinFiles Include="$(MainProjectPath)/Skins/**/*.gif" />
+      <DeploySkinFiles Include="$(MainProjectPath)/Skins/**/*.yml" />
+      <DeploySkinFiles Include="$(MainProjectPath)/Skins/**/*.json" />
+      <DeploySkinFiles Include="$(MainProjectPath)/Skins/**/fonts/*.eot" />
+      <DeploySkinFiles Include="$(MainProjectPath)/Skins/**/fonts/*.svg" />
+      <DeploySkinFiles Include="$(MainProjectPath)/Skins/**/fonts/*.ttf" />
+      <DeploySkinFiles Include="$(MainProjectPath)/Skins/**/fonts/*.woff" />
+      <DeploySkinFiles Include="$(MainProjectPath)/Skins/**/fonts/*.woff2" />
+    </ItemGroup>
+
+    <!-- Declare container files -->
+    <ItemGroup>
+      <DeployContainerFiles Include="$(MainProjectPath)/Containers/**/*.ascx" />
+      <DeployContainerFiles Include="$(MainProjectPath)/Containers/**/*.css" />
+      <DeployContainerFiles Include="$(MainProjectPath)/Containers/**/*.resx" />
+      <DeployContainerFiles Include="$(MainProjectPath)/Containers/**/*.js" />
+      <DeployContainerFiles Include="$(MainProjectPath)/Containers/**/*.jpg" />
+      <DeployContainerFiles Include="$(MainProjectPath)/Containers/**/*.png" />
+      <DeployContainerFiles Include="$(MainProjectPath)/Containers/**/*.gif" />
+    </ItemGroup>
+
+    <!-- Declare menu files -->
+    <ItemGroup>
+      <DeployMenuFiles Include="$(MainProjectPath)/Menus/**/*.xslt" />
+      <DeployMenuFiles Include="$(MainProjectPath)/Menus/**/*.cshtml" />
+      <DeployMenuFiles Include="$(MainProjectPath)/Menus/**/*.txt" />
 			<DeployMenuFiles Include="$(MainProjectPath)/Menus/**/*.xml" />
-            <DeployMenuFiles Include="$(MainProjectPath)/Menus/**/*.min.css" />
-            <DeployMenuFiles Include="$(MainProjectPath)/Menus/**/*.min.js" />
-        </ItemGroup>
+      <DeployMenuFiles Include="$(MainProjectPath)/Menus/**/*.min.css" />
+      <DeployMenuFiles Include="$(MainProjectPath)/Menus/**/*.min.js" />
+    </ItemGroup>
 
-        <!-- Declare module files -->
-        <ItemGroup>
-            <DeployLayoutManagerFiles Include="../R7.Epsilon.LayoutManager/**/*.ascx" />
-            <DeployLayoutManagerFiles Include="../R7.Epsilon.LayoutManager/**/*.css" />
-            <DeployLayoutManagerFiles Include="../R7.Epsilon.LayoutManager/**/*.resx" />
-            <DeployLayoutManagerFiles Include="../R7.Epsilon.LayoutManager/**/*.js" />
-            <DeployLayoutManagerFiles Include="../R7.Epsilon.LayoutManager/**/*.jpg" />
-            <DeployLayoutManagerFiles Include="../R7.Epsilon.LayoutManager/**/*.png" />
-            <DeployLayoutManagerFiles Include="../R7.Epsilon.LayoutManager/**/*.gif" />
-        </ItemGroup>
+    <!-- Declare binaries -->
+    <ItemGroup>
+      <DeployBinaryFiles Include="$(MainProjectOutputPath)/$(MainProjectName)*.dll" />
+      <DeployBinaryFiles Include="$(MainProjectOutputPath)/$(MainProjectName)*.pdb" Condition=" '$(Configuration)' == 'Debug' "/>
+    </ItemGroup>
 
-        <!-- Declare binaries -->
-        <ItemGroup> 
-            <DeployBinaryFiles Include="$(MainProjectOutputPath)/R7.Epsilon*.dll" />
-            <DeployBinaryFiles Include="$(MainProjectOutputPath)/R7.Epsilon*.pdb" Condition=" '$(Configuration)' == 'Debug' "/>
-            <DeployBinaryFiles Include="$(MainProjectOutputPath)/YamlDotNet.dll" />
-		</ItemGroup>
+    <!-- Declare external JS files -->
+    <ItemGroup>
+      <DeployExternalJsFiles Include="$(NodeModulesPath)/bootstrap/dist/js/bootstrap.bundle.min.js" />
+      <DeployExternalJsFiles Include="$(NodeModulesPath)/bootstrap/dist/js/bootstrap.bundle.min.js.map" Condition=" '$(Configuration)' == 'Debug' " />
+      <DeployExternalJsFiles Include="$(NodeModulesPath)/clipboard/dist/clipboard.min.js" />
+    </ItemGroup>
 
-		<!-- Cleanup -->
-		<RemoveDir Directories="$(TmpDir)" />
+    <!-- Declare external CSS files -->
+    <ItemGroup>
+      <DeployExternalCssFiles Include="$(NodeModulesPath)/bootstrap/dist/css/bootstrap.min.css" />
+      <DeployExternalCssFiles Include="$(NodeModulesPath)/bootstrap/dist/css/bootstrap.min.css.map" Condition=" '$(Configuration)' == 'Debug' " />
+    </ItemGroup>
 
-		<!-- Copy files to tmp dirs -->
-		<Copy SourceFiles="@(DeploySkinFiles)" DestinationFolder="$(TmpDir)/Skins/%(RecursiveDir)" />
-		<Copy SourceFiles="@(DeployContainerFiles)" DestinationFolder="$(TmpDir)/Containers/%(RecursiveDir)" />
-		<Copy SourceFiles="@(DeployMenuFiles)" DestinationFolder="$(TmpDir)/Menus/%(RecursiveDir)" />
-        <Copy SourceFiles="@(DeployLayoutManagerFiles)" DestinationFolder="$(TmpDir)/Modules/R7.Epsilon.LayoutManager/%(RecursiveDir)" />
-		
-		<!-- declare files to move -->
-		<ItemGroup>
-			<SkinMoveFiles Include="$(TmpDir)/Skins/**/*.*" />	
-		</ItemGroup>
-	
-		<ItemGroup>	
-			<ContainerMoveFiles Include="$(TmpDir)/Containers/**/*.*" />
-		</ItemGroup>
+    <!-- Cleanup -->
+    <RemoveDir Directories="$(TmpDir)" />
 
-		<ItemGroup>   
-            <MenuMoveFiles Include="$(TmpDir)/Menus/**/*.*" />
-        </ItemGroup>
+    <!-- Copy files to tmp dirs -->
+    <Copy SourceFiles="@(DeploySkinFiles)" DestinationFolder="$(TmpDir)/Skins/%(RecursiveDir)" />
+    <Copy SourceFiles="@(DeployContainerFiles)" DestinationFolder="$(TmpDir)/Containers/%(RecursiveDir)" />
+    <Copy SourceFiles="@(DeployMenuFiles)" DestinationFolder="$(TmpDir)/Menus/%(RecursiveDir)" />
 
-        <ItemGroup> 
-            <ModuleMoveFiles Include="$(TmpDir)/Modules/**/*.*" />
-        </ItemGroup>
+    <!-- Declare files to move -->
+    <ItemGroup>
+      <SkinMoveFiles Include="$(TmpDir)/Skins/**/*.*" />
+    </ItemGroup>
+    <ItemGroup>
+      <ContainerMoveFiles Include="$(TmpDir)/Containers/**/*.*" />
+    </ItemGroup>
+    <ItemGroup>
+      <MenuMoveFiles Include="$(TmpDir)/Menus/**/*.*" />
+    </ItemGroup>
 
-		<!-- Deploy files -->
-		<Copy SourceFiles="@(SkinMoveFiles)" DestinationFolder="$(DnnSkinsPath)/R7.Epsilon/%(RecursiveDir)" SkipUnchangedFiles="true" />
-		<Copy SourceFiles="@(ContainerMoveFiles)" DestinationFolder="$(DnnContainersPath)/R7.Epsilon/%(RecursiveDir)" SkipUnchangedFiles="true" />
-		<Copy SourceFiles="@(MenuMoveFiles)" DestinationFolder="$(DnnMenusPath)/R7.Epsilon/%(RecursiveDir)" SkipUnchangedFiles="true" />
-		<Copy SourceFiles="@(ModuleMoveFiles)" DestinationFolder="$(DnnModulesPath)/R7.Epsilon/%(RecursiveDir)" SkipUnchangedFiles="true" />
+    <!-- Deploy files -->
+    <Copy SourceFiles="@(SkinMoveFiles)" DestinationFolder="$(ProjectSkinsPath)/%(RecursiveDir)" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(ContainerMoveFiles)" DestinationFolder="$(ProjectContainersPath)/%(RecursiveDir)" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(MenuMoveFiles)" DestinationFolder="$(ProjectMenusPath)/%(RecursiveDir)" SkipUnchangedFiles="true" />
 
-		<!-- Copy binaries -->
-		<Copy SourceFiles="@(DeployBinaryFiles)" DestinationFolder="$(DnnBinPath)" SkipUnchangedFiles="true" />
-        
-		<!-- Cleanup -->
-		<RemoveDir Directories="$(TmpDir)" />
+    <!-- Deploy external files -->
+    <Copy SourceFiles="@(DeployExternalJsFiles)" DestinationFolder="$(ProjectSkinsPath)/js/" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(DeployExternalCssFiles)" DestinationFolder="$(ProjectSkinsPath)/css/" SkipUnchangedFiles="true" />
 
-	</Target>
+    <!-- Deploy config files -->
+    <Copy SourceFiles="$(MainProjectPath)/Skins/R7.Epsilon.development.yml" DestinationFiles="$(DnnLocalDeployPath)/Portals/0/R7.Epsilon.yml" SkipUnchangedFiles="true" />
+
+    <!-- Copy binaries -->
+    <Copy SourceFiles="@(DeployBinaryFiles)" DestinationFolder="$(DnnBinPath)" SkipUnchangedFiles="true" />
+
+    <!-- Cleanup -->
+    <RemoveDir Directories="$(TmpDir)" />
+
+  </Target>
 </Project>

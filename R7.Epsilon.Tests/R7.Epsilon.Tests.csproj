@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\xunit.runner.visualstudio.2.3.1\build\net20\xunit.runner.visualstudio.props" Condition="Exists('..\packages\xunit.runner.visualstudio.2.3.1\build\net20\xunit.runner.visualstudio.props')" />
   <PropertyGroup>
@@ -57,19 +57,12 @@
       <Project>{F7F17F2A-6F32-4AC4-B2EE-1C637D0A26EF}</Project>
       <Name>R7.Epsilon</Name>
     </ProjectReference>
-    <ProjectReference Include="..\R7.Epsilon.LayoutManager\R7.Epsilon.LayoutManager.csproj">
-      <Project>{E1127917-284E-4960-94A2-E357E2BDAC76}</Project>
-      <Name>R7.Epsilon.LayoutManager</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DefaultPortalConfigTests.cs" />
-    <Compile Include="Skins\Layouts\LayoutTests.cs" />
-    <Compile Include="Components\LayoutValidatorTests.cs" />
+    <Compile Include="DevPortalConfigTests.cs" />
+    <Compile Include="Components\EpsilonUrlHelperTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Skins\" />
-    <Folder Include="Skins\Layouts\" />
-    <Folder Include="Components\" />
   </ItemGroup>
 </Project>

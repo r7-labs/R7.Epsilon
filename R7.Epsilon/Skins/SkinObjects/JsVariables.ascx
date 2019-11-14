@@ -5,11 +5,14 @@ var epsilon = {
     tabId:<%= PortalSettings.ActiveTab.TabID %>,
     tabName:'<%= PortalSettings.ActiveTab.TabName %>',
     portalId:<%= PortalSettings.Current.PortalId %>,
+	portalAlias:'<%= PortalSettings.Current.PortalAlias.HTTPAlias %>',
     breadCrumbs:<%= JsBreadCrumbsList %>,
     breadCrumbsRemoveLastLink:<%= JsBreadCrumbsRemoveLastLink %>,
-	layoutManagerUrl:'<%= LayoutManagerUrl %>',
-    localization:{<%= LocalizationResources %>},
+	localization:{<%= LocalizationResources %>},
     queryParams:{<%= QueryParams %>},
-	menuMinHeaders:<%= R7.Epsilon.Components.EpsilonConfig.Instance.MenuMinHeaders %>
+	enablePopups:<%= PortalSettings.EnablePopUps.ToString ().ToLowerInvariant() %>,
+	inPopup:<%= DotNetNuke.Common.Utilities.UrlUtils.InPopUp ().ToString ().ToLowerInvariant () %>,
+	cookiePrefix: '<%= R7.Epsilon.Components.Const.COOKIE_PREFIX %>',
+	isEditMode:<%= (PortalSettings.UserMode == PortalSettings.Mode.Edit).ToString().ToLowerInvariant () %>
 };
 </script>

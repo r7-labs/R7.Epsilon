@@ -1,10 +1,10 @@
 //
-//  FeedbackButton.ascx.cs
+//  File: FeedbackButton.ascx.cs
+//  Project: R7.Epsilon
 //
-//  Author:
-//       Roman M. Yagodin <roman.yagodin@gmail.com>
+//  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2015-2018 Roman M. Yagodin
+//  Copyright (c) 2015-2019 Roman M. Yagodin, R7.Labs
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -53,25 +53,19 @@ namespace R7.Epsilon.Skins.SkinObjects
                                                  .Select (entry => entry.Value)
                                                  .FirstOrDefault (module => module.ModuleDefinition.DefinitionName == Config.Feedback.ModuleDefinitionName);
             if (feedbackModule != null) {
-                string feedbackUrl;
-                if (Config.Feedback.OpenInPopup && PortalSettings.Current.EnablePopUps && !A11yHelper.GetA11y(Request) && !(EpsilonUrlHelper.IsIeBrowser (Request) && !EpsilonUrlHelper.IsEdgeBrowser (Request))) {
-                    // show feedback module
-                    feedbackUrl = UrlUtils.PopUpUrl (Globals.NavigateURL (feedbackModule.TabID, "", "mid", feedbackModule.ModuleID.ToString ()),
-                                                     this, PortalSettings.Current, false, false, 550, 950, false, "");
-                }
-                else {
-                    // show entire feedback page
-                    feedbackUrl = Globals.NavigateURL (feedbackModule.TabID);
-                    // popups disabled, open feedback in new window
-                    linkFeedback.Target = "_blank";
+                var feedbackUrl = Globals.NavigateURL (feedbackModule.TabID);
+                var openInPopup = Config.Feedback.OpenInPopup;
+
+                if (EpsilonUrlHelper.IsIeBrowser (Request) && !EpsilonUrlHelper.IsEdgeBrowser (Request)) {
+                    openInPopup = false;
                 }
 
-                linkFeedback.CssClass = "unselectable " + CssClass;
-                linkFeedback.ToolTip = Localizer.GetString("FeedBackButton.Tooltip");
-                linkFeedback.Text = Localizer.GetString("FeedBackButton.Text");
-                linkFeedback.Attributes.Add("data-feedback-url", feedbackUrl);
-                linkFeedback.Attributes.Add("onclick", string.Format("javascript:return skinSetupFeedbackUrl(jQuery,this,{0})",
-                                                                       feedbackModule.ModuleID));
+                linkFeedback.CssClass = CssClass;
+                linkFeedback.ToolTip = T.GetString ("FeedbackButton_Tooltip.Text");
+                linkFeedback.Attributes.Add ("href", "#");
+                linkFeedback.Attributes.Add ("data-feedback-url", feedbackUrl);
+                linkFeedback.Attributes.Add ("data-feedback-open-in-popup", openInPopup.ToString ().ToLowerInvariant ());
+                linkFeedback.Attributes.Add ("onclick", $"skinOpenFeedback(event,this,jQuery,{feedbackModule.ModuleID})");
             }
             else {
                 // no feedback module found, hide the button

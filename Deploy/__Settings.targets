@@ -1,0 +1,42 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+
+  <!-- Import MSBuild.Community.Tasks -->
+  <Import Project="../packages/MSBuildTasks.1.5.0.235/tools/MSBuild.Community.Tasks.Targets" />
+
+  <!-- Main settings -->
+  <PropertyGroup>
+    <PackageName>R7.Epsilon</PackageName>
+    <MainProjectName>R7.Epsilon</MainProjectName>
+    <MainProjectPath>../$(MainProjectName)</MainProjectPath>
+    <NodeModulesPath>../node_modules</NodeModulesPath>
+    <DnnLocalDeployPath Condition=" '$(OS)' == 'Unix' ">$(HOME)/mnt/dnn8</DnnLocalDeployPath>
+    <DnnLocalDeployPath Condition=" '$(OS)' != 'Unix' ">C:\Dotnetnuke804</DnnLocalDeployPath>
+    <!-- Empty - place module folders directly in DesktopModules -->
+    <!-- /MVC - place module folders directly in DesktopModules/MVC -->
+    <!-- /$(MainProjectName) - place module folders in DesktopModules/$(MainProjectName) -->
+    <!-- /MVC/$(MainProjectName) - place module folders in DesktopModules/MVC/$(MainProjectName) -->
+    <ProjectModulesPathPrefix>/$(MainProjectName)</ProjectModulesPathPrefix>
+  </PropertyGroup>
+
+  <!-- Derieved settings -->
+  <PropertyGroup>
+    <MainProjectOutputPath>$(MainProjectPath)/bin/$(Configuration)</MainProjectOutputPath>
+    <DnnBinPath>$(DnnLocalDeployPath)/bin</DnnBinPath>
+    <DnnSkinsPath>$(DnnLocalDeployPath)/Portals/_default/Skins</DnnSkinsPath>
+    <DnnContainersPath>$(DnnLocalDeployPath)/Portals/_default/Containers</DnnContainersPath>
+    <DnnMenusPath>$(DnnLocalDeployPath)/DesktopModules/DDRMenu</DnnMenusPath>
+    <DnnModulesPath>$(DnnLocalDeployPath)/DesktopModules</DnnModulesPath>
+    <DnnJsLibrariesPath>$(DnnLocalDeployPath)/Resources/Libraries</DnnJsLibrariesPath>
+    <ProjectSkinsPath>$(DnnSkinsPath)/$(MainProjectName)</ProjectSkinsPath>
+    <ProjectContainersPath>$(DnnContainersPath)/$(MainProjectName)</ProjectContainersPath>
+    <ProjectMenusPath>$(DnnMenusPath)</ProjectMenusPath>
+    <ProjectModulesPath>$(DnnModulesPath)$(ProjectModulesPathPrefix)</ProjectModulesPath>
+  </PropertyGroup>
+
+  <!-- Internal settings -->
+  <PropertyGroup>
+    <PackageOutputPath>$(MSBuildProjectDirectory)/bin/Deploy</PackageOutputPath>
+    <TmpDir>bin/tmp</TmpDir>
+    <BuildSettingsImported>true</BuildSettingsImported>
+  </PropertyGroup>
+</Project>

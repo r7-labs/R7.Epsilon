@@ -1,10 +1,10 @@
 ﻿//
-//  EpsilonSkinObjectBase.cs
+//  File: EpsilonSkinObjectBase.cs
+//  Project: R7.Epsilon
 //
-//  Author:
-//       Roman M. Yagodin <roman.yagodin@gmail.com>
+//  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2015-2016 Roman M. Yagodin
+//  Copyright (c) 2014-2019 Roman M. Yagodin, R7.Labs
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -19,25 +19,25 @@
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+using System.Web.UI;
 using DotNetNuke.Common;
+using DotNetNuke.Entities.Tabs;
 using DotNetNuke.UI.Skins;
 using R7.Epsilon.Components;
 
 namespace R7.Epsilon.Skins.SkinObjects
 {
-    public class EpsilonSkinObjectBase : SkinObjectBase, ILocalizableControl, IConfigurableControl
+    public class EpsilonSkinObjectBase : SkinObjectBase, IEpsilonSkinPart
     {
-        #region ILocalizableControl implementation
+        #region IEpsilonSkinPart implementation
+
+        public TabInfo ActiveTab => PortalSettings.ActiveTab;
 
         private ControlLocalizer localizer;
 
-        public ControlLocalizer Localizer {
+        public ControlLocalizer T {
             get { return localizer ?? (localizer = new ControlLocalizer (this)); }
         }
-
-        #endregion
-
-        #region IConfigurableControl implementation
 
         private EpsilonPortalConfig config;
 
@@ -53,6 +53,23 @@ namespace R7.Epsilon.Skins.SkinObjects
                     Globals.NavigateURL (PortalSettings.HomeTabId) : Globals.AddHTTP (PortalSettings.PortalAlias.HTTPAlias);
             }
         }
+
+        private EpsilonSkinBase skin;
+
+        public EpsilonSkinBase Skin {
+            get {
+                if (skin == null) {
+                    Control control = this;
+                    while (!(control.Parent is EpsilonSkinBase)) {
+                        if (control.Parent == null) {
+                            return null;
+                        }
+                        control = control.Parent;
+                    }
+                    skin = (EpsilonSkinBase) control.Parent;
+                }
+                return skin;
+            }
+        }
     }
 }
-

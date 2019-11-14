@@ -1,0 +1,115 @@
+﻿@using System.Dynamic;
+@using System.Linq;
+@using System.Collections.Generic;
+@using DotNetNuke.Web.DDRMenu;
+@using DotNetNuke.Common;
+@using DotNetNuke.Entities.Portals;
+@using DotNetNuke.Services.Localization;
+@inherits DotNetNuke.Web.Razor.DotNetNukeWebPage<dynamic>
+
+@functions {
+	string NodeActiveCssClass (MenuNode node)
+	{
+		return (node.Selected) ? "active" : string.Empty;
+	}
+
+	string NodeDisabledCssClass (MenuNode node)
+	{
+		return !node.Enabled ? "disabled" : string.Empty;
+	}
+
+	string NodeCssClasses (MenuNode node)
+	{
+		return (NodeActiveCssClass (node) + " " + NodeDisabledCssClass (node)).Trim ();
+	}
+
+	MenuNode FindCurrentNodeRecursive (MenuNode node)
+	{
+		if (node.Selected) {
+			return node;
+		}
+
+		foreach (var node1 in node.Children) {
+			var node2 = FindCurrentNodeRecursive (node1);
+			if (node2 != null) {
+				return node2;
+			}
+		}
+
+		return null;
+	}
+
+	// TODO: Implement via NodeManipulator?
+	IList<MenuNode> BreadcrumbNodes (MenuNode root)
+	{
+		var currentNode = FindCurrentNodeRecursive (root);
+		var nodes = new List<MenuNode> ();
+		while (currentNode != null) {
+			nodes.Insert (0, currentNode);
+			currentNode = currentNode.Parent;
+		}
+
+		return nodes;
+	}
+
+	string GetString (string resourceKey)
+	{
+		var resourceFileRoot = "~/Portals/_default/Skins/R7.Epsilon/App_LocalResources/Fake.ascx.resx";
+		return Localization.GetString (resourceKey, resourceFileRoot);
+	}
+
+	string GetNodeUrl (MenuNode node)
+	{
+		// TODO: Apply URL formats here
+		if (string.IsNullOrEmpty (node.Url) && node.TabId == -1) {
+			return Globals.NavigateURL (PortalSettings.Current.HomeTabId);
+		}
+
+		return node.Url;
+	}
+}
+
+@helper RenderDropdownFor(MenuNode parentNode) {
+	<div class="dropdown-menu" aria-labelledby="btnDropCrumb">
+		@foreach (var node in parentNode.Children) {
+			<a class="dropdown-item @NodeCssClasses(node)" href="@GetNodeUrl(node)">@node.Text</a>
+		}
+	</div>
+}
+
+@helper RenderBreadcrumb(MenuNode root) {
+	// TODO: Implement schema.org markup
+	var nodes = BreadcrumbNodes (root);
+	if (nodes.Count > 0) {
+        <nav aria-label="breadcrumb">
+			<ol class="breadcrumb">
+				@foreach (var node in nodes) {
+					var text = node.Text;
+					if (node == root) {
+						text = GetString ("DropCrumb_Home.Text");
+					}
+					<li class="breadcrumb-item @NodeCssClasses(node)">
+						@if (node.Selected) {
+							if (node.Children.Count > 0) {
+								<span class="dropdown">
+									<a class="dropdown-toggle" href="#" type="button" role="button" id="btnDropCrumb" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										@Html.Raw(node.Text)
+									</a>
+									@RenderDropdownFor(node)
+								</span>
+							}
+							else {
+								@Html.Raw(text)
+							}
+						}
+						else {
+							<a class="@NodeCssClasses(node)" href="@GetNodeUrl(node)">@Html.Raw(text)</a>
+						}
+					</li>
+				}
+			</ol>
+		</nav>
+	}
+}
+
+@RenderBreadcrumb(Model.Source.root)

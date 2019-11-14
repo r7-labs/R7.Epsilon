@@ -41,7 +41,7 @@
 				skinSplitSubMenu(jQuery, &quot;<xsl:value-of select="$ControlID" />&quot;, <xsl:value-of select="$subMenuColumns"/>);
 			});
 	    </script>
-        <ul class="megamenu">
+        <ul class="megamenu navbar-nav">
             <xsl:attribute name="id"><xsl:value-of select="$ControlID" /></xsl:attribute>
             <xsl:apply-templates select="node">
 				<xsl:with-param name="level" select="0"/>
@@ -53,8 +53,8 @@
 		<xsl:choose>
 			<xsl:when test="$level=0">
 				<li>
-					<xsl:attribute name="class">level0</xsl:attribute>
-                    <a>
+					<xsl:attribute name="class">level0 nav-item</xsl:attribute>
+                    <a class="nav-link">
 						<xsl:call-template name="menuLink">
                             <xsl:with-param name="enabled" select="$enableTopLinks = 1 and not ($hamburgerMenu = 1)" />
                         </xsl:call-template>
@@ -70,6 +70,7 @@
                             </xsl:otherwise>
                         </xsl:choose>
 					</a>
+					<!--
 					<xsl:if test="node">
 						<div class="sub">
 							<xsl:apply-templates select="node">
@@ -81,6 +82,7 @@
 							</a>
 						</div>
 					</xsl:if>
+					-->
 				</li>
 			</xsl:when>
 			<xsl:when test="$level=1">

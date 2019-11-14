@@ -1,9 +1,11 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.Skins.SkinObjects.EpsilonSkinObjectBase" %>
-<%@ OutputCache Duration="1200" VaryByParam="TabId;Language" %>
+<%@ Import Namespace="R7.Epsilon.Components" %>
+
+<% if (!Skin.Options.DisableSocialShare) { %>
 <%
-var vk = Config.SocialNetworks.FirstOrDefault (n => n.Name == "VKontakte" && n.ShareEnabled);
-var fb = Config.SocialNetworks.FirstOrDefault (n => n.Name == "Facebook" && n.ShareEnabled);
-var tw = Config.SocialNetworks.FirstOrDefault (n => n.Name == "Twitter" && n.ShareEnabled);
+var vk = Config.SocialGroups.FirstOrDefault (g => g.Type == SocialGroupType.VKontakte && g.ShareEnabled);
+var fb = Config.SocialGroups.FirstOrDefault (g => g.Type == SocialGroupType.Facebook && g.ShareEnabled);
+var tw = Config.SocialGroups.FirstOrDefault (g => g.Type == SocialGroupType.Twitter && g.ShareEnabled);
 %>
 <%-- Facebook Like --%><% if (fb != null) { %>
 <script>(function(d, s, id) {
@@ -32,6 +34,8 @@ setTimeout(function() {
     document.getElementById("vk_api_transport").appendChild(el);
 },0);
 </script><% } %>
+<% } %>
+
 <% if (Config.Analytics.UseSputnik) { %>
 <script type="text/javascript">
   (function(d, t, p) {

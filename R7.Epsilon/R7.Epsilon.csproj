@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>R7.Epsilon</RootNamespace>
     <AssemblyName>R7.Epsilon</AssemblyName>
-    <ReleaseVersion>1.16</ReleaseVersion>
+    <ReleaseVersion>2.0</ReleaseVersion>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -70,17 +70,12 @@
     <None Include="Skins\App_LocalResources\SharedResources.ru-RU.resx" />
     <None Include="R7.Epsilon.csproj" />
     <None Include="R7.Epsilon.dnn" />
-    <None Include="Skins\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Skins\skin.doctype.xml">
     </None>
     <None Include="lib\ClientDependency.Core.dll" />
     <None Include="lib\DotNetNuke.Web.DDRMenu.dll" />
-    <None Include="Skins\R7.Epsilon.yml" />
+    <None Include="Skins\R7.Epsilon.development.yml" />
     <None Include="lib\README.md" />
-    <None Include="Skins\Layouts\Universal.xml" />
-    <None Include="Skins\Layouts\Default.xml" />
-    <None Include="Skins\Layouts\Default_A11y.xml" />
-    <None Include="Skins\Layouts\Home.xml" />
     <None Include="Menus\Mega2Epsilon\Mega2Epsilon.xslt" />
     <None Include="Menus\Mega2Epsilon\menudef.xml" />
     <None Include="Skins\koi.json" />
@@ -90,24 +85,14 @@
     <Compile Include="Models\ModelHelper.cs" />
     <Compile Include="Components\ControllerBase.cs" />
     <Compile Include="Components\ControlLocalizer.cs" />
-    <Compile Include="Components\IConfigurableControl.cs" />
-    <Compile Include="Components\ILocalizableControl.cs" />
     <Compile Include="Components\Utils.cs" />
     <Compile Include="Components\EpsilonPortalConfig.cs" />
     <Compile Include="Components\EpsilonConfig.cs" />
-    <Compile Include="Models\DynamicPane.cs" />
-    <Compile Include="Models\Layout.cs" />
-    <Compile Include="Components\MarkupParser.cs" />
-    <Compile Include="Components\LayoutValidator.cs" />
-    <Compile Include="Models\PaneEqualityComparer.cs" />
-    <Compile Include="Components\LayoutManager.cs" />
-    <Compile Include="Skins\Custom.ascx.cs">
-      <DependentUpon>Custom.ascx</DependentUpon>
-    </Compile>
+    <Compile Include="Components\SocialGroupType.cs" />
+    <Compile Include="Components\SocialGroupHelper.cs" />
+    <Compile Include="Components\SearchEngineType.cs" />
+    <Compile Include="Components\SearchEngineHelper.cs" />
     <Compile Include="Components\Const.cs" />
-    <Compile Include="Components\LayoutHelper.cs" />
-    <Compile Include="Models\LayoutFile.cs" />
-    <Compile Include="Models\LayoutFileEqualityComparer.cs" />
     <Compile Include="ControlExtensions\GridViewExtensions.cs" />
     <Compile Include="Skins\EpsilonSkinBase.cs" />
     <Compile Include="Containers\EpsilonContainerBase.cs" />
@@ -117,20 +102,11 @@
     <Compile Include="Skins\SkinObjects\FeedbackButton.ascx.cs">
       <DependentUpon>FeedbackButton.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Skins\SkinObjects\FooterContent.ascx.cs">
-      <DependentUpon>FooterContent.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Skins\SkinObjects\Founders.ascx.cs">
-      <DependentUpon>Founders.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Skins\SkinObjects\HeadersMenu.ascx.cs">
-      <DependentUpon>HeadersMenu.ascx</DependentUpon>
+    <Compile Include="Skins\SkinObjects\CustomContent.ascx.cs">
+      <DependentUpon>CustomContent.ascx</DependentUpon>
     </Compile>
     <Compile Include="Skins\SkinObjects\JsVariables.ascx.cs">
       <DependentUpon>JsVariables.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Skins\SkinObjects\LocalMenu.ascx.cs">
-      <DependentUpon>LocalMenu.ascx</DependentUpon>
     </Compile>
     <Compile Include="Skins\SkinObjects\PageHeader.ascx.cs">
       <DependentUpon>PageHeader.ascx</DependentUpon>
@@ -144,38 +120,29 @@
     <Compile Include="Skins\SkinObjects\SecondaryMenu.ascx.cs">
       <DependentUpon>SecondaryMenu.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Skins\SkinObjects\SocialGroups.ascx.cs">
-      <DependentUpon>SocialGroups.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Skins\SkinObjects\EpsilonSkinObjectBase.cs" />
     <Compile Include="Skins\SkinObjects\EpsilonMenuBase.cs" />
-    <Compile Include="Components\CacheHelper.cs" />
     <Compile Include="Components\A11yHelper.cs" />
     <Compile Include="Components\EpsilonUrlHelper.cs" />
-    <Compile Include="Skins\PopupSkin.ascx.cs">
-      <DependentUpon>PopupSkin.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Skins\SkinObjects\Banners\BannerLoader.ascx.cs">
       <DependentUpon>BannerLoader.ascx</DependentUpon>
     </Compile>
     <Compile Include="Skins\SkinObjects\Banners\BannerWrapper.ascx.cs">
       <DependentUpon>BannerWrapper.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Skins\SkinObjects\Includes.ascx.cs">
+      <DependentUpon>Includes.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Skins\SkinObjects\Banners\IBannerControl.cs" />
     <Compile Include="Components\EpsilonNodeManipulator.cs" />
+    <Compile Include="Skins\EpsilonSkinOptions.cs" />
+    <Compile Include="Skins\IEpsilonSkinPart.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Containers\Blank.ascx" />
     <Content Include="Containers\Default.ascx" />
     <Content Include="Skins\Edit.ascx" />
-    <Content Include="Skins\Home.ascx" />
     <Content Include="Skins\PopupSkin.ascx" />
-    <Content Include="Skins\css\bootstrap-theme.min.css" />
-    <Content Include="Skins\css\bootstrap.min.css" />
-    <Content Include="Skins\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Skins\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Skins\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Skins\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Skins\images\error.png" />
     <Content Include="Skins\images\error.svg" />
     <Content Include="Skins\images\loading.gif" />
@@ -184,13 +151,10 @@
     <Content Include="Skins\images\video-play.png" />
     <Content Include="Skins\images\video-play.svg" />
     <Content Include="Skins\js\bootstrap-image-gallery.min.js" />
-    <Content Include="Skins\js\bootstrap.min.js" />
     <Content Include="Skins\js\jquery.blueimp-gallery.min.js" />
     <Content Include="Skins\images\logo-template.png" />
     <Content Include="Skins\images\logo-template.svg" />
     <Content Include="Skins\images\button_100x100.png" />
-    <Content Include="Skins\images\button_100x100.svg" />
-    <Content Include="Skins\Universal.ascx" />
     <Content Include="Containers\Default_H3.ascx" />
     <Content Include="Containers\Message_Warning.ascx" />
     <Content Include="Containers\Message_Info.ascx" />
@@ -204,18 +168,9 @@
     <Content Include="Skins\js\skin.js" />
     <Content Include="Skins\images\logo_template_133x100.png" />
     <Content Include="Skins\images\logo_template_133x100.svg" />
-    <Content Include="Skins\images\social_32x32.png" />
-    <Content Include="Skins\images\social_32x32.svg" />
     <Content Include="Skins\images\logo_template_178x100.xcf" />
-    <Content Include="Skins\css\a11y-palette.scss" />
-    <Content Include="Skins\css\a11y-skin.scss" />
     <Content Include="Skins\js\a11y.js" />
     <Content Include="Skins\js\menu.js" />
-    <Content Include="Skins\css\a11y-layout.scss" />
-    <Content Include="Skins\images\social_mono_32x32.png" />
-    <Content Include="Skins\images\social_mono_32x32.svg" />
-    <Content Include="Skins\images\functions_mono_32x32.png" />
-    <Content Include="Skins\images\functions_mono_32x32.svg" />
     <Content Include="Skins\css\blueimp.scss" />
     <Content Include="Containers\Default_H4.ascx" />
     <Content Include="Containers\Thumbnail.ascx" />
@@ -224,42 +179,19 @@
     <Content Include="Containers\Callout_Danger.ascx" />
     <Content Include="Containers\Callout_Success.ascx" />
     <Content Include="Containers\Callout_Primary.ascx" />
-    <Content Include="Containers\Callout_Default.ascx" />
-    <Content Include="Skins\Admin.ascx" />
-    <Content Include="Containers\Panel_Default.ascx" />
-    <Content Include="Containers\Panel_Primary.ascx" />
-    <Content Include="Containers\Panel_Info.ascx" />
-    <Content Include="Containers\Panel_Success.ascx" />
-    <Content Include="Containers\Panel_Warning.ascx" />
-    <Content Include="Containers\Panel_Danger.ascx" />
-    <Content Include="Application\Global.asax" />
-    <Content Include="Skins\css\consulting-palette.scss" />
-    <Content Include="Skins\css\consulting-layout.scss" />
-    <Content Include="Skins\css\consulting-skin.scss" />
-    <Content Include="Skins\css\world-layout.scss" />
-    <Content Include="Skins\css\world-palette.scss" />
-    <Content Include="Skins\css\world-skin.scss" />
+    <Content Include="Containers\Callout_Secondary.ascx" />
+    <Content Include="Containers\Callout_Dark.ascx" />
+    <Content Include="Containers\Callout_Light.ascx" />
     <Content Include="packages.config" />
     <Content Include="license.htm" />
     <Content Include="releaseNotes.htm" />
-    <Content Include="Skins\Custom.ascx" />
     <Content Include="Skins\ErrorSkin.ascx" />
-    <Content Include="Skins\HomeCustom.ascx" />
-    <Content Include="Skins\css\default-skin.scss" />
-    <Content Include="Skins\css\default-palette.scss" />
-    <Content Include="Skins\css\default-layout.scss" />
-    <Content Include="Skins\css\skin.scss" />
-    <Content Include="Skins\css\menu.scss" />
     <Content Include="Skins\SkinObjects\AdminPageInfo.ascx" />
     <Content Include="Skins\SkinObjects\BrowserCheck.ascx" />
     <Content Include="Skins\SkinObjects\FeedbackButton.ascx" />
-    <Content Include="Skins\SkinObjects\FooterContent.ascx" />
-    <Content Include="Skins\SkinObjects\Founders.ascx" />
-    <Content Include="Skins\SkinObjects\Functions.ascx" />
+    <Content Include="Skins\SkinObjects\CustomContent.ascx" />
     <Content Include="Skins\SkinObjects\GAdsense.ascx" />
-    <Content Include="Skins\SkinObjects\HeadersMenu.ascx" />
     <Content Include="Skins\SkinObjects\JsVariables.ascx" />
-    <Content Include="Skins\SkinObjects\LocalMenu.ascx" />
     <Content Include="Skins\SkinObjects\LogoMobile.ascx" />
     <Content Include="Skins\SkinObjects\LogoTitle.ascx" />
     <Content Include="Skins\SkinObjects\PageHeader.ascx" />
@@ -275,28 +207,37 @@
     <Content Include="Containers\Alert_Success.ascx" />
     <Content Include="Containers\Alert_Warning.ascx" />
     <Content Include="Containers\Alert_Danger.ascx" />
-    <Content Include="Containers\PanelBody_Warning.ascx" />
-    <Content Include="Containers\PanelBody_Primary.ascx" />
-    <Content Include="Containers\PanelBody_Default.ascx" />
-    <Content Include="Containers\PanelBody_Info.ascx" />
-    <Content Include="Containers\PanelBody_Success.ascx" />
-    <Content Include="Containers\PanelBody_Danger.ascx" />
+    <Content Include="Containers\Alert_Primary.ascx" />
+    <Content Include="Containers\Alert_Secondary.ascx" />
+    <Content Include="Containers\Alert_Dark.ascx" />
+    <Content Include="Containers\Alert_Light.ascx" />
+    <Content Include="Containers\Card_Primary.ascx" />
+    <Content Include="Containers\Card_Secondary.ascx" />
+    <Content Include="Containers\Card_Light.ascx" />
+    <Content Include="Containers\Card_Dark.ascx" />
+    <Content Include="Containers\Card.ascx" />
+    <Content Include="Containers\Card.ascx" />
+    <Content Include="Containers\Card_Warning.ascx" />
+    <Content Include="Containers\Card_Danger.ascx" />
+    <Content Include="Containers\HeaderCard_Primary.ascx" />
+    <Content Include="Containers\HeaderCard_Secondary.ascx" />
+    <Content Include="Containers\HeaderCard_Light.ascx" />
+    <Content Include="Containers\HeaderCard_Dark.ascx" />
+    <Content Include="Containers\HeaderCard_Success.ascx" />
+    <Content Include="Containers\HeaderCard_Info.ascx" />
+    <Content Include="Containers\HeaderCard_Warning.ascx" />
+    <Content Include="Containers\HeaderCard_Danger.ascx" />
     <Content Include="Skins\SkinObjects\Banners\BannerLoader.ascx" />
     <Content Include="Skins\SkinObjects\Banners\BannerWrapper.ascx" />
-    <Content Include="Skins\images\float_buttons_48x48.png" />
-    <Content Include="Skins\images\float_buttons_48x48.svg" />
-    <Content Include="Skins\images\login_icons.png" />
-    <Content Include="Skins\images\login_icons.svg" />
-    <Content Include="Skins\images\founders.png" />
-    <Content Include="Skins\images\founders.svg" />
+    <Content Include="Skins\SkinObjects\PermalinksModal.ascx" />
     <Content Include="Skins\js\feedback.js" />
     <Content Include="Skins\js\bootstrap-init.js" />
     <Content Include="Skins\SkinObjects\PartialContentAlert.ascx" />
-    <Content Include="Default_H3.ascx" />
     <Content Include="Containers\Well.ascx" />
     <Content Include="Containers\Well_Small.ascx" />
     <Content Include="Containers\Well_Large.ascx" />
     <Content Include="Containers\Blank_Well.ascx" />
+    <Content Include="Skins\Default.ascx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
@@ -317,7 +258,56 @@
     <Folder Include="Menus\" />
     <Folder Include="Menus\Mega2Epsilon\" />
     <Folder Include="Skins\SkinObjects\Banners\" />
+    <Content Include="Skins\SkinObjects\Includes.ascx" />
+    <Content Include="Skins\SkinObjects\Meta.ascx" />
+    <Content Include="Skins\Blocks\Header.ascx" />
+    <Content Include="Skins\Blocks\Footer.ascx" />
+    <Content Include="Menus\Mega2Epsilon\Mega2Epsilon.cshtml" />
+    <Content Include="Skins\SkinObjects\SearchModal.ascx" />
+    <Content Include="Skins\SkinObjects\Languages.ascx" />
+    <Content Include="Skins\Blocks\SubHeader.ascx" />
+    <Content Include="Skins\Blocks\SupFooter.ascx" />
+    <Content Include="Skins\Blocks\Start.ascx" />
+    <Content Include="Skins\Blocks\End.ascx" />
+    <Content Include="Skins\css\_dnn.scss" />
+    <Content Include="Skins\css\_menu.scss" />
+    <Content Include="Skins\css\_skin.scss" />
+    <Content Include="Skins\css\brown-theme.scss" />
+    <Content Include="Skins\css\palettes\_brown-palette.scss" />
+    <Content Include="Skins\css\palettes\_green-palette.scss" />
+    <Content Include="Skins\css\green-theme.scss" />
+    <Content Include="Skins\css\palettes\_blue-palette.scss" />
+    <Content Include="Skins\css\blue-theme.scss" />
+    <Content Include="Skins\css\palettes\_contrast-palette.scss" />
+    <Content Include="Skins\css\contrast-theme.scss" />
+    <Content Include="Menus\DropCrumb\DropCrumb.cshtml" />
+    <Content Include="Menus\DropCrumb\menudef.xml" />
+    <Content Include="Skins\Layouts\_default.ascx" />
+    <Content Include="Skins\SkinObjects\A11yFunctions.ascx" />
+    <Content Include="Skins\SkinObjects\Websites.ascx" />
+    <Content Include="Skins\css\_bootstrap.scss" />
+    <Content Include="Skins\SkinObjects\FloatButtons.ascx" />
+    <Content Include="Skins\Layouts\_home.ascx" />
+    <Content Include="Skins\Home.ascx" />
+    <Content Include="Skins\Layouts\_edit.ascx" />
+    <Content Include="Skins\Simple.ascx" />
+    <Content Include="Skins\Layouts\_simple.ascx" />
+    <Content Include="Skins\Layouts\_footer-3cols.ascx" />
+    <Content Include="Skins\Layouts\_footer-4cols.ascx" />
+    <Content Include="Skins\Layouts\_single-pane.ascx" />
+    <Content Include="Skins\css\palettes\_shared-palette.scss" />
+    <Content Include="Skins\css\_default-variables.scss" />
+    <Content Include="Skins\css\_contrast-overrides.scss" />
+    <Content Include="Skins\css\_green-overrides.scss" />
+    <Content Include="Skins\css\_brown-overrides.scss" />
+    <Content Include="Skins\css\_blue-overrides.scss" />
+    <Content Include="Skins\css\color-classes\_color-classes.scss" />
+    <Content Include="Skins\css\color-classes\_brand-color-classes.scss" />
+    <Content Include="Skins\css\_containers.scss" />
+    <Content Include="Containers\DnnAlert_Warning.ascx" />
+    <Content Include="Containers\DnnAlert_Success.ascx" />
+    <Content Include="Containers\DnnAlert_Info.ascx" />
+    <Content Include="Containers\DnnAlert_Danger.ascx" />
+    <Content Include="Skins\css\_contrast-post-overrides.scss" />
   </ItemGroup>
-  <Import Project="../Deploy/Preprocess.targets" />
-  <Target Name="BeforeBuild" DependsOnTargets="CompileScss;MinifyJS" />
 </Project>

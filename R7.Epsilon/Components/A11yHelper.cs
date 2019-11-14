@@ -1,10 +1,10 @@
 ﻿//
-//  A11yHelper.cs
+//  File: A11yHelper.cs
+//  Project: R7.Epsilon
 //
-//  Author:
-//       Roman M. Yagodin <roman.yagodin@gmail.com>
+//  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2016 Roman M. Yagodin
+//  Copyright (c) 2016-2019 Roman M. Yagodin, R7.Labs
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -20,61 +20,59 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Web;
 
 namespace R7.Epsilon.Components
 {
     public static class A11yHelper
     {
-        public static bool? TryGetA11yParam (HttpRequest request)
+        public static string GetThemeCookie (HttpRequest request)
         {
-            // try to get a11y mode from querystring
-            var a11yParamStr = request.QueryString ["a11y"];
-            if (!string.IsNullOrWhiteSpace (a11yParamStr)) {
-                bool a11yParam;
-                if (bool.TryParse (a11yParamStr, out a11yParam)) {
-                    return a11yParam;
-                }
-            }
-
-            return null;
+            return request.Cookies [Const.COOKIE_PREFIX + "Theme"]?.Value;
         }
 
-        public static bool? TryGetA11yCookie (HttpRequest request)
+        public static void SetThemeCookie (HttpResponse response, string value)
         {
-            // try to get a11y mode from cookie
-            var cookie = request.Cookies ["a11y"];
-            if (cookie != null) {
-                bool a11yCookie;
-                if (bool.TryParse (cookie.Value, out a11yCookie)) {
-                    return a11yCookie;
-                }
-            }
-
-            return null;
+            response.Cookies [Const.COOKIE_PREFIX + "Theme"].Value = value;
+            response.Cookies [Const.COOKIE_PREFIX + "Theme"].Expires = DateTime.Now.AddDays (1d);
         }
 
-        public static bool GetA11y (HttpRequest request)
+        public static void SetFontSizeCookie (HttpResponse response, int value)
         {
-            // try to get a11y mode from querystring
-            var a11y = TryGetA11yParam (request);
-            if (a11y != null) {
-                return a11y.Value;
-            }
-
-            // no a11y was found in the querystring, try to get cookie value
-            a11y = TryGetA11yCookie (request);
-            if (a11y != null) {
-                return a11y.Value;
-            }
-
-            return false;
+            response.Cookies [Const.COOKIE_PREFIX + "FontSize"].Value = value.ToString ();
+            response.Cookies [Const.COOKIE_PREFIX + "FontSize"].HttpOnly = false;
+            response.Cookies [Const.COOKIE_PREFIX + "FontSize"].Expires = DateTime.Now.AddDays (1d);
         }
 
-        public static void SetA11yCookie (HttpResponse response, bool value)
+        public static void SetDisablePopupsCookie (HttpResponse response, bool value)
         {
-            response.Cookies ["a11y"].Value = value.ToString ();
-            response.Cookies ["a11y"].Expires = DateTime.Now.AddDays (1d);
+            response.Cookies [Const.COOKIE_PREFIX + "DisablePopups"].Value = value.ToString ().ToLowerInvariant ();
+            response.Cookies [Const.COOKIE_PREFIX + "DisablePopups"].HttpOnly = false;
+            response.Cookies [Const.COOKIE_PREFIX + "DisablePopups"].Expires = DateTime.Now.AddDays (1d);
+        }
+
+        public static void SetA11yCookies (HttpResponse response, IEnumerable<ThemeConfig> themes)
+        {
+            var a11yTheme = themes.FirstOrDefault (t => t.IsA11yTheme);
+            if (a11yTheme != null) {
+                SetThemeCookie (response, a11yTheme.Name);
+            }
+
+            SetFontSizeCookie (response, 24);
+            SetDisablePopupsCookie (response, true);
+        }
+
+        public static void ResetA11yCookies (HttpResponse response, IEnumerable<ThemeConfig> themes)
+        {
+            var defaultTheme = themes.FirstOrDefault ();
+            if (defaultTheme != null) {
+                SetThemeCookie (response, defaultTheme.Name);
+            }
+
+            SetFontSizeCookie (response,16);
+            SetDisablePopupsCookie (response, false);
         }
     }
 }

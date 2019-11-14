@@ -1,158 +1,151 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0" DefaultTargets="InstallPackage">
-	<Import Project="BuildSettings.targets" Condition=" '$(BuildSettingsImported)' == '' " />
-    <Import Project="Tests.targets" Condition=" '$(TestsImported)' == '' "/>
-	
-	<PropertyGroup>
-		<!-- Enable install package creation by default (standalone) -->
-    	<EnableInstallPackage Condition=" '$(EnableInstallPackage)' == '' ">true</EnableInstallPackage>
-  	</PropertyGroup>
-	<Target Name="InstallPackage" Condition=" '$(EnableInstallPackage)' == 'true' " DependsOnTargets="Tests">
+  <Import Project="__Settings.targets" Condition=" '$(BuildSettingsImported)' == '' " />
+  <Import Project="Bundle.targets" Condition=" '$(BundleImported)' == '' " />
+  <Import Project="Tests.targets" Condition=" '$(TestsImported)' == '' "/>
 
-		<!-- Read package version from the manifest -->
-		<XmlPeek Query="/msb:Project/msb:PropertyGroup[1]/msb:ReleaseVersion/text()"
-				 XmlInputPath="$(MainProjectPath)/R7.Epsilon.csproj"
-				 Namespaces="&lt;Namespace Prefix='msb' Uri='http://schemas.microsoft.com/developer/msbuild/2003'/&gt;">
-			<Output TaskParameter="Result" PropertyName="Version" />
-    	</XmlPeek>
+  <PropertyGroup>
+    <!-- Enable install package creation by default (standalone) -->
+    <EnableInstallPackage Condition=" '$(EnableInstallPackage)' == '' ">true</EnableInstallPackage>
+  </PropertyGroup>
 
-		<!-- Package file name -->
-		<PropertyGroup>
-        	<PackageFileName>$(PackageName)-$(Version)-Install.$(Configuration).zip</PackageFileName>
-		</PropertyGroup>
+  <Target Name="InstallPackage" Condition=" '$(EnableInstallPackage)' == 'true' " DependsOnTargets="Bundle;Tests">
 
-		<!-- Declare skin files -->
-		<ItemGroup>
-			<InstallSkinFiles Include="$(MainProjectPath)/Skins/**/*.ascx" />
-            <InstallSkinFiles Include="$(MainProjectPath)/Skins/**/*.xml" />
-            <InstallSkinFiles Include="$(MainProjectPath)/Skins/**/*.xslt" />
-			<InstallSkinFiles Include="$(MainProjectPath)/Skins/**/*.css" />
-			<InstallSkinFiles Include="$(MainProjectPath)/Skins/**/*.resx" />
-			<InstallSkinFiles Include="$(MainProjectPath)/Skins/**/*.js" />
-			<InstallSkinFiles Include="$(MainProjectPath)/Skins/**/*.jpg" />
-			<InstallSkinFiles Include="$(MainProjectPath)/Skins/**/*.png" />
-			<InstallSkinFiles Include="$(MainProjectPath)/Skins/**/*.gif" />
-            <InstallSkinFiles Include="$(MainProjectPath)/Skins/**/*.yml" />
-			<InstallSkinFiles Include="$(MainProjectPath)/Skins/**/*.json" />
-            <InstallSkinFiles Include="$(MainProjectPath)/Skins/**/fonts/*.eot" />
-            <InstallSkinFiles Include="$(MainProjectPath)/Skins/**/fonts/*.svg" />
-            <InstallSkinFiles Include="$(MainProjectPath)/Skins/**/fonts/*.ttf" />
-            <InstallSkinFiles Include="$(MainProjectPath)/Skins/**/fonts/*.woff" />
-            <InstallSkinFiles Include="$(MainProjectPath)/Skins/**/fonts/*.woff2" />
-		</ItemGroup>
+    <!-- Package file name -->
+    <PropertyGroup>
+      <PackageFileName>$(PackageName)-$(ReleaseVersion)-Install.$(Configuration).zip</PackageFileName>
+    </PropertyGroup>
 
-		<!-- Declare container files -->
-		<ItemGroup>
-			<InstallContainerFiles Include="$(MainProjectPath)/Containers/**/*.ascx" />
-			<InstallContainerFiles Include="$(MainProjectPath)/Containers/**/*.css" />
-			<InstallContainerFiles Include="$(MainProjectPath)/Containers/**/*.resx" />
-			<InstallContainerFiles Include="$(MainProjectPath)/Containers/**/*.js" />
-			<InstallContainerFiles Include="$(MainProjectPath)/Containers/**/*.jpg" />
-			<InstallContainerFiles Include="$(MainProjectPath)/Containers/**/*.png" />
-			<InstallContainerFiles Include="$(MainProjectPath)/Containers/**/*.gif" />
-		</ItemGroup>
+    <!-- Declare skin files -->
+    <ItemGroup>
+      <InstallSkinFiles Include="$(MainProjectPath)/Skins/**/*.ascx" />
+      <InstallSkinFiles Include="$(MainProjectPath)/Skins/**/*.xml" />
+      <InstallSkinFiles Include="$(MainProjectPath)/Skins/**/*.xslt" />
+      <InstallSkinFiles Include="$(MainProjectPath)/Skins/**/*.css" />
+      <InstallSkinFiles Include="$(MainProjectPath)/Skins/**/*.resx" />
+      <InstallSkinFiles Include="$(MainProjectPath)/Skins/**/*.js" />
+      <InstallSkinFiles Include="$(MainProjectPath)/Skins/**/*.map" />
+      <InstallSkinFiles Include="$(MainProjectPath)/Skins/**/*.jpg" />
+      <InstallSkinFiles Include="$(MainProjectPath)/Skins/**/*.png" />
+      <InstallSkinFiles Include="$(MainProjectPath)/Skins/**/*.gif" />
+      <InstallSkinFiles Include="$(MainProjectPath)/Skins/**/*.yml" />
+      <InstallSkinFiles Include="$(MainProjectPath)/Skins/**/*.json" />
+      <InstallSkinFiles Include="$(MainProjectPath)/Skins/**/fonts/*.eot" />
+      <InstallSkinFiles Include="$(MainProjectPath)/Skins/**/fonts/*.svg" />
+      <InstallSkinFiles Include="$(MainProjectPath)/Skins/**/fonts/*.ttf" />
+      <InstallSkinFiles Include="$(MainProjectPath)/Skins/**/fonts/*.woff" />
+      <InstallSkinFiles Include="$(MainProjectPath)/Skins/**/fonts/*.woff2" />
+    </ItemGroup>
 
-		<!-- Declare menu files -->
-        <ItemGroup>
-            <InstallMenuFiles Include="$(MainProjectPath)/Menus/**/*.xslt" />
-			<InstallMenuFiles Include="$(MainProjectPath)/Menus/**/*.cshtml" />
-			<InstallMenuFiles Include="$(MainProjectPath)/Menus/**/*.txt" />
-			<InstallMenuFiles Include="$(MainProjectPath)/Menus/**/*.xml" />
-            <InstallMenuFiles Include="$(MainProjectPath)/Menus/**/*.min.css" />
-			<InstallMenuFiles Include="$(MainProjectPath)/Menus/**/*.min.js" />
-        </ItemGroup>
+    <!-- Declare container files -->
+    <ItemGroup>
+      <InstallContainerFiles Include="$(MainProjectPath)/Containers/**/*.ascx" />
+      <InstallContainerFiles Include="$(MainProjectPath)/Containers/**/*.css" />
+      <InstallContainerFiles Include="$(MainProjectPath)/Containers/**/*.resx" />
+      <InstallContainerFiles Include="$(MainProjectPath)/Containers/**/*.js" />
+      <InstallContainerFiles Include="$(MainProjectPath)/Containers/**/*.jpg" />
+      <InstallContainerFiles Include="$(MainProjectPath)/Containers/**/*.png" />
+      <InstallContainerFiles Include="$(MainProjectPath)/Containers/**/*.gif" />
+    </ItemGroup>
 
-        <!-- Declare module files -->
-        <ItemGroup>
-            <InstallLayoutManagerFiles Include="../R7.Epsilon.LayoutManager/**/*.ascx" />
-            <InstallLayoutManagerFiles Include="../R7.Epsilon.LayoutManager/**/*.css" />
-            <InstallLayoutManagerFiles Include="../R7.Epsilon.LayoutManager/**/*.resx" />
-            <InstallLayoutManagerFiles Include="../R7.Epsilon.LayoutManager/**/*.js" />
-            <InstallLayoutManagerFiles Include="../R7.Epsilon.LayoutManager/**/*.jpg" />
-            <InstallLayoutManagerFiles Include="../R7.Epsilon.LayoutManager/**/*.png" />
-            <InstallLayoutManagerFiles Include="../R7.Epsilon.LayoutManager/**/*.gif" />
-        </ItemGroup>
-              
-		<!-- Declare manifest files -->
-		<ItemGroup>
-			<InstallManifestFiles Include="$(MainProjectPath)/*.dnn" />
-			<InstallManifestFiles Include="$(MainProjectPath)/*.htm" />
-		</ItemGroup>
-			
-		<!-- Declare binaries -->
-		<ItemGroup>	
-			<InstallBinaryFiles Include="$(MainProjectOutputPath)/R7.Epsilon*.dll" />
-			<InstallBinaryFiles Include="$(MainProjectOutputPath)/R7.Epsilon*.pdb" Condition=" '$(Configuration)' == 'Debug' "/>
-            <InstallBinaryFiles Include="$(MainProjectOutputPath)/YamlDotNet.dll" />
-		</ItemGroup>
-	
-		<!-- Cleanup -->
-		<RemoveDir Directories="$(TmpDir)" />
+    <!-- Declare menu files -->
+    <ItemGroup>
+      <InstallMenuFiles Include="$(MainProjectPath)/Menus/**/*.xslt" />
+      <InstallMenuFiles Include="$(MainProjectPath)/Menus/**/*.cshtml" />
+      <InstallMenuFiles Include="$(MainProjectPath)/Menus/**/*.txt" />
+      <InstallMenuFiles Include="$(MainProjectPath)/Menus/**/*.xml" />
+      <InstallMenuFiles Include="$(MainProjectPath)/Menus/**/*.min.css" />
+      <InstallMenuFiles Include="$(MainProjectPath)/Menus/**/*.min.js" />
+    </ItemGroup>
 
-		<!-- Copy to tmp dir -->
-		<Copy SourceFiles="@(InstallSkinFiles)" DestinationFolder="$(MSBuildProjectDirectory)/$(TmpDir)/Skins/%(RecursiveDir)" />
-		<Copy SourceFiles="@(InstallContainerFiles)" DestinationFolder="$(MSBuildProjectDirectory)/$(TmpDir)/Containers/%(RecursiveDir)" />
-		<Copy SourceFiles="@(InstallMenuFiles)" DestinationFolder="$(MSBuildProjectDirectory)/$(TmpDir)/Menus/%(RecursiveDir)" />
-        <Copy SourceFiles="@(InstallLayoutManagerFiles)" DestinationFolder="$(MSBuildProjectDirectory)/$(TmpDir)/Modules/R7.Epsilon.LayoutManager/%(RecursiveDir)" />
- 		     
-		<!-- Declare zipped files -->
-		<ItemGroup>
-			<InstallSkinZipFiles Include="$(MSBuildProjectDirectory)/$(TmpDir)/Skins/**/*.*" />
-		</ItemGroup>
-	
-		<ItemGroup>
-			<InstallContainerZipFiles Include="$(MSBuildProjectDirectory)/$(TmpDir)/Containers/**/*.*" />
-		</ItemGroup>
+    <!-- Declare manifest files -->
+    <ItemGroup>
+      <InstallManifestFiles Include="$(MainProjectPath)/*.dnn" />
+      <InstallManifestFiles Include="$(MainProjectPath)/*.htm" />
+    </ItemGroup>
 
-		<ItemGroup>
-            <InstallMenuZipFiles Include="$(MSBuildProjectDirectory)/$(TmpDir)/Menus/**/*.*" />
-        </ItemGroup>
+    <!-- Declare binaries -->
+    <ItemGroup>
+      <InstallBinaryFiles Include="$(MainProjectOutputPath)/$(MainProjectName)*.dll" />
+      <!-- TODO: Provide separate resource package for debugger symbols and XML docs -->
+      <InstallBinaryFiles Include="$(MainProjectOutputPath)/$(MainProjectName)*.pdb" Condition=" '$(Configuration)' == 'Debug' "/>
+    </ItemGroup>
 
-        <ItemGroup>
-            <InstallModuleZipFiles Include="$(MSBuildProjectDirectory)/$(TmpDir)/Modules/**/*.*" />
-        </ItemGroup>
+    <!-- Declare external JS files -->
+    <ItemGroup>
+    <InstallExternalJsFiles Include="$(NodeModulesPath)/bootstrap/dist/js/bootstrap.bundle.min.js" />
+      <InstallExternalJsFiles Include="$(NodeModulesPath)/bootstrap/dist/js/bootstrap.bundle.min.js.map"  Condition=" '$(Configuration)' == 'Debug' " />
+      <InstallExternalJsFiles Include="$(NodeModulesPath)/clipboard/dist/clipboard.min.js" />
+    </ItemGroup>
 
-		<!-- Create resource archives  -->
-		<Zip Condition=" '$(OS)' != 'Unix' " Files="@(InstallSkinZipFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\bin\tmp\Skins" ZipFileName="Resources_Skins.zip" />
-		<Zip Condition=" '$(OS)' != 'Unix' " Files="@(InstallContainerZipFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\bin\tmp\Containers" ZipFileName="Resources_Containers.zip" />
-		<Zip Condition=" '$(OS)' != 'Unix' " Files="@(InstallMenuZipFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\bin\tmp\Menus" ZipFileName="Resources_Menus.zip" />
-        <Zip Condition=" '$(OS)' != 'Unix' " Files="@(InstallModuleZipFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\bin\tmp\Modules" ZipFileName="Resources_Modules.zip" />
-		      
-        <Exec Condition=" '$(OS)' == 'Unix' " Command="zip -r -6 -UN=UTF8 &quot;Resources_Skins.zip&quot; ." WorkingDirectory="$(TmpDir)/Skins" />
-        <Exec Condition=" '$(OS)' == 'Unix' " Command="zip -r -6 -UN=UTF8 &quot;Resources_Containers.zip&quot; ." WorkingDirectory="$(TmpDir)/Containers" />
-		<Exec Condition=" '$(OS)' == 'Unix' " Command="zip -r -6 -UN=UTF8 &quot;Resources_Menus.zip&quot; ." WorkingDirectory="$(TmpDir)/Menus" />
-        <Exec Condition=" '$(OS)' == 'Unix' " Command="zip -r -6 -UN=UTF8 &quot;Resources_Modules.zip&quot; ." WorkingDirectory="$(TmpDir)/Modules" />
-		      
-		<!-- Copy binaries -->
-		<Copy SourceFiles="@(InstallBinaryFiles)" DestinationFolder="$(TmpDir)/Package/bin" />
+    <!-- Declare external CSS files -->
+    <ItemGroup>
+      <InstallExternalCssFiles Include="$(NodeModulesPath)/bootstrap/dist/css/bootstrap.min.css" />
+      <InstallExternalCssFiles Include="$(NodeModulesPath)/bootstrap/dist/css/bootstrap.min.css.map" Condition=" '$(Configuration)' == 'Debug' "/>
+    </ItemGroup>
 
-		<!-- Copy manifest files -->
-		<Copy SourceFiles="@(InstallManifestFiles)" DestinationFolder="$(TmpDir)/Package" />
-	
-		<!--- Move resource archives to $(TmpDir)/Package folder -->
-		<Copy SourceFiles="$(TmpDir)/Skins/Resources_Skins.zip" DestinationFolder="$(TmpDir)/Package" />
-        <Copy SourceFiles="$(TmpDir)/Containers/Resources_Containers.zip" DestinationFolder="$(TmpDir)/Package" />
-		<Copy SourceFiles="$(TmpDir)/Menus/Resources_Menus.zip" DestinationFolder="$(TmpDir)/Package" />
-		<Copy SourceFiles="$(TmpDir)/Modules/Resources_Modules.zip" DestinationFolder="$(TmpDir)/Package" />
-		<Delete Files="$(TmpDir)/Skins/Resources_Skins.zip" />
-        <Delete Files="$(TmpDir)/Containers/Resources_Containers.zip" />
-		<Delete Files="$(TmpDir)/Containers/Resources_Menus.zip" />
-        <Delete Files="$(TmpDir)/Modules/Resources_Modules.zip" />
-		      
-		<!-- Declare tmp package folder -->
-		<ItemGroup>
-			<InstallPackageFiles Include="$(TmpDir)/Package/**/*.*" />
-		</ItemGroup>
-		
-		<!-- Create the install package -->
-		<Zip Condition=" '$(OS)' != 'Unix' " Files="@(InstallPackageFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\bin\tmp\Package" ZipFileName="$(PackageFileName)" />
-		<Exec Condition=" '$(OS)' == 'Unix' " Command="zip -r -6 -UN=UTF8 &quot;$(PackageFileName)&quot; ." WorkingDirectory="$(TmpDir)/Package" />
+    <!-- Cleanup -->
+    <RemoveDir Directories="$(TmpDir)" />
 
-		<!-- Copy the install package to the output directory -->
-		<Copy SourceFiles="$(TmpDir)/Package/$(PackageFileName)" DestinationFolder="$(PackageOutputPath)" />
-        <Delete Files="$(TmpDir)/Package/$(PackageFileName)" />
-		
-		<!-- Cleanup -->
-		<RemoveDir Directories="$(TmpDir)" />
-	</Target>
+    <!-- Copy to tmp dir -->
+    <Copy SourceFiles="@(InstallSkinFiles)" DestinationFolder="$(MSBuildProjectDirectory)/$(TmpDir)/Skins/%(RecursiveDir)" />
+    <Copy SourceFiles="@(InstallContainerFiles)" DestinationFolder="$(MSBuildProjectDirectory)/$(TmpDir)/Containers/%(RecursiveDir)" />
+    <Copy SourceFiles="@(InstallMenuFiles)" DestinationFolder="$(MSBuildProjectDirectory)/$(TmpDir)/Menus/%(RecursiveDir)" />
+
+    <!-- Copy external files to tmp dir -->
+    <Copy SourceFiles="@(InstallExternalJsFiles)" DestinationFolder="$(MSBuildProjectDirectory)/$(TmpDir)/Skins/js/" />
+    <Copy SourceFiles="@(InstallExternalCssFiles)" DestinationFolder="$(MSBuildProjectDirectory)/$(TmpDir)/Skins/css/" />
+
+    <!-- Declare files to zip -->
+    <ItemGroup>
+      <InstallSkinZipFiles Include="$(MSBuildProjectDirectory)/$(TmpDir)/Skins/**/*.*" />
+    </ItemGroup>
+    <ItemGroup>
+      <InstallContainerZipFiles Include="$(MSBuildProjectDirectory)/$(TmpDir)/Containers/**/*.*" />
+    </ItemGroup>
+    <ItemGroup>
+      <InstallMenuZipFiles Include="$(MSBuildProjectDirectory)/$(TmpDir)/Menus/**/*.*" />
+    </ItemGroup>
+
+    <!-- Create resource archives  -->
+    <Zip Condition=" '$(OS)' != 'Unix' " Files="@(InstallSkinZipFiles)" WorkingDirectory="$(TmpDir)\Skins" ZipFileName="Resources_Skins.zip" />
+    <Zip Condition=" '$(OS)' != 'Unix' " Files="@(InstallContainerZipFiles)" WorkingDirectory="$(TmpDir)\Containers" ZipFileName="Resources_Containers.zip" />
+    <Zip Condition=" '$(OS)' != 'Unix' " Files="@(InstallMenuZipFiles)" WorkingDirectory="$(TmpDir)\Menus" ZipFileName="Resources_Menus.zip" />
+
+    <Exec Condition=" '$(OS)' == 'Unix' " Command="zip -r -6 -UN=UTF8 &quot;Resources_Skins.zip&quot; ." WorkingDirectory="$(TmpDir)/Skins" />
+    <Exec Condition=" '$(OS)' == 'Unix' " Command="zip -r -6 -UN=UTF8 &quot;Resources_Containers.zip&quot; ." WorkingDirectory="$(TmpDir)/Containers" />
+    <Exec Condition=" '$(OS)' == 'Unix' " Command="zip -r -6 -UN=UTF8 &quot;Resources_Menus.zip&quot; ." WorkingDirectory="$(TmpDir)/Menus" />
+
+    <!-- Copy binaries -->
+    <Copy SourceFiles="@(InstallBinaryFiles)" DestinationFolder="$(TmpDir)/Package/bin" />
+
+    <!-- Copy manifest files -->
+    <Copy SourceFiles="@(InstallManifestFiles)" DestinationFolder="$(TmpDir)/Package" />
+
+    <!--- Move resource archives to $(TmpDir)/Package folder -->
+    <Copy SourceFiles="$(TmpDir)/Skins/Resources_Skins.zip" DestinationFolder="$(TmpDir)/Package" />
+    <Copy SourceFiles="$(TmpDir)/Containers/Resources_Containers.zip" DestinationFolder="$(TmpDir)/Package" />
+    <Copy SourceFiles="$(TmpDir)/Menus/Resources_Menus.zip" DestinationFolder="$(TmpDir)/Package" />
+
+    <Delete Files="$(TmpDir)/Skins/Resources_Skins.zip" />
+    <Delete Files="$(TmpDir)/Containers/Resources_Containers.zip" />
+    <Delete Files="$(TmpDir)/Containers/Resources_Menus.zip" />
+
+    <!-- Declare tmp package folder -->
+    <ItemGroup>
+      <InstallPackageFiles Include="$(TmpDir)/Package/**/*.*" />
+    </ItemGroup>
+
+    <!-- Create the install package -->
+    <Zip Condition=" '$(OS)' != 'Unix' " Files="@(InstallPackageFiles)" WorkingDirectory="$(MSBuildProjectDirectory)\bin\tmp\Package" ZipFileName="$(PackageFileName)" />
+    <Exec Condition=" '$(OS)' == 'Unix' " Command="zip -r -6 -UN=UTF8 &quot;$(PackageFileName)&quot; ." WorkingDirectory="$(TmpDir)/Package" />
+
+    <!-- Copy the install package to the output directory -->
+    <Copy SourceFiles="$(TmpDir)/Package/$(PackageFileName)" DestinationFolder="$(PackageOutputPath)" />
+    <Delete Files="$(TmpDir)/Package/$(PackageFileName)" />
+
+    <!-- Cleanup -->
+    <RemoveDir Directories="$(TmpDir)" />
+
+  </Target>
 </Project>

@@ -16,10 +16,22 @@
         <value>Система</value>
     </data>
     <data name="A11y.Text" xml:space="preserve">
-        <value><![CDATA[<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>]]></value>
+        <value>Возможности повышенной доступности</value>
     </data>
-    <data name="A11y.Title" xml:space="preserve">
-        <value>Включить (выключить) возможности сайта для слабовидящих</value>
+	<data name="A11yDisablePopups.Text" xml:space="preserve">
+        <value>Отключить всплывающие диалоги</value>
+    </data>
+	<data name="A11yIncreaseFontSize.Text" xml:space="preserve">
+        <value>Увеличить размер шрифта</value>
+    </data>
+	<data name="A11yDecreaseFontSize.Text" xml:space="preserve">
+        <value>Уменьшить размер шрифта</value>
+    </data>
+	<data name="A11yRestoreDefaults.Text" xml:space="preserve">
+        <value>Восстановить умолчания</value>
+    </data>
+	<data name="A11yWebsiteVersion.Text" xml:space="preserve">
+        <value>Версия сайта для слабовидящих</value>
     </data>
     <data name="SkinCopyright.Text" xml:space="preserve">
         <value><![CDATA[<a href="https://github.com/roman-yagodin/R7.Epsilon" target="_blank">Тема R7.Epsilon v{version}</a>]]></value>
@@ -27,14 +39,8 @@
     <data name="CopyrightNote.Text" xml:space="preserve">
         <value>При перепечатке текстовой информации и фотографий ссылка на сайт обязательна</value>
     </data>
-    <data name="ButtonUp.Title" xml:space="preserve">
-        <value>Нажми меня, чтобы перейти наверх</value>
-    </data>
-    <data name="LocalMenu.Text" xml:space="preserve">
-        <value><![CDATA[Содержание <span class="glyphicon glyphicon-menu-down"></span>]]></value>
-    </data>
-    <data name="HeadersMenu.Text" xml:space="preserve">
-        <value><![CDATA[На этой странице <span class="glyphicon glyphicon-menu-down"></span>]]></value>
+    <data name="ButtonUp_Tooltip.Text" xml:space="preserve">
+        <value>Нажмите здесь, чтобы перейти к началу страницы.</value>
     </data>
     <data name="ToggleNavigation.Text" xml:space="preserve">
         <value>Включить/выключить навигационное меню</value>
@@ -45,18 +51,6 @@
     <data name="PublishedOnDate.Format" xml:space="preserve">
         <value>dd MMMM yyyy</value>
     </data>
-    <data name="Founder1.Title" xml:space="preserve">
-        <value>Сайт учредителя 1</value>
-    </data>
-    <data name="Founder1.Href" xml:space="preserve">
-        <value>http://www.founder1.ru</value>
-    </data>
-    <data name="Founder2.Title" xml:space="preserve">
-        <value>Сайт учредителя 2</value>
-    </data>
-    <data name="Founder2.Href" xml:space="preserve">
-        <value>http://www.founder2.ru</value>
-    </data>
     <data name="BrowserCheck.Warning" xml:space="preserve">
         <value><![CDATA[<strong>Внимание!</strong> Мы определили, что Вы используете устаревшую версию браузера, не поддерживающую в должной мере современные стандарты Интернет. Как следствие, сайт может отображаться неправильно, а отдельные его функции могут работать некорректно или будут недоступны. Пожалуйста, обновите браузер!]]></value>
     </data>
@@ -66,64 +60,95 @@
     <data name="SubMenuClose.Text" xml:space="preserve">
         <value>Закрыть меню</value>
     </data>
-    <data xml:space="preserve" name="FeedBackButton.Text">
-        <value></value>
+    <data xml:space="preserve" name="FeedbackButton_Tooltip.Text">
+        <value>Нажмите на кнопку, чтобы открыть форму обратной связи. Вы также можете предварительно выделить фрагмент текста на странице, чтобы передать его в форму обратной связи.</value>
     </data>
-    <data xml:space="preserve" name="FeedBackButton.Tooltip">
-        <value>Выдели место ошибки мышкой и нажми меня, чтобы открыть форму обратной связи</value>
+	<data name="SocialGroups.Text" xml:space="preserve">
+        <value>Присоединяйтесь!</value>
     </data>
-    <data xml:space="preserve" name="VKontakte.Title">
+    <data name="VKontakte.Text" xml:space="preserve">
         <value>ВКонтакте</value>
     </data>
-    <data xml:space="preserve" name="Facebook.Title">
+    <data name="Facebook.Text" xml:space="preserve">
         <value>Facebook</value>
     </data>
-    <data xml:space="preserve" name="Twitter.Title">
+    <data name="Twitter.Text" xml:space="preserve">
         <value>Twitter</value>
     </data>
-    <data xml:space="preserve" name="Odnoklassniki.Title">
+    <data name="Odnoklassniki.Text" xml:space="preserve">
         <value>Одноклассники</value>
-    </data>    
-    <data xml:space="preserve" name="YouTube.Title">
-        <value>Youtube</value>
     </data>
-	<data name="Instagram.Title" xml:space="preserve">
+    <data name="YouTube.Text" xml:space="preserve">
+        <value>YouTube</value>
+    </data>
+	<data name="Instagram.Text" xml:space="preserve">
         <value>Инстаграм</value>
     </data>
-	<data name="LinkedIn.Title" xml:space="preserve">
+	<data name="LinkedIn.Text" xml:space="preserve">
         <value>LinkedIn</value>
     </data>
-	<data name="MoreSocialGroups.Title" xml:space="preserve">
-        <value>Нажмите, чтобы увидеть еще социальные сети</value>
+	<data name="Reddit.Text" xml:space="preserve">
+        <value>Reddit</value>
     </data>
-    <data xml:space="preserve" name="YandexCycounter.Text">
+	<data xml:space="preserve" name="YandexCycounter.Text">
         <value>Индекс качества сайта Яндекс</value>
     </data>
     <data name="LogoTitle.Tagline" xml:space="preserve">
         <value>лозунг</value>
     </data>
-    <data name="GoogleTranslate.Title" xml:space="preserve">
-        <value>Перевести с помощью Google</value>
+    <data name="Languages.Text" xml:space="preserve">
+        <value>Языки</value>
     </data>
-    <data name="GoogleTranslate.Alt" xml:space="preserve">
+	<data name="Websites.Text" xml:space="preserve">
+        <value>Наши сайты</value>
+    </data>
+	<data name="UserProfile.Text" xml:space="preserve">
+        <value>Профиль пользователя</value>
+    </data>
+    <data name="GoogleTranslate.Title" xml:space="preserve">
         <value>Перевести с помощью Google</value>
     </data>
     <data name="AgeRating.Text" xml:space="preserve">
         <value>12+</value>
     </data>
-    <data name="AgeRating.Title" xml:space="preserve">
-        <value>Информационная продукция для детей, достигших возраста двенадцати лет (12+)</value>
+    <data name="AgeRating_Tooltip.Text" xml:space="preserve">
+        <value>Информационная продукция для детей старше 12 лет (если иное не указано дополнительно). Нажмите на кнопку для получения подробной информации.</value>
     </data>
-    <data name="LastModified.Text" xml:space="preserve">
+	<data name="AgeRating_Link.Text" xml:space="preserve">
+		<value>https://base.garant.ru/77680092/948c9c0734b6e944a4727660f2d5a027/</value>
+	</data>
+	<data name="LastModified.Text" xml:space="preserve">
         <value>Последние изменения:</value>
     </data>
-    <data name="Permalink.Text" xml:space="preserve">
-        <value>Постоянная ссылка:</value>
+	<data name="LastModified_Tooltip.Text" xml:space="preserve">
+        <value>Дата последних изменений содержимого или настроек страницы.</value>
     </data>
-	<data name="SelectLayout.Text" xml:space="preserve">
-        <value>Выбрать лейаут</value>
+	<data name="LastModifiedByUser_Tooltip.Text" xml:space="preserve">
+        <value>Пользователь, последним вносивший изменения в содержимое или настройки страницы.</value>
     </data>
-    <data name="FeedbackPage.Template" xml:space="preserve">
+    <data name="Permalinks.Text" xml:space="preserve">
+        <value>Постоянные ссылки&#8230;</value>
+    </data>
+	<data name="Permalinks_Tooltip.Text" xml:space="preserve">
+        <value>Получить постоянную ссылку для цитирования содержимого сайта.</value>
+    </data>
+	<data name="Permalinks_ModalTitle.Text" xml:space="preserve">
+        <value>Постоянные ссылки</value>
+    </data>
+	<data name="Permalinks_Help.Text" xml:space="preserve">
+		<value>Пожалуйста, используйте одну из представленных ниже постоянных ссылок для цитирования содержимого нашего сайта.
+		Не используйте для этого ссылку, скопированную непосредственно из адресной строки вашего браузера - она очень скоро изменится, и поэтому скопированная ссылка быстро станет битой!</value>
+    </data>
+	<data name="CopyPermalink.Text" xml:space="preserve">
+        <value>копировать</value>
+    </data>
+	<data name="CopyPermalink_Tooltip.Text" xml:space="preserve">
+        <value>Нажмите, чтобы скопировать постоянную ссылку в буфер обмена.</value>
+    </data>
+	<data name="CreateShortUrl_Tooltip.Text" xml:space="preserve">
+        <value>Создать короткую ссылку с использованием </value>
+    </data>
+	<data name="FeedbackPage.Template" xml:space="preserve">
         <value>\nСтраница: {origin}/linkclick.aspx?link={page}</value>
     </data>
     <data name="FeedbackSelection.Template" xml:space="preserve">
@@ -136,11 +161,53 @@
         <value>&lt;span class=&quot;firstline&quot;&gt;[HeaderPane1.Content]&lt;/span&gt;&lt;br /&gt;вторая строка&lt;div class=&quot;tagline&quot;&gt;лозунг&lt;/div&gt;</value>
     </data>
 	<data name="PartialContentAlert.Title" xml:space="preserve">
-        <value><![CDATA[<i class="glyphicon glyphicon-info-sign"></i> Примечание]]></value>
+        <value><![CDATA[<i class="fas fa-info-circle"></i> Примечание]]></value>
     </data>
 	<data name="PartialContentAlert.Content" xml:space="preserve">
         <value><![CDATA[<p>Здесь показан только один из блоков информации на странице <a class="alert-link" href="[TabUrl]">[TabName]</a>.</p>
 			<p>Вы можете <a class="alert-link" href="[TabUrl]#[ModuleId]">перейти к этому блоку</a> на полной версии страницы.</p>]]>
 		</value>
     </data>
+    <data name="SearchModalButton.Text" xml:space="preserve">
+        <value>Поиск</value>
+    </data>
+    <data name="SearchModalTitle.Text" xml:space="preserve">
+        <value>Поиск</value>
+    </data>
+	<data name="SearchEngines.Text" xml:space="preserve">
+        <value>Не нашли того, что искали? Используйте внешние поисковые системы для поиска по нашему сайту:</value>
+    </data>
+	<data name="SearchWith.Text" xml:space="preserve">
+        <value>Искать с помощью</value>
+    </data>
+	<data name="SearchEngineType_Google.Text" xml:space="preserve">
+        <value>Google</value>
+    </data>
+	<data name="SearchEngineType_Yandex.Text" xml:space="preserve">
+        <value>Яндекс</value>
+    </data>
+	<data name="SearchEngineType_DuckDuckGo.Text" xml:space="preserve">
+        <value>DuckDuckGo</value>
+    </data>
+    <data name="ModalClose.Text" xml:space="preserve">
+        <value>Закрыть</value>
+    </data>
+	<data name="Theme_green.Text" xml:space="preserve">
+        <value>Зеленая тема</value>
+    </data>
+	<data name="Theme_blue.Text" xml:space="preserve">
+        <value>Синяя тема</value>
+    </data>
+	<data name="Theme_brown.Text" xml:space="preserve">
+        <value>Коричневая тема</value>
+    </data>
+	<data name="Theme_contrast.Text" xml:space="preserve">
+        <value>Контрастная тема</value>
+    </data>
+	<data name="DefaultTheme.Text" xml:space="preserve">
+        <value>(по умолчанию)</value>
+    </data>
+	<data name="Mega2Epsilon_GoToPage.Text" xml:space="preserve">
+		<value>Перейти на страницу </value>
+	</data>
 </root>

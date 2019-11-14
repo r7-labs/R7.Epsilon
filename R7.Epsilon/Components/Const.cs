@@ -26,12 +26,7 @@ namespace R7.Epsilon.Components
         public const int HOST_PORTAL_ID = -1;
 
         public const string LAYOUTS_FOLDER = "Skins\\R7.Epsilon\\Layouts\\";
-
-        public const string LAYOUT_TAB_SETTING_NAME_BASE = "r7_Epsilon_Layout";
-
-        public const string LAYOUT_TAB_SETTING_NAME = LAYOUT_TAB_SETTING_NAME_BASE;
-
-        public const string A11Y_LAYOUT_TAB_SETTING_NAME = LAYOUT_TAB_SETTING_NAME + "_A11y";
+        public const string COOKIE_PREFIX = "R7.Epsilon.";
 
         /// <summary>
         /// Returns layout name prefix which is used in tab settings

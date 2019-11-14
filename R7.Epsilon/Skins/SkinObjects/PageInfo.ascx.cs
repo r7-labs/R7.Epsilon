@@ -1,10 +1,10 @@
 ﻿//
-//  PageInfo.ascx.cs
+//  File: PageInfo.ascx.cs
+//  Project: R7.Epsilon
 //
-//  Author:
-//       Roman M. Yagodin <roman.yagodin@gmail.com>
+//  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2015-2017 Roman M. Yagodin
+//  Copyright (c) 2015-2019 Roman M. Yagodin, R7.Labs
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -20,7 +20,6 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System.Linq;
-using DotNetNuke.Common;
 using DotNetNuke.Entities.Content;
 using DotNetNuke.Entities.Modules;
 using DotNetNuke.Entities.Portals;
@@ -33,7 +32,7 @@ namespace R7.Epsilon.Skins.SkinObjects
 
         public PageInfo ()
         {
-            lastModifiedContentItem = GetLastModifiedContentItem (PortalSettings.ActiveTab.TabID);
+            lastModifiedContentItem = GetLastModifiedContentItem (ActiveTab.TabID);
         }
 
         protected ContentItem GetLastModifiedContentItem (int tabId)
@@ -43,32 +42,20 @@ namespace R7.Epsilon.Skins.SkinObjects
             foreach (var module in ModuleController.Instance.GetTabModules (tabId)) {
                 contentItems.Concat (contentController.GetContentItemsByModuleId (module.Value.ModuleID));
             }
-            
-            return contentItems.OrderByDescending (ci => ci.LastModifiedOnDate).FirstOrDefault ();
-        }
 
-        /// <summary>
-        /// Gets page permalink
-        /// </summary>
-        /// <value>The page permalink.</value>
-        protected string PagePermalink {
-            get {
-                return Globals.AddHTTP (PortalSettings.Current.PortalAlias.HTTPAlias +
-                    string.Format (Localizer.SafeGetString ("Permalink.Format", "/Default.aspx?TabId={0}"),
-                    PortalSettings.ActiveTab.TabID));
-            }
+            return contentItems.OrderByDescending (ci => ci.LastModifiedOnDate).FirstOrDefault ();
         }
 
         protected string LastContentModifiedOnDate {
             get {
-                return SafeGetLastModifiedContentItem ().LastModifiedOnDate.ToString (Localizer.SafeGetString ("PublishedOnDate.Format", "MM/dd/yyyy"));
+                return SafeGetLastModifiedContentItem ().LastModifiedOnDate.ToString (T.SafeGetString ("PublishedOnDate.Format", "MM/dd/yyyy"));
             }
         }
 
         protected string LastContentModifiedByUserName {
             get {
                 var user = SafeGetLastModifiedContentItem ().LastModifiedByUser (PortalSettings.PortalId);
-                return (user != null) ? user.DisplayName : Localizer.SafeGetString ("SystemUser.Text", "System");
+                return (user != null) ? user.DisplayName : T.SafeGetString ("SystemUser.Text", "System");
             }
         }
 
@@ -79,7 +66,7 @@ namespace R7.Epsilon.Skins.SkinObjects
             }
 
             // should be already among content items
-            return PortalSettings.ActiveTab;
+            return ActiveTab;
         }
     }
 }

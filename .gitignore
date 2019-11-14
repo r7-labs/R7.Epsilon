@@ -1,4 +1,6 @@
 # User-specific
+/.vs/
+*.user
 *.userprefs
 *.usertasks
 
@@ -6,6 +8,8 @@
 bin/
 obj/
 /Deploy/output/
+.webpack
+yarn-error.log
 
 # Less/UglifyJS build output
 
@@ -15,5 +19,4 @@ R7.Epsilon/Skins/js/*.min.js
 # Downloaded NuGet packages
 /packages/
 /Packages/
-
-
+/node_modules/

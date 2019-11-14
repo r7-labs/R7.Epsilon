@@ -1,10 +1,31 @@
 ﻿//
-//  EpsilonPortalConfig.cs
+//  File: EpsilonPortalConfig.cs
+//  Project: R7.Epsilon
 //
-//  Author:
-//       Roman M. Yagodin <roman.yagodin@gmail.com>
+//  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2015-2017 Roman M. Yagodin
+//  Copyright (c) 2014-2019 Roman M. Yagodin, R7.Labs
+//
+//  This program is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU Affero General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  This program is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU Affero General Public License for more details.
+//
+//  You should have received a copy of the GNU Affero General Public License
+//  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+//
+//  File: EpsilonPortalConfig.cs
+//  Project: R7.Epsilon
+//
+//  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
+//
+//  Copyright (c) 2015-2019 Roman M. Yagodin, R7.Labs
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -22,6 +43,8 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.Web;
 using System.Web.Compilation;
 using DotNetNuke.Services.Exceptions;
 using DotNetNuke.Web.DDRMenu;
@@ -32,17 +55,31 @@ namespace R7.Epsilon.Components
     {
         #region Portal config properties
 
-        public string SkinCss { get; set; } = "css/default-skin.min.css";
+        public List<ThemeConfig> Themes { get; set; } = new List<ThemeConfig> {
+            new ThemeConfig {
+                Name = "green",
+                Css = "green-theme.min.css",
+                Color = "green",
+                IsA11yTheme = false
 
-        public string SkinA11yCss { get; set; } = "css/a11y-skin.min.css";
+            },
+            new ThemeConfig {
+                Name = "contrast",
+                Css = "contrast-theme.min.css",
+                Color = "black",
+                IsA11yTheme = true
+            }
+        };
 
         public List<CdnConfig> Cdns { get; set; } = new List<CdnConfig> {
             new CdnConfig {
                 Location = "PageHead",
-                Href = "https://use.fontawesome.com/releases/v5.6.3/css/all.css",
-                Integrity = "sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+                Href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css",
+                Integrity = "sha256-UzFD2WYH2U1dQpKDjjZK72VtPeWP50NoJjd26rnAdUI="
             }
         };
+
+        public List<WebsiteConfig> Websites { get; set; } = new List<WebsiteConfig> ();
 
         public FeedbackConfig Feedback { get; set; } = new FeedbackConfig ();
 
@@ -60,17 +97,40 @@ namespace R7.Epsilon.Components
 
         public int MenuUrlType { get; set; } = 0;
 
+        [Obsolete]
         public int MenuMinHeaders { get; set; } = 7;
 
         public bool UseObrnadzorMicrodata { get; set; }
 
-        public List<SocialNetworkConfig> SocialNetworks { get; set; } = new List<SocialNetworkConfig> ();
+        public List<SocialGroupConfig> SocialGroups { get; set; } = new List<SocialGroupConfig> ();
+
+        public List<SearchEngineConfig> SearchEngines { get; set; } = new List<SearchEngineConfig> ();
 
         public AnalyticsConfig Analytics { get; set; } = new AnalyticsConfig ();
 
-        public FunctionsConfig Functions { get; set; } = new FunctionsConfig ();
+        public IList<string> PermalinkFormats { get; set; } = new List<string> {
+            "/tabid/{tabid}"
+        };
+
+        public IList<UrlShortenerConfig> UrlShorteners { get; set; } = new List<UrlShortenerConfig> {
+            new UrlShortenerConfig {
+                Label = "tinyurl.com",
+                UrlFormat = "https://tinyurl.com/create.php?url={url}"
+            }
+        };
 
         #endregion
+
+        public ThemeConfig GetTheme (HttpRequest request)
+        {
+            var theme = default (ThemeConfig);
+            var themeName = A11yHelper.GetThemeCookie (request);
+            if (themeName != null) {
+                theme = Themes.FirstOrDefault (t => t.Name == themeName);
+            }
+
+            return theme;
+        }
     }
 
     public class MenuConfig
@@ -105,12 +165,15 @@ namespace R7.Epsilon.Components
         public string Slot { get; set; } = "0000000000";
     }
 
-    // TODO: Rename to SocialNetwork
-    public class SocialNetworkConfig
+    public class SocialGroupConfig
     {
+        public SocialGroupType Type { get; set; }
+
         public string Name { get; set; }
 
-        public string Group { get; set; }
+        public string Color { get; set; }
+
+        public string Url { get; set; }
 
         public bool ShareEnabled { get; set; } = false;
 
@@ -132,16 +195,8 @@ namespace R7.Epsilon.Components
 
         public string ModuleDefinitionName { get; set; } = "Feedback";
 
+        // TODO: Rename to AllowOpenInPopup
         public bool OpenInPopup { get; set; } = true;
-    }
-
-    public class FunctionsConfig
-    {
-        public bool EnableAltWebsite { get; set; } = false;
-
-        public string AltWebsiteUrl { get; set; } = string.Empty;
-
-        public string AltWebsiteCulture { get; set; } = string.Empty;
     }
 
     public class CdnConfig
@@ -152,5 +207,47 @@ namespace R7.Epsilon.Components
 
         public string Location { get; set; }
     }
-}
 
+    public class ThemeConfig
+    {
+        public string Name { get; set; }
+
+        public string Css { get; set; }
+
+        public string Color { get; set; }
+
+        public bool IsA11yTheme { get; set; }
+    }
+
+    public class WebsiteConfig
+    {
+        public string Name { get; set; }
+
+        public string Url { get; set; }
+
+        public string Hreflang { get; set; }
+
+        public bool IsAltWebsite { get; set; }
+    }
+
+    public class SearchEngineConfig
+    {
+        public string Name { get; set; }
+
+        public SearchEngineType Type { get; set; }
+
+        public string UrlFormat { get; set; }
+
+        public string GetUrl (string website, string searchText)
+        {
+            return UrlFormat.Replace ("{website}", website).Replace ("{searchText}", HttpUtility.UrlEncode (searchText));
+        }
+    }
+
+    public class UrlShortenerConfig
+    {
+        public string Label { get; set; }
+
+        public string UrlFormat { get; set; }
+    }
+}

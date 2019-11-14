@@ -1,38 +1,29 @@
-﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.Skins.SkinObjects.SocialGroups" %>
-<%@ OutputCache Duration="1200" VaryByParam="Language" VaryByCustom="PortalId" %>
-<ul runat="server" class="skin-socialgroups">
-    <asp:ListView runat="server" ItemType="R7.Epsilon.Components.SocialNetworkConfig" SelectMethod="GetPrimarySocialNetworks">
-    	<LayoutTemplate>
-            <div runat="server" id="itemPlaceholder"></div>
-        </LayoutTemplate>
-    	<ItemTemplate>
-            <li>
-    	        <asp:HyperLink runat="server" NavigateUrl="<%# Item.Group %>" Target="_blank" rel="nofollow"
-					CssClass='<%# "skin-social-button skin-social-" + Item.Name.ToLowerInvariant () %>'
-					ToolTip='<%# Localizer.GetString (Item.Name + ".Title") %>'
-					aria-label='<%# Localizer.GetString (Item.Name + ".Title") %>' />
-			</li>
-    	</ItemTemplate>
-    </asp:ListView>
-	<li class="dropdown" style="<%= ShowDropdown ? string.Empty: "display:none" %>">
-		<a id="dropdownSocialGroups" role="button" href="#" class="skin-social-button skin-social-more dropdown-toggle"
-			data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="<%: Localizer.GetString ("MoreSocialGroups.Title")%>">
-			<span class="glyphicon glyphicon-option-horizontal"></span>
-		</a>
-	    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownSocialGroups">
-			<asp:ListView runat="server" ItemType="R7.Epsilon.Components.SocialNetworkConfig" SelectMethod="GetSecondarySocialNetworks">
-                <LayoutTemplate>
-                    <div runat="server" id="itemPlaceholder"></div>
-                </LayoutTemplate>
-                <ItemTemplate>
-                    <li>
-                        <asp:HyperLink runat="server" NavigateUrl="<%# Item.Group %>" Target="_blank" rel="nofollow">
-							<span class="skin-social-button skin-social-<%# Item.Name.ToLowerInvariant () %>"></span>
-						    <%# Localizer.GetString (Item.Name + ".Title") %>
-						</asp:HyperLink>
-					</li>
-                </ItemTemplate>
-            </asp:ListView>
-	    </ul>
-	</li>
-</ul>
+﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.Skins.SkinObjects.EpsilonSkinObjectBase" %>
+<%@ Import Namespace="R7.Epsilon.Components" %>
+<div class="dropdown skin-social-groups" style="display:inline-block">
+	<button type="button" class="btn btn-lg dropdown-toggle" data-toggle="dropdown" title='<%: T.GetString ("SocialGroups.Text") %>'>
+		<% var primaryGroup = Config.SocialGroups.FirstOrDefault (g => g.IsPrimary) ?? Config.SocialGroups.First (); %>
+		<i class="fab fa-<%: SocialGroupHelper.GetFAIconName (primaryGroup.Type) %>"></i><sup>+</sup>
+	</button>
+	<div class="dropdown-menu">
+		<% var prevGroup = default (SocialGroupConfig); %>
+		<% foreach (var group in Config.SocialGroups.OrderByDescending (g => g.IsPrimary)) {
+			if (prevGroup != null && !group.IsPrimary && prevGroup.IsPrimary) { %>
+				<div class="dropdown-divider"></div>
+			<% } %>
+			<a class="dropdown-item" href="<%: group.Url %>" target="_blank">
+				<i class="fab fa-<%: SocialGroupHelper.GetFAIconName (group.Type) %> brand-text brand-text-<%: group.Type.ToString ().ToLowerInvariant () %> skin-social-group-icon"
+					style="<%: SocialGroupHelper.GetCustomColorStyle (group.Color) %>">
+				</i>
+				<% if (!string.IsNullOrEmpty (group.Name)) { %>
+					<span class="skin-custom-content" data-resource-key="<%: group.Name %>">
+						<%: T.GetStringOrKey (group.Name + ".Text") %>
+					</span>
+				<% } else { %>
+					<%: T.GetString (group.Type + ".Text") %>
+				<% } %>
+				<% prevGroup = group; %>
+			</a>
+		<% } %>
+	</div>
+</div>

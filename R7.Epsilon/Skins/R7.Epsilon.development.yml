@@ -1,0 +1,133 @@
+themes:
+  - name: green
+    css: green-theme.min.css
+    color: green
+    is-a11y-theme: false
+
+  - name: blue
+    css: blue-theme.min.css
+    color: blue
+    is-a11y-theme: false
+
+  - name: brown
+    css: brown-theme.min.css
+    color: brown
+    is-a11y-theme: false
+
+  - name: contrast
+    css: contrast-theme.min.css
+    color: black
+    is-a11y-theme: true
+
+footer-buttons-group-name: FooterButtons
+
+primary-menu:
+  node-selector: "*,0,2"
+  node-manipulator-types:
+    - R7.News.Stream.Integrations.DDRMenu.StreamNodeManipulator, R7.News.Stream
+
+secondary-menu:
+  node-selector: "*,0,2"
+
+menu-url-type: 0
+
+social-groups:
+
+  - type: VKontakte
+    name: VKontakte1
+    url: https://vk.com/your-vk-group
+    api-id: 0000000
+    is-primary: true
+    share-enabled: true
+
+  - type: VKontakte
+    name: VKontakte2
+    color: '#458e66'
+    url: https://vk.com/your-vk-group
+    api-id: 0000000
+    is-primary: false
+    share-enabled: true
+
+  - type: Facebook
+    url: https://www.facebook.com/your-facebook-group
+    # specify Facebook App ID for the "like" button, or leave empty (will produce messages in JS console)
+    api-id:
+    share-enabled: true
+
+  - type: Twitter
+    url: https://twitter.com/your-twitter-group
+    share-enabled: true
+    params: ['your-twitter-via']
+
+  - type: YouTube
+    url: https://www.youtube.com/channel/your-youtube-group
+    is-primary: true
+
+  - type: Odnoklassniki
+    url: https://ok.ru/group/your-ok-group
+
+  - type: Instagram
+    url: https://www.instagram.com/your-instagram-group
+
+  - type: LinkedIn
+    url: https://www.linkedin.com/your-linkedin-group
+
+  - type: Reddit
+    url: https://reddit.com
+
+adsense:
+  client: ca-pub-9311000650074319
+  slot: 6593885688
+
+show-terms: true
+
+show-privacy: true
+
+use-obrnadzor-microdata: false
+
+analytics:
+  use-sputnik: true
+
+feedback:
+#  tab-id: 1100
+#  module-definition-name: "Form and List"
+#  open-in-popup: false
+  tab-id: 1090
+  module-definition-name: "Feedback"
+  open-in-popup: true
+
+websites:
+
+  - name: site1
+    url: http://consulting.volgau.com
+    hreflang: ru
+
+  - name: altsite1
+    url: http://consulting.volgau.com
+    hreflang: en-US
+    is-alt-website: true
+
+search-engines:
+
+  - name: Google1
+    type: Google
+    url-format: https://google.com/search?q=site:{website}%20{searchText}
+
+  - type: Yandex
+    url-format: https://yandex.ru/search?site={website}&text={searchText}
+
+  - type: DuckDuckGo
+    url-format: https://duckduckgo.com/search?q=site:{website}%20{searchText}
+
+permalink-formats:
+
+  - "/tabid/{tabid}{?language}"
+  - "/default.aspx?tabid={tabid}{?forumid}{?scope}"
+  - "/linkclick.aspx?link={tabid}&portalid={portalid}"
+
+url-shorteners:
+
+  - label: "tinyurl.com"
+    url-format: "https://tinyurl.com/create.php?url={url}"
+  - label: "clck.ru"
+    url-format: "https://clck.ru?url={url}"
