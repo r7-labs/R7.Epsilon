@@ -87,34 +87,40 @@
 	// TODO: Implement schema.org markup
 	var nodes = GetBreadcrumbNodes (root);
 	if (nodes.Count > 0) {
-        <nav aria-label='@GetString("DropCrumb_AriaLabel.Text")'>
-			<ol class="breadcrumb">
+        <nav aria-label='@GetString("DropCrumb_AriaLabel.Text")' itemprop="breadcrumb" itemscope="" itemtype="https://schema.org/breadcrumb">
+			<ol class="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList">
 				@foreach (var node in nodes) {
 					if (node == root) {
 						node.Enabled = true;
 					}
 					if (node.Selected) {
-						<li class="breadcrumb-item @NodeCssClasses(node)" aria-current="page">
+						<li class="breadcrumb-item @NodeCssClasses(node)" aria-current="page" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
 							@if (node.HasChildren ()) {
 								<span class="dropdown">
-									<a class="dropdown-toggle" href="#" type="button" role="button" id="btnDropCrumb" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-										@Html.Raw(node.Text)
+									<a class="dropdown-toggle" href="#" type="button" role="button" id="btnDropCrumb" data-toggle="dropdown"
+											aria-haspopup="true" aria-expanded="false" itemprop="item">
+										<span itemprop="name">@Html.Raw(node.Text)</span>
 									</a>
 									@RenderDropdownFor(node)
 								</span>
 							}
 							else {
-								@Html.Raw(node.Text)
+								<span itemprop="item">
+									<span itemprop="name">@Html.Raw(node.Text)</span>
+								</span>
 							}
 						</li>
 					}
 					else {
-						<li class="breadcrumb-item @NodeCssClasses(node)">
+						<li class="breadcrumb-item @NodeCssClasses(node)" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
 							@if (node == root) {
-								<a href="@FormatUrl(node)" title='@GetString("DropCrumb_Home_Tooltip.Text")'>@Html.Raw(GetString("DropCrumb_Home.Text"))</a>
+								<a href="@FormatUrl(node)" title='@GetString("DropCrumb_Home_Tooltip.Text")' itemprop="item">
+									@Html.Raw(GetString("DropCrumb_Home.Text"))
+									<meta itemprop="name" content="@node.Text" />
+								</a>
 							}
 							else {
-								<a href="@FormatUrl(node)">@Html.Raw(node.Text)</a>
+								<a href="@FormatUrl(node)" itemprop="item"><span itemprop="name">@Html.Raw(node.Text)</span></a>
 							}
 						</li>
 					}
