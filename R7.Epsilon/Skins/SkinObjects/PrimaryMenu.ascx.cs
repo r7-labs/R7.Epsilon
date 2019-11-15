@@ -40,6 +40,7 @@ namespace R7.Epsilon.Skins.SkinObjects
             Menu = menuPrimary;
             Menu.NodeSelector = Config.PrimaryMenu.NodeSelector;
             Menu.IncludeNodes = Config.PrimaryMenu.IncludeNodes;
+            Menu.ExcludeNodes = Config.PrimaryMenu.ExcludeNodes;
 
             if (Menu.TemplateArguments == null) {
                 Menu.TemplateArguments = new List<TemplateArgument> ();

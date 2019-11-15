@@ -118,6 +118,8 @@ namespace R7.Epsilon.Components
 
         public string IncludeNodes { get; set; } = string.Empty;
 
+        public string ExcludeNodes { get; set; } = string.Empty;
+
         public string UrlFormat { get; set; }
 
         public ICollection<string> NodeManipulatorTypes { get; set; } = new Collection<string> ();
