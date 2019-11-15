@@ -28,7 +28,7 @@ using DDRMenu = DotNetNuke.Web.DDRMenu;
 
 namespace R7.Epsilon.Skins.SkinObjects
 {
-    // TODO: Remove as not needed
+    // WTF: Removing this class causes issues with passing template arguments
     public abstract class EpsilonMenuBase: EpsilonSkinObjectBase
     {
         #region Controls
