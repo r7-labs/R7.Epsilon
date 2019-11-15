@@ -49,7 +49,7 @@ namespace R7.Epsilon.Skins.SkinObjects
             Menu.TemplateArguments.Add (new TemplateArgument ("UrlFormat", Config.PrimaryMenu.UrlFormat));
 
             if (Config.PrimaryMenu.NodeManipulators.Count > 0) {
-                Menu.NodeManipulator = typeof (EpsilonPrimaryMenuNodeManipulator).FullName;
+                Menu.NodeManipulator = typeof (EpsilonNodeManipulator<PrimaryMenu>).FullName;
             }
 
             base.OnInit (e);

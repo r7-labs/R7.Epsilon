@@ -1,10 +1,10 @@
 ﻿//
-//  EpsilonNodeManipulator.cs
+//  File: EpsilonNodeManipulator.cs
+//  Project: R7.Epsilon
 //
-//  Author:
-//       Roman M. Yagodin <roman.yagodin@gmail.com>
+//  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2017 Roman M. Yagodin
+//  Copyright (c) 2014-2019 Roman M. Yagodin, R7.Labs
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -22,39 +22,38 @@
 using System.Collections.Generic;
 using DotNetNuke.Entities.Portals;
 using DotNetNuke.Web.DDRMenu;
+using R7.Epsilon.Skins.SkinObjects;
 
 namespace R7.Epsilon.Components
 {
-    public abstract class EpsilonNodeManipulator: INodeManipulator
+    public class EpsilonNodeManipulator<TMenu>: INodeManipulator
     {
         readonly ICollection<INodeManipulator> _nodeManipulators;
 
-        protected EpsilonNodeManipulator (ICollection<INodeManipulator> nodeManipulators)
+        public EpsilonNodeManipulator ()
+        {
+            if (typeof (TMenu) == typeof (PrimaryMenu)) {
+                _nodeManipulators = EpsilonConfig.Instance.PrimaryMenu.NodeManipulators;
+            }
+            else if (typeof (TMenu) == typeof (SecondaryMenu)) {
+                _nodeManipulators = EpsilonConfig.Instance.SecondaryMenu.NodeManipulators;
+            }
+        }
+
+        public EpsilonNodeManipulator (ICollection<INodeManipulator> nodeManipulators)
         {
 	        _nodeManipulators = nodeManipulators;
         }
 
         public List<MenuNode> ManipulateNodes (List<MenuNode> nodes, PortalSettings portalSettings)
         {
-            foreach (var nodeManipulator in _nodeManipulators) {
-                nodeManipulator.ManipulateNodes (nodes, portalSettings);
+            if (_nodeManipulators != null) {
+                foreach (var nodeManipulator in _nodeManipulators) {
+                    nodeManipulator.ManipulateNodes (nodes, portalSettings);
+                }
             }
 
             return nodes;
-        }
-    }
-
-    public class EpsilonPrimaryMenuNodeManipulator : EpsilonNodeManipulator
-    {
-        public EpsilonPrimaryMenuNodeManipulator (): base (EpsilonConfig.Instance.PrimaryMenu.NodeManipulators)
-        {
-        }
-    }
-
-    public class EpsilonSecondaryMenuNodeManipulator : EpsilonNodeManipulator
-    {
-        public EpsilonSecondaryMenuNodeManipulator () : base (EpsilonConfig.Instance.SecondaryMenu.NodeManipulators)
-    	{
         }
     }
 }
