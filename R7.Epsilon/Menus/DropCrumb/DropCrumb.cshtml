@@ -92,7 +92,6 @@
 				@foreach (var node in nodes) {
 					if (node == root) {
 						node.Enabled = true;
-						node.Text = GetString ("DropCrumb_Home.Text");
 					}
 					<li class="breadcrumb-item @NodeCssClasses(node)">
 						@if (node.Selected) {
@@ -109,7 +108,12 @@
 							}
 						}
 						else {
-							<a href="@FormatUrl(node)">@Html.Raw(node.Text)</a>
+							if (node == root) {
+								<a href="@FormatUrl(node)" title='@GetString("DropCrumb_Home_Tooltip.Text")'>@Html.Raw(GetString("DropCrumb_Home.Text"))</a>
+							}
+							else {
+								<a href="@FormatUrl(node)">@Html.Raw(node.Text)</a>
+							}
 						}
 					</li>
 				}

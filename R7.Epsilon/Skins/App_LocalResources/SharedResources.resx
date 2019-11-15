@@ -228,6 +228,9 @@
 	<data name="DropCrumb_Home.Text" xml:space="preserve">
 		<value><![CDATA[<i class='fas fa-home'></i>]]></value>
 	</data>
+	<data name="DropCrumb_Home_Tooltip.Text" xml:space="preserve">
+		<value>Go to the home page.</value>
+	</data>
 	<data name="Mega2Epsilon_GoToPage.Text" xml:space="preserve">
 		<value>Navigate to page </value>
 	</data>
