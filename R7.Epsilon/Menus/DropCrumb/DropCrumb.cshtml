@@ -90,9 +90,9 @@
         <nav aria-label="breadcrumb">
 			<ol class="breadcrumb">
 				@foreach (var node in nodes) {
-					var text = node.Text;
 					if (node == root) {
-						text = GetString ("DropCrumb_Home.Text");
+						node.Enabled = true;
+						node.Text = GetString ("DropCrumb_Home.Text");
 					}
 					<li class="breadcrumb-item @NodeCssClasses(node)">
 						@if (node.Selected) {
@@ -105,11 +105,11 @@
 								</span>
 							}
 							else {
-								@Html.Raw(text)
+								@Html.Raw(node.Text)
 							}
 						}
 						else {
-							<a class="@NodeCssClasses(node)" href="@FormatUrl(node)">@Html.Raw(text)</a>
+							<a class="@NodeCssClasses(node)" href="@FormatUrl(node)">@Html.Raw(node.Text)</a>
 						}
 					</li>
 				}
