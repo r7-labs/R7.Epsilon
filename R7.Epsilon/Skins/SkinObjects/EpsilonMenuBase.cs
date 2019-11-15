@@ -1,10 +1,10 @@
 ﻿//
-//  EpsilonMenuBase.cs
+//  File: EpsilonMenuBase.cs
+//  Project: R7.Epsilon
 //
-//  Author:
-//       Roman M. Yagodin <roman.yagodin@gmail.com>
+//  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2015-2016 Roman M. Yagodin
+//  Copyright (c) 2015-2019 Roman M. Yagodin, R7.Labs
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -28,77 +28,13 @@ using DDRMenu = DotNetNuke.Web.DDRMenu;
 
 namespace R7.Epsilon.Skins.SkinObjects
 {
+    // TODO: Remove as not needed
     public abstract class EpsilonMenuBase: EpsilonSkinObjectBase
     {
         #region Controls
 
         protected DDRMenu.SkinObject Menu;
 
-        /*
-        protected DDRMenu.SkinObject menu;
-
-        public DDRMenu.SkinObject Menu
-        {
-            get
-            {
-                if (menu == null)
-                {
-                    // find menu control
-                    foreach (Control control in Controls)
-                    {
-                        if (control.ID != null && control.ID.StartsWith ("menu", StringComparison.InvariantCultureIgnoreCase))
-                        {
-                            menu = (DDRMenu.SkinObject) control;
-                            break;
-                        }
-                    }
-                }
-
-                return menu;
-            }
-        }
-        */
-
         #endregion
-
-        #region Properties
-
-        public bool PassDefaultTemplateArgs { get; set; }
-
-        #endregion
-
-        protected EpsilonMenuBase ()
-        {
-            PassDefaultTemplateArgs = true;
-        }
-       
-        protected override void OnInit (EventArgs e)
-        {
-            base.OnInit (e);
-
-            if (PassDefaultTemplateArgs)
-            {
-                // configurable menu template arguments
-                var menuTemplateArgs = new List<TemplateArgument> ()
-                {
-                    new TemplateArgument ("urlType", Config.MenuUrlType.ToString ()) 
-                };
-
-                // set menu template arguments
-                SetMenuTemplateArguments (Menu, menuTemplateArgs);
-            }
-        }
-
-        private void SetMenuTemplateArguments (DDRMenu.SkinObject menu, List<TemplateArgument> args)
-        {
-            // check if menu exists for various skin derivatives
-            if (menu != null)
-            {
-                if (menu.TemplateArguments != null)
-                    menu.TemplateArguments.AddRange (args);
-                else
-                    menu.TemplateArguments = args;
-            }
-        }
     }
 }

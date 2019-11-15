@@ -5,6 +5,7 @@
 @using DotNetNuke.Common;
 @using DotNetNuke.Entities.Portals;
 @using DotNetNuke.Services.Localization;
+@using R7.Epsilon.Components;
 @inherits DotNetNuke.Web.Razor.DotNetNukeWebPage<dynamic>
 
 @functions {
@@ -58,21 +59,26 @@
 		return Localization.GetString (resourceKey, resourceFileRoot);
 	}
 
-	string GetNodeUrl (MenuNode node)
+	string FormatUrl (MenuNode node)
 	{
-		// TODO: Apply URL formats here
 		if (string.IsNullOrEmpty (node.Url) && node.TabId == -1) {
-			return Globals.NavigateURL (PortalSettings.Current.HomeTabId);
+			node.TabId = PortalSettings.Current.HomeTabId;
+			node.Url = Globals.NavigateURL (PortalSettings.Current.HomeTabId);
 		}
 
-		return node.Url;
+		var urlFormat = Model.UrlFormat;
+		if (string.IsNullOrEmpty (urlFormat)) {
+			return node.Url;
+		}
+
+		return EpsilonUrlHelper.FormatUrl (urlFormat, node.TabId, PortalSettings.Current.PortalId, HttpContext.Current.Request.QueryString);
 	}
 }
 
 @helper RenderDropdownFor(MenuNode parentNode) {
 	<div class="dropdown-menu" aria-labelledby="btnDropCrumb">
 		@foreach (var node in parentNode.Children) {
-			<a class="dropdown-item @NodeCssClasses(node)" href="@GetNodeUrl(node)">@node.Text</a>
+			<a class="dropdown-item @NodeCssClasses(node)" href="@FormatUrl(node)">@node.Text</a>
 		}
 	</div>
 }
@@ -103,7 +109,7 @@
 							}
 						}
 						else {
-							<a class="@NodeCssClasses(node)" href="@GetNodeUrl(node)">@Html.Raw(text)</a>
+							<a class="@NodeCssClasses(node)" href="@FormatUrl(node)">@Html.Raw(text)</a>
 						}
 					</li>
 				}

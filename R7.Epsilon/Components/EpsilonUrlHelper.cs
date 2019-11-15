@@ -1,10 +1,10 @@
 //
-//  EpsilonUrlHelper.cs
+//  File: EpsilonUrlHelper.cs
+//  Project: R7.Epsilon
 //
-//  Author:
-//       Roman M. Yagodin <roman.yagodin@gmail.com>
+//  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2017 Roman M. Yagodin
+//  Copyright (c) 2014-2019 Roman M. Yagodin, R7.Labs
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -35,11 +35,16 @@ namespace R7.Epsilon.Components
             return Globals.AddHTTP (PortalSettings.Current.PortalAlias.HTTPAlias + url);
         }
 
+        public static string FormatUrl (string url, int tabId,  int portalId)
+        {
+            return url.Replace ("{tabid}", tabId.ToString ()).Replace ("{portalid}", portalId.ToString ());
+        }
+
         /// <summary>
         /// Replaces "{?arg}" in link format strings with the &amp;arg=value or ?arg=value
         /// if current querystring contains this argument
         /// </summary>
-        public static string ReplaceOptionalArguments (NameValueCollection queryString, string url)
+        public static string FormatUrlWithOptArgs (string url, NameValueCollection queryString)
         {
             var argFormats = Regex.Matches (url, @"\{\?\w+\}", RegexOptions.IgnoreCase);
             foreach (Match argFormat in argFormats) {
@@ -56,10 +61,20 @@ namespace R7.Epsilon.Components
 
             if (!url.Contains ("?")) {
                 // replace first & with ?
-                var ampIndex = url.IndexOf ("&");
+                var ampIndex = url.IndexOf ("&", StringComparison.InvariantCulture);
                 if (ampIndex >= 0) {
                     url = url.Substring (0, ampIndex) + "?" + url.Substring (ampIndex + 1);
                 }
+            }
+
+            return url;
+        }
+
+        public static string FormatUrl (string url, int tabId,  int portalId, NameValueCollection queryString)
+        {
+            url = FormatUrl (url, tabId, portalId);
+            if (url.Contains ("{?")) {
+                url = FormatUrlWithOptArgs (url, queryString);
             }
 
             return url;

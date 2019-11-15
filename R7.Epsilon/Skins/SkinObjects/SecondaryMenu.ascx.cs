@@ -1,10 +1,10 @@
 ﻿//
-//  SecondaryMenu.ascx.cs
+//  File: SecondaryMenu.ascx.cs
+//  Project: R7.Epsilon
 //
-//  Author:
-//       Roman M. Yagodin <roman.yagodin@gmail.com>
+//  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2015-2017 Roman M. Yagodin
+//  Copyright (c) 2014-2019 Roman M. Yagodin, R7.Labs
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -20,7 +20,9 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
+using System.Collections.Generic;
 using R7.Epsilon.Components;
+using DotNetNuke.Web.DDRMenu.TemplateEngine;
 using DDRMenu = DotNetNuke.Web.DDRMenu;
 
 namespace R7.Epsilon.Skins.SkinObjects
@@ -38,6 +40,12 @@ namespace R7.Epsilon.Skins.SkinObjects
             Menu = menuSecondary;
             Menu.NodeSelector = Config.SecondaryMenu.NodeSelector;
             Menu.IncludeNodes = Config.SecondaryMenu.IncludeNodes;
+
+            if (Menu.TemplateArguments == null) {
+                Menu.TemplateArguments = new List<TemplateArgument> ();
+            }
+
+            Menu.TemplateArguments.Add (new TemplateArgument ("UrlFormat", Config.SecondaryMenu.UrlFormat));
 
             if (Config.SecondaryMenu.NodeManipulators.Count > 0) {
                 Menu.NodeManipulator = typeof (EpsilonSecondaryMenuNodeManipulator).FullName;

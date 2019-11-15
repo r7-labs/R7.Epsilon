@@ -41,19 +41,19 @@ namespace R7.Epsilon.Tests.Components
             queryString3.Add ("arg3", "value3");
 
             Assert.Equal ("http://someurl.com",
-                EpsilonUrlHelper.ReplaceOptionalArguments (new NameValueCollection (), "http://someurl.com"));
+                EpsilonUrlHelper.FormatUrlWithOptArgs ("http://someurl.com", new NameValueCollection ()));
 
             Assert.Equal ("http://someurl.com?arg1=value1",
-                EpsilonUrlHelper.ReplaceOptionalArguments (queryString1, "http://someurl.com?arg1=value1{?arg2}"));
+                EpsilonUrlHelper.FormatUrlWithOptArgs ("http://someurl.com?arg1=value1{?arg2}", queryString1));
 
             Assert.Equal ("http://someurl.com?arg1=value1&arg2=value2",
-                EpsilonUrlHelper.ReplaceOptionalArguments (queryString2, "http://someurl.com?arg1=value1{?arg2}"));
+                EpsilonUrlHelper.FormatUrlWithOptArgs ("http://someurl.com?arg1=value1{?arg2}", queryString2));
 
             Assert.Equal ("http://someurl.com?arg2=value2",
-                EpsilonUrlHelper.ReplaceOptionalArguments (queryString2, "http://someurl.com{?arg1}{?arg2}"));
+                EpsilonUrlHelper.FormatUrlWithOptArgs ("http://someurl.com{?arg1}{?arg2}", queryString2));
 
             Assert.Equal ("http://someurl.com?arg1=value1",
-                EpsilonUrlHelper.ReplaceOptionalArguments (queryString3, "http://someurl.com?arg1=value1{?arg2}"));
+                EpsilonUrlHelper.FormatUrlWithOptArgs ("http://someurl.com?arg1=value1{?arg2}", queryString3));
         }
     }
 }

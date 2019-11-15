@@ -120,6 +120,9 @@
     <Compile Include="Skins\SkinObjects\SecondaryMenu.ascx.cs">
       <DependentUpon>SecondaryMenu.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Skins\SkinObjects\BreadcrumbMenu.ascx.cs">
+      <DependentUpon>BreadcrumbMenu.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Skins\SkinObjects\EpsilonSkinObjectBase.cs" />
     <Compile Include="Skins\SkinObjects\EpsilonMenuBase.cs" />
     <Compile Include="Components\A11yHelper.cs" />
@@ -198,6 +201,7 @@
     <Content Include="Skins\SkinObjects\PageInfo.ascx" />
     <Content Include="Skins\SkinObjects\PrimaryMenu.ascx" />
     <Content Include="Skins\SkinObjects\SecondaryMenu.ascx" />
+    <Content Include="Skins\SkinObjects\BreadcrumbMenu.ascx" />
     <Content Include="Skins\SkinObjects\SocialGroups.ascx" />
     <Content Include="Skins\SkinObjects\SocialShareButtons.ascx" />
     <Content Include="Skins\SkinObjects\SharedScripts.ascx" />

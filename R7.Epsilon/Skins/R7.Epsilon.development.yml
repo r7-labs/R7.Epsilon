@@ -22,14 +22,20 @@ themes:
 footer-buttons-group-name: FooterButtons
 
 primary-menu:
+
+  url-format: "/tabid/{tabid}"
   node-selector: "*,0,2"
   node-manipulator-types:
     - R7.News.Stream.Integrations.DDRMenu.StreamNodeManipulator, R7.News.Stream
 
 secondary-menu:
+
+  url-format: "/default.aspx?tabid={tabid}{?language}"
   node-selector: "*,0,2"
 
-menu-url-type: 0
+breadcrumb-menu:
+
+  url-format: "/linkclick.aspx?link={tabid}&portalid={portalid}"
 
 social-groups:
 

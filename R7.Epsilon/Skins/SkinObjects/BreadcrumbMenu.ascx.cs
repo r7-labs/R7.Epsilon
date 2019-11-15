@@ -1,5 +1,5 @@
 ﻿//
-//  File: PrimaryMenu.ascx.cs
+//  File: BreadcrumbMenu.ascx.cs
 //  Project: R7.Epsilon
 //
 //  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
@@ -21,35 +21,28 @@
 
 using System;
 using System.Collections.Generic;
-using R7.Epsilon.Components;
 using DotNetNuke.Web.DDRMenu.TemplateEngine;
 using DDRMenu = DotNetNuke.Web.DDRMenu;
 
 namespace R7.Epsilon.Skins.SkinObjects
 {
-    public class PrimaryMenu: EpsilonMenuBase
+    public class BreadcrumbMenu: EpsilonMenuBase
     {
         #region Controls
 
-        protected DDRMenu.SkinObject menuPrimary;
+        protected DDRMenu.SkinObject menuBreadcrumb;
 
         #endregion
 
         protected override void OnInit (EventArgs e)
         {
-            Menu = menuPrimary;
-            Menu.NodeSelector = Config.PrimaryMenu.NodeSelector;
-            Menu.IncludeNodes = Config.PrimaryMenu.IncludeNodes;
+            Menu = menuBreadcrumb;
 
             if (Menu.TemplateArguments == null) {
                 Menu.TemplateArguments = new List<TemplateArgument> ();
             }
 
-            Menu.TemplateArguments.Add (new TemplateArgument ("UrlFormat", Config.PrimaryMenu.UrlFormat));
-
-            if (Config.PrimaryMenu.NodeManipulators.Count > 0) {
-                Menu.NodeManipulator = typeof (EpsilonPrimaryMenuNodeManipulator).FullName;
-            }
+            Menu.TemplateArguments.Add (new TemplateArgument ("UrlFormat", Config.BreadcrumbMenu.UrlFormat));
 
             base.OnInit (e);
         }

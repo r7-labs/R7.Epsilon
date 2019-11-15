@@ -1,6 +1,8 @@
 ﻿@using System.Dynamic;
 @using DotNetNuke.Web.DDRMenu;
 @using DotNetNuke.Services.Localization;
+@using DotNetNuke.Entities.Portals;
+@using R7.Epsilon.Components;
 @inherits DotNetNuke.Web.Razor.DotNetNukeWebPage<dynamic>
 
 @functions {
@@ -29,6 +31,16 @@
 		var resourceFileRoot = "~/Portals/_default/Skins/R7.Epsilon/App_LocalResources/Fake.ascx.resx";
 		return Localization.GetString (resourceKey, resourceFileRoot);
 	}
+
+	string FormatUrl (MenuNode node)
+	{
+		var urlFormat = Model.UrlFormat;
+		if (string.IsNullOrEmpty (urlFormat)) {
+			return node.Url;
+		}
+
+		return EpsilonUrlHelper.FormatUrl (urlFormat, node.TabId, PortalSettings.Current.PortalId, HttpContext.Current.Request.QueryString);
+	}
 }
 
 @helper RenderNodes(IList<MenuNode> nodes) {
@@ -44,7 +56,7 @@
 						</li>
 					} else {
 						<li class="nav-item">
-							<a href="@node.Url" class="nav-link @NodeCssClasses(node)">@node.Text</a>
+							<a href="@FormatUrl(node)" class="nav-link @NodeCssClasses(node)">@node.Text</a>
 						</li>
 					}
 				}
@@ -63,7 +75,7 @@
 		<div class="row no-gutters">
 			<div class="col-12 p-0">
 				<div class="nav-item">
-					<a href="@parentNode.Url" class="h4 nav-link @NodeCssClasses(parentNode)"
+					<a href="@FormatUrl(parentNode)" class="h4 nav-link @NodeCssClasses(parentNode)"
 							title='@(GetString("Mega2Epsilon_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
 						@parentNode.Text <i class="fas fa-caret-right"></i><i class="fas fa-caret-right"></i>
 					</a>
@@ -81,7 +93,7 @@
 					}
 					else {
 						<div class="nav-item">
-							<a href="@node.Url" class="nav-link @NodeCssClasses(node)">@node.Text</a>
+							<a href="@FormatUrl(node)" class="nav-link @NodeCssClasses(node)">@node.Text</a>
 						</div>
 					}
 				</div>
@@ -92,13 +104,13 @@
 
 @helper RenderDropdownFor(MenuNode parentNode) {
 	<div class="dropdown-menu" aria-labelledby="@(Model.ControlID)_subnav_dropdown_@parentNode.TabId">
-		<a class="h5 dropdown-item @NodeCssClasses(parentNode) dropdown-item-parent" href="@parentNode.Url"
+		<a class="h5 dropdown-item @NodeCssClasses(parentNode) dropdown-item-parent" href="@FormatUrl(parentNode)"
 				title='@(GetString("Mega2Epsilon_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
 			@parentNode.Text <i class="fas fa-caret-right"></i><i class="fas fa-caret-right"></i>
 		</a>
 		<div class="dropdown-divider"></div>
 		@foreach (var node in parentNode.Children) {
-    		<a class="dropdown-item @NodeCssClasses(node)" href="@node.Url">@node.Text</a>
+    		<a class="dropdown-item @NodeCssClasses(node)" href="@FormatUrl(node)">@node.Text</a>
 		}
 	</div>
 }
