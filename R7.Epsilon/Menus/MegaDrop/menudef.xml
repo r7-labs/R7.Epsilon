@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+    <template>MegaDrop.cshtml</template>
+    <scripts />
+    <stylesheets />
+</manifest>

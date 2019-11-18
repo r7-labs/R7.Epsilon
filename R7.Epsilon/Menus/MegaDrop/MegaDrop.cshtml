@@ -76,7 +76,7 @@
 			<div class="col-12 p-0">
 				<div class="nav-item">
 					<a href="@FormatUrl(parentNode)" class="h4 nav-link @NodeCssClasses(parentNode)"
-							title='@(GetString("Mega2Epsilon_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
+							title='@(GetString("MegaDrop_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
 						@parentNode.Text <i class="fas fa-caret-right"></i><i class="fas fa-caret-right"></i>
 					</a>
 				</div>
@@ -105,7 +105,7 @@
 @helper RenderDropdownFor(MenuNode parentNode) {
 	<div class="dropdown-menu" aria-labelledby="@(Model.ControlID)_subnav_dropdown_@parentNode.TabId">
 		<a class="h5 dropdown-item @NodeCssClasses(parentNode) dropdown-item-parent" href="@FormatUrl(parentNode)"
-				title='@(GetString("Mega2Epsilon_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
+				title='@(GetString("MegaDrop_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
 			@parentNode.Text <i class="fas fa-caret-right"></i><i class="fas fa-caret-right"></i>
 		</a>
 		<div class="dropdown-divider"></div>

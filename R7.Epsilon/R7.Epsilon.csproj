@@ -70,14 +70,12 @@
     <None Include="Skins\App_LocalResources\SharedResources.ru-RU.resx" />
     <None Include="R7.Epsilon.csproj" />
     <None Include="R7.Epsilon.dnn" />
-    <None Include="Skins\skin.doctype.xml">
-    </None>
+    <None Include="Skins\skin.doctype.xml" />
     <None Include="lib\ClientDependency.Core.dll" />
     <None Include="lib\DotNetNuke.Web.DDRMenu.dll" />
     <None Include="Skins\R7.Epsilon.development.yml" />
     <None Include="lib\README.md" />
-    <None Include="Menus\Mega2Epsilon\Mega2Epsilon.xslt" />
-    <None Include="Menus\Mega2Epsilon\menudef.xml" />
+    <None Include="Menus\MegaDrop\menudef.xml" />
     <None Include="Skins\koi.json" />
   </ItemGroup>
   <ItemGroup>
@@ -260,13 +258,13 @@
     <Folder Include="ControlExtensions\" />
     <Folder Include="Skins\SkinObjects\" />
     <Folder Include="Menus\" />
-    <Folder Include="Menus\Mega2Epsilon\" />
+    <Folder Include="Menus\MegaDrop\" />
     <Folder Include="Skins\SkinObjects\Banners\" />
     <Content Include="Skins\SkinObjects\Includes.ascx" />
     <Content Include="Skins\SkinObjects\Meta.ascx" />
     <Content Include="Skins\Blocks\Header.ascx" />
     <Content Include="Skins\Blocks\Footer.ascx" />
-    <Content Include="Menus\Mega2Epsilon\Mega2Epsilon.cshtml" />
+    <Content Include="Menus\MegaDrop\MegaDrop.cshtml" />
     <Content Include="Skins\SkinObjects\SearchModal.ascx" />
     <Content Include="Skins\SkinObjects\Languages.ascx" />
     <Content Include="Skins\Blocks\SubHeader.ascx" />
