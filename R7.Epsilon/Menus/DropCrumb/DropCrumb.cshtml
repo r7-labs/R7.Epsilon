@@ -74,10 +74,33 @@
 	}
 }
 
-@helper RenderDropdownFor(MenuNode parentNode) {
-	<div class="dropdown-menu" aria-labelledby="btnDropCrumb">
+@helper RenderDropdownLevel2For(MenuNode parentNode) {
+	<div class="dropdown-menu" aria-labelledby="btnDropCrumb_@parentNode.TabId">
+		<a class="h5 dropdown-item @NodeCssClasses(parentNode)" href="@FormatUrl(parentNode)">
+			@parentNode.Text <i class="fas fa-angle-double-right"></i>
+		</a>
+		<div class="dropdown-divider"></div>
 		@foreach (var node in parentNode.Children) {
 			<a class="dropdown-item @NodeCssClasses(node)" href="@FormatUrl(node)">@node.Text</a>
+		}
+	</div>
+}
+
+@helper RenderDropdownFor(MenuNode parentNode) {
+	<div class="dropdown-menu" aria-labelledby="btnDropCrumb_@parentNode.TabId">
+		@foreach (var node in parentNode.Children) {
+			if (node.HasChildren ()) {
+				<div class="dropright">
+					<a class="dropdown-item dropdown-toggle lvl2" href="#" type="button" role="button" id="btnDropCrumb_@node.TabId" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false">
+						<span itemprop="name">@Html.Raw(node.Text)</span>
+					</a>
+					@RenderDropdownLevel2For(node)
+				</div>
+			}
+			else {
+				<a class="dropdown-item @NodeCssClasses(node)" href="@FormatUrl(node)">@node.Text</a>
+			}
 		}
 	</div>
 }
@@ -95,7 +118,7 @@
 						<li class="breadcrumb-item @NodeCssClasses(node)" aria-current="page" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
 							@if (node.HasChildren ()) {
 								<span class="dropdown">
-									<a class="dropdown-toggle" href="#" type="button" role="button" id="btnDropCrumb" data-toggle="dropdown"
+									<a class="dropdown-toggle" href="#" type="button" role="button" id="btnDropCrumb_@node.TabId" data-toggle="dropdown"
 											aria-haspopup="true" aria-expanded="false" itemprop="item">
 										<span itemprop="name">@Html.Raw(node.Text)</span>
 									</a>
@@ -129,3 +152,13 @@
 }
 
 @RenderBreadcrumb(Model.Source.root)
+
+<script>
+$(document).ready(function(){
+	$(".breadcrumb .dropdown .dropdown-toggle.lvl2").on("click", function(e){
+		$(this).next(".dropdown-menu").toggle();
+		e.stopPropagation();
+		e.preventDefault();
+	});
+});
+</script>

@@ -77,7 +77,7 @@
 				<div class="nav-item">
 					<a href="@FormatUrl(parentNode)" class="h4 nav-link @NodeCssClasses(parentNode)"
 							title='@(GetString("MegaDrop_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
-						@parentNode.Text <i class="fas fa-caret-right"></i><i class="fas fa-caret-right"></i>
+						@parentNode.Text <i class="fas fa-angle-double-right"></i>
 					</a>
 				</div>
 			</div>
@@ -106,7 +106,7 @@
 	<div class="dropdown-menu" aria-labelledby="@(Model.ControlID)_subnav_dropdown_@parentNode.TabId">
 		<a class="h5 dropdown-item @NodeCssClasses(parentNode) dropdown-item-parent" href="@FormatUrl(parentNode)"
 				title='@(GetString("MegaDrop_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
-			@parentNode.Text <i class="fas fa-caret-right"></i><i class="fas fa-caret-right"></i>
+			@parentNode.Text <i class="fas fa-angle-double-right"></i>
 		</a>
 		<div class="dropdown-divider"></div>
 		@foreach (var node in parentNode.Children) {
