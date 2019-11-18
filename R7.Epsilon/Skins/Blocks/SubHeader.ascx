@@ -8,7 +8,7 @@
 <nav class="skin-local-navbar" role="navigation">
 	<% if (!Skin.Options.DisableBreadCrumb) { %>
 		<div class="container">
-			<skin:BREADCRUMBMENU id="breadcrumbMenu" runat="server" MenuStyle="DropCrumb" NodeSelector="*,0,5" />
+			<skin:BREADCRUMBMENU id="breadcrumbMenu" runat="server" />
 		</div>
 	<% } %>
     <div class="container">

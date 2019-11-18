@@ -40,7 +40,6 @@
 		return null;
 	}
 
-	// TODO: Implement via NodeManipulator?
 	IList<MenuNode> GetBreadcrumbNodes (MenuNode root)
 	{
 		var currentNode = FindCurrentNodeRecursive (root);
@@ -84,7 +83,6 @@
 }
 
 @helper RenderBreadcrumb(MenuNode root) {
-	// TODO: Implement schema.org markup
 	var nodes = GetBreadcrumbNodes (root);
 	if (nodes.Count > 0) {
         <nav aria-label='@GetString("DropCrumb_AriaLabel.Text")' itemprop="breadcrumb" itemscope="" itemtype="https://schema.org/breadcrumb">

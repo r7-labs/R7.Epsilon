@@ -66,7 +66,9 @@ namespace R7.Epsilon.Components
 
         public MenuConfig SecondaryMenu { get; set; } = new MenuConfig ();
 
-        public MenuConfig BreadcrumbMenu { get; set; } = new MenuConfig ();
+        public MenuConfig BreadcrumbMenu { get; set; } = new MenuConfig {
+            NodeSelector = "*,0,7"
+        };
 
         public string FooterButtonsGroupName { get; set; }
 

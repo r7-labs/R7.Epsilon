@@ -37,6 +37,7 @@ namespace R7.Epsilon.Skins.SkinObjects
         protected override void OnInit (EventArgs e)
         {
             Menu = menuBreadcrumb;
+            Menu.NodeSelector = Config.PrimaryMenu.NodeSelector;
 
             if (Menu.TemplateArguments == null) {
                 Menu.TemplateArguments = new List<TemplateArgument> ();
