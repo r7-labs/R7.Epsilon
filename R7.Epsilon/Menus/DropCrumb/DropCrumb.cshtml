@@ -24,31 +24,18 @@
 		return (NodeActiveCssClass (node) + " " + NodeDisabledCssClass (node)).Trim ();
 	}
 
-	MenuNode FindCurrentNodeRecursive (MenuNode node)
-	{
-		if (node.Selected) {
-			return node;
-		}
-
-		foreach (var node1 in node.Children) {
-			var node2 = FindCurrentNodeRecursive (node1);
-			if (node2 != null) {
-				return node2;
-			}
-		}
-
-		return null;
-	}
-
 	IList<MenuNode> GetBreadcrumbNodes (MenuNode root)
 	{
-		var currentNode = FindCurrentNodeRecursive (root);
-		var nodes = new List<MenuNode> ();
-		while (currentNode != null) {
-			nodes.Insert (0, currentNode);
-			currentNode = currentNode.Parent;
+		var node = root;
+		var nodes = new List<MenuNode> { node };
+		while (!node.Selected && node.HasChildren ()) {
+			var breadcrumbNode = node.Children.FirstOrDefault (n => n.Breadcrumb);
+			if (breadcrumbNode == null) {
+				break;
+			}
+			nodes.Add (breadcrumbNode);
+			node = breadcrumbNode;
 		}
-
 		return nodes;
 	}
 
