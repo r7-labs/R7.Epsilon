@@ -62,9 +62,13 @@ namespace R7.Epsilon.Components
 
         public FeedbackConfig Feedback { get; set; } = new FeedbackConfig ();
 
-        public MenuConfig PrimaryMenu { get; set; } = new MenuConfig ();
+        public MenuConfig PrimaryMenu { get; set; } = new MenuConfig {
+            NodeSelector = "*,0,3"
+        };
 
-        public MenuConfig SecondaryMenu { get; set; } = new MenuConfig ();
+        public MenuConfig SecondaryMenu { get; set; } = new MenuConfig {
+            NodeSelector = "*,0,3"
+        };
 
         public MenuConfig BreadcrumbMenu { get; set; } = new MenuConfig {
             NodeSelector = "*,0,7"
@@ -116,7 +120,7 @@ namespace R7.Epsilon.Components
 
     public class MenuConfig
     {
-        public string NodeSelector { get; set; } = "*,0,2";
+        public string NodeSelector { get; set; }
 
         public string IncludeNodes { get; set; } = string.Empty;
 
