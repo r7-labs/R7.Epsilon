@@ -53,6 +53,7 @@ window.skinSearchExternalClick = function (e, link) {
 
 (function ($, window, document) {
 
+    // TODO: Obsolete, remove
     function initBreadcrumb () {
         if (epsilon.breadCrumbsRemoveLastLink) {
             // assume new style breadcrumbs with schema.org markup (DNN 8+)
@@ -187,18 +188,27 @@ window.skinSearchExternalClick = function (e, link) {
         $(".skin-tags ul.categories > li > a").addClass ("badge badge-secondary");
     }
 
+    function initMainMenu () {
+        $(".skin-main-nav .navbar-nav .dropdown-toggle.lvl2").on("click", function(e){
+            $(this).next(".dropdown-menu").toggle();
+            e.stopPropagation();
+            e.preventDefault();
+        });
+    }
+
     $(function () {
         initBootstrapTooltips ();
         initBootstrapPopovers ();
 
         if (! epsilon.inPopup) {
             emptyLayoutRows ();
-            initBreadcrumb ();
+            // initBreadcrumb ();
             initUpButton (320, 500);
             initCustomContent ();
             initSearch ();
             initClipboard ();
             initTags ();
+            initMainMenu ();
             alterLanguage ();
             alterLogin ();
             window.skinA11y = new A11y ().init ();

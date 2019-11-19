@@ -110,6 +110,29 @@
 		</a>
 		<div class="dropdown-divider"></div>
 		@foreach (var node in parentNode.Children) {
+			if (node.HasChildren ()) {
+				<div class="dropright">
+					<a id="@(Model.ControlID)_dropright_@node.TabId" href="#" role="button" data-toggle="dropdown"
+						aria-expanded="false" aria-haspopup="true"
+						class="dropdown-item dropdown-toggle lvl2 @NodeCssClasses(node)">@node.Text</a>
+					@RenderDropdownLvl2For(node)
+				</div>
+			}
+			else {
+    			<a class="dropdown-item @NodeCssClasses(node)" href="@FormatUrl(node)">@node.Text</a>
+			}
+		}
+	</div>
+}
+
+@helper RenderDropdownLvl2For(MenuNode parentNode) {
+	<div class="dropdown-menu" aria-labelledby="@(Model.ControlID)_dropright_@parentNode.TabId">
+		<a class="h6 dropdown-item @NodeCssClasses(parentNode)" href="@FormatUrl(parentNode)"
+				title='@(GetString("MegaDrop_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
+			@parentNode.Text <i class="fas fa-angle-double-right"></i>
+		</a>
+		<div class="dropdown-divider"></div>
+		@foreach (var node in parentNode.Children) {
     		<a class="dropdown-item @NodeCssClasses(node)" href="@FormatUrl(node)">@node.Text</a>
 		}
 	</div>
