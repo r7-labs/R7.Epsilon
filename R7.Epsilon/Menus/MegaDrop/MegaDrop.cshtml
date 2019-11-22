@@ -41,6 +41,11 @@
 
 		return EpsilonUrlHelper.FormatUrl (urlFormat, node.TabId, PortalSettings.Current.PortalId, HttpContext.Current.Request.QueryString);
 	}
+
+	string Id (MenuNode node, string prefix)
+	{
+		return Model.ControlID + "_" + prefix + node.TabId;
+	}
 }
 
 @helper RenderNodes(IList<MenuNode> nodes) {
@@ -50,7 +55,7 @@
 				@foreach (var node in nodes) {
 					if (node.HasChildren()) {
 						<li class="nav-item dropdown">
-							<a href="#@(Model.ControlID)_subnav_@node.TabId" aria-controls="@(Model.ControlID)_subnav_@node.TabId"
+							<a href='#@Id(node, "subnav")' aria-controls='@Id(node, "subnav")'
 								role="button" data-toggle="collapse" aria-expanded="false"
 								class="nav-link dropdown-toggle @NodeCssClasses(node)">@node.Text</a>
 						</li>
@@ -71,7 +76,7 @@
 }
 
 @helper RenderSubnavFor(MenuNode parentNode) {
-	<div class="navbar-nav skin-navbar-subnav col-6 col-md-12 collapse" id="@(Model.ControlID)_subnav_@parentNode.TabId" data-parent="#@Model.ControlID">
+	<div class="navbar-nav skin-navbar-subnav col-6 col-md-12 collapse" id='@Id(parentNode, "subnav")' data-parent="#@Model.ControlID">
 		<div class="row no-gutters">
 			<div class="col-12 p-0">
 				<div class="nav-item">
@@ -85,7 +90,7 @@
 				<div class="@subnavItemCssClass()">
 					@if (node.HasChildren ()) {
 						<div class="nav-item dropdown">
-							<a id="@(Model.ControlID)_subnav_dropdown_@node.TabId" href="#" role="button" data-toggle="dropdown"
+							<a id='@Id(node, "subnav_dropdown")' href="#" role="button" data-toggle="dropdown"
 								aria-expanded="false" aria-haspopup="true"
 								class="nav-link dropdown-toggle @NodeCssClasses(node)">@node.Text</a>
 							@RenderDropdownFor(node)
@@ -103,7 +108,7 @@
 }
 
 @helper RenderDropdownFor(MenuNode parentNode) {
-	<div class="dropdown-menu" aria-labelledby="@(Model.ControlID)_subnav_dropdown_@parentNode.TabId">
+	<div class="dropdown-menu" aria-labelledby='@Id(parentNode, "subnav_dropdown")'>
 		<a class="h5 dropdown-item @NodeCssClasses(parentNode) dropdown-item-parent" href="@FormatUrl(parentNode)"
 				title='@(GetString("MegaDrop_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
 			@parentNode.Text <i class="fas fa-angle-double-right"></i>
@@ -112,7 +117,7 @@
 		@foreach (var node in parentNode.Children) {
 			if (node.HasChildren ()) {
 				<div class="dropright">
-					<a id="@(Model.ControlID)_dropright_@node.TabId" href="#" role="button" data-toggle="dropdown"
+					<a id='@Id(node, "dropright")' href="#" role="button" data-toggle="dropdown"
 						aria-expanded="false" aria-haspopup="true"
 						class="dropdown-item dropdown-toggle lvl2 @NodeCssClasses(node)">@node.Text</a>
 					@RenderDropdownLvl2For(node)
@@ -126,7 +131,7 @@
 }
 
 @helper RenderDropdownLvl2For(MenuNode parentNode) {
-	<div class="dropdown-menu" aria-labelledby="@(Model.ControlID)_dropright_@parentNode.TabId">
+	<div class="dropdown-menu" aria-labelledby='@Id(parentNode, "dropright")'>
 		<a class="h6 dropdown-item @NodeCssClasses(parentNode)" href="@FormatUrl(parentNode)"
 				title='@(GetString("MegaDrop_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
 			@parentNode.Text <i class="fas fa-angle-double-right"></i>
