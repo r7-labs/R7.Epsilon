@@ -4,7 +4,7 @@
 //
 //  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2019 Roman M. Yagodin, R7.Labs
+//  Copyright (c) 2014-2019 Roman M. Yagodin, R7.Labs
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -18,6 +18,8 @@
 //
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+@import "mixins";
 
 .skin-primary-navbar
 {
@@ -70,16 +72,6 @@
 	.skin-navbar-subnav { transition: none; }
 	.skin-navbar-subnav.collapsing { display: none; }
 }
-
-@mixin fa-icon-after ($icon) {
-    content: $icon;
-    font-family: "Font Awesome 5 Free";
-    display: inline-block;
-    padding-left: 4px;
-    font-weight: 900;
-}
-
-
 
 .skin-navbar-subnav .collapse-toggle::after {
     @include fa-icon-after('\f0d7')

@@ -21,22 +21,7 @@
 
 @import "bootstrap";
 @import "containers";
-
-/* Mixins */
-// TODO: Move mixins to separate file
-
-@mixin background-position-xy ($index-x, $index-y, $icon-size)
-{
-    background-position:(-$icon-size * $index-x) (-$icon-size * $index-y);
-}
-
-@mixin fa-icon-before ($icon) {
-    content: $icon;
-    font-family: "Font Awesome 5 Free";
-    display: inline-block;
-    padding-right: 4px;
-    font-weight: 900;
-}
+@import "mixins";
 
 /* Styles */
 

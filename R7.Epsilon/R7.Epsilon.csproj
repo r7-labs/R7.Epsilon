@@ -311,5 +311,6 @@
     <Content Include="Containers\DnnAlert_Success.ascx" />
     <Content Include="Containers\DnnAlert_Info.ascx" />
     <Content Include="Containers\DnnAlert_Danger.ascx" />
+    <Content Include="Skins\css\_mixins.scss" />
   </ItemGroup>
 </Project>
