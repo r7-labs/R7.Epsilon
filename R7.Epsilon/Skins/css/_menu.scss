@@ -59,8 +59,10 @@
 	width: 100%;
 }
 
-.skin-navbar-subnav .nav-link {
-    white-space: normal;
+.skin-navbar-subnav {
+    .nav-link, .dropdown-item {
+        white-space: normal;
+    }
 }
 
 // disable "broken" menu animation on small screens
@@ -77,9 +79,7 @@
     font-weight: 900;
 }
 
-.skin-navbar-subnav .collapse .dropdown-item.h6 {
-    font-weight: bold;
-}
+
 
 .skin-navbar-subnav .collapse-toggle::after {
     @include fa-icon-after('\f0d7')
