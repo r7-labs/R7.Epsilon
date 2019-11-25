@@ -16,7 +16,12 @@
 		return !node.Enabled ? "disabled" : string.Empty;
 	}
 
-	string NodeCssClasses (MenuNode node)
+	string NodeForkCssClasses (MenuNode node)
+	{
+		return NodeActiveCssClass (node);
+	}
+
+	string NodeLeafCssClasses (MenuNode node)
 	{
 		return (NodeActiveCssClass (node) + " " + NodeDisabledCssClass (node)).Trim ();
 	}
@@ -38,7 +43,6 @@
 		if (string.IsNullOrEmpty (urlFormat)) {
 			return node.Url;
 		}
-
 		return EpsilonUrlHelper.FormatUrl (urlFormat, node.TabId, PortalSettings.Current.PortalId, HttpContext.Current.Request.QueryString);
 	}
 
@@ -57,11 +61,11 @@
 						<li class="nav-item dropdown">
 							<a href='#@Id(node, "subnav")' aria-controls='@Id(node, "subnav")'
 								role="button" data-toggle="collapse" aria-expanded="false"
-								class="nav-link dropdown-toggle @NodeCssClasses(node)">@node.Text</a>
+								class="nav-link dropdown-toggle @NodeForkCssClasses(node)">@node.Text</a>
 						</li>
 					} else {
 						<li class="nav-item">
-							<a href="@FormatUrl(node)" class="nav-link @NodeCssClasses(node)">@node.Text</a>
+							<a href="@FormatUrl(node)" class="nav-link @NodeLeafCssClasses(node)">@node.Text</a>
 						</li>
 					}
 				}
@@ -78,27 +82,29 @@
 @helper RenderSubnavFor(MenuNode parentNode) {
 	<div class="navbar-nav skin-navbar-subnav col-6 col-md-12 collapse" id='@Id(parentNode, "subnav")' data-parent="#@Model.ControlID">
 		<div class="row no-gutters">
-			<div class="col-12 p-0">
-				<div class="nav-item">
-					<a href="@FormatUrl(parentNode)" class="h4 nav-link @NodeCssClasses(parentNode)"
-							title='@(GetString("MegaDrop_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
-						@parentNode.Text <i class="fas fa-angle-double-right"></i>
-					</a>
+			@if (parentNode.Enabled) {
+				<div class="col-12 p-0">
+					<div class="nav-item">
+						<a href="@FormatUrl(parentNode)" class="h4 nav-link @NodeLeafCssClasses(parentNode)"
+								title='@(GetString("MegaDrop_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
+							@parentNode.Text <i class="fas fa-angle-double-right"></i>
+						</a>
+					</div>
 				</div>
-			</div>
+			}
 			@foreach (var node in parentNode.Children) {
 				<div class="@subnavItemCssClass()">
 					@if (node.HasChildren ()) {
 						<div class="nav-item dropdown">
 							<a id='@Id(node, "subnav_dropdown")' href="#" role="button" data-toggle="dropdown"
 								aria-expanded="false" aria-haspopup="true"
-								class="nav-link dropdown-toggle @NodeCssClasses(node)">@node.Text</a>
+								class="nav-link dropdown-toggle @NodeForkCssClasses(node)">@node.Text</a>
 							@RenderDropdownFor(node)
 						</div>
 					}
 					else {
 						<div class="nav-item">
-							<a href="@FormatUrl(node)" class="nav-link @NodeCssClasses(node)">@node.Text</a>
+							<a href="@FormatUrl(node)" class="nav-link @NodeLeafCssClasses(node)">@node.Text</a>
 						</div>
 					}
 				</div>
@@ -109,20 +115,22 @@
 
 @helper RenderDropdownFor(MenuNode parentNode) {
 	<div class="dropdown-menu" aria-labelledby='@Id(parentNode, "subnav_dropdown")'>
-		<a class="h5 dropdown-item @NodeCssClasses(parentNode) dropdown-item-parent" href="@FormatUrl(parentNode)"
-				title='@(GetString("MegaDrop_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
-			@parentNode.Text <i class="fas fa-angle-double-right"></i>
-		</a>
-		<div class="dropdown-divider"></div>
+		@if (parentNode.Enabled) {
+			<a class="h5 dropdown-item @NodeLeafCssClasses(parentNode) dropdown-item-parent" href="@FormatUrl(parentNode)"
+					title='@(GetString("MegaDrop_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
+				@parentNode.Text <i class="fas fa-angle-double-right"></i>
+			</a>
+			<div class="dropdown-divider"></div>
+		}
 		@foreach (var node in parentNode.Children) {
 			if (node.HasChildren ()) {
 				<a href="@FormatUrl(node)" data-toggle="collapse" data-target='#@Id(node, "collapse")'
 					aria-expanded="false" aria-controls='@Id(node, "collapse")'
-					class="dropdown-item collapse-toggle @NodeCssClasses(node)">@node.Text</a>
+					class="dropdown-item collapse-toggle @NodeForkCssClasses(node)">@node.Text</a>
 				@RenderCollapseFor(node)
 			}
 			else {
-    			<a class="dropdown-item @NodeCssClasses(node)" href="@FormatUrl(node)">@node.Text</a>
+    			<a class="dropdown-item @NodeLeafCssClasses(node)" href="@FormatUrl(node)">@node.Text</a>
 			}
 		}
 	</div>
@@ -131,12 +139,14 @@
 @helper RenderCollapseFor(MenuNode parentNode) {
 	<div id='@Id(parentNode, "collapse")' class="collapse bg-light">
 		<div class="dropdown-divider"></div>
-		<a class="h6 dropdown-item @NodeCssClasses(parentNode)" href="@FormatUrl(parentNode)"
-				title='@(GetString("MegaDrop_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
-			@parentNode.Text <i class="fas fa-angle-double-right"></i>
-		</a>
+		@if (parentNode.Enabled) {
+			<a class="h6 dropdown-item @NodeForkCssClasses(parentNode)" href="@FormatUrl(parentNode)"
+					title='@(GetString("MegaDrop_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
+				@parentNode.Text <i class="fas fa-angle-double-right"></i>
+			</a>
+		}
 		@foreach (var node in parentNode.Children) {
-    		<a class="dropdown-item small @NodeCssClasses(node)" href="@FormatUrl(node)">@node.Text</a>
+    		<a class="dropdown-item small @NodeLeafCssClasses(node)" href="@FormatUrl(node)">@node.Text</a>
 		}
 		<div class="dropdown-divider"></div>
 	</div>
