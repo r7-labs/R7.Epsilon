@@ -68,3 +68,23 @@
 	.skin-navbar-subnav { transition: none; }
 	.skin-navbar-subnav.collapsing { display: none; }
 }
+
+@mixin fa-icon-after ($icon) {
+    content: $icon;
+    font-family: "Font Awesome 5 Free";
+    display: inline-block;
+    padding-left: 4px;
+    font-weight: 900;
+}
+
+.skin-navbar-subnav .collapse .dropdown-item.h6 {
+    font-weight: bold;
+}
+
+.skin-navbar-subnav .collapse-toggle::after {
+    @include fa-icon-after('\f0d7')
+}
+
+.skin-navbar-subnav .collapse-toggle.show::after {
+    @include fa-icon-after('\f0d8')
+}

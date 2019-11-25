@@ -116,12 +116,10 @@
 		<div class="dropdown-divider"></div>
 		@foreach (var node in parentNode.Children) {
 			if (node.HasChildren ()) {
-				<div class="dropright">
-					<a id='@Id(node, "dropright")' href="#" role="button" data-toggle="dropdown"
-						aria-expanded="false" aria-haspopup="true"
-						class="dropdown-item dropdown-toggle lvl2 @NodeCssClasses(node)">@node.Text</a>
-					@RenderDropdownLvl2For(node)
-				</div>
+				<a href="@FormatUrl(node)" data-toggle="collapse" data-target='#@Id(node, "collapse")'
+					aria-expanded="false" aria-controls='@Id(node, "collapse")'
+					class="dropdown-item collapse-toggle @NodeCssClasses(node)">@node.Text</a>
+				@RenderCollapseFor(node)
 			}
 			else {
     			<a class="dropdown-item @NodeCssClasses(node)" href="@FormatUrl(node)">@node.Text</a>
@@ -130,16 +128,17 @@
 	</div>
 }
 
-@helper RenderDropdownLvl2For(MenuNode parentNode) {
-	<div class="dropdown-menu" aria-labelledby='@Id(parentNode, "dropright")'>
+@helper RenderCollapseFor(MenuNode parentNode) {
+	<div id='@Id(parentNode, "collapse")' class="collapse bg-light">
+		<div class="dropdown-divider"></div>
 		<a class="h6 dropdown-item @NodeCssClasses(parentNode)" href="@FormatUrl(parentNode)"
 				title='@(GetString("MegaDrop_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
 			@parentNode.Text <i class="fas fa-angle-double-right"></i>
 		</a>
-		<div class="dropdown-divider"></div>
 		@foreach (var node in parentNode.Children) {
-    		<a class="dropdown-item @NodeCssClasses(node)" href="@FormatUrl(node)">@node.Text</a>
+    		<a class="dropdown-item small @NodeCssClasses(node)" href="@FormatUrl(node)">@node.Text</a>
 		}
+		<div class="dropdown-divider"></div>
 	</div>
 }
 

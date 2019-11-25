@@ -189,10 +189,15 @@ window.skinSearchExternalClick = function (e, link) {
     }
 
     function initMainMenu () {
-        $(".skin-main-nav .navbar-nav .dropdown-toggle.lvl2").on("click", function(e){
-            $(this).next(".dropdown-menu").toggle();
+        $(".skin-main-nav .collapse-toggle").on ("click", function(e) {
+            $(this).toggleClass ("show").next (".collapse").collapse ("toggle");
             e.stopPropagation();
             e.preventDefault();
+        });
+        // hide collapses when parent dropdown hides
+        $(".skin-main-nav .dropdown").on("hidden.bs.dropdown", function(e) {
+            console.log ("hidden!");
+            $(this).find (".collapse-toggle").removeClass ("show").next (".collapse").collapse ("hide");
         });
     }
 

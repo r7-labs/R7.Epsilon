@@ -23,6 +23,7 @@
 @import "containers";
 
 /* Mixins */
+// TODO: Move mixins to separate file
 
 @mixin background-position-xy ($index-x, $index-y, $icon-size)
 {
@@ -33,8 +34,7 @@
     content: $icon;
     font-family: "Font Awesome 5 Free";
     display: inline-block;
-    padding-right: 3px;
-    vertical-align: middle;
+    padding-right: 4px;
     font-weight: 900;
 }
 
