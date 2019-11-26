@@ -53,30 +53,6 @@ window.skinSearchExternalClick = function (e, link) {
 
 (function ($, window, document) {
 
-    // TODO: Obsolete, remove
-    function initBreadcrumb () {
-        if (epsilon.breadCrumbsRemoveLastLink) {
-            // assume new style breadcrumbs with schema.org markup (DNN 8+)
-            var schemaOrg = true;
-            var breadcrumb = $(".breadcrumb > span > span").first ();
-
-            if (breadcrumb.length === 0) {
-                // it looks like an old style breadcrumbs
-                schemaOrg = false;
-                breadcrumb = $(".breadcrumb > span").first ();
-            }
-
-            // remove last link (to the current page)
-            if (breadcrumb.length > 0) {
-                if (schemaOrg) {
-                    breadcrumb.find ("a").last ().parent ().remove ();
-                } else {
-                    breadcrumb.find ("a").last ().remove ();
-                }
-            }
-        }
-    }
-
     function initUpButton (offset, duration) {
         $(window).scroll(function() {
             if ($(this).scrollTop() > offset) {
@@ -189,14 +165,25 @@ window.skinSearchExternalClick = function (e, link) {
     }
 
     function initMainMenu () {
-        $(".skin-main-nav .collapse-toggle").on ("click", function(e) {
+        $(".skin-main-nav .collapse-toggle").on ("click", function (e) {
             $(this).toggleClass ("show").next (".collapse").collapse ("toggle");
-            e.stopPropagation();
-            e.preventDefault();
+            e.stopPropagation ();
+            e.preventDefault ();
         });
         // hide collapses when parent dropdown hides
-        $(".skin-main-nav .dropdown").on("hidden.bs.dropdown", function(e) {
-            console.log ("hidden!");
+        $(".skin-main-nav .dropdown").on("hidden.bs.dropdown", function (e) {
+            $(this).find (".collapse-toggle").removeClass ("show").next (".collapse").collapse ("hide");
+        });
+    }
+
+    function initBreadcrumb () {
+        $(".breadcrumb .collapse-toggle").on ("click", function (e) {
+            $(this).toggleClass ("show").next (".collapse").collapse ("toggle");
+            e.stopPropagation ();
+            e.preventDefault ();
+        });
+        // hide collapses when parent dropdown hides
+        $(".breadcrumb .dropdown").on("hidden.bs.dropdown", function (e) {
             $(this).find (".collapse-toggle").removeClass ("show").next (".collapse").collapse ("hide");
         });
     }
@@ -207,13 +194,13 @@ window.skinSearchExternalClick = function (e, link) {
 
         if (! epsilon.inPopup) {
             emptyLayoutRows ();
-            // initBreadcrumb ();
             initUpButton (320, 500);
             initCustomContent ();
             initSearch ();
             initClipboard ();
             initTags ();
             initMainMenu ();
+            initBreadcrumb ();
             alterLanguage ();
             alterLogin ();
             window.skinA11y = new A11y ().init ();

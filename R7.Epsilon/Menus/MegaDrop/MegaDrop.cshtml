@@ -86,7 +86,7 @@
 				<div class="col-12 p-0">
 					<div class="nav-item">
 						<a href="@FormatUrl(parentNode)" class="h4 nav-link @NodeLeafCssClasses(parentNode)"
-								title='@(GetString("MegaDrop_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
+								title='@(GetString("Menu_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
 							@parentNode.Text <i class="fas fa-angle-double-right"></i>
 						</a>
 					</div>
@@ -96,8 +96,8 @@
 				<div class="@subnavItemCssClass()">
 					@if (node.HasChildren ()) {
 						<div class="nav-item dropdown">
-							<a id='@Id(node, "subnav_dropdown")' href="#" role="button" data-toggle="dropdown"
-								aria-expanded="false" aria-haspopup="true"
+							<a id='@Id(node, "subnav_dropdown")' type="button" role="button" href="#" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false"
 								class="nav-link dropdown-toggle @NodeForkCssClasses(node)">@node.Text</a>
 							@RenderDropdownFor(node)
 						</div>
@@ -117,14 +117,15 @@
 	<div class="dropdown-menu" aria-labelledby='@Id(parentNode, "subnav_dropdown")'>
 		@if (parentNode.Enabled) {
 			<a class="h5 dropdown-item @NodeLeafCssClasses(parentNode) dropdown-item-parent" href="@FormatUrl(parentNode)"
-					title='@(GetString("MegaDrop_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
+					title='@(GetString("Menu_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
 				@parentNode.Text <i class="fas fa-angle-double-right"></i>
 			</a>
 			<div class="dropdown-divider"></div>
 		}
 		@foreach (var node in parentNode.Children) {
 			if (node.HasChildren ()) {
-				<a href="@FormatUrl(node)" data-toggle="collapse" data-target='#@Id(node, "collapse")'
+				<a type="button" role="button" href="@FormatUrl(node)"
+					data-toggle="collapse" data-target='#@Id(node, "collapse")'
 					aria-expanded="false" aria-controls='@Id(node, "collapse")'
 					class="dropdown-item collapse-toggle @NodeForkCssClasses(node)">@node.Text</a>
 				@RenderCollapseFor(node)
@@ -141,7 +142,7 @@
 		<div class="dropdown-divider"></div>
 		@if (parentNode.Enabled) {
 			<a class="h6 dropdown-item @NodeForkCssClasses(parentNode)" href="@FormatUrl(parentNode)"
-					title='@(GetString("MegaDrop_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
+					title='@(GetString("Menu_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
 				@parentNode.Text <i class="fas fa-angle-double-right"></i>
 			</a>
 		}

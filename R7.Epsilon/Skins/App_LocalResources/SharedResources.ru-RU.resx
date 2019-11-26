@@ -213,7 +213,7 @@
 	<data name="DropCrumb_Home_Tooltip.Text" xml:space="preserve">
 		<value>Перейти на главную страницу.</value>
 	</data>
-	<data name="MegaDrop_GoToPage.Text" xml:space="preserve">
+	<data name="Menu_GoToPage.Text" xml:space="preserve">
 		<value>Перейти на страницу </value>
 	</data>
 </root>
