@@ -43,6 +43,7 @@ namespace R7.Epsilon.Skins.SkinObjects
                 Menu.TemplateArguments = new List<TemplateArgument> ();
             }
 
+            Menu.TemplateArguments.Add (new TemplateArgument ("ClientID", "breadcrumbMenu"));
             Menu.TemplateArguments.Add (new TemplateArgument ("UrlFormat", Config.BreadcrumbMenu.UrlFormat));
 
             base.OnInit (e);

@@ -46,6 +46,7 @@ namespace R7.Epsilon.Skins.SkinObjects
                 Menu.TemplateArguments = new List<TemplateArgument> ();
             }
 
+            Menu.TemplateArguments.Add (new TemplateArgument ("ClientID", "primaryMenu"));
             Menu.TemplateArguments.Add (new TemplateArgument ("UrlFormat", Config.PrimaryMenu.UrlFormat));
 
             if (Config.PrimaryMenu.NodeManipulators.Count > 0) {

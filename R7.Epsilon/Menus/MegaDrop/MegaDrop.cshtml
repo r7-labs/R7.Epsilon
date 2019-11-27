@@ -48,18 +48,18 @@
 
 	string Id (MenuNode node, string prefix)
 	{
-		return Model.ControlID + "_" + prefix + node.TabId;
+		return Model.ClientID + "_" + prefix + node.TabId;
 	}
 }
 
 @helper RenderNodes(IList<MenuNode> nodes) {
     if (nodes.Count > 0) {
-		<div id="@Model.ControlID" class="row no-gutters">
+		<div id="@Model.ClientID" class="row no-gutters">
 			<ul class="navbar-nav col-6 col-md-12">
 				@foreach (var node in nodes) {
 					if (node.HasChildren()) {
 						<li class="nav-item dropdown">
-							<a href='#@Id(node, "submenu")' aria-controls='@Id(node, "submenu")'
+							<a href='#@Id(node, "subMenu")' aria-controls='@Id(node, "subMenu")'
 								role="button" data-toggle="collapse" aria-expanded="false"
 								class="nav-link dropdown-toggle @NodeForkCssClasses(node)">@node.Text</a>
 						</li>
@@ -80,7 +80,7 @@
 }
 
 @helper RenderSubmenuFor (MenuNode parentNode) {
-	<div class="navbar-nav skin-submenu col-6 col-md-12 collapse" id='@Id(parentNode, "submenu")' data-parent="#@Model.ControlID">
+	<div class="navbar-nav skin-submenu col-6 col-md-12 collapse" id='@Id(parentNode, "subMenu")' data-parent="#@Model.ClientID">
 		<div class="row no-gutters">
 			@if (parentNode.Enabled) {
 				<div class="col-12 p-0">
@@ -96,7 +96,7 @@
 				<div class="@submenuItemCssClass()">
 					@if (node.HasChildren ()) {
 						<div class="nav-item dropdown">
-							<a id='@Id(node, "submenu_dropdown")' type="button" role="button" href="#" data-toggle="dropdown"
+							<a id='@Id(node, "btnDropdown")' type="button" role="button" href="#" data-toggle="dropdown"
 								aria-haspopup="true" aria-expanded="false"
 								class="nav-link dropdown-toggle @NodeForkCssClasses(node)">@node.Text</a>
 							@RenderDropdownFor(node)
@@ -114,7 +114,7 @@
 }
 
 @helper RenderDropdownFor(MenuNode parentNode) {
-	<div class="dropdown-menu" aria-labelledby='@Id(parentNode, "submenu_dropdown")'>
+	<div class="dropdown-menu" aria-labelledby='@Id(parentNode, "btnDropdown")'>
 		@if (parentNode.Enabled) {
 			<a class="h5 dropdown-item @NodeLeafCssClasses(parentNode) dropdown-item-parent" href="@FormatUrl(parentNode)"
 					title='@(GetString("Menu_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
