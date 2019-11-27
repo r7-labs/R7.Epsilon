@@ -54,7 +54,7 @@
 
 @helper RenderNodes(IList<MenuNode> nodes) {
     if (nodes.Count > 0) {
-		<div class="row no-gutters">
+		<div id="@Model.ControlID" class="row no-gutters">
 			<ul class="navbar-nav col-6 col-md-12">
 				@foreach (var node in nodes) {
 					if (node.HasChildren()) {

@@ -61,17 +61,14 @@
 </div>
 <nav class="navbar navbar-expand-md bg-dark navbar-dark --sticky-top navbar-1 --skin-primary-navbar">
     <div class="container">
-
 		<div class="navbar-brand skin-navbar-brand-link d-md-none">
             <skin:LOGOMOBILE runat="server" />
         </div>
-
         <button type="button" class="navbar-toggler skin-top-menu-toggle" data-toggle="collapse" data-target=".skin-top-menu">
             <asp:Label runat="server" CssClass="sr-only" Text='<%# T.GetString ("ToggleNavigation.Text") %>' />
             <span class="navbar-toggler-icon"></span>
         </button>
-
-        <div class="collapse navbar-collapse skin-top-menu" role="navigation">
+        <div class="collapse navbar-collapse skin-top-menu skin-main-nav skin-primary-menu" role="navigation">
             <skin:PRIMARYMENU runat="server" />
         </div>
 <!--
@@ -84,10 +81,9 @@
         -->
     </div>
 </nav>
-
 <nav class="navbar navbar-expand-md bg-dark navbar-dark --sticky-top navbar-2 --skin-primary-navbar">
     <div class="container">
-        <div class="collapse navbar-collapse skin-top-menu" role="navigation">
+        <div class="collapse navbar-collapse skin-top-menu skin-main-nav skin-secondary-menu" role="navigation">
             <skin:SECONDARYMENU runat="server" />
         </div>
     </div>
