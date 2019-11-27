@@ -30,20 +30,19 @@ namespace R7.Epsilon.Skins.SkinObjects
     {
         #region Controls
 
-        protected DDRMenu.SkinObject menuBreadcrumb;
+        protected DDRMenu.SkinObject breadcrumbMenu;
 
         #endregion
 
         protected override void OnInit (EventArgs e)
         {
-            Menu = menuBreadcrumb;
+            Menu = breadcrumbMenu;
             Menu.NodeSelector = Config.PrimaryMenu.NodeSelector;
 
             if (Menu.TemplateArguments == null) {
                 Menu.TemplateArguments = new List<TemplateArgument> ();
             }
 
-            Menu.TemplateArguments.Add (new TemplateArgument ("ClientID", "breadcrumbMenu"));
             Menu.TemplateArguments.Add (new TemplateArgument ("UrlFormat", Config.BreadcrumbMenu.UrlFormat));
 
             base.OnInit (e);

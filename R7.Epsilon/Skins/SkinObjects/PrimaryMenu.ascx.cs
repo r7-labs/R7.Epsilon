@@ -31,13 +31,13 @@ namespace R7.Epsilon.Skins.SkinObjects
     {
         #region Controls
 
-        protected DDRMenu.SkinObject menuPrimary;
+        protected DDRMenu.SkinObject primaryMenu;
 
         #endregion
 
         protected override void OnInit (EventArgs e)
         {
-            Menu = menuPrimary;
+            Menu = primaryMenu;
             Menu.NodeSelector = Config.PrimaryMenu.NodeSelector;
             Menu.IncludeNodes = Config.PrimaryMenu.IncludeNodes;
             Menu.ExcludeNodes = Config.PrimaryMenu.ExcludeNodes;
@@ -46,7 +46,6 @@ namespace R7.Epsilon.Skins.SkinObjects
                 Menu.TemplateArguments = new List<TemplateArgument> ();
             }
 
-            Menu.TemplateArguments.Add (new TemplateArgument ("ClientID", "primaryMenu"));
             Menu.TemplateArguments.Add (new TemplateArgument ("UrlFormat", Config.PrimaryMenu.UrlFormat));
 
             if (Config.PrimaryMenu.NodeManipulators.Count > 0) {

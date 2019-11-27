@@ -67,14 +67,14 @@
 
 	string Id (MenuNode node, string prefix)
 	{
-		return Model.ClientID + "_" + prefix + node.TabId;
+		return Model.ControlID + "_" + prefix + node.TabId;
 	}
 }
 
 @helper RenderBreadcrumb(MenuNode root) {
 	var nodes = GetBreadcrumbNodes (root);
 	if (nodes.Count > 0) {
-        <nav id="@Model.ClientID" aria-label='@GetString("DropCrumb_AriaLabel.Text")' itemprop="breadcrumb" itemscope="" itemtype="https://schema.org/breadcrumb">
+        <nav id="@Model.ControlID" aria-label='@GetString("DropCrumb_AriaLabel.Text")' itemprop="breadcrumb" itemscope="" itemtype="https://schema.org/breadcrumb">
 			<ol class="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList">
 				@foreach (var node in nodes) {
 					if (node == root) {

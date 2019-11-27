@@ -48,13 +48,13 @@
 
 	string Id (MenuNode node, string prefix)
 	{
-		return Model.ClientID + "_" + prefix + node.TabId;
+		return Model.ControlID + "_" + prefix + node.TabId;
 	}
 }
 
 @helper RenderNodes(IList<MenuNode> nodes) {
     if (nodes.Count > 0) {
-		<div id="@Model.ClientID" class="row no-gutters">
+		<div id="@Model.ControlID" class="row no-gutters">
 			<ul class="navbar-nav col-6 col-md-12">
 				@foreach (var node in nodes) {
 					if (node.HasChildren()) {
@@ -80,7 +80,7 @@
 }
 
 @helper RenderSubmenuFor (MenuNode parentNode) {
-	<div class="navbar-nav skin-submenu col-6 col-md-12 collapse" id='@Id(parentNode, "subMenu")' data-parent="#@Model.ClientID">
+	<div class="navbar-nav skin-submenu col-6 col-md-12 collapse" id='@Id(parentNode, "subMenu")' data-parent="#@Model.ControlID">
 		<div class="row no-gutters">
 			@if (parentNode.Enabled) {
 				<div class="col-12 p-0">
