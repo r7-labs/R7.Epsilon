@@ -21,33 +21,7 @@
 
 @import "mixins";
 
-.skin-primary-navbar
-{
-    border:none;
-    border-radius:0;
-    background-color:$header-background-color;
-    background-image:$header-background-image;
-}
-
-@media only screen and (max-width: 767px)
-{
-    .skin-primary-navbar
-    {
-        background-image:none; // reset gradient
-        background-color:$color-primary-4;
-    }
-}
-
-// for login positioning
-.skin-primary-navbar-main { position:relative; }
-
-.skin-secondary-navbar
-{
-    min-height:0;
-    border:none; // override navbar 1px border
-}
-
-.skin-main-nav {
+.skin-main-menu {
     width: 100%;
     .dropdown-item.dropdown-item-parent {
         font-weight: bold;
@@ -57,15 +31,23 @@
     }
 }
 
-.skin-navbar-subnav > .row {
+.skin-primary-menu {
+    background-color: $color-primary-4 !important;
+}
+
+.skin-secondary-menu {
+    background-color: lighten($color-primary-4, 10%) !important;
+}
+
+.skin-submenu > .row {
 	width: 100%;
 }
 
-.skin-navbar-subnav .nav-link {
+.skin-submenu .nav-link {
     white-space: normal;
 }
 
-.skin-navbar-subnav,
+.skin-submenu,
 .breadcrumb {
     .dropdown-item {
         white-space: normal;
@@ -77,17 +59,17 @@
 
 // disable "broken" menu animation on small screens
 @media (max-width: 767px) {
-	.skin-navbar-subnav { transition: none; }
-	.skin-navbar-subnav.collapsing { display: none; }
+	.skin-submenu { transition: none; }
+	.skin-submenu.collapsing { display: none; }
 }
 
-.skin-navbar-subnav, .breadcrumb {
+.skin-submenu, .breadcrumb {
     .collapse-toggle::after {
         @include fa-icon-after('\f0d7');
     }
 }
 
-.skin-navbar-subnav, .breadcrumb {
+.skin-submenu, .breadcrumb {
     .collapse-toggle.show::after {
         @include fa-icon-after('\f0d8');
     }

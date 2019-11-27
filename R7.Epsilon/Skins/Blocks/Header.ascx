@@ -57,34 +57,26 @@
 				<skin:SOCIALGROUPS runat="server" />
 			<% } %>
 		</div>
-    </div>
+	</div>
 </div>
-<nav class="navbar navbar-expand-md bg-dark navbar-dark --sticky-top navbar-1 --skin-primary-navbar">
-    <div class="container">
-		<div class="navbar-brand skin-navbar-brand-link d-md-none">
-            <skin:LOGOMOBILE runat="server" />
-        </div>
-        <button type="button" class="navbar-toggler skin-top-menu-toggle" data-toggle="collapse" data-target=".skin-top-menu">
-            <asp:Label runat="server" CssClass="sr-only" Text='<%# T.GetString ("ToggleNavigation.Text") %>' />
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse skin-top-menu skin-main-nav skin-primary-menu" role="navigation">
-            <skin:PRIMARYMENU runat="server" />
-        </div>
-<!--
-        <div class="collapse navbar-collapse skin-primary-navbar-main d-none">
-            <div class="skin-header-content d-sm-none">
-                <skin:LOGOTITLE runat="server" />
-            </div>
-            <skin:CUSTOMCONTENT runat="server" CssClass="skin-header-content d-none" ResourceKey="HeaderPane1.Content" />
-        </div>
-        -->
-    </div>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark skin-main-menu skin-primary-menu">
+	<div class="container">
+		<div class="navbar-brand d-md-none">
+			<skin:LOGOMOBILE runat="server" />
+		</div>
+		<button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".skin-main-menu .navbar-collapse">
+			<span class="sr-only"><%: T.GetString ("ToggleNavigation.Text") %></span>
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse">
+			<skin:PRIMARYMENU runat="server" />
+		</div>
+	</div>
 </nav>
-<nav class="navbar navbar-expand-md bg-dark navbar-dark --sticky-top navbar-2 --skin-primary-navbar">
-    <div class="container">
-        <div class="collapse navbar-collapse skin-top-menu skin-main-nav skin-secondary-menu" role="navigation">
-            <skin:SECONDARYMENU runat="server" />
-        </div>
-    </div>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark skin-main-menu skin-secondary-menu">
+	<div class="container">
+		<div class="collapse navbar-collapse">
+			<skin:SECONDARYMENU runat="server" />
+		</div>
+	</div>
 </nav>

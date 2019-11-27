@@ -178,23 +178,7 @@ a.btn-primary:visited {
 
 /* Main Header */
 
-.navbar { margin-bottom:0 }
-
-.navbar-toggle { margin-right:inherit }
-
-.skin-top-menu-toggle.navbar-toggle
-{
-    float:right;
-    border-color:transparent;
-    background-color:transparent;
-    &:hover
-    {
-        background-color:$color-primary-4;
-    }
-    .icon-bar { background-color:#fff; }
-}
-
-.navbar-brand.skin-navbar-brand-link
+.skin-main-menu .navbar-brand
 {
     float:left;
     padding-left:0;
