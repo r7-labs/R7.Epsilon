@@ -48,7 +48,7 @@
 }
 
 .skin-submenu,
-.breadcrumb {
+.skin-breadcrumb-menu {
     .dropdown-item {
         white-space: normal;
     }
@@ -63,22 +63,24 @@
 	.skin-submenu.collapsing { display: none; }
 }
 
-.skin-submenu, .breadcrumb {
+.skin-submenu,
+.skin-breadcrumb-menu {
     .collapse-toggle::after {
         @include fa-icon-after('\f0d7');
     }
 }
 
-.skin-submenu, .breadcrumb {
+.skin-submenu,
+.skin-breadcrumb-menu {
     .collapse-toggle.show::after {
         @include fa-icon-after('\f0d8');
     }
 }
 
-.breadcrumb .dropdown-menu {
+.skin-breadcrumb-menu .dropdown-menu {
     min-width: 320px;
 }
 
-.breadcrumb-item.disabled a {
+.skin-breadcrumb-menu .breadcrumb-item.disabled a {
     color: #6c757d !important; // like text-muted
 }
