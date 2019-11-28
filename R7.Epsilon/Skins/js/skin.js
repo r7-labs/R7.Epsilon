@@ -174,6 +174,52 @@ window.skinSearchExternalClick = function (e, link) {
         $(".skin-main-menu .dropdown").on("hidden.bs.dropdown", function (e) {
             $(this).find (".collapse-toggle").removeClass ("show").next (".collapse").collapse ("hide");
         });
+
+        // TODO: How this will work with event namespaces?
+        $(".skin-main-menu .skin-submenu.collapse")
+            .on ("shown.bs.collapse", function (e) {
+                console.log ("submenu shown!");
+                const parentMenuItem = $(".skin-main-menu .dropdown-toggle[href='#" + $(this).attr ("id") + "']");
+                const firstMenuItem = $(this).find (".nav-link").first ();
+                const lastMenuItem = $(this).find (".nav-link").last ();
+                parentMenuItem.on ("keydown", function (e) {
+                    console.log (e);
+                    // Tab or Down
+                    if ((e.keyCode === 9 && !e.shiftKey) || e.keyCode === 40) {
+                        e.preventDefault ();
+                        e.stopPropagation ();
+                        firstMenuItem.focus ();
+                    }
+                });
+                firstMenuItem.on ("keydown", function (e) {
+                    // Shift-Tab or Up
+                    if ((e.keyCode === 9 && e.shiftKey) || e.keyCode === 38) {
+                        e.preventDefault ();
+                        e.stopPropagation ();
+                        parentMenuItem.focus ();
+                    }
+                });
+                lastMenuItem.on ("keydown", function (e) {
+                    // Tab
+                    if (e.keyCode === 9 && !e.shiftKey) {
+                        const nextParentMenuItem = parentMenuItem.parent ().next ().children (".nav-link");
+                        if (nextParentMenuItem.length > 0) {
+                            e.preventDefault ();
+                            e.stopPropagation ();
+                            nextParentMenuItem.focus ();
+                        }
+                    }
+                });
+            })
+            .on ("hidden.bs.collapse", function () {
+                console.log ("submenu hidden!");
+                const parentMenuItem = $(".skin-main-menu .dropdown-toggle[href='#" + $(this).attr ("id") + "']");
+                const firstMenuItem = $(this).find (".nav-link").first ();
+                const lastMenuItem = $(this).find (".nav-link").last ();
+                parentMenuItem.off ("keydown");
+                firstMenuItem.off ("keydown");
+                lastMenuItem.off ("keydown");
+            });
     }
 
     function initBreadcrumb () {
