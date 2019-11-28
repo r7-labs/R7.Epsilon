@@ -3,18 +3,28 @@
     background-position:(-$icon-size * $index-x) (-$icon-size * $index-y);
 }
 
-@mixin fa-icon-before ($icon) {
-    content: $icon;
-    font-family: "Font Awesome 5 Free";
+@mixin char-before ($char) {
+    content: $char;
     display: inline-block;
     padding-right: 4px;
     font-weight: 900;
 }
 
-@mixin fa-icon-after ($icon) {
-    content: $icon;
-    font-family: "Font Awesome 5 Free";
+@mixin char-after ($char) {
+    content: $char;
     display: inline-block;
     padding-left: 4px;
     font-weight: 900;
 }
+
+@mixin fa-icon-before ($icon) {
+    font-family: "Font Awesome 5 Free";
+    @include char-before($icon);
+}
+
+@mixin fa-icon-after ($icon) {
+    font-family: "Font Awesome 5 Free";
+    @include char-after($icon);
+}
+
+

@@ -52,8 +52,10 @@
     .dropdown-item {
         white-space: normal;
     }
-    .collapse .h6.dropdown-item {
-        font-weight: bold;
+    .collapse, .collapsing {
+        .h6.dropdown-item {
+            font-weight: bold;
+        }
     }
 }
 
@@ -74,6 +76,15 @@
 .skin-breadcrumb-menu {
     .collapse-toggle.show::after {
         @include fa-icon-after('\f0d8');
+    }
+}
+
+.skin-submenu,
+.skin-breadcrumb-menu {
+    .collapse, .collapsing {
+        .dropdown-item.small::before {
+            @include char-before('•');
+        }
     }
 }
 
