@@ -165,25 +165,25 @@ window.skinSearchExternalClick = function (e, link) {
     }
 
     function initMainMenu () {
-        $(".skin-main-nav .collapse-toggle").on ("click", function (e) {
+        $(".skin-main-menu .collapse-toggle").on ("click", function (e) {
             $(this).toggleClass ("show").next (".collapse").collapse ("toggle");
             e.stopPropagation ();
             e.preventDefault ();
         });
         // hide collapses when parent dropdown hides
-        $(".skin-main-nav .dropdown").on("hidden.bs.dropdown", function (e) {
+        $(".skin-main-menu .dropdown").on("hidden.bs.dropdown", function (e) {
             $(this).find (".collapse-toggle").removeClass ("show").next (".collapse").collapse ("hide");
         });
     }
 
     function initBreadcrumb () {
-        $(".breadcrumb .collapse-toggle").on ("click", function (e) {
+        $(".skin-breadcrumb-menu .collapse-toggle").on ("click", function (e) {
             $(this).toggleClass ("show").next (".collapse").collapse ("toggle");
             e.stopPropagation ();
             e.preventDefault ();
         });
         // hide collapses when parent dropdown hides
-        $(".breadcrumb .dropdown").on("hidden.bs.dropdown", function (e) {
+        $(".skin-breadcrumb-menu .dropdown").on("hidden.bs.dropdown", function (e) {
             $(this).find (".collapse-toggle").removeClass ("show").next (".collapse").collapse ("hide");
         });
     }
