@@ -112,18 +112,6 @@ a.btn-primary:visited {
     background-color: $float-btn-feedback-bg-color;
 }
 
-.skin-header > .container
-{
-    padding-top:9px;
-    padding-bottom:5px;
-}
-
-.skin-header > .container > .row
-{
-    margin-right:0;
-    margin-left:0;
-}
-
 .skin-languages {
     .language-object > select,
     .Language.selected,
@@ -236,6 +224,44 @@ a.btn-primary:visited {
     &h1 small, &h2 small { display:inline-block; }
 }
 
+.skin-header > .container
+{
+    padding-top:9px;
+    padding-bottom:5px;
+}
+
+.skin-header > .container > .row
+{
+    margin-right:0;
+    margin-left:0;
+}
+
+// style it like the breadbrumb
+.skin-subheader-top {
+    background-color: #e9ecef;
+    border-bottom-left-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+    padding: .75rem 1rem;
+}
+
+.skin-subheader-top .skin-breadcrumb-menu .breadcrumb {
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.skin-social-share-buttons {
+    .skin-social-share-btn {
+        display:inline-block;
+        & > * {
+            margin-top: 0 !important; // overriding inline style!
+            margin-right: 1rem;
+        }
+        .fb-like, .twitter-share-button, #vk_like {
+            vertical-align: bottom;
+        }
+    }
+}
+
 .skin-home {
     // hide (but not remove) page header for the home page
     .skin-page-header {
@@ -243,84 +269,7 @@ a.btn-primary:visited {
     }
 }
 
-#skin-separator-1
-{
-    display:inline-block;
-    width:50px;
-
-    &.hidden-local.hidden-headers
-    {
-        display:none;
-    }
-}
-
-.skin-social-share-buttons
-{
-    display:inline-block;
-
-    & > * {
-        display:inline-block;
-        margin-top:1em !important; // overriding inline style!
-    }
-
-    #___plusone_0 {
-        vertical-align:bottom !important; // overriding inline style!
-        font-size:inherit !important; // overriding inline style!
-    }
-    .twitter-share-button, #vk_like { vertical-align:bottom; }
-    .fb-like, .twitter-share-button { margin-right:30px; }
-    .fb-like, #vk_like { min-width:110px; }
-}
-
-@media only screen and (max-width : 991px)
-{
-    // separate from menus on md- screens
-    .skin-social-share-buttons { margin-top:1em }
-}
-
-.breadcrumb {
-    /*
-    background-color:transparent; // lighten($color-secondary-1-1, 20%);
-    padding-left:0;
-    padding-right:0;
-    margin-bottom:0;
-    margin-top:0;
-
-    a.skin-breadcrumb-link {
-        margin-right:5px;
-        margin-left:5px;
-    }
-
-    // for DNN 8+
-    > span > span {
-        > span:first-child > a.skin-breadcrumb-link {
-            margin-left:inherit;
-        }
-        > span:last-child > a.skin-breadcrumb-link {
-            color:$color-secondary-1-3;;
-            font-size:$big-font-size;
-            font-weight:bold;
-        }
-    }
-
-    // for DNN 7-
-    > span > a.skin-breadcrumb-link {
-        &:first-child {
-            margin-left:inherit;
-        }
-        &:last-child {
-            color:$color-secondary-1-3;;
-            font-size:$big-font-size;
-            font-weight:bold;
-        }
-    }
-    */
-
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-}
-
-// style it like breadbrumb
+// style it like the breadbrumb
 .skin-page-info {
     padding: .75rem 1rem;
     background-color: #e9ecef;

@@ -5,16 +5,24 @@
 <%@ Register TagPrefix="skin" TagName="BREADCRUMBMENU" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/BreadcrumbMenu.ascx" %>
 <%@ Register TagPrefix="skin" TagName="SOCIALSHAREBUTTONS" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/SocialShareButtons.ascx" %>
 
-<nav class="skin-local-navbar" role="navigation">
-	<% if (!Skin.Options.DisableBreadCrumb) { %>
-		<div class="container">
-			<skin:BREADCRUMBMENU id="breadcrumbMenu" runat="server" />
+<div class="skin-subheader">
+	<div class="container">
+		<div class="row">
+			<div class="col">
+			 	<div class="skin-subheader-top">
+					<% if (!Skin.Options.DisableBreadCrumb) { %>
+						<skin:BREADCRUMBMENU runat="server" />
+					<% } %>
+					<% if (!Skin.Options.DisableSocialShare) { %>
+						<hr />
+						<skin:SOCIALSHAREBUTTONS runat="server" Visible="<%# !Skin.Options.DisableSocialShare %>" />
+					<% } %>
+				</div>
+			</div>
 		</div>
-	<% } %>
-    <div class="container">
-        <skin:PAGEHEADER runat="server" />
-        <div id="skin-separator-1" class="d-xs-none">&nbsp;</div>
-        <skin:SOCIALSHAREBUTTONS runat="server" Visible="<%# !Skin.Options.DisableSocialShare %>" />
-    </div>
-</nav>
+	</div>
+	<div class="container">
+		<skin:PAGEHEADER runat="server" />
+	</div>
+</div>
 <a id="content" name="content"></a>

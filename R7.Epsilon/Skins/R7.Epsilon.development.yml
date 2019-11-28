@@ -42,7 +42,7 @@ social-groups:
     url: https://vk.com/your-vk-group
     api-id: 0000000
     is-primary: true
-    share-enabled: true
+    share-enabled: false
 
   - type: VKontakte
     name: VKontakte2
@@ -50,7 +50,7 @@ social-groups:
     url: https://vk.com/your-vk-group
     api-id: 0000000
     is-primary: false
-    share-enabled: true
+    share-enabled: false
 
   - type: Facebook
     url: https://www.facebook.com/your-facebook-group
