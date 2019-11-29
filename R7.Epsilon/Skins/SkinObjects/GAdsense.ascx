@@ -6,7 +6,7 @@ if (!Request.RawUrl.ToLowerInvariant ().Contains ("/login?returnurl=")) {
 var adsenseScript = "<script async src=\"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"></script>" +
 "<ins class=\"adsbygoogle\" " +
 "style=\"display:block\" " +
-"data-ad-client=\"" + Config.Adsense.Client + "\" " +
+"data-ad-client=\"ca-" + Config.Adsense.Client + "\" " +
 "data-ad-slot=\"" + Config.Adsense.Slot + "\" " +
 "data-ad-format=\"auto\"></ins>" +
 "<script>" +
