@@ -52,16 +52,17 @@
 
 	string FormatUrl (MenuNode node)
 	{
+		if (!node.Enabled) {
+			return "#";
+		}
 		if (string.IsNullOrEmpty (node.Url) && node.TabId == -1) {
 			node.TabId = PortalSettings.Current.HomeTabId;
 			node.Url = Globals.NavigateURL (PortalSettings.Current.HomeTabId);
 		}
-
 		var urlFormat = Model.UrlFormat;
 		if (string.IsNullOrEmpty (urlFormat)) {
 			return node.Url;
 		}
-
 		return EpsilonUrlHelper.FormatUrl (urlFormat, node.TabId, PortalSettings.Current.PortalId, HttpContext.Current.Request.QueryString);
 	}
 

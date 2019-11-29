@@ -39,6 +39,9 @@
 
 	string FormatUrl (MenuNode node)
 	{
+		if (!node.Enabled) {
+			return "#";
+		}
 		var urlFormat = Model.UrlFormat;
 		if (string.IsNullOrEmpty (urlFormat)) {
 			return node.Url;
