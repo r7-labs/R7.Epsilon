@@ -6,21 +6,25 @@
 <%@ Register TagPrefix="skin" TagName="SOCIALSHAREBUTTONS" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/SocialShareButtons.ascx" %>
 
 <div class="skin-subheader">
-	<div class="container">
-		<div class="row">
-			<div class="col">
-			 	<div class="skin-subheader-top">
-					<% if (!Skin.Options.DisableBreadCrumb) { %>
-						<skin:BREADCRUMBMENU runat="server" />
-					<% } %>
-					<% if (!Skin.Options.DisableSocialShare) { %>
-						<hr />
-						<skin:SOCIALSHAREBUTTONS runat="server" Visible="<%# !Skin.Options.DisableSocialShare %>" />
-					<% } %>
+	<% if (!Skin.Options.DisableBreadCrumb || !Skin.Options.DisableSocialShare) { %>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="skin-subheader-top">
+						<% if (!Skin.Options.DisableBreadCrumb) { %>
+							<skin:BREADCRUMBMENU runat="server" />
+						<% } %>
+						<% if (!Skin.Options.DisableSocialShare) { %>
+							<% if (!Skin.Options.DisableBreadCrumb) { %>
+								<hr />
+							<% } %>
+							<skin:SOCIALSHAREBUTTONS runat="server" Visible="<%# !Skin.Options.DisableSocialShare %>" />
+						<% } %>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	<% } %>
 	<div class="container">
 		<skin:PAGEHEADER runat="server" />
 	</div>
