@@ -62,8 +62,8 @@ window.skinSearchExternalClick = function (e, link) {
             }
         });
 
-        $('.skin-float-btn-up').click(function(event) {
-            event.preventDefault();
+        $('.skin-float-btn-up').on ("click.epsilon", function (e) {
+            e.preventDefault();
             $(this).tooltip ('hide');
             $('html, body').animate({scrollTop: 0}, duration);
             return false;
@@ -165,7 +165,7 @@ window.skinSearchExternalClick = function (e, link) {
     }
 
     function initMainMenu () {
-        $(".skin-main-menu .collapse-toggle").on ("click", function (e) {
+        $(".skin-main-menu .collapse-toggle").on ("click.epsilon", function (e) {
             $(this).toggleClass ("show").next (".collapse").collapse ("toggle");
             e.stopPropagation ();
             e.preventDefault ();
@@ -178,12 +178,10 @@ window.skinSearchExternalClick = function (e, link) {
         // TODO: How this will work with event namespaces?
         $(".skin-main-menu .skin-submenu.collapse")
             .on ("shown.bs.collapse", function (e) {
-                console.log ("submenu shown!");
                 const parentMenuItem = $(".skin-main-menu .dropdown-toggle[href='#" + $(this).attr ("id") + "']");
                 const firstMenuItem = $(this).find (".nav-link").first ();
                 const lastMenuItem = $(this).find (".nav-link").last ();
-                parentMenuItem.on ("keydown", function (e) {
-                    console.log (e);
+                parentMenuItem.on ("keydown.epsilon", function (e) {
                     // Tab or Down
                     if ((e.keyCode === 9 && !e.shiftKey) || e.keyCode === 40) {
                         e.preventDefault ();
@@ -191,7 +189,7 @@ window.skinSearchExternalClick = function (e, link) {
                         firstMenuItem.focus ();
                     }
                 });
-                firstMenuItem.on ("keydown", function (e) {
+                firstMenuItem.on ("keydown.epsilon", function (e) {
                     // Shift-Tab or Up
                     if ((e.keyCode === 9 && e.shiftKey) || e.keyCode === 38) {
                         e.preventDefault ();
@@ -199,7 +197,7 @@ window.skinSearchExternalClick = function (e, link) {
                         parentMenuItem.focus ();
                     }
                 });
-                lastMenuItem.on ("keydown", function (e) {
+                lastMenuItem.on ("keydown.epsilon", function (e) {
                     // Tab
                     if (e.keyCode === 9 && !e.shiftKey) {
                         const nextParentMenuItem = parentMenuItem.parent ().next ().children (".nav-link");
@@ -212,18 +210,17 @@ window.skinSearchExternalClick = function (e, link) {
                 });
             })
             .on ("hidden.bs.collapse", function () {
-                console.log ("submenu hidden!");
                 const parentMenuItem = $(".skin-main-menu .dropdown-toggle[href='#" + $(this).attr ("id") + "']");
                 const firstMenuItem = $(this).find (".nav-link").first ();
                 const lastMenuItem = $(this).find (".nav-link").last ();
-                parentMenuItem.off ("keydown");
-                firstMenuItem.off ("keydown");
-                lastMenuItem.off ("keydown");
+                parentMenuItem.off ("keydown.epsilon");
+                firstMenuItem.off ("keydown.epsilon");
+                lastMenuItem.off ("keydown.epsilon");
             });
     }
 
     function initBreadcrumb () {
-        $(".skin-breadcrumb-menu .collapse-toggle").on ("click", function (e) {
+        $(".skin-breadcrumb-menu .collapse-toggle").on ("click.epsilon", function (e) {
             $(this).toggleClass ("show").next (".collapse").collapse ("toggle");
             e.stopPropagation ();
             e.preventDefault ();
