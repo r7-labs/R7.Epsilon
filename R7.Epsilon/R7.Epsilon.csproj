@@ -171,7 +171,6 @@
     <Content Include="Skins\images\logo_template_133x100.svg" />
     <Content Include="Skins\images\logo_template_178x100.xcf" />
     <Content Include="Skins\js\a11y.js" />
-    <Content Include="Skins\js\menu.js" />
     <Content Include="Skins\css\blueimp.scss" />
     <Content Include="Containers\Default_H4.ascx" />
     <Content Include="Containers\Thumbnail.ascx" />

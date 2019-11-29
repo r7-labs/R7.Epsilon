@@ -82,9 +82,6 @@ namespace R7.Epsilon.Components
 
         public bool ShowPrivacy { get; set; }
 
-        [Obsolete]
-        public int MenuMinHeaders { get; set; } = 7;
-
         public bool UseObrnadzorMicrodata { get; set; }
 
         public List<SocialGroupConfig> SocialGroups { get; set; } = new List<SocialGroupConfig> ();

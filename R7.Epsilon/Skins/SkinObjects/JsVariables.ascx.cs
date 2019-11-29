@@ -1,10 +1,10 @@
 ﻿//
-//  JsVariables.ascx.cs
+//  File: JsVariables.ascx.cs
+//  Project: R7.Epsilon
 //
-//  Author:
-//       Roman M. Yagodin <roman.yagodin@gmail.com>
+//  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2015-2017 Roman M. Yagodin
+//  Copyright (c) 2014-2019 Roman M. Yagodin, R7.Labs
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -19,47 +19,14 @@
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-using System.Linq;
 using System.Text;
-using System.Web.Caching;
-using DotNetNuke.Common;
-using DotNetNuke.Common.Utilities;
-using DotNetNuke.Entities.Modules;
-using DotNetNuke.Entities.Tabs;
-using R7.Epsilon.Components;
 
 namespace R7.Epsilon.Skins.SkinObjects
 {
     // TODO: Introduce ClientConfig class, serialize it to JSON
     public class JsVariables: EpsilonSkinObjectBase
     {
-        #region Control properties
-
-        private bool breadCrumbsRemoveLastLink = true;
-        public bool BreadCrumbsRemoveLastLink
-        {
-            get { return breadCrumbsRemoveLastLink; }
-            set { breadCrumbsRemoveLastLink = value; }
-        }
-
-        #endregion
-
         #region Bindable properties
-
-        protected string JsBreadCrumbsRemoveLastLink
-        {
-            get { return breadCrumbsRemoveLastLink.ToString ().ToLowerInvariant (); }
-        }
-
-        protected string JsBreadCrumbsList
-        {
-            get
-            {
-                return "[" + Utils.FormatList<int> (",", PortalSettings.ActiveTab.BreadCrumbs
-                    .ToArray ().Select (b => ((TabInfo) b).TabID)) + "]";
-            }
-        }
-
         public string LocalizationResources
         {
             get {

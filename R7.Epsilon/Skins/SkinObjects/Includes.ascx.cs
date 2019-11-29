@@ -40,10 +40,6 @@ namespace R7.Epsilon.Skins.SkinObjects
 
             ClientResourceManager.RegisterScript (Page, SkinPath + "js/skin.min.js", (int) FileOrder.Js.DefaultPriority, "DnnFormBottomProvider", "skin", "0.0.0");
 
-            if (Attributes ["MenuJs"] != "false") {
-                ClientResourceManager.RegisterScript (Page, SkinPath + "js/menu.min.js", (int) FileOrder.Js.DefaultPriority, "DnnFormBottomProvider", "menu", "0.0.0");
-            }
-
             ClientResourceManager.RegisterScript (Page, SkinPath + "js/feedback.min.js", (int) FileOrder.Js.DefaultPriority, "DnnFormBottomProvider", "feedback", "0.0.0");
 
             if (Attributes ["LazyAds"] != "false") {
