@@ -20,6 +20,7 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
+using System.Linq;
 using DotNetNuke.Web.Client;
 using DotNetNuke.Web.Client.ClientResourceManagement;
 using DotNetNuke.Framework.JavaScriptLibraries;
@@ -41,6 +42,21 @@ namespace R7.Epsilon.Skins.SkinObjects
             ClientResourceManager.RegisterScript (Page, SkinPath + "js/skin.min.js", (int) FileOrder.Js.DefaultPriority, "DnnFormBottomProvider", "skin", "0.0.0");
 
             ClientResourceManager.RegisterScript (Page, SkinPath + "js/feedback.min.js", (int) FileOrder.Js.DefaultPriority, "DnnFormBottomProvider", "feedback", "0.0.0");
+
+            if (Attributes ["BlueimpGallery"] != "false") {
+                JavaScript.RequestRegistration ("jQuery-BlueimpGallery");
+
+                /*
+                var blueimpLibrary = JavaScriptLibraryController.Instance.GetLibraries (jsl => jsl.LibraryName == "jQuery-BlueimpGallery")
+                    .OrderByDescending (jsl => jsl.Version).First ();
+                var blueimpLibraryDnnVersion = string.Format ("{0:D2}_{1:D2}_{2:D2}", blueimpLibrary.Version.Major, blueimpLibrary.Version.Minor, blueimpLibrary.Version.Revision);
+
+                ClientResourceManager.RegisterStyleSheet (Page, "/Resources/Libraries/jQuery-BlueimpGallery/" + blueimpLibraryDnnVersion + "/css/blueimp-gallery.min.css", (int) FileOrder.Css.SkinCss, "DnnPageHeaderProvider", "blueimp-gallery", blueimpLibrary.Version.ToString ());
+                */
+
+                ClientResourceManager.RegisterStyleSheet (Page, "/Resources/Libraries/jQuery-BlueimpGallery/02_33_00/css/blueimp-gallery.min.css", (int) FileOrder.Css.SkinCss, "DnnPageHeaderProvider", "blueimp-gallery", "2.33.0");
+
+            }
 
             if (Attributes ["LazyAds"] != "false") {
                 JavaScript.RequestRegistration ("LazyAds");
