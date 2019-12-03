@@ -93,5 +93,40 @@
 }
 
 .skin-breadcrumb-menu .breadcrumb-item.disabled a {
-    color: #6c757d !important; // like text-muted
+    color: $skin-color-muted !important;
+}
+
+.skin-cards-menu {
+    display: flex;
+    flex-wrap: wrap;
+
+    .skin-cards-menu-col {
+        margin-bottom: 1rem;
+    }
+
+    .card {
+        height: 100%;
+    }
+
+    .card-title.disabled {
+        color: $skin-color-muted;
+    }
+
+    .card-title > a::after {
+        @include fa-icon-after('\f101');
+    }
+
+    .skin-cards-menu-description {
+        font-size: $skin-font-size-small;
+        color: $skin-color-muted;
+    }
+
+    .skin-cards-menu-submenu {
+        padding-left: 16px;
+        font-size: $skin-font-size-small;
+
+        .disabled {
+            color: $skin-color-muted;
+        }
+    }
 }
