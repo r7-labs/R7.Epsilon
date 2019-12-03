@@ -1,0 +1,98 @@
+﻿@using System.Dynamic;
+@using System.Collections.Generic;
+@using DotNetNuke.Web.DDRMenu;
+@using DotNetNuke.Services.Localization;
+@using DotNetNuke.Entities.Portals;
+@using R7.Epsilon.Components;
+@inherits DotNetNuke.Web.Razor.DotNetNukeWebPage<dynamic>
+
+@functions {
+	string NodeActiveCssClass (MenuNode node)
+	{
+		return (node.Selected) ? "active" : string.Empty;
+	}
+
+	string NodeDisabledCssClass (MenuNode node)
+	{
+		return !node.Enabled ? "disabled" : string.Empty;
+	}
+
+	string NodeForkCssClasses (MenuNode node)
+	{
+		return NodeActiveCssClass (node);
+	}
+
+	string NodeLeafCssClasses (MenuNode node)
+	{
+		return (NodeActiveCssClass (node) + " " + NodeDisabledCssClass (node)).Trim ();
+	}
+
+	string GetString (string resourceKey)
+	{
+		var resourceFileRoot = "~/Portals/_default/Skins/R7.Epsilon/App_LocalResources/Fake.ascx.resx";
+		return Localization.GetString (resourceKey, resourceFileRoot);
+	}
+
+	string FormatUrl (MenuNode node)
+	{
+		if (!node.Enabled) {
+			return "#";
+		}
+		var urlFormat = Model.UrlFormat;
+		if (string.IsNullOrEmpty (urlFormat)) {
+			return node.Url;
+		}
+		return EpsilonUrlHelper.FormatUrl (urlFormat, node.TabId, PortalSettings.Current.PortalId, HttpContext.Current.Request.QueryString);
+	}
+
+	string Id (MenuNode node, string prefix)
+	{
+		return Model.ControlID + "_" + prefix + node.TabId;
+	}
+
+	string GetDirection ()
+	{
+		if (((IDictionary<string, object>) Model).ContainsKey ("Direction")) {
+			return Model.Direction;
+		}
+		return null;
+	}
+}
+
+@helper RenderMenu(IList<MenuNode> nodes) {
+    if (nodes.Count > 0) {
+		<ul id="@Model.ControlID" class='nav nav-pills @(GetDirection() == "Horizontal" ? "" : "flex-column")'>
+			@foreach (var node in nodes) {
+				if (node.HasChildren()) {
+					<li class='nav-item @(GetDirection() == "Horizontal" ? "dropdown" : "dropright")'>
+						<a id='@Id(node, "btnDropdown")' type="button" role="button" href="#" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"
+							class="nav-link dropdown-toggle @NodeForkCssClasses(node)">@node.Text</a>
+						@RenderDropdownFor(node)
+					</li>
+				} else {
+					<li class="nav-item">
+						<a href="@FormatUrl(node)" class="nav-link @NodeLeafCssClasses(node)">@node.Text</a>
+					</li>
+				}
+			}
+		</ul>
+	}
+}
+
+@helper RenderDropdownFor(MenuNode parentNode) {
+	<div class="dropdown-menu" aria-labelledby='@Id(parentNode, "btnDropdown")'>
+		@if (parentNode.Enabled) {
+			<a class="h6 dropdown-item @NodeLeafCssClasses(parentNode) dropdown-item-parent" href="@FormatUrl(parentNode)"
+					title='@(GetString("Menu_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
+				@parentNode.Text <i class="fas fa-angle-double-right"></i>
+			</a>
+			<div class="dropdown-divider"></div>
+		}
+		@foreach (var node in parentNode.Children) {
+			<a class="dropdown-item @NodeLeafCssClasses(node)" href="@FormatUrl(node)">@node.Text</a>
+		}
+	</div>
+}
+
+@RenderMenu(Model.Source.root.Children)

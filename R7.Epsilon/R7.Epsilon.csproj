@@ -258,12 +258,15 @@
     <Folder Include="Skins\SkinObjects\" />
     <Folder Include="Menus\" />
     <Folder Include="Menus\MegaDrop\" />
+    <Folder Include="Menus\EpsilonPills\" />
     <Folder Include="Skins\SkinObjects\Banners\" />
     <Content Include="Skins\SkinObjects\Includes.ascx" />
     <Content Include="Skins\SkinObjects\Meta.ascx" />
     <Content Include="Skins\Blocks\Header.ascx" />
     <Content Include="Skins\Blocks\Footer.ascx" />
     <Content Include="Menus\MegaDrop\MegaDrop.cshtml" />
+    <Content Include="Menus\EpsilonPills\EpsilonPills.cshtml" />
+    <Content Include="Menus\EpsilonPills\menudef.xml" />
     <Content Include="Skins\SkinObjects\SearchModal.ascx" />
     <Content Include="Skins\SkinObjects\Languages.ascx" />
     <Content Include="Skins\Blocks\SubHeader.ascx" />
