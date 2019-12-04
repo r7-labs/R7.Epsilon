@@ -138,6 +138,7 @@
     <Compile Include="Components\EpsilonNodeManipulator.cs" />
     <Compile Include="Skins\EpsilonSkinOptions.cs" />
     <Compile Include="Skins\IEpsilonSkinPart.cs" />
+    <Compile Include="Menus\EpsilonMenuHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Containers\Blank.ascx" />
