@@ -57,6 +57,14 @@
 		}
 		return null;
 	}
+
+	bool GetShowDescription ()
+	{
+		if (((IDictionary<string, object>) Model).ContainsKey ("ShowDescription")) {
+			return bool.Parse (Model.ShowDescription);
+		}
+		return false;
+	}
 }
 
 @helper RenderMenu(IList<MenuNode> nodes) {
@@ -72,10 +80,13 @@
 							else {
 								<span class="h5 card-title skin-menu-parent-item @NodeLeafCssClasses(node)">@node.Text</span>
 							}
-							<!-- TODO: Make description display configurable -->
-							<p class="card-text skin-cards-menu-description">@node.Description</p>
+							@if (GetShowDescription ()) {
+								<p class="card-text skin-cards-menu-description">@node.Description</p>
+							}
 							@if (node.HasChildren ()) {
-								<hr />
+								if (GetShowDescription ()) {
+									<hr />
+								}
 								@RenderListFor(node)
 							}
 						</div>
