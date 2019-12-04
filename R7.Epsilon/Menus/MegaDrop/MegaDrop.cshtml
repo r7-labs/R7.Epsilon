@@ -55,7 +55,7 @@
 	}
 }
 
-@helper RenderNodes(IList<MenuNode> nodes) {
+@helper RenderMenu(IList<MenuNode> nodes) {
     if (nodes.Count > 0) {
 		<div id="@Model.ControlID" class="row no-gutters">
 			<ul class="navbar-nav col-6 col-md-12">
@@ -156,4 +156,4 @@
 	</div>
 }
 
-@RenderNodes(Model.Source.root.Children)
+@RenderMenu(Model.Source.root.Children)
