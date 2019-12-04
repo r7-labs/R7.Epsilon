@@ -83,9 +83,9 @@
 @helper RenderDropdownFor(MenuNode parentNode) {
 	<div class="dropdown-menu" aria-labelledby='@Id(parentNode, "btnDropdown")'>
 		@if (parentNode.Enabled) {
-			<a class="h6 dropdown-item @NodeLeafCssClasses(parentNode) dropdown-item-parent" href="@FormatUrl(parentNode)"
+			<a class="h6 dropdown-item skin-menu-parent-item @NodeLeafCssClasses(parentNode)" href="@FormatUrl(parentNode)"
 					title='@(GetString("Menu_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
-				@parentNode.Text <i class="fas fa-angle-double-right"></i>
+				@parentNode.Text
 			</a>
 			<div class="dropdown-divider"></div>
 		}

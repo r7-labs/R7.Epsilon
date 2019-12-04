@@ -21,11 +21,23 @@
 
 @import "mixins";
 
+.skin-menu {
+    .skin-menu-parent-item {
+        font-weight: bold;
+        &::after {
+            @include fa-icon-after('\f101');
+        }
+        &.disabled {
+            color: $skin-color-muted;
+            &::after {
+                content: none;
+            }
+        }
+    }
+}
+
 .skin-main-menu {
     width: 100%;
-    .dropdown-item.dropdown-item-parent {
-        font-weight: bold;
-    }
     .navbar-nav {
         flex-wrap: wrap;
     }
@@ -51,11 +63,6 @@
 .skin-breadcrumb-menu {
     .dropdown-item {
         white-space: normal;
-    }
-    .collapse, .collapsing {
-        .h6.dropdown-item {
-            font-weight: bold;
-        }
     }
 }
 
@@ -106,14 +113,6 @@
 
     .card {
         height: 100%;
-    }
-
-    .card-title.disabled {
-        color: $skin-color-muted;
-    }
-
-    .card-title > a::after {
-        @include fa-icon-after('\f101');
     }
 
     .skin-cards-menu-description {

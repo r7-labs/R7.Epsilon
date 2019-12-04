@@ -66,14 +66,12 @@
 				<div class="col-lg-4 col-md-6 skin-cards-menu-col">
 					<div class="card">
 						<div class="card-body">
-							<h5 class="card-title @NodeLeafCssClasses(node)">
-								@if (node.Enabled) {
-									<a href="@FormatUrl(node)">@node.Text</a>
-								}
-								else {
-									@node.Text
-								}
-							</h5>
+							@if (node.Enabled) {
+								<a class="h5 card-title skin-menu-parent-item @NodeLeafCssClasses(node)" href="@FormatUrl(node)">@node.Text</a>
+							}
+							else {
+								<span class="h5 card-title skin-menu-parent-item @NodeLeafCssClasses(node)">@node.Text</span>
+							}
 							<!-- TODO: Make description display configurable -->
 							<p class="card-text skin-cards-menu-description">@node.Description</p>
 							@if (node.HasChildren ()) {

@@ -88,9 +88,9 @@
 			@if (parentNode.Enabled) {
 				<div class="col-12 p-0">
 					<div class="nav-item">
-						<a href="@FormatUrl(parentNode)" class="h4 nav-link @NodeLeafCssClasses(parentNode)"
+						<a href="@FormatUrl(parentNode)" class="h4 nav-link skin-menu-parent-item @NodeLeafCssClasses(parentNode)"
 								title='@(GetString("Menu_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
-							@parentNode.Text <i class="fas fa-angle-double-right"></i>
+							@parentNode.Text
 						</a>
 					</div>
 				</div>
@@ -119,9 +119,9 @@
 @helper RenderDropdownFor(MenuNode parentNode) {
 	<div class="dropdown-menu" aria-labelledby='@Id(parentNode, "btnDropdown")'>
 		@if (parentNode.Enabled) {
-			<a class="h5 dropdown-item @NodeLeafCssClasses(parentNode) dropdown-item-parent" href="@FormatUrl(parentNode)"
+			<a class="h5 dropdown-item skin-menu-parent-item @NodeLeafCssClasses(parentNode)" href="@FormatUrl(parentNode)"
 					title='@(GetString("Menu_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
-				@parentNode.Text <i class="fas fa-angle-double-right"></i>
+				@parentNode.Text
 			</a>
 			<div class="dropdown-divider"></div>
 		}
@@ -144,9 +144,9 @@
 	<div id='@Id(parentNode, "collapse")' class="collapse bg-light">
 		<div class="dropdown-divider"></div>
 		@if (parentNode.Enabled) {
-			<a class="h6 dropdown-item @NodeForkCssClasses(parentNode)" href="@FormatUrl(parentNode)"
+			<a class="h6 dropdown-item skin-menu-parent-item @NodeForkCssClasses(parentNode)" href="@FormatUrl(parentNode)"
 					title='@(GetString("Menu_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
-				@parentNode.Text <i class="fas fa-angle-double-right"></i>
+				@parentNode.Text
 			</a>
 		}
 		@foreach (var node in parentNode.Children) {
