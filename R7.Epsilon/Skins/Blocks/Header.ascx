@@ -59,7 +59,7 @@
 		</div>
 	</div>
 </div>
-<nav class="navbar navbar-expand-md bg-dark navbar-dark skin-main-menu skin-primary-menu">
+<nav class="navbar navbar-expand-md bg-dark navbar-dark skin-menu skin-main-menu skin-primary-menu">
 	<div class="container">
 		<div class="navbar-brand d-md-none">
 			<skin:LOGOMOBILE runat="server" />
@@ -73,7 +73,7 @@
 		</div>
 	</div>
 </nav>
-<nav class="navbar navbar-expand-md bg-dark navbar-dark skin-main-menu skin-secondary-menu">
+<nav class="navbar navbar-expand-md bg-dark navbar-dark skin-menu skin-main-menu skin-secondary-menu">
 	<div class="container">
 		<div class="collapse navbar-collapse">
 			<skin:SECONDARYMENU runat="server" />

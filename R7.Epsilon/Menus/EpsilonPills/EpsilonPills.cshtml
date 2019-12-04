@@ -61,7 +61,7 @@
 
 @helper RenderMenu(IList<MenuNode> nodes) {
     if (nodes.Count > 0) {
-		<ul id="@Model.ControlID" class='nav nav-pills @(GetDirection() == "Horizontal" ? "" : "flex-column")'>
+		<ul id="@Model.ControlID" class='nav nav-pills @(GetDirection() == "Horizontal" ? "" : "flex-column") skin-menu skin-pills-menu'>
 			@foreach (var node in nodes) {
 				if (node.HasChildren()) {
 					<li class='nav-item @(GetDirection() == "Horizontal" ? "dropdown" : "dropright")'>
