@@ -58,7 +58,7 @@
 	<ul class="card-text skin-cards-menu-submenu">
 		@foreach (var node in parentNode.Children) {
 			<li>
-			 	@if (node.Enabled) {
+				@if (node.Enabled) {
 					<a class="@EpsilonMenuHelper.LeafNodeCssClasses(node)" href="@FormatUrl(node)">@node.Text</a>
 				}
 				else {
