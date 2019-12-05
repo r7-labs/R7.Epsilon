@@ -32,7 +32,7 @@ namespace R7.Epsilon.Tests
         [Fact]
         public void PortalConfigDeserializationTest ()
         {
-            var devConfigFile = Path.Combine ("..", "..", "..", "R7.Epsilon", "Skins", "R7.Epsilon.development.yml");
+            var devConfigFile = Path.Combine ("..", "..", "..", "R7.Epsilon", "R7.Epsilon.development.yml");
 
             using (var configReader = new StringReader (File.ReadAllText (devConfigFile))) {
                 var deserializer = new DeserializerBuilder ().WithNamingConvention (new HyphenatedNamingConvention ()).Build ();

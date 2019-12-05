@@ -100,7 +100,7 @@
     <Copy SourceFiles="@(DeployExternalCssFiles)" DestinationFolder="$(ProjectSkinsPath)/css/" SkipUnchangedFiles="true" />
 
     <!-- Deploy config files -->
-    <Copy SourceFiles="$(MainProjectPath)/Skins/R7.Epsilon.development.yml" DestinationFiles="$(DnnLocalDeployPath)/Portals/0/R7.Epsilon.yml" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="$(MainProjectPath)/R7.Epsilon.development.yml" DestinationFiles="$(DnnLocalDeployPath)/Portals/0/R7.Epsilon.yml" SkipUnchangedFiles="true" />
 
     <!-- Copy binaries -->
     <Copy SourceFiles="@(DeployBinaryFiles)" DestinationFolder="$(DnnBinPath)" SkipUnchangedFiles="true" />
