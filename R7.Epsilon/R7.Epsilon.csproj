@@ -135,7 +135,7 @@
       <DependentUpon>Includes.ascx</DependentUpon>
     </Compile>
     <Compile Include="Skins\SkinObjects\Banners\IBannerControl.cs" />
-    <Compile Include="Components\EpsilonNodeManipulator.cs" />
+    <Compile Include="Menus\EpsilonNodeManipulator.cs" />
     <Compile Include="Skins\EpsilonSkinOptions.cs" />
     <Compile Include="Skins\IEpsilonSkinPart.cs" />
     <Compile Include="Menus\EpsilonMenuHelper.cs" />

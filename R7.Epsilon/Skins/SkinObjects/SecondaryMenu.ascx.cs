@@ -21,7 +21,7 @@
 
 using System;
 using System.Collections.Generic;
-using R7.Epsilon.Components;
+using R7.Epsilon.Menus;
 using DotNetNuke.Web.DDRMenu.TemplateEngine;
 using DDRMenu = DotNetNuke.Web.DDRMenu;
 

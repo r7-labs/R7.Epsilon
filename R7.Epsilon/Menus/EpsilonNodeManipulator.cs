@@ -22,9 +22,10 @@
 using System.Collections.Generic;
 using DotNetNuke.Entities.Portals;
 using DotNetNuke.Web.DDRMenu;
+using R7.Epsilon.Components;
 using R7.Epsilon.Skins.SkinObjects;
 
-namespace R7.Epsilon.Components
+namespace R7.Epsilon.Menus
 {
     public class EpsilonNodeManipulator<TMenu>: INodeManipulator
     {
