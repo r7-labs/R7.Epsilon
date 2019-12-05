@@ -118,7 +118,7 @@
 			</a>
 		}
 		@foreach (var node in parentNode.Children) {
-		<a class="dropdown-item small @EpsilonMenuHelper.LeafNodeCssClasses(node)" href="@FormatUrl(node)">@node.Text</a>
+		<a class="dropdown-item @EpsilonMenuHelper.LeafNodeCssClasses(node)" href="@FormatUrl(node)">@node.Text</a>
 		}
 		<div class="dropdown-divider"></div>
 	</div>

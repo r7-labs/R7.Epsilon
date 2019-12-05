@@ -59,13 +59,6 @@
     white-space: normal;
 }
 
-.skin-submenu,
-.skin-breadcrumb-menu {
-    .dropdown-item {
-        white-space: normal;
-    }
-}
-
 // disable "broken" menu animation on small screens
 @media (max-width: 767px) {
 	.skin-submenu { transition: none; }
@@ -74,23 +67,21 @@
 
 .skin-submenu,
 .skin-breadcrumb-menu {
+    .dropdown-item {
+        white-space: normal;
+    }
     .collapse-toggle::after {
         @include fa-icon-after('\f0d7');
     }
-}
-
-.skin-submenu,
-.skin-breadcrumb-menu {
     .collapse-toggle.show::after {
         @include fa-icon-after('\f0d8');
     }
-}
-
-.skin-submenu,
-.skin-breadcrumb-menu {
     .collapse, .collapsing {
-        .dropdown-item.small::before {
-            @include char-before('•');
+        .dropdown-item:not(.skin-menu-parent-item) {
+            font-size: $skin-font-size-small;
+            &::before {
+                @include char-before('•');
+            }
         }
     }
 }
