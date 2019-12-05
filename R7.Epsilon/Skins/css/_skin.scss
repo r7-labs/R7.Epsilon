@@ -276,7 +276,7 @@ a.btn-primary:visited {
     border-top-left-radius: .25rem;
     border-top-right-radius: .25rem;
     & > ul {
-        font-size: 85%;
+        font-size: $skin-font-size-small;
         margin-bottom: 0;
         & > li {
             padding-right: 1rem;
@@ -298,7 +298,7 @@ a.btn-primary:visited {
 }
 
 .skin-permalink {
-    font-size: 85%;
+    font-size: $skin-font-size-small;
 }
 
 /* Footer */
@@ -338,7 +338,7 @@ a.btn-primary:visited {
 
     .skin-footer-content-well
     {
-        font-size:85%;
+        font-size: $skin-font-size-small;
         margin-bottom:10px;
         border-radius:5px;
         border-left:3px solid #fff;
@@ -366,7 +366,7 @@ a.btn-primary:visited {
 
     .skin-terms
     {
-        font-size:85%;
+        font-size: $skin-font-size-small;
         text-align:right;
     }
 }
