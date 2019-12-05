@@ -18,6 +18,7 @@
                 <dependency type="coreVersion">08.00.04</dependency>
 				<dependency type="package">LazyAds</dependency>
 				<dependency type="package">Rangy</dependency>
+				<dependency type="package">jQuery-BlueimpGallery</dependency>
             </dependencies>
 			<components>
                 <component type="Cleanup" version="02.00.00">
