@@ -21,9 +21,12 @@ themes:
 
 footer-buttons-group-name: FooterButtons
 
-primary-menu:
+menu:
 
   url-format: "/tabid/{tabid}"
+
+primary-menu:
+
   node-manipulator-types:
     - R7.News.Stream.Integrations.DDRMenu.StreamNodeManipulator, R7.News.Stream
 

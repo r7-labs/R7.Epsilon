@@ -40,13 +40,13 @@ namespace R7.Epsilon.Skins.SkinObjects
             Menu = primaryMenu;
             Menu.NodeSelector = Config.PrimaryMenu.NodeSelector;
             Menu.IncludeNodes = Config.PrimaryMenu.IncludeNodes;
-            Menu.ExcludeNodes = Config.PrimaryMenu.ExcludeNodes;
+            Menu.ExcludeNodes = Config.PrimaryMenu.ExcludeNodes ?? Config.Menu.ExcludeNodes;
 
             if (Menu.TemplateArguments == null) {
                 Menu.TemplateArguments = new List<TemplateArgument> ();
             }
 
-            Menu.TemplateArguments.Add (new TemplateArgument ("UrlFormat", Config.PrimaryMenu.UrlFormat));
+            Menu.TemplateArguments.Add (new TemplateArgument ("UrlFormat", Config.PrimaryMenu.UrlFormat ?? Config.Menu.UrlFormat));
 
             if (Config.PrimaryMenu.NodeManipulators.Count > 0) {
                 Menu.NodeManipulator = typeof (EpsilonNodeManipulator<PrimaryMenu>).FullName;

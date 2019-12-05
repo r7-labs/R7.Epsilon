@@ -37,13 +37,15 @@ namespace R7.Epsilon.Skins.SkinObjects
         protected override void OnInit (EventArgs e)
         {
             Menu = breadcrumbMenu;
-            Menu.NodeSelector = Config.PrimaryMenu.NodeSelector;
+            Menu.NodeSelector = Config.BreadcrumbMenu.NodeSelector;
+            Menu.IncludeNodes = Config.BreadcrumbMenu.IncludeNodes;
+            Menu.ExcludeNodes = Config.BreadcrumbMenu.ExcludeNodes ?? Config.Menu.ExcludeNodes;
 
             if (Menu.TemplateArguments == null) {
                 Menu.TemplateArguments = new List<TemplateArgument> ();
             }
 
-            Menu.TemplateArguments.Add (new TemplateArgument ("UrlFormat", Config.BreadcrumbMenu.UrlFormat));
+            Menu.TemplateArguments.Add (new TemplateArgument ("UrlFormat", Config.BreadcrumbMenu.UrlFormat ?? Config.Menu.UrlFormat));
 
             base.OnInit (e);
         }

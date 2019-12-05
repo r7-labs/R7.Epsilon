@@ -1,18 +1,27 @@
 ﻿@using System.Dynamic;
 @using System.Collections.Generic;
 @using DotNetNuke.Web.DDRMenu;
+@using R7.Epsilon.Components;
 @using R7.Epsilon.Menus;
 @inherits DotNetNuke.Web.Razor.DotNetNukeWebPage<dynamic>
 
 @functions {
 	string FormatUrl (MenuNode node)
 	{
-		return EpsilonMenuHelper.FormatUrl (node, Model.UrlFormat);
+		return EpsilonMenuHelper.FormatUrl (node, GetUrlFormat ());
 	}
 
 	string Id (MenuNode node, string prefix)
 	{
 		return Model.ControlID + "_" + prefix + node.TabId;
+	}
+
+	string GetUrlFormat ()
+	{
+		if (((IDictionary<string, object>) Model).ContainsKey ("UrlFormat")) {
+			return Model.UrlFormat;
+		}
+		return EpsilonConfig.Instance.Menu.UrlFormat;
 	}
 
 	string GetDirection ()
