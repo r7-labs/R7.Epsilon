@@ -139,6 +139,7 @@
     <Compile Include="Skins\EpsilonSkinOptions.cs" />
     <Compile Include="Skins\IEpsilonSkinPart.cs" />
     <Compile Include="Menus\EpsilonMenuHelper.cs" />
+    <Compile Include="Components\JavascriptLibraryHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Containers\Blank.ascx" />

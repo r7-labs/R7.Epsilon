@@ -20,10 +20,11 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
-using System.Linq;
+using DotNetNuke.Common;
 using DotNetNuke.Web.Client;
 using DotNetNuke.Web.Client.ClientResourceManagement;
 using DotNetNuke.Framework.JavaScriptLibraries;
+using R7.Epsilon.Components;
 
 namespace R7.Epsilon.Skins.SkinObjects
 {
@@ -45,17 +46,13 @@ namespace R7.Epsilon.Skins.SkinObjects
 
             if (Attributes ["BlueimpGallery"] != "false") {
                 JavaScript.RequestRegistration ("jQuery-BlueimpGallery");
-
-                /*
-                var blueimpLibrary = JavaScriptLibraryController.Instance.GetLibraries (jsl => jsl.LibraryName == "jQuery-BlueimpGallery")
-                    .OrderByDescending (jsl => jsl.Version).First ();
-                var blueimpLibraryDnnVersion = string.Format ("{0:D2}_{1:D2}_{2:D2}", blueimpLibrary.Version.Major, blueimpLibrary.Version.Minor, blueimpLibrary.Version.Revision);
-
-                ClientResourceManager.RegisterStyleSheet (Page, "/Resources/Libraries/jQuery-BlueimpGallery/" + blueimpLibraryDnnVersion + "/css/blueimp-gallery.min.css", (int) FileOrder.Css.SkinCss, "DnnPageHeaderProvider", "blueimp-gallery", blueimpLibrary.Version.ToString ());
-                */
-
-                ClientResourceManager.RegisterStyleSheet (Page, "/Resources/Libraries/jQuery-BlueimpGallery/02_33_00/css/blueimp-gallery.min.css", (int) FileOrder.Css.SkinCss, "DnnPageHeaderProvider", "blueimp-gallery", "2.33.0");
-
+                var blueimpLibrary = JavascriptLibraryHelper.GetHighestVersionLibrary ("jQuery-BlueimpGallery");
+                if (blueimpLibrary != null) {
+                    ClientResourceManager.RegisterStyleSheet (Page, "/Resources/Libraries/jQuery-BlueimpGallery/"
+                        + Globals.FormatVersion (blueimpLibrary.Version, "00", 3, "_") + "/css/blueimp-gallery.min.css",
+                        (int) FileOrder.Css.SkinCss, "DnnPageHeaderProvider", "blueimp-gallery", blueimpLibrary.Version.ToString ()
+                    );
+                }
             }
 
             if (Attributes ["LazyAds"] != "false") {
