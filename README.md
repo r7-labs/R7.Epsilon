@@ -20,6 +20,7 @@ See it in action at http://www.volgau.com!
 - Devs can use [Paletton.com](http://paletton.com) to create and customize palettes.
 - Integration with feedback forms including passing user-selected content.
 - Google Adsense adaptive banners support for different screen sizes with automatic loading on window resize.
+- [Blueimp Gallery](https://blueimp.github.io/Gallery/) support.
 - Optional [cnt.sputnik.ru](https://cnt.sputnik.ru/) analytics support.
 
 ## Site-specific (portal level) custom skins (WIP)
@@ -38,10 +39,6 @@ Note that layout files are reusable - any number of skin files could reference s
 Note also then you update *R7.Epsilon* package, there is a chance that some things in your custom skin will break.
 Please always test updates in non-production environment first!
 
-## Some planned features:
-
-- BlueImp gallery support (at least for Home skin).
-
 # Install
 
 - Install [LazyAds javascript library](https://github.com/roman-yagodin/R7.Dnn.JavaScriptLibraries/releases/tag/lazyads-v1.1.10) dependency.
@@ -54,6 +51,33 @@ just to be sure that you will always have access to Admin/Host pages.
 ## Banner skinobject support for DNN 8/9
 
 Please see [this wiki page](https://github.com/roman-yagodin/R7.Epsilon/wiki/Install:-Banner-skinobject-support-for-DNN-8-and-9)
+
+## Basic blueimp Gallery support
+
+All static images on the page with `data-gallery=""` attribute on the enclosing `A` tag will be displayed as one gallery:
+
+```HTML
+<a href="/images/orange.jpg" title="Image of orange in the default gallery" data-gallery="">
+    <img src="/images/orange-thumbnail.jpg" alt="Orange" />
+</a>
+<a href="/images/peach.jpg" title="Image of peach in the default gallery" data-gallery="">
+    <img src="/images/peach-thumbnail.jpg" alt="Peach" />
+</a>
+```
+
+Each static image with `data-gallery="#blueimp-gallery-single"` attribute on the enclosing `A` tag will be displayed in "each own" lightbox:
+
+```HTML
+<a href="/images/orange.jpg" title="Single image of orange" data-gallery="#blueimp-gallery-single">
+    <img src="/images/orange-thumbnail.jpg" alt="Orange" />
+</a>
+<a href="/images/peach.jpg" title="Single image of peach" data-gallery="#blueimp-gallery-single">
+    <img src="/images/peach-thumbnail.jpg" alt="Peach" />
+</a>
+```
+
+Of cause, you can also have any number of additional lightboxes (galleries, carousels) on the page,
+but you'll need to add lightboxes markup for them manually. See more in the [blueimp Gallery readme](https://github.com/blueimp/Gallery).
 
 # Acknowledgements
 
