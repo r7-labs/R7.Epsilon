@@ -118,5 +118,9 @@
         .disabled {
             color: $skin-color-muted;
         }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
     }
 }
