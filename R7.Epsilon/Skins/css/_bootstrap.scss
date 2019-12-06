@@ -23,7 +23,15 @@
 
 .dropdown-item.active,
 .dropdown-item:active {
-    background-color: $color-secondary-1-0;
+    background-color: $color-primary-0;
+    &.disabled {
+        color: #fff;
+    }
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+    background-color: $color-primary-0;
 }
 
 /* Alerts */
