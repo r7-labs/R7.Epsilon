@@ -76,8 +76,6 @@ namespace R7.Epsilon.Components
             NodeSelector = "*,0,7"
         };
 
-        public string FooterButtonsGroupName { get; set; }
-
         public AdsenseConfig Adsense { get; set; } = new AdsenseConfig ();
 
         public bool ShowTerms { get; set; }

@@ -48,10 +48,6 @@ Please always test updates in non-production environment first!
 Note that though you can use *R7.Epsilon* for Admin/Host pages, we strongly recommend to use one of the pre-installed DNN themes for that -
 just to be sure that you will always have access to Admin/Host pages.
 
-## Banner skinobject support for DNN 8/9
-
-Please see [this wiki page](https://github.com/roman-yagodin/R7.Epsilon/wiki/Install:-Banner-skinobject-support-for-DNN-8-and-9)
-
 ## Basic blueimp Gallery support
 
 All static images on the page with `data-gallery=""` attribute on the enclosing `A` tag will be displayed as one gallery:

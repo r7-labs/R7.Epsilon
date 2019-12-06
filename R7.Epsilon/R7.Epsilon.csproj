@@ -73,7 +73,6 @@
     <None Include="Skins\skin.doctype.xml" />
     <None Include="lib\ClientDependency.Core.dll" />
     <None Include="lib\DotNetNuke.Web.DDRMenu.dll" />
-    <None Include="Skins\R7.Epsilon.development.yml" />
     <None Include="lib\README.md" />
     <None Include="Menus\MegaDrop\menudef.xml" />
     <None Include="Skins\koi.json" />
@@ -125,16 +124,9 @@
     <Compile Include="Skins\SkinObjects\EpsilonMenuBase.cs" />
     <Compile Include="Components\A11yHelper.cs" />
     <Compile Include="Components\EpsilonUrlHelper.cs" />
-    <Compile Include="Skins\SkinObjects\Banners\BannerLoader.ascx.cs">
-      <DependentUpon>BannerLoader.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Skins\SkinObjects\Banners\BannerWrapper.ascx.cs">
-      <DependentUpon>BannerWrapper.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Skins\SkinObjects\Includes.ascx.cs">
       <DependentUpon>Includes.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Skins\SkinObjects\Banners\IBannerControl.cs" />
     <Compile Include="Menus\EpsilonNodeManipulator.cs" />
     <Compile Include="Skins\EpsilonSkinOptions.cs" />
     <Compile Include="Skins\IEpsilonSkinPart.cs" />
@@ -232,8 +224,6 @@
     <Content Include="Containers\HeaderCard_Info.ascx" />
     <Content Include="Containers\HeaderCard_Warning.ascx" />
     <Content Include="Containers\HeaderCard_Danger.ascx" />
-    <Content Include="Skins\SkinObjects\Banners\BannerLoader.ascx" />
-    <Content Include="Skins\SkinObjects\Banners\BannerWrapper.ascx" />
     <Content Include="Skins\SkinObjects\PermalinksModal.ascx" />
     <Content Include="Skins\js\feedback.js" />
     <Content Include="Skins\js\bootstrap-init.js" />
@@ -264,7 +254,6 @@
     <Folder Include="Menus\MegaDrop\" />
     <Folder Include="Menus\EpsilonPills\" />
     <Folder Include="Menus\EpsilonCards\" />
-    <Folder Include="Skins\SkinObjects\Banners\" />
     <Content Include="Skins\SkinObjects\Includes.ascx" />
     <Content Include="Skins\SkinObjects\Meta.ascx" />
     <Content Include="Skins\Blocks\Header.ascx" />
@@ -322,5 +311,6 @@
     <Content Include="Containers\DnnAlert_Danger.ascx" />
     <Content Include="Skins\css\_mixins.scss" />
     <Content Include="Skins\SkinObjects\BlueimpGallery.ascx" />
+    <Content Include="R7.Epsilon.development.yml" />
   </ItemGroup>
 </Project>

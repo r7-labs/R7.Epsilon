@@ -5,16 +5,12 @@
 <%@ Register TagPrefix="skin" TagName="GADSENSE" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/GAdsense.ascx" %>
 <%@ Register TagPrefix="skin" TagName="CUSTOMCONTENT" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/CustomContent.ascx" %>
 <%@ Register TagPrefix="skin" TagName="YCYCOUNTER" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/YCycounter.ascx" %>
-<%@ Register TagPrefix="skin" TagName="BANNER" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/Banners/BannerLoader.ascx" %>
 
 <div class="container">
 	<div class="row">
 		<div class="col-lg-8 col-md-10 col-sm-12">
 			<skin:GADSENSE runat="server" />
 			<div class="row">
-				<div class="skin-footer-buttons col-sm-6 d-xs-none">
-					<skin:BANNER runat="server" GroupName="<%# Config.FooterButtonsGroupName %>" BannerTypeId="4" BannerCount="3" Orientation="H" />
-				</div>
 				<skin:CUSTOMCONTENT runat="server" CssClass="skin-footer-content col-sm-6" ResourceKey="FooterPane1.Content" />
 			</div>
 		</div>
