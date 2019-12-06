@@ -92,6 +92,7 @@ a.btn-primary:visited {
     border-radius: 50%;
     cursor:pointer;
     opacity: $float-btn-opacity;
+    text-decoration: none;
     &:hover { opacity: 1;  }
     color: #fff;
     & > i { color: #fff; }
