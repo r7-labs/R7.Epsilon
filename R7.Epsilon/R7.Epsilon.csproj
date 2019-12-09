@@ -90,7 +90,6 @@
     <Compile Include="Components\SearchEngineType.cs" />
     <Compile Include="Components\SearchEngineHelper.cs" />
     <Compile Include="Components\Const.cs" />
-    <Compile Include="ControlExtensions\GridViewExtensions.cs" />
     <Compile Include="Skins\EpsilonSkinBase.cs" />
     <Compile Include="Containers\EpsilonContainerBase.cs" />
     <Compile Include="Skins\SkinObjects\BrowserCheck.ascx.cs">
