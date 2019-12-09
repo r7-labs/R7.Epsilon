@@ -18,10 +18,10 @@ Options.DisablePageInfo = true;
 		<skin:HEADER runat="server" />
 	</header>
 	<skin:SUBHEADER runat="server" />
-	<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_single-pane.ascx" -->
+	<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_single-pane.ascx"-->
 	<skin:SUPFOOTER runat="server" />
 	<footer class="skin-footer">
-		<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_footer-4cols.ascx" -->
+		<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_footer-4cols.ascx"-->
 		<skin:FOOTER runat="server" />
 	</footer>
 	<skin:END runat="server" />
