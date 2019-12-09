@@ -292,7 +292,7 @@
     <Content Include="Skins\Layouts\_edit.ascx" />
     <Content Include="Skins\Simple.ascx" />
     <Content Include="Skins\Layouts\_simple.ascx" />
-    <Content Include="Skins\Layouts\_footer-4cols.ascx" />
+    <Content Include="Skins\Layouts\_footer.ascx" />
     <Content Include="Skins\Layouts\_single-pane.ascx" />
     <Content Include="Skins\css\palettes\_shared-palette.scss" />
     <Content Include="Skins\css\_variables.scss" />
