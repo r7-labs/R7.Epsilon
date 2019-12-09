@@ -164,7 +164,7 @@
         <value>\n\n---{content}</value>
     </data>
     <data name="FeedbackPage_Template.Text" xml:space="preserve">
-        <value>\nPage: {origin}/linkclick.aspx?link={page}</value>
+        <value>\nPage: {origin}/tabid/{tabid}</value>
     </data>
     <data name="FeedbackSelection_Template.Text" xml:space="preserve">
         <value>\nSelection: \&quot;{selection}\&quot;</value>

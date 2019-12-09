@@ -146,7 +146,7 @@
         <value>Создать короткую ссылку с использованием </value>
     </data>
 	<data name="FeedbackPage_Template.Text" xml:space="preserve">
-        <value>\nСтраница: {origin}/linkclick.aspx?link={page}</value>
+        <value>\nСтраница: {origin}/tabid/{tabid}</value>
     </data>
     <data name="FeedbackSelection_Template.Text" xml:space="preserve">
         <value>\nВыделенный фрагмент: \&quot;{selection}\&quot;</value>

@@ -12,7 +12,7 @@
             if (!!epsilon.queryParams ["returntabid"]) {
                 feedbackContent += epsilon.localization ["feedbackPageTemplate"]
                     .replace (/\{origin\}/, getLocationOrigin (window.location))
-                    .replace (/\{page\}/, epsilon.queryParams ["returntabid"]);
+                    .replace (/\{tabid\}/, epsilon.queryParams ["returntabid"]);
 
                 if (!!epsilon.queryParams ["feedbackselection"]) {
                     feedbackContent += epsilon.localization ["feedbackSelectionTemplate"].replace (/\{selection\}/, epsilon.queryParams ["feedbackselection"]);
