@@ -185,7 +185,6 @@
     <Content Include="Skins\SkinObjects\GAdsense.ascx" />
     <Content Include="Skins\SkinObjects\JsVariables.ascx" />
     <Content Include="Skins\SkinObjects\LogoMobile.ascx" />
-    <Content Include="Skins\SkinObjects\LogoTitle.ascx" />
     <Content Include="Skins\SkinObjects\PageHeader.ascx" />
     <Content Include="Skins\SkinObjects\PageInfo.ascx" />
     <Content Include="Skins\SkinObjects\PrimaryMenu.ascx" />
