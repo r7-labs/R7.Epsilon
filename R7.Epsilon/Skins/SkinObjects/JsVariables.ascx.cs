@@ -32,9 +32,9 @@ namespace R7.Epsilon.Skins.SkinObjects
             get {
                 var sb = new StringBuilder ();
 
-                sb.AppendFormat ("feedbackTemplate:'{0}',", T.GetString ("Feedback.Template"));
-                sb.AppendFormat ("feedbackPageTemplate:'{0}',", T.GetString ("FeedbackPage.Template"));
-                sb.AppendFormat ("feedbackSelectionTemplate:'{0}',", T.GetString ("FeedbackSelection.Template"));
+                sb.AppendFormat ("feedbackTemplate:'{0}',", T.GetString ("Feedback_Template.Text"));
+                sb.AppendFormat ("feedbackPageTemplate:'{0}',", T.GetString ("FeedbackPage_Template.Text"));
+                sb.AppendFormat ("feedbackSelectionTemplate:'{0}',", T.GetString ("FeedbackSelection_Template.Text"));
                 sb.AppendFormat ("subMenuCloseButtonTitle:'{0}',", T.GetString ("SubMenuClose.Text"));
                 sb.AppendFormat ("feedbackMessage:'{0}'", T.GetString ("FeedbackMessage.Text"));
 

@@ -13,12 +13,12 @@
 				<div class="col-12">
 					<skin:GADSENSE runat="server" />
 				</div>
-				<skin:CUSTOMCONTENT runat="server" CssClass="col-12 col-md-6 skin-footer-content" ResourceKey="FooterPane1.Content" />
-				<skin:CUSTOMCONTENT runat="server" CssClass="col-12 col-md-6 skin-footer-content" ResourceKey="FooterPane2.Content" />
+				<skin:CUSTOMCONTENT runat="server" CssClass="col-12 col-md-6 skin-footer-content" ResourceKey="FooterPane1_Content.Text" />
+				<skin:CUSTOMCONTENT runat="server" CssClass="col-12 col-md-6 skin-footer-content" ResourceKey="FooterPane2_Content.Text" />
 			</div>
 		</div>
-		<skin:CUSTOMCONTENT runat="server" CssClass="col-12 col-md-3 skin-footer-content" ResourceKey="FooterPane3.Content" />
-		<skin:CUSTOMCONTENT runat="server" CssClass="col-12 col-md-3 skin-footer-content" ResourceKey="FooterPane4.Content" />
+		<skin:CUSTOMCONTENT runat="server" CssClass="col-12 col-md-3 skin-footer-content" ResourceKey="FooterPane3_Content.Text" />
+		<skin:CUSTOMCONTENT runat="server" CssClass="col-12 col-md-3 skin-footer-content" ResourceKey="FooterPane4_Content.Text" />
 	</div>
 </div>
 <div class="skin-footer-lastrow">

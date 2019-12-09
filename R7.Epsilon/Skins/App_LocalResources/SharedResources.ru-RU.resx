@@ -48,10 +48,10 @@
     <data name="SkipToContent.Text" xml:space="preserve">
         <value>Перейти напрямую к содержимому</value>
     </data>
-    <data name="PublishedOnDate.Format" xml:space="preserve">
+    <data name="PublishedOnDate_Format.Text" xml:space="preserve">
         <value>dd MMMM yyyy</value>
     </data>
-    <data name="BrowserCheck.Warning" xml:space="preserve">
+    <data name="BrowserCheck_Warning.Text" xml:space="preserve">
         <value><![CDATA[<strong>Внимание!</strong> Мы определили, что Вы используете устаревшую версию браузера, не поддерживающую в должной мере современные стандарты Интернет. Как следствие, сайт может отображаться неправильно, а отдельные его функции могут работать некорректно или будут недоступны. Пожалуйста, обновите браузер!]]></value>
     </data>
     <data name="Close.Text" xml:space="preserve">
@@ -90,11 +90,8 @@
 	<data name="Reddit.Text" xml:space="preserve">
         <value>Reddit</value>
     </data>
-	<data xml:space="preserve" name="YandexCycounter.Text">
+	<data name="YandexCycounter.Text" xml:space="preserve">
         <value>Индекс качества сайта Яндекс</value>
-    </data>
-    <data name="LogoTitle.Tagline" xml:space="preserve">
-        <value>лозунг</value>
     </data>
     <data name="Languages.Text" xml:space="preserve">
         <value>Языки</value>
@@ -105,7 +102,7 @@
 	<data name="UserProfile.Text" xml:space="preserve">
         <value>Профиль пользователя</value>
     </data>
-    <data name="GoogleTranslate.Title" xml:space="preserve">
+    <data name="GoogleTranslate.Text" xml:space="preserve">
         <value>Перевести с помощью Google</value>
     </data>
     <data name="AgeRating.Text" xml:space="preserve">
@@ -148,22 +145,19 @@
 	<data name="CreateShortUrl_Tooltip.Text" xml:space="preserve">
         <value>Создать короткую ссылку с использованием </value>
     </data>
-	<data name="FeedbackPage.Template" xml:space="preserve">
+	<data name="FeedbackPage_Template.Text" xml:space="preserve">
         <value>\nСтраница: {origin}/linkclick.aspx?link={page}</value>
     </data>
-    <data name="FeedbackSelection.Template" xml:space="preserve">
+    <data name="FeedbackSelection_Template.Text" xml:space="preserve">
         <value>\nВыделенный фрагмент: \&quot;{selection}\&quot;</value>
     </data>
 	<data name="FeedbackMessage.Text" xml:space="preserve">
         <value>[FeedbackMessage.Text]</value>
     </data>
-    <data name="HeaderPane1.Content" xml:space="preserve">
-        <value>&lt;span class=&quot;firstline&quot;&gt;[HeaderPane1.Content]&lt;/span&gt;&lt;br /&gt;вторая строка&lt;div class=&quot;tagline&quot;&gt;лозунг&lt;/div&gt;</value>
-    </data>
-	<data name="PartialContentAlert.Title" xml:space="preserve">
+    <data name="PartialContentAlert_Title.Text" xml:space="preserve">
         <value><![CDATA[<i class="fas fa-info-circle"></i> Примечание]]></value>
     </data>
-	<data name="PartialContentAlert.Content" xml:space="preserve">
+	<data name="PartialContentAlert_Content.Text" xml:space="preserve">
         <value><![CDATA[<p>Здесь показан только один из блоков информации на странице <a class="alert-link" href="[TabUrl]">[TabName]</a>.</p>
 			<p>Вы можете <a class="alert-link" href="[TabUrl]#[ModuleId]">перейти к этому блоку</a> на полной версии страницы.</p>]]>
 		</value>

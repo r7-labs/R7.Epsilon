@@ -48,7 +48,7 @@ namespace R7.Epsilon.Skins.SkinObjects
 
         protected string LastContentModifiedOnDate {
             get {
-                return SafeGetLastModifiedContentItem ().LastModifiedOnDate.ToString (T.SafeGetString ("PublishedOnDate.Format", "MM/dd/yyyy"));
+                return SafeGetLastModifiedContentItem ().LastModifiedOnDate.ToString (T.SafeGetString ("PublishedOnDate_Format.Text", "MM/dd/yyyy"));
             }
         }
 

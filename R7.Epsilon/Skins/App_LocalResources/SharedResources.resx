@@ -51,10 +51,10 @@
     <data name="SkipToContent.Text" xml:space="preserve">
         <value>Skip to main content</value>
     </data>
-    <data name="PublishedOnDate.Format" xml:space="preserve">
+    <data name="PublishedOnDate_Format.Text" xml:space="preserve">
         <value>dd MMM yyyy</value>
     </data>
-    <data name="BrowserCheck.Warning" xml:space="preserve">
+    <data name="BrowserCheck_Warning.Text" xml:space="preserve">
         <value><![CDATA[<strong>Warning!</strong> We have determined that you are using an outdated version of the browser, which doesn't provide proper support for the modern Internet standards. As a result, the website may be displayed incorrectly, some of its features may not work properly or will not be available. Please update browser!]]></value>
     </data>
     <data name="Close.Text" xml:space="preserve">
@@ -63,7 +63,7 @@
     <data name="SubMenuClose.Text" xml:space="preserve">
         <value>Close Menu</value>
     </data>
-    <data xml:space="preserve" name="FeedbackButton_Tooltip.Text">
+    <data name="FeedbackButton_Tooltip.Text" xml:space="preserve">
         <value>Click the button to open feedback form. You also can preliminarily select fragment of text on the page to pass it to the feedback form.</value>
     </data>
 	<data name="SocialGroups.Text" xml:space="preserve">
@@ -93,26 +93,20 @@
 	<data name="Reddit.Text" xml:space="preserve">
         <value>Reddit</value>
     </data>
-    <data xml:space="preserve" name="YandexCycounter.Text">
+    <data name="YandexCycounter.Text" xml:space="preserve">
         <value>Yandex website quality index</value>
     </data>
-    <data name="LogoTitle.Text" xml:space="preserve">
-        <value></value>
+    <data xml:space="preserve" name="FooterPane1_Content.Text">
+        <value>[FooterPane1_Content]</value>
     </data>
-    <data name="LogoTitle.Tagline" xml:space="preserve">
-        <value>tagline</value>
+    <data xml:space="preserve" name="FooterPane2_Content.Text">
+        <value>[FooterPane2_Content]</value>
     </data>
-    <data xml:space="preserve" name="FooterPane1.Content">
-        <value>[FooterPane1.Content]</value>
+    <data xml:space="preserve" name="FooterPane3_Content.Text">
+        <value>[FooterPane3_Content]</value>
     </data>
-    <data xml:space="preserve" name="FooterPane2.Content">
-        <value>[FooterPane2.Content]</value>
-    </data>
-    <data xml:space="preserve" name="FooterPane3.Content">
-        <value>[FooterPane3.Content]</value>
-    </data>
-	<data xml:space="preserve" name="FooterPane4.Content">
-        <value>[FooterPane4.Content]</value>
+	<data xml:space="preserve" name="FooterPane4_Content.Text">
+        <value>[FooterPane4_Content]</value>
     </data>
 	<data name="Languages.Text" xml:space="preserve">
         <value>Languages</value>
@@ -166,25 +160,22 @@
 	<data name="CreateShortUrl_Tooltip.Text" xml:space="preserve">
         <value>Create short URL with </value>
     </data>
-	<data name="Feedback.Template" xml:space="preserve">
+	<data name="Feedback_Template.Text" xml:space="preserve">
         <value>\n\n---{content}</value>
     </data>
-    <data name="FeedbackPage.Template" xml:space="preserve">
+    <data name="FeedbackPage_Template.Text" xml:space="preserve">
         <value>\nPage: {origin}/linkclick.aspx?link={page}</value>
     </data>
-    <data name="FeedbackSelection.Template" xml:space="preserve">
+    <data name="FeedbackSelection_Template.Text" xml:space="preserve">
         <value>\nSelection: \&quot;{selection}\&quot;</value>
     </data>
 	<data name="FeedbackMessage.Text" xml:space="preserve">
         <value>[FeedbackMessage.Text]</value>
     </data>
-    <data name="HeaderPane1.Content" xml:space="preserve">
-        <value>&lt;span class=&quot;firstline&quot;&gt;[HeaderPane1.Content]&lt;/span&gt;&lt;br /&gt;second line&lt;div class=&quot;tagline&quot;&gt;tagline&lt;/div&gt;</value>
-    </data>
-    <data name="PartialContentAlert.Title" xml:space="preserve">
+    <data name="PartialContentAlert_Title.Text" xml:space="preserve">
         <value><![CDATA[<i class="fas fa-info-circle"></i> Note]]></value>
     </data>
-	<data name="PartialContentAlert.Content" xml:space="preserve">
+	<data name="PartialContentAlert_Content.Text" xml:space="preserve">
         <value><![CDATA[<p>Here is shown the one of many blocks of information on the <a class="alert-link" href="[TabUrl]">[TabName]</a> page.</p>
 			<p>You can <a class="alert-link" href="[TabUrl]#[ModuleId]">navigate to this block</a> on the full page version.</p>]]>
 		</value>
