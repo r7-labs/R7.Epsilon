@@ -25,15 +25,18 @@ menu:
 
 primary-menu:
 
+  node-selector: "*,0,3"
   node-manipulator-types:
     - R7.News.Stream.Integrations.DDRMenu.StreamNodeManipulator, R7.News.Stream
 
 secondary-menu:
 
+  node-selector: "*,0,3"
   url-format: "/default.aspx?tabid={tabid}{?language}"
 
 breadcrumb-menu:
 
+  node-selector: "*,0,7"
   url-format: "/linkclick.aspx?link={tabid}&portalid={portalid}"
 
 social-groups:
