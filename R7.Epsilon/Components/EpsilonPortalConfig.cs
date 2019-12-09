@@ -53,8 +53,8 @@ namespace R7.Epsilon.Components
         public List<CdnConfig> Cdns { get; set; } = new List<CdnConfig> {
             new CdnConfig {
                 Location = "PageHead",
-                Href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css",
-                Integrity = "sha256-UzFD2WYH2U1dQpKDjjZK72VtPeWP50NoJjd26rnAdUI="
+                Href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css",
+                Integrity = "sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ="
             }
         };
 
