@@ -111,7 +111,10 @@
     <data xml:space="preserve" name="FooterPane3.Content">
         <value>[FooterPane3.Content]</value>
     </data>
-    <data name="Languages.Text" xml:space="preserve">
+	<data xml:space="preserve" name="FooterPane4.Content">
+        <value>[FooterPane4.Content]</value>
+    </data>
+	<data name="Languages.Text" xml:space="preserve">
         <value>Languages</value>
     </data>
     <data name="Websites.Text" xml:space="preserve">

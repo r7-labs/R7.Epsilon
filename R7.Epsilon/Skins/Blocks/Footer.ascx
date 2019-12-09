@@ -8,14 +8,17 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-lg-8 col-md-10 col-sm-12">
-			<skin:GADSENSE runat="server" />
+		<div class="col-12 col-md-6">
 			<div class="row">
-				<skin:CUSTOMCONTENT runat="server" CssClass="skin-footer-content col-sm-6" ResourceKey="FooterPane1.Content" />
+				<div class="col-12">
+					<skin:GADSENSE runat="server" />
+				</div>
+				<skin:CUSTOMCONTENT runat="server" CssClass="col-12 col-md-6 skin-footer-content" ResourceKey="FooterPane1.Content" />
+				<skin:CUSTOMCONTENT runat="server" CssClass="col-12 col-md-6 skin-footer-content" ResourceKey="FooterPane2.Content" />
 			</div>
 		</div>
-		<skin:CUSTOMCONTENT runat="server" CssClass="col-lg-2 col-md-2 col-sm-6 skin-footer-content" ResourceKey="FooterPane2.Content" />
-		<skin:CUSTOMCONTENT runat="server" CssClass="col-lg-2 col-sm-6 skin-footer-content" ResourceKey="FooterPane3.Content" />
+		<skin:CUSTOMCONTENT runat="server" CssClass="col-12 col-md-3 skin-footer-content" ResourceKey="FooterPane3.Content" />
+		<skin:CUSTOMCONTENT runat="server" CssClass="col-12 col-md-3 skin-footer-content" ResourceKey="FooterPane4.Content" />
 	</div>
 </div>
 <div class="skin-footer-lastrow">
