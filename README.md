@@ -50,25 +50,14 @@ just to be sure that you will always have access to Admin/Host pages.
 
 ## Basic blueimp Gallery support
 
-All static images on the page with `data-gallery=""` attribute on the enclosing `A` tag will be displayed as one gallery:
+Each static image with `data-gallery=""` attribute on the enclosing `A` tag will be displayed in "each own" lightbox:
 
 ```HTML
 <a href="/images/orange.jpg" title="Image of orange in the default gallery" data-gallery="">
-    <img src="/images/orange-thumbnail.jpg" alt="Orange" />
+    <img src="/images/thumbnails/orange.jpg" alt="Orange" />
 </a>
 <a href="/images/peach.jpg" title="Image of peach in the default gallery" data-gallery="">
-    <img src="/images/peach-thumbnail.jpg" alt="Peach" />
-</a>
-```
-
-Each static image with `data-gallery="#blueimp-gallery-single"` attribute on the enclosing `A` tag will be displayed in "each own" lightbox:
-
-```HTML
-<a href="/images/orange.jpg" title="Single image of orange" data-gallery="#blueimp-gallery-single">
-    <img src="/images/orange-thumbnail.jpg" alt="Orange" />
-</a>
-<a href="/images/peach.jpg" title="Single image of peach" data-gallery="#blueimp-gallery-single">
-    <img src="/images/peach-thumbnail.jpg" alt="Peach" />
+    <img src="/images/thumbnails/peach.jpg" alt="Peach" />
 </a>
 ```
 
