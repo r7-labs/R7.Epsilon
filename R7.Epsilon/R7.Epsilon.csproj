@@ -149,11 +149,6 @@
     <Content Include="Skins\images\logo-template.svg" />
     <Content Include="Skins\images\button_100x100.png" />
     <Content Include="Containers\Default_H3.ascx" />
-    <Content Include="Containers\Message_Warning.ascx" />
-    <Content Include="Containers\Message_Info.ascx" />
-    <Content Include="Containers\Message_Success.ascx" />
-    <Content Include="Containers\Message_Danger.ascx" />
-    <Content Include="Containers\Callout_Info.ascx" />
     <Content Include="Skins\images\logo-template-150x150.png" />
     <Content Include="Skins\images\logo-template-150x150.svg" />
     <Content Include="Skins\images\logo-template-350x75.png" />
@@ -165,6 +160,8 @@
     <Content Include="Skins\js\a11y.js" />
     <Content Include="Skins\css\blueimp.scss" />
     <Content Include="Containers\Default_H4.ascx" />
+    <Content Include="Containers\Callout.ascx" />
+    <Content Include="Containers\Callout_Info.ascx" />
     <Content Include="Containers\Callout_Warning.ascx" />
     <Content Include="Containers\Callout_Danger.ascx" />
     <Content Include="Containers\Callout_Success.ascx" />
@@ -172,6 +169,10 @@
     <Content Include="Containers\Callout_Secondary.ascx" />
     <Content Include="Containers\Callout_Dark.ascx" />
     <Content Include="Containers\Callout_Light.ascx" />
+    <Content Include="Containers\Lined.ascx" />
+    <Content Include="Containers\Lined_H3.ascx" />
+    <Content Include="Containers\Lined_H4.ascx" />
+    <Content Include="Containers\Lined_H5.ascx" />
     <Content Include="packages.config" />
     <Content Include="license.htm" />
     <Content Include="releaseNotes.htm" />
