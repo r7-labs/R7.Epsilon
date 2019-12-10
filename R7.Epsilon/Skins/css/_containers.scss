@@ -22,32 +22,21 @@
 // TODO: Review top and bottom margins
 .cnt-blank,
 .cnt-callout,
-.cnt-thumbnail,
-.cnt-thumbnail-h,
 .cnt-card,
 .cnt-alert,
-.cnt-dnn-alert,
-.cnt-well {
+.cnt-dnn-alert {
     margin-top: 20px; // like h2 & h3
 }
 
-.well.cnt-well h2,
-.well.cnt-well h3,
-.well.cnt-well h4 {
-	margin-top:0
-}
-
 // header visible in edit mode
-.cnt-blank > h4, .cnt-thumbnail > h4 { color:#ccc }
-.cnt-blank > h4 { margin-top:0 }
-
-// fix DNN alert containers max width
-.cnt-dnn-alert.dnnFormMessage { max-width:inherit; }
-
-.cnt-dnn-alert, .cnt-thumbnail-h
-{
-    padding:10px 20px;
-    margin-bottom:0;
+.cnt-blank > h4 {
+    color: #ccc;
+    margin-top: 0;
 }
 
-.cnt-thumbnail { margin-bottom:0; }
+.cnt-dnn-alert {
+    padding: 10px 20px;
+    margin-bottom: 0;
+    // fix DNN alert containers max width
+    &.dnnFormMessage { max-width: inherit; }
+}

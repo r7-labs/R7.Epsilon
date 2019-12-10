@@ -165,8 +165,6 @@
     <Content Include="Skins\js\a11y.js" />
     <Content Include="Skins\css\blueimp.scss" />
     <Content Include="Containers\Default_H4.ascx" />
-    <Content Include="Containers\Thumbnail.ascx" />
-    <Content Include="Containers\Thumbnail_H.ascx" />
     <Content Include="Containers\Callout_Warning.ascx" />
     <Content Include="Containers\Callout_Danger.ascx" />
     <Content Include="Containers\Callout_Success.ascx" />
@@ -212,6 +210,15 @@
     <Content Include="Containers\Card_Info.ascx" />
     <Content Include="Containers\Card_Warning.ascx" />
     <Content Include="Containers\Card_Danger.ascx" />
+    <Content Include="Containers\BlankCard.ascx" />
+    <Content Include="Containers\BlankCard_Primary.ascx" />
+    <Content Include="Containers\BlankCard_Secondary.ascx" />
+    <Content Include="Containers\BlankCard_Light.ascx" />
+    <Content Include="Containers\BlankCard_Dark.ascx" />
+    <Content Include="Containers\BlankCard_Success.ascx" />
+    <Content Include="Containers\BlankCard_Info.ascx" />
+    <Content Include="Containers\BlankCard_Warning.ascx" />
+    <Content Include="Containers\BlankCard_Danger.ascx" />
     <Content Include="Containers\HeaderCard.ascx" />
     <Content Include="Containers\HeaderCard_Primary.ascx" />
     <Content Include="Containers\HeaderCard_Secondary.ascx" />
@@ -225,10 +232,6 @@
     <Content Include="Skins\js\feedback.js" />
     <Content Include="Skins\js\bootstrap-init.js" />
     <Content Include="Skins\SkinObjects\PartialContentAlert.ascx" />
-    <Content Include="Containers\Well.ascx" />
-    <Content Include="Containers\Well_Small.ascx" />
-    <Content Include="Containers\Well_Large.ascx" />
-    <Content Include="Containers\Blank_Well.ascx" />
     <Content Include="Skins\Default.ascx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
