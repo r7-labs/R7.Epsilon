@@ -383,7 +383,7 @@ a.btn-primary:visited {
         border-color: rgba(0,0,0,.125) !important; // from .card
     }
     & > .card-title.text-light {
-        color: #818182 !important; // from .alert-light
+        color: $skin-color-alert-light !important; // from .alert-light
     }
 }
 

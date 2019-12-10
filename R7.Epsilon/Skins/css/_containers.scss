@@ -40,3 +40,11 @@
     // fix DNN alert containers max width
     &.dnnFormMessage { max-width: inherit; }
 }
+
+.cnt-card.text-light .card-header {
+    color: $skin-color-alert-light;
+}
+
+.cnt-card .card-header .Head {
+    margin-bottom: 0;
+}
