@@ -64,11 +64,6 @@ Each static image with `data-gallery=""` attribute on the enclosing `A` tag will
 Of cause, you can also have any number of additional lightboxes (galleries, carousels) on the page,
 but you'll need to add lightboxes markup for them manually. See more in the [blueimp Gallery readme](https://github.com/blueimp/Gallery).
 
-# Acknowledgements
-
-Project code originates from Chris Hammond's [HammerFlex](https://github.com/ChrisHammond/HammerFlex) skin
-and utilizes some ideas from [Tidy](http://tidy.codeplex.com/) skin. You should really try them too!
-
 # License
 
 [![AGPLv3](https://www.gnu.org/graphics/agplv3-155x51.png)](https://www.gnu.org/licenses/agpl-3.0.html)
