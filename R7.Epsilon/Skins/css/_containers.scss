@@ -19,13 +19,9 @@
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-// TODO: Review top and bottom margins
-.cnt-blank,
-.cnt-callout,
-.cnt-card,
-.cnt-alert,
-.cnt-dnn-alert {
-    margin-top: 20px; // like h2 & h3
+.skin-cnt {
+    clear: both;
+    margin-bottom: 1rem;
 }
 
 // header visible in edit mode
@@ -36,7 +32,6 @@
 
 .cnt-dnn-alert {
     padding: 10px 20px;
-    margin-bottom: 0;
     // fix DNN alert containers max width
     &.dnnFormMessage { max-width: inherit; }
 }
