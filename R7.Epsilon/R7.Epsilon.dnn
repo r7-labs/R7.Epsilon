@@ -61,6 +61,12 @@
 						<file><name>Panel_Success.ascx</name></file>
 						<file><name>Panel_Warning.ascx</name></file>
 						<file><name>Panel_Danger.ascx</name></file>
+						<file><name>Well.ascx</name></file>
+						<file><name>Well_Small.ascx</name></file>
+						<file><name>Well_Large.ascx</name></file>
+						<file><name>Blank_Well.ascx</name></file>
+						<file><name>Thumbnail.ascx</name></file>
+						<file><name>Thumbnail_H.ascx</name></file>
 					</files>
 				</component>
 				<component type="Cleanup" version="01.14.00">
