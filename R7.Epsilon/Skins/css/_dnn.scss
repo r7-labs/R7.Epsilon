@@ -94,8 +94,13 @@ ul.dnnAdminTabNav {
         background-color: #eee;
     }
     .DnnModule {
-        border: 1px dashed #ccc;
         margin-bottom: 15px;
+        .cnt {
+            min-height: 22px;
+        }
+        .cnt-default, .cnt-blank {
+            border: 1px dashed #ccc;
+        }
     }
     .cnt {
         margin-bottom: 0;
