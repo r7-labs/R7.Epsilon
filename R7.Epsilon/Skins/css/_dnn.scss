@@ -84,15 +84,25 @@ ul.dnnAdminTabNav {
 }
 
 // panes look in layout mode
-.paneOutline
-{
-    border:0;
-    span.SubHead center
-    {
-        border:1px #ccc dotted;
-        border-left:0;
-        border-right:0;
-        line-height:2.5em;
+.paneOutline {
+    border: 1px solid #ccc;
+    margin: 5px 0;
+    .SubHead {
+        color: #666;
+    }
+    &:hover {
+        background-color: #eee;
+    }
+}
+
+.skin-footer .paneOutline {
+    .SubHead {
+        color: #fff;
+    }
+    &:hover {
+        .SubHead {
+            color: #666;
+        }
     }
 }
 
