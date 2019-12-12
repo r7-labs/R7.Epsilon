@@ -56,13 +56,13 @@ window.skinSearchExternalClick = function (e, link) {
     function initUpButton (offset, duration) {
         $(window).scroll(function() {
             if ($(this).scrollTop() > offset) {
-                $('.skin-float-btn-up').fadeIn(duration);
+                $('.skn-float-btn-up').fadeIn(duration);
             } else {
-                $('.skin-float-btn-up').fadeOut(duration);
+                $('.skn-float-btn-up').fadeOut(duration);
             }
         });
 
-        $('.skin-float-btn-up').on ("click.epsilon", function (e) {
+        $('.skn-float-btn-up').on ("click.epsilon", function (e) {
             e.preventDefault();
             $(this).tooltip ('hide');
             $('html, body').animate({scrollTop: 0}, duration);
@@ -80,7 +80,7 @@ window.skinSearchExternalClick = function (e, link) {
     }
 
     function alterLanguage () {
-        $(".skin-languages .language-object a").each (function () {
+        $(".skn-languages .language-object a").each (function () {
             const lang = $(this).parent (".Language").attr ("title");
             const langCode = $(this).closest (".language-object").find ("option").filter (function () { return $(this).text() == lang; }).val ();
             $(this).addClass ("dropdown-item")
@@ -102,34 +102,34 @@ window.skinSearchExternalClick = function (e, link) {
     }
 
     function alterLogin () {
-        $(".skin-login li.userDisplayName > a").addClass ("dropdown-item");
-        $(".skin-login div.loginGroup > a").addClass ("dropdown-item");
-        $(".skin-login li.userMessages > a").addClass ("dropdown-item");
-        $(".skin-login li.userNotifications > a").addClass ("dropdown-item");
-        $(".skin-login li.userProfileImg > a").addClass ("dropdown-item");
+        $(".skn-login li.userDisplayName > a").addClass ("dropdown-item");
+        $(".skn-login div.loginGroup > a").addClass ("dropdown-item");
+        $(".skn-login li.userMessages > a").addClass ("dropdown-item");
+        $(".skn-login li.userNotifications > a").addClass ("dropdown-item");
+        $(".skn-login li.userProfileImg > a").addClass ("dropdown-item");
 
-        const loginGroup = $(".skin-login .loginGroup").first ().detach ();
+        const loginGroup = $(".skn-login .loginGroup").first ().detach ();
         const divider = "<li class='dropdown-divider'></li>";
 
-        const profileImg = $(".skin-login li.userProfileImg > a > img");
+        const profileImg = $(".skn-login li.userProfileImg > a > img");
         if (profileImg.length > 0) {
             profileImg.attr ("src", profileImg.attr ("src").replace ("h=32&w=32", "h=64&w=64"));
 
-            const profileLinkBlock = $(".skin-login li.userDisplayName").first ().detach ();
-            const profileImgBlock = $(".skin-login li.userProfileImg").first ().detach ();
+            const profileLinkBlock = $(".skn-login li.userDisplayName").first ().detach ();
+            const profileImgBlock = $(".skn-login li.userProfileImg").first ().detach ();
 
-            $(".skin-login ul.buttonGroup")
+            $(".skn-login ul.buttonGroup")
                 .prepend (divider)
                 .prepend (profileLinkBlock)
                 .prepend (profileImgBlock)
                 .append (divider)
                 .append (loginGroup.children ("a").prepend ("<i class='fas fa-lock'></i> "));
 
-                $(".skin-login li.userMessages > a > span").addClass ("badge badge-primary");
-                $(".skin-login li.userNotifications > a > span").addClass ("badge badge-secondary");
+                $(".skn-login li.userMessages > a > span").addClass ("badge badge-primary");
+                $(".skn-login li.userNotifications > a > span").addClass ("badge badge-secondary");
         }
         else {
-            $(".skin-login ul.buttonGroup")
+            $(".skn-login ul.buttonGroup")
                 .append (divider)
                 .append (loginGroup.children ("a").prepend ("<i class='fas fa-unlock-alt'></i> "));
         }
@@ -138,7 +138,7 @@ window.skinSearchExternalClick = function (e, link) {
     function initCustomContent () {
         // TODO: Also check for superusers and admins
         if (epsilon.isEditMode) {
-            $(".skin-custom-content").each (function () {
+            $(".skn-custom-content").each (function () {
                 $(this).prepend ("<div class='actionMenu'>"
                                 + "<ul class='dnn_mact'>"
                                 // TODO: Localize label
@@ -161,24 +161,24 @@ window.skinSearchExternalClick = function (e, link) {
     }
 
     function initTags () {
-        $(".skin-tags ul.categories > li > a").addClass ("badge badge-secondary");
+        $(".skn-tags ul.categories > li > a").addClass ("badge badge-secondary");
     }
 
     function initMainMenu () {
-        $(".skin-main-menu .collapse-toggle").on ("click.epsilon", function (e) {
+        $(".skn-main-menu .collapse-toggle").on ("click.epsilon", function (e) {
             $(this).toggleClass ("show").next (".collapse").collapse ("toggle");
             e.stopPropagation ();
             e.preventDefault ();
         });
         // hide collapses when parent dropdown hides
-        $(".skin-main-menu .dropdown").on("hidden.bs.dropdown", function (e) {
+        $(".skn-main-menu .dropdown").on("hidden.bs.dropdown", function (e) {
             $(this).find (".collapse-toggle").removeClass ("show").next (".collapse").collapse ("hide");
         });
 
         // TODO: How this will work with event namespaces?
-        $(".skin-main-menu .skin-submenu.collapse")
+        $(".skn-main-menu .skn-submenu.collapse")
             .on ("shown.bs.collapse", function (e) {
-                const parentMenuItem = $(".skin-main-menu .dropdown-toggle[href='#" + $(this).attr ("id") + "']");
+                const parentMenuItem = $(".skn-main-menu .dropdown-toggle[href='#" + $(this).attr ("id") + "']");
                 const firstMenuItem = $(this).find (".nav-link").first ();
                 const lastMenuItem = $(this).find (".nav-link").last ();
                 parentMenuItem.on ("keydown.epsilon", function (e) {
@@ -210,7 +210,7 @@ window.skinSearchExternalClick = function (e, link) {
                 });
             })
             .on ("hidden.bs.collapse", function () {
-                const parentMenuItem = $(".skin-main-menu .dropdown-toggle[href='#" + $(this).attr ("id") + "']");
+                const parentMenuItem = $(".skn-main-menu .dropdown-toggle[href='#" + $(this).attr ("id") + "']");
                 const firstMenuItem = $(this).find (".nav-link").first ();
                 const lastMenuItem = $(this).find (".nav-link").last ();
                 parentMenuItem.off ("keydown.epsilon");
@@ -220,13 +220,13 @@ window.skinSearchExternalClick = function (e, link) {
     }
 
     function initBreadcrumb () {
-        $(".skin-breadcrumb-menu .collapse-toggle").on ("click.epsilon", function (e) {
+        $(".skn-breadcrumb-menu .collapse-toggle").on ("click.epsilon", function (e) {
             $(this).toggleClass ("show").next (".collapse").collapse ("toggle");
             e.stopPropagation ();
             e.preventDefault ();
         });
         // hide collapses when parent dropdown hides
-        $(".skin-breadcrumb-menu .dropdown").on("hidden.bs.dropdown", function (e) {
+        $(".skn-breadcrumb-menu .dropdown").on("hidden.bs.dropdown", function (e) {
             $(this).find (".collapse-toggle").removeClass ("show").next (".collapse").collapse ("hide");
         });
     }

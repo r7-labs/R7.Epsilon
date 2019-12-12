@@ -5,6 +5,6 @@
 <skin:META runat="server" />
 <skin:INCLUDES runat="server" LazyAds="false" Rangy="false" BlueimpGallery="false" />
 <skin:JSVARIABLES runat="server" />
-<div class="skin skin-popup">
+<div class="skin skn-popup">
 	<div id="ContentPane" runat="server" />
 </div>

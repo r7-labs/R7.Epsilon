@@ -43,12 +43,12 @@
 }
 
 @helper RenderSubmenuFor (MenuNode parentNode) {
-	<div class="navbar-nav skin-submenu col-6 col-md-12 collapse" id='@Id(parentNode, "subMenu")' data-parent="#@Model.ControlID">
+	<div class="navbar-nav skn-submenu col-6 col-md-12 collapse" id='@Id(parentNode, "subMenu")' data-parent="#@Model.ControlID">
 		<div class="row no-gutters">
 			@if (parentNode.Enabled) {
 				<div class="col-12 p-0">
 					<div class="nav-item">
-						<a href="@FormatUrl(parentNode)" class="h4 nav-link skin-menu-parent-item @EpsilonMenuHelper.LeafNodeCssClasses(parentNode)"
+						<a href="@FormatUrl(parentNode)" class="h4 nav-link skn-menu-parent-item @EpsilonMenuHelper.LeafNodeCssClasses(parentNode)"
 								title='@(EpsilonMenuHelper.GetString("Menu_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
 							@parentNode.Text
 						</a>
@@ -79,7 +79,7 @@
 @helper RenderDropdownFor(MenuNode parentNode) {
 	<div class="dropdown-menu" aria-labelledby='@Id(parentNode, "btnDropdown")'>
 		@if (parentNode.Enabled) {
-			<a class="h5 dropdown-item skin-menu-parent-item @EpsilonMenuHelper.LeafNodeCssClasses(parentNode)" href="@FormatUrl(parentNode)"
+			<a class="h5 dropdown-item skn-menu-parent-item @EpsilonMenuHelper.LeafNodeCssClasses(parentNode)" href="@FormatUrl(parentNode)"
 					title='@(EpsilonMenuHelper.GetString("Menu_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
 				@parentNode.Text
 			</a>
@@ -104,7 +104,7 @@
 	<div id='@Id(parentNode, "collapse")' class="collapse bg-light">
 		<div class="dropdown-divider"></div>
 		@if (parentNode.Enabled) {
-			<a class="h6 dropdown-item skin-menu-parent-item @EpsilonMenuHelper.ForkNodeCssClasses(parentNode)" href="@FormatUrl(parentNode)"
+			<a class="h6 dropdown-item skn-menu-parent-item @EpsilonMenuHelper.ForkNodeCssClasses(parentNode)" href="@FormatUrl(parentNode)"
 					title='@(EpsilonMenuHelper.GetString("Menu_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
 				@parentNode.Text
 			</a>

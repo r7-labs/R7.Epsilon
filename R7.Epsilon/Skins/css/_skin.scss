@@ -64,7 +64,7 @@ a.btn-primary:visited {
 
 /* Float Buttons */
 
-.skin-float-box-vertical {
+.skn-float-box-vertical {
     position: fixed;
     bottom: 2rem;
     right: 2rem;
@@ -72,7 +72,7 @@ a.btn-primary:visited {
     z-index: 10;
 }
 
-.skin-float-btn {
+.skn-float-btn {
     display: inline-block;
     width: 4rem;
     height: 4rem;
@@ -93,20 +93,20 @@ a.btn-primary:visited {
     &:hover { text-decoration: none; }
 }
 
-.skin-float-btn-age-rating {
+.skn-float-btn-age-rating {
     font-weight: bolder;
     background-color: $float-btn-age-rating-bg-color;
 }
 
-.skin-float-btn-up {
+.skn-float-btn-up {
     background-color: $float-btn-up-bg-color;
 }
 
-.skin-float-btn-feedback {
+.skn-float-btn-feedback {
     background-color: $float-btn-feedback-bg-color;
 }
 
-.skin-languages {
+.skn-languages {
     .language-object > select,
     .Language.selected,
     .Language > img {
@@ -114,13 +114,13 @@ a.btn-primary:visited {
     }
 }
 
-.skin-languages-btn > sup {
+.skn-languages-btn > sup {
 	position: relative;
 	left: -0.2rem;
 }
 
 // Search
-.skin-search-box {
+.skn-search-box {
     text-align: center;
     .searchInputContainer {
         width: 100%;
@@ -129,7 +129,7 @@ a.btn-primary:visited {
             top: 7px;
         }
     }
-    .skin-search-btn { display: none; }
+    .skn-search-btn { display: none; }
     input {
         width: 100%;
         height: 45px;
@@ -151,7 +151,7 @@ a.btn-primary:visited {
 
 @media only screen and (max-width : 767px)
 {
-    .skin-search
+    .skn-search
     {
         padding-top:4px;
         padding-bottom:4px;
@@ -160,7 +160,7 @@ a.btn-primary:visited {
 
 /* Main Header */
 
-.skin-main-menu .navbar-brand
+.skn-main-menu .navbar-brand
 {
     float:left;
     padding-left:0;
@@ -168,12 +168,12 @@ a.btn-primary:visited {
 }
 
 // TODO: Remove empty rule
-.navbar-brand.skin-navbar-brand-logo
+.navbar-brand.skn-navbar-brand-logo
 {
     img {}
 }
 
-.skin-header-content
+.skn-header-content
 {
     display:inline-block;
     margin-left:40px;
@@ -205,7 +205,7 @@ a.btn-primary:visited {
     }
 }
 
-.skin-page-header
+.skn-page-header
 {
     margin-top:5px;
     padding-bottom:5px;
@@ -218,33 +218,33 @@ a.btn-primary:visited {
     &h1 small, &h2 small { display:inline-block; }
 }
 
-.skin-header > .container
+.skn-header > .container
 {
     padding-top:9px;
     padding-bottom:5px;
 }
 
-.skin-header > .container > .row
+.skn-header > .container > .row
 {
     margin-right:0;
     margin-left:0;
 }
 
 // style it like the breadbrumb
-.skin-subheader-top {
+.skn-subheader-top {
     background-color: #e9ecef;
     border-bottom-left-radius: .25rem;
     border-bottom-right-radius: .25rem;
     padding: .75rem 1rem;
 }
 
-.skin-subheader-top .skin-breadcrumb-menu .breadcrumb {
+.skn-subheader-top .skn-breadcrumb-menu .breadcrumb {
     padding: 0;
     margin-bottom: 0;
 }
 
-.skin-social-share-buttons {
-    .skin-social-share-btn {
+.skn-social-share-buttons {
+    .skn-social-share-btn {
         display:inline-block;
         & > * {
             margin-top: 0 !important; // overriding inline style!
@@ -256,21 +256,21 @@ a.btn-primary:visited {
     }
 }
 
-.skin-home {
+.skn-home {
     // hide (but not remove) page header for the home page
-    .skin-page-header {
+    .skn-page-header {
         display: none;
     }
 }
 
 // style it like the breadbrumb
-.skin-page-info {
+.skn-page-info {
     padding: .75rem 1rem;
     background-color: #e9ecef;
     border-top-left-radius: .25rem;
     border-top-right-radius: .25rem;
     & > ul {
-        font-size: $skin-font-size-small;
+        font-size: $skn-font-size-small;
         margin-bottom: 0;
         & > li {
             padding-right: 1rem;
@@ -278,7 +278,7 @@ a.btn-primary:visited {
     }
 }
 
-.skin-tags {
+.skn-tags {
     ul.categories, ul.tags {
         display:inline-block;
         margin-left: 0;
@@ -291,13 +291,13 @@ a.btn-primary:visited {
     }
 }
 
-.skin-permalink {
-    font-size: $skin-font-size-small;
+.skn-permalink {
+    font-size: $skn-font-size-small;
 }
 
 /* Footer */
 
-.skin-footer
+.skn-footer
 {
     //margin-top:20px;
     color:#fff;
@@ -308,22 +308,22 @@ a.btn-primary:visited {
     border-top:4px solid $footer-line-background-color;
 }
 
-.admin .skin-footer {
+.admin .skn-footer {
     padding-top:0;
     padding-bottom:0;
 }
 
-.skin-banner { margin-bottom:10px; }
+.skn-banner { margin-bottom:10px; }
 
-.skin-footer-content
+.skn-footer-content
 {
     display:inline-block;
 
-    .skin-footer-content-element { margin-right:15px; }
+    .skn-footer-content-element { margin-right:15px; }
 
-    .skin-footer-content-well
+    .skn-footer-content-well
     {
-        font-size: $skin-font-size-small;
+        font-size: $skn-font-size-small;
         margin-bottom:10px;
         border-radius:5px;
         border-left:3px solid #fff;
@@ -333,12 +333,12 @@ a.btn-primary:visited {
     }
 }
 
-.skin-footer-lastrow
+.skn-footer-lastrow
 {
     padding:10px 0;
     background-color:$footer-last-background-color;
 
-    .skin-footer-88x31-buttons
+    .skn-footer-88x31-buttons
     {
         padding-top:2px;
         img
@@ -349,9 +349,9 @@ a.btn-primary:visited {
         }
     }
 
-    .skin-terms
+    .skn-terms
     {
-        font-size: $skin-font-size-small;
+        font-size: $skn-font-size-small;
         text-align:right;
     }
 }
@@ -359,7 +359,7 @@ a.btn-primary:visited {
 @media only screen and (max-width : 767px)
 {
     // align terms left on xs screens
-    .skin-footer-lastrow .skin-terms {
+    .skn-footer-lastrow .skn-terms {
         text-align:inherit;
         margin-top:1em;
     }
@@ -367,16 +367,16 @@ a.btn-primary:visited {
 
 /* Callouts */
 
-.skin-callout {
+.skn-callout {
     border-left-width: 6px;
 }
 
-.skin-callout {
+.skn-callout {
     &.border-light {
         border-color: rgba(0,0,0,.125) !important; // from .card
     }
     & > .card-title.text-light {
-        color: $skin-color-alert-light !important; // from .alert-light
+        color: $skn-color-alert-light !important; // from .alert-light
     }
 }
 
@@ -388,7 +388,7 @@ a.btn-primary:visited {
 // fix for text colors in Bootstrap alerts
 .alert .Normal { color:inherit !important }
 
-.skin-login {
+.skn-login {
     .registerGroup {
         ul.buttonGroup {
             padding-left: 0;
@@ -407,12 +407,12 @@ a.btn-primary:visited {
     }
 }
 
-.skin-custom-content div.actionMenu {
+.skn-custom-content div.actionMenu {
     display: inline-block;
 }
 
-.skin-social-groups {
-    .skin-social-group-icon {
+.skn-social-groups {
+    .skn-social-group-icon {
         font-size: 2rem;
         line-height: 2rem;
         vertical-align: middle;

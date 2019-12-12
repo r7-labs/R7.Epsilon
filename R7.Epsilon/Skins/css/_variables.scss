@@ -20,9 +20,9 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // Bootstrap-inherited variables
-$skin-font-size-small: 80%;
-$skin-color-muted: #6c757d;
-$skin-color-alert-light: #818182;
+$skn-font-size-small: 80%;
+$skn-color-muted: #6c757d;
+$skn-color-alert-light: #818182;
 
 // float buttons
 $float-btn-opacity:0.55;
@@ -45,9 +45,9 @@ $btn-primary-active-bg-color: darken($color-primary-0,10%);
 $btn-primary-active-border-color: darken($color-primary-3,5%);
 
 // like .btn-secondary
-$btn-secondary-bg-color: $skin-color-muted;
+$btn-secondary-bg-color: $skn-color-muted;
 $btn-secondary-bg-hover-color: #5a6268;
-$btn-secondary-border-color: $skin-color-muted;
+$btn-secondary-border-color: $skn-color-muted;
 $btn-secondary-border-hover-color: #5a6268;
 $btn-secondary-text-color: #fff;
 $btn-secondary-focus-shadow-color: rgba(130,138,145,.5);

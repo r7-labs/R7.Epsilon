@@ -17,7 +17,7 @@
 				%>
 					<div class="card card-body border-gray p-3 mb-2">
 						<ul class="list-unstyled mb-0">
-							<li class="mb-2 skin-permalink" id="skinPermalink<%: permalinkIndex %>"><%: permalink %></li>
+							<li class="mb-2 skn-permalink" id="skinPermalink<%: permalinkIndex %>"><%: permalink %></li>
 							<li>
 								<button type="button" class="btn btn-sm btn-clipboard btn-outline-primary"
 										title='<%: T.GetString ("CopyPermalink_Tooltip.Text") %>'

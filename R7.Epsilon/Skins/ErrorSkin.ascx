@@ -13,14 +13,14 @@ Options.DisableLogin = true;
 Options.DisablePageInfo = true;
 %>
 <skin:START runat="server" />
-<div class="skin skin-error">
-	<header class="skin-header">
+<div class="skin skn-error">
+	<header class="skn-header">
 		<skin:HEADER runat="server" />
 	</header>
 	<skin:SUBHEADER runat="server" />
 	<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_simple.ascx"-->
 	<skin:SUPFOOTER runat="server" />
-	<footer class="skin-footer">
+	<footer class="skn-footer">
 		<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_footer.ascx"-->
 		<skin:FOOTER runat="server" />
 	</footer>

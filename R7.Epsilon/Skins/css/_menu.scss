@@ -21,14 +21,14 @@
 
 @import "mixins";
 
-.skin-menu {
-    .skin-menu-parent-item {
+.skn-menu {
+    .skn-menu-parent-item {
         font-weight: bold;
         &::after {
             @include fa-icon-after('\f101');
         }
         &.disabled {
-            color: $skin-color-muted;
+            color: $skn-color-muted;
             &::after {
                 content: none;
             }
@@ -36,37 +36,37 @@
     }
 }
 
-.skin-main-menu {
+.skn-main-menu {
     width: 100%;
     .navbar-nav {
         flex-wrap: wrap;
     }
 }
 
-.skin-primary-menu {
+.skn-primary-menu {
     background-color: $color-primary-4 !important;
 }
 
-.skin-secondary-menu {
+.skn-secondary-menu {
     background-color: lighten($color-primary-4, 10%) !important;
 }
 
-.skin-submenu > .row {
+.skn-submenu > .row {
 	width: 100%;
 }
 
-.skin-submenu .nav-link {
+.skn-submenu .nav-link {
     white-space: normal;
 }
 
 // disable "broken" menu animation on small screens
 @media (max-width: 767px) {
-	.skin-submenu { transition: none; }
-	.skin-submenu.collapsing { display: none; }
+	.skn-submenu { transition: none; }
+	.skn-submenu.collapsing { display: none; }
 }
 
-.skin-submenu,
-.skin-breadcrumb-menu {
+.skn-submenu,
+.skn-breadcrumb-menu {
     .dropdown-item {
         white-space: normal;
     }
@@ -77,8 +77,8 @@
         @include fa-icon-after('\f0d8');
     }
     .collapse, .collapsing {
-        .dropdown-item:not(.skin-menu-parent-item) {
-            font-size: $skin-font-size-small;
+        .dropdown-item:not(.skn-menu-parent-item) {
+            font-size: $skn-font-size-small;
             &::before {
                 @include char-before('•');
             }
@@ -86,19 +86,19 @@
     }
 }
 
-.skin-breadcrumb-menu .dropdown-menu {
+.skn-breadcrumb-menu .dropdown-menu {
     min-width: 320px;
 }
 
-.skin-breadcrumb-menu .breadcrumb-item.disabled a {
-    color: $skin-color-muted !important;
+.skn-breadcrumb-menu .breadcrumb-item.disabled a {
+    color: $skn-color-muted !important;
 }
 
-.skin-cards-menu {
+.skn-cards-menu {
     display: flex;
     flex-wrap: wrap;
 
-    .skin-cards-menu-col {
+    .skn-cards-menu-col {
         margin-bottom: 1rem;
     }
 
@@ -106,17 +106,17 @@
         height: 100%;
     }
 
-    .skin-cards-menu-description {
-        font-size: $skin-font-size-small;
-        color: $skin-color-muted;
+    .skn-cards-menu-description {
+        font-size: $skn-font-size-small;
+        color: $skn-color-muted;
     }
 
-    .skin-cards-menu-submenu {
+    .skn-cards-menu-submenu {
         padding-left: 16px;
-        font-size: $skin-font-size-small;
+        font-size: $skn-font-size-small;
 
         .disabled {
-            color: $skin-color-muted;
+            color: $skn-color-muted;
         }
 
         li {

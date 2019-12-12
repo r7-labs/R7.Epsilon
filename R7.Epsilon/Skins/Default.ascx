@@ -8,13 +8,13 @@
 <%@ Register TagPrefix="skin" TagName="END" Src="~/Portals/_default/Skins/R7.Epsilon/Blocks/End.ascx" %>
 <skin:START runat="server" />
 <div class="skin">
-	<header class="skin-header">
+	<header class="skn-header">
 		<skin:HEADER runat="server" />
 	</header>
 	<skin:SUBHEADER runat="server" />
 	<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_default.ascx"-->
 	<skin:SUPFOOTER runat="server" />
-	<footer class="skin-footer">
+	<footer class="skn-footer">
 		<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_footer.ascx"-->
 		<skin:FOOTER runat="server" />
 	</footer>

@@ -2,7 +2,7 @@
 <%@ Import Namespace="R7.Epsilon.Components" %>
 <%@ Import Namespace="DnnGlobals=DotNetNuke.Common.Globals" %>
 <div class="dropdown" style="display:inline-block">
-	<button type="button" class="btn btn-lg dropdown-toggle skin-a11y-btn"
+	<button type="button" class="btn btn-lg dropdown-toggle skn-a11y-btn"
 		data-toggle="dropdown"
 		title='<%: T.GetString ("A11y.Text") %>'>
 		<%= T.GetString ("A11yIcon.Text") %>

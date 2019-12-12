@@ -13,24 +13,24 @@
 				<div class="col-12">
 					<skin:GADSENSE runat="server" />
 				</div>
-				<skin:CUSTOMCONTENT runat="server" CssClass="col-12 col-md-6 skin-footer-content" ResourceKey="FooterPane1_Content.Text" />
-				<skin:CUSTOMCONTENT runat="server" CssClass="col-12 col-md-6 skin-footer-content" ResourceKey="FooterPane2_Content.Text" />
+				<skin:CUSTOMCONTENT runat="server" CssClass="col-12 col-md-6 skn-footer-content" ResourceKey="FooterPane1_Content.Text" />
+				<skin:CUSTOMCONTENT runat="server" CssClass="col-12 col-md-6 skn-footer-content" ResourceKey="FooterPane2_Content.Text" />
 			</div>
 		</div>
-		<skin:CUSTOMCONTENT runat="server" CssClass="col-12 col-md-3 skin-footer-content" ResourceKey="FooterPane3_Content.Text" />
-		<skin:CUSTOMCONTENT runat="server" CssClass="col-12 col-md-3 skin-footer-content" ResourceKey="FooterPane4_Content.Text" />
+		<skin:CUSTOMCONTENT runat="server" CssClass="col-12 col-md-3 skn-footer-content" ResourceKey="FooterPane3_Content.Text" />
+		<skin:CUSTOMCONTENT runat="server" CssClass="col-12 col-md-3 skn-footer-content" ResourceKey="FooterPane4_Content.Text" />
 	</div>
 </div>
-<div class="skin-footer-lastrow">
+<div class="skn-footer-lastrow">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-2 col-sm-3 col-xs-12 skin-footer-88x31-buttons">
+			<div class="col-md-2 col-sm-3 col-xs-12 skn-footer-88x31-buttons">
 				<skin:YCYCOUNTER runat="server" />
 			</div>
-			<div class="col-md-10 col-sm-9 col-xs-12 skin-terms">
+			<div class="col-md-10 col-sm-9 col-xs-12 skn-terms">
 				<div>
 					<dnn:COPYRIGHT runat="server" /> |
-					<asp:Label runat="server" CssClass="skin-copyright" Text='<%# Skin.SkinCopyright %>' />
+					<asp:Label runat="server" CssClass="skn-copyright" Text='<%# Skin.SkinCopyright %>' />
 					<asp:Literal runat="server" Visible='<%# Config.ShowTerms %>' Text="|" />
 					<dnn:TERMS   runat="server" Visible='<%# Config.ShowTerms %>' />
 					<asp:Literal runat="server" Visible='<%# Config.ShowPrivacy %>' Text="|" />

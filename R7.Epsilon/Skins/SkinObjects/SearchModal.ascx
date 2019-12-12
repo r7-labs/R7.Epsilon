@@ -11,12 +11,12 @@
                 </button>
             </div>
             <div class="modal-body">
-                <div class="skin-search-box">
+                <div class="skn-search-box">
 				    <dnn:SEARCH id="dnnSearch" runat="server"
                         ShowSite="false"
                         ShowWeb="false"
 						EnableTheming="true"
-                        CssClass="skin-search-btn" />
+                        CssClass="skn-search-btn" />
 				</div>
 				<% if (Config.SearchEngines.Count > 0) { %>
 					<hr />
@@ -28,7 +28,7 @@
 									<i class='fab fa-<%: SearchEngineHelper.GetFAIconName (engine.Type) %>'></i>
 									<%: T.GetString ("SearchWith.Text") %>
 									<% if (!string.IsNullOrEmpty (engine.Name)) { %>
-										<span class="skin-custom-content" data-resource-key='<%: "SearchEngineType_" + engine.Name + ".Text" %>'>
+										<span class="skn-custom-content" data-resource-key='<%: "SearchEngineType_" + engine.Name + ".Text" %>'>
 											<%: T.GetStringOrKey ("SearchEngineType_" + engine.Name + ".Text") %>
 										</span>
 									<% } else { %>
