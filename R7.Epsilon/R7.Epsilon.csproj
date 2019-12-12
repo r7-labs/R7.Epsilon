@@ -272,11 +272,11 @@
     <Content Include="Skins\SkinObjects\FloatButtons.ascx" />
     <Content Include="Skins\Layouts\_home.ascx" />
     <Content Include="Skins\Home.ascx" />
-    <Content Include="Skins\Layouts\_edit.ascx" />
-    <Content Include="Skins\Simple.ascx" />
+    <Content Include="Skins\Layouts\_section.ascx" />
+    <Content Include="Skins\Section.ascx" />
     <Content Include="Skins\Layouts\_simple.ascx" />
     <Content Include="Skins\Layouts\_footer.ascx" />
-    <Content Include="Skins\Layouts\_single-pane.ascx" />
+    <Content Include="Skins\Layouts\_content-pane.ascx" />
     <Content Include="Skins\css\palettes\_shared-palette.scss" />
     <Content Include="Skins\css\_variables.scss" />
     <Content Include="Skins\css\contrast-variables.scss" />

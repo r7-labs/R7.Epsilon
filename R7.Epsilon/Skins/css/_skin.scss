@@ -47,13 +47,6 @@
     background-color: $color-primary-3 !important
 }
 
-.carousel-inner > .active.left {
-  float: none;
-}
-.carousel-caption h1 {
-  color: #fff;
-}
-
 a.btn-info,
 a.btn-info:visited,
 a.btn-primary,
@@ -385,13 +378,6 @@ a.btn-primary:visited {
     & > .card-title.text-light {
         color: $skin-color-alert-light !important; // from .alert-light
     }
-}
-
-/* fix for carousel for large resolution displays */
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
-  margin: 0 auto;
-  width: 100%;
 }
 
 /* fix for DNN dropdown lists being cut off*/
