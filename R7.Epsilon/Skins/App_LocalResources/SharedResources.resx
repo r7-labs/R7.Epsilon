@@ -231,4 +231,10 @@
 	<data name="Menu_GoToPage.Text" xml:space="preserve">
 		<value>Navigate to page </value>
 	</data>
+	<data name="CustomMarkup_Start.Text" xml:space="preserve">
+		<value></value>
+	</data>
+	<data name="CustomMarkup_End.Text" xml:space="preserve">
+		<value></value>
+	</data>
 </root>

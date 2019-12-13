@@ -1,10 +1,13 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" Inherits="R7.Epsilon.Skins.EpsilonSkinBase" %>
-<%@ Register TagPrefix="skin" TagName="META" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/Meta.ascx" %>
-<%@ Register TagPrefix="skin" TagName="INCLUDES" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/Includes.ascx" %>
-<%@ Register TagPrefix="skin" TagName="JSVARIABLES" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/JsVariables.ascx" %>
-<skin:META runat="server" />
-<skin:INCLUDES runat="server" LazyAds="false" Rangy="false" BlueimpGallery="false" />
-<skin:JSVARIABLES runat="server" />
+<%@ Register TagPrefix="skin" TagName="START" Src="~/Portals/_default/Skins/R7.Epsilon/Blocks/Start.ascx" %>
+<%@ Register TagPrefix="skin" TagName="END" Src="~/Portals/_default/Skins/R7.Epsilon/Blocks/PopupEnd.ascx" %>
+<%
+Options.DisableSocialShare = true;
+Options.DisableLazyAds = true;
+Options.DisableRangy = true;
+%>
+<skin:START runat="server" />
 <div class="skin skn-popup">
 	<div id="ContentPane" runat="server" />
 </div>
+<skin:END runat="server" />

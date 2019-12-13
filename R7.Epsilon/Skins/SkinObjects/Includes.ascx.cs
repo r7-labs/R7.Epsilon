@@ -44,15 +44,13 @@ namespace R7.Epsilon.Skins.SkinObjects
                 );
             }
 
-            if (Attributes ["BlueimpGallery"] != "false") {
-                JavaScript.RequestRegistration ("jQuery-BlueimpGallery");
-                var blueimpLibrary = JavascriptLibraryHelper.GetHighestVersionLibrary ("jQuery-BlueimpGallery");
-                if (blueimpLibrary != null) {
-                    ClientResourceManager.RegisterStyleSheet (Page, "/Resources/Libraries/jQuery-BlueimpGallery/"
-                        + Globals.FormatVersion (blueimpLibrary.Version, "00", 3, "_") + "/css/blueimp-gallery.min.css",
-                        (int) FileOrder.Css.SkinCss, "DnnPageHeaderProvider", "blueimp-gallery", blueimpLibrary.Version.ToString ()
-                    );
-                }
+            JavaScript.RequestRegistration ("jQuery-BlueimpGallery");
+            var blueimpLibrary = JavascriptLibraryHelper.GetHighestVersionLibrary ("jQuery-BlueimpGallery");
+            if (blueimpLibrary != null) {
+                ClientResourceManager.RegisterStyleSheet (Page, "/Resources/Libraries/jQuery-BlueimpGallery/"
+                    + Globals.FormatVersion (blueimpLibrary.Version, "00", 3, "_") + "/css/blueimp-gallery.min.css",
+                    (int) FileOrder.Css.SkinCss, "DnnPageHeaderProvider", "blueimp-gallery", blueimpLibrary.Version.ToString ()
+                );
             }
 
             ClientResourceManager.RegisterStyleSheet (Page, SkinPath + "css/" + (Config.GetTheme (Request) ?? Config.Themes [0]).Css, (int) FileOrder.Css.SkinCss, "DnnPageHeaderProvider", "skin", "0.0.0");
@@ -63,15 +61,15 @@ namespace R7.Epsilon.Skins.SkinObjects
 
             ClientResourceManager.RegisterScript (Page, SkinPath + "js/feedback.min.js", (int) FileOrder.Js.DefaultPriority, "DnnFormBottomProvider", "feedback", "0.0.0");
 
-            if (Attributes ["LazyAds"] != "false") {
+            ClientResourceManager.RegisterScript (Page, SkinPath + "js/clipboard.min.js", (int) FileOrder.Js.DefaultPriority, "DnnFormBottomProvider", "clipboard", "2.0.4");
+
+            if (!Skin.Options.DisableLazyAds) {
                 JavaScript.RequestRegistration ("LazyAds");
             }
 
-            if (Attributes ["Rangy"] != "false") {
+            if (!Skin.Options.DisableRangy) {
                 JavaScript.RequestRegistration ("Rangy");
             }
-
-            ClientResourceManager.RegisterScript (Page, SkinPath + "js/clipboard.min.js", (int) FileOrder.Js.DefaultPriority, "DnnFormBottomProvider", "clipboard", "2.0.4");
         }
     }
 }

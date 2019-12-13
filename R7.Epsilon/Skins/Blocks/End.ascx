@@ -9,3 +9,4 @@
 <skin:PERMALINKSMODAL runat="server" />
 <skin:BLUEIMPGALLERY runat="server" />
 <skin:SHAREDSCRIPTS runat="server" />
+<%= T.GetString ("CustomMarkup_End.Text") %>

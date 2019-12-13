@@ -30,5 +30,9 @@ namespace R7.Epsilon.Skins
         public bool DisableLogin { get; set; }
 
         public bool DisablePageInfo { get; set; }
+
+        public bool DisableLazyAds { get; set; }
+
+        public bool DisableRangy { get; set; }
     }
 }
