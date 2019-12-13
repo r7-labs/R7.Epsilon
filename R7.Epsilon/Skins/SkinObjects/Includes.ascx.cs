@@ -36,13 +36,13 @@ namespace R7.Epsilon.Skins.SkinObjects
         {
             ClientResourceManager.RegisterStyleSheet (Page, SkinPath + "css/bootstrap.min.css", (int) FileOrder.Css.SkinCss, "DnnPageHeaderProvider", "bootstrap", "4.3.1");
 
-            ClientResourceManager.RegisterStyleSheet (Page, SkinPath + "css/" + (Config.GetTheme (Request) ?? Config.Themes [0]).Css, (int) FileOrder.Css.SkinCss, "DnnPageHeaderProvider", "skin", "0.0.0");
-
-            ClientResourceManager.RegisterScript (Page, SkinPath + "js/bootstrap.bundle.min.js", (int) FileOrder.Js.DefaultPriority, "DnnFormBottomProvider", "bootstrap", "4.3.1");
-
-            ClientResourceManager.RegisterScript (Page, SkinPath + "js/skin.min.js", (int) FileOrder.Js.DefaultPriority, "DnnFormBottomProvider", "skin", "0.0.0");
-
-            ClientResourceManager.RegisterScript (Page, SkinPath + "js/feedback.min.js", (int) FileOrder.Js.DefaultPriority, "DnnFormBottomProvider", "feedback", "0.0.0");
+            var fontAwesome = JavascriptLibraryHelper.GetHighestVersionLibrary ("FontAwesome");
+            if (fontAwesome != null) {
+                ClientResourceManager.RegisterStyleSheet (Page, "/Resources/Libraries/FontAwesome/"
+                    + Globals.FormatVersion (fontAwesome.Version, "00", 3, "_") + "/css/all.min.css",
+                    (int) FileOrder.Css.SkinCss, "DnnPageHeaderProvider", "font-awesome", fontAwesome.Version.ToString ()
+                );
+            }
 
             if (Attributes ["BlueimpGallery"] != "false") {
                 JavaScript.RequestRegistration ("jQuery-BlueimpGallery");
@@ -54,6 +54,14 @@ namespace R7.Epsilon.Skins.SkinObjects
                     );
                 }
             }
+
+            ClientResourceManager.RegisterStyleSheet (Page, SkinPath + "css/" + (Config.GetTheme (Request) ?? Config.Themes [0]).Css, (int) FileOrder.Css.SkinCss, "DnnPageHeaderProvider", "skin", "0.0.0");
+
+            ClientResourceManager.RegisterScript (Page, SkinPath + "js/bootstrap.bundle.min.js", (int) FileOrder.Js.DefaultPriority, "DnnFormBottomProvider", "bootstrap", "4.3.1");
+
+            ClientResourceManager.RegisterScript (Page, SkinPath + "js/skin.min.js", (int) FileOrder.Js.DefaultPriority, "DnnFormBottomProvider", "skin", "0.0.0");
+
+            ClientResourceManager.RegisterScript (Page, SkinPath + "js/feedback.min.js", (int) FileOrder.Js.DefaultPriority, "DnnFormBottomProvider", "feedback", "0.0.0");
 
             if (Attributes ["LazyAds"] != "false") {
                 JavaScript.RequestRegistration ("LazyAds");

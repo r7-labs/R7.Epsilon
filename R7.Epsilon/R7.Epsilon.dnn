@@ -16,6 +16,7 @@
                 <!-- .NET 4.5 -->
                 <dependency type="type">System.Reflection.ReflectionContext</dependency>
                 <dependency type="coreVersion">08.00.04</dependency>
+				<dependency type="package">FontAwesome</dependency>
 				<dependency type="package">LazyAds</dependency>
 				<dependency type="package">Rangy</dependency>
 				<dependency type="package">jQuery-BlueimpGallery</dependency>

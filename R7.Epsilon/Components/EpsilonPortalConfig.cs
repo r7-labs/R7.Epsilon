@@ -50,14 +50,6 @@ namespace R7.Epsilon.Components
             }
         };
 
-        public List<CdnConfig> Cdns { get; set; } = new List<CdnConfig> {
-            new CdnConfig {
-                Location = "PageHead",
-                Href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css",
-                Integrity = "sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ="
-            }
-        };
-
         public List<WebsiteConfig> Websites { get; set; } = new List<WebsiteConfig> ();
 
         public FeedbackConfig Feedback { get; set; } = new FeedbackConfig ();
@@ -183,15 +175,6 @@ namespace R7.Epsilon.Components
 
         // TODO: Rename to AllowOpenInPopup
         public bool OpenInPopup { get; set; } = true;
-    }
-
-    public class CdnConfig
-    {
-        public string Href { get; set; }
-
-        public string Integrity { get; set; }
-
-        public string Location { get; set; }
     }
 
     public class ThemeConfig
