@@ -173,38 +173,6 @@ a.btn-primary:visited {
     img {}
 }
 
-.skn-header-content
-{
-    display:inline-block;
-    margin-left:40px;
-    margin-top:30px;
-    font-style:italic;
-
-    font-size:$big-font-size;
-    line-height:1.2em;
-    color:#fff;
-    text-shadow:$header-content-text-shadow;
-
-    a {
-        text-decoration:none;
-        color:#fff;
-    }
-
-    .firstline {
-        font-size:$big-font-size + 4px;
-        white-space:nowrap;
-    }
-
-    .tagline {
-        color:$color-primary-4;
-        font-size:$font-size;
-        font-weight:bold;
-        text-shadow:$header-content-tagline-shadow;
-
-        a { color:$color-primary-4; }
-    }
-}
-
 .skn-page-header
 {
     margin-top:5px;

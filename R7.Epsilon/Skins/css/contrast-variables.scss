@@ -29,11 +29,7 @@ $big-font-size:($font-size + 4px);
 // border radius
 $borderRadius: 4px;
 
-// header and footer
-$header-content-text-shadow:none;
-$header-content-tagline-shadow:none;
-$header-background-image:linear-gradient(to bottom, $color-primary-4 0%, $color-primary-4 ($font-size * 2 + 1px), $color-primary-3 ($font-size * 2 + 1px),  $color-primary-2 100%);
-$header-background-color:mix($color-primary-3, $color-secondary-1-2);
+// footer
 $footer-line-background-color:$color-secondary-1-4;
 $footer-main-background-color:mix($color-secondary-1-2, $color-secondary-1-3);
 $footer-last-background-color:$color-secondary-1-4;
