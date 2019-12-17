@@ -51,3 +51,8 @@
 .border-primary {
     border-color: darken($color-primary-bs, 10%) !important;
 }
+
+// badges
+.badge-primary {
+    background-color: $color-primary-bs;
+}
