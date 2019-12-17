@@ -41,6 +41,15 @@
     border-color: rgba(0,0,0,.125) !important; // from .card
 }
 
+.alert-primary {
+    color: $color-primary-bs;
+    border-color: lighten($color-primary-bs, 40%);
+    background-color: lighten($color-primary-bs, 50%);
+    .alert-link {
+        color: $color-primary-bs;
+    }
+}
+
 // color classes for Bootstrap "primary" elements
 .text-primary {
     color: $color-primary-bs !important;
