@@ -21,6 +21,7 @@
 
 /* Overrides for Bootstrap styles */
 
+// dropdown items
 .dropdown-item.active,
 .dropdown-item:active {
     background-color: $color-primary-0;
@@ -29,13 +30,24 @@
     }
 }
 
+// nav-pills
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
     background-color: $color-primary-0;
 }
 
-/* Alerts */
-
+// alerts
 .alert.alert-light {
     border-color: rgba(0,0,0,.125) !important; // from .card
+}
+
+// color classes for Bootstrap "primary" elements
+.text-primary {
+    color: $color-primary-bs !important;
+}
+.bg-primary {
+    background-color: $color-primary-bs !important;
+}
+.border-primary {
+    border-color: darken($color-primary-bs, 10%) !important;
 }

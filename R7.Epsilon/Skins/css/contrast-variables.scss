@@ -21,6 +21,9 @@
 
 /* Variables */
 
+// color to replace Bootstrap "primary"
+$color-primary-bs: $color-primary-3;
+
 // font size
 $font-size:16px;
 $bigger-font-size:($font-size + 2px);
@@ -59,4 +62,3 @@ $btn-secondary-text-color: #000;
 $btn-secondary-focus-shadow-color: $color-primary-2;
 $btn-secondary-active-bg-color: #999;
 $btn-secondary-active-border-color: #000;
-

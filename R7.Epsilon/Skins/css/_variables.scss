@@ -19,10 +19,14 @@
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+// color to replace Bootstrap "primary"
+$color-primary-bs: $color-secondary-1-0;
+
 // Bootstrap-inherited variables
 $skn-font-size-small: 80%;
 $skn-color-muted: #6c757d;
 $skn-color-alert-light: #818182;
+$skn-color-primary-alt-0: $color-secondary-1-0;
 
 // float buttons
 $float-btn-opacity:0.55;
@@ -41,8 +45,8 @@ $btn-primary-border-color: $color-primary-0;
 $btn-primary-border-hover-color: $color-primary-3;
 $btn-primary-text-color: #fff;
 $btn-primary-focus-shadow-color: $color-primary-2;
-$btn-primary-active-bg-color: darken($color-primary-0,10%);
-$btn-primary-active-border-color: darken($color-primary-3,5%);
+$btn-primary-active-bg-color: darken($color-primary-0, 10%);
+$btn-primary-active-border-color: darken($color-primary-3, 5%);
 
 // like .btn-secondary
 $btn-secondary-bg-color: $skn-color-muted;

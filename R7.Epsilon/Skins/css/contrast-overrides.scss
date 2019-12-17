@@ -26,62 +26,15 @@
 .brand-bg { background-color: #000 !important }
 .brand-border { border-color: #000 !important }
 
-.text-primary,
-.text-secondary,
-.text-success,
-.text-info,
-.text-warning,
-.text-danger,
+// color classes for Bootstrap "dark" elements
 .text-dark {
     color: #000 !important;
 }
-
-.bg-primary,
-.bg-secondary,
-.bg-success,
-.bg-info,
-.bg-warning,
-.bg-danger,
 .bg-dark {
     background-color: #000 !important;
 }
-
-.border-primary,
-.border-secondary,
-.border-success,
-.border-info,
-.border-warning,
-.border-danger,
 .border-dark {
     border-color: #000 !important;
-}
-
-.card-body {
-    &.border-primary,
-    &.border-warning,
-    &.border-dark {
-        border-width: 3px;
-    }
-    &.border-danger {
-        border-width: 5px;
-    }
-    &.border-light {
-        border-style: dashed;
-        border-left-style: solid;
-    }
-}
-
-.skn-callout {
-    border-left-width: 9px !important;
-}
-
-.skn-callout {
-    &.border-light {
-        border-color:#000 !important;
-    }
-    & > .card-title.text-light {
-        color: #000 !important;
-    }
 }
 
 /* Links */
