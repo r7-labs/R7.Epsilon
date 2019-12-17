@@ -19,7 +19,19 @@
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-/* CSS classes */
+/* Overrides */
+
+body {
+    color: #000;
+}
+
+.dropdown-item {
+    color: #000;
+}
+
+.text-body {
+    color: #000 !important;
+}
 
 // brand colors classes
 .brand-text { color: #000 !important }
@@ -37,8 +49,7 @@
     border-color: #000 !important;
 }
 
-/* Links */
-
+// links
 a.btn {
     text-decoration: none;
 }
@@ -58,8 +69,7 @@ a.underline-link.bold-link {
     text-decoration: none;
 }
 
-/* Buttons */
-
+// buttons
 .btn.btn-secondary {
     background-color: $btn-secondary-bg-color;
     border-color: $btn-secondary-border-color;
@@ -82,4 +92,11 @@ a.underline-link.bold-link {
 
 .dnnTertiaryAction, a.dnnTertiaryAction {
     text-decoration: underline;
+}
+
+// containers
+.cnt-lined {
+    h2, h3, h4, h5 {
+        color: #000;
+    }
 }
