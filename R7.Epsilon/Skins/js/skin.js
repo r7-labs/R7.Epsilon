@@ -20,6 +20,8 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import A11y from "./a11y";
+import Cookies from "js-cookie";
+
 const supportedBrowsers = require ("./supportedBrowsers");
 
 // TODO: Move global functions to eplilon object
@@ -50,6 +52,11 @@ window.skinSearchExternalClick = function (e, link) {
     const searchText = $("input[id$='_dnnSearch_txtSearch']").val ();
     const urlFormat = $(link).data ("url-format");
     $(link).attr ("href", urlFormat.replace ("{website}", encodeURIComponent (epsilon.portalAlias)).replace ("{searchText}", encodeURIComponent (searchText)));
+};
+
+window.skinCookiesAlertButtonClick = function (e) {
+    Cookies.set (epsilon.cookiePrefix + "CookiesAlert", {expires: 14});
+    $(e.target).closest (".toast").toast ("hide");
 };
 
 (function ($, window, document) {
@@ -238,6 +245,15 @@ window.skinSearchExternalClick = function (e, link) {
         });
     }
 
+    function showToasts () {
+        if (! supportedBrowsers.test (navigator.userAgent)) {
+            $("#skin_toastBrowserWarning").toast ("show");
+        }
+        if (typeof Cookies.get (epsilon.cookiePrefix + "CookiesAlert") === "undefined") {
+            $("#skin_toastCookiesAlert").toast ("show");
+        }
+    }
+
     $(function () {
         initBootstrapTooltips ();
         initBootstrapPopovers ();
@@ -254,12 +270,8 @@ window.skinSearchExternalClick = function (e, link) {
             initBreadcrumb ();
             alterLanguage ();
             alterLogin ();
-
+            showToasts ();
             window.skinA11y = new A11y ().init ();
-
-            if (! supportedBrowsers.test (navigator.userAgent)) {
-                $("#skin_toastBrowserWarning").toast ("show");
-            }
         }
     });
 

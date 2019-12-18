@@ -57,6 +57,15 @@
     <data name="BrowserWarning_Body.Text" xml:space="preserve">
         <value>Мы определили, что Вы используете устаревшую версию браузера. Как следствие, наш сайт может отображаться неправильно, а отдельные его функции могут работать некорректно или будут недоступны.</value>
     </data>
+	<data name="CookiesAlert_Title.Text" xml:space="preserve">
+        <value>Внимание!</value>
+    </data>
+    <data name="CookiesAlert_Body.Text" xml:space="preserve">
+        <value>Как и многие другие сайты, мы используем куки для того, чтобы сделать ваше пребывание на сайте максимально удобным.</value>
+    </data>
+	<data name="CookiesAlert_Button_Label.Text" xml:space="preserve">
+        <value>Понятно!</value>
+    </data>
     <data name="Close.Text" xml:space="preserve">
         <value>Закрыть</value>
     </data>

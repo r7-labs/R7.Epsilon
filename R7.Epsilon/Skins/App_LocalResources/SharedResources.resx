@@ -60,6 +60,15 @@
     <data name="BrowserWarning_Body.Text" xml:space="preserve">
         <value>We have determined that you are using an outdated version of the browser. As a result, our website may be displayed incorrectly, some of its features may not work properly or will not be available.</value>
     </data>
+	<data name="CookiesAlert_Title.Text" xml:space="preserve">
+        <value>Warning!</value>
+    </data>
+    <data name="CookiesAlert_Body.Text" xml:space="preserve">
+        <value>Like many other websites, we use cookies to ensure that we provide you the best experience.</value>
+    </data>
+	<data name="CookiesAlert_Button_Label.Text" xml:space="preserve">
+        <value>Got it!</value>
+    </data>
     <data name="Close.Text" xml:space="preserve">
         <value>Close</value>
     </data>
