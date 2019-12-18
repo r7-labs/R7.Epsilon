@@ -247,7 +247,7 @@ window.skinCookiesAlertButtonClick = function (e) {
 
     function showToasts () {
         if (! supportedBrowsers.test (navigator.userAgent)) {
-            $("#skin_toastBrowserWarning").toast ("show");
+            $("#skin_toastBrowserAlert").toast ("show");
         }
         if (typeof Cookies.get (epsilon.cookiePrefix + "CookiesAlert") === "undefined") {
             $("#skin_toastCookiesAlert").toast ("show");

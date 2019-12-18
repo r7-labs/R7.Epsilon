@@ -51,10 +51,10 @@
     <data name="PublishedOnDate_Format.Text" xml:space="preserve">
         <value>dd MMMM yyyy</value>
     </data>
-	<data name="BrowserWarning_Title.Text" xml:space="preserve">
+	<data name="BrowserAlert_Title.Text" xml:space="preserve">
         <value>Внимание!</value>
     </data>
-    <data name="BrowserWarning_Body.Text" xml:space="preserve">
+    <data name="BrowserAlert_Body.Text" xml:space="preserve">
         <value>Мы определили, что Вы используете устаревшую версию браузера. Как следствие, наш сайт может отображаться неправильно, а отдельные его функции могут работать некорректно или будут недоступны.</value>
     </data>
 	<data name="CookiesAlert_Title.Text" xml:space="preserve">
