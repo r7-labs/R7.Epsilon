@@ -64,7 +64,7 @@
         <value>Warning!</value>
     </data>
     <data name="CookiesAlert_Body.Text" xml:space="preserve">
-        <value>Like many other websites, we use cookies to ensure that we provide you the best experience.</value>
+        <value><![CDATA[Like many other websites, we use <a href="https://en.wikipedia.org/wiki/HTTP_cookie" target="_blank">cookies</a> to ensure that we provide you the best experience.]]></value>
     </data>
 	<data name="CookiesAlert_Button_Label.Text" xml:space="preserve">
         <value>Got it!</value>
