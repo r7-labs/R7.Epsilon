@@ -3,7 +3,6 @@
 <%@ Register TagPrefix="dnn" TagName="LOGO" Src="~/Admin/Skins/Logo.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="USER" Src="~/Admin/Skins/User.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="LOGIN" Src="~/Admin/Skins/Login.ascx" %>
-<%@ Register TagPrefix="skin" TagName="BROWSERCHECK" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/BrowserCheck.ascx" %>
 <%@ Register TagPrefix="skin" TagName="SOCIALGROUPS" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/SocialGroups.ascx" %>
 <%@ Register TagPrefix="skin" TagName="A11YFUNCTIONS" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/A11yFunctions.ascx" %>
 <%@ Register TagPrefix="skin" TagName="LANGUAGES" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/Languages.ascx" %>
@@ -17,7 +16,6 @@
     <div class="row">
 		<a href='<%= DnnGlobals.NavigateURL ("", "quickA11y", "enable") %>' class="sr-only sr-only-focusable" itemprop="copy"><%: T.GetString ("A11yWebsiteVersion.Text") %></a>
 		<a href="#content" class="sr-only sr-only-focusable"><%: T.GetString ("SkipToContent.Text") %></a>
-		<skin:BROWSERCHECK runat="server" />
     </div>
 </div>
 <div class="container --sticky-top">

@@ -4,7 +4,9 @@
 <%@ Register TagPrefix="skin" TagName="SHAREDSCRIPTS" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/SharedScripts.ascx" %>
 <%@ Register TagPrefix="skin" TagName="BLUEIMPGALLERY" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/BlueimpGallery.ascx" %>
 <%@ Register TagPrefix="skin" TagName="FLOATBUTTONS" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/FloatButtons.ascx" %>
+<%@ Register TagPrefix="skin" TagName="TOASTS" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/Toasts.ascx" %>
 <skin:FLOATBUTTONS runat="server" />
+<skin:TOASTS runat="server" />
 <skin:SEARCHMODAL runat="server" />
 <skin:PERMALINKSMODAL runat="server" />
 <skin:BLUEIMPGALLERY runat="server" />

@@ -20,6 +20,7 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import A11y from "./a11y";
+const supportedBrowsers = require ("./supportedBrowsers");
 
 // TODO: Move global functions to eplilon object
 
@@ -98,6 +99,12 @@ window.skinSearchExternalClick = function (e, link) {
     function initBootstrapPopovers () {
         if (typeof ($.fn.popover) !== "undefined") {
             $("[data-toggle='popover']").popover ();
+        }
+    }
+
+    function initBootstrapToasts () {
+        if (typeof ($.fn.toast) !== "undefined") {
+            $(".toast").toast ();
         }
     }
 
@@ -236,6 +243,7 @@ window.skinSearchExternalClick = function (e, link) {
         initBootstrapPopovers ();
 
         if (! epsilon.inPopup) {
+            initBootstrapToasts ();
             emptyLayoutRows ();
             initUpButton (320, 500);
             initCustomContent ();
@@ -246,7 +254,12 @@ window.skinSearchExternalClick = function (e, link) {
             initBreadcrumb ();
             alterLanguage ();
             alterLogin ();
+
             window.skinA11y = new A11y ().init ();
+
+            if (! supportedBrowsers.test (navigator.userAgent)) {
+                $("#skin_toastBrowserWarning").toast ("show");
+            }
         }
     });
 

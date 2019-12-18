@@ -512,3 +512,11 @@ a.dnnSecondaryAction:active, a.dnnSecondaryAction.active {
     background-color: $btn-secondary-active-bg-color;
     border-color: $btn-secondary-active-border-color;
 }
+
+.skn-toasts {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    z-index: 1100;
+}

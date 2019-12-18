@@ -91,9 +91,6 @@
     <Compile Include="Components\Const.cs" />
     <Compile Include="Skins\EpsilonSkinBase.cs" />
     <Compile Include="Containers\EpsilonContainerBase.cs" />
-    <Compile Include="Skins\SkinObjects\BrowserCheck.ascx.cs">
-      <DependentUpon>BrowserCheck.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Skins\SkinObjects\FeedbackButton.ascx.cs">
       <DependentUpon>FeedbackButton.ascx</DependentUpon>
     </Compile>
@@ -140,6 +137,7 @@
     <Content Include="Skins\js\jquery.blueimp-gallery.min.js" />
     <Content Include="Containers\Default_H3.ascx" />
     <Content Include="Skins\js\skin.js" />
+    <Content Include="Skins\js\supportedBrowsers.js" />
     <Content Include="Skins\js\a11y.js" />
     <Content Include="Containers\Default_H4.ascx" />
     <Content Include="Containers\Callout.ascx" />
@@ -160,7 +158,7 @@
     <Content Include="releaseNotes.htm" />
     <Content Include="Skins\ErrorSkin.ascx" />
     <Content Include="Skins\SkinObjects\AdminPageInfo.ascx" />
-    <Content Include="Skins\SkinObjects\BrowserCheck.ascx" />
+    <Content Include="Skins\SkinObjects\Toasts.ascx" />
     <Content Include="Skins\SkinObjects\FeedbackButton.ascx" />
     <Content Include="Skins\SkinObjects\CustomContent.ascx" />
     <Content Include="Skins\SkinObjects\GAdsense.ascx" />
