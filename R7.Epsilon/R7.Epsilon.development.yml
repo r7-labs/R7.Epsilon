@@ -22,12 +22,12 @@ themes:
 menu:
 
   url-format: "/tabid/{tabid}"
+  node-manipulator-types:
+    - R7.News.Stream.Integrations.DDRMenu.StreamNodeManipulator, R7.News.Stream
 
 primary-menu:
 
   node-selector: "*,0,3"
-  node-manipulator-types:
-    - R7.News.Stream.Integrations.DDRMenu.StreamNodeManipulator, R7.News.Stream
 
 secondary-menu:
 

@@ -22,6 +22,7 @@
 using System;
 using System.Collections.Generic;
 using DotNetNuke.Web.DDRMenu.TemplateEngine;
+using R7.Epsilon.Menus;
 using DDRMenu = DotNetNuke.Web.DDRMenu;
 
 namespace R7.Epsilon.Skins.SkinObjects
@@ -46,6 +47,8 @@ namespace R7.Epsilon.Skins.SkinObjects
             }
 
             Menu.TemplateArguments.Add (new TemplateArgument ("UrlFormat", Config.BreadcrumbMenu.UrlFormat ?? Config.Menu.UrlFormat));
+
+            Menu.NodeManipulator = typeof (EpsilonNodeManipulator<BreadcrumbMenu>).FullName;
 
             base.OnInit (e);
         }

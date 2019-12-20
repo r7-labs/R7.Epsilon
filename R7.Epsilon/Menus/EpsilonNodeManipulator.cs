@@ -27,19 +27,12 @@ using R7.Epsilon.Skins.SkinObjects;
 
 namespace R7.Epsilon.Menus
 {
-    public class EpsilonNodeManipulator<TMenu>: INodeManipulator
+    public class EpsilonNodeManipulator: INodeManipulator
     {
-        readonly ICollection<INodeManipulator> _nodeManipulators;
+        protected ICollection<INodeManipulator> _nodeManipulators;
 
-        public EpsilonNodeManipulator ()
-        {
-            if (typeof (TMenu) == typeof (PrimaryMenu)) {
-                _nodeManipulators = EpsilonConfig.Instance.PrimaryMenu.NodeManipulators;
-            }
-            else if (typeof (TMenu) == typeof (SecondaryMenu)) {
-                _nodeManipulators = EpsilonConfig.Instance.SecondaryMenu.NodeManipulators;
-            }
-        }
+        public EpsilonNodeManipulator (): this (EpsilonConfig.Instance.Menu.NodeManipulators)
+        {}
 
         public EpsilonNodeManipulator (ICollection<INodeManipulator> nodeManipulators)
         {
@@ -53,8 +46,33 @@ namespace R7.Epsilon.Menus
                     nodeManipulator.ManipulateNodes (nodes, portalSettings);
                 }
             }
-
             return nodes;
+        }
+    }
+
+    public class EpsilonNodeManipulator<TMenu>: EpsilonNodeManipulator
+    {
+        public EpsilonNodeManipulator ()
+        {
+            if (typeof (TMenu) == typeof (PrimaryMenu)) {
+                if (EpsilonConfig.Instance.PrimaryMenu.NodeManipulators.Count > 0) {
+                    _nodeManipulators = EpsilonConfig.Instance.PrimaryMenu.NodeManipulators;
+                    return;
+                }
+            }
+            else if (typeof (TMenu) == typeof (SecondaryMenu)) {
+                if (EpsilonConfig.Instance.SecondaryMenu.NodeManipulators.Count > 0) {
+                    _nodeManipulators = EpsilonConfig.Instance.SecondaryMenu.NodeManipulators;
+                    return;
+                }
+            }
+            else if (typeof (TMenu) == typeof (BreadcrumbMenu)) {
+                if (EpsilonConfig.Instance.BreadcrumbMenu.NodeManipulators.Count > 0) {
+                    _nodeManipulators = EpsilonConfig.Instance.BreadcrumbMenu.NodeManipulators;
+                    return;
+                }
+            }
+            _nodeManipulators = EpsilonConfig.Instance.Menu.NodeManipulators;
         }
     }
 }
