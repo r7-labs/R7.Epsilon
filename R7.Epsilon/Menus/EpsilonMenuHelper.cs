@@ -19,6 +19,7 @@
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+using System;
 using System.Web;
 using DotNetNuke.Web.DDRMenu;
 using DotNetNuke.Entities.Portals;
@@ -29,12 +30,29 @@ namespace R7.Epsilon.Menus
 {
     public static class EpsilonMenuHelper
     {
+        const string resourceFileRoot = "~/Portals/_default/Skins/R7.Epsilon/App_LocalResources/Fake.ascx.resx";
+
+        static readonly HtmlString EmptyHtmlString = new HtmlString ("");
+
         public static string GetString (string resourceKey)
         {
-            var resourceFileRoot = "~/Portals/_default/Skins/R7.Epsilon/App_LocalResources/Fake.ascx.resx";
             return Localization.GetString (resourceKey, resourceFileRoot);
         }
 
+        public static string FormatDate (MenuNode node)
+        {
+            var date = DateTime.Parse (node.CommandArgument);
+            return date.ToString (GetString ("Menu_DateFormat.Text"));
+        }
+
+        public static HtmlString RenderNodeBadge (MenuNode node)
+        {
+            if (node.CommandName == "X-Date") {
+                return new HtmlString ($"<span class=\"badge badge-primary\">{FormatDate (node)}</span> ");
+            }
+
+            return EmptyHtmlString;
+        }
         public static string FormatUrl (MenuNode node, string urlFormat)
         {
             if (!node.Enabled) {

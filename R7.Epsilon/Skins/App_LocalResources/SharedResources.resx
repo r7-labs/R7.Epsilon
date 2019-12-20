@@ -243,6 +243,9 @@
 	<data name="Menu_GoToPage.Text" xml:space="preserve">
 		<value>Navigate to page </value>
 	</data>
+	<data name="Menu_DateFormat.Text" xml:space="preserve">
+		<value>MMM dd</value>
+	</data>
 	<data name="CustomMarkup_Start.Text" xml:space="preserve">
 		<value></value>
 	</data>

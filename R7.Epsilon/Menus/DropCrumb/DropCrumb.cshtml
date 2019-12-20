@@ -55,6 +55,7 @@
 									<a id='@Id(node, "btnDropdown")' type="button" role="button" href="#" data-toggle="dropdown"
 											aria-haspopup="true" aria-expanded="false" itemprop="item"
 											class="dropdown-toggle">
+										@EpsilonMenuHelper.RenderNodeBadge(node)
 										<span itemprop="name">@node.Text</span>
 									</a>
 									@RenderDropdownFor(node)
@@ -73,11 +74,13 @@
 							@if (node == root) {
 								<a href="@FormatUrl(node)" title='@EpsilonMenuHelper.GetString("DropCrumb_Home_Tooltip.Text")' itemprop="item">
 									@Html.Raw(EpsilonMenuHelper.GetString("DropCrumb_Home.Text"))
+									@EpsilonMenuHelper.RenderNodeBadge(node)
 									<meta itemprop="name" content="@node.Text" />
 								</a>
 							}
 							else {
 								<a href="@FormatUrl(node)" itemprop="item">
+									@EpsilonMenuHelper.RenderNodeBadge(node)
 									<span itemprop="name">@node.Text</span>
 								</a>
 							}
@@ -97,12 +100,16 @@
 						data-target='@Id(node, "collapse")' data-toggle="dropdown"
 						aria-controls='@Id(node, "collapse")' aria-expanded="false"
 						class="dropdown-item collapse-toggle @EpsilonMenuHelper.ForkNodeCssClasses(node)">
+					@EpsilonMenuHelper.RenderNodeBadge(node)
 					<span itemprop="name">@node.Text</span>
 				</a>
 				@RenderCollapseFor(node)
 			}
 			else {
-				<a class="dropdown-item @EpsilonMenuHelper.LeafNodeCssClasses(node)" href="@FormatUrl(node)">@node.Text</a>
+				<a class="dropdown-item @EpsilonMenuHelper.LeafNodeCssClasses(node)" href="@FormatUrl(node)">
+					@EpsilonMenuHelper.RenderNodeBadge(node)
+					@node.Text
+				</a>
 			}
 		}
 	</div>
@@ -114,11 +121,15 @@
 		@if (parentNode.Enabled) {
 			<a class="h6 dropdown-item skn-menu-parent-item @EpsilonMenuHelper.ForkNodeCssClasses(parentNode)" href="@FormatUrl(parentNode)"
 					title='@(EpsilonMenuHelper.GetString("Menu_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
+				@EpsilonMenuHelper.RenderNodeBadge(parentNode)
 				@parentNode.Text
 			</a>
 		}
 		@foreach (var node in parentNode.Children) {
-		<a class="dropdown-item @EpsilonMenuHelper.LeafNodeCssClasses(node)" href="@FormatUrl(node)">@node.Text</a>
+			<a class="dropdown-item @EpsilonMenuHelper.LeafNodeCssClasses(node)" href="@FormatUrl(node)">
+				@EpsilonMenuHelper.RenderNodeBadge(node)
+				@node.Text
+			</a>
 		}
 		<div class="dropdown-divider"></div>
 	</div>

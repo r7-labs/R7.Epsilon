@@ -222,4 +222,7 @@
 	<data name="Menu_GoToPage.Text" xml:space="preserve">
 		<value>Перейти на страницу </value>
 	</data>
+	<data name="Menu_DateFormat.Text" xml:space="preserve">
+		<value>dd MMM</value>
+	</data>
 </root>

@@ -42,10 +42,16 @@
 						<div class="card-body">
 							<h5>
 								@if (node.Enabled) {
-									<a class="card-title skn-menu-parent-item @EpsilonMenuHelper.LeafNodeCssClasses(node)" href="@FormatUrl(node)">@node.Text</a>
+									<a class="card-title skn-menu-parent-item @EpsilonMenuHelper.LeafNodeCssClasses(node)" href="@FormatUrl(node)">
+										@EpsilonMenuHelper.RenderNodeBadge(node)
+										@node.Text
+									</a>
 								}
 								else {
-									<span class="card-title skn-menu-parent-item @EpsilonMenuHelper.LeafNodeCssClasses(node)">@node.Text</span>
+									<span class="card-title skn-menu-parent-item @EpsilonMenuHelper.LeafNodeCssClasses(node)">
+										@EpsilonMenuHelper.RenderNodeBadge(node)
+										@node.Text
+									</span>
 								}
 							</h5>
 							@if (GetShowDescription ()) {
@@ -70,10 +76,16 @@
 		@foreach (var node in parentNode.Children) {
 			<li>
 				@if (node.Enabled) {
-					<a class="@EpsilonMenuHelper.LeafNodeCssClasses(node)" href="@FormatUrl(node)">@node.Text</a>
+					<a class="@EpsilonMenuHelper.LeafNodeCssClasses(node)" href="@FormatUrl(node)">
+						@EpsilonMenuHelper.RenderNodeBadge(node)
+						@node.Text
+					</a>
 				}
 				else {
-					<span class="@EpsilonMenuHelper.LeafNodeCssClasses(node)">@node.Text</span>
+					<span class="@EpsilonMenuHelper.LeafNodeCssClasses(node)">
+						@EpsilonMenuHelper.RenderNodeBadge(node)
+						@node.Text
+					</span>
 				}
 			</li>
 		}

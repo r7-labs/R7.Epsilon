@@ -1,4 +1,5 @@
-﻿@using System.Dynamic
+﻿@using System.Globalization
+@using System.Dynamic
 @using DotNetNuke.Web.DDRMenu
 @using R7.Epsilon.Menus
 @inherits DotNetNuke.Web.Razor.DotNetNukeWebPage<dynamic>
@@ -23,12 +24,18 @@
 					if (node.HasChildren()) {
 						<li class="nav-item dropdown">
 							<a href='#@Id(node, "subMenu")' aria-controls='@Id(node, "subMenu")'
-								role="button" data-toggle="collapse" aria-expanded="false"
-								class="nav-link dropdown-toggle @EpsilonMenuHelper.ForkNodeCssClasses(node)">@node.Text</a>
+									role="button" data-toggle="collapse" aria-expanded="false"
+									class="nav-link dropdown-toggle @EpsilonMenuHelper.ForkNodeCssClasses(node)">
+								@EpsilonMenuHelper.RenderNodeBadge(node)
+								@node.Text
+							</a>
 						</li>
 					} else {
 						<li class="nav-item">
-							<a href="@FormatUrl(node)" class="nav-link @EpsilonMenuHelper.LeafNodeCssClasses(node)">@node.Text</a>
+							<a href="@FormatUrl(node)" class="nav-link @EpsilonMenuHelper.LeafNodeCssClasses(node)">
+								@EpsilonMenuHelper.RenderNodeBadge(node)
+								@node.Text
+							</a>
 						</li>
 					}
 				}
@@ -50,6 +57,7 @@
 					<div class="nav-item">
 						<a href="@FormatUrl(parentNode)" class="h4 nav-link skn-menu-parent-item @EpsilonMenuHelper.LeafNodeCssClasses(parentNode)"
 								title='@(EpsilonMenuHelper.GetString("Menu_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
+							@EpsilonMenuHelper.RenderNodeBadge(parentNode)
 							@parentNode.Text
 						</a>
 					</div>
@@ -60,14 +68,20 @@
 					@if (node.HasChildren ()) {
 						<div class="nav-item dropdown">
 							<a id='@Id(node, "btnDropdown")' type="button" role="button" href="#" data-toggle="dropdown"
-								aria-haspopup="true" aria-expanded="false"
-								class="nav-link dropdown-toggle @EpsilonMenuHelper.ForkNodeCssClasses(node)">@node.Text</a>
+									aria-haspopup="true" aria-expanded="false"
+									class="nav-link dropdown-toggle @EpsilonMenuHelper.ForkNodeCssClasses(node)">
+								@EpsilonMenuHelper.RenderNodeBadge(node)
+								@node.Text
+							</a>
 							@RenderDropdownFor(node)
 						</div>
 					}
 					else {
 						<div class="nav-item">
-							<a href="@FormatUrl(node)" class="nav-link @EpsilonMenuHelper.LeafNodeCssClasses(node)">@node.Text</a>
+							<a href="@FormatUrl(node)" class="nav-link @EpsilonMenuHelper.LeafNodeCssClasses(node)">
+								@EpsilonMenuHelper.RenderNodeBadge(node)
+								@node.Text
+							</a>
 						</div>
 					}
 				</div>
@@ -81,6 +95,7 @@
 		@if (parentNode.Enabled) {
 			<a class="h5 dropdown-item skn-menu-parent-item @EpsilonMenuHelper.LeafNodeCssClasses(parentNode)" href="@FormatUrl(parentNode)"
 					title='@(EpsilonMenuHelper.GetString("Menu_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
+				@EpsilonMenuHelper.RenderNodeBadge(parentNode)
 				@parentNode.Text
 			</a>
 			<div class="dropdown-divider"></div>
@@ -88,13 +103,19 @@
 		@foreach (var node in parentNode.Children) {
 			if (node.HasChildren ()) {
 				<a type="button" role="button" href="@FormatUrl(node)"
-					data-toggle="collapse" data-target='#@Id(node, "collapse")'
-					aria-expanded="false" aria-controls='@Id(node, "collapse")'
-					class="dropdown-item collapse-toggle @EpsilonMenuHelper.ForkNodeCssClasses(node)">@node.Text</a>
+						data-toggle="collapse" data-target='#@Id(node, "collapse")'
+						aria-expanded="false" aria-controls='@Id(node, "collapse")'
+						class="dropdown-item collapse-toggle @EpsilonMenuHelper.ForkNodeCssClasses(node)">
+					@EpsilonMenuHelper.RenderNodeBadge(node)
+					@node.Text
+				</a>
 				@RenderCollapseFor(node)
 			}
 			else {
-				<a class="dropdown-item @EpsilonMenuHelper.LeafNodeCssClasses(node)" href="@FormatUrl(node)">@node.Text</a>
+				<a class="dropdown-item @EpsilonMenuHelper.LeafNodeCssClasses(node)" href="@FormatUrl(node)">
+					@EpsilonMenuHelper.RenderNodeBadge(node)
+					@node.Text
+				</a>
 			}
 		}
 	</div>
@@ -106,11 +127,15 @@
 		@if (parentNode.Enabled) {
 			<a class="h6 dropdown-item skn-menu-parent-item @EpsilonMenuHelper.ForkNodeCssClasses(parentNode)" href="@FormatUrl(parentNode)"
 					title='@(EpsilonMenuHelper.GetString("Menu_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
+				@EpsilonMenuHelper.RenderNodeBadge(parentNode)
 				@parentNode.Text
 			</a>
 		}
 		@foreach (var node in parentNode.Children) {
-			<a class="dropdown-item @EpsilonMenuHelper.LeafNodeCssClasses(node)" href="@FormatUrl(node)">@node.Text</a>
+			<a class="dropdown-item @EpsilonMenuHelper.LeafNodeCssClasses(node)" href="@FormatUrl(node)">
+				@EpsilonMenuHelper.RenderNodeBadge(node)
+				@node.Text
+			</a>
 		}
 		<div class="dropdown-divider"></div>
 	</div>

@@ -46,7 +46,10 @@
 					</li>
 				} else {
 					<li class="nav-item">
-						<a href="@FormatUrl(node)" class="nav-link @EpsilonMenuHelper.LeafNodeCssClasses(node)">@node.Text</a>
+						<a href="@FormatUrl(node)" class="nav-link @EpsilonMenuHelper.LeafNodeCssClasses(node)">
+							@EpsilonMenuHelper.RenderNodeBadge(node)
+							@node.Text
+						</a>
 					</li>
 				}
 			}
@@ -59,12 +62,16 @@
 		@if (parentNode.Enabled) {
 			<a class="h6 dropdown-item skn-menu-parent-item @EpsilonMenuHelper.LeafNodeCssClasses(parentNode)" href="@FormatUrl(parentNode)"
 					title='@(EpsilonMenuHelper.GetString("Menu_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
+				@EpsilonMenuHelper.RenderNodeBadge(parentNode)
 				@parentNode.Text
 			</a>
 			<div class="dropdown-divider"></div>
 		}
 		@foreach (var node in parentNode.Children) {
-			<a class="dropdown-item @EpsilonMenuHelper.LeafNodeCssClasses(node)" href="@FormatUrl(node)">@node.Text</a>
+			<a class="dropdown-item @EpsilonMenuHelper.LeafNodeCssClasses(node)" href="@FormatUrl(node)">
+				@EpsilonMenuHelper.RenderNodeBadge(node)
+				@node.Text
+			</a>
 		}
 	</div>
 }

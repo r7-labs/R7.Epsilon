@@ -72,8 +72,10 @@ namespace R7.Epsilon.Components
                         var deserializer = new DeserializerBuilder ().WithNamingConvention (new HyphenatedNamingConvention ()).Build ();
                         var portalConfig = deserializer.Deserialize<EpsilonPortalConfig> (configReader);
 
+                        portalConfig.Menu.LoadNodeManipulators ();
                         portalConfig.PrimaryMenu.LoadNodeManipulators ();
                         portalConfig.SecondaryMenu.LoadNodeManipulators ();
+                        portalConfig.BreadcrumbMenu.LoadNodeManipulators ();
 
                         return portalConfig;
                     }
