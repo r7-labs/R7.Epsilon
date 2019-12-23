@@ -245,11 +245,28 @@ window.skinCookiesAlertButtonClick = function (e) {
         });
     }
 
+    function isCookiesEnabled () {
+        // borrowed from https://github.com/Modernizr/Modernizr/blob/master/feature-detects/cookies.js
+        try {
+            document.cookie = epsilon.cookiePrefix + "CookieTest=1;"
+            var isCookiesEnabled = document.cookie.indexOf (epsilon.cookiePrefix + "CookieTest=") !== -1;
+            document.cookie = epsilon.cookiePrefix + "CookieTest=1; expires=Thu, 01-Jan-1970 00:00:01 GMT";
+            return isCookiesEnabled;
+          }
+          catch (e) {
+            return false;
+          }
+    }
+
     function showToasts () {
         if (! supportedBrowsers.test (navigator.userAgent)) {
             $("#skin_toastBrowserAlert").toast ("show");
         }
-        if (typeof Cookies.get (epsilon.cookiePrefix + "CookiesAlert") === "undefined") {
+
+        if (!isCookiesEnabled ()) {
+            $("#skin_toastCookiesDisabledAlert").toast ("show");
+        }
+        else if (typeof Cookies.get (epsilon.cookiePrefix + "CookiesAlert") === "undefined") {
             $("#skin_toastCookiesAlert").toast ("show");
         }
     }

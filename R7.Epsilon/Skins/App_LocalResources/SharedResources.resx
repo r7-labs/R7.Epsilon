@@ -61,10 +61,18 @@
         <value>We have determined that you are using an outdated version of the browser. As a result, our website may be displayed incorrectly, some of its features may not work properly or will not be available.</value>
     </data>
 	<data name="CookiesAlert_Title.Text" xml:space="preserve">
+        <value>Note:</value>
+    </data>
+	<data name="CookiesDisabledAlert_Title.Text" xml:space="preserve">
         <value>Warning!</value>
     </data>
     <data name="CookiesAlert_Body.Text" xml:space="preserve">
-        <value><![CDATA[Like many other websites, we use <a href="https://en.wikipedia.org/wiki/HTTP_cookie" target="_blank">cookies</a> to ensure that we provide you the best experience.]]></value>
+        <value><![CDATA[<p>Like many other websites, we use <strong><a href="https://en.wikipedia.org/wiki/HTTP_cookie" target="_blank">cookies</a></strong> to ensure that we provide you with the best experience.</p>]]></value>
+    </data>
+	<data name="CookiesDisabledAlert_Body.Text" xml:space="preserve">
+        <value><![CDATA[<p>Like many other websites, we use <strong><a href="https://en.wikipedia.org/wiki/HTTP_cookie" target="_blank">cookies</a></strong> to ensure that we provide you with the best experience.</p>
+		<p>We have determined that cookies are disabled in your browser, so some features of our website will not be available or may not work properly.
+		<p><strong>Please enable cookies in your browser and reload the page!</strong></p>]]></value>
     </data>
 	<data name="CookiesAlert_Button_Label.Text" xml:space="preserve">
         <value>Got it!</value>
