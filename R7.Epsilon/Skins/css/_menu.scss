@@ -59,6 +59,16 @@
     white-space: normal;
 }
 
+// hide secondary navbar then collapsed
+.navbar.skn-secondary-menu {
+    padding-top: 0;
+    padding-bottom: 0;
+    .navbar-collapse {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+}
+
 // disable "broken" menu animation on small screens
 @media (max-width: 767px) {
 	.skn-submenu { transition: none; }
