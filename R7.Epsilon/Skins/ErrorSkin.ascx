@@ -13,7 +13,7 @@ Options.DisableLogin = true;
 Options.DisablePageInfo = true;
 %>
 <skin:START runat="server" />
-<div class="skin skn-error">
+<div class="skn skn-error">
 	<header class="skn-header">
 		<skin:HEADER runat="server" />
 	</header>

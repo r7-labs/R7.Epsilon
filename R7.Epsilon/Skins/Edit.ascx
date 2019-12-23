@@ -11,7 +11,7 @@ Options.DisableSocialShare = true;
 Options.DisablePageInfo = true;
 %>
 <skin:START runat="server" />
-<div class="skin skn-edit">
+<div class="skn skn-edit">
 	<header class="skn-header">
 		<skin:HEADER runat="server" />
 	</header>

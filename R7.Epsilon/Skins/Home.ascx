@@ -10,7 +10,7 @@
 Options.DisableBreadCrumb = true;
 %>
 <skin:START runat="server" />
-<div class="skin skn-home">
+<div class="skn skn-home">
 	<header class="skn-header">
 		<skin:HEADER runat="server" />
 	</header>

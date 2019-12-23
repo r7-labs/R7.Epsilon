@@ -10,7 +10,7 @@
 Options.DisableSocialShare = true;
 %>
 <skin:START runat="server" />
-<div class="skin">
+<div class="skn">
 	<header class="skn-header">
 		<skin:HEADER runat="server" />
 	</header>

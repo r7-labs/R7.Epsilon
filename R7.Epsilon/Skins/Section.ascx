@@ -7,7 +7,7 @@
 <%@ Register TagPrefix="skin" TagName="FOOTER" Src="~/Portals/_default/Skins/R7.Epsilon/Blocks/Footer.ascx" %>
 <%@ Register TagPrefix="skin" TagName="END" Src="~/Portals/_default/Skins/R7.Epsilon/Blocks/End.ascx" %>
 <skin:START runat="server" />
-<div class="skin">
+<div class="skn">
 	<header class="skn-header">
 		<skin:HEADER runat="server" />
 	</header>
