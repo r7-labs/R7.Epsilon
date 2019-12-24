@@ -238,6 +238,7 @@
     <Content Include="Skins\SkinObjects\Includes.ascx" />
     <Content Include="Skins\SkinObjects\Meta.ascx" />
     <Content Include="Skins\Blocks\Header.ascx" />
+    <Content Include="Skins\Blocks\SecondaryHeader.ascx" />
     <Content Include="Skins\Blocks\Footer.ascx" />
     <Content Include="Menus\MegaDrop\MegaDrop.cshtml" />
     <Content Include="Menus\EpsilonPills\EpsilonPills.cshtml" />
@@ -275,6 +276,7 @@
     <Content Include="Skins\Section.ascx" />
     <Content Include="Skins\Layouts\_simple.ascx" />
     <Content Include="Skins\Layouts\_footer.ascx" />
+    <Content Include="Skins\Layouts\_header.ascx" />
     <Content Include="Skins\Layouts\_content-pane.ascx" />
     <Content Include="Skins\css\palettes\_shared-palette.scss" />
     <Content Include="Skins\css\_variables.scss" />

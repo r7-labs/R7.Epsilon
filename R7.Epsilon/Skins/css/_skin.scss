@@ -198,6 +198,22 @@ a.btn-primary:visited {
     margin-left:0;
 }
 
+.skn-header-panes > .container,
+.skn-header-panes.container {
+    padding-top: 0;
+    padding-bottom: 0;
+    & > .row {
+        background-color: #e9ecef;
+    }
+}
+
+.skn-header-panes {
+    font-size: $skn-font-size-small;
+    .cnt {
+        margin-top: 0.75rem;
+    }
+}
+
 // style it like the breadbrumb
 .skn-subheader-top {
     background-color: #e9ecef;

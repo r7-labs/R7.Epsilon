@@ -70,10 +70,3 @@
 		</div>
 	</div>
 </nav>
-<nav class="navbar navbar-expand-md bg-dark navbar-dark skn-menu skn-main-menu skn-secondary-menu">
-	<div class="container">
-		<div class="collapse navbar-collapse">
-			<skin:SECONDARYMENU runat="server" />
-		</div>
-	</div>
-</nav>

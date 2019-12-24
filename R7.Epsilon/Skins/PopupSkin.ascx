@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" Inherits="R7.Epsilon.Skins.EpsilonSkinBase" %>
 <%@ Register TagPrefix="skin" TagName="START" Src="~/Portals/_default/Skins/R7.Epsilon/Blocks/Start.ascx" %>
-<%@ Register TagPrefix="skin" TagName="END" Src="~/Portals/_default/Skins/R7.Epsilon/Blocks/PopupEnd.ascx" %>
+<%@ Register TagPrefix="skin" TagName="POPUPEND" Src="~/Portals/_default/Skins/R7.Epsilon/Blocks/PopupEnd.ascx" %>
 <%
 Options.DisableSocialShare = true;
 Options.DisableLazyAds = true;
@@ -10,4 +10,4 @@ Options.DisableRangy = true;
 <div class="skn skn-popup">
 	<div id="ContentPane" runat="server" />
 </div>
-<skin:END runat="server" />
+<skin:POPUPEND runat="server" />
