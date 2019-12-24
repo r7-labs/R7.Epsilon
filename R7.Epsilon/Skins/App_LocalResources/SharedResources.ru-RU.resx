@@ -178,9 +178,15 @@
         <value>Частичное содержимое</value>
     </data>
 	<data name="PartialContentAlert_Template.Text" xml:space="preserve">
-        <value><![CDATA[<p>Ниже показан только один из блоков информации на странице <strong>[TabName]</strong>.
+        <value><![CDATA[<p class="mb-0">Ниже показан только один из блоков информации на странице <strong>[TabName]</strong>.
 			Вы можете <a class="alert-link" href="[TabUrl]#[ModuleId]">перейти к этому блоку</a> на полной версии страницы.</p>]]>
 		</value>
+    </data>
+	<data name="PageNotPublishedAlert_Title.Text" xml:space="preserve">
+        <value>Страница не опубликована</value>
+    </data>
+	<data name="PageNotPublishedAlert_Body.Text" xml:space="preserve">
+        <value>Данная страница не опубликована. Возможно, истёк срок её публикации, либо её содержимое находится в процессе разработки.</value>
     </data>
     <data name="SearchModalButton.Text" xml:space="preserve">
         <value>Поиск</value>

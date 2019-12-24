@@ -24,3 +24,15 @@ if (moduleId != null && string.IsNullOrEmpty (Request.QueryString ["ctl"])) {
 	</div>
 </div>
 <% } %>
+<% if (ActiveTab.EndDate != null && ActiveTab.EndDate <= DateTime.Now) { %>
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<div class="alert alert-warning" role="alert">
+				<h4 class="alert-heading"><i class="fas fa-exclamation-triangle"></i> <%: T.GetString ("PageNotPublishedAlert_Title.Text") %></h4>
+				<p class="mb-0"><%: T.GetString ("PageNotPublishedAlert_Body.Text") %></p>
+			</div>
+		</div>
+	</div>
+</div>
+<% } %>

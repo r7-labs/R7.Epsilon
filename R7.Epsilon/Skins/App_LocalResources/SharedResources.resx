@@ -196,9 +196,15 @@
         <value>Partial content</value>
     </data>
 	<data name="PartialContentAlert_Template.Text" xml:space="preserve">
-        <value><![CDATA[<p>Below is shown the one of many blocks of information on the <strong>[TabName]</strong> page.
+        <value><![CDATA[<p class="mb-0">Below is shown the one of many blocks of information on the <strong>[TabName]</strong> page.
 			You can <a class="alert-link" href="[TabUrl]#[ModuleId]">navigate to this block</a> on the full page version.</p>]]>
 		</value>
+    </data>
+	<data name="PageNotPublishedAlert_Title.Text" xml:space="preserve">
+        <value>Page is not published</value>
+    </data>
+	<data name="PageNotPublishedAlert_Body.Text" xml:space="preserve">
+        <value>The page is not published. Probably its publication has expired, or its content is under development.</value>
     </data>
     <data name="SearchModalButton.Text" xml:space="preserve">
         <value>Search</value>

@@ -212,7 +212,7 @@
     <Content Include="Skins\SkinObjects\PermalinksModal.ascx" />
     <Content Include="Skins\js\feedback.js" />
     <Content Include="Skins\js\bootstrap-init.js" />
-    <Content Include="Skins\SkinObjects\PartialContentAlert.ascx" />
+    <Content Include="Skins\SkinObjects\Alerts.ascx" />
     <Content Include="Skins\Default.ascx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
