@@ -76,16 +76,17 @@ ul.dnnAdminTabNav {
 .dnnCheckbox .mark { background:none; }
 
 .dnnSortable {
-    // restore value, overriden by col-*
-    min-height:110px!important;
+    // use .col value instead
+    &.ui-sortable { padding: 0 15px; }
+}
 
-    // use col-* value instead
-    &.ui-sortable { padding:0 15px; }
+.dnnSortable.DNNEmptyPane,
+.paneOutline {
+    outline: 1px dashed #ccc;
 }
 
 // panes look in layout mode
 .paneOutline {
-    border: 1px solid #ccc;
     margin: 5px 0;
     .SubHead {
         color: #666;
