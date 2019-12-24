@@ -193,11 +193,11 @@
         <value>[FeedbackMessage.Text]</value>
     </data>
     <data name="PartialContentAlert_Title.Text" xml:space="preserve">
-        <value><![CDATA[<i class="fas fa-info-circle"></i> Note]]></value>
+        <value>Partial content</value>
     </data>
-	<data name="PartialContentAlert_Content.Text" xml:space="preserve">
-        <value><![CDATA[<p>Here is shown the one of many blocks of information on the <a class="alert-link" href="[TabUrl]">[TabName]</a> page.</p>
-			<p>You can <a class="alert-link" href="[TabUrl]#[ModuleId]">navigate to this block</a> on the full page version.</p>]]>
+	<data name="PartialContentAlert_Template.Text" xml:space="preserve">
+        <value><![CDATA[<p>Below is shown the one of many blocks of information on the <strong>[TabName]</strong> page.
+			You can <a class="alert-link" href="[TabUrl]#[ModuleId]">navigate to this block</a> on the full page version.</p>]]>
 		</value>
     </data>
     <data name="SearchModalButton.Text" xml:space="preserve">

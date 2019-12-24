@@ -4,7 +4,7 @@
 <%@ Register TagPrefix="skin" TagName="PAGEHEADER" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/PageHeader.ascx" %>
 <%@ Register TagPrefix="skin" TagName="BREADCRUMBMENU" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/BreadcrumbMenu.ascx" %>
 <%@ Register TagPrefix="skin" TagName="SOCIALSHAREBUTTONS" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/SocialShareButtons.ascx" %>
-
+<%@ Register TagPrefix="skin" TagName="PARTIALCONTENTALERT" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/PartialContentAlert.ascx" %>
 <div class="skn-subheader">
 	<% if (!Skin.Options.DisableBreadCrumb || !Skin.Options.DisableSocialShare) { %>
 		<div class="container">
@@ -30,3 +30,4 @@
 	</div>
 </div>
 <a id="content" name="content"></a>
+<skin:PARTIALCONTENTALERT runat="server" />

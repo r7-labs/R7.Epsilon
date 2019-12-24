@@ -175,11 +175,11 @@
         <value>[FeedbackMessage.Text]</value>
     </data>
     <data name="PartialContentAlert_Title.Text" xml:space="preserve">
-        <value><![CDATA[<i class="fas fa-info-circle"></i> Примечание]]></value>
+        <value>Частичное содержимое</value>
     </data>
-	<data name="PartialContentAlert_Content.Text" xml:space="preserve">
-        <value><![CDATA[<p>Здесь показан только один из блоков информации на странице <a class="alert-link" href="[TabUrl]">[TabName]</a>.</p>
-			<p>Вы можете <a class="alert-link" href="[TabUrl]#[ModuleId]">перейти к этому блоку</a> на полной версии страницы.</p>]]>
+	<data name="PartialContentAlert_Template.Text" xml:space="preserve">
+        <value><![CDATA[<p>Ниже показан только один из блоков информации на странице <strong>[TabName]</strong>.
+			Вы можете <a class="alert-link" href="[TabUrl]#[ModuleId]">перейти к этому блоку</a> на полной версии страницы.</p>]]>
 		</value>
     </data>
     <data name="SearchModalButton.Text" xml:space="preserve">
