@@ -24,6 +24,19 @@
 			<components>
 				<component type="Cleanup" version="02.00.00">
 					<files>
+						<basePath>Portals\_default\Skins\R7.Epsilon\Skins\SkinObjects</basePath>
+						<file><name>PartialContentAlert.ascx</name></file>
+						<file><name>Founders.ascx</name></file>
+						<file><name>Functions.ascx</name></file>
+						<file><name>FooterContent.ascx</name></file>
+						<file><name>LocalMenu.ascx</name></file>
+						<file><name>HeadersMenu.ascx</name></file>
+						<file><name>AdminPageInfo.ascx</name></file>
+						<file><name>BrowserCheck.ascx</name></file>
+						<file><name>LogoTitle.ascx</name></file>
+						<file><name>Banners\BannerLoader.ascx</name></file>
+						<file><name>Banners\BannerWrapper.ascx</name></file>
+					</files>
 						<basePath>Portals\_default\Skins\R7.Epsilon\Skins\css</basePath>
 						<file><name>boostrap-theme.min.css</name></file>
 					</files>
