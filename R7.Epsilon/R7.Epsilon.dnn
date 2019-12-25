@@ -13,44 +13,44 @@
 			<license src="license.htm" />
 			<releaseNotes src="releaseNotes.htm" />
 			<dependencies>
-                <!-- .NET 4.5 -->
-                <dependency type="type">System.Reflection.ReflectionContext</dependency>
-                <dependency type="coreVersion">08.00.04</dependency>
+				<!-- .NET 4.5 -->
+				<dependency type="type">System.Reflection.ReflectionContext</dependency>
+				<dependency type="coreVersion">08.00.04</dependency>
 				<dependency type="package">FontAwesome</dependency>
 				<dependency type="package">LazyAds</dependency>
 				<dependency type="package">Rangy</dependency>
 				<dependency type="package">jQuery-BlueimpGallery</dependency>
-            </dependencies>
+			</dependencies>
 			<components>
-                <component type="Cleanup" version="02.00.00">
+				<component type="Cleanup" version="02.00.00">
 					<files>
-                        <basePath>Portals\_default\Skins\R7.Epsilon\Skins\css</basePath>
+						<basePath>Portals\_default\Skins\R7.Epsilon\Skins\css</basePath>
 						<file><name>boostrap-theme.min.css</name></file>
 					</files>
-                    <files>
-                        <basePath>Portals\_default\Skins\R7.Epsilon\Skins\fonts</basePath>
+					<files>
+						<basePath>Portals\_default\Skins\R7.Epsilon\Skins\fonts</basePath>
 						<file><name>glyphicons-halflings-regular.eot</name></file>
-                        <file><name>glyphicons-halflings-regular.svg</name></file>
-                        <file><name>glyphicons-halflings-regular.ttf</name></file>
-                        <file><name>glyphicons-halflings-regular.woff</name></file>
-                        <file><name>glyphicons-halflings-regular.woff2</name></file>
+						<file><name>glyphicons-halflings-regular.svg</name></file>
+						<file><name>glyphicons-halflings-regular.ttf</name></file>
+						<file><name>glyphicons-halflings-regular.woff</name></file>
+						<file><name>glyphicons-halflings-regular.woff2</name></file>
 					</files>
-					 <files>
-                        <basePath>Portals\_default\Skins\R7.Epsilon\Skins\Layouts</basePath>
+					<files>
+						<basePath>Portals\_default\Skins\R7.Epsilon\Skins\Layouts</basePath>
 						<file><name>Default.xml</name></file>
 						<file><name>Default_A11y.xml</name></file>
 						<file><name>Home.xml</name></file>
 						<file><name>Universal.xml</name></file>
 					</files>
 					<files>
-                        <basePath>Portals\_default\Skins\R7.Epsilon\css</basePath>
+						<basePath>Portals\_default\Skins\R7.Epsilon\css</basePath>
 						<file><name>default-skin.min.css</name></file>
 						<file><name>a11y-skin.min.css</name></file>
 						<file><name>consulting-skin.min.css</name></file>
 						<file><name>world-skin.min.css</name></file>
 					</files>
 					<files>
-                        <basePath>Portals\_default\Containers\R7.Epsilon</basePath>
+						<basePath>Portals\_default\Containers\R7.Epsilon</basePath>
 						<file><name>Message_Success.ascx</name></file>
 						<file><name>Message_Info.ascx</name></file>
 						<file><name>Message_Warning.ascx</name></file>
@@ -72,13 +72,13 @@
 				</component>
 				<component type="Cleanup" version="01.14.00">
 					<files>
-                        <basePath>Portals\_default\Skins\R7.Epsilon\SkinObjects</basePath>
+						<basePath>Portals\_default\Skins\R7.Epsilon\SkinObjects</basePath>
 						<file><name>SocialShareScripts.ascx</name></file>
 					</files>
 				</component>
 				<component type="Cleanup" version="01.13.00">
 					<files>
-                        <basePath>Portals\_default\Skins\R7.Epsilon</basePath>
+						<basePath>Portals\_default\Skins\R7.Epsilon</basePath>
 						<file><name>Admin.doctype.xml</name></file>
 						<file><name>Custom.doctype.xml</name></file>
 						<file><name>Edit.doctype.xml</name></file>
@@ -104,22 +104,22 @@
 						</resourceFile>
 					</resourceFiles>
 				</component>
-                <component type="ResourceFile">
-                    <resourceFiles>
-                        <basePath>DesktopModules\R7.Epsilon</basePath>
-                        <resourceFile>
-                            <name>Resources_Modules.zip</name>
-                        </resourceFile>
-                    </resourceFiles>
-                </component>
 				<component type="ResourceFile">
-                    <resourceFiles>
-                        <basePath>DesktopModules\DDRMenu</basePath>
-                        <resourceFile>
-                            <name>Resources_Menus.zip</name>
-                        </resourceFile>
-                    </resourceFiles>
-                </component>
+					<resourceFiles>
+						<basePath>DesktopModules\R7.Epsilon</basePath>
+						<resourceFile>
+							<name>Resources_Modules.zip</name>
+						</resourceFile>
+					</resourceFiles>
+				</component>
+				<component type="ResourceFile">
+					<resourceFiles>
+						<basePath>DesktopModules\DDRMenu</basePath>
+						<resourceFile>
+							<name>Resources_Menus.zip</name>
+						</resourceFile>
+					</resourceFiles>
+				</component>
 				<component type="Assembly">
 					<assemblies>
 						<basePath>bin</basePath>
@@ -146,7 +146,7 @@
 			</owner>
 			<license src="license.htm" />
 			<releaseNotes src="releaseNotes.htm" />
-            <components>
+			<components>
 				<component type="Container">
 					<containerFiles>
 						<containerName>R7.Epsilon</containerName>
@@ -163,5 +163,5 @@
 				</component>
 			</components>
 		</package>
-    </packages>
+	</packages>
 </dotnetnuke>
