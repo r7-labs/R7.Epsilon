@@ -23,7 +23,6 @@ using System;
 using System.Collections.Concurrent;
 using System.IO;
 using System.Web.Caching;
-using DotNetNuke.Common;
 using DotNetNuke.Common.Utilities;
 using DotNetNuke.Entities.Portals;
 using YamlDotNet.Serialization;
@@ -56,29 +55,32 @@ namespace R7.Epsilon.Components
         {
             var lazyPortalConfig = portalConfigs.GetOrAdd (portalId, newKey =>
                 new Lazy<EpsilonPortalConfig> (() => {
+                    var portalConfig = default (EpsilonPortalConfig);
 
                     var portalSettings = new PortalSettings (portalId);
                     var portalConfigFile = Path.Combine (portalSettings.HomeDirectoryMapPath, "R7.Epsilon.yml");
-
-                    // ensure portal config file exists
-                    if (!File.Exists (portalConfigFile)) {
-                        File.Copy (Path.Combine (
-                            Globals.ApplicationMapPath,
-                            "Portals\\_default\\Skins\\R7.Epsilon\\R7.Epsilon.yml"),
-                            portalConfigFile);
+                    try {
+                        if (File.Exists (portalConfigFile)) {
+                            using (var configReader = new StringReader (File.ReadAllText (portalConfigFile))) {
+                                var deserializer = new DeserializerBuilder ().WithNamingConvention (new HyphenatedNamingConvention ()).Build ();
+                                portalConfig = deserializer.Deserialize<EpsilonPortalConfig> (configReader);
+                            }
+                        }
+                    }
+                    catch (Exception) {
+                        // TODO: Log exception
                     }
 
-                    using (var configReader = new StringReader (File.ReadAllText (portalConfigFile))) {
-                        var deserializer = new DeserializerBuilder ().WithNamingConvention (new HyphenatedNamingConvention ()).Build ();
-                        var portalConfig = deserializer.Deserialize<EpsilonPortalConfig> (configReader);
-
-                        portalConfig.Menu.LoadNodeManipulators ();
-                        portalConfig.PrimaryMenu.LoadNodeManipulators ();
-                        portalConfig.SecondaryMenu.LoadNodeManipulators ();
-                        portalConfig.BreadcrumbMenu.LoadNodeManipulators ();
-
-                        return portalConfig;
+                    if (portalConfig == null) {
+                        portalConfig = new EpsilonPortalConfig ();
                     }
+
+                    portalConfig.Menu.LoadNodeManipulators ();
+                    portalConfig.PrimaryMenu.LoadNodeManipulators ();
+                    portalConfig.SecondaryMenu.LoadNodeManipulators ();
+                    portalConfig.BreadcrumbMenu.LoadNodeManipulators ();
+
+                    return portalConfig;
                 })
             );
 
