@@ -11,10 +11,9 @@
 <%@ Register TagPrefix="skin" TagName="SECONDARYMENU" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/SecondaryMenu.ascx" %>
 <%@ Register TagPrefix="skin" TagName="LOGOMOBILE" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/LogoMobile.ascx" %>
 <%@ Register TagPrefix="skin" TagName="CUSTOMCONTENT" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/CustomContent.ascx" %>
-
 <div class="container">
     <div class="row">
-		<a href='<%= DnnGlobals.NavigateURL ("", "quickA11y", "enable") %>' class="sr-only sr-only-focusable" itemprop="copy"><%: T.GetString ("A11yWebsiteVersion.Text") %></a>
+		<a href='<%= DnnGlobals.NavigateURL ("", "a11y", "true") %>' class="sr-only sr-only-focusable" itemprop="copy"><%: T.GetString ("A11yWebsiteVersion.Text") %></a>
 		<a href="#content" class="sr-only sr-only-focusable"><%: T.GetString ("SkipToContent.Text") %></a>
     </div>
 </div>

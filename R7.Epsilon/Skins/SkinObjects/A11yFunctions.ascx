@@ -36,7 +36,7 @@
 		<a id="lnkReEnablePopups" role="checkbox" class="dropdown-item d-none" href="javascript:skinA11y.reEnablePopups()">
 			<i class="fas fa-check-square"></i>	<%: T.GetString("A11yDisablePopups.Text") %></a>
 		<div class="dropdown-divider"></div>
-			<a class="dropdown-item" href='<%= DnnGlobals.NavigateURL ("", "quickA11y", "reset") %>'>
+			<a class="dropdown-item" href='<%= DnnGlobals.NavigateURL ("", "a11y", "false") %>'>
 			<i class="fas fa-undo"></i></i> <%: T.GetString("A11yRestoreDefaults.Text") %></a>
 	</div>
 </div>

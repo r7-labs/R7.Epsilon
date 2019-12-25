@@ -95,13 +95,13 @@ namespace R7.Epsilon.Skins
                 return true;
             }
 
-            var a11yArg = Request.QueryString ["quickA11y"];
+            var a11yArg = Request.QueryString ["a11y"];
             if (a11yArg != null) {
-                if (a11yArg == "enable" || a11yArg == "true") {
+                if (string.Equals (a11yArg, "true", StringComparison.InvariantCultureIgnoreCase)) {
                     A11yHelper.SetA11yCookies (Response, Config.Themes);
                     return true;
                 }
-                if (a11yArg == "reset" || a11yArg == "false") {
+                if (string.Equals (a11yArg, "false", StringComparison.InvariantCultureIgnoreCase)) {
                     A11yHelper.ResetA11yCookies (Response, Config.Themes);
                     return true;
                 }
