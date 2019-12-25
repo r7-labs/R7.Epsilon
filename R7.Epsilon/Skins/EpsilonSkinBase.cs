@@ -79,12 +79,13 @@ namespace R7.Epsilon.Skins
                 Response.Redirect (Globals.NavigateURL (), false);
                 return;
             }
-            // add canonical URL link
-            // TODO: Add support for blogs and forums
-            var linkCanonicalUrl = new HtmlLink ();
-            linkCanonicalUrl.Attributes.Add ("rel", "canonical");
-            linkCanonicalUrl.Href = Globals.NavigateURL ();
-            Page.Header.Controls.Add (linkCanonicalUrl);
+
+            if (!string.IsNullOrEmpty (Config.CanonicalUrlFormat)) {
+                var linkCanonicalUrl = new HtmlLink ();
+                linkCanonicalUrl.Attributes.Add ("rel", "canonical");
+                linkCanonicalUrl.Href = EpsilonUrlHelper.FormatUrl (Config.CanonicalUrlFormat, ActiveTab.TabID, ActiveTab.PortalID, Request.QueryString);
+                Page.Header.Controls.Add (linkCanonicalUrl);
+            }
         }
 
         protected bool SetCookiesByQueryString ()

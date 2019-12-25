@@ -37,21 +37,28 @@ namespace R7.Epsilon.Components
 
         public static string FormatUrl (string url, int tabId,  int portalId)
         {
-            return url.Replace ("{tabid}", tabId.ToString ()).Replace ("{portalid}", portalId.ToString ());
+            return url.Replace ("{tabid}", tabId.ToString ())
+                      .Replace ("{portalid}", portalId.ToString ())
+                      .Replace ("{taburl}", Globals.NavigateURL ());
         }
 
         /// <summary>
-        /// Replaces "{?arg}" in link format strings with the &amp;arg=value or ?arg=value
-        /// if current querystring contains this argument
+        /// Replaces "{?arg}" or "{&amp;arg}" in link format strings with the "&amp;arg=value" (or "?arg=value" at the beginning),
+        /// replaces "{/arg}" with the "/arg/value" - if current querystring contains this argument
         /// </summary>
         public static string FormatUrlWithOptArgs (string url, NameValueCollection queryString)
         {
-            var argFormats = Regex.Matches (url, @"\{\?\w+\}", RegexOptions.IgnoreCase);
+            var argFormats = Regex.Matches (url, @"\{[\?&/]\w+\}", RegexOptions.IgnoreCase);
             foreach (Match argFormat in argFormats) {
                 if (argFormat.Success) {
                     var arg = argFormat.Value.Substring (2, argFormat.Value.Length - 3);
                     if (queryString [arg] != null) {
-                        url = url.Replace (argFormat.Value, "&" + arg + "=" + queryString [arg].ToString ());
+                        if (argFormat.Value.IndexOf ("/", StringComparison.InvariantCulture) == 1) {
+                            url = url.Replace (argFormat.Value, "/" + arg + "/" + queryString [arg].ToString ());
+                        }
+                        else {
+                            url = url.Replace (argFormat.Value, "&" + arg + "=" + queryString [arg].ToString ());
+                        }
                     }
                     else {
                         url = url.Replace (argFormat.Value, string.Empty);
@@ -73,7 +80,7 @@ namespace R7.Epsilon.Components
         public static string FormatUrl (string url, int tabId,  int portalId, NameValueCollection queryString)
         {
             url = FormatUrl (url, tabId, portalId);
-            if (url.Contains ("{?")) {
+            if (url.IndexOf ("{") >= 0) {
                 url = FormatUrlWithOptArgs (url, queryString);
             }
 

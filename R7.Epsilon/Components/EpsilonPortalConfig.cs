@@ -93,6 +93,8 @@ namespace R7.Epsilon.Components
             }
         };
 
+        public string CanonicalUrlFormat { get; set; }
+
         #endregion
 
         public ThemeConfig GetTheme (HttpRequest request)
@@ -218,5 +220,12 @@ namespace R7.Epsilon.Components
         public string Label { get; set; }
 
         public string UrlFormat { get; set; }
+    }
+
+    public class CanonicalUrlConfig
+    {
+        public bool Enabled { get; set; }
+
+
     }
 }

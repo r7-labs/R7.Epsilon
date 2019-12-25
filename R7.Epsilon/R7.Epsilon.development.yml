@@ -130,7 +130,7 @@ search-engines:
 permalink-formats:
 
   - "/tabid/{tabid}{?language}"
-  - "/default.aspx?tabid={tabid}{?forumid}{?scope}"
+  - "/default.aspx?tabid={tabid}{?forumid}{?threadid}{?scope}"
   - "/linkclick.aspx?link={tabid}&portalid={portalid}"
 
 url-shorteners:
@@ -139,3 +139,5 @@ url-shorteners:
     url-format: "https://tinyurl.com/create.php?url={url}"
   - label: "clck.ru"
     url-format: "https://clck.ru?url={url}"
+
+canonical-url-format: "{taburl}{/forumid}{/threadid}{/scope}"
