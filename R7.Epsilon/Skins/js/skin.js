@@ -189,7 +189,6 @@ window.skinCookiesAlertButtonClick = function (e) {
             $(this).find (".collapse-toggle").removeClass ("show").next (".collapse").collapse ("hide");
         });
 
-        // TODO: How this will work with event namespaces?
         $(".skn-main-menu .skn-submenu.collapse")
             .on ("shown.bs.collapse", function (e) {
                 const parentMenuItem = $(".skn-main-menu .dropdown-toggle[href='#" + $(this).attr ("id") + "']");
