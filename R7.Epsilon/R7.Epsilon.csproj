@@ -155,7 +155,6 @@
     <Content Include="license.htm" />
     <Content Include="releaseNotes.htm" />
     <Content Include="Skins\ErrorSkin.ascx" />
-    <Content Include="Skins\SkinObjects\AdminPageInfo.ascx" />
     <Content Include="Skins\SkinObjects\Toasts.ascx" />
     <Content Include="Skins\SkinObjects\FeedbackButton.ascx" />
     <Content Include="Skins\SkinObjects\CustomContent.ascx" />
