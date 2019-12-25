@@ -1,10 +1,10 @@
 ﻿//
-//  File: DevPortalConfigTests.cs
+//  File: DevelopmentPortalConfigTests.cs
 //  Project: R7.Epsilon
 //
 //  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2016-2019 Roman M. Yagodin, R7.Labs
+//  Copyright (c) 2014-2019 Roman M. Yagodin, R7.Labs
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -27,7 +27,7 @@ using YamlDotNet.Serialization;
 
 namespace R7.Epsilon.Tests
 {
-    public class DevPortalConfigTests
+    public class DevelopmentPortalConfigTests
     {
         [Fact]
         public void PortalConfigDeserializationTest ()

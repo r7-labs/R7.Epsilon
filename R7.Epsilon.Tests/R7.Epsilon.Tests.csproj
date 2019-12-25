@@ -59,7 +59,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DevPortalConfigTests.cs" />
+    <Compile Include="DevelopmentPortalConfigTests.cs" />
     <Compile Include="Components\EpsilonUrlHelperTests.cs" />
   </ItemGroup>
   <ItemGroup>
