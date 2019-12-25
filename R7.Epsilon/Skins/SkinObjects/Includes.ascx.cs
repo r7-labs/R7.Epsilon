@@ -30,11 +30,9 @@ namespace R7.Epsilon.Skins.SkinObjects
 {
     public class Includes: EpsilonSkinObjectBase
     {
-        protected string SkinPath => "~/Portals/_default/Skins/R7.Epsilon/";
-
         protected override void OnLoad (EventArgs e)
         {
-            ClientResourceManager.RegisterStyleSheet (Page, SkinPath + "css/bootstrap.min.css", (int) FileOrder.Css.SkinCss, "DnnPageHeaderProvider", "bootstrap", "4.3.1");
+            ClientResourceManager.RegisterStyleSheet (Page, Const.SKIN_PATH + "css/bootstrap.min.css", (int) FileOrder.Css.SkinCss, "DnnPageHeaderProvider", "bootstrap", "4.3.1");
 
             var fontAwesome = JavascriptLibraryHelper.GetHighestVersionLibrary ("FontAwesome");
             if (fontAwesome != null) {
@@ -53,15 +51,15 @@ namespace R7.Epsilon.Skins.SkinObjects
                 );
             }
 
-            ClientResourceManager.RegisterStyleSheet (Page, SkinPath + "css/" + (Config.GetTheme (Request) ?? Config.Themes [0]).Css, (int) FileOrder.Css.SkinCss, "DnnPageHeaderProvider", "skin", "0.0.0");
+            ClientResourceManager.RegisterStyleSheet (Page, Const.SKIN_PATH + "css/" + (Config.GetTheme (Request) ?? Config.Themes [0]).Css, (int) FileOrder.Css.SkinCss, "DnnPageHeaderProvider", "skin", "0.0.0");
 
-            ClientResourceManager.RegisterScript (Page, SkinPath + "js/bootstrap.bundle.min.js", (int) FileOrder.Js.DefaultPriority, "DnnFormBottomProvider", "bootstrap", "4.3.1");
+            ClientResourceManager.RegisterScript (Page, Const.SKIN_PATH + "js/bootstrap.bundle.min.js", (int) FileOrder.Js.DefaultPriority, "DnnFormBottomProvider", "bootstrap", "4.3.1");
 
-            ClientResourceManager.RegisterScript (Page, SkinPath + "js/skin.min.js", (int) FileOrder.Js.DefaultPriority, "DnnFormBottomProvider", "skin", "0.0.0");
+            ClientResourceManager.RegisterScript (Page, Const.SKIN_PATH + "js/skin.min.js", (int) FileOrder.Js.DefaultPriority, "DnnFormBottomProvider", "skin", "0.0.0");
 
-            ClientResourceManager.RegisterScript (Page, SkinPath + "js/feedback.min.js", (int) FileOrder.Js.DefaultPriority, "DnnFormBottomProvider", "feedback", "0.0.0");
+            ClientResourceManager.RegisterScript (Page, Const.SKIN_PATH + "js/feedback.min.js", (int) FileOrder.Js.DefaultPriority, "DnnFormBottomProvider", "feedback", "0.0.0");
 
-            ClientResourceManager.RegisterScript (Page, SkinPath + "js/clipboard.min.js", (int) FileOrder.Js.DefaultPriority, "DnnFormBottomProvider", "clipboard", "2.0.4");
+            ClientResourceManager.RegisterScript (Page, Const.SKIN_PATH + "js/clipboard.min.js", (int) FileOrder.Js.DefaultPriority, "DnnFormBottomProvider", "clipboard", "2.0.4");
 
             if (!Skin.Options.DisableLazyAds) {
                 JavaScript.RequestRegistration ("LazyAds");

@@ -30,7 +30,7 @@ namespace R7.Epsilon.Menus
 {
     public static class EpsilonMenuHelper
     {
-        const string resourceFileRoot = "~/Portals/_default/Skins/R7.Epsilon/App_LocalResources/Fake.ascx.resx";
+        const string resourceFileRoot = Const.SKIN_PATH + "App_LocalResources/Fake.ascx.resx";
 
         static readonly HtmlString EmptyHtmlString = new HtmlString ("");
 

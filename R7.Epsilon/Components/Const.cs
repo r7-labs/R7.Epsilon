@@ -1,10 +1,10 @@
 ﻿//
-//  Const.cs
+//  File: Const.cs
+//  Project: R7.Epsilon
 //
-//  Author:
-//       Roman M. Yagodin <roman.yagodin@gmail.com>
+//  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2016 Roman M. Yagodin
+//  Copyright (c) 2014-2019 Roman M. Yagodin, R7.Labs
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -23,20 +23,8 @@ namespace R7.Epsilon.Components
 {
     public static class Const
     {
-        public const int HOST_PORTAL_ID = -1;
-
-        public const string LAYOUTS_FOLDER = "Skins\\R7.Epsilon\\Layouts\\";
         public const string COOKIE_PREFIX = "R7.Epsilon.";
 
-        /// <summary>
-        /// Returns layout name prefix which is used in tab settings
-        /// </summary>
-        /// <returns>The value prefix.</returns>
-        /// <param name="portalId">Portal identifier.</param>
-        public static string GetSettingValuePrefix (int portalId)
-        {
-            // [G]lobal and [L]ocal like in SkinSrc or ContainerSrc fields
-            return (portalId == HOST_PORTAL_ID) ? "[G]" : "[L]";
-        }
+        public const string SKIN_PATH = "~/Portals/_default/Skins/R7.Epsilon/";
     }
 }
