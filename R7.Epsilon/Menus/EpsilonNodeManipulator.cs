@@ -29,12 +29,12 @@ namespace R7.Epsilon.Menus
 {
     public class EpsilonNodeManipulator: INodeManipulator
     {
-        protected ICollection<INodeManipulator> _nodeManipulators;
+        protected IEnumerable<INodeManipulator> _nodeManipulators;
 
-        public EpsilonNodeManipulator (): this (EpsilonConfig.Instance.Menu.NodeManipulators)
+        public EpsilonNodeManipulator (): this (EpsilonConfig.Instance.Menu.GetNodeManipulators ())
         {}
 
-        public EpsilonNodeManipulator (ICollection<INodeManipulator> nodeManipulators)
+        public EpsilonNodeManipulator (IEnumerable<INodeManipulator> nodeManipulators)
         {
 	        _nodeManipulators = nodeManipulators;
         }
@@ -56,23 +56,23 @@ namespace R7.Epsilon.Menus
         {
             if (typeof (TMenu) == typeof (PrimaryMenu)) {
                 if (EpsilonConfig.Instance.PrimaryMenu.NodeManipulators.Count > 0) {
-                    _nodeManipulators = EpsilonConfig.Instance.PrimaryMenu.NodeManipulators;
+                    _nodeManipulators = EpsilonConfig.Instance.PrimaryMenu.GetNodeManipulators ();
                     return;
                 }
             }
             else if (typeof (TMenu) == typeof (SecondaryMenu)) {
                 if (EpsilonConfig.Instance.SecondaryMenu.NodeManipulators.Count > 0) {
-                    _nodeManipulators = EpsilonConfig.Instance.SecondaryMenu.NodeManipulators;
+                    _nodeManipulators = EpsilonConfig.Instance.SecondaryMenu.GetNodeManipulators ();
                     return;
                 }
             }
             else if (typeof (TMenu) == typeof (BreadcrumbMenu)) {
                 if (EpsilonConfig.Instance.BreadcrumbMenu.NodeManipulators.Count > 0) {
-                    _nodeManipulators = EpsilonConfig.Instance.BreadcrumbMenu.NodeManipulators;
+                    _nodeManipulators = EpsilonConfig.Instance.BreadcrumbMenu.GetNodeManipulators ();
                     return;
                 }
             }
-            _nodeManipulators = EpsilonConfig.Instance.Menu.NodeManipulators;
+            _nodeManipulators = EpsilonConfig.Instance.Menu.GetNodeManipulators ();
         }
     }
 }

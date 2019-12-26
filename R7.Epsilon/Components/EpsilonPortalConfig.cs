@@ -19,21 +19,14 @@
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
 using System.Web;
-using System.Web.Compilation;
-using DotNetNuke.Services.Exceptions;
-using DotNetNuke.Web.DDRMenu;
 
 namespace R7.Epsilon.Components
 {
     public class EpsilonPortalConfig
     {
-        #region Portal config properties
-
         public List<ThemeConfig> Themes { get; set; } = new List<ThemeConfig> {
             new ThemeConfig {
                 Name = "green",
@@ -94,19 +87,6 @@ namespace R7.Epsilon.Components
         };
 
         public string CanonicalUrlFormat { get; set; }
-
-        #endregion
-
-        public ThemeConfig GetTheme (HttpRequest request)
-        {
-            var theme = default (ThemeConfig);
-            var themeName = A11yHelper.GetThemeCookie (request);
-            if (themeName != null) {
-                theme = Themes.FirstOrDefault (t => t.Name == themeName);
-            }
-
-            return theme;
-        }
     }
 
     public class MenuConfig
@@ -121,19 +101,7 @@ namespace R7.Epsilon.Components
 
         public ICollection<string> NodeManipulatorTypes { get; set; } = new Collection<string> ();
 
-        public ICollection<INodeManipulator> NodeManipulators = new Collection<INodeManipulator> ();
-
-        public void LoadNodeManipulators ()
-        {
-            foreach (var nodeManipulatorType in NodeManipulatorTypes) {
-                try {
-                    NodeManipulators.Add (((INodeManipulator) Activator.CreateInstance (BuildManager.GetType (nodeManipulatorType, true, true))));
-                }
-                catch (Exception ex) {
-                    Exceptions.LogException (ex);
-                }
-            }
-        }
+        public ICollection<object> NodeManipulators = new Collection<object> ();
     }
 
     public class AdsenseConfig
@@ -220,12 +188,5 @@ namespace R7.Epsilon.Components
         public string Label { get; set; }
 
         public string UrlFormat { get; set; }
-    }
-
-    public class CanonicalUrlConfig
-    {
-        public bool Enabled { get; set; }
-
-
     }
 }

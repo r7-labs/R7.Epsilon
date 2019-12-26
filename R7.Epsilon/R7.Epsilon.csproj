@@ -125,6 +125,8 @@
     <Compile Include="Skins\IEpsilonSkinPart.cs" />
     <Compile Include="Menus\EpsilonMenuHelper.cs" />
     <Compile Include="Components\JavascriptLibraryHelper.cs" />
+    <Compile Include="Components\EpsilonPortalConfigExtensions.cs" />
+    <Compile Include="Components\MenuConfigExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Containers\Blank.ascx" />
