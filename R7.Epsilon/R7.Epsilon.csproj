@@ -224,11 +224,8 @@
     </MonoDevelop>
   </ProjectExtensions>
   <ItemGroup>
-    <Folder Include="Application\" />
-    <Folder Include="Models\" />
     <Folder Include="Components\" />
     <Folder Include="Skins\Layouts\" />
-    <Folder Include="ControlExtensions\" />
     <Folder Include="Skins\SkinObjects\" />
     <Folder Include="Menus\" />
     <Folder Include="Menus\MegaDrop\" />

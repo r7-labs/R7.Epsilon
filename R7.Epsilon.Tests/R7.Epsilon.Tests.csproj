@@ -62,7 +62,4 @@
     <Compile Include="DevelopmentPortalConfigTests.cs" />
     <Compile Include="Components\EpsilonUrlHelperTests.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Skins\" />
-  </ItemGroup>
 </Project>
