@@ -25,6 +25,7 @@ using System.IO;
 using System.Web.Caching;
 using DotNetNuke.Common.Utilities;
 using DotNetNuke.Entities.Portals;
+using DotNetNuke.Services.Exceptions;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
 
@@ -67,8 +68,8 @@ namespace R7.Epsilon.Components
                             }
                         }
                     }
-                    catch (Exception) {
-                        // TODO: Log exception
+                    catch (Exception ex) {
+                        Exceptions.LogException (ex);
                     }
 
                     if (portalConfig == null) {
