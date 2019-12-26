@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -140,6 +140,7 @@
     <Content Include="Skins\js\supportedBrowsers.js" />
     <Content Include="Skins\js\a11y.js" />
     <Content Include="Containers\Default_H4.ascx" />
+    <Content Include="Containers\Default_H5.ascx" />
     <Content Include="Containers\Callout.ascx" />
     <Content Include="Containers\Callout_Info.ascx" />
     <Content Include="Containers\Callout_Warning.ascx" />
