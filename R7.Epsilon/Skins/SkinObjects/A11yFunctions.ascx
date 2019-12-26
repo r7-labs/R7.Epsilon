@@ -4,8 +4,8 @@
 <div class="dropdown" style="display:inline-block">
 	<button type="button" class="btn btn-lg dropdown-toggle skn-a11y-btn"
 		data-toggle="dropdown"
-		title='<%: T.GetString ("A11y.Text") %>'>
-		<%= T.GetString ("A11yIcon.Text") %>
+		title='<%: T.GetString ("A11y_Tooltip.Text") %>'>
+		<%= T.GetString ("A11y_Icon.Text") %>
 	</button>
 	<div class="dropdown-menu">
 		<% if (Config.Themes.Count > 1) { %>

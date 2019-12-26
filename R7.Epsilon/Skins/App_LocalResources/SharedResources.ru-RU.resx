@@ -15,7 +15,7 @@
     <data name="SystemUser.Text" xml:space="preserve">
         <value>Система</value>
     </data>
-    <data name="A11y.Text" xml:space="preserve">
+    <data name="A11y_Tooltip.Text" xml:space="preserve">
         <value>Возможности повышенной доступности</value>
     </data>
 	<data name="A11yDisablePopups.Text" xml:space="preserve">

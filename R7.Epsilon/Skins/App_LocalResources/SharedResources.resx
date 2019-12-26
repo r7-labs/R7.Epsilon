@@ -15,10 +15,10 @@
     <data name="SystemUser.Text" xml:space="preserve">
         <value>System</value>
     </data>
-    <data name="A11y.Text" xml:space="preserve">
+    <data name="A11y_Tooltip.Text" xml:space="preserve">
         <value>Accessibility features</value>
     </data>
-	<data name="A11yIcon.Text" xml:space="preserve">
+	<data name="A11y_Icon.Text" xml:space="preserve">
         <value><![CDATA[<i class="fas fa-universal-access"></i>]]></value>
     </data>
 	<data name="A11yDisablePopups.Text" xml:space="preserve">
