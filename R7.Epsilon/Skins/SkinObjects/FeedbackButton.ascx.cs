@@ -54,7 +54,7 @@ namespace R7.Epsilon.Skins.SkinObjects
                                                  .FirstOrDefault (module => module.ModuleDefinition.DefinitionName == Config.Feedback.ModuleDefinitionName);
             if (feedbackModule != null) {
                 var feedbackUrl = Globals.NavigateURL (feedbackModule.TabID);
-                var openInPopup = Config.Feedback.OpenInPopup;
+                var openInPopup = Config.Feedback.AllowOpenInPopup;
 
                 if (EpsilonUrlHelper.IsIeBrowser (Request) && !EpsilonUrlHelper.IsEdgeBrowser (Request)) {
                     openInPopup = false;

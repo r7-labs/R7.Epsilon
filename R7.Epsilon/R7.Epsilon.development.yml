@@ -99,10 +99,10 @@ analytics:
 feedback:
 #  tab-id: 1100
 #  module-definition-name: "Form and List"
-#  open-in-popup: false
+#  allow-open-in-popup: false
   tab-id: 1090
   module-definition-name: "Feedback"
-  open-in-popup: true
+  allow-open-in-popup: true
 
 websites:
 
