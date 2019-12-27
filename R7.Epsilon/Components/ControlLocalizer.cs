@@ -64,14 +64,6 @@ namespace R7.Epsilon.Components
             return Localization.GetString (key, LocalResourceFile);
         }
 
-        // TODO: Remove as unused?
-        public string GetString (string key, string defaultKey)
-        {
-            var localizedValue = GetString (key);
-
-            return !string.IsNullOrWhiteSpace (localizedValue) ? localizedValue : GetString(defaultKey);
-        }
-
         public string GetStringOrDefault (string key, string defaultValue)
         {
             var localizedValue = GetString (key);
