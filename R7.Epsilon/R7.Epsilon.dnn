@@ -37,6 +37,7 @@
 						<file><name>Banners\BannerLoader.ascx</name></file>
 						<file><name>Banners\BannerWrapper.ascx</name></file>
 					</files>
+					<files>
 						<basePath>Portals\_default\Skins\R7.Zeta\Skins\css</basePath>
 						<file><name>boostrap-theme.min.css</name></file>
 					</files>
