@@ -1,6 +1,6 @@
 ﻿//
 //  File: EpsilonNodeManipulator.cs
-//  Project: R7.Epsilon
+//  Project: R7.Zeta
 //
 //  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
@@ -22,10 +22,10 @@
 using System.Collections.Generic;
 using DotNetNuke.Entities.Portals;
 using DotNetNuke.Web.DDRMenu;
-using R7.Epsilon.Components;
-using R7.Epsilon.Skins.SkinObjects;
+using R7.Zeta.Components;
+using R7.Zeta.Skins.SkinObjects;
 
-namespace R7.Epsilon.Menus
+namespace R7.Zeta.Menus
 {
     public class EpsilonNodeManipulator: INodeManipulator
     {

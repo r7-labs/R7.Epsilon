@@ -1,6 +1,6 @@
 //
 //  File: SearchEngineType.cs
-//  Project: R7.Epsilon
+//  Project: R7.Zeta
 //
 //  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
@@ -19,7 +19,7 @@
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-namespace R7.Epsilon.Components
+namespace R7.Zeta.Components
 {
     public enum SearchEngineType
     {

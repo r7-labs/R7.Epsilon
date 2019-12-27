@@ -1,6 +1,6 @@
 //
 //  File: FeedbackButton.ascx.cs
-//  Project: R7.Epsilon
+//  Project: R7.Zeta
 //
 //  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
@@ -26,9 +26,9 @@ using DotNetNuke.Common;
 using DotNetNuke.Common.Utilities;
 using DotNetNuke.Entities.Modules;
 using DotNetNuke.Entities.Portals;
-using R7.Epsilon.Components;
+using R7.Zeta.Components;
 
-namespace R7.Epsilon.Skins.SkinObjects
+namespace R7.Zeta.Skins.SkinObjects
 {
     public class FeedbackButton : EpsilonSkinObjectBase
     {

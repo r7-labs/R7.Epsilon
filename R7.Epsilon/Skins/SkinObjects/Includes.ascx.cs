@@ -1,6 +1,6 @@
 ﻿//
 //  File: Includes.ascx.cs
-//  Project: R7.Epsilon
+//  Project: R7.Zeta
 //
 //  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
@@ -24,9 +24,9 @@ using DotNetNuke.Common;
 using DotNetNuke.Web.Client;
 using DotNetNuke.Web.Client.ClientResourceManagement;
 using DotNetNuke.Framework.JavaScriptLibraries;
-using R7.Epsilon.Components;
+using R7.Zeta.Components;
 
-namespace R7.Epsilon.Skins.SkinObjects
+namespace R7.Zeta.Skins.SkinObjects
 {
     public class Includes: EpsilonSkinObjectBase
     {

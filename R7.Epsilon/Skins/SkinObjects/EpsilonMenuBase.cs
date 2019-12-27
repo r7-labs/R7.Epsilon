@@ -1,6 +1,6 @@
 ﻿//
 //  File: EpsilonMenuBase.cs
-//  Project: R7.Epsilon
+//  Project: R7.Zeta
 //
 //  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
@@ -26,7 +26,7 @@ using DotNetNuke.Web.DDRMenu.TemplateEngine;
 // aliases
 using DDRMenu = DotNetNuke.Web.DDRMenu;
 
-namespace R7.Epsilon.Skins.SkinObjects
+namespace R7.Zeta.Skins.SkinObjects
 {
     // WTF: Removing this class causes issues with passing template arguments
     public abstract class EpsilonMenuBase: EpsilonSkinObjectBase

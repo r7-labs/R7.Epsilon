@@ -6,8 +6,8 @@
     <ProjectTypeGuids>{349C5851-65DF-11DA-9384-00065B846F21};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <ProjectGuid>{F7F17F2A-6F32-4AC4-B2EE-1C637D0A26EF}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>R7.Epsilon</RootNamespace>
-    <AssemblyName>R7.Epsilon</AssemblyName>
+    <RootNamespace>R7.Zeta</RootNamespace>
+    <AssemblyName>R7.Zeta</AssemblyName>
     <ReleaseVersion>2.0-beta.1</ReleaseVersion>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>

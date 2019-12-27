@@ -1,6 +1,6 @@
 ﻿//
 //  File: EpsilonConfig.cs
-//  Project: R7.Epsilon
+//  Project: R7.Zeta
 //
 //  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
@@ -29,7 +29,7 @@ using DotNetNuke.Services.Exceptions;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
 
-namespace R7.Epsilon.Components
+namespace R7.Zeta.Components
 {
     public static class EpsilonConfig
     {
@@ -59,7 +59,7 @@ namespace R7.Epsilon.Components
                     var portalConfig = default (EpsilonPortalConfig);
 
                     var portalSettings = new PortalSettings (portalId);
-                    var portalConfigFile = Path.Combine (portalSettings.HomeDirectoryMapPath, "R7.Epsilon.yml");
+                    var portalConfigFile = Path.Combine (portalSettings.HomeDirectoryMapPath, "R7.Zeta.yml");
                     try {
                         if (File.Exists (portalConfigFile)) {
                             using (var configReader = new StringReader (File.ReadAllText (portalConfigFile))) {

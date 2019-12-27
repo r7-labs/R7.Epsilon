@@ -1,5 +1,5 @@
-﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.Skins.SkinObjects.EpsilonSkinObjectBase" %>
-<%@ Import Namespace="R7.Epsilon.Components" %>
+﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Zeta.Skins.SkinObjects.EpsilonSkinObjectBase" %>
+<%@ Import Namespace="R7.Zeta.Components" %>
 
 <% if (!Skin.Options.DisableSocialShare) { %>
 <%

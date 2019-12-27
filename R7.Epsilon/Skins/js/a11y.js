@@ -1,6 +1,6 @@
 ﻿//
 //  File: a11y.js
-//  Project: R7.Epsilon
+//  Project: R7.Zeta
 //
 //  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //

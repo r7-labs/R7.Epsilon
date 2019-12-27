@@ -1,16 +1,16 @@
-﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.Skins.SkinObjects.EpsilonSkinObjectBase" %>
+﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Zeta.Skins.SkinObjects.EpsilonSkinObjectBase" %>
 <%@ Import Namespace="DnnGlobals=DotNetNuke.Common.Globals" %>
 <%@ Register TagPrefix="dnn" TagName="LOGO" Src="~/Admin/Skins/Logo.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="USER" Src="~/Admin/Skins/User.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="LOGIN" Src="~/Admin/Skins/Login.ascx" %>
-<%@ Register TagPrefix="skin" TagName="SOCIALGROUPS" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/SocialGroups.ascx" %>
-<%@ Register TagPrefix="skin" TagName="A11YFUNCTIONS" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/A11yFunctions.ascx" %>
-<%@ Register TagPrefix="skin" TagName="LANGUAGES" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/Languages.ascx" %>
-<%@ Register TagPrefix="skin" TagName="WEBSITES" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/Websites.ascx" %>
-<%@ Register TagPrefix="skin" TagName="PRIMARYMENU" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/PrimaryMenu.ascx" %>
-<%@ Register TagPrefix="skin" TagName="SECONDARYMENU" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/SecondaryMenu.ascx" %>
-<%@ Register TagPrefix="skin" TagName="LOGOMOBILE" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/LogoMobile.ascx" %>
-<%@ Register TagPrefix="skin" TagName="CUSTOMCONTENT" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/CustomContent.ascx" %>
+<%@ Register TagPrefix="skin" TagName="SOCIALGROUPS" Src="~/Portals/_default/Skins/R7.Zeta/SkinObjects/SocialGroups.ascx" %>
+<%@ Register TagPrefix="skin" TagName="A11YFUNCTIONS" Src="~/Portals/_default/Skins/R7.Zeta/SkinObjects/A11yFunctions.ascx" %>
+<%@ Register TagPrefix="skin" TagName="LANGUAGES" Src="~/Portals/_default/Skins/R7.Zeta/SkinObjects/Languages.ascx" %>
+<%@ Register TagPrefix="skin" TagName="WEBSITES" Src="~/Portals/_default/Skins/R7.Zeta/SkinObjects/Websites.ascx" %>
+<%@ Register TagPrefix="skin" TagName="PRIMARYMENU" Src="~/Portals/_default/Skins/R7.Zeta/SkinObjects/PrimaryMenu.ascx" %>
+<%@ Register TagPrefix="skin" TagName="SECONDARYMENU" Src="~/Portals/_default/Skins/R7.Zeta/SkinObjects/SecondaryMenu.ascx" %>
+<%@ Register TagPrefix="skin" TagName="LOGOMOBILE" Src="~/Portals/_default/Skins/R7.Zeta/SkinObjects/LogoMobile.ascx" %>
+<%@ Register TagPrefix="skin" TagName="CUSTOMCONTENT" Src="~/Portals/_default/Skins/R7.Zeta/SkinObjects/CustomContent.ascx" %>
 <div class="container">
     <div class="row">
 		<a href='<%= DnnGlobals.NavigateURL ("", "a11y", "true") %>' class="sr-only sr-only-focusable" itemprop="copy"><%: T.GetString ("A11yWebsiteVersion.Text") %></a>

@@ -4,11 +4,11 @@ using System.Runtime.CompilerServices;
 // Information about this assembly is defined by the following attributes.
 // Change them to the values specific to your project.
 
-[assembly: AssemblyTitle ("R7.Epsilon")]
+[assembly: AssemblyTitle ("R7.Zeta")]
 [assembly: AssemblyDescription ("Responsive skin for DNN Platform")]
 [assembly: AssemblyConfiguration ("")]
 [assembly: AssemblyCompany ("R7.Labs")]
-[assembly: AssemblyProduct ("R7.Epsilon")]
+[assembly: AssemblyProduct ("R7.Zeta")]
 [assembly: AssemblyCopyright ("")]
 [assembly: AssemblyTrademark ("")]
 [assembly: AssemblyCulture ("")]

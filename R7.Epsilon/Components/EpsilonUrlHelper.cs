@@ -1,6 +1,6 @@
 //
 //  File: EpsilonUrlHelper.cs
-//  Project: R7.Epsilon
+//  Project: R7.Zeta
 //
 //  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
@@ -26,7 +26,7 @@ using System.Text.RegularExpressions;
 using DotNetNuke.Common;
 using DotNetNuke.Entities.Portals;
 
-namespace R7.Epsilon.Components
+namespace R7.Zeta.Components
 {
     public static class EpsilonUrlHelper
     {

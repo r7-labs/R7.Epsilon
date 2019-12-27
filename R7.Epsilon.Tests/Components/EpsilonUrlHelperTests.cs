@@ -1,6 +1,6 @@
 //
 //  File: EpsilonUrlHelperTests.cs
-//  Project: R7.Epsilon
+//  Project: R7.Zeta
 //
 //  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
@@ -21,9 +21,9 @@
 
 using System.Collections.Specialized;
 using Xunit;
-using R7.Epsilon.Components;
+using R7.Zeta.Components;
 
-namespace R7.Epsilon.Tests.Components
+namespace R7.Zeta.Tests.Components
 {
     public class EpsilonUrlHelperTests
     {

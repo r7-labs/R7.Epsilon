@@ -3,7 +3,7 @@ using System.Linq;
 using DotNetNuke.Common;
 using DotNetNuke.Framework.JavaScriptLibraries;
 
-namespace R7.Epsilon.Components
+namespace R7.Zeta.Components
 {
     public static class JavascriptLibraryHelper
     {

@@ -5,7 +5,7 @@
 
   <!-- Main settings -->
   <PropertyGroup>
-    <PackageName>R7.Epsilon</PackageName>
+    <PackageName>R7.Zeta</PackageName>
     <MainProjectName>R7.Epsilon</MainProjectName>
     <MainProjectPath>../$(MainProjectName)</MainProjectPath>
     <NodeModulesPath>../node_modules</NodeModulesPath>

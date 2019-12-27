@@ -1,6 +1,6 @@
 ﻿//
 //  File: DevelopmentPortalConfigTests.cs
-//  Project: R7.Epsilon
+//  Project: R7.Zeta
 //
 //  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
@@ -19,13 +19,13 @@
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-using R7.Epsilon.Components;
+using R7.Zeta.Components;
 using Xunit;
 using System.IO;
 using YamlDotNet.Serialization.NamingConventions;
 using YamlDotNet.Serialization;
 
-namespace R7.Epsilon.Tests
+namespace R7.Zeta.Tests
 {
     public class DevelopmentPortalConfigTests
     {

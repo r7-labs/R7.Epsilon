@@ -1,6 +1,6 @@
 ﻿//
 //  File: ControlLocalizer.cs
-//  Project: R7.Epsilon
+//  Project: R7.Zeta
 //
 //  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
@@ -26,7 +26,7 @@ using System.Web.UI;
 using DotNetNuke.Services.Localization;
 using DotNetNuke.UI.Skins;
 
-namespace R7.Epsilon.Components
+namespace R7.Zeta.Components
 {
     public class ControlLocalizer
     {

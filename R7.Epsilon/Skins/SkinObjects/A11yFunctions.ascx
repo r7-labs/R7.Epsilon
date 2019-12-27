@@ -1,5 +1,5 @@
-﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.Skins.SkinObjects.EpsilonSkinObjectBase" %>
-<%@ Import Namespace="R7.Epsilon.Components" %>
+﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Zeta.Skins.SkinObjects.EpsilonSkinObjectBase" %>
+<%@ Import Namespace="R7.Zeta.Components" %>
 <%@ Import Namespace="DnnGlobals=DotNetNuke.Common.Globals" %>
 <div class="dropdown" style="display:inline-block">
 	<button type="button" class="btn btn-lg dropdown-toggle skin-a11y-btn"

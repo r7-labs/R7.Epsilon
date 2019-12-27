@@ -1,6 +1,6 @@
-﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.Skins.SkinObjects.EpsilonSkinObjectBase" %>
+﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Zeta.Skins.SkinObjects.EpsilonSkinObjectBase" %>
 <%@ Register TagPrefix="dnn" TagName="LANGUAGE" Src="~/Admin/Skins/Language.ascx" %>
-<%@ Import Namespace="R7.Epsilon.Components" %>
+<%@ Import Namespace="R7.Zeta.Components" %>
 <div class="dropdown" style="display:inline-block">
 	<button type="button" class="btn btn-lg dropdown-toggle skin-languages-btn" data-toggle="dropdown"
 		title='<%: T.GetString("Languages.Text") %>'>

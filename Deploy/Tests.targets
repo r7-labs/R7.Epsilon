@@ -9,7 +9,7 @@
     <XmlPeek XmlInputPath="../R7.Epsilon.Tests/packages.config" Query="/packages/package[@id='xunit.runner.console']/@version">
       <Output TaskParameter="Result" PropertyName="XunitRunnerConsolePackageVersion" />
     </XmlPeek>
-    <Exec Condition=" '$(OS)' == 'Unix' " Command="mono ../packages/xunit.runner.console.$(XunitRunnerConsolePackageVersion)/tools/xunit.console.exe ..\R7.Epsilon.Tests\bin\$(Configuration)\R7.Epsilon.Tests.dll" />
-    <Exec Condition=" '$(OS)' != 'Unix' " Command="..\packages\xunit.runner.console.$(XunitRunnerConsolePackageVersion)\tools\xunit.console ..\R7.Epsilon.Tests\bin\$(Configuration)\R7.Epsilon.Tests.dll" />
+    <Exec Condition=" '$(OS)' == 'Unix' " Command="mono ../packages/xunit.runner.console.$(XunitRunnerConsolePackageVersion)/tools/xunit.console.exe ..\R7.Epsilon.Tests\bin\$(Configuration)\R7.Zeta.Tests.dll" />
+    <Exec Condition=" '$(OS)' != 'Unix' " Command="..\packages\xunit.runner.console.$(XunitRunnerConsolePackageVersion)\tools\xunit.console ..\R7.Epsilon.Tests\bin\$(Configuration)\R7.Zeta.Tests.dll" />
   </Target>
 </Project>

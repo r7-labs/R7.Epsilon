@@ -1,6 +1,6 @@
 //
 //  File: MenuConfigExtensions.cs
-//  Project: R7.Epsilon
+//  Project: R7.Zeta
 //
 //  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
@@ -26,7 +26,7 @@ using System.Web.Compilation;
 using DotNetNuke.Services.Exceptions;
 using DotNetNuke.Web.DDRMenu;
 
-namespace R7.Epsilon.Components
+namespace R7.Zeta.Components
 {
     public static class MenuConfigExtensions
     {

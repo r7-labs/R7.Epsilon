@@ -1,7 +1,7 @@
 ﻿<dotnetnuke type="Package" version="5.0">
 	<packages>
-		<package name="R7.Epsilon Skin" type="Skin" version="02.00.00">
-			<friendlyName>R7.Epsilon</friendlyName>
+		<package name="R7.Zeta Skin" type="Skin" version="02.00.00">
+			<friendlyName>R7.Zeta</friendlyName>
 			<description>Highly customizable, multiportal, responsive skin for DNN Platfrom using Bootstrap 3. Requires installation via the Host/Extensions page.</description>
 			<owner>
 				<name>Roman M. Yagodin</name>
@@ -24,7 +24,7 @@
 			<components>
 				<component type="Cleanup" version="02.00.00">
 					<files>
-						<basePath>Portals\_default\Skins\R7.Epsilon\Skins\SkinObjects</basePath>
+						<basePath>Portals\_default\Skins\R7.Zeta\Skins\SkinObjects</basePath>
 						<file><name>PartialContentAlert.ascx</name></file>
 						<file><name>Founders.ascx</name></file>
 						<file><name>Functions.ascx</name></file>
@@ -37,11 +37,11 @@
 						<file><name>Banners\BannerLoader.ascx</name></file>
 						<file><name>Banners\BannerWrapper.ascx</name></file>
 					</files>
-						<basePath>Portals\_default\Skins\R7.Epsilon\Skins\css</basePath>
+						<basePath>Portals\_default\Skins\R7.Zeta\Skins\css</basePath>
 						<file><name>boostrap-theme.min.css</name></file>
 					</files>
 					<files>
-						<basePath>Portals\_default\Skins\R7.Epsilon\Skins\fonts</basePath>
+						<basePath>Portals\_default\Skins\R7.Zeta\Skins\fonts</basePath>
 						<file><name>glyphicons-halflings-regular.eot</name></file>
 						<file><name>glyphicons-halflings-regular.svg</name></file>
 						<file><name>glyphicons-halflings-regular.ttf</name></file>
@@ -49,21 +49,21 @@
 						<file><name>glyphicons-halflings-regular.woff2</name></file>
 					</files>
 					<files>
-						<basePath>Portals\_default\Skins\R7.Epsilon\Skins\Layouts</basePath>
+						<basePath>Portals\_default\Skins\R7.Zeta\Skins\Layouts</basePath>
 						<file><name>Default.xml</name></file>
 						<file><name>Default_A11y.xml</name></file>
 						<file><name>Home.xml</name></file>
 						<file><name>Universal.xml</name></file>
 					</files>
 					<files>
-						<basePath>Portals\_default\Skins\R7.Epsilon\css</basePath>
+						<basePath>Portals\_default\Skins\R7.Zeta\css</basePath>
 						<file><name>default-skin.min.css</name></file>
 						<file><name>a11y-skin.min.css</name></file>
 						<file><name>consulting-skin.min.css</name></file>
 						<file><name>world-skin.min.css</name></file>
 					</files>
 					<files>
-						<basePath>Portals\_default\Containers\R7.Epsilon</basePath>
+						<basePath>Portals\_default\Containers\R7.Zeta</basePath>
 						<file><name>Message_Success.ascx</name></file>
 						<file><name>Message_Info.ascx</name></file>
 						<file><name>Message_Warning.ascx</name></file>
@@ -85,13 +85,13 @@
 				</component>
 				<component type="Cleanup" version="01.14.00">
 					<files>
-						<basePath>Portals\_default\Skins\R7.Epsilon\SkinObjects</basePath>
+						<basePath>Portals\_default\Skins\R7.Zeta\SkinObjects</basePath>
 						<file><name>SocialShareScripts.ascx</name></file>
 					</files>
 				</component>
 				<component type="Cleanup" version="01.13.00">
 					<files>
-						<basePath>Portals\_default\Skins\R7.Epsilon</basePath>
+						<basePath>Portals\_default\Skins\R7.Zeta</basePath>
 						<file><name>Admin.doctype.xml</name></file>
 						<file><name>Custom.doctype.xml</name></file>
 						<file><name>Edit.doctype.xml</name></file>
@@ -105,13 +105,13 @@
 				</component>
 				<component type="Skin">
 					<skinFiles>
-						<skinName>R7.Epsilon</skinName>
-						<basePath>Portals\_default\Skins\R7.Epsilon</basePath>
+						<skinName>R7.Zeta</skinName>
+						<basePath>Portals\_default\Skins\R7.Zeta</basePath>
 					</skinFiles>
 				</component>
 				<component type="ResourceFile">
 					<resourceFiles>
-						<basePath>Portals\_default\Skins\R7.Epsilon</basePath>
+						<basePath>Portals\_default\Skins\R7.Zeta</basePath>
 						<resourceFile>
 							<name>Resources_Skins.zip</name>
 						</resourceFile>
@@ -119,7 +119,7 @@
 				</component>
 				<component type="ResourceFile">
 					<resourceFiles>
-						<basePath>DesktopModules\R7.Epsilon</basePath>
+						<basePath>DesktopModules\R7.Zeta</basePath>
 						<resourceFile>
 							<name>Resources_Modules.zip</name>
 						</resourceFile>
@@ -138,7 +138,7 @@
 						<basePath>bin</basePath>
 						<assembly>
 							<path>bin</path>
-							<name>R7.Epsilon.dll</name>
+							<name>R7.Zeta.dll</name>
 						</assembly>
 						<assembly>
 							<path>bin</path>
@@ -148,9 +148,9 @@
 				</component>
 			</components>
 		</package>
-		<package name="R7.Epsilon Containers" type="Container" version="02.00.00">
-			<friendlyName>R7.Epsilon</friendlyName>
-			<description>Containers for the R7.Epsilon Skin package.</description>
+		<package name="R7.Zeta Containers" type="Container" version="02.00.00">
+			<friendlyName>R7.Zeta</friendlyName>
+			<description>Containers for the R7.Zeta Skin package.</description>
 			<owner>
 				<name>Roman M. Yagodin</name>
 				<organization>R7.Labs</organization>
@@ -162,13 +162,13 @@
 			<components>
 				<component type="Container">
 					<containerFiles>
-						<containerName>R7.Epsilon</containerName>
-						<basePath>Portals\_default\Containers\R7.Epsilon</basePath>
+						<containerName>R7.Zeta</containerName>
+						<basePath>Portals\_default\Containers\R7.Zeta</basePath>
 					</containerFiles>
 				</component>
 				<component type="ResourceFile">
 					<resourceFiles>
-						<basePath>Portals\_default\Containers\R7.Epsilon</basePath>
+						<basePath>Portals\_default\Containers\R7.Zeta</basePath>
 						<resourceFile>
 							<name>Resources_Containers.zip</name>
 						</resourceFile>

@@ -1,6 +1,6 @@
 ﻿//
 //  File: EpsilonContainerBase.cs
-//  Project: R7.Epsilon
+//  Project: R7.Zeta
 //
 //  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
@@ -22,7 +22,7 @@
 using DotNetNuke.Entities.Portals;
 using DotNetNuke.UI.Containers;
 
-namespace R7.Epsilon.Containers
+namespace R7.Zeta.Containers
 {
     public class EpsilonContainerBase: Container
     {

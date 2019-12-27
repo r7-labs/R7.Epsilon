@@ -66,9 +66,9 @@
 
     <!-- Declare binaries -->
     <ItemGroup>
-      <InstallBinaryFiles Include="$(MainProjectOutputPath)/$(MainProjectName)*.dll" />
+      <InstallBinaryFiles Include="$(MainProjectOutputPath)/R7.Zeta*.dll" />
       <!-- TODO: Provide separate resource package for debugger symbols and XML docs -->
-      <InstallBinaryFiles Include="$(MainProjectOutputPath)/$(MainProjectName)*.pdb" Condition=" '$(Configuration)' == 'Debug' "/>
+      <InstallBinaryFiles Include="$(MainProjectOutputPath)/R7.Zeta*.pdb" Condition=" '$(Configuration)' == 'Debug' "/>
     </ItemGroup>
 
     <!-- Declare external JS files -->

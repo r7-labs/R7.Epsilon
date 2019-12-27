@@ -1,6 +1,6 @@
 ﻿//
 //  File: PageInfo.ascx.cs
-//  Project: R7.Epsilon
+//  Project: R7.Zeta
 //
 //  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
@@ -24,7 +24,7 @@ using DotNetNuke.Entities.Content;
 using DotNetNuke.Entities.Modules;
 using DotNetNuke.Entities.Portals;
 
-namespace R7.Epsilon.Skins.SkinObjects
+namespace R7.Zeta.Skins.SkinObjects
 {
     public class PageInfo : EpsilonSkinObjectBase
     {

@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{46155C3C-2950-4AA1-AEDD-B5A0C4F4C421}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>R7.Epsilon.Tests</RootNamespace>
-    <AssemblyName>R7.Epsilon.Tests</AssemblyName>
+    <RootNamespace>R7.Zeta.Tests</RootNamespace>
+    <AssemblyName>R7.Zeta.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <ReleaseVersion>2.0-beta.1</ReleaseVersion>
   </PropertyGroup>

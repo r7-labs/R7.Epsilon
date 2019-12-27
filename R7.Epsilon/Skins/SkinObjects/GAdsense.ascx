@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.Skins.SkinObjects.EpsilonSkinObjectBase" %>
+﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Zeta.Skins.SkinObjects.EpsilonSkinObjectBase" %>
 <%
 // HACK: GH-77 Try to resolve Google Adsense complaints about missing content
 if (!string.IsNullOrEmpty (Config.Adsense.Client) && !Request.RawUrl.ToLowerInvariant ().Contains ("/login?returnurl=")) {

@@ -1,6 +1,6 @@
 ﻿//
 //  File: Const.cs
-//  Project: R7.Epsilon
+//  Project: R7.Zeta
 //
 //  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
@@ -19,12 +19,12 @@
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-namespace R7.Epsilon.Components
+namespace R7.Zeta.Components
 {
     public static class Const
     {
-        public const string COOKIE_PREFIX = "R7.Epsilon.";
+        public const string COOKIE_PREFIX = "R7.Zeta.";
 
-        public const string SKIN_PATH = "~/Portals/_default/Skins/R7.Epsilon/";
+        public const string SKIN_PATH = "~/Portals/_default/Skins/R7.Zeta/";
     }
 }

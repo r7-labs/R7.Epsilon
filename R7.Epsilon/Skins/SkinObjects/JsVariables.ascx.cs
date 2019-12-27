@@ -1,6 +1,6 @@
 ﻿//
 //  File: JsVariables.ascx.cs
-//  Project: R7.Epsilon
+//  Project: R7.Zeta
 //
 //  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
@@ -21,7 +21,7 @@
 
 using System.Text;
 
-namespace R7.Epsilon.Skins.SkinObjects
+namespace R7.Zeta.Skins.SkinObjects
 {
     // TODO: Introduce ClientConfig class, serialize it to JSON
     public class JsVariables: EpsilonSkinObjectBase

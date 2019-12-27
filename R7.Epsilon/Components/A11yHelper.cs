@@ -1,6 +1,6 @@
 ﻿//
 //  File: A11yHelper.cs
-//  Project: R7.Epsilon
+//  Project: R7.Zeta
 //
 //  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
@@ -24,7 +24,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace R7.Epsilon.Components
+namespace R7.Zeta.Components
 {
     public static class A11yHelper
     {

@@ -1,6 +1,6 @@
 ﻿//
 //  File: BreadcrumbMenu.ascx.cs
-//  Project: R7.Epsilon
+//  Project: R7.Zeta
 //
 //  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
@@ -22,10 +22,10 @@
 using System;
 using System.Collections.Generic;
 using DotNetNuke.Web.DDRMenu.TemplateEngine;
-using R7.Epsilon.Menus;
+using R7.Zeta.Menus;
 using DDRMenu = DotNetNuke.Web.DDRMenu;
 
-namespace R7.Epsilon.Skins.SkinObjects
+namespace R7.Zeta.Skins.SkinObjects
 {
     public class BreadcrumbMenu: EpsilonMenuBase
     {

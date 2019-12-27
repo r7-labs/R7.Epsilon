@@ -1,6 +1,6 @@
 //
 //  File: IEpsilonSkinPart.cs
-//  Project: R7.Epsilon
+//  Project: R7.Zeta
 //
 //  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
@@ -20,9 +20,9 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using DotNetNuke.Entities.Tabs;
-using R7.Epsilon.Components;
+using R7.Zeta.Components;
 
-namespace R7.Epsilon.Skins
+namespace R7.Zeta.Skins
 {
     public interface IEpsilonSkinPart
     {

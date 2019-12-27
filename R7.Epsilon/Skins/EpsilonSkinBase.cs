@@ -1,6 +1,6 @@
 ﻿//
 //  File: EpsilonSkinBase.cs
-//  Project: R7.Epsilon
+//  Project: R7.Zeta
 //
 //  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
@@ -25,9 +25,9 @@ using System.Web.UI.HtmlControls;
 using DotNetNuke.Common;
 using DotNetNuke.Entities.Tabs;
 using DotNetNuke.UI.Skins;
-using R7.Epsilon.Components;
+using R7.Zeta.Components;
 
-namespace R7.Epsilon.Skins
+namespace R7.Zeta.Skins
 {
     public class EpsilonSkinBase : Skin, IEpsilonSkinPart
     {

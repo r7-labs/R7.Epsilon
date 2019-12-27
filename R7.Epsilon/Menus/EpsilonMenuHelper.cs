@@ -1,6 +1,6 @@
 //
 //  File: EpsilonMenuHelper.cs
-//  Project: R7.Epsilon
+//  Project: R7.Zeta
 //
 //  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
@@ -24,9 +24,9 @@ using System.Web;
 using DotNetNuke.Web.DDRMenu;
 using DotNetNuke.Entities.Portals;
 using DotNetNuke.Services.Localization;
-using R7.Epsilon.Components;
+using R7.Zeta.Components;
 
-namespace R7.Epsilon.Menus
+namespace R7.Zeta.Menus
 {
     public static class EpsilonMenuHelper
     {

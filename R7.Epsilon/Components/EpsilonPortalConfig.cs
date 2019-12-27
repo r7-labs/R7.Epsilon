@@ -1,6 +1,6 @@
 ﻿//
 //  File: EpsilonPortalConfig.cs
-//  Project: R7.Epsilon
+//  Project: R7.Zeta
 //
 //  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
@@ -23,7 +23,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Web;
 
-namespace R7.Epsilon.Components
+namespace R7.Zeta.Components
 {
     public class EpsilonPortalConfig
     {
