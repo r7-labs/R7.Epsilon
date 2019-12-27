@@ -37,6 +37,7 @@
 						<file><name>Banners\BannerLoader.ascx</name></file>
 						<file><name>Banners\BannerWrapper.ascx</name></file>
 					</files>
+					<files>
 						<basePath>Portals\_default\Skins\R7.Epsilon\Skins\css</basePath>
 						<file><name>boostrap-theme.min.css</name></file>
 					</files>
@@ -119,14 +120,6 @@
 				</component>
 				<component type="ResourceFile">
 					<resourceFiles>
-						<basePath>DesktopModules\R7.Epsilon</basePath>
-						<resourceFile>
-							<name>Resources_Modules.zip</name>
-						</resourceFile>
-					</resourceFiles>
-				</component>
-				<component type="ResourceFile">
-					<resourceFiles>
 						<basePath>DesktopModules\DDRMenu</basePath>
 						<resourceFile>
 							<name>Resources_Menus.zip</name>
@@ -139,10 +132,6 @@
 						<assembly>
 							<path>bin</path>
 							<name>R7.Epsilon.dll</name>
-						</assembly>
-						<assembly>
-							<path>bin</path>
-							<name>YamlDotNet.dll</name>
 						</assembly>
 					</assemblies>
 				</component>
