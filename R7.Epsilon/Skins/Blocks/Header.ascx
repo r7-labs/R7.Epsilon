@@ -12,19 +12,17 @@
 <%@ Register TagPrefix="skin" TagName="LOGOMOBILE" Src="~/Portals/_default/Skins/R7.Zeta/SkinObjects/LogoMobile.ascx" %>
 <%@ Register TagPrefix="skin" TagName="CUSTOMCONTENT" Src="~/Portals/_default/Skins/R7.Zeta/SkinObjects/CustomContent.ascx" %>
 <div class="container">
-    <div class="row">
+	<div class="row">
 		<a href='<%= DnnGlobals.NavigateURL ("", "a11y", "true") %>' class="sr-only sr-only-focusable" itemprop="copy"><%: T.GetString ("A11yWebsiteVersion.Text") %></a>
 		<a href="#content" class="sr-only sr-only-focusable"><%: T.GetString ("SkipToContent.Text") %></a>
     </div>
-</div>
-<div class="container --sticky-top">
     <div class="row">
-        <div class="col-xs-12 col-md col-sm-6 col-lg-3">
+        <div class="col-md col-sm-6 col-lg-3 text-center text-sm-left align-self-center">
             <div class="navbar-brand skin-navbar-brand-logo">
                 <dnn:LOGO runat="server" id="dnnLOGO" />
             </div>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md col-lg-3 order-md-last text-sm-right">
+        <div class="col-sm-6 col-md-auto col-lg-3 order-md-last text-center text-sm-right align-self-center">
 			<button type="button" role="search" class="btn btn-lg skin-search-btn" style="display:inline-block"
                 data-toggle="modal" data-target="#searchModal"
                 title='<%: T.GetString("SearchModalButton.Text") %>'>
@@ -42,8 +40,8 @@
 				</div>
 			<% } %>
         </div>
-		<hr class="w-100 d-md-none" />
-		<div class="col-xs-12 col-sm-12 col-md col-lg-6 text-lg-center">
+		<hr class="w-100 d-md-none my-2" />
+		<div class="col-sm-12 col-md col-lg-6 text-center align-self-center">
 			<skin:A11YFUNCTIONS runat="server" />
 			<skin:LANGUAGES runat="server" />
 			<% if (Config.Websites.Count > 0) { %>
