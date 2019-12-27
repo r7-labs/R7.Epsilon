@@ -72,7 +72,7 @@ namespace R7.Epsilon.Components
             return !string.IsNullOrWhiteSpace (localizedValue) ? localizedValue : GetString(defaultKey);
         }
 
-        public string SafeGetString (string key, string defaultValue)
+        public string GetStringOrDefault (string key, string defaultValue)
         {
             var localizedValue = GetString (key);
 

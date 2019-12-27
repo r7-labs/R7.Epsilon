@@ -48,14 +48,14 @@ namespace R7.Epsilon.Skins.SkinObjects
 
         protected string LastContentModifiedOnDate {
             get {
-                return SafeGetLastModifiedContentItem ().LastModifiedOnDate.ToString (T.SafeGetString ("PublishedOnDate_Format.Text", "MM/dd/yyyy"));
+                return SafeGetLastModifiedContentItem ().LastModifiedOnDate.ToString (T.GetStringOrDefault ("PublishedOnDate_Format.Text", "MM/dd/yyyy"));
             }
         }
 
         protected string LastContentModifiedByUserName {
             get {
                 var user = SafeGetLastModifiedContentItem ().LastModifiedByUser (PortalSettings.PortalId);
-                return (user != null) ? user.DisplayName : T.SafeGetString ("SystemUser.Text", "System");
+                return (user != null) ? user.DisplayName : T.GetStringOrDefault ("SystemUser.Text", "System");
             }
         }
 
