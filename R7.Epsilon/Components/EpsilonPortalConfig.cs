@@ -106,11 +106,9 @@ namespace R7.Epsilon.Components
 
     public class AdsenseConfig
     {
-        // TODO: Should be empty string?
-        public string Client { get; set; } = "pub-0000000000000000";
+        public string Client { get; set; }
 
-        // TODO: Should be empty string?
-        public string Slot { get; set; } = "0000000000";
+        public string Slot { get; set; }
     }
 
     public class SocialGroupConfig
