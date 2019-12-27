@@ -12,247 +12,247 @@
 	<resheader name="writer">
 		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
 	</resheader>
-    <data name="SystemUser.Text" xml:space="preserve">
-        <value>System</value>
-    </data>
-    <data name="A11y_Tooltip.Text" xml:space="preserve">
-        <value>Accessibility features</value>
-    </data>
+	<data name="SystemUser.Text" xml:space="preserve">
+		<value>System</value>
+	</data>
+	<data name="A11y_Tooltip.Text" xml:space="preserve">
+		<value>Accessibility features</value>
+	</data>
 	<data name="A11y_Icon.Text" xml:space="preserve">
-        <value><![CDATA[<i class="fas fa-universal-access"></i>]]></value>
-    </data>
+		<value><![CDATA[<i class="fas fa-universal-access"></i>]]></value>
+	</data>
 	<data name="A11yDisablePopups.Text" xml:space="preserve">
-        <value>Disable modal popups</value>
-    </data>
+		<value>Disable modal popups</value>
+	</data>
 	<data name="A11yIncreaseFontSize.Text" xml:space="preserve">
-        <value>Increase font size</value>
-    </data>
+		<value>Increase font size</value>
+	</data>
 	<data name="A11yDecreaseFontSize.Text" xml:space="preserve">
-        <value>Decrease font size</value>
-    </data>
+		<value>Decrease font size</value>
+	</data>
 	<data name="A11yRestoreDefaults.Text" xml:space="preserve">
-        <value>Restore defaults</value>
-    </data>
+		<value>Restore defaults</value>
+	</data>
 	<data name="A11yWebsiteVersion.Text" xml:space="preserve">
-        <value>Accessible website version</value>
-    </data>
-    <data name="SkinCopyright.Text" xml:space="preserve">
-        <value><![CDATA[<a href="https://github.com/roman-yagodin/R7.Epsilon" target="_blank">R7.Epsilon Theme v{version}</a>]]></value>
-    </data>
-    <data name="CopyrightNote.Text" xml:space="preserve">
-        <value>By copying the text and photos the reference to the site is mandatory</value>
-    </data>
-    <data name="ButtonUp_Tooltip.Text" xml:space="preserve">
-        <value>Click here to go to the top of the page.</value>
-    </data>
-    <data name="ToggleNavigation.Text" xml:space="preserve">
-        <value>Toggle navigation</value>
-    </data>
-    <data name="SkipToContent.Text" xml:space="preserve">
-        <value>Skip to main content</value>
-    </data>
-    <data name="PublishedOnDate_Format.Text" xml:space="preserve">
-        <value>dd MMM yyyy</value>
-    </data>
+		<value>Accessible website version</value>
+	</data>
+	<data name="SkinCopyright.Text" xml:space="preserve">
+		<value><![CDATA[<a href="https://github.com/roman-yagodin/R7.Epsilon" target="_blank">R7.Epsilon Theme v{version}</a>]]></value>
+	</data>
+	<data name="CopyrightNote.Text" xml:space="preserve">
+		<value>By copying the text and photos the reference to the site is mandatory</value>
+	</data>
+	<data name="ButtonUp_Tooltip.Text" xml:space="preserve">
+		<value>Click here to go to the top of the page.</value>
+	</data>
+	<data name="ToggleNavigation.Text" xml:space="preserve">
+		<value>Toggle navigation</value>
+	</data>
+	<data name="SkipToContent.Text" xml:space="preserve">
+		<value>Skip to main content</value>
+	</data>
+	<data name="PublishedOnDate_Format.Text" xml:space="preserve">
+		<value>dd MMM yyyy</value>
+	</data>
 	<data name="BrowserAlert_Title.Text" xml:space="preserve">
-        <value>Warning!</value>
-    </data>
-    <data name="BrowserAlert_Body.Text" xml:space="preserve">
-        <value>We have determined that you are using an outdated version of the browser. As a result, our website may be displayed incorrectly, some of its features may not work properly or will not be available.</value>
-    </data>
+		<value>Warning!</value>
+	</data>
+	<data name="BrowserAlert_Body.Text" xml:space="preserve">
+		<value>We have determined that you are using an outdated version of the browser. As a result, our website may be displayed incorrectly, some of its features may not work properly or will not be available.</value>
+	</data>
 	<data name="CookiesAlert_Title.Text" xml:space="preserve">
-        <value>Note:</value>
-    </data>
+		<value>Note:</value>
+	</data>
 	<data name="CookiesDisabledAlert_Title.Text" xml:space="preserve">
-        <value>Warning!</value>
-    </data>
-    <data name="CookiesAlert_Body.Text" xml:space="preserve">
-        <value><![CDATA[<p>Like many other websites, we use <strong><a href="https://en.wikipedia.org/wiki/HTTP_cookie" target="_blank">cookies</a></strong> to ensure that we provide you with the best experience.</p>]]></value>
-    </data>
+		<value>Warning!</value>
+	</data>
+	<data name="CookiesAlert_Body.Text" xml:space="preserve">
+		<value><![CDATA[<p>Like many other websites, we use <strong><a href="https://en.wikipedia.org/wiki/HTTP_cookie" target="_blank">cookies</a></strong> to ensure that we provide you with the best experience.</p>]]></value>
+	</data>
 	<data name="CookiesDisabledAlert_Body.Text" xml:space="preserve">
-        <value><![CDATA[<p>Like many other websites, we use <strong><a href="https://en.wikipedia.org/wiki/HTTP_cookie" target="_blank">cookies</a></strong> to ensure that we provide you with the best experience.</p>
+		<value><![CDATA[<p>Like many other websites, we use <strong><a href="https://en.wikipedia.org/wiki/HTTP_cookie" target="_blank">cookies</a></strong> to ensure that we provide you with the best experience.</p>
 		<p>We have determined that cookies are disabled in your browser, so some features of our website will not be available or may not work properly.
 		<p><strong>Please enable cookies in your browser and reload the page!</strong></p>]]></value>
-    </data>
+	</data>
 	<data name="CookiesAlert_Button_Label.Text" xml:space="preserve">
-        <value>Got it!</value>
-    </data>
-    <data name="Close.Text" xml:space="preserve">
-        <value>Close</value>
-    </data>
-    <data name="SubMenuClose.Text" xml:space="preserve">
-        <value>Close Menu</value>
-    </data>
-    <data name="FeedbackButton_Tooltip.Text" xml:space="preserve">
-        <value>Click the button to open feedback form. You also can preliminarily select fragment of text on the page to pass it to the feedback form.</value>
-    </data>
+		<value>Got it!</value>
+	</data>
+	<data name="Close.Text" xml:space="preserve">
+		<value>Close</value>
+	</data>
+	<data name="SubMenuClose.Text" xml:space="preserve">
+		<value>Close Menu</value>
+	</data>
+	<data name="FeedbackButton_Tooltip.Text" xml:space="preserve">
+		<value>Click the button to open feedback form. You also can preliminarily select fragment of text on the page to pass it to the feedback form.</value>
+	</data>
 	<data name="SocialGroups.Text" xml:space="preserve">
-        <value>Follow Us!</value>
-    </data>
-    <data name="VKontakte.Text" xml:space="preserve">
-        <value>VKontakte</value>
-    </data>
-    <data name="Facebook.Text" xml:space="preserve">
-        <value>Facebook</value>
-    </data>
-    <data name="Twitter.Text" xml:space="preserve">
-        <value>Twitter</value>
-    </data>
-    <data name="Odnoklassniki.Text" xml:space="preserve">
-        <value>Odnoklassniki</value>
-    </data>
-    <data name="YouTube.Text" xml:space="preserve">
-        <value>YouTube</value>
-    </data>
+		<value>Follow Us!</value>
+	</data>
+	<data name="VKontakte.Text" xml:space="preserve">
+		<value>VKontakte</value>
+	</data>
+	<data name="Facebook.Text" xml:space="preserve">
+		<value>Facebook</value>
+	</data>
+	<data name="Twitter.Text" xml:space="preserve">
+		<value>Twitter</value>
+	</data>
+	<data name="Odnoklassniki.Text" xml:space="preserve">
+		<value>Odnoklassniki</value>
+	</data>
+	<data name="YouTube.Text" xml:space="preserve">
+		<value>YouTube</value>
+	</data>
 	<data name="Instagram.Text" xml:space="preserve">
-        <value>Instagram</value>
-    </data>
+		<value>Instagram</value>
+	</data>
 	<data name="LinkedIn.Text" xml:space="preserve">
-        <value>LinkedIn</value>
-    </data>
+		<value>LinkedIn</value>
+	</data>
 	<data name="Reddit.Text" xml:space="preserve">
-        <value>Reddit</value>
-    </data>
-    <data name="YandexCycounter.Text" xml:space="preserve">
-        <value>Yandex website quality index</value>
-    </data>
-    <data xml:space="preserve" name="FooterPane1_Content.Text">
-        <value>[FooterPane1_Content]</value>
-    </data>
-    <data xml:space="preserve" name="FooterPane2_Content.Text">
-        <value>[FooterPane2_Content]</value>
-    </data>
-    <data xml:space="preserve" name="FooterPane3_Content.Text">
-        <value>[FooterPane3_Content]</value>
-    </data>
-	<data xml:space="preserve" name="FooterPane4_Content.Text">
-        <value>[FooterPane4_Content]</value>
-    </data>
+		<value>Reddit</value>
+	</data>
+	<data name="YandexCycounter.Text" xml:space="preserve">
+		<value>Yandex website quality index</value>
+	</data>
+	<data name="FooterPane1_Content.Text" xml:space="preserve">
+		<value>[FooterPane1_Content]</value>
+	</data>
+	<data name="FooterPane2_Content.Text" xml:space="preserve">
+		<value>[FooterPane2_Content]</value>
+	</data>
+	<data name="FooterPane3_Content.Text" xml:space="preserve">
+		<value>[FooterPane3_Content]</value>
+	</data>
+	<data name="FooterPane4_Content.Text" xml:space="preserve">
+		<value>[FooterPane4_Content]</value>
+	</data>
 	<data name="Languages.Text" xml:space="preserve">
-        <value>Languages</value>
-    </data>
-    <data name="Websites.Text" xml:space="preserve">
-        <value>Our Websites</value>
-    </data>
+		<value>Languages</value>
+	</data>
+	<data name="Websites.Text" xml:space="preserve">
+		<value>Our Websites</value>
+	</data>
 	<data name="UserProfile.Text" xml:space="preserve">
-        <value>User Profile</value>
-    </data>
-    <data name="GoogleTranslate.Text" xml:space="preserve">
-        <value>Translate with Google</value>
-    </data>
-    <data name="AgeRating.Text" xml:space="preserve">
-        <value>12</value>
-    </data>
-    <data name="AgeRating_Tooltip.Text" xml:space="preserve">
-        <value>Information product for children since the age of twelve years - PEGI 12 (unless otherwise specified). Click the button to get more info.</value>
-    </data>
+		<value>User Profile</value>
+	</data>
+	<data name="GoogleTranslate.Text" xml:space="preserve">
+		<value>Translate with Google</value>
+	</data>
+	<data name="AgeRating.Text" xml:space="preserve">
+		<value>12</value>
+	</data>
+	<data name="AgeRating_Tooltip.Text" xml:space="preserve">
+		<value>Information product for children since the age of twelve years - PEGI 12 (unless otherwise specified). Click the button to get more info.</value>
+	</data>
 	<data name="AgeRating_Link.Text" xml:space="preserve">
 		<value>https://pegi.info/</value>
 	</data>
 	<data name="LastModified.Text" xml:space="preserve">
-        <value>Last Modified:</value>
-    </data>
+		<value>Last Modified:</value>
+	</data>
 	<data name="LastModified_Tooltip.Text" xml:space="preserve">
-        <value>Last modified date of page contents or settings.</value>
-    </data>
+		<value>Last modified date of page contents or settings.</value>
+	</data>
 	<data name="LastModifiedByUser_Tooltip.Text" xml:space="preserve">
-        <value>The last user who was modified the page contents or settings.</value>
-    </data>
-    <data name="Permalinks.Text" xml:space="preserve">
-        <value>Permalinks&#8230;</value>
-    </data>
+		<value>The last user who was modified the page contents or settings.</value>
+	</data>
+	<data name="Permalinks.Text" xml:space="preserve">
+		<value>Permalinks&#8230;</value>
+	</data>
 	<data name="Permalinks_Tooltip.Text" xml:space="preserve">
-        <value>Get permalink to share site content.</value>
-    </data>
+		<value>Get permalink to share site content.</value>
+	</data>
 	<data name="Permalinks_ModalTitle.Text" xml:space="preserve">
-        <value>Permalinks</value>
-    </data>
+		<value>Permalinks</value>
+	</data>
 	<data name="Permalinks_Help.Text" xml:space="preserve">
-        <value>Please use one of the permalinks provided below to share our website content.
+		<value>Please use one of the permalinks provided below to share our website content.
 		Do not use the URL copied from your browser address line for that - it could easily change and so the copied link will get broken soon! </value>
-    </data>
+	</data>
 	<data name="CopyPermalink.Text" xml:space="preserve">
-        <value>copy</value>
-    </data>
+		<value>copy</value>
+	</data>
 	<data name="CopyPermalink_Tooltip.Text" xml:space="preserve">
-        <value>Click to copy permalink to the clipboard.</value>
-    </data>
+		<value>Click to copy permalink to the clipboard.</value>
+	</data>
 	<data name="CreateShortUrl_Tooltip.Text" xml:space="preserve">
-        <value>Create short URL with </value>
-    </data>
+		<value>Create short URL with </value>
+	</data>
 	<data name="Feedback_Template.Text" xml:space="preserve">
-        <value>\n\n---{content}</value>
-    </data>
-    <data name="FeedbackPage_Template.Text" xml:space="preserve">
-        <value>\nPage: {origin}/tabid/{tabid}</value>
-    </data>
-    <data name="FeedbackSelection_Template.Text" xml:space="preserve">
-        <value>\nSelection: \&quot;{selection}\&quot;</value>
-    </data>
+		<value>\n\n---{content}</value>
+	</data>
+	<data name="FeedbackPage_Template.Text" xml:space="preserve">
+		<value>\nPage: {origin}/tabid/{tabid}</value>
+	</data>
+	<data name="FeedbackSelection_Template.Text" xml:space="preserve">
+		<value>\nSelection: \&quot;{selection}\&quot;</value>
+	</data>
 	<data name="FeedbackMessage.Text" xml:space="preserve">
-        <value>[FeedbackMessage.Text]</value>
-    </data>
-    <data name="PartialContentAlert_Title.Text" xml:space="preserve">
-        <value>Partial content</value>
-    </data>
+		<value>[FeedbackMessage.Text]</value>
+	</data>
+	<data name="PartialContentAlert_Title.Text" xml:space="preserve">
+		<value>Partial content</value>
+	</data>
 	<data name="PartialContentAlert_Template.Text" xml:space="preserve">
-        <value><![CDATA[<p class="mb-0">Below is shown the one of many blocks of information on the <strong>[TabName]</strong> page.
+		<value><![CDATA[<p class="mb-0">Below is shown the one of many blocks of information on the <strong>[TabName]</strong> page.
 			You can <a class="alert-link" href="[TabUrl]#[ModuleId]">navigate to this block</a> on the full page version.</p>]]>
 		</value>
-    </data>
+	</data>
 	<data name="PageNotPublishedAlert_Title.Text" xml:space="preserve">
-        <value>Page is not published</value>
-    </data>
+		<value>Page is not published</value>
+	</data>
 	<data name="PageNotPublishedAlert_Body.Text" xml:space="preserve">
-        <value>The page is not published. Probably its publication has expired, or its content is under development.</value>
-    </data>
-    <data name="SearchModalButton.Text" xml:space="preserve">
-        <value>Search</value>
-    </data>
-    <data name="SearchModalTitle.Text" xml:space="preserve">
-        <value>Search</value>
-    </data>
+		<value>The page is not published. Probably its publication has expired, or its content is under development.</value>
+	</data>
+	<data name="SearchModalButton.Text" xml:space="preserve">
+		<value>Search</value>
+	</data>
+	<data name="SearchModalTitle.Text" xml:space="preserve">
+		<value>Search</value>
+	</data>
 	<data name="SearchEngines.Text" xml:space="preserve">
-        <value>Not found you have looked for? Use web search engines to find content on our site:</value>
-    </data>
+		<value>Not found you have looked for? Use web search engines to find content on our site:</value>
+	</data>
 	<data name="SearchWith.Text" xml:space="preserve">
-        <value>Search with</value>
-    </data>
+		<value>Search with</value>
+	</data>
 	<data name="SearchEngineType_Google.Text" xml:space="preserve">
-        <value>Google</value>
-    </data>
+		<value>Google</value>
+	</data>
 	<data name="SearchEngineType_Yandex.Text" xml:space="preserve">
-        <value>Yandex</value>
-    </data>
+		<value>Yandex</value>
+	</data>
 	<data name="SearchEngineType_DuckDuckGo.Text" xml:space="preserve">
-        <value>DuckDuckGo</value>
-    </data>
-    <data name="ModalClose.Text" xml:space="preserve">
-        <value>Close</value>
-    </data>
+		<value>DuckDuckGo</value>
+	</data>
+	<data name="ModalClose.Text" xml:space="preserve">
+		<value>Close</value>
+	</data>
 	<data name="Theme_green.Text" xml:space="preserve">
-        <value>Green theme</value>
-    </data>
+		<value>Green theme</value>
+	</data>
 	<data name="Theme_blue.Text" xml:space="preserve">
-        <value>Blue theme</value>
-    </data>
+		<value>Blue theme</value>
+	</data>
 	<data name="Theme_brown.Text" xml:space="preserve">
-        <value>Brown theme</value>
-    </data>
+		<value>Brown theme</value>
+	</data>
 	<data name="Theme_contrast.Text" xml:space="preserve">
-        <value>Contrast theme</value>
-    </data>
+		<value>Contrast theme</value>
+	</data>
 	<data name="DefaultTheme.Text" xml:space="preserve">
-        <value>(default)</value>
-    </data>
+		<value>(default)</value>
+	</data>
 	<data name="DropCrumb_AriaLabel.Text" xml:space="preserve">
 		<value>Breadcrumbs navigation</value>
 	</data>
 	<data name="DropCrumb_Home.Text" xml:space="preserve">
-		<value><![CDATA[<i class='fas fa-home'></i>]]></value>
+		<value><![CDATA[<i class="fas fa-home"></i>]]></value>
 	</data>
 	<data name="DropCrumb_Home_Tooltip.Text" xml:space="preserve">
-		<value>Go to the home page.</value>
+		<value>Navigate to the home page.</value>
 	</data>
 	<data name="Menu_GoToPage.Text" xml:space="preserve">
 		<value>Navigate to page </value>
