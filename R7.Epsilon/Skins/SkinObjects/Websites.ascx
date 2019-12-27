@@ -9,7 +9,7 @@
 			<a class="dropdown-item" href="<%: site.Url %>" hreflang="<%: site.Hreflang %>" target="_blank">
 				<span class="skn-custom-content" data-resource-key="<%: site.Name %>">
 					<i class="fas fa-globe"></i>
-					<%: T.GetStringOrKey (site.Name) %>
+					<%: T.GetStringOrKey (site.Name + ".Text") %>
 				</span>
 			</a>
 		<% } %>
