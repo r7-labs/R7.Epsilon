@@ -120,14 +120,6 @@
 				</component>
 				<component type="ResourceFile">
 					<resourceFiles>
-						<basePath>DesktopModules\R7.Zeta</basePath>
-						<resourceFile>
-							<name>Resources_Modules.zip</name>
-						</resourceFile>
-					</resourceFiles>
-				</component>
-				<component type="ResourceFile">
-					<resourceFiles>
 						<basePath>DesktopModules\DDRMenu</basePath>
 						<resourceFile>
 							<name>Resources_Menus.zip</name>
