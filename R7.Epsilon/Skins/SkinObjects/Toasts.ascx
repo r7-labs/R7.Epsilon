@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.Skins.SkinObjects.EpsilonSkinObjectBase" %>
-<div class="skn-toasts" aria-live="polite" aria-atomic="true">
+<div class="skin-toasts" aria-live="polite" aria-atomic="true">
 	<div id="skin_toastBrowserAlert" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
 		<div class="toast-header">
 			<i class="fas fa-exclamation-triangle text-warning"></i> <strong class="ml-1 mr-auto"><%: T.GetString ("BrowserAlert_Title.Text") %></strong>

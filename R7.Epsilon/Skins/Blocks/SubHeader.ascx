@@ -5,12 +5,12 @@
 <%@ Register TagPrefix="skin" TagName="BREADCRUMBMENU" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/BreadcrumbMenu.ascx" %>
 <%@ Register TagPrefix="skin" TagName="SOCIALSHAREBUTTONS" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/SocialShareButtons.ascx" %>
 <%@ Register TagPrefix="skin" TagName="ALERTS" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/Alerts.ascx" %>
-<div class="skn-subheader">
+<div class="skin-subheader">
 	<% if (!Skin.Options.DisableBreadCrumb || !Skin.Options.DisableSocialShare) { %>
 		<div class="container">
 			<div class="row">
 				<div class="col">
-					<div class="skn-subheader-top">
+					<div class="skin-subheader-top">
 						<% if (!Skin.Options.DisableBreadCrumb) { %>
 							<skin:BREADCRUMBMENU runat="server" />
 						<% } %>

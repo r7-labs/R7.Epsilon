@@ -20,18 +20,18 @@
 <div class="container --sticky-top">
     <div class="row">
         <div class="col-xs-12 col-md col-sm-6 col-lg-3">
-            <div class="navbar-brand skn-navbar-brand-logo">
+            <div class="navbar-brand skin-navbar-brand-logo">
                 <dnn:LOGO runat="server" id="dnnLOGO" />
             </div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md col-lg-3 order-md-last text-sm-right">
-			<button type="button" role="search" class="btn btn-lg skn-search-btn" style="display:inline-block"
+			<button type="button" role="search" class="btn btn-lg skin-search-btn" style="display:inline-block"
                 data-toggle="modal" data-target="#searchModal"
                 title='<%: T.GetString("SearchModalButton.Text") %>'>
                 <i class="fas fa-search"></i>
             </button>
 			<% if (!Skin.Options.DisableLogin) { %>
-				<div class="dropdown skn-login" style="display:inline-block">
+				<div class="dropdown skin-login" style="display:inline-block">
 					<button type="button" class="btn btn-lg dropdown-toggle" data-toggle="dropdown" title='<%: T.GetString ("UserProfile.Text") %>'>
 						<i class="fas fa-user"></i>
 					</button>
@@ -55,12 +55,12 @@
 		</div>
 	</div>
 </div>
-<nav class="navbar navbar-expand-md bg-dark navbar-dark skn-menu skn-main-menu skn-primary-menu">
+<nav class="navbar navbar-expand-md bg-dark navbar-dark skin-menu skin-main-menu skin-primary-menu">
 	<div class="container">
 		<div class="navbar-brand d-md-none">
 			<skin:LOGOMOBILE runat="server" />
 		</div>
-		<button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".skn-main-menu .navbar-collapse">
+		<button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".skin-main-menu .navbar-collapse">
 			<span class="sr-only"><%: T.GetString ("ToggleNavigation.Text") %></span>
 			<span class="navbar-toggler-icon"></span>
 		</button>

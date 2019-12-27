@@ -7,7 +7,7 @@ Options.DisableLazyAds = true;
 Options.DisableRangy = true;
 %>
 <skin:START runat="server" />
-<div class="skn skn-popup">
+<div class="skin skin-popup">
 	<div id="ContentPane" runat="server" />
 </div>
 <skin:POPUPEND runat="server" />

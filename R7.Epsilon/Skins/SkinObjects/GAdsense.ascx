@@ -14,16 +14,16 @@ var adsenseScript = "<script async src=\"//pagead2.googlesyndication.com/pagead/
 "</script>";
 %>
 <%-- breakpoints from Bootstrap 4 grid system + 360px --%>
-<div class="ad skn-banner" data-lazyad="" data-matchmedia="only screen and (min-width : 768px)">
+<div class="ad skin-banner" data-lazyad="" data-matchmedia="only screen and (min-width : 768px)">
     <script type="text/lazyad"><!-- <%= adsenseScript %> --></script>
 </div>
-<div class="ad skn-banner" data-lazyad="" data-matchmedia="only screen and (min-width : 576px) and (max-width : 768px)">
+<div class="ad skin-banner" data-lazyad="" data-matchmedia="only screen and (min-width : 576px) and (max-width : 768px)">
     <script type="text/lazyad"><!-- <%= adsenseScript %> --></script>
 </div>
-<div class="ad skn-banner" data-lazyad="" data-matchmedia="only screen and (min-width : 360px) and (max-width : 575px)">
+<div class="ad skin-banner" data-lazyad="" data-matchmedia="only screen and (min-width : 360px) and (max-width : 575px)">
     <script type="text/lazyad"><!-- <%= adsenseScript %> --></script>
 </div>
-<div class="ad skn-banner" data-lazyad="" data-matchmedia="only screen and (max-width : 359px)">
+<div class="ad skin-banner" data-lazyad="" data-matchmedia="only screen and (max-width : 359px)">
     <script type="text/lazyad"><!-- <%= adsenseScript %> --></script>
 </div>
 <% } %>

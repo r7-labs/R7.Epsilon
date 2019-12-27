@@ -35,27 +35,27 @@
 
 @helper RenderMenu(IList<MenuNode> nodes) {
     if (nodes.Count > 0) {
-		<div id="@Model.ControlID" class="row skn-menu skn-cards-menu">
+		<div id="@Model.ControlID" class="row skin-menu skin-cards-menu">
 			@foreach (var node in nodes) {
-				<div class="col-lg-4 col-md-6 skn-cards-menu-col">
+				<div class="col-lg-4 col-md-6 skin-cards-menu-col">
 					<div class="card">
 						<div class="card-body">
 							<h5>
 								@if (node.Enabled) {
-									<a class="card-title skn-menu-parent-item @EpsilonMenuHelper.LeafNodeCssClasses(node)" href="@FormatUrl(node)">
+									<a class="card-title skin-menu-parent-item @EpsilonMenuHelper.LeafNodeCssClasses(node)" href="@FormatUrl(node)">
 										@EpsilonMenuHelper.RenderNodeBadge(node)
 										@node.Text
 									</a>
 								}
 								else {
-									<span class="card-title skn-menu-parent-item @EpsilonMenuHelper.LeafNodeCssClasses(node)">
+									<span class="card-title skin-menu-parent-item @EpsilonMenuHelper.LeafNodeCssClasses(node)">
 										@EpsilonMenuHelper.RenderNodeBadge(node)
 										@node.Text
 									</span>
 								}
 							</h5>
 							@if (GetShowDescription ()) {
-								<p class="card-text skn-cards-menu-description">@node.Description</p>
+								<p class="card-text skin-cards-menu-description">@node.Description</p>
 							}
 							@if (node.HasChildren ()) {
 								if (GetShowDescription ()) {
@@ -72,7 +72,7 @@
 }
 
 @helper RenderListFor(MenuNode parentNode) {
-	<ul class="card-text skn-cards-menu-submenu">
+	<ul class="card-text skin-cards-menu-submenu">
 		@foreach (var node in parentNode.Children) {
 			<li>
 				@if (node.Enabled) {

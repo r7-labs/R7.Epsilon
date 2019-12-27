@@ -7,8 +7,8 @@
 <%@ Register TagPrefix="skin" TagName="FOOTER" Src="~/Portals/_default/Skins/R7.Epsilon/Blocks/Footer.ascx" %>
 <%@ Register TagPrefix="skin" TagName="END" Src="~/Portals/_default/Skins/R7.Epsilon/Blocks/End.ascx" %>
 <skin:START runat="server" />
-<div class="skn">
-	<header class="skn-header">
+<div class="skin">
+	<header class="skin-header">
 		<skin:HEADER runat="server" />
 		<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_header.ascx"-->
 		<skin:SECONDARYHEADER runat="server" />
@@ -16,7 +16,7 @@
 	<skin:SUBHEADER runat="server" />
 	<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_section.ascx"-->
 	<skin:SUPFOOTER runat="server" />
-	<footer class="skn-footer">
+	<footer class="skin-footer">
 		<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_footer.ascx"-->
 		<skin:FOOTER runat="server" />
 	</footer>

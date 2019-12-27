@@ -64,13 +64,13 @@ window.skinCookiesAlertButtonClick = function (e) {
     function initUpButton (offset, duration) {
         $(window).scroll(function() {
             if ($(this).scrollTop() > offset) {
-                $('.skn-float-btn-up').fadeIn(duration);
+                $('.skin-float-btn-up').fadeIn(duration);
             } else {
-                $('.skn-float-btn-up').fadeOut(duration);
+                $('.skin-float-btn-up').fadeOut(duration);
             }
         });
 
-        $('.skn-float-btn-up').on ("click.epsilon", function (e) {
+        $('.skin-float-btn-up').on ("click.epsilon", function (e) {
             e.preventDefault();
             $(this).tooltip ('hide');
             $('html, body').animate({scrollTop: 0}, duration);
@@ -88,7 +88,7 @@ window.skinCookiesAlertButtonClick = function (e) {
     }
 
     function alterLanguage () {
-        $(".skn-languages .language-object a").each (function () {
+        $(".skin-languages .language-object a").each (function () {
             const lang = $(this).parent (".Language").attr ("title");
             const langCode = $(this).closest (".language-object").find ("option").filter (function () { return $(this).text() == lang; }).val ();
             $(this).addClass ("dropdown-item")
@@ -116,34 +116,34 @@ window.skinCookiesAlertButtonClick = function (e) {
     }
 
     function alterLogin () {
-        $(".skn-login li.userDisplayName > a").addClass ("dropdown-item");
-        $(".skn-login div.loginGroup > a").addClass ("dropdown-item");
-        $(".skn-login li.userMessages > a").addClass ("dropdown-item");
-        $(".skn-login li.userNotifications > a").addClass ("dropdown-item");
-        $(".skn-login li.userProfileImg > a").addClass ("dropdown-item");
+        $(".skin-login li.userDisplayName > a").addClass ("dropdown-item");
+        $(".skin-login div.loginGroup > a").addClass ("dropdown-item");
+        $(".skin-login li.userMessages > a").addClass ("dropdown-item");
+        $(".skin-login li.userNotifications > a").addClass ("dropdown-item");
+        $(".skin-login li.userProfileImg > a").addClass ("dropdown-item");
 
-        const loginGroup = $(".skn-login .loginGroup").first ().detach ();
+        const loginGroup = $(".skin-login .loginGroup").first ().detach ();
         const divider = "<li class='dropdown-divider'></li>";
 
-        const profileImg = $(".skn-login li.userProfileImg > a > img");
+        const profileImg = $(".skin-login li.userProfileImg > a > img");
         if (profileImg.length > 0) {
             profileImg.attr ("src", profileImg.attr ("src").replace ("h=32&w=32", "h=64&w=64"));
 
-            const profileLinkBlock = $(".skn-login li.userDisplayName").first ().detach ();
-            const profileImgBlock = $(".skn-login li.userProfileImg").first ().detach ();
+            const profileLinkBlock = $(".skin-login li.userDisplayName").first ().detach ();
+            const profileImgBlock = $(".skin-login li.userProfileImg").first ().detach ();
 
-            $(".skn-login ul.buttonGroup")
+            $(".skin-login ul.buttonGroup")
                 .prepend (divider)
                 .prepend (profileLinkBlock)
                 .prepend (profileImgBlock)
                 .append (divider)
                 .append (loginGroup.children ("a").prepend ("<i class='fas fa-lock'></i> "));
 
-                $(".skn-login li.userMessages > a > span").addClass ("badge badge-primary");
-                $(".skn-login li.userNotifications > a > span").addClass ("badge badge-secondary");
+                $(".skin-login li.userMessages > a > span").addClass ("badge badge-primary");
+                $(".skin-login li.userNotifications > a > span").addClass ("badge badge-secondary");
         }
         else {
-            $(".skn-login ul.buttonGroup")
+            $(".skin-login ul.buttonGroup")
                 .append (divider)
                 .append (loginGroup.children ("a").prepend ("<i class='fas fa-unlock-alt'></i> "));
         }
@@ -152,7 +152,7 @@ window.skinCookiesAlertButtonClick = function (e) {
     function initCustomContent () {
         // TODO: Also check for superusers and admins
         if (epsilon.isEditMode) {
-            $(".skn-custom-content").each (function () {
+            $(".skin-custom-content").each (function () {
                 $(this).prepend ("<div class='actionMenu'>"
                                 + "<ul class='dnn_mact'>"
                                 // TODO: Localize label
@@ -175,23 +175,23 @@ window.skinCookiesAlertButtonClick = function (e) {
     }
 
     function initTags () {
-        $(".skn-tags ul.categories > li > a").addClass ("badge badge-secondary");
+        $(".skin-tags ul.categories > li > a").addClass ("badge badge-secondary");
     }
 
     function initMainMenu () {
-        $(".skn-main-menu .collapse-toggle").on ("click.epsilon", function (e) {
+        $(".skin-main-menu .collapse-toggle").on ("click.epsilon", function (e) {
             $(this).toggleClass ("show").next (".collapse").collapse ("toggle");
             e.stopPropagation ();
             e.preventDefault ();
         });
         // hide collapses when parent dropdown hides
-        $(".skn-main-menu .dropdown").on("hidden.bs.dropdown", function (e) {
+        $(".skin-main-menu .dropdown").on("hidden.bs.dropdown", function (e) {
             $(this).find (".collapse-toggle").removeClass ("show").next (".collapse").collapse ("hide");
         });
 
-        $(".skn-main-menu .skn-submenu.collapse")
+        $(".skin-main-menu .skin-submenu.collapse")
             .on ("shown.bs.collapse", function (e) {
-                const parentMenuItem = $(".skn-main-menu .dropdown-toggle[href='#" + $(this).attr ("id") + "']");
+                const parentMenuItem = $(".skin-main-menu .dropdown-toggle[href='#" + $(this).attr ("id") + "']");
                 const firstMenuItem = $(this).find (".nav-link").first ();
                 const lastMenuItem = $(this).find (".nav-link").last ();
                 parentMenuItem.on ("keydown.epsilon", function (e) {
@@ -223,7 +223,7 @@ window.skinCookiesAlertButtonClick = function (e) {
                 });
             })
             .on ("hidden.bs.collapse", function () {
-                const parentMenuItem = $(".skn-main-menu .dropdown-toggle[href='#" + $(this).attr ("id") + "']");
+                const parentMenuItem = $(".skin-main-menu .dropdown-toggle[href='#" + $(this).attr ("id") + "']");
                 const firstMenuItem = $(this).find (".nav-link").first ();
                 const lastMenuItem = $(this).find (".nav-link").last ();
                 parentMenuItem.off ("keydown.epsilon");
@@ -233,13 +233,13 @@ window.skinCookiesAlertButtonClick = function (e) {
     }
 
     function initBreadcrumb () {
-        $(".skn-breadcrumb-menu .collapse-toggle").on ("click.epsilon", function (e) {
+        $(".skin-breadcrumb-menu .collapse-toggle").on ("click.epsilon", function (e) {
             $(this).toggleClass ("show").next (".collapse").collapse ("toggle");
             e.stopPropagation ();
             e.preventDefault ();
         });
         // hide collapses when parent dropdown hides
-        $(".skn-breadcrumb-menu .dropdown").on("hidden.bs.dropdown", function (e) {
+        $(".skin-breadcrumb-menu .dropdown").on("hidden.bs.dropdown", function (e) {
             $(this).find (".collapse-toggle").removeClass ("show").next (".collapse").collapse ("hide");
         });
     }

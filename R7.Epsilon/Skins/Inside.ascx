@@ -10,8 +10,8 @@
 Options.DisableSocialShare = true;
 %>
 <skin:START runat="server" />
-<div class="skn">
-	<header class="skn-header">
+<div class="skin">
+	<header class="skin-header">
 		<skin:HEADER runat="server" />
 		<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_header.ascx"-->
 		<skin:SECONDARYHEADER runat="server" />
@@ -19,7 +19,7 @@ Options.DisableSocialShare = true;
 	<skin:SUBHEADER runat="server" />
 	<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_default.ascx"-->
 	<skin:SUPFOOTER runat="server" />
-	<footer class="skn-footer">
+	<footer class="skin-footer">
 		<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_footer.ascx"-->
 		<skin:FOOTER runat="server" />
 	</footer>

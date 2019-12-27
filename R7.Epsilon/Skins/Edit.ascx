@@ -11,8 +11,8 @@ Options.DisableSocialShare = true;
 Options.DisablePageInfo = true;
 %>
 <skin:START runat="server" />
-<div class="skn skn-edit">
-	<header class="skn-header">
+<div class="skin skin-edit">
+	<header class="skin-header">
 		<skin:HEADER runat="server" />
 		<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_header.ascx"-->
 		<skin:SECONDARYHEADER runat="server" />
@@ -20,7 +20,7 @@ Options.DisablePageInfo = true;
 	<skin:SUBHEADER runat="server" />
 	<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_content-pane.ascx"-->
 	<skin:SUPFOOTER runat="server" />
-	<footer class="footer skn-footer">
+	<footer class="footer skin-footer">
 		<skin:FOOTER runat="server" />
 	</footer>
 	<skin:END runat="server" />

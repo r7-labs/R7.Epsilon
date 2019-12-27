@@ -21,14 +21,14 @@
 
 @import "mixins";
 
-.skn-menu {
-    .skn-menu-parent-item {
+.skin-menu {
+    .skin-menu-parent-item {
         font-weight: bold;
         &::after {
             @include fa-icon-after('\f101');
         }
         &.disabled {
-            color: $skn-color-muted;
+            color: $skin-color-muted;
             &::after {
                 content: none;
             }
@@ -36,31 +36,31 @@
     }
 }
 
-.skn-main-menu {
+.skin-main-menu {
     width: 100%;
     .navbar-nav {
         flex-wrap: wrap;
     }
 }
 
-.skn-primary-menu {
+.skin-primary-menu {
     background-color: $color-primary-4 !important;
 }
 
-.skn-secondary-menu {
+.skin-secondary-menu {
     background-color: lighten($color-primary-4, 10%) !important;
 }
 
-.skn-submenu > .row {
+.skin-submenu > .row {
 	width: 100%;
 }
 
-.skn-submenu .nav-link {
+.skin-submenu .nav-link {
     white-space: normal;
 }
 
 // hide secondary navbar then collapsed
-.navbar.skn-secondary-menu {
+.navbar.skin-secondary-menu {
     padding-top: 0;
     padding-bottom: 0;
     .navbar-collapse {
@@ -71,12 +71,12 @@
 
 // disable "broken" menu animation on small screens
 @media (max-width: 767px) {
-	.skn-submenu { transition: none; }
-	.skn-submenu.collapsing { display: none; }
+	.skin-submenu { transition: none; }
+	.skin-submenu.collapsing { display: none; }
 }
 
-.skn-submenu,
-.skn-breadcrumb-menu {
+.skin-submenu,
+.skin-breadcrumb-menu {
     .dropdown-item {
         white-space: normal;
     }
@@ -87,8 +87,8 @@
         @include fa-icon-after('\f0d8');
     }
     .collapse, .collapsing {
-        .dropdown-item:not(.skn-menu-parent-item) {
-            font-size: $skn-font-size-small;
+        .dropdown-item:not(.skin-menu-parent-item) {
+            font-size: $skin-font-size-small;
             &::before {
                 @include char-before('•');
             }
@@ -96,19 +96,19 @@
     }
 }
 
-.skn-breadcrumb-menu .dropdown-menu {
+.skin-breadcrumb-menu .dropdown-menu {
     min-width: 320px;
 }
 
-.skn-breadcrumb-menu .breadcrumb-item.disabled a {
-    color: $skn-color-muted !important;
+.skin-breadcrumb-menu .breadcrumb-item.disabled a {
+    color: $skin-color-muted !important;
 }
 
-.skn-cards-menu {
+.skin-cards-menu {
     display: flex;
     flex-wrap: wrap;
 
-    .skn-cards-menu-col {
+    .skin-cards-menu-col {
         margin-bottom: 1rem;
     }
 
@@ -116,17 +116,17 @@
         height: 100%;
     }
 
-    .skn-cards-menu-description {
-        font-size: $skn-font-size-small;
-        color: $skn-color-muted;
+    .skin-cards-menu-description {
+        font-size: $skin-font-size-small;
+        color: $skin-color-muted;
     }
 
-    .skn-cards-menu-submenu {
+    .skin-cards-menu-submenu {
         padding-left: 16px;
-        font-size: $skn-font-size-small;
+        font-size: $skin-font-size-small;
 
         .disabled {
-            color: $skn-color-muted;
+            color: $skin-color-muted;
         }
 
         li {
