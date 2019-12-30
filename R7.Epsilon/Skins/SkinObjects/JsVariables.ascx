@@ -3,7 +3,7 @@
 <script type="text/javascript">
 var epsilon = {
     tabId:<%= PortalSettings.ActiveTab.TabID %>,
-    tabName:'<%= PortalSettings.ActiveTab.TabName %>',
+    tabName:'<%= HttpUtility.JavaScriptStringEncode (PortalSettings.ActiveTab.TabName) %>',
     portalId:<%= PortalSettings.Current.PortalId %>,
     breadCrumbs:<%= JsBreadCrumbsList %>,
     breadCrumbsRemoveLastLink:<%= JsBreadCrumbsRemoveLastLink %>,
