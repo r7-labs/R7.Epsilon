@@ -120,6 +120,11 @@ a.btn-primary:visited {
 }
 
 // Search
+
+.skin-search-open-modal-btn {
+    display: inline-block;
+}
+
 .skin-search-box {
     text-align: center;
     .searchInputContainer {
@@ -129,7 +134,9 @@ a.btn-primary:visited {
             top: 7px;
         }
     }
-    .skin-search-btn { display: none; }
+    .skin-search-btn {
+        display: none;
+    }
     input {
         width: 100%;
         height: 45px;
@@ -367,6 +374,7 @@ a.btn-primary:visited {
 .alert .Normal { color:inherit !important }
 
 .skin-login {
+    display: inline-block;
     .registerGroup {
         ul.buttonGroup {
             padding-left: 0;

@@ -23,13 +23,13 @@
             </div>
         </div>
         <div class="col-sm-6 col-md-auto col-lg-3 order-md-last text-center text-sm-right align-self-center">
-			<button type="button" role="search" class="btn btn-lg skin-search-btn" style="display:inline-block"
+			<button type="button" role="search" class="btn btn-lg skin-search-open-modal-btn"
                 data-toggle="modal" data-target="#searchModal"
                 title='<%: T.GetString("SearchModalButton.Text") %>'>
                 <i class="fas fa-search"></i>
             </button>
 			<% if (!Skin.Options.DisableLogin) { %>
-				<div class="dropdown skin-login" style="display:inline-block">
+				<div class="dropdown skin-login">
 					<button type="button" class="btn btn-lg dropdown-toggle" data-toggle="dropdown" title='<%: T.GetString ("UserProfile.Text") %>'>
 						<i class="fas fa-user"></i>
 					</button>
