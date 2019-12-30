@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.Skins.SkinObjects.EpsilonSkinObjectBase" %>
 <%@ Register TagPrefix="dnn" TagName="LANGUAGE" Src="~/Admin/Skins/Language.ascx" %>
 <%@ Import Namespace="R7.Epsilon.Components" %>
-<div class="dropdown" style="display:inline-block">
+<div class="dropdown d-inline-block">
 	<button type="button" class="btn btn-lg dropdown-toggle skin-languages-btn" data-toggle="dropdown"
 		title='<%: T.GetString("Languages.Text") %>'>
 		<% var langCodeParts = CultureInfo.CurrentCulture.IetfLanguageTag.Split (new char [] {'-'}, StringSplitOptions.RemoveEmptyEntries); %>

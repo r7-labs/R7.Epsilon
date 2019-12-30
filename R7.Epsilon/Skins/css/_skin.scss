@@ -119,6 +119,10 @@ a.btn-primary:visited {
 	left: -0.2rem;
 }
 
+.skin-open-search-modal-btn {
+    display: inline-block;
+}
+
 // Search
 .skin-search-box {
     text-align: center;
@@ -129,7 +133,9 @@ a.btn-primary:visited {
             top: 7px;
         }
     }
-    .skin-search-btn { display: none; }
+    .skin-search-btn {
+        display: none;
+    }
     input {
         width: 100%;
         height: 45px;
