@@ -25,7 +25,7 @@ using System.Web;
 using DotNetNuke.Entities.Portals;
 using DotNetNuke.Entities.Users;
 
-namespace R7.Epsilon.Components
+namespace R7.Zeta.Components
 {
     public static class CacheHelper
     {
