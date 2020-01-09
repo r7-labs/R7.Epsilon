@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -127,6 +127,7 @@
     <Compile Include="Components\JavascriptLibraryHelper.cs" />
     <Compile Include="Components\EpsilonPortalConfigExtensions.cs" />
     <Compile Include="Components\MenuConfigExtensions.cs" />
+    <Compile Include="Components\CacheHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Containers\Blank.ascx" />
@@ -226,6 +227,7 @@
   </ProjectExtensions>
   <ItemGroup>
     <Folder Include="Components\" />
+    <Folder Include="Application\" />
     <Folder Include="Skins\Layouts\" />
     <Folder Include="Skins\SkinObjects\" />
     <Folder Include="Menus\" />
@@ -292,5 +294,6 @@
     <Content Include="Skins\css\_mixins.scss" />
     <Content Include="Skins\SkinObjects\BlueimpGallery.ascx" />
     <Content Include="R7.Epsilon.development.yml" />
+    <Content Include="Application\Global.asax" />
   </ItemGroup>
 </Project>
