@@ -43,7 +43,7 @@ window.skinOpenFeedback = function (e, button, $, feedbackModuleId) {
         dnnModal.show (popupFeedbackUrl, false, 550, 950, false, "");
     }
     else {
-        const rawFeedbackUrl = baseFeedbackUrl + "?" + feedbackParams + "&" + feedbackSelection;
+        const rawFeedbackUrl = baseFeedbackUrl + "?" + feedbackParams + feedbackSelection;
         window.open (rawFeedbackUrl, "_blank");
     }
 };
