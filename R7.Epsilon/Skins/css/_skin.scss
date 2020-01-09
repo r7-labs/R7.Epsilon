@@ -235,8 +235,8 @@ a.btn-primary:visited {
             margin-top: 0 !important; // overriding inline style!
             margin-right: 1rem;
         }
-        .fb-like, .twitter-share-button, #vk_like {
-            vertical-align: bottom;
+        .fb-like {
+            top: -6px;
         }
     }
 }
