@@ -16,7 +16,7 @@
 						<% } %>
 						<% if (!Skin.Options.DisableSocialShare) { %>
 							<% if (!Skin.Options.DisableBreadCrumb) { %>
-								<hr class="mb-2" />
+								<hr />
 							<% } %>
 							<skin:SOCIALSHAREBUTTONS runat="server" Visible="<%# !Skin.Options.DisableSocialShare %>" />
 						<% } %>
