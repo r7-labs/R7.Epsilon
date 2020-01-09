@@ -125,7 +125,7 @@ search-engines:
     url-format: https://yandex.ru/search?site={website}&text={searchText}
 
   - type: DuckDuckGo
-    url-format: https://duckduckgo.com/search?q=site:{website}%20{searchText}
+    url-format: https://duckduckgo.com/?q=site:{website}%20{searchText}
 
 permalink-formats:
 
