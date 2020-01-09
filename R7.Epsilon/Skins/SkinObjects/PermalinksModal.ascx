@@ -13,7 +13,7 @@
 				<p class="alert alert-warning"><%: T.GetString ("Permalinks_Help.Text") %></p>
 				<% var permalinkIndex = 1; %>
 				<% foreach (var permalinkFormat in Config.PermalinkFormats) {
-					var permalink = EpsilonUrlHelper.FormatUrl (permalinkFormat, ActiveTab.TabID, PortalSettings.PortalId, Request.QueryString);
+					var permalink = EpsilonUrlHelper.FullUrl (EpsilonUrlHelper.FormatUrl (permalinkFormat, ActiveTab.TabID, PortalSettings.PortalId, Request.QueryString));
 				%>
 					<div class="card card-body border-gray p-3 mb-2">
 						<ul class="list-unstyled mb-0">
