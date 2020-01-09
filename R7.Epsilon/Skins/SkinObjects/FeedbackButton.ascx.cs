@@ -62,7 +62,7 @@ namespace R7.Zeta.Skins.SkinObjects
 
                 linkFeedback.CssClass = CssClass;
                 linkFeedback.ToolTip = T.GetString ("FeedbackButton_Tooltip.Text");
-                linkFeedback.Attributes.Add ("href", "#");
+                linkFeedback.Attributes.Add ("href", feedbackUrl);
                 linkFeedback.Attributes.Add ("data-feedback-url", feedbackUrl);
                 linkFeedback.Attributes.Add ("data-feedback-open-in-popup", openInPopup.ToString ().ToLowerInvariant ());
                 linkFeedback.Attributes.Add ("onclick", $"skinOpenFeedback(event,this,jQuery,{feedbackModule.ModuleID})");
