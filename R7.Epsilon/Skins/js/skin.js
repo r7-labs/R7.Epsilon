@@ -59,6 +59,10 @@ window.skinCookiesAlertButtonClick = function (e) {
     $(e.target).closest (".toast").toast ("hide");
 };
 
+window.skinCookiesDisabledAlertButtonClick = function (e) {
+    $(e.target).closest (".toast").toast ("hide");
+};
+
 window.skinBrowserAlertButtonClick = function (e) {
     Cookies.set (epsilon.cookiePrefix + "BrowserAlert", {expires: 1});
     $(e.target).closest (".toast").toast ("hide");

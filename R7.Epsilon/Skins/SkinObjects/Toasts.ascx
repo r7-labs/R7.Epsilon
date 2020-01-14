@@ -37,6 +37,9 @@
 		</div>
 		<div class="toast-body">
 			<%= T.GetString ("CookiesDisabledAlert_Body.Text") %>
+			<button type="button" class="btn btn-sm btn-warning" onclick="skinCookiesDisabledAlertButtonClick(event)">
+				<%= T.GetString ("CookiesDisabledAlert_Button_Label.Text") %>
+			</button>
 		</div>
 	</div>
 </div>
