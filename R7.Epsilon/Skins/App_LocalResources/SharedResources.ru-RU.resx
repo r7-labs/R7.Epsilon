@@ -37,7 +37,7 @@
 		<value><![CDATA[<a href="https://github.com/roman-yagodin/R7.Epsilon" target="_blank">Тема R7.Epsilon v{version}</a>]]></value>
 	</data>
 	<data name="CopyrightNote.Text" xml:space="preserve">
-		<value>При копировании контента ссылка на сайт обязательна</value>
+		<value>При копировании содержимого ссылка на сайт обязательна</value>
 	</data>
 	<data name="ButtonUp_Tooltip.Text" xml:space="preserve">
 		<value>Нажмите здесь, чтобы перейти к началу страницы.</value>
