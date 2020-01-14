@@ -119,9 +119,15 @@ a.btn-primary:visited {
 	left: -0.2rem;
 }
 
-// Search
+.skin-websites {
+    display: inline-block;
+    .dropdown-item {
+        white-space: normal;
+    }
+}
 
-.skin-search-open-modal-btn {
+// Search
+.skin-open-search-modal-btn {
     display: inline-block;
 }
 
