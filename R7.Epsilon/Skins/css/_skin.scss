@@ -225,6 +225,9 @@ a.btn-primary:visited {
 .skin-subheader-top .skin-breadcrumb-menu .breadcrumb {
     padding: 0;
     margin-bottom: 0;
+    .breadcrumb-item:first-child {
+        padding-left: 0.2rem;
+    }
 }
 
 .skin-social-share-buttons {
