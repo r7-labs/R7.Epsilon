@@ -52,7 +52,7 @@
 								itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
 							@if (node.HasChildren ()) {
 								<span class="dropdown">
-									<a id='@Id(node, "btnDropdown")' type="button" role="button" href="#" data-toggle="dropdown"
+									<a id='@Id(node, "btnDropdown")' role="button" href="#" data-toggle="dropdown"
 											aria-haspopup="true" aria-expanded="false" itemprop="item"
 											class="dropdown-toggle">
 										@EpsilonMenuHelper.RenderNodeBadge(node)
@@ -96,7 +96,7 @@
 	<div class="dropdown-menu" aria-labelledby='@Id(parentNode, "btnDropdown")'>
 		@foreach (var node in parentNode.Children) {
 			if (node.HasChildren ()) {
-				<a type="button" role="button" href="@FormatUrl(node)"
+				<a role="button" href="@FormatUrl(node)"
 						data-target='@Id(node, "collapse")' data-toggle="dropdown"
 						aria-controls='@Id(node, "collapse")' aria-expanded="false"
 						class="dropdown-item collapse-toggle @EpsilonMenuHelper.ForkNodeCssClasses(node)">

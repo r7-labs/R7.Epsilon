@@ -67,7 +67,7 @@
 				<div class="col-lg-4 col-md-6 p-0">
 					@if (node.HasChildren ()) {
 						<div class="nav-item dropdown">
-							<a id='@Id(node, "btnDropdown")' type="button" role="button" href="#" data-toggle="dropdown"
+							<a id='@Id(node, "btnDropdown")' role="button" href="#" data-toggle="dropdown"
 									aria-haspopup="true" aria-expanded="false"
 									class="nav-link dropdown-toggle @EpsilonMenuHelper.ForkNodeCssClasses(node)">
 								@EpsilonMenuHelper.RenderNodeBadge(node)
@@ -102,7 +102,7 @@
 		}
 		@foreach (var node in parentNode.Children) {
 			if (node.HasChildren ()) {
-				<a type="button" role="button" href="@FormatUrl(node)"
+				<a role="button" href="@FormatUrl(node)"
 						data-toggle="collapse" data-target='#@Id(node, "collapse")'
 						aria-expanded="false" aria-controls='@Id(node, "collapse")'
 						class="dropdown-item collapse-toggle @EpsilonMenuHelper.ForkNodeCssClasses(node)">
