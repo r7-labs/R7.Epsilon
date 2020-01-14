@@ -2,7 +2,7 @@
 	<packages>
 		<package name="R7.Epsilon Skin" type="Skin" version="02.00.00">
 			<friendlyName>R7.Epsilon</friendlyName>
-			<description>Highly customizable, multiportal, responsive skin for DNN Platfrom using Bootstrap 3. Requires installation via the Host/Extensions page.</description>
+			<description>Highly customizable, multiportal, responsive skin for DNN Platfrom using Bootstrap 4. Requires installation via the Host/Extensions page.</description>
 			<owner>
 				<name>Roman M. Yagodin</name>
 				<organization>R7.Labs</organization>

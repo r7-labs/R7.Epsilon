@@ -3,7 +3,7 @@
 [![BCH compliance](https://bettercodehub.com/edge/badge/roman-yagodin/R7.Epsilon)](https://bettercodehub.com/)
 [![Join the chat at https://gitter.im/roman-yagodin/R7.Epsilon](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/roman-yagodin/R7.Epsilon?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-*R7.Epsilon* is an opensource responsive skin (theme) for DNN Platform based on Bootstrap 3.
+*R7.Epsilon* is an opensource responsive skin (theme) for DNN Platform based on Bootstrap 4.
 See it in action at http://www.volgau.com!
 
 # Features
