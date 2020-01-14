@@ -121,8 +121,11 @@ a.btn-primary:visited {
 
 .skin-websites {
     display: inline-block;
-    .dropdown-item {
-        white-space: normal;
+    .dropdown-menu {
+        min-width: 320px;
+        .dropdown-item {
+            white-space: normal;
+        }
     }
 }
 
