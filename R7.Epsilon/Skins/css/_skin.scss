@@ -121,16 +121,19 @@ a.btn-primary:visited {
 
 .skin-websites {
     display: inline-block;
-    .dropdown-item {
-        white-space: normal;
+    .dropdown-menu {
+        min-width: 320px;
+        .dropdown-item {
+            white-space: normal;
+        }
     }
 }
 
+// Search
 .skin-open-search-modal-btn {
     display: inline-block;
 }
 
-// Search
 .skin-search-box {
     text-align: center;
     .searchInputContainer {
