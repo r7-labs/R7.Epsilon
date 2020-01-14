@@ -19,7 +19,7 @@
 @helper RenderMenu(IList<MenuNode> nodes) {
     if (nodes.Count > 0) {
 		<div id="@Model.ControlID" class="row no-gutters">
-			<ul class="navbar-nav col-6 col-md-12">
+			<ul class="navbar-nav col-4 col-md-12">
 				@foreach (var node in nodes) {
 					if (node.HasChildren()) {
 						<li class="nav-item dropdown">
@@ -50,7 +50,7 @@
 }
 
 @helper RenderSubmenuFor (MenuNode parentNode) {
-	<div class="navbar-nav skin-submenu col-6 col-md-12 collapse" id='@Id(parentNode, "subMenu")' data-parent="#@Model.ControlID">
+	<div class="navbar-nav skin-submenu col-8 col-md-12 collapse" id='@Id(parentNode, "subMenu")' data-parent="#@Model.ControlID">
 		<div class="row no-gutters">
 			@if (parentNode.Enabled) {
 				<div class="col-12 p-0">
