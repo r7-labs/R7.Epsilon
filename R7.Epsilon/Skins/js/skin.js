@@ -59,6 +59,11 @@ window.skinCookiesAlertButtonClick = function (e) {
     $(e.target).closest (".toast").toast ("hide");
 };
 
+window.skinBrowserAlertButtonClick = function (e) {
+    Cookies.set (epsilon.cookiePrefix + "BrowserAlert", {expires: 1});
+    $(e.target).closest (".toast").toast ("hide");
+};
+
 (function ($, window, document) {
 
     function initUpButton (offset, duration) {
@@ -258,8 +263,10 @@ window.skinCookiesAlertButtonClick = function (e) {
     }
 
     function showToasts () {
-        if (! supportedBrowsers.test (navigator.userAgent)) {
-            $("#skin_toastBrowserAlert").toast ("show");
+        if (typeof Cookies.get (epsilon.cookiePrefix + "BrowserAlert") === "undefined") {
+            if (! supportedBrowsers.test (navigator.userAgent)) {
+                $("#skin_toastBrowserAlert").toast ("show");
+            }
         }
 
         if (!isCookiesEnabled ()) {

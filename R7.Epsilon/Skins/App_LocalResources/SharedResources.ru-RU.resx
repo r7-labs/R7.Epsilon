@@ -55,7 +55,10 @@
 		<value>Внимание!</value>
 	</data>
 	<data name="BrowserAlert_Body.Text" xml:space="preserve">
-		<value>Возможно, вы используете устаревшую версию браузера. Как следствие, наш сайт может отображаться неправильно, а отдельные его функции могут работать некорректно или будут недоступны.</value>
+		<value>Возможно, вы используете устаревшую версию браузера! Как следствие, наш сайт может отображаться неправильно, а отдельные его функции могут работать некорректно или будут недоступны.</value>
+	</data>
+	<data name="BrowserAlert_Button_Label.Text" xml:space="preserve">
+		<value>Got it!</value>
 	</data>
 	<data name="CookiesAlert_Title.Text" xml:space="preserve">
 		<value>Примечание:</value>
