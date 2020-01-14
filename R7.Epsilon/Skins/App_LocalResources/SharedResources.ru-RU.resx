@@ -77,6 +77,9 @@
 	<data name="CookiesAlert_Button_Label.Text" xml:space="preserve">
 		<value>Понятно!</value>
 	</data>
+	<data name="CookiesDisabledAlert_Button_Label.Text" xml:space="preserve">
+		<value>Я сделаю это!</value>
+	</data>
 	<data name="Close.Text" xml:space="preserve">
 		<value>Закрыть</value>
 	</data>

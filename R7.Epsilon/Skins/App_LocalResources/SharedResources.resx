@@ -80,6 +80,9 @@
 	<data name="CookiesAlert_Button_Label.Text" xml:space="preserve">
 		<value>Got it!</value>
 	</data>
+	<data name="CookiesDisabledAlert_Button_Label.Text" xml:space="preserve">
+		<value>I'll do it!</value>
+	</data>
 	<data name="Close.Text" xml:space="preserve">
 		<value>Close</value>
 	</data>
