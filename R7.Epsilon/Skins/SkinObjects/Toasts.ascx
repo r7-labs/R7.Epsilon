@@ -9,6 +9,9 @@
 		</div>
 		<div class="toast-body">
 			<p><%= T.GetString ("BrowserAlert_Body.Text") %></p>
+			<button type="button" class="btn btn-sm btn-warning" onclick="skinBrowserAlertButtonClick(event)">
+				<%= T.GetString ("BrowserAlert_Button_Label.Text") %>
+			</button>
 		</div>
 	</div>
 	<div id="skin_toastCookiesAlert" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">

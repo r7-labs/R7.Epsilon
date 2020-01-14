@@ -58,7 +58,10 @@
 		<value>Warning!</value>
 	</data>
 	<data name="BrowserAlert_Body.Text" xml:space="preserve">
-		<value>You are probably using an outdated version of the browser. As a result, our website may be displayed incorrectly, some of its features may not work properly or will not be available.</value>
+		<value>You may be using an outdated version of the browser! As a result, our website may be displayed incorrectly, some of its features may not work properly or will not be available.</value>
+	</data>
+	<data name="BrowserAlert_Button_Label.Text" xml:space="preserve">
+		<value>Got it!</value>
 	</data>
 	<data name="CookiesAlert_Title.Text" xml:space="preserve">
 		<value>Note:</value>
