@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" Inherits="R7.Epsilon.Skins.EpsilonSkinBase" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" Inherits="R7.Zeta.Skins.EpsilonSkinBase" %>
 <%@ Register TagPrefix="skin" TagName="START" Src="~/Portals/_default/Skins/R7.Zeta/Blocks/Start.ascx" %>
 <%@ Register TagPrefix="skin" TagName="HEADER" Src="~/Portals/_default/Skins/R7.Zeta/Blocks/Header.ascx" %>
 <%@ Register TagPrefix="skin" TagName="SECONDARYHEADER" Src="~/Portals/_default/Skins/R7.Zeta/Blocks/SecondaryHeader.ascx" %>
