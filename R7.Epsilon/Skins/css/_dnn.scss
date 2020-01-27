@@ -27,6 +27,27 @@ a.dnnFormHelp {
     top: 4px;
 }
 
+/* URL selectors styles */
+
+.dnnFileUploadScope .dnnFormItem span,
+.urlControlTab .dnnFormItem > span {
+    width: 50px;
+    font-size: $skin-font-size-small;
+}
+
+.urlControlLinkType span,
+.dnnFormItem .urlControlLinkType span {
+    font-size: $skin-font-size-small;
+}
+
+.dnnFormItem .dnnDropDownList .dt-container {
+    // make URL selectors dropdown wider
+    min-width: 320px;
+}
+
+// fix colored background on DNN radiobuttons
+.dnnRadiobutton .mark { background-color:transparent; }
+
 /* ADMIN */
 #ControlBar,
 #ControlBar:before,
@@ -67,10 +88,6 @@ a.dnnFormHelp {
 
 // Bootstrap embed-responsive extensions
 .embed-responsive-5by4 { padding-bottom:78.75%; }
-
-// fix colored background on DNN radiobuttons
-.dnnRadiobutton .mark { background-color:transparent; }
-
 // fix for DNN action menu icons with Font Awesome 5
 .fa-pencil::before { content: "\f303"; }
 .fa-arrows::before { content: "\f0b2"; }
