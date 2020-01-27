@@ -146,14 +146,15 @@
 	<data name="GoogleTranslate.Text" xml:space="preserve">
 		<value>Translate with Google</value>
 	</data>
-	<data name="AgeRating.Text" xml:space="preserve">
+	<data name="AgeRating_Label.Text" xml:space="preserve">
 		<value>12</value>
 	</data>
-	<data name="AgeRating_Tooltip.Text" xml:space="preserve">
-		<value>Information product for children since the age of twelve years - PEGI 12 (unless otherwise specified). Click the button to get more info.</value>
+	<data name="AgeRating_Title.Text" xml:space="preserve">
+		<value>Age Rating PEGI 12</value>
 	</data>
-	<data name="AgeRating_Link.Text" xml:space="preserve">
-		<value>https://pegi.info/</value>
+	<data name="AgeRating_Content.Text" xml:space="preserve">
+		<value><![CDATA[Information product for <strong>children since the age of twelve years - PEGI 12</strong> (unless otherwise specified).
+		<hr class="my-2"/><a class="skin-chevron-link" href="https://pegi.info/" target="_blank">More info</a>]]></value>
 	</data>
 	<data name="LastModified.Text" xml:space="preserve">
 		<value>Last Modified:</value>
