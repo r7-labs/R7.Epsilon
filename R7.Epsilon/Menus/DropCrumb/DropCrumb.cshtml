@@ -119,7 +119,7 @@
 	<div id='@Id(parentNode, "collapse")' class="collapse bg-light">
 		<div class="dropdown-divider"></div>
 		@if (parentNode.Enabled) {
-			<a class="h6 dropdown-item skin-menu-parent-item @EpsilonMenuHelper.ForkNodeCssClasses(parentNode)" href="@FormatUrl(parentNode)"
+			<a class="h6 dropdown-item skin-chevron-link @EpsilonMenuHelper.ForkNodeCssClasses(parentNode)" href="@FormatUrl(parentNode)"
 					title='@(EpsilonMenuHelper.GetString("Menu_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
 				@EpsilonMenuHelper.RenderNodeBadge(parentNode)
 				@parentNode.Text
