@@ -47,7 +47,7 @@ namespace R7.Zeta.Components
         {
             return DataCache.GetCachedData<EpsilonPortalConfig> (
                 cacheItemArgs.GetOrAdd (PortalSettings.Current.PortalId,
-                    (pid) => new CacheItemArgs ("//r7_Zeta/config?portalId=" + pid, 3600, CacheItemPriority.Normal)),
+                    (pid) => new CacheItemArgs ("//r7_Zeta/config?portalId=" + pid, 60, CacheItemPriority.Normal)),
                 (cia) => LoadPortalConfig (PortalSettings.Current.PortalId)
             );
         }
