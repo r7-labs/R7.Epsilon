@@ -131,3 +131,37 @@ div.actionMenu ul.dnn_mact {
 body > form #ControlBar_ControlPanel {
     z-index: 1030 !important;
 }
+
+/* Audit control styles */
+
+.dnnModuleAuditControl {
+    color: $skin-color-muted;
+    font-size: $skin-font-size-small;
+    width: auto;
+    max-width: none;
+    p {
+        display: inline-block;
+        margin-right: 1rem;
+        margin-top: 1rem;
+        margin-bottom: 0;
+    }
+}
+
+.dnnModuleSettings div.dnnmsStat {
+    border: none;
+    padding: 0;
+    .dnnModuleAuditControl {
+        width: auto;
+        max-width: none;
+        p {
+            padding-right: 0;
+        }
+    }
+}
+
+.dnnFormItem {
+    .dnnModuleAuditControl {
+        width: 45%;
+        max-width: 445px;
+    }
+}
