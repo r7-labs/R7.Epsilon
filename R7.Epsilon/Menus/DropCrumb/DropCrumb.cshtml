@@ -72,7 +72,7 @@
 						<li class="breadcrumb-item @EpsilonMenuHelper.LeafNodeCssClasses(node)"
 								itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
 							@if (node == root) {
-								<a href="@FormatUrl(node)" title='@EpsilonMenuHelper.GetString("DropCrumb_Home_Tooltip.Text")' itemprop="item">
+								<a href="@FormatUrl(node)" class="border border-primary rounded px-1" title='@EpsilonMenuHelper.GetString("DropCrumb_Home_Tooltip.Text")' itemprop="item">
 									@Html.Raw(EpsilonMenuHelper.GetString("DropCrumb_Home.Text"))
 									@EpsilonMenuHelper.RenderNodeBadge(node)
 									<meta itemprop="name" content="@node.Text" />
