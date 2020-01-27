@@ -19,7 +19,7 @@
 		<value>Возможности повышенной доступности</value>
 	</data>
 	<data name="A11yDisablePopups.Text" xml:space="preserve">
-		<value>Отключить всплывающие диалоги</value>
+		<value>Отключить всплывающие окна DNN</value>
 	</data>
 	<data name="A11yIncreaseFontSize.Text" xml:space="preserve">
 		<value>Увеличить размер шрифта</value>

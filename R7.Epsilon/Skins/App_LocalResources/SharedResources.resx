@@ -22,7 +22,7 @@
 		<value><![CDATA[<i class="fas fa-universal-access"></i>]]></value>
 	</data>
 	<data name="A11yDisablePopups.Text" xml:space="preserve">
-		<value>Disable modal popups</value>
+		<value>Disable DNN modal popups</value>
 	</data>
 	<data name="A11yIncreaseFontSize.Text" xml:space="preserve">
 		<value>Increase font size</value>
