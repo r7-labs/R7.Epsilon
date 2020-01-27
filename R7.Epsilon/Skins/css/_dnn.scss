@@ -1,8 +1,11 @@
 /* Form styles */
 
 ul.dnnAdminTabNav {
-    height: 40px;
+    height: auto;
     border-radius: 0 !important;
+    li.ui-tabs-active a {
+        margin-top: -4px;
+    }
 }
 
 ul.dnnActions {
