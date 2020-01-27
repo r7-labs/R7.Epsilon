@@ -1,3 +1,5 @@
+/* Form styles */
+
 ul.dnnAdminTabNav {
     height: 40px;
     border-radius: 0 !important;
@@ -16,6 +18,10 @@ ul.dnnActions {
 
 .dnnLabel + span {
     white-space: normal;
+}
+
+a.dnnFormHelp {
+    top: 4px;
 }
 
 /* ADMIN */
