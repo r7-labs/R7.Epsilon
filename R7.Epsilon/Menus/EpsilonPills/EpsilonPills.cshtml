@@ -60,7 +60,7 @@
 @helper RenderDropdownFor(MenuNode parentNode) {
 	<div class="dropdown-menu" aria-labelledby='@Id(parentNode, "btnDropdown")'>
 		@if (parentNode.Enabled) {
-			<a class="h6 dropdown-item skin-menu-parent-item @EpsilonMenuHelper.LeafNodeCssClasses(parentNode)" href="@FormatUrl(parentNode)"
+			<a class="h6 dropdown-item skin-chevron-link @EpsilonMenuHelper.LeafNodeCssClasses(parentNode)" href="@FormatUrl(parentNode)"
 					title='@(EpsilonMenuHelper.GetString("Menu_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
 				@EpsilonMenuHelper.RenderNodeBadge(parentNode)
 				@parentNode.Text

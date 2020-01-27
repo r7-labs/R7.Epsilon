@@ -445,6 +445,14 @@ a.bold-link {
     }
 }
 
+a.skin-chevron-link {
+    font-weight: bold;
+    &::after {
+        // angle-double-right
+        @include fa-icon-after('\f101');
+    }
+}
+
 /* Buttons */
 
 // reset DNN styles

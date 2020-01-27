@@ -30,11 +30,7 @@
 }
 
 .skin-menu {
-    .skin-menu-parent-item {
-        font-weight: bold;
-        &::after {
-            @include fa-icon-after('\f101');
-        }
+    .skin-chevron-link {
         &.disabled {
             color: $skin-color-muted;
             &::after {
@@ -95,7 +91,7 @@
         @include fa-icon-after('\f0d8');
     }
     .collapse, .collapsing {
-        .dropdown-item:not(.skin-menu-parent-item) {
+        .dropdown-item:not(.skin-chevron-link) {
             font-size: $skin-font-size-small;
             &::before {
                 @include char-before('•');

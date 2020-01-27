@@ -42,13 +42,13 @@
 						<div class="card-body">
 							<h5>
 								@if (node.Enabled) {
-									<a class="card-title skin-menu-parent-item @EpsilonMenuHelper.LeafNodeCssClasses(node)" href="@FormatUrl(node)">
+									<a class="card-title skin-chevron-link @EpsilonMenuHelper.LeafNodeCssClasses(node)" href="@FormatUrl(node)">
 										@EpsilonMenuHelper.RenderNodeBadge(node)
 										@node.Text
 									</a>
 								}
 								else {
-									<span class="card-title skin-menu-parent-item @EpsilonMenuHelper.LeafNodeCssClasses(node)">
+									<span class="card-title skin-chevron-link @EpsilonMenuHelper.LeafNodeCssClasses(node)">
 										@EpsilonMenuHelper.RenderNodeBadge(node)
 										@node.Text
 									</span>
