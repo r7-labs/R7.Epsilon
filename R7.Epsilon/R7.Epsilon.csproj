@@ -89,9 +89,6 @@
     <Compile Include="Components\Const.cs" />
     <Compile Include="Skins\EpsilonSkinBase.cs" />
     <Compile Include="Containers\EpsilonContainerBase.cs" />
-    <Compile Include="Skins\SkinObjects\FeedbackButton.ascx.cs">
-      <DependentUpon>FeedbackButton.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Skins\SkinObjects\CustomContent.ascx.cs">
       <DependentUpon>CustomContent.ascx</DependentUpon>
     </Compile>
@@ -160,7 +157,6 @@
     <Content Include="releaseNotes.htm" />
     <Content Include="Skins\ErrorSkin.ascx" />
     <Content Include="Skins\SkinObjects\Toasts.ascx" />
-    <Content Include="Skins\SkinObjects\FeedbackButton.ascx" />
     <Content Include="Skins\SkinObjects\CustomContent.ascx" />
     <Content Include="Skins\SkinObjects\GAdsense.ascx" />
     <Content Include="Skins\SkinObjects\JsVariables.ascx" />

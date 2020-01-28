@@ -24,28 +24,22 @@ import Cookies from "js-cookie";
 
 const supportedBrowsers = require ("./supportedBrowsers");
 
-// TODO: Move global functions to eplilon object
+// TODO: Move global functions to eplilon object?
 
 window.skinGoogleTranslatePage = function (fromLang) {
     window.open ("http://translate.google.com/translate?hl=en&sl=" + fromLang + "&u=" + encodeURI (document.location));
 };
 
-window.skinOpenFeedback = function (e, button, $, feedbackModuleId) {
-    e.preventDefault ();
+window.skinGetBaseFeedbackUrl = function () {
+    const feedbackParams = "returntabid=" + epsilon.queryParams ["TabId"] + "&feedbackmid=" + epsilon.feedbackModuleId;
+    return epsilon.feedbackUrl + "?" + feedbackParams;
+}
+
+window.skinOpenFeedback = function () {
     const selection = encodeURIComponent (rangy.getSelection ().toString ().replace (/(\n|\r)/gm," ").replace (/\s+/g, " ").replace (/\"/g, "").trim ().substring (0,100));
-    const baseFeedbackUrl = $(button).data ("feedback-url");
-    const feedbackParams = "returntabid=" + epsilon.queryParams ["TabId"] + "&feedbackmid=" + feedbackModuleId;
-
     const feedbackSelection = ((!!selection)? "&feedbackselection=" + selection : "");
-
-    if (epsilon.enablePopups && window.skinA11y.getPopupsDisabled () === false && $(button).data ("feedback-open-in-popup") === true) {
-        const popupFeedbackUrl = baseFeedbackUrl + "/mid/" + feedbackModuleId + "?" + feedbackParams + "&popup=true" + feedbackSelection;
-        dnnModal.show (popupFeedbackUrl, false, 550, 950, false, "");
-    }
-    else {
-        const rawFeedbackUrl = baseFeedbackUrl + "?" + feedbackParams + feedbackSelection;
-        window.open (rawFeedbackUrl, "_blank");
-    }
+    const feedbackUrl = skinGetBaseFeedbackUrl () + feedbackSelection;
+    window.open (feedbackUrl, "_blank");
 };
 
 window.skinSearchExternalClick = function (e, link) {
@@ -76,6 +70,18 @@ window.skinBrowserAlertButtonClick = function (e) {
             : location.protocol + "//" + location.hostname + (location.port ? ":" + location.port: "");
     }
 
+    function initFeedbackButton () {
+        $("#btnSkinFeedback").on ("inserted.bs.popover", function () {
+            $("#btnSkinOpenFeedback")
+                .attr ("href", skinGetBaseFeedbackUrl ())
+                .attr ("target", "_blank")
+                .click (function (e) {
+                    e.preventDefault ();
+                    skinOpenFeedback ();
+                });
+        });
+    }
+
     function setupFeedbackModule () {
         if (!!epsilon.queryParams ["feedbackmid"]) {
             var feedbackContent = "";
@@ -89,7 +95,6 @@ window.skinBrowserAlertButtonClick = function (e) {
                 }
 
                 var moduleSelector = "#dnn_ctr" + epsilon.queryParams ["feedbackmid"] + "_ContentPane";
-                $(moduleSelector).prepend (epsilon.localization ["feedbackMessage"]);
                 $(moduleSelector + " textarea").first ()
                     .val (epsilon.localization ["feedbackTemplate"].replace (/\{content\}/, feedbackContent))
                     .trigger ("change").trigger ("keyup");
@@ -311,6 +316,7 @@ window.skinBrowserAlertButtonClick = function (e) {
     $(function () {
         initBootstrapTooltips ();
         initBootstrapPopovers ();
+
         setupFeedbackModule ();
 
         if (! epsilon.inPopup) {
@@ -323,6 +329,7 @@ window.skinBrowserAlertButtonClick = function (e) {
             initTags ();
             initMainMenu ();
             initBreadcrumb ();
+            initFeedbackButton ();
             alterLanguage ();
             alterLogin ();
             showToasts ();

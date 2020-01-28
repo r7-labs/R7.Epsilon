@@ -89,9 +89,6 @@
 	<data name="SubMenuClose.Text" xml:space="preserve">
 		<value>Close Menu</value>
 	</data>
-	<data name="FeedbackButton_Tooltip.Text" xml:space="preserve">
-		<value>Click the button to open feedback form. You also can preliminarily select fragment of text on the page to pass it to the feedback form.</value>
-	</data>
 	<data name="SocialGroups.Text" xml:space="preserve">
 		<value>Follow Us!</value>
 	</data>
@@ -153,8 +150,24 @@
 		<value>Age Rating PEGI 12</value>
 	</data>
 	<data name="AgeRating_Content.Text" xml:space="preserve">
-		<value><![CDATA[Information product for <strong>children since the age of twelve years - PEGI 12</strong> (unless otherwise specified).
-		<hr class="my-2"/><a class="skin-chevron-link" href="https://pegi.info/" target="_blank">More info</a>]]></value>
+		<value><![CDATA[<p>Information product for <strong>children since the age of twelve years - PEGI 12</strong> (unless otherwise specified).</p>
+		<p class="mb-1"><a class="btn btn-sm btn-info" href="https://pegi.info/" target="_blank">More info</a></p>]]></value>
+	</data>
+	<data name="Feedback_Title.Text" xml:space="preserve">
+		<value>Feedback</value>
+	</data>
+	<data name="Feedback_Template.Text" xml:space="preserve">
+		<value>\n\n---{content}</value>
+	</data>
+	<data name="FeedbackPage_Template.Text" xml:space="preserve">
+		<value>\nPage: {origin}/tabid/{tabid}</value>
+	</data>
+	<data name="FeedbackSelection_Template.Text" xml:space="preserve">
+		<value>\nSelection: \&quot;{selection}\&quot;</value>
+	</data>
+	<data name="Feedback_Content.Text" xml:space="preserve">
+		<value><![CDATA[<p>Click the button below to open feedback form. You can preliminarily select fragment of text on the page to pass it to the feedback form.</p>
+		<p class="mb-1"><a id="btnSkinOpenFeedback" class="btn btn-sm btn-primary">Open feedback form</a></p>]]></value>
 	</data>
 	<data name="LastModified.Text" xml:space="preserve">
 		<value>Last Modified:</value>
@@ -186,18 +199,6 @@
 	</data>
 	<data name="CreateShortUrl_Tooltip.Text" xml:space="preserve">
 		<value>Create short URL with </value>
-	</data>
-	<data name="Feedback_Template.Text" xml:space="preserve">
-		<value>\n\n---{content}</value>
-	</data>
-	<data name="FeedbackPage_Template.Text" xml:space="preserve">
-		<value>\nPage: {origin}/tabid/{tabid}</value>
-	</data>
-	<data name="FeedbackSelection_Template.Text" xml:space="preserve">
-		<value>\nSelection: \&quot;{selection}\&quot;</value>
-	</data>
-	<data name="FeedbackMessage.Text" xml:space="preserve">
-		<value>[FeedbackMessage.Text]</value>
 	</data>
 	<data name="PartialContentAlert_Title.Text" xml:space="preserve">
 		<value>Partial content</value>

@@ -86,9 +86,6 @@
 	<data name="SubMenuClose.Text" xml:space="preserve">
 		<value>Закрыть меню</value>
 	</data>
-	<data xml:space="preserve" name="FeedbackButton_Tooltip.Text">
-		<value>Нажмите на кнопку, чтобы открыть форму обратной связи. Вы также можете предварительно выделить фрагмент текста на странице, чтобы передать его в форму обратной связи.</value>
-	</data>
 	<data name="SocialGroups.Text" xml:space="preserve">
 		<value>Присоединяйтесь!</value>
 	</data>
@@ -138,8 +135,18 @@
 		<value>Знак информационной продукции (12+)</value>
 	</data>
 	<data name="AgeRating_Content.Text" xml:space="preserve">
-		<value><![CDATA[Информационная продукция <strong>для детей старше 12 лет</strong> (если иное не указано дополнительно).
-		<hr class="my-2" /><a class="skin-chevron-link" href="https://base.garant.ru/77680092/948c9c0734b6e944a4727660f2d5a027/" target="_blank">Подробнее</a>]]></value>
+		<value><![CDATA[<p>Информационная продукция <strong>для детей старше 12 лет</strong> (если иное не указано дополнительно).</p>
+		<p class="mb-1"><a class="btn btn-sm btn-info" href="https://base.garant.ru/77680092/948c9c0734b6e944a4727660f2d5a027/" target="_blank">Подробнее</a></p>]]></value>
+	</data>
+	<data name="FeedbackPage_Template.Text" xml:space="preserve">
+		<value>\nСтраница: {origin}/tabid/{tabid}</value>
+	</data>
+	<data name="FeedbackSelection_Template.Text" xml:space="preserve">
+		<value>\nВыделенный фрагмент: \&quot;{selection}\&quot;</value>
+	</data>
+	<data name="Feedback_Content.Text" xml:space="preserve">
+		<value><![CDATA[<p>Перейдите по ссылке, чтобы открыть форму обратной связи. Вы можете предварительно выделить фрагмент текста на странице, чтобы передать его в форму обратной связи.</p>
+		<p class="mb-1"><a id="btnSkinOpenFeedback" class="btn btn-sm btn-primary">Открыть форму обратной связи</a></p>]]></value>
 	</data>
 	<data name="LastModified.Text" xml:space="preserve">
 		<value>Последние изменения:</value>
@@ -171,15 +178,6 @@
 	</data>
 	<data name="CreateShortUrl_Tooltip.Text" xml:space="preserve">
 		<value>Создать короткую ссылку с использованием </value>
-	</data>
-	<data name="FeedbackPage_Template.Text" xml:space="preserve">
-		<value>\nСтраница: {origin}/tabid/{tabid}</value>
-	</data>
-	<data name="FeedbackSelection_Template.Text" xml:space="preserve">
-		<value>\nВыделенный фрагмент: \&quot;{selection}\&quot;</value>
-	</data>
-	<data name="FeedbackMessage.Text" xml:space="preserve">
-		<value>[FeedbackMessage.Text]</value>
 	</data>
 	<data name="PartialContentAlert_Title.Text" xml:space="preserve">
 		<value>Частичное содержимое</value>
