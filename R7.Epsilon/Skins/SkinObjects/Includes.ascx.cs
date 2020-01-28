@@ -57,8 +57,6 @@ namespace R7.Zeta.Skins.SkinObjects
 
             ClientResourceManager.RegisterScript (Page, Const.SKIN_PATH + "js/skin.min.js", (int) FileOrder.Js.DefaultPriority, "DnnFormBottomProvider", "skin", "0.0.0");
 
-            ClientResourceManager.RegisterScript (Page, Const.SKIN_PATH + "js/feedback.min.js", (int) FileOrder.Js.DefaultPriority, "DnnFormBottomProvider", "feedback", "0.0.0");
-
             ClientResourceManager.RegisterScript (Page, Const.SKIN_PATH + "js/clipboard.min.js", (int) FileOrder.Js.DefaultPriority, "DnnFormBottomProvider", "clipboard", "2.0.4");
 
             if (!Skin.Options.DisableLazyAds) {
