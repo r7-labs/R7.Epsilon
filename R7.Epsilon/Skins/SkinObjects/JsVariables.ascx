@@ -6,7 +6,9 @@ var epsilon = {
     queryParams:{<%= QueryParams %>},
 	enablePopups:<%= PortalSettings.EnablePopUps.ToString ().ToLowerInvariant() %>,
 	inPopup:<%= DotNetNuke.Common.Utilities.UrlUtils.InPopUp ().ToString ().ToLowerInvariant () %>,
-	cookiePrefix: '<%= R7.Zeta.Components.Const.COOKIE_PREFIX %>',
-	isEditMode:<%= (PortalSettings.UserMode == PortalSettings.Mode.Edit).ToString().ToLowerInvariant () %>
+	cookiePrefix: '<%= R7.Epsilon.Components.Const.COOKIE_PREFIX %>',
+	isEditMode:<%= (PortalSettings.UserMode == PortalSettings.Mode.Edit).ToString().ToLowerInvariant () %>,
+	feedbackUrl: '<%= FeedbackUrl %>',
+	feedbackModuleId: <%: FeedbackModule.ModuleID %>
 };
 </script>
