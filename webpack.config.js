@@ -40,8 +40,7 @@ var scssConfig = {
 var jsConfig = {
     mode: "production",
     entry: {
-        skin: "./R7.Epsilon/Skins/js/skin.js",
-        feedback: "./R7.Epsilon/Skins/js/feedback.js"
+        skin: "./R7.Epsilon/Skins/js/skin.js"
     },
     output: {
         // TODO: suppress JS output somehow?
