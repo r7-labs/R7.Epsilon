@@ -65,3 +65,15 @@
 .badge-primary {
     background-color: $color-primary-bs;
 }
+
+/* Pagination */
+
+.page-item.active .page-link {
+    background-color: $color-primary-bs;
+    border-color: $color-primary-bs;
+}
+
+.page-link:focus {
+    // TODO: Convert to mixin
+    box-shadow: 0 0 0 .2rem $btn-primary-focus-shadow-color;
+}
