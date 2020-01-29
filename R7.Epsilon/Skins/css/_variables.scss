@@ -44,7 +44,7 @@ $btn-primary-bg-hover-color: $color-primary-3;
 $btn-primary-border-color: $color-primary-0;
 $btn-primary-border-hover-color: $color-primary-3;
 $btn-primary-text-color: #fff;
-$btn-primary-focus-shadow-color: $color-primary-2;
+$btn-primary-focus-shadow-color: fade-out($color-primary-3, .75); // BS4 default is rgba(0,123,255,.25)
 $btn-primary-active-bg-color: darken($color-primary-0, 10%);
 $btn-primary-active-border-color: darken($color-primary-3, 5%);
 

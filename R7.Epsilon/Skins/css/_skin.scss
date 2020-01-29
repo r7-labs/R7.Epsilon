@@ -423,7 +423,7 @@ a.btn-primary:visited {
 
 /* Links */
 
-a, .btn.btn-link {
+a, .page-link, .btn.btn-link {
     color: $link-color;
     &:hover {
         color: $link-hover-color;
@@ -477,6 +477,7 @@ a.dnnPrimaryAction, a.dnnSecondaryAction, a.dnnTertiaryAction {
 }
 
 .btn:focus, .btn.focus {
+    // TODO: Convert to mixin
     box-shadow: 0 0 0 .2rem $btn-primary-focus-shadow-color;
 }
 
@@ -492,6 +493,7 @@ a.dnnPrimaryAction,
         color: $btn-primary-text-color;
     }
     &:focus, &.focus {
+        // TODO: Convert to mixin
         box-shadow: 0 0 0 .2rem $btn-primary-focus-shadow-color;
     }
 }
@@ -507,6 +509,7 @@ a.dnnSecondaryAction {
         color: $btn-secondary-text-color;
     }
     &:focus, &.focus {
+        // TODO: Convert to mixin
         box-shadow: 0 0 0 .2rem $btn-secondary-focus-shadow-color;
     }
 }
@@ -514,6 +517,7 @@ a.dnnSecondaryAction {
 .btn-link, a.btn-link,
 .dnnTertiaryAction, a.dnnTertiaryAction {
     &:focus, &.focus {
+        // TODO: Convert to mixin
         box-shadow: 0 0 0 .2rem $btn-secondary-focus-shadow-color;
     }
 }
@@ -542,6 +546,7 @@ a.dnnPrimaryAction:active, a.dnnPrimaryAction.active {
 .btn-primary:not(:disabled):not(.disabled).active:focus,
 .btn-primary:not(:disabled):not(.disabled):active:focus,
 .show > .btn-primary.dropdown-toggle:focus {
+    // TODO: Convert to mixin
     box-shadow: 0 0 0 .2rem $btn-primary-focus-shadow-color;
 }
 
