@@ -22,10 +22,10 @@
 // Palette URL: http://paletton.com/#uid=3340H0k00lW00++08xX00bZ8o06
 
 $color-primary-0: #777777;	// Main Primary color
-$color-primary-1: #FFFFFF;
+$color-primary-1: #FFFFFF;  // must be #fff
 $color-primary-2: #B2B3B2;
 $color-primary-3: #414141;
-$color-primary-4: #000000;
+$color-primary-4: #000000;  // must be #000
 
 $color-secondary-1-0: #AFAFAF;	// Main Secondary color (1)
 $color-secondary-1-1: #FFFFFF;
@@ -38,3 +38,10 @@ $color-secondary-2-1: #FFFFFF;
 $color-secondary-2-2: #D3D2D2;
 $color-secondary-2-3: #4E4E4E;
 $color-secondary-2-4: #010000;
+
+// colors to replace Bootstrap "primary"
+$color-bs-primary-0: $color-primary-0;
+$color-bs-primary-1: $color-primary-1;
+$color-bs-primary-2: $color-primary-2;
+$color-bs-primary-3: $color-primary-3;
+$color-bs-primary-4: $color-primary-4;

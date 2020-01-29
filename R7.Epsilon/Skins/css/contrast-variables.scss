@@ -21,10 +21,8 @@
 
 /* Variables */
 
-// color to replace Bootstrap "primary"
-$color-primary-bs: $color-primary-3;
-
 // footer
+// TODO: Rename to footer-*-bg-color
 $footer-line-background-color:$color-secondary-1-4;
 $footer-main-background-color:$color-secondary-1-3;
 $footer-last-background-color:$color-secondary-1-4;
@@ -36,24 +34,24 @@ $float-btn-age-rating-bg-color: $color-primary-4;
 $float-btn-feedback-bg-color: $color-primary-4;
 
 // links
-$link-color: $color-primary-4;
-$link-hover-color: $color-primary-0;
+$link-color: $color-bs-primary-4;
+$link-hover-color: $color-bs-primary-0;
 
-// buttons
-$btn-primary-bg-color: #000;
-$btn-primary-bg-hover-color: #000;
-$btn-primary-border-color: #000;
-$btn-primary-border-hover-color: #000;
-$btn-primary-text-color: #fff;
-// $btn-primary-focus-shadow-color: fade-out($color-primary-3, 0.75);
+// primary button colors
+$btn-primary-bg-color: $color-bs-primary-4;
+$btn-primary-bg-hover-color: $color-bs-primary-4;
+$btn-primary-border-color: $color-bs-primary-4;
+$btn-primary-border-hover-color: $color-bs-primary-4;
+$btn-primary-text-color: $color-bs-primary-1;
 $btn-primary-active-bg-color: #555;
-$btn-primary-active-border-color: #000;
+$btn-primary-active-border-color: $color-bs-primary-1;
 
-$btn-secondary-bg-color: #fff; // like .btn-secondary
-$btn-secondary-bg-hover-color: #fff; // like .btn-secondary
-$btn-secondary-border-color: #000;
-$btn-secondary-border-hover-color: #000;
-$btn-secondary-text-color: #000;
-$btn-secondary-focus-shadow-color: $color-primary-2;
+// secondary button colors
+$btn-secondary-bg-color: $color-bs-primary-1;
+$btn-secondary-bg-hover-color: $color-bs-primary-1;
+$btn-secondary-border-color: $color-bs-primary-4;
+$btn-secondary-border-hover-color: $color-bs-primary-4;
+$btn-secondary-text-color: $color-bs-primary-4;
+$btn-secondary-focus-shadow-color: $color-bs-primary-2;
 $btn-secondary-active-bg-color: #999;
-$btn-secondary-active-border-color: #000;
+$btn-secondary-active-border-color: $color-bs-primary-4;

@@ -24,7 +24,7 @@
 // dropdown items
 .dropdown-item.active,
 .dropdown-item:active {
-    background-color: $color-primary-0;
+    background-color: $color-bs-primary-0;
     &.disabled {
         color: #fff;
     }
@@ -33,7 +33,7 @@
 // nav-pills
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
-    background-color: $color-primary-0;
+    background-color: $color-bs-primary-0;
 }
 
 // alerts
@@ -42,35 +42,36 @@
 }
 
 .alert-primary {
-    color: $color-primary-bs;
-    border-color: lighten($color-primary-bs, 40%);
-    background-color: lighten($color-primary-bs, 50%);
+    color: $color-bs-primary-0;
+    border-color: lighten($color-bs-primary-0, 40%);
+    background-color: lighten($color-bs-primary-0, 50%);
     .alert-link {
-        color: $color-primary-bs;
+        color: $color-bs-primary-0;
     }
 }
 
-// color classes for Bootstrap "primary" elements
+/* Color classes for Bootstrap "primary" */
+
 .text-primary {
-    color: $color-primary-bs !important;
+    color: $color-bs-primary-0 !important;
 }
 .bg-primary {
-    background-color: $color-primary-bs !important;
+    background-color: $color-bs-primary-0 !important;
 }
 .border-primary {
-    border-color: darken($color-primary-bs, 10%) !important;
+    border-color: darken($color-bs-primary-0, 10%) !important;
 }
 
 // badges
 .badge-primary {
-    background-color: $color-primary-bs;
+    background-color: $color-bs-primary-0;
 }
 
 /* Pagination */
 
 .page-item.active .page-link {
-    background-color: $color-primary-bs;
-    border-color: $color-primary-bs;
+    background-color: $color-bs-primary-0;
+    border-color: $color-bs-primary-0;
 }
 
 .page-link:focus {
