@@ -84,21 +84,25 @@ window.skinBrowserAlertButtonClick = function (e) {
 
     function setupFeedbackModule () {
         if (!!epsilon.queryParams ["feedbackmid"]) {
-            var feedbackContent = "";
+
+            var feedbackMessage = epsilon.localization ["feedbackMessageTemplate"];
+
             if (!!epsilon.queryParams ["returntabid"]) {
-                feedbackContent += epsilon.localization ["feedbackPageTemplate"]
-                    .replace (/\{origin\}/, getLocationOrigin (window.location))
-                    .replace (/\{tabid\}/, epsilon.queryParams ["returntabid"]);
-
-                if (!!epsilon.queryParams ["feedbackselection"]) {
-                    feedbackContent += epsilon.localization ["feedbackSelectionTemplate"].replace (/\{selection\}/, epsilon.queryParams ["feedbackselection"]);
-                }
-
-                var moduleSelector = "#dnn_ctr" + epsilon.queryParams ["feedbackmid"] + "_ContentPane";
-                $(moduleSelector + " textarea").first ()
-                    .val (epsilon.localization ["feedbackTemplate"].replace (/\{content\}/, feedbackContent))
-                    .trigger ("change").trigger ("keyup");
+                feedbackMessage = feedbackMessage.replace (/\{page\}/, getLocationOrigin (window.location) + "/tabid/" + epsilon.queryParams ["returntabid"]);
             }
+            else {
+                feedbackMessage = feedbackMessage.replace (/\{page\}/, epsilon.localization ["notSpecified"]);
+            }
+
+            if (!!epsilon.queryParams ["feedbackselection"]) {
+                feedbackMessage = feedbackMessage.replace (/\{selection\}/, epsilon.queryParams ["feedbackselection"]);
+            }
+            else {
+                feedbackMessage = feedbackMessage.replace (/\{selection\}/, epsilon.localization ["notSpecified"]);
+            }
+
+            var moduleSelector = "#dnn_ctr" + epsilon.queryParams ["feedbackmid"] + "_ContentPane";
+            $(moduleSelector + " textarea").first ().val (feedbackMessage).trigger ("change").trigger ("keyup");
         }
     }
 

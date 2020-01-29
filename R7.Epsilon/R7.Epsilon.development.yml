@@ -97,12 +97,8 @@ analytics:
   use-sputnik: true
 
 feedback:
-#  tab-id: 1100
-#  module-definition-name: "Form and List"
-#  allow-open-in-popup: false
   tab-id: 1090
-  module-definition-name: "Feedback"
-  allow-open-in-popup: true
+  module-id: 2591
 
 websites:
 

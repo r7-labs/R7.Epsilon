@@ -86,8 +86,8 @@
 	<data name="Close.Text" xml:space="preserve">
 		<value>Close</value>
 	</data>
-	<data name="SubMenuClose.Text" xml:space="preserve">
-		<value>Close Menu</value>
+	<data name="NotSpecified.Text" xml:space="preserve">
+		<value>(not specified)</value>
 	</data>
 	<data name="SocialGroups.Text" xml:space="preserve">
 		<value>Follow Us!</value>
@@ -156,17 +156,11 @@
 	<data name="Feedback_Title.Text" xml:space="preserve">
 		<value>Feedback</value>
 	</data>
-	<data name="Feedback_Template.Text" xml:space="preserve">
-		<value>\n\n---{content}</value>
-	</data>
-	<data name="FeedbackPage_Template.Text" xml:space="preserve">
-		<value>\nPage: {origin}/tabid/{tabid}</value>
-	</data>
-	<data name="FeedbackSelection_Template.Text" xml:space="preserve">
-		<value>\nSelection: \&quot;{selection}\&quot;</value>
+	<data name="Feedback_MessageTemplate.Text" xml:space="preserve">
+		<value>\n\n---\nLink to Page: {page}\nSelection: \&quot;{selection}\&quot;</value>
 	</data>
 	<data name="Feedback_Content.Text" xml:space="preserve">
-		<value><![CDATA[<p>Click the button below to open feedback form. You can preliminarily select fragment of text on the page to pass it to the feedback form.</p>
+		<value><![CDATA[<p>In order to provide a feedback, click the button below. You can <strong>preliminarily select a portion of text</strong> on the page to pass it to the form.</p>
 		<p class="mb-1"><a id="btnSkinOpenFeedback" class="btn btn-sm btn-primary">Open feedback form</a></p>]]></value>
 	</data>
 	<data name="LastModified.Text" xml:space="preserve">

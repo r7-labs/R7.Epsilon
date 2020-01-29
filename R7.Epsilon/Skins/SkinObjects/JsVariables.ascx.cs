@@ -20,9 +20,6 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System.Text;
-using System.Linq;
-using DotNetNuke.Common;
-using DotNetNuke.Entities.Modules;
 
 namespace R7.Epsilon.Skins.SkinObjects
 {
@@ -31,30 +28,14 @@ namespace R7.Epsilon.Skins.SkinObjects
     {
         #region Bindable properties
 
-        ModuleInfo _feedbackModule;
-        bool _feedbackModuleChecked;
-        public ModuleInfo FeedbackModule
-        {
-            get {
-                if (!_feedbackModuleChecked) {
-                    _feedbackModuleChecked = true;
-                    return _feedbackModule = GetFeedbackModule ();
-                }
-                return _feedbackModule;
-            }
-        }
-
-        public string FeedbackUrl => Globals.NavigateURL (Config.Feedback.TabId);
-
         public string LocalizationResources
         {
             get {
                 var sb = new StringBuilder ();
 
-                sb.AppendFormat ("feedbackTemplate:'{0}',", T.GetString ("Feedback_Template.Text"));
-                sb.AppendFormat ("feedbackPageTemplate:'{0}',", T.GetString ("FeedbackPage_Template.Text"));
-                sb.AppendFormat ("feedbackSelectionTemplate:'{0}',", T.GetString ("FeedbackSelection_Template.Text"));
-                sb.AppendFormat ("subMenuCloseButtonTitle:'{0}'", T.GetString ("SubMenuClose.Text"));
+                sb.AppendFormat ("feedbackMessageTemplate:'{0}'", T.GetString ("Feedback_MessageTemplate.Text"));
+                sb.Append (",");
+                sb.AppendFormat ("notSpecified:'{0}'", T.GetString ("NotSpecified.Text"));
 
                 return sb.ToString ();
             }
@@ -72,12 +53,5 @@ namespace R7.Epsilon.Skins.SkinObjects
         }
 
         #endregion
-
-        protected ModuleInfo GetFeedbackModule ()
-        {
-            return ModuleController.Instance.GetTabModules (Config.Feedback.TabId)
-                                            .Select (entry => entry.Value)
-                                            .FirstOrDefault (module => module.ModuleDefinition.DefinitionName == Config.Feedback.ModuleDefinitionName);
-        }
     }
 }
