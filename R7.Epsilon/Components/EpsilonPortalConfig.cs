@@ -135,13 +135,14 @@ namespace R7.Zeta.Components
         public bool UseSputnik { get; set; } = false;
     }
 
+    // TODO: Custom feedback URL (with format?)
     public class FeedbackConfig
     {
-        public int TabId { get; set; } = -1;
+        public int TabId { get; set; }
 
-        public string ModuleDefinitionName { get; set; } = "Feedback";
+        public int ModuleId { get; set; }
 
-        public bool AllowOpenInPopup { get; set; } = true;
+        public bool IsEnabled () => TabId > 0 && ModuleId > 0;
     }
 
     public class ThemeConfig

@@ -5,10 +5,12 @@ var epsilon = {
     localization:{<%= LocalizationResources %>},
     queryParams:{<%= QueryParams %>},
 	enablePopups:<%= PortalSettings.EnablePopUps.ToString ().ToLowerInvariant() %>,
-	inPopup:<%= DotNetNuke.Common.Utilities.UrlUtils.InPopUp ().ToString ().ToLowerInvariant () %>,
+	inPopup:<%= UrlUtils.InPopUp ().ToString ().ToLowerInvariant () %>,
 	cookiePrefix: '<%= R7.Epsilon.Components.Const.COOKIE_PREFIX %>',
 	isEditMode:<%= (PortalSettings.UserMode == PortalSettings.Mode.Edit).ToString().ToLowerInvariant () %>,
-	feedbackUrl: '<%= FeedbackUrl %>',
-	feedbackModuleId: <%: FeedbackModule.ModuleID %>
+	feedbackUrl: '<%= DotNetNuke.Common.Globals.NavigateURL (Config.Feedback.TabId) %>',
+	feedbackTabId: <%: Config.Feedback.TabId %>,
+	feedbackModuleId: <%: Config.Feedback.ModuleId %>
 };
 </script>
+
