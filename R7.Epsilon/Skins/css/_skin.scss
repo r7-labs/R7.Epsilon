@@ -445,6 +445,41 @@ a.bold-link {
     }
 }
 
+a.external-link {
+    &::after {
+        // angle-double-right
+        @include fa-icon-after('\f35d');
+    }
+}
+
+a.external-square-link {
+    &::after {
+        // angle-double-right
+        @include fa-icon-after('\f360');
+    }
+}
+
+a.chevron-link {
+    &::after {
+        // angle-double-right
+        @include fa-icon-after('\f054');
+    }
+}
+
+a.chevron-circle-link {
+    &::after {
+        // angle-double-right
+        @include fa-icon-after('\f138');
+    }
+}
+
+a.chevron-double-link {
+    &::after {
+        // angle-double-right
+        @include fa-icon-after('\f101');
+    }
+}
+
 a.skin-chevron-link {
     font-weight: bold;
     &::after {
