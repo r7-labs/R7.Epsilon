@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>R7.Zeta</RootNamespace>
     <AssemblyName>R7.Zeta</AssemblyName>
-    <ReleaseVersion>2.0-beta.3</ReleaseVersion>
+    <ReleaseVersion>2.0-beta.4</ReleaseVersion>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
