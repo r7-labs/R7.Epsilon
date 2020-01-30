@@ -19,9 +19,9 @@
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+@import "mixins";
 @import "bootstrap";
 @import "containers";
-@import "mixins";
 
 /* Styles */
 
@@ -422,6 +422,14 @@ a.btn-primary:visited {
     }
 }
 
+.skin-toasts {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    z-index: 1100;
+}
+
 /* Links */
 
 a, .page-link, .btn.btn-link {
@@ -448,44 +456,38 @@ a.bold-link {
 
 a.external-link {
     &::after {
-        // angle-double-right
-        @include fa-icon-after('\f35d');
+        @include fa-icon-after('\f35d'); // external-link-alt
     }
 }
 
 a.external-square-link {
     &::after {
-        // angle-double-right
-        @include fa-icon-after('\f360');
+        @include fa-icon-after('\f360'); // external-link-square-alt
     }
 }
 
 a.chevron-link {
     &::after {
-        // angle-double-right
-        @include fa-icon-after('\f054');
+        @include fa-icon-after('\f054'); // chevron-right
     }
 }
 
 a.chevron-circle-link {
     &::after {
-        // angle-double-right
-        @include fa-icon-after('\f138');
+        @include fa-icon-after('\f138'); // chevron-circle-right
     }
 }
 
 a.chevron-double-link {
     &::after {
-        // angle-double-right
-        @include fa-icon-after('\f101');
+        @include fa-icon-after('\f101'); // angle-double-right
     }
 }
 
 a.skin-chevron-link {
     font-weight: bold;
     &::after {
-        // angle-double-right
-        @include fa-icon-after('\f101');
+        @include fa-icon-after('\f101'); // angle-double-right
     }
 }
 
@@ -512,11 +514,6 @@ a.dnnPrimaryAction, a.dnnSecondaryAction, a.dnnTertiaryAction {
     }
 }
 
-.btn:focus, .btn.focus {
-    // TODO: Convert to mixin
-    box-shadow: 0 0 0 .2rem $btn-primary-focus-shadow-color;
-}
-
 .dnnPrimaryAction,
 a.dnnPrimaryAction,
 .btn.btn-primary {
@@ -528,33 +525,51 @@ a.dnnPrimaryAction,
         border-color: $btn-primary-border-hover-color;
         color: $btn-primary-text-color;
     }
+}
+
+.btn.btn-primary,
+.dnnPrimaryAction,
+a.dnnPrimaryAction {
     &:focus, &.focus {
-        // TODO: Convert to mixin
-        box-shadow: 0 0 0 .2rem $btn-primary-focus-shadow-color;
+        @include btn-focus-box-shadow($btn-primary-focus-box-shadow-color, $btn-focus-box-shadow-alpha);
     }
 }
 
+.btn.skin-btn-primary {
+    background-color: $skin-btn-primary-bg-color;
+    border-color: $skin-btn-primary-border-color;
+    color: $skin-btn-primary-text-color;
+    &:hover {
+        background-color: $skin-btn-primary-bg-hover-color;
+        border-color: $skin-btn-primary-border-hover-color;
+        color: $skin-btn-primary-text-color;
+    }
+}
+
+.btn.skin-btn-primary {
+    &:focus, &.focus {
+        @include btn-focus-box-shadow($skin-btn-primary-focus-box-shadow-color, $btn-focus-box-shadow-alpha);
+    }
+}
+
+.btn.btn-secondary,
 .dnnSecondaryAction,
 a.dnnSecondaryAction {
     background-color: $btn-secondary-bg-color;
-    border-color: $btn-secondary-border-color;
-    color: $btn-secondary-text-color;
+    border-color: $btn-secondary-border-color !important; // contrast theme fixup
+    color: $btn-secondary-text-color !important; // contrast theme fixup
     &:hover {
         background-color: $btn-secondary-bg-hover-color;
         border-color: $btn-secondary-border-hover-color;
         color: $btn-secondary-text-color;
     }
-    &:focus, &.focus {
-        // TODO: Convert to mixin
-        box-shadow: 0 0 0 .2rem $btn-secondary-focus-shadow-color;
-    }
 }
 
 .btn-link, a.btn-link,
+.dnnSecondaryAction, a.dnnSecondaryAction,
 .dnnTertiaryAction, a.dnnTertiaryAction {
     &:focus, &.focus {
-        // TODO: Convert to mixin
-        box-shadow: 0 0 0 .2rem $btn-secondary-focus-shadow-color;
+        @include btn-focus-box-shadow($btn-primary-focus-box-shadow-color, $btn-focus-box-shadow-alpha);
     }
 }
 
@@ -579,11 +594,17 @@ a.dnnPrimaryAction:active, a.dnnPrimaryAction.active {
     border-color: $btn-primary-active-border-color;
 }
 
+.skin-btn-primary:not(:disabled):not(.disabled).active,
+.skin-btn-primary:not(:disabled):not(.disabled):active,
+.show > .skin-btn-primary.dropdown-toggle {
+    background-color: $skin-btn-primary-active-bg-color;
+    border-color: $skin-btn-primary-active-border-color;
+}
+
 .btn-primary:not(:disabled):not(.disabled).active:focus,
 .btn-primary:not(:disabled):not(.disabled):active:focus,
 .show > .btn-primary.dropdown-toggle:focus {
-    // TODO: Convert to mixin
-    box-shadow: 0 0 0 .2rem $btn-primary-focus-shadow-color;
+    @include btn-focus-box-shadow($btn-primary-focus-box-shadow-color, $btn-focus-box-shadow-alpha);
 }
 
 .btn-secondary:not(:disabled):not(.disabled).active,
@@ -595,10 +616,3 @@ a.dnnSecondaryAction:active, a.dnnSecondaryAction.active {
     border-color: $btn-secondary-active-border-color;
 }
 
-.skin-toasts {
-    position: fixed;
-    top: 0;
-    right: 0;
-    padding: 1rem;
-    z-index: 1100;
-}

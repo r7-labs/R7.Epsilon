@@ -83,19 +83,11 @@ a.underline-link.bold-link {
     text-decoration: none;
 }
 
-// buttons
-.btn.btn-secondary {
-    background-color: $btn-secondary-bg-color;
-    border-color: $btn-secondary-border-color;
-    color: $btn-secondary-text-color;
-    &:hover {
-        background-color: $btn-secondary-bg-hover-color;
-        border-color: $btn-secondary-border-hover-color;
-        color: $btn-secondary-text-color;
-    }
-}
+/* Buttons */
 
-.btn-primary, .btn.btn-secondary,
+.btn-primary,
+.btn.skin-btn-primary,
+.btn.btn-secondary,
 .dnnPrimaryAction, a.dnnPrimaryAction,
 .dnnSecondaryAction, a.dnnSecondaryAction {
     text-decoration: none;

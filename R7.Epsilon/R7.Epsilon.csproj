@@ -278,6 +278,7 @@
     <Content Include="Skins\Layouts\_grid-3cols.ascx" />
     <Content Include="Skins\css\palettes\_shared-palette.scss" />
     <Content Include="Skins\css\_variables.scss" />
+    <Content Include="Skins\css\_variables-calculated.scss" />
     <Content Include="Skins\css\contrast-variables.scss" />
     <Content Include="Skins\css\contrast-overrides.scss" />
     <Content Include="Skins\css\green-variables.scss" />
