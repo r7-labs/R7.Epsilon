@@ -1,0 +1,34 @@
+//
+//  File: _variables-calculated.scss
+//  Project: R7.Epsilon
+//
+//  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
+//
+//  Copyright (c) 2014-2020 Roman M. Yagodin, R7.Labs
+//
+//  This program is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU Affero General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  This program is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU Affero General Public License for more details.
+//
+//  You should have received a copy of the GNU Affero General Public License
+//  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+/* Calculated colors for buttons */
+
+$btn-primary-active-bg-color: darken($btn-primary-bg-color, $btn-active-darken-percent);
+$btn-primary-active-border-color: darken($btn-primary-bg-hover-color, $btn-active-darken-percent);
+$btn-primary-focus-box-shadow-color: $btn-primary-bg-hover-color;
+
+$skin-btn-primary-active-bg-color: darken($skin-btn-primary-bg-color, $btn-active-darken-percent);
+$skin-btn-primary-active-border-color: darken($skin-btn-primary-bg-hover-color, $btn-active-darken-percent);
+$skin-btn-primary-focus-box-shadow-color: $skin-btn-primary-bg-hover-color;
+
+$btn-secondary-active-bg-color: darken($btn-secondary-bg-color, $btn-active-darken-percent);
+$btn-secondary-active-border-color: darken($btn-secondary-bg-hover-color, $btn-active-darken-percent);
+$btn-secondary-focus-box-shadow-color: $btn-secondary-bg-hover-color;

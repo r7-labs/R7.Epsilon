@@ -19,12 +19,11 @@
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-// Bootstrap-inherited variables
+// some Bootstrap-inherited variables
 // TODO: Rename with bs- prefix
 $skin-font-size-small: 80%;
 $skin-color-muted: #6c757d;
 $skin-color-alert-light: #818182;
-$bs-focus-shadow-alpha: .75;
 
 // float buttons
 $float-btn-opacity:0.55;
@@ -36,24 +35,29 @@ $float-btn-feedback-bg-color: $color-secondary-1-3;
 $link-color: $color-bs-primary-3;
 $link-hover-color: $color-bs-primary-0;
 
-// primary button colors
-// TODO: Introduce more Bootstrap-inherited vars
+/* Buttons */
+
+$bs-btn-primary-text-color: #fff;
+$btn-focus-box-shadow-alpha: .75;
+$btn-active-darken-percent: 10%;
+
+// BS-style (blue) main primary button colors
+$btn-primary-text-color: $bs-btn-primary-text-color;
 $btn-primary-bg-color: $color-bs-primary-0;
 $btn-primary-bg-hover-color: $color-bs-primary-3;
 $btn-primary-border-color: $color-bs-primary-0;
 $btn-primary-border-hover-color: $color-bs-primary-3;
-$btn-primary-text-color: #fff;
-$btn-primary-focus-shadow-color: fade-out($color-bs-primary-3, $bs-focus-shadow-alpha);
-$btn-primary-active-bg-color: darken($color-bs-primary-0, 10%);
-$btn-primary-active-border-color: darken($color-bs-primary-3, 5%);
 
-// secondary button colors, like .btn-secondary
-// TODO: Introduce more Bootstrap-inherited vars
-$btn-secondary-bg-color: $skin-color-muted;
-$btn-secondary-bg-hover-color: #5a6268;
-$btn-secondary-border-color: $skin-color-muted;
-$btn-secondary-border-hover-color: #5a6268;
-$btn-secondary-text-color: #fff;
-$btn-secondary-focus-shadow-color: rgba(130,138,145,.5);
-$btn-secondary-active-bg-color: #545b62;
-$btn-secondary-active-border-color: #4e555b;
+// skin-style main primary button colors
+$skin-btn-primary-text-color: $bs-btn-primary-text-color;
+$skin-btn-primary-bg-color: $color-primary-0;
+$skin-btn-primary-bg-hover-color: $color-primary-3;
+$skin-btn-primary-border-color: $color-primary-0;
+$skin-btn-primary-border-hover-color: $color-primary-3;
+
+// main secondary button colors
+$btn-secondary-text-color: $bs-btn-primary-text-color;
+$btn-secondary-bg-color: grayscale($btn-primary-bg-color);
+$btn-secondary-bg-hover-color: grayscale($btn-primary-bg-hover-color);
+$btn-secondary-border-color: grayscale($btn-primary-bg-color);
+$btn-secondary-border-hover-color: grayscale($btn-primary-bg-hover-color);

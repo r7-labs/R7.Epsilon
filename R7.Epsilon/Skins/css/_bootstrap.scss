@@ -4,7 +4,7 @@
 //
 //  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2019 Roman M. Yagodin, R7.Labs
+//  Copyright (c) 2020 Roman M. Yagodin, R7.Labs
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -55,9 +55,11 @@
 .text-primary {
     color: $color-bs-primary-0 !important;
 }
+
 .bg-primary {
     background-color: $color-bs-primary-0 !important;
 }
+
 .border-primary {
     border-color: darken($color-bs-primary-0, 10%) !important;
 }
@@ -75,6 +77,5 @@
 }
 
 .page-link:focus {
-    // TODO: Convert to mixin
-    box-shadow: 0 0 0 .2rem $btn-primary-focus-shadow-color;
+    @include btn-focus-box-shadow($btn-primary-focus-box-shadow-color, $btn-focus-box-shadow-alpha);
 }

@@ -37,21 +37,28 @@ $float-btn-feedback-bg-color: $color-primary-4;
 $link-color: $color-bs-primary-4;
 $link-hover-color: $color-bs-primary-0;
 
-// primary button colors
-$btn-primary-bg-color: $color-bs-primary-4;
-$btn-primary-bg-hover-color: $color-bs-primary-4;
-$btn-primary-border-color: $color-bs-primary-4;
-$btn-primary-border-hover-color: $color-bs-primary-4;
-$btn-primary-text-color: $color-bs-primary-1;
-$btn-primary-active-bg-color: #555;
-$btn-primary-active-border-color: $color-bs-primary-1;
+/* Buttons */
 
-// secondary button colors
+$btn-focus-box-shadow-alpha: .5;
+$btn-active-darken-percent: 15%;
+
+// BS-style (blue) main primary button colors
+$btn-primary-text-color: $bs-btn-primary-text-color;
+$btn-primary-bg-color: $color-bs-primary-4;
+$btn-primary-bg-hover-color: $color-bs-primary-0;
+$btn-primary-border-color: $color-bs-primary-4;
+$btn-primary-border-hover-color: $color-bs-primary-0;
+
+// skin-style main primary button colors
+$skin-btn-primary-text-color: $bs-btn-primary-text-color;
+$skin-btn-primary-bg-color: $color-primary-4;
+$skin-btn-primary-bg-hover-color: $color-primary-0;
+$skin-btn-primary-border-color: $color-primary-4;
+$skin-btn-primary-border-hover-color: $color-primary-0;
+
+// main secondary button colors
+$btn-secondary-text-color: $color-bs-primary-4;
 $btn-secondary-bg-color: $color-bs-primary-1;
 $btn-secondary-bg-hover-color: $color-bs-primary-1;
 $btn-secondary-border-color: $color-bs-primary-4;
 $btn-secondary-border-hover-color: $color-bs-primary-4;
-$btn-secondary-text-color: $color-bs-primary-4;
-$btn-secondary-focus-shadow-color: $color-bs-primary-2;
-$btn-secondary-active-bg-color: #999;
-$btn-secondary-active-border-color: $color-bs-primary-4;
