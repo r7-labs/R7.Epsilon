@@ -14,7 +14,7 @@ ul.dnnActions {
 }
 
 .dnnFormItem .dnnGrid {
-    font-size: $skin-font-size-small;
+    font-size: $bs-font-size-small;
 }
 
 // override for dnnLabels in the bootstrap
@@ -36,16 +36,16 @@ a.dnnFormHelp {
 .dnnFileUploadScope .dnnFormItem span,
 .urlControlTab .dnnFormItem > span {
     width: 50px;
-    font-size: $skin-font-size-small;
+    font-size: $bs-font-size-small;
 }
 
 .dnnFileUploadScope .selected-value {
-    font-size: $skin-font-size-small;
+    font-size: $bs-font-size-small;
 }
 
 .urlControlLinkType span,
 .dnnFormItem .urlControlLinkType span {
-    font-size: $skin-font-size-small;
+    font-size: $bs-font-size-small;
 }
 
 .dnnFormItem .dnnDropDownList .dt-container {
@@ -169,8 +169,8 @@ body > form #ControlBar_ControlPanel {
 /* Audit control styles */
 
 .dnnModuleAuditControl {
-    color: $skin-color-muted;
-    font-size: $skin-font-size-small;
+    color: $bs-color-muted;
+    font-size: $bs-font-size-small;
     width: auto;
     max-width: none;
     p {

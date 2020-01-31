@@ -218,7 +218,7 @@ a.btn-primary:visited {
 }
 
 .skin-header-panes {
-    font-size: $skin-font-size-small;
+    font-size: $bs-font-size-small;
     .cnt {
         margin-top: 0.75rem;
     }
@@ -267,7 +267,7 @@ a.btn-primary:visited {
     border-top-left-radius: .25rem;
     border-top-right-radius: .25rem;
     & > ul {
-        font-size: $skin-font-size-small;
+        font-size: $bs-font-size-small;
         margin-bottom: 0;
         & > li {
             padding-right: 1rem;
@@ -289,7 +289,7 @@ a.btn-primary:visited {
 }
 
 .skin-permalink {
-    font-size: $skin-font-size-small;
+    font-size: $bs-font-size-small;
 }
 
 /* Footer */
@@ -320,7 +320,7 @@ a.btn-primary:visited {
 
     .skin-footer-content-well
     {
-        font-size: $skin-font-size-small;
+        font-size: $bs-font-size-small;
         margin-bottom:10px;
         border-radius:5px;
         border-left:3px solid #fff;
@@ -348,7 +348,7 @@ a.btn-primary:visited {
 
     .skin-terms
     {
-        font-size: $skin-font-size-small;
+        font-size: $bs-font-size-small;
         text-align:right;
     }
 }
@@ -373,7 +373,7 @@ a.btn-primary:visited {
         border-color: rgba(0,0,0,.125) !important; // from .card
     }
     & > .card-title.text-light {
-        color: $skin-color-alert-light !important; // from .alert-light
+        color: $bs-color-alert-light !important; // from .alert-light
     }
 }
 
