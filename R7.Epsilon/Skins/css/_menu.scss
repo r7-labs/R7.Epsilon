@@ -32,7 +32,7 @@
 .skin-menu {
     .skin-chevron-link {
         &.disabled {
-            color: $skin-color-muted;
+            color: $bs-color-muted;
             &::after {
                 content: none;
             }
@@ -92,7 +92,7 @@
     }
     .collapse, .collapsing {
         .dropdown-item:not(.skin-chevron-link) {
-            font-size: $skin-font-size-small;
+            font-size: $bs-font-size-small;
             &::before {
                 @include char-before('•');
             }
@@ -105,7 +105,7 @@
 }
 
 .skin-breadcrumb-menu .breadcrumb-item.disabled a {
-    color: $skin-color-muted !important;
+    color: $bs-color-muted !important;
 }
 
 .skin-cards-menu {
@@ -121,16 +121,16 @@
     }
 
     .skin-cards-menu-description {
-        font-size: $skin-font-size-small;
-        color: $skin-color-muted;
+        font-size: $bs-font-size-small;
+        color: $bs-color-muted;
     }
 
     .skin-cards-menu-submenu {
         padding-left: 16px;
-        font-size: $skin-font-size-small;
+        font-size: $bs-font-size-small;
 
         .disabled {
-            color: $skin-color-muted;
+            color: $bs-color-muted;
         }
 
         li {
