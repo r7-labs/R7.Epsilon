@@ -22,10 +22,15 @@
 @import "mixins";
 
 // make nav link colors less transparent / more contrast
-.skin-main-menu.navbar-dark .navbar-nav .nav-link {
-    color: rgba(255,255,255,.75);
-    &:focus, &:hover {
-        color: rgba(255,255,255,.85);
+.skin-main-menu.navbar-dark {
+    .navbar-nav .nav-link {
+        color: rgba(255,255,255,.75);
+        &:focus, &:hover {
+            color: rgba(255,255,255,.85);
+        }
+    }
+    .navbar-toggler {
+        border-color: rgba(255,255,255,.25);
     }
 }
 
