@@ -79,3 +79,9 @@
 .page-link:focus {
     @include btn-focus-box-shadow($btn-primary-focus-box-shadow-color, $btn-focus-box-shadow-alpha);
 }
+
+// quick fix for light outline buttons colors
+.btn.btn-outline-light {
+    color: #343a40; // like .btn-outline-dark
+    border: 1px dotted #343a40;
+}
