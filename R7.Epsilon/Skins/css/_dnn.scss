@@ -13,6 +13,10 @@ ul.dnnActions {
     padding-left: 0;
 }
 
+.dnnFormItem .dnnGrid {
+    font-size: $skin-font-size-small;
+}
+
 // override for dnnLabels in the bootstrap
 .form-group .dnnLabel {
     text-align: left;
@@ -32,6 +36,10 @@ a.dnnFormHelp {
 .dnnFileUploadScope .dnnFormItem span,
 .urlControlTab .dnnFormItem > span {
     width: 50px;
+    font-size: $skin-font-size-small;
+}
+
+.dnnFileUploadScope .selected-value {
     font-size: $skin-font-size-small;
 }
 
