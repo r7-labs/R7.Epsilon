@@ -38,11 +38,11 @@ body {
 }
 
 .border-primary {
-    background-color: $main-color !important;
+    border-color: $main-color !important;
 }
 
 .text-primary {
-    background-color: $main-color !important;
+    color: $main-color !important;
 }
 
 /* Badges */
