@@ -113,3 +113,11 @@ a.underline-link.bold-link {
 .dnnTertiaryAction, a.dnnTertiaryAction {
     text-decoration: underline;
 }
+
+.btn.btn-outline-primary {
+    border-width: 0.2rem;
+    &:hover {
+        background-color: $main-color;
+        color: #fff;
+    }
+}
