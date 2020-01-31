@@ -1,7 +1,7 @@
 <%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Zeta.Skins.SkinObjects.EpsilonSkinObjectBase" %>
 <%@ Import Namespace="R7.Zeta.Components" %>
 <div class="dropdown skin-websites">
-	<button type="button" class="btn btn-lg dropdown-toggle skin-websites-btn" data-toggle="dropdown" title='<%: T.GetString ("Websites.Text") %>'>
+	<button type="button" class="btn btn-lg skin-btn-unstyled dropdown-toggle skin-websites-btn" data-toggle="dropdown" title='<%: T.GetString ("Websites.Text") %>'>
 		<i class="fas fa-globe"></i>
 	</button>
 	<div class="dropdown-menu">
