@@ -22,37 +22,48 @@
 /* Overrides */
 
 body {
-    color: #000;
+    color: $main-color;
 }
 
 .dropdown-item {
-    color: #000;
+    color: $main-color;
 }
 
 .text-body {
-    color: #000 !important;
+    color: $main-color !important;
 }
 
-.badge-dark {
-    background-color: #000;
+/* Badges */
+
+.badge-primary {
+    color: #fff;
+    background-color: $main-color;
+    border-color: $main-color;
+}
+
+.badge-secondary {
+    color: $main-color;
+    background-color: #fff;
+    border-color: $main-color;
 }
 
 // alerts
 .alert-primary {
-    color: #000;
-    border-color: #000;
-    background-color: #ddd;
+    color: #fff;
+    border-color: $main-color;
+    background-color: $main-color;
     .alert-link {
-        color: #000;
+        color: #fff;
     }
 }
 
 // brand colors classes
-.brand-text { color: #000 !important }
-.brand-bg { background-color: #000 !important }
-.brand-border { border-color: #000 !important }
+.brand-text { color: $main-color !important }
+.brand-bg { background-color: $main-color !important }
+.brand-border { border-color:$main-color !important }
 
-// links
+/* Links */
+
 a.btn {
     text-decoration: none;
 }
@@ -87,11 +98,4 @@ a.underline-link.bold-link {
 
 .dnnTertiaryAction, a.dnnTertiaryAction {
     text-decoration: underline;
-}
-
-// containers
-.cnt-lined {
-    h2, h3, h4, h5 {
-        color: #000;
-    }
 }
