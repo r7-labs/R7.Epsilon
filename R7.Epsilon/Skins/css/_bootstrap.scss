@@ -36,10 +36,7 @@
     background-color: $color-bs-primary-0;
 }
 
-// alerts
-.alert.alert-light {
-    border-color: rgba(0,0,0,.125) !important; // from .card
-}
+/* Alerts  */
 
 .alert-primary {
     color: $color-bs-primary-0;
@@ -80,8 +77,15 @@
     @include btn-focus-box-shadow($btn-primary-focus-box-shadow-color, $btn-focus-box-shadow-alpha);
 }
 
-// quick fix for light outline buttons colors
+/* "Fixes" */
+
+// light outline buttons
 .btn.btn-outline-light {
     color: #343a40; // like .btn-outline-dark
-    border: 1px dotted #343a40;
+    border-color: rgba(0,0,0,.125); // like .card
+}
+
+// light alerts
+.alert.alert-light {
+    border-color: rgba(0,0,0,.125); // like .card
 }
