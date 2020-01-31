@@ -85,9 +85,11 @@ a.underline-link.bold-link {
 
 /* Buttons */
 
-.btn-primary,
+.btn.btn-primary,
+.btn.btn-outline-primary,
 .btn.skin-btn-primary,
 .btn.btn-secondary,
+.btn.btn-outline-secondary,
 .dnnPrimaryAction, a.dnnPrimaryAction,
 .dnnSecondaryAction, a.dnnSecondaryAction {
     text-decoration: none;

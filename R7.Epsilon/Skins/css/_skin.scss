@@ -526,7 +526,18 @@ a.dnnPrimaryAction,
     }
 }
 
+.btn.btn-outline-primary {
+    border-color: $btn-primary-border-color;
+    color: $btn-primary-border-color;
+    &:hover {
+        background-color: $btn-primary-bg-hover-color;
+        border-color: $btn-primary-border-hover-color;
+        color: $btn-primary-text-color;
+    }
+}
+
 .btn.btn-primary,
+.btn.btn-outline-primary,
 .dnnPrimaryAction,
 a.dnnPrimaryAction {
     &:focus, &.focus {
@@ -559,8 +570,18 @@ a.dnnSecondaryAction {
     color: $btn-secondary-text-color !important; // contrast theme fixup
     &:hover {
         background-color: $btn-secondary-bg-hover-color;
-        border-color: $btn-secondary-border-hover-color;
-        color: $btn-secondary-text-color;
+        border-color: $btn-secondary-border-hover-color !important; // contrast theme fixup
+        color: $btn-secondary-text-color !important; // contrast theme fixup
+    }
+}
+
+.btn.btn-outline-secondary {
+    border-color: $btn-secondary-border-color !important; // contrast theme fixup
+    color: $btn-secondary-border-color !important; // contrast theme fixup
+    &:hover {
+        background-color: $btn-secondary-bg-hover-color;
+        border-color: $btn-secondary-border-hover-color !important; // contrast theme fixup
+        color: $btn-secondary-text-color !important; // contrast theme fixup
     }
 }
 
