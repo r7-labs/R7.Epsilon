@@ -556,7 +556,8 @@ a.dnnPrimaryAction {
     }
 }
 
-.btn.skin-btn-primary {
+.btn.skin-btn-primary,
+.btn.skin-btn-unstyled  {
     &:focus, &.focus {
         @include btn-focus-box-shadow($skin-btn-primary-focus-box-shadow-color, $btn-focus-box-shadow-alpha);
     }

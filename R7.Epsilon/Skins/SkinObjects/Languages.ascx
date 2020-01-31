@@ -2,7 +2,7 @@
 <%@ Register TagPrefix="dnn" TagName="LANGUAGE" Src="~/Admin/Skins/Language.ascx" %>
 <%@ Import Namespace="R7.Epsilon.Components" %>
 <div class="dropdown d-inline-block">
-	<button type="button" class="btn btn-lg dropdown-toggle skin-languages-btn" data-toggle="dropdown"
+	<button type="button" class="btn btn-lg skin-btn-unstyled dropdown-toggle skin-languages-btn" data-toggle="dropdown"
 		title='<%: T.GetString("Languages.Text") %>'>
 		<% var langCodeParts = CultureInfo.CurrentCulture.IetfLanguageTag.Split (new char [] {'-'}, StringSplitOptions.RemoveEmptyEntries); %>
 		<strong><%: langCodeParts [0].ToUpperInvariant () %></strong>

@@ -16,7 +16,7 @@
 			<span class="fas fa-user"></span> <%: LastContentModifiedByUserName %>
 		</li>
 		<li class="list-inline-item">
-			<button type="button" id="btnPermalinks" class="btn btn-sm text-muted"
+			<button type="button" id="btnPermalinks" class="btn btn-sm skin-btn-unstyled text-muted"
 					title='<%: T.GetString ("Permalinks_Tooltip.Text") %>'
 					data-toggle="modal" data-target="#skinPermalinksModal">
 				<i class="fas fa-globe"></i> <%: T.GetString ("Permalinks.Text") %>

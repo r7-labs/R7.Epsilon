@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.Skins.SkinObjects.EpsilonSkinObjectBase" %>
 <%@ Import Namespace="R7.Epsilon.Components" %>
 <div class="dropdown d-inline-block skin-social-groups">
-	<button type="button" class="btn btn-lg dropdown-toggle" data-toggle="dropdown" title='<%: T.GetString ("SocialGroups.Text") %>'>
+	<button type="button" class="btn btn-lg skin-btn-unstyled dropdown-toggle" data-toggle="dropdown" title='<%: T.GetString ("SocialGroups.Text") %>'>
 		<% var primaryGroup = Config.SocialGroups.FirstOrDefault (g => g.IsPrimary) ?? Config.SocialGroups.First (); %>
 		<i class="fab fa-<%: SocialGroupHelper.GetFAIconName (primaryGroup.Type) %>"></i><sup>+</sup>
 	</button>
