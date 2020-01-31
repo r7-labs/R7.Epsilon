@@ -25,10 +25,6 @@ body {
     color: $main-color;
 }
 
-.dropdown-item {
-    color: $main-color;
-}
-
 .text-body {
     color: $main-color !important;
 }
@@ -120,4 +116,31 @@ a.underline-link.bold-link {
         background-color: $main-color;
         color: #fff;
     }
+}
+
+/* Dropdowns */
+
+.dropdown-item {
+    color: $main-color;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+    background-color: $main-color;
+    &.disabled {
+        color: #fff;
+    }
+}
+
+// nav-pills
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+    background-color: $main-color;
+}
+
+
+// pagination
+.page-item.active .page-link {
+    background-color: $main-color;
+    border-color: $main-color;
 }
