@@ -29,8 +29,8 @@
                 <i class="fas fa-search"></i>
             </button>
 			<% if (!Skin.Options.DisableLogin) { %>
-				<div class="dropdown d-inline-block skin-login">
-					<button type="button" class="btn btn-lg  skin-btn-unstyled dropdown-toggle" data-toggle="dropdown" title='<%: T.GetString ("UserProfile.Text") %>'>
+				<div class="dropdown skin-login">
+					<button type="button" class="btn btn-lg skin-btn-unstyled dropdown-toggle" data-toggle="dropdown" title='<%: T.GetString ("UserProfile.Text") %>'>
 						<i class="fas fa-user"></i>
 					</button>
 					<div class="dropdown-menu">
