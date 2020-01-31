@@ -1,6 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.Skins.SkinObjects.JsVariables" %>
 <%@ Import Namespace="DotNetNuke.Common.Utilities" %>
-<%@ Import Namespace="R7.Epsilon.Components" %>
 <script type="text/javascript">
 var epsilon = {
     portalAlias:'<%= PortalSettings.Current.PortalAlias.HTTPAlias %>',
