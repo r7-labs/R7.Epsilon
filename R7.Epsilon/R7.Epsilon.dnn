@@ -29,6 +29,7 @@
 						<file><name>Founders.ascx</name></file>
 						<file><name>Functions.ascx</name></file>
 						<file><name>FooterContent.ascx</name></file>
+						<file><name>FeedbackButton.ascx</name></file>
 						<file><name>LocalMenu.ascx</name></file>
 						<file><name>HeadersMenu.ascx</name></file>
 						<file><name>AdminPageInfo.ascx</name></file>
