@@ -21,6 +21,12 @@ ul.dnnActions {
     font-size: $bs-font-size-small;
 }
 
+// sync SELECT style with other DNN form controls
+.dnnFormItem select {
+    max-width: 445px !important;
+    width: 45%;
+}
+
 // override for dnnLabels in the bootstrap
 .form-group .dnnLabel {
     text-align: left;
