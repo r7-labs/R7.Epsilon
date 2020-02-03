@@ -176,6 +176,12 @@ body > form #ControlBar_ControlPanel {
     z-index: 1030 !important;
 }
 
+// remove DNN settings form top/bottom margin
+.dnnModuleSettings {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 /* Audit control styles */
 
 .dnnModuleAuditControl {
