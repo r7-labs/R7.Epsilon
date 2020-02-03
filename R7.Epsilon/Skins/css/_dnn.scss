@@ -8,6 +8,10 @@ ul.dnnAdminTabNav {
     }
 }
 
+ul.dnnAdminTabNav li a {
+	font-size: 80%;
+}
+
 ul.dnnActions {
     display: inline-block; // for the Edit Profile and My Account links in User Profiles
     padding-left: 0;
