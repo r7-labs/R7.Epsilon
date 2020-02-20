@@ -4,7 +4,7 @@
 //
 //  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2015-2019 Roman M. Yagodin, R7.Labs
+//  Copyright (c) 2015-2020 Roman M. Yagodin, R7.Labs
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -20,35 +20,32 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
-using DotNetNuke.Common;
 using DotNetNuke.Web.Client;
 using DotNetNuke.Web.Client.ClientResourceManagement;
 using DotNetNuke.Framework.JavaScriptLibraries;
 using R7.Epsilon.Components;
+using R7.Dnn.Extensions.Client;
 
 namespace R7.Epsilon.Skins.SkinObjects
 {
     public class Includes: EpsilonSkinObjectBase
     {
+        // TODO: Move to OnInit?
         protected override void OnLoad (EventArgs e)
         {
             ClientResourceManager.RegisterStyleSheet (Page, Const.SKIN_PATH + "css/bootstrap.min.css", (int) FileOrder.Css.SkinCss, "DnnPageHeaderProvider", "bootstrap", "4.3.1");
 
-            var fontAwesome = JavascriptLibraryHelper.GetHighestVersionLibrary ("FontAwesome");
+            var fontAwesome = JavaScriptLibraryHelper.GetHighestVersionLibrary ("FontAwesome");
             if (fontAwesome != null) {
-                ClientResourceManager.RegisterStyleSheet (Page, "/Resources/Libraries/FontAwesome/"
-                    + Globals.FormatVersion (fontAwesome.Version, "00", 3, "_") + "/css/all.min.css",
-                    (int) FileOrder.Css.SkinCss, "DnnPageHeaderProvider", "font-awesome", fontAwesome.Version.ToString ()
-                );
+                JavaScriptLibraryHelper.RegisterStyleSheet (fontAwesome,
+                    Page, "css/all.min.css", (int) FileOrder.Css.SkinCss, "DnnPageHeaderProvider", "font-awesome");
             }
 
             JavaScript.RequestRegistration ("jQuery-BlueimpGallery");
-            var blueimpLibrary = JavascriptLibraryHelper.GetHighestVersionLibrary ("jQuery-BlueimpGallery");
+            var blueimpLibrary = JavaScriptLibraryHelper.GetHighestVersionLibrary ("jQuery-BlueimpGallery");
             if (blueimpLibrary != null) {
-                ClientResourceManager.RegisterStyleSheet (Page, "/Resources/Libraries/jQuery-BlueimpGallery/"
-                    + Globals.FormatVersion (blueimpLibrary.Version, "00", 3, "_") + "/css/blueimp-gallery.min.css",
-                    (int) FileOrder.Css.SkinCss, "DnnPageHeaderProvider", "blueimp-gallery", blueimpLibrary.Version.ToString ()
-                );
+                JavaScriptLibraryHelper.RegisterStyleSheet (blueimpLibrary,
+                    Page, "css/blueimp-gallery.min.css", (int) FileOrder.Css.SkinCss, "DnnPageHeaderProvider", "blueimp-gallery");
             }
 
             ClientResourceManager.RegisterStyleSheet (Page, Const.SKIN_PATH + "css/" + (Config.GetTheme (Request) ?? Config.Themes [0]).Css, (int) FileOrder.Css.SkinCss, "DnnPageHeaderProvider", "skin", "0.0.0");
