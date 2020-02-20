@@ -1,4 +1,4 @@
-﻿<dotnetnuke type="Package" version="5.0">
+<dotnetnuke type="Package" version="5.0">
 	<packages>
 		<package name="R7.Epsilon Skin" type="Skin" version="02.00.00">
 			<friendlyName>R7.Epsilon</friendlyName>
@@ -13,9 +13,9 @@
 			<license src="license.htm" />
 			<releaseNotes src="releaseNotes.htm" />
 			<dependencies>
-				<!-- .NET 4.5 -->
-				<dependency type="type">System.Reflection.ReflectionContext</dependency>
+				<dependency type="type">System.Reflection.ReflectionContext</dependency> <!-- .NET 4.5 -->
 				<dependency type="coreVersion">08.00.04</dependency>
+				<dependency type="managedPackage" version="0.14.0">R7.Dnn.Extensions</dependency>
 				<dependency type="package">FontAwesome</dependency>
 				<dependency type="package">LazyAds</dependency>
 				<dependency type="package">Rangy</dependency>
