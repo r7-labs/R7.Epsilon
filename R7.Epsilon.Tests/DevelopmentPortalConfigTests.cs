@@ -4,7 +4,7 @@
 //
 //  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2014-2019 Roman M. Yagodin, R7.Labs
+//  Copyright (c) 2014-2020 Roman M. Yagodin, R7.Labs
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -35,7 +35,7 @@ namespace R7.Epsilon.Tests
             var devConfigFile = Path.Combine ("..", "..", "..", "R7.Epsilon", "R7.Epsilon.development.yml");
 
             using (var configReader = new StringReader (File.ReadAllText (devConfigFile))) {
-                var deserializer = new DeserializerBuilder ().WithNamingConvention (new HyphenatedNamingConvention ()).Build ();
+                var deserializer = new DeserializerBuilder ().WithNamingConvention (HyphenatedNamingConvention.Instance).Build ();
                 Assert.NotNull (deserializer.Deserialize<EpsilonPortalConfig> (configReader));
             }
         }
