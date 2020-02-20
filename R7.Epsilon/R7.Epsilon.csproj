@@ -177,8 +177,6 @@
     <Content Include="Containers\Default.ascx" />
     <Content Include="Skins\Edit.ascx" />
     <Content Include="Skins\PopupSkin.ascx" />
-    <Content Include="Skins\js\bootstrap-image-gallery.min.js" />
-    <Content Include="Skins\js\jquery.blueimp-gallery.min.js" />
     <Content Include="Containers\Default_H3.ascx" />
     <Content Include="Skins\js\skin.js" />
     <Content Include="Skins\js\supportedBrowsers.js" />
@@ -253,7 +251,6 @@
     <Content Include="Containers\HeaderCard_Warning.ascx" />
     <Content Include="Containers\HeaderCard_Danger.ascx" />
     <Content Include="Skins\SkinObjects\PermalinksModal.ascx" />
-    <Content Include="Skins\js\bootstrap-init.js" />
     <Content Include="Skins\SkinObjects\Alerts.ascx" />
     <Content Include="Skins\Default.ascx" />
   </ItemGroup>
