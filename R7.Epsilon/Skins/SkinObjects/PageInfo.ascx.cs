@@ -4,7 +4,7 @@
 //
 //  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2015-2019 Roman M. Yagodin, R7.Labs
+//  Copyright (c) 2015-2020 Roman M. Yagodin, R7.Labs
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -19,10 +19,12 @@
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+using System;
 using System.Linq;
 using DotNetNuke.Entities.Content;
 using DotNetNuke.Entities.Modules;
 using DotNetNuke.Entities.Portals;
+using R7.Dnn.Extensions.Models;
 
 namespace R7.Epsilon.Skins.SkinObjects
 {
@@ -35,7 +37,31 @@ namespace R7.Epsilon.Skins.SkinObjects
             lastModifiedContentItem = GetLastModifiedContentItem (ActiveTab.TabID);
         }
 
-        protected ContentItem GetLastModifiedContentItem (int tabId)
+        protected DateTime GetPublishedOnDate ()
+        {
+            var startDate = (ActiveTab.StartDate != DateTime.MinValue) ? (DateTime?) ActiveTab.StartDate : null;
+            return ModelHelper.PublishedOnDate (startDate, ActiveTab.CreatedOnDate);
+        }
+
+        protected DateTime GetLastModifiedOnDate ()
+        {
+            var lastModifiedOnDate = SafeGetLastModifiedContentItem ().LastModifiedOnDate;
+            var publishedOnDate = GetPublishedOnDate ();
+
+            if (lastModifiedOnDate < publishedOnDate) {
+                lastModifiedOnDate = publishedOnDate;
+            }
+
+            return lastModifiedOnDate;
+        }
+
+        public string PublishedOnDateString => GetPublishedOnDate ()
+            .ToString (T.GetStringOrDefault ("PublishedOnDate_Format.Text", "MM/dd/yyyy"));
+
+        public string LastModifiedOnDateString => GetLastModifiedOnDate ()
+            .ToString (T.GetStringOrDefault ("PublishedOnDate_Format.Text", "MM/dd/yyyy"));
+
+        ContentItem GetLastModifiedContentItem (int tabId)
         {
             var contentController = new ContentController ();
             var contentItems = contentController.GetContentItemsByTabId (tabId);
@@ -46,12 +72,6 @@ namespace R7.Epsilon.Skins.SkinObjects
             return contentItems.OrderByDescending (ci => ci.LastModifiedOnDate).FirstOrDefault ();
         }
 
-        protected string LastContentModifiedOnDate {
-            get {
-                return SafeGetLastModifiedContentItem ().LastModifiedOnDate.ToString (T.GetStringOrDefault ("PublishedOnDate_Format.Text", "MM/dd/yyyy"));
-            }
-        }
-
         protected string LastContentModifiedByUserName {
             get {
                 var user = SafeGetLastModifiedContentItem ().LastModifiedByUser (PortalSettings.PortalId);
@@ -59,7 +79,7 @@ namespace R7.Epsilon.Skins.SkinObjects
             }
         }
 
-        protected ContentItem SafeGetLastModifiedContentItem ()
+        ContentItem SafeGetLastModifiedContentItem ()
         {
             if (lastModifiedContentItem != null) {
                 return lastModifiedContentItem;

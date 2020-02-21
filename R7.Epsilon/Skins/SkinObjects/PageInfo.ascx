@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.Skins.SkinObjects.PageInfo" %>
+<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.Skins.SkinObjects.PageInfo" %>
 <%@ Register TagPrefix="dnn" TagName="TAGS" Src="~/Admin/Skins/Tags.ascx" %>
 <% if (!Skin.Options.DisablePageInfo) { %>
 <div class="skin-page-info text-muted">
@@ -9,8 +9,11 @@
 		<hr />
 	<% } %>
 	<ul class="list-inline">
-		<li class="list-inline-item" title='<%: T.GetString ("LastModified_Tooltip.Text") %>'>
-			<span class="fas fa-calendar-alt"></span> <%: T.GetString ("LastModified.Text") %> <%: LastContentModifiedOnDate %>
+		<li class="list-inline-item" title='<%: T.GetString ("PublishedDate_Tooltip.Text") %>'>
+			<span class="fas fa-calendar-alt"></span> <%: T.GetString ("PublishedDate.Text") %> <%: PublishedOnDateString %>
+		</li>
+		<li class="list-inline-item" title='<%: T.GetString ("LastModifiedDate_Tooltip.Text") %>'>
+			<span class="fas fa-calendar-alt"></span> <%: T.GetString ("LastModifiedDate.Text") %> <%: LastModifiedOnDateString %>
 		</li>
 		<li class="list-inline-item" title='<%: T.GetString ("LastModifiedByUser_Tooltip.Text") %>'>
 			<span class="fas fa-user"></span> <%: LastContentModifiedByUserName %>

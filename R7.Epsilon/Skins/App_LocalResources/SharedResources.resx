@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 	<resheader name="resmimetype">
 		<value>text/microsoft-resx</value>
@@ -163,14 +163,20 @@
 		<value><![CDATA[<p>In order to provide a feedback, click the button below. You can <strong>preliminarily select a portion of text</strong> on the page to pass it to the form.</p>
 		<p class="mb-1"><a id="btnSkinOpenFeedback" class="btn btn-sm btn-primary">Open feedback form</a></p>]]></value>
 	</data>
-	<data name="LastModified.Text" xml:space="preserve">
+	<data name="PublishedDate.Text" xml:space="preserve">
+		<value>Published:</value>
+	</data>
+	<data name="PublishedDate_Tooltip.Text" xml:space="preserve">
+		<value>Publish date of the page.</value>
+	</data>
+	<data name="LastModifiedDate.Text" xml:space="preserve">
 		<value>Last Modified:</value>
 	</data>
-	<data name="LastModified_Tooltip.Text" xml:space="preserve">
-		<value>Last modified date of page contents or settings.</value>
+	<data name="LastModifiedDate_Tooltip.Text" xml:space="preserve">
+		<value>Last modified date of page contents (or settings).</value>
 	</data>
 	<data name="LastModifiedByUser_Tooltip.Text" xml:space="preserve">
-		<value>The last user who was modified the page contents or settings.</value>
+		<value>The last user who was modified the page contents (or settings).</value>
 	</data>
 	<data name="Permalinks.Text" xml:space="preserve">
 		<value>Permalinks&#8230;</value>
