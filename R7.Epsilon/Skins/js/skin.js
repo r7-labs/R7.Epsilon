@@ -127,7 +127,15 @@ window.skinBrowserAlertButtonClick = function (e) {
         $('.row').each (function () {
             if ($(this).children ().length ===
                 $(this).children ('.DNNEmptyPane').not ('.dnnSortable').length) {
-                $(this).addClass ('hidden');
+                $(this).addClass ('d-none');
+            }
+        });
+    }
+    
+    function emptySpecificTags () {
+        $(".language-object").each (function () {
+            if ($(this).children ().length === 0) {
+                $(this).addClass ("d-none");
             }
         });
     }
@@ -326,6 +334,7 @@ window.skinBrowserAlertButtonClick = function (e) {
         if (! epsilon.inPopup) {
             initBootstrapToasts ();
             emptyLayoutRows ();
+            emptySpecificTags ();
             initUpButton (320, 500);
             initCustomContent ();
             initSearch ();

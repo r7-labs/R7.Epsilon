@@ -112,6 +112,10 @@ a.btn-primary:visited {
     .Language > img {
         display: none;
     }
+    // hide subsequent divider
+    .language-object.d-none + .dropdown-divider {
+        display: none;
+    }
 }
 
 .skin-languages-btn > sup {
