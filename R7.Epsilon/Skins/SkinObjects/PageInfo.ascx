@@ -9,17 +9,17 @@
 		<hr />
 	<% } %>
 	<ul class="list-inline">
-		<li class="list-inline-item" title='<%: T.GetString ("PublishedDate_Tooltip.Text") %>'>
+		<li class="list-inline-item skin-page-info-item" title='<%: T.GetString ("PublishedDate_Tooltip.Text") %>'>
 			<span class="fas fa-calendar-alt"></span> <%: T.GetString ("PublishedDate.Text") %> <%: PublishedOnDateString %>
 		</li>
-		<li class="list-inline-item" title='<%: T.GetString ("LastModifiedDate_Tooltip.Text") %>'>
+		<li class="list-inline-item skin-page-info-item" title='<%: T.GetString ("LastModifiedDate_Tooltip.Text") %>'>
 			<span class="fas fa-calendar-alt"></span> <%: T.GetString ("LastModifiedDate.Text") %> <%: LastModifiedOnDateString %>
 		</li>
-		<li class="list-inline-item" title='<%: T.GetString ("LastModifiedByUser_Tooltip.Text") %>'>
+		<li class="list-inline-item skin-page-info-item" title='<%: T.GetString ("LastModifiedByUser_Tooltip.Text") %>'>
 			<span class="fas fa-user"></span> <%: LastContentModifiedByUserName %>
 		</li>
 		<li class="list-inline-item">
-			<button type="button" id="btnPermalinks" class="btn btn-sm skin-btn-unstyled text-muted"
+			<button type="button" id="btnPermalinks" class="btn skin-btn-unstyled text-muted skin-btn-permalinks"
 					title='<%: T.GetString ("Permalinks_Tooltip.Text") %>'
 					data-toggle="modal" data-target="#skinPermalinksModal">
 				<i class="fas fa-globe"></i> <%: T.GetString ("Permalinks.Text") %>

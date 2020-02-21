@@ -269,9 +269,12 @@ a.btn-primary:visited {
     & > ul {
         font-size: $bs-font-size-small;
         margin-bottom: 0;
-        & > li {
-            padding-right: 1rem;
+        & > li.skin-page-info-item {
+			padding: .375rem .75rem; // like .btn
         }
+    }
+    .skin-btn-permalinks {
+        font-size: 100%;
     }
 }
 
