@@ -4,7 +4,7 @@
 //
 //  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2014-2019 Roman M. Yagodin, R7.Labs
+//  Copyright (c) 2014-2020 Roman M. Yagodin, R7.Labs
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -21,7 +21,6 @@
 
 using System;
 using System.Collections.Specialized;
-using System.Web;
 using System.Text.RegularExpressions;
 using DotNetNuke.Common;
 using DotNetNuke.Entities.Portals;
@@ -85,34 +84,6 @@ namespace R7.Epsilon.Components
             }
 
             return url;
-        }
-
-        // TODO: Move to the base library
-        /// <summary>
-        /// Checks if browser is InternetExplorer
-        /// </summary>
-        /// <returns><c>true</c>, if browser is InternetExplorer, <c>false</c> otherwise.</returns>
-        /// <param name="request">Request.</param>
-        public static bool IsIeBrowser (HttpRequest request)
-        {
-            var browserName = request.Browser.Browser.ToUpperInvariant ();
-            if (browserName.StartsWith ("IE", StringComparison.Ordinal)
-                || browserName.Contains ("MSIE")
-                || browserName == "INTERNETEXPLORER") {
-                return true;
-            }
-
-            return false;
-        }
-
-        /// <summary>
-        /// Checks if browser is Edge
-        /// </summary>
-        /// <returns><c>true</c>, if browser is Edge, <c>false</c> otherwise.</returns>
-        /// <param name="request">Request.</param>
-        public static bool IsEdgeBrowser (HttpRequest request)
-        {
-            return request.UserAgent.Contains ("Edge");
         }
     }
 }
