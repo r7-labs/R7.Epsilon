@@ -9,7 +9,7 @@
     <RootNamespace>R7.Epsilon.Tests</RootNamespace>
     <AssemblyName>R7.Epsilon.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <ReleaseVersion>2.0-beta.4</ReleaseVersion>
+    <ReleaseVersion>2.0-rc.1</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

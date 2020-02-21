@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>R7.Epsilon</RootNamespace>
     <AssemblyName>R7.Epsilon</AssemblyName>
-    <ReleaseVersion>2.0-beta.4</ReleaseVersion>
+    <ReleaseVersion>2.0-rc.1</ReleaseVersion>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
