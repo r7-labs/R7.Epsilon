@@ -253,6 +253,7 @@
     <Content Include="Skins\SkinObjects\PermalinksModal.ascx" />
     <Content Include="Skins\SkinObjects\Alerts.ascx" />
     <Content Include="Skins\Default.ascx" />
+    <Content Include="Containers\Blank_Blank.ascx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
