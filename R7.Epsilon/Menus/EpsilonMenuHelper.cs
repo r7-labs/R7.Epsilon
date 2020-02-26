@@ -58,7 +58,7 @@ namespace R7.Epsilon.Menus
             if (!node.Enabled) {
                 return "#";
             }
-            if (string.IsNullOrEmpty (urlFormat)) {
+            if (node.TabId <= 0 || string.IsNullOrEmpty (urlFormat)) {
                 return node.Url;
             }
             return EpsilonUrlHelper.FormatUrl (urlFormat, node.TabId, PortalSettings.Current.PortalId, HttpContext.Current.Request.QueryString);

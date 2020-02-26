@@ -25,7 +25,7 @@
 
 	string FormatUrl (MenuNode node)
 	{
-		if (string.IsNullOrEmpty (node.Url) && node.TabId == -1) {
+		if (string.IsNullOrEmpty (node.Url) && node.TabId <= 0) {
 			node.TabId = PortalSettings.Current.HomeTabId;
 			node.Url = Globals.NavigateURL (PortalSettings.Current.HomeTabId);
 		}
