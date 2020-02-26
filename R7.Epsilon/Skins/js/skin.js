@@ -138,6 +138,11 @@ window.skinBrowserAlertButtonClick = function (e) {
                 $(this).addClass ("d-none");
             }
         });
+        $(".navbar.skin-secondary-menu .navbar-collapse").each (function () {
+            if ($(this).children ().length === 0) {
+                $(this).parent ().parent ().addClass ("d-none");
+            }
+        });
     }
 
     function alterLanguage () {
