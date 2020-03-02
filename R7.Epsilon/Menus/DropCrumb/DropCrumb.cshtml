@@ -55,7 +55,7 @@
 								itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
 							@if (node.HasChildren ()) {
 								<span class="dropdown">
-									<a id='@Id(node, "btnDropdown")' role="button" href="@FormatUrl(node)" data-toggle="dropdown"
+									<a id='@Id(node, "btnDropdown")' role="button" href="@FormatUrl(node)" rel="nofollow" data-toggle="dropdown"
 											aria-haspopup="true" aria-expanded="false" itemprop="item"
 											class="dropdown-toggle">
 										@EpsilonMenuHelper.RenderNodeBadge(node)
