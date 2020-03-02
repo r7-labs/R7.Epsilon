@@ -1,4 +1,4 @@
-﻿@using System.Dynamic
+@using System.Dynamic
 @using System.Linq
 @using System.Collections.Generic
 @using DotNetNuke.Web.DDRMenu
@@ -43,6 +43,9 @@
 	if (nodes.Count > 0) {
 		<nav id="@Model.ControlID" class="skin-menu skin-breadcrumb-menu" aria-label='@EpsilonMenuHelper.GetString("DropCrumb_AriaLabel.Text")' itemprop="breadcrumb" itemscope="" itemtype="https://schema.org/breadcrumb">
 			<ol class="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+				@{
+					var position = 1;
+				}
 				@foreach (var node in nodes) {
 					if (node == root) {
 						node.Enabled = true;
@@ -57,6 +60,7 @@
 											class="dropdown-toggle">
 										@EpsilonMenuHelper.RenderNodeBadge(node)
 										<span itemprop="name">@node.Text</span>
+										<meta itemprop="position" content="@position">
 									</a>
 									@RenderDropdownFor(node)
 								</span>
@@ -64,6 +68,7 @@
 							else {
 								<span itemprop="item">
 									<span itemprop="name">@node.Text</span>
+									<meta itemprop="position" content="@position">
 								</span>
 							}
 						</li>
@@ -76,16 +81,19 @@
 									@Html.Raw(EpsilonMenuHelper.GetString("DropCrumb_Home.Text"))
 									@EpsilonMenuHelper.RenderNodeBadge(node)
 									<meta itemprop="name" content="@node.Text" />
+									<meta itemprop="position" content="@position">
 								</a>
 							}
 							else {
 								<a href="@FormatUrl(node)" itemprop="item">
 									@EpsilonMenuHelper.RenderNodeBadge(node)
 									<span itemprop="name">@node.Text</span>
+									<meta itemprop="position" content="@position">
 								</a>
 							}
 						</li>
 					}
+					position++;
 				}
 			</ol>
 		</nav>
