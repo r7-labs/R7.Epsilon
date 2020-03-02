@@ -46,10 +46,6 @@
 		<div id="AsidePane8" runat="server" class="col-md-3 col-sm-5" />
 	</div>
 	<div class="row">
-		<div id="ContentPane2" runat="server" class="col-md-9 col-sm-7" />
-		<div id="AsidePane2" runat="server" class="col-md-3 col-sm-5" />
-	</div>
-	<div class="row">
 		<div id="ContentPane9" runat="server" class="col-md-9 col-sm-7" />
 		<div id="AsidePane9" runat="server" class="col-md-3 col-sm-5" />
 	</div>
