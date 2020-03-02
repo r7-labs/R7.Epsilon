@@ -4,7 +4,7 @@
 //
 //  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
 //
-//  Copyright (c) 2014-2019 Roman M. Yagodin, R7.Labs
+//  Copyright (c) 2014-2020 Roman M. Yagodin, R7.Labs
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU Affero General Public License as published by
@@ -36,6 +36,11 @@
 
 .skin-menu {
     .skin-chevron-link {
+        color: $link-color;
+        &:hover {
+            color: $link-hover-color;
+            text-decoration: underline;
+        }
         &.disabled {
             color: $bs-color-muted;
             &::after {
@@ -43,6 +48,10 @@
             }
         }
     }
+}
+
+.skin-menu .h6.dropdown-item {
+	font-size: 1.15rem;
 }
 
 .skin-main-menu {
