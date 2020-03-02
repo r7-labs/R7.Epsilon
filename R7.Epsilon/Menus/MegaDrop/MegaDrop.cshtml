@@ -1,4 +1,4 @@
-﻿@using System.Globalization
+@using System.Globalization
 @using System.Dynamic
 @using DotNetNuke.Web.DDRMenu
 @using R7.Epsilon.Menus
@@ -23,8 +23,8 @@
 				@foreach (var node in nodes) {
 					if (node.HasChildren()) {
 						<li class="nav-item dropdown">
-							<a href='#@Id(node, "subMenu")' aria-controls='@Id(node, "subMenu")'
-									role="button" data-toggle="collapse" aria-expanded="false"
+							<a role="button" href="@FormatUrl(node)" data-target='#@Id(node, "subMenu")' data-toggle="collapse"
+							        aria-controls='@Id(node, "subMenu")' aria-expanded="false"
 									class="nav-link dropdown-toggle @EpsilonMenuHelper.ForkNodeCssClasses(node)">
 								@EpsilonMenuHelper.RenderNodeBadge(node)
 								@node.Text
@@ -67,7 +67,7 @@
 				<div class="col-lg-4 col-md-6 p-0">
 					@if (node.HasChildren ()) {
 						<div class="nav-item dropdown">
-							<a id='@Id(node, "btnDropdown")' role="button" href="#" data-toggle="dropdown"
+							<a id='@Id(node, "btnDropdown")' role="button" href="@FormatUrl(node)" data-toggle="dropdown"
 									aria-haspopup="true" aria-expanded="false"
 									class="nav-link dropdown-toggle @EpsilonMenuHelper.ForkNodeCssClasses(node)">
 								@EpsilonMenuHelper.RenderNodeBadge(node)

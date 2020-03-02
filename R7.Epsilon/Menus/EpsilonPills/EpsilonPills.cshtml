@@ -39,7 +39,7 @@
 			@foreach (var node in nodes) {
 				if (node.HasChildren()) {
 					<li class='nav-item @(GetDirection() == "Horizontal" ? "dropdown" : "dropright")'>
-						<a id='@Id(node, "btnDropdown")' role="button" href="#" data-toggle="dropdown"
+						<a id='@Id(node, "btnDropdown")' role="button" href="@FormatUrl(node)" data-toggle="dropdown"
 							aria-haspopup="true" aria-expanded="false"
 							class="nav-link dropdown-toggle @EpsilonMenuHelper.ForkNodeCssClasses(node)">@node.Text</a>
 						@RenderDropdownFor(node)
