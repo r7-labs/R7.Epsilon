@@ -80,7 +80,7 @@
 								<a href="@FormatUrl(node)" class="border border-primary rounded px-1" title='@EpsilonMenuHelper.GetString("DropCrumb_Home_Tooltip.Text")' itemprop="item">
 									@Html.Raw(EpsilonMenuHelper.GetString("DropCrumb_Home.Text"))
 									@EpsilonMenuHelper.RenderNodeBadge(node)
-									<meta itemprop="name" content="@node.Text" />
+									<meta itemprop="name" content='@EpsilonMenuHelper.GetString("DropCrumb_Home_Label.Text")'>
 									<meta itemprop="position" content="@position">
 								</a>
 							}

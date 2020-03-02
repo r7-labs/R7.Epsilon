@@ -259,6 +259,9 @@
 	<data name="DropCrumb_Home.Text" xml:space="preserve">
 		<value><![CDATA[<i class="fas fa-home"></i>]]></value>
 	</data>
+	<data name="DropCrumb_Home_Label.Text" xml:space="preserve">
+		<value>Home</value>
+	</data>
 	<data name="DropCrumb_Home_Tooltip.Text" xml:space="preserve">
 		<value>Navigate to the home page.</value>
 	</data>

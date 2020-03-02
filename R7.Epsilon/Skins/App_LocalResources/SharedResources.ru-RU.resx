@@ -241,6 +241,9 @@
 	<data name="DropCrumb_AriaLabel.Text" xml:space="preserve">
 		<value>Навигация с помощью &quot;хлебных крошек&quot;</value>
 	</data>
+	<data name="DropCrumb_Home_Label.Text" xml:space="preserve">
+		<value>Главная</value>
+	</data>
 	<data name="DropCrumb_Home_Tooltip.Text" xml:space="preserve">
 		<value>Перейти на главную страницу.</value>
 	</data>
