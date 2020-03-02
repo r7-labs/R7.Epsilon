@@ -41,6 +41,9 @@
             color: $link-hover-color;
             text-decoration: underline;
         }
+        &:active, &.active {
+            color: #fff;
+        }
         &.disabled {
             color: $bs-color-muted;
             &::after {
