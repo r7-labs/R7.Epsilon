@@ -254,6 +254,8 @@
     <Content Include="Skins\SkinObjects\Alerts.ascx" />
     <Content Include="Skins\Default.ascx" />
     <Content Include="Containers\Blank_Blank.ascx" />
+    <Content Include="Skins\ContentList.ascx" />
+    <Content Include="Skins\Layouts\_content-list.ascx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
