@@ -27,11 +27,11 @@ menu:
 
 primary-menu:
 
-  node-selector: "*,0,3"
+  node-selector: "*"
 
 secondary-menu:
 
-  node-selector: "*,0,3"
+  node-selector: "*"
   url-format: "/default.aspx?tabid={tabid}{?language}"
 
 breadcrumb-menu:
