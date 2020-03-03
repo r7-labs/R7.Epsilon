@@ -118,6 +118,10 @@ a.dnnFormHelp {
     &.ui-sortable { padding: 0 15px; }
 }
 
+.DNNEmptyPane {
+	display: none;
+}
+
 .dnnSortable.DNNEmptyPane,
 .paneOutline {
     outline: 1px dashed #ccc;
