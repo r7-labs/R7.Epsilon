@@ -50,15 +50,15 @@ namespace R7.Epsilon.Components
         public MenuConfig Menu { get; set; } = new MenuConfig ();
 
         public MenuConfig PrimaryMenu { get; set; } = new MenuConfig {
-            NodeSelector = "*,0,3"
+            NodeSelector = "*"
         };
 
         public MenuConfig SecondaryMenu { get; set; } = new MenuConfig {
-            NodeSelector = "*,0,3"
+            NodeSelector = "*"
         };
 
         public MenuConfig BreadcrumbMenu { get; set; } = new MenuConfig {
-            NodeSelector = "*,0,7"
+            NodeSelector = "*"
         };
 
         public AdsenseConfig Adsense { get; set; } = new AdsenseConfig ();

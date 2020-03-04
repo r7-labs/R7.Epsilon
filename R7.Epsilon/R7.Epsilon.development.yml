@@ -36,7 +36,7 @@ secondary-menu:
 
 breadcrumb-menu:
 
-  node-selector: "*,0,7"
+  node-selector: "*"
   url-format: "/linkclick.aspx?link={tabid}&portalid={portalid}"
 
 social-groups:
