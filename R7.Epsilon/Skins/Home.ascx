@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" Inherits="R7.Epsilon.Skins.EpsilonSkinBase" %>
+<%@ Control Language="C#" AutoEventWireup="true" Inherits="R7.Epsilon.Skins.EpsilonSkinBase" %>
 <%@ Register TagPrefix="skin" TagName="START" Src="~/Portals/_default/Skins/R7.Epsilon/Blocks/Start.ascx" %>
 <%@ Register TagPrefix="skin" TagName="HEADER" Src="~/Portals/_default/Skins/R7.Epsilon/Blocks/Header.ascx" %>
 <%@ Register TagPrefix="skin" TagName="SECONDARYHEADER" Src="~/Portals/_default/Skins/R7.Epsilon/Blocks/SecondaryHeader.ascx" %>
@@ -18,7 +18,9 @@ Options.DisablePageInfo = true;
 		<skin:SECONDARYHEADER runat="server" />
 	</header>
 	<skin:SUBHEADER runat="server" />
-	<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_home.ascx"-->
+	<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_top.ascx"-->
+	<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_main.ascx"-->
+	<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_bottom-grid-3cols.ascx"-->
 	<skin:SUPFOOTER runat="server" />
 	<footer class="skin-footer">
 		<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_footer.ascx"-->

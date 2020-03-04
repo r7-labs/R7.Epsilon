@@ -18,7 +18,7 @@ Options.DisablePageInfo = true;
 		<skin:SECONDARYHEADER runat="server" />
 	</header>
 	<skin:SUBHEADER runat="server" />
-	<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_content-pane.ascx"-->
+	<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_main-only.ascx"-->
 	<skin:SUPFOOTER runat="server" />
 	<footer class="footer skin-footer">
 		<skin:FOOTER runat="server" />

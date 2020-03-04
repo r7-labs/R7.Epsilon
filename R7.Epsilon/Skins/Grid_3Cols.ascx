@@ -14,7 +14,9 @@
 		<skin:SECONDARYHEADER runat="server" />
 	</header>
 	<skin:SUBHEADER runat="server" />
-	<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_grid-3cols.ascx"-->
+	<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_top-grid-3cols.ascx"-->
+	<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_main.ascx"-->
+	<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_bottom-grid-3cols.ascx"-->
 	<skin:SUPFOOTER runat="server" />
 	<footer class="skin-footer">
 		<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_footer.ascx"-->
