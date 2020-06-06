@@ -261,6 +261,7 @@
     <Content Include="Skins\Layouts\_bottom.ascx" />
     <Content Include="Skins\Layouts\_top-grid-2cols.ascx" />
     <Content Include="Skins\Layouts\_top-grid-3cols.ascx" />
+    <Content Include="Global.asax" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
@@ -273,7 +274,6 @@
   </ProjectExtensions>
   <ItemGroup>
     <Folder Include="Components\" />
-    <Folder Include="Application\" />
     <Folder Include="Skins\Layouts\" />
     <Folder Include="Skins\SkinObjects\" />
     <Folder Include="Menus\" />
@@ -340,6 +340,5 @@
     <Content Include="Skins\css\_mixins.scss" />
     <Content Include="Skins\SkinObjects\BlueimpGallery.ascx" />
     <Content Include="R7.Epsilon.development.yml" />
-    <Content Include="Application\Global.asax" />
   </ItemGroup>
 </Project>
