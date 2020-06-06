@@ -58,9 +58,12 @@
       <InstallMenuFiles Include="$(MainProjectPath)/Menus/**/*.min.js" />
     </ItemGroup>
 
+    <!-- Generate main manifest file -->
+    <Exec Command="$(Pwsh) GenerateManifest.ps1 &quot;$(MainProjectOutputPath)/$(MainProjectName).dnn.template.xml&quot; $(ReleaseVersion)" />
+
     <!-- Declare manifest files -->
     <ItemGroup>
-      <InstallManifestFiles Include="$(MainProjectPath)/*.dnn" />
+      <InstallManifestFiles Include="$(MainProjectOutputPath)/*.dnn" />
       <InstallManifestFiles Include="$(MainProjectPath)/*.htm" />
       <InstallManifestFiles Include="$(MainProjectPath)/Global.asax" />
     </ItemGroup>

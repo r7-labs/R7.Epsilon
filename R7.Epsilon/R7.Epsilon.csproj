@@ -116,7 +116,9 @@
     <None Include="Skins\App_LocalResources\SharedResources.resx" />
     <None Include="Skins\App_LocalResources\SharedResources.ru-RU.resx" />
     <None Include="R7.Epsilon.csproj" />
-    <None Include="R7.Epsilon.dnn" />
+    <None Include="R7.Epsilon.dnn.template.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Skins\skin.doctype.xml" />
     <None Include="lib\ClientDependency.Core.dll" />
     <None Include="lib\DotNetNuke.Web.DDRMenu.dll" />

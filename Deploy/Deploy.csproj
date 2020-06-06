@@ -69,6 +69,7 @@
     <None Include="Bundle.targets" />
     <None Include="Tests.targets" />
     <None Include="packages.config" />
+    <None Include="GenerateManifest.ps1" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="__Settings.targets" />
