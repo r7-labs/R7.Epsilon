@@ -15,8 +15,8 @@
 	<div class="row">
 		<skin:CUSTOMCONTENT runat="server" CssClass="col-12 col-md-6 skin-footer-content" ResourceKey="FooterPane1_Content.Text" />
 		<skin:CUSTOMCONTENT runat="server" CssClass="col-12 col-md-6 skin-footer-content" ResourceKey="FooterPane2_Content.Text" />
-		<skin:CUSTOMCONTENT runat="server" CssClass="col-12 col-md-3 skin-footer-content" ResourceKey="FooterPane3_Content.Text" />
-		<skin:CUSTOMCONTENT runat="server" CssClass="col-12 col-md-3 skin-footer-content" ResourceKey="FooterPane4_Content.Text" />
+		<skin:CUSTOMCONTENT runat="server" CssClass="col-12 col-md-6 skin-footer-content" ResourceKey="FooterPane3_Content.Text" />
+		<skin:CUSTOMCONTENT runat="server" CssClass="col-12 col-md-6 skin-footer-content" ResourceKey="FooterPane4_Content.Text" />
 	</div>
 </div>
 <div class="skin-footer-lastrow">
