@@ -2,16 +2,9 @@
 <%@ Register TagPrefix="dnn" TagName="PRIVACY" Src="~/Admin/Skins/Privacy.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="TERMS" Src="~/Admin/Skins/Terms.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="COPYRIGHT" Src="~/Admin/Skins/Copyright.ascx" %>
-<%@ Register TagPrefix="skin" TagName="GADSENSE" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/GAdsense.ascx" %>
 <%@ Register TagPrefix="skin" TagName="CUSTOMCONTENT" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/CustomContent.ascx" %>
 <%@ Register TagPrefix="skin" TagName="YCYCOUNTER" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/YCycounter.ascx" %>
-
 <div class="container">
-	<div class="row">
-		<div class="col-12">
-			<skin:GADSENSE runat="server" />
-		</div>
-	</div>
 	<div class="row">
 		<skin:CUSTOMCONTENT runat="server" CssClass="col-12 col-md-6 skin-footer-content" ResourceKey="FooterPane1_Content.Text" />
 		<skin:CUSTOMCONTENT runat="server" CssClass="col-12 col-md-6 skin-footer-content" ResourceKey="FooterPane2_Content.Text" />
