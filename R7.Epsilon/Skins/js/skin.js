@@ -49,7 +49,7 @@ window.skinSearchExternalClick = function (e, link) {
 };
 
 window.skinCookiesAlertButtonClick = function (e) {
-    Cookies.set (epsilon.cookiePrefix + "CookiesAlert", true, {expires: 14});
+    Cookies.set (epsilon.cookiePrefix + "CookiesAlert", true, {expires: 31});
     $(e.target).closest (".toast").toast ("hide");
 };
 
@@ -58,7 +58,7 @@ window.skinCookiesDisabledAlertButtonClick = function (e) {
 };
 
 window.skinBrowserAlertButtonClick = function (e) {
-    Cookies.set (epsilon.cookiePrefix + "BrowserAlert", true, {expires: 1});
+    Cookies.set (epsilon.cookiePrefix + "BrowserAlert", true, {expires: 7});
     $(e.target).closest (".toast").toast ("hide");
 };
 

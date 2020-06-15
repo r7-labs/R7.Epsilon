@@ -54,7 +54,7 @@ export default class A11y {
 
     setFontSize (fontSize) {
         document.documentElement.style = "font-size:" + fontSize + "px;";
-        Cookies.set (epsilon.cookiePrefix + "FontSize", fontSize, {expires: 1});
+        Cookies.set (epsilon.cookiePrefix + "FontSize", fontSize, {expires: 7});
     }
 
     increaseFontSize () {
@@ -98,7 +98,7 @@ export default class A11y {
         $("a#lnkDisablePopups").addClass ("d-none");
         $("a#lnkReEnablePopups").removeClass ("d-none");
 
-        Cookies.set (epsilon.cookiePrefix + "DisablePopups", true, {expires: 1});
+        Cookies.set (epsilon.cookiePrefix + "DisablePopups", true, {expires: 7});
     }
 
     disableTooglePopups () {
