@@ -58,7 +58,7 @@ window.skinCookiesDisabledAlertButtonClick = function (e) {
 };
 
 window.skinBrowserAlertButtonClick = function (e) {
-    Cookies.set (epsilon.cookiePrefix + "BrowserAlert", true, {expires: 7});
+    Cookies.set (epsilon.cookiePrefix + "BrowserAlert", true, {expires: 14});
     $(e.target).closest (".toast").toast ("hide");
 };
 
