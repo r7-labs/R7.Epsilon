@@ -180,8 +180,15 @@ window.skinBrowserAlertButtonClick = function (e) {
         $(".skin-login li.userNotifications > a").addClass ("dropdown-item");
         $(".skin-login li.userProfileImg > a").addClass ("dropdown-item");
 
+        const registrationDisabled = $(".skin-login .registerGroup").length === 0;
+        if (registrationDisabled) {
+            $(".skin-login .dropdown-menu")
+                .append ("<div class='registerGroup'><ul class='buttonGroup'></ul></div>");
+        }
+
         const loginGroup = $(".skin-login .loginGroup").first ().detach ();
         const divider = "<li class='dropdown-divider'></li>";
+        const buttonGroup = $(".skin-login ul.buttonGroup");
 
         const profileImg = $(".skin-login li.userProfileImg > a > img");
         if (profileImg.length > 0) {
@@ -190,7 +197,7 @@ window.skinBrowserAlertButtonClick = function (e) {
             const profileLinkBlock = $(".skin-login li.userDisplayName").first ().detach ();
             const profileImgBlock = $(".skin-login li.userProfileImg").first ().detach ();
 
-            $(".skin-login ul.buttonGroup")
+            buttonGroup
                 .prepend (divider)
                 .prepend (profileLinkBlock)
                 .prepend (profileImgBlock)
@@ -201,9 +208,10 @@ window.skinBrowserAlertButtonClick = function (e) {
                 $(".skin-login li.userNotifications > a > span").addClass ("badge badge-secondary");
         }
         else {
-            $(".skin-login ul.buttonGroup")
-                .append (divider)
-                .append (loginGroup.children ("a").prepend ("<i class='fas fa-unlock-alt'></i> "));
+            if (!registrationDisabled) {
+                buttonGroup.append (divider);
+            }
+            buttonGroup.append (loginGroup.children ("a").prepend ("<i class='fas fa-unlock-alt'></i> "));
         }
     }
 
