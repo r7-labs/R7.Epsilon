@@ -1,24 +1,3 @@
-//
-//  File: EpsilonMenuHelper.cs
-//  Project: R7.Epsilon
-//
-//  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
-//
-//  Copyright (c) 2014-2019 Roman M. Yagodin, R7.Labs
-//
-//  This program is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU Affero General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
-//
-//  This program is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU Affero General Public License for more details.
-//
-//  You should have received a copy of the GNU Affero General Public License
-//  along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
 using System;
 using System.Web;
 using DotNetNuke.Web.DDRMenu;
@@ -28,24 +7,44 @@ using R7.Epsilon.Components;
 
 namespace R7.Epsilon.Menus
 {
-    public static class EpsilonMenuHelper
+    public class EpsilonMenuHelper
     {
         const string resourceFileRoot = Const.SKIN_PATH + "App_LocalResources/Fake.ascx.resx";
 
-        static readonly HtmlString EmptyHtmlString = new HtmlString ("");
+        readonly HtmlString EmptyHtmlString = new HtmlString ("");
 
-        public static string GetString (string resourceKey)
+        readonly string UrlFormat;
+
+        readonly string ControlId;
+
+        public EpsilonMenuHelper (string controlId)
+        {
+            ControlId = controlId;
+        }
+
+        public EpsilonMenuHelper (string controlId, string urlFormat)
+        {
+            ControlId = controlId;
+            UrlFormat = urlFormat;
+        }
+
+        public string Id (MenuNode node, string prefix)
+        {
+            return ControlId + "_" + prefix + node.TabId;
+        }
+
+        public string GetString (string resourceKey)
         {
             return Localization.GetString (resourceKey, resourceFileRoot);
         }
 
-        public static string FormatDate (MenuNode node)
+        public string FormatDate (MenuNode node)
         {
             var date = DateTime.Parse (node.CommandArgument);
             return date.ToString (GetString ("Menu_DateFormat.Text"));
         }
 
-        public static HtmlString RenderNodeBadge (MenuNode node)
+        public HtmlString RenderNodeBadge (MenuNode node)
         {
             if (node.CommandName == "X-Date") {
                 return new HtmlString ($"<span class=\"badge badge-primary\">{FormatDate (node)}</span> ");
@@ -53,39 +52,45 @@ namespace R7.Epsilon.Menus
 
             return EmptyHtmlString;
         }
-        public static string FormatUrl (MenuNode node, string urlFormat)
+
+        public string FormatUrl (MenuNode node)
+        {
+            return FormatUrl (node, UrlFormat);
+        }
+
+        public string FormatUrl (MenuNode node, string urlFormat)
         {
             if (!node.Enabled) {
                 return "#";
             }
-            if (node.TabId <= 0 || string.IsNullOrEmpty (urlFormat)) {
+            if (node.TabId <= 0 || string.IsNullOrEmpty (UrlFormat)) {
                 return node.Url;
             }
-            return EpsilonUrlHelper.FormatUrl (urlFormat, node.TabId, PortalSettings.Current.PortalId, HttpContext.Current.Request.QueryString);
+            return EpsilonUrlHelper.FormatUrl (UrlFormat, node.TabId, PortalSettings.Current.PortalId, HttpContext.Current.Request.QueryString);
         }
 
-        public static string FormatTabId (MenuNode node)
+        public string FormatTabId (MenuNode node)
         {
             return (node.TabId > 0) ? node.TabId.ToString () : string.Empty;
         }
 
-        static string NodeActiveCssClass (MenuNode node)
+        string NodeActiveCssClass (MenuNode node)
         {
             // "active" class will be set via JS
             return string.Empty;
         }
 
-        static string NodeDisabledCssClass (MenuNode node)
+        string NodeDisabledCssClass (MenuNode node)
         {
             return !node.Enabled ? "disabled" : string.Empty;
         }
 
-        public static string ForkNodeCssClasses (MenuNode node)
+        public string ForkNodeCssClasses (MenuNode node)
         {
             return NodeActiveCssClass (node);
         }
 
-        public static string LeafNodeCssClasses (MenuNode node)
+        public string LeafNodeCssClasses (MenuNode node)
         {
             return (NodeActiveCssClass (node) + " " + NodeDisabledCssClass (node)).Trim ();
         }

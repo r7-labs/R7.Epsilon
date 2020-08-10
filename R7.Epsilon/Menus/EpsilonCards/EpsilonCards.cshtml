@@ -6,14 +6,9 @@
 @inherits DotNetNuke.Web.Razor.DotNetNukeWebPage<dynamic>
 
 @functions {
-	string FormatUrl (MenuNode node)
+	string FormatUrl (MenuNode node, EpsilonMenuHelper mh)
 	{
-		return EpsilonMenuHelper.FormatUrl (node, GetUrlFormat ());
-	}
-
-	string Id (MenuNode node, string prefix)
-	{
-		return Model.ControlID + "_" + prefix + node.TabId;
+		return mh.FormatUrl (node, GetUrlFormat ());
 	}
 
 	string GetUrlFormat ()
@@ -33,7 +28,7 @@
 	}
 }
 
-@helper RenderMenu(IList<MenuNode> nodes) {
+@helper RenderMenu(IList<MenuNode> nodes, EpsilonMenuHelper mh) {
     if (nodes.Count > 0) {
 		<div id="@Model.ControlID" class="row skin-menu skin-cards-menu">
 			@foreach (var node in nodes) {
@@ -42,14 +37,14 @@
 						<div class="card-body">
 							<h5>
 								@if (node.Enabled) {
-									<a class="card-title skin-chevron-link @EpsilonMenuHelper.LeafNodeCssClasses(node)" data-tabid="@EpsilonMenuHelper.FormatTabId(node)" href="@FormatUrl(node)">
-										@EpsilonMenuHelper.RenderNodeBadge(node)
+									<a class="card-title skin-chevron-link @mh.LeafNodeCssClasses(node)" data-tabid="@mh.FormatTabId(node)" href="@FormatUrl(node, mh)">
+										@mh.RenderNodeBadge(node)
 										@node.Text
 									</a>
 								}
 								else {
-									<span class="card-title skin-chevron-link @EpsilonMenuHelper.LeafNodeCssClasses(node)" data-tabid="@EpsilonMenuHelper.FormatTabId(node)">
-										@EpsilonMenuHelper.RenderNodeBadge(node)
+									<span class="card-title skin-chevron-link @mh.LeafNodeCssClasses(node)" data-tabid="@mh.FormatTabId(node)">
+										@mh.RenderNodeBadge(node)
 										@node.Text
 									</span>
 								}
@@ -61,7 +56,7 @@
 								if (GetShowDescription ()) {
 									<hr />
 								}
-								@RenderListFor(node)
+								@RenderListFor(node, mh)
 							}
 						</div>
 					</div>
@@ -71,19 +66,19 @@
 	}
 }
 
-@helper RenderListFor(MenuNode parentNode) {
+@helper RenderListFor(MenuNode parentNode, EpsilonMenuHelper mh) {
 	<ul class="card-text skin-cards-menu-submenu">
 		@foreach (var node in parentNode.Children) {
 			<li>
 				@if (node.Enabled) {
-					<a class="@EpsilonMenuHelper.LeafNodeCssClasses(node)" data-tabid="@EpsilonMenuHelper.FormatTabId(node)" href="@FormatUrl(node)">
-						@EpsilonMenuHelper.RenderNodeBadge(node)
+					<a class="@mh.LeafNodeCssClasses(node)" data-tabid="@mh.FormatTabId(node)" href="@FormatUrl(node, mh)">
+						@mh.RenderNodeBadge(node)
 						@node.Text
 					</a>
 				}
 				else {
-					<span class="@EpsilonMenuHelper.LeafNodeCssClasses(node)" data-tabid="@EpsilonMenuHelper.FormatTabId(node)">
-						@EpsilonMenuHelper.RenderNodeBadge(node)
+					<span class="@mh.LeafNodeCssClasses(node)" data-tabid="@mh.FormatTabId(node)">
+						@mh.RenderNodeBadge(node)
 						@node.Text
 					</span>
 				}
@@ -92,4 +87,4 @@
 	</ul>
 }
 
-@RenderMenu(Model.Source.root.Children)
+@RenderMenu(Model.Source.root.Children, new EpsilonMenuHelper(Model.ControlID))

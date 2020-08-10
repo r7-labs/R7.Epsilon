@@ -6,14 +6,9 @@
 @inherits DotNetNuke.Web.Razor.DotNetNukeWebPage<dynamic>
 
 @functions {
-	string FormatUrl (MenuNode node)
+	string FormatUrl (MenuNode node, EpsilonMenuHelper mh)
 	{
-		return EpsilonMenuHelper.FormatUrl (node, GetUrlFormat ());
-	}
-
-	string Id (MenuNode node, string prefix)
-	{
-		return Model.ControlID + "_" + prefix + node.TabId;
+		return mh.FormatUrl (node, GetUrlFormat ());
 	}
 
 	string GetUrlFormat ()
@@ -33,21 +28,21 @@
 	}
 }
 
-@helper RenderMenu(IList<MenuNode> nodes) {
+@helper RenderMenu(IList<MenuNode> nodes, EpsilonMenuHelper mh) {
 	if (nodes.Count > 0) {
 		<ul id="@Model.ControlID" class='nav nav-pills @(GetDirection() == "Horizontal" ? "" : "flex-column") skin-menu skin-pills-menu'>
 			@foreach (var node in nodes) {
 				if (node.HasChildren()) {
 					<li class='nav-item @(GetDirection() == "Horizontal" ? "dropdown" : "dropright")'>
-						<a id='@Id(node, "btnDropdown")' role="button" href="@FormatUrl(node)" data-toggle="dropdown"
+						<a id='@mh.Id(node, "btnDropdown")' role="button" href="@FormatUrl(node, mh)" data-toggle="dropdown"
 							aria-haspopup="true" aria-expanded="false"
-							class="nav-link dropdown-toggle @EpsilonMenuHelper.ForkNodeCssClasses(node)">@node.Text</a>
-						@RenderDropdownFor(node)
+							class="nav-link dropdown-toggle @mh.ForkNodeCssClasses(node)">@node.Text</a>
+						@RenderDropdownFor(node, mh)
 					</li>
 				} else {
 					<li class="nav-item">
-						<a href="@FormatUrl(node)" class="nav-link @EpsilonMenuHelper.LeafNodeCssClasses(node)" data-tabid="@EpsilonMenuHelper.FormatTabId(node)">
-							@EpsilonMenuHelper.RenderNodeBadge(node)
+						<a href="@FormatUrl(node, mh)" class="nav-link @mh.LeafNodeCssClasses(node)" data-tabid="@mh.FormatTabId(node)">
+							@mh.RenderNodeBadge(node)
 							@node.Text
 						</a>
 					</li>
@@ -57,23 +52,23 @@
 	}
 }
 
-@helper RenderDropdownFor(MenuNode parentNode) {
-	<div class="dropdown-menu" aria-labelledby='@Id(parentNode, "btnDropdown")'>
+@helper RenderDropdownFor(MenuNode parentNode, EpsilonMenuHelper mh) {
+	<div class="dropdown-menu" aria-labelledby='@mh.Id(parentNode, "btnDropdown")'>
 		@if (parentNode.Enabled) {
-			<a class="h6 dropdown-item skin-chevron-link @EpsilonMenuHelper.LeafNodeCssClasses(parentNode)" data-tabid="@EpsilonMenuHelper.FormatTabId(parentNode)" href="@FormatUrl(parentNode)"
-					title='@(EpsilonMenuHelper.GetString("Menu_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
-				@EpsilonMenuHelper.RenderNodeBadge(parentNode)
+			<a class="h6 dropdown-item skin-chevron-link @mh.LeafNodeCssClasses(parentNode)" data-tabid="@mh.FormatTabId(parentNode)" href="@FormatUrl(parentNode, mh)"
+					title='@(mh.GetString("Menu_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
+				@mh.RenderNodeBadge(parentNode)
 				@parentNode.Text
 			</a>
 			<div class="dropdown-divider"></div>
 		}
 		@foreach (var node in parentNode.Children) {
-			<a class="dropdown-item @EpsilonMenuHelper.LeafNodeCssClasses(node)" data-tabid="@EpsilonMenuHelper.FormatTabId(node)" href="@FormatUrl(node)">
-				@EpsilonMenuHelper.RenderNodeBadge(node)
+			<a class="dropdown-item @mh.LeafNodeCssClasses(node)" data-tabid="@mh.FormatTabId(node)" href="@FormatUrl(node, mh)">
+				@mh.RenderNodeBadge(node)
 				@node.Text
 			</a>
 		}
 	</div>
 }
 
-@RenderMenu(Model.Source.root.Children)
+@RenderMenu(Model.Source.root.Children, new EpsilonMenuHelper(Model.ControlID))
