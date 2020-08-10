@@ -2,6 +2,7 @@
 <%@ Import Namespace="DotNetNuke.Common.Utilities" %>
 <script type="text/javascript">
 var epsilon = {
+	activeTabId:<%= ActiveTab.TabID %>,
     portalAlias:'<%= PortalSettings.Current.PortalAlias.HTTPAlias %>',
     localization:{<%= LocalizationResources %>},
     queryParams:{<%= QueryParams %>},

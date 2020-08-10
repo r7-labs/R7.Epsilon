@@ -64,9 +64,15 @@ namespace R7.Epsilon.Menus
             return EpsilonUrlHelper.FormatUrl (urlFormat, node.TabId, PortalSettings.Current.PortalId, HttpContext.Current.Request.QueryString);
         }
 
+        public static string FormatTabId (MenuNode node)
+        {
+            return (node.TabId > 0) ? node.TabId.ToString () : string.Empty;
+        }
+
         static string NodeActiveCssClass (MenuNode node)
         {
-            return node.Selected ? "active" : string.Empty;
+            // "active" class will be set via JS
+            return string.Empty;
         }
 
         static string NodeDisabledCssClass (MenuNode node)

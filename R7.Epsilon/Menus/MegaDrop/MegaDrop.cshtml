@@ -25,14 +25,14 @@
 						<li class="nav-item dropdown">
 							<a role="button" href="@FormatUrl(node)" data-target='#@Id(node, "subMenu")' data-toggle="collapse"
 							        aria-controls='@Id(node, "subMenu")' aria-expanded="false"
-									class="nav-link dropdown-toggle @EpsilonMenuHelper.ForkNodeCssClasses(node)">
+									class="nav-link dropdown-toggle @EpsilonMenuHelper.ForkNodeCssClasses(node)" data-tabid="@EpsilonMenuHelper.FormatTabId(node)">
 								@EpsilonMenuHelper.RenderNodeBadge(node)
 								@node.Text
 							</a>
 						</li>
 					} else {
 						<li class="nav-item">
-							<a href="@FormatUrl(node)" class="nav-link @EpsilonMenuHelper.LeafNodeCssClasses(node)">
+							<a href="@FormatUrl(node)" class="nav-link @EpsilonMenuHelper.LeafNodeCssClasses(node)" data-tabid="@EpsilonMenuHelper.FormatTabId(node)">
 								@EpsilonMenuHelper.RenderNodeBadge(node)
 								@node.Text
 							</a>
@@ -55,7 +55,7 @@
 			@if (parentNode.Enabled) {
 				<div class="col-12 p-0">
 					<div class="nav-item">
-						<a href="@FormatUrl(parentNode)" class="h4 nav-link skin-chevron-link @EpsilonMenuHelper.LeafNodeCssClasses(parentNode)"
+						<a href="@FormatUrl(parentNode)" class="h4 nav-link skin-chevron-link @EpsilonMenuHelper.LeafNodeCssClasses(parentNode)" data-tabid="@EpsilonMenuHelper.FormatTabId(parentNode)"
 								title='@(EpsilonMenuHelper.GetString("Menu_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
 							@EpsilonMenuHelper.RenderNodeBadge(parentNode)
 							@parentNode.Text
@@ -69,7 +69,7 @@
 						<div class="nav-item dropdown">
 							<a id='@Id(node, "btnDropdown")' role="button" href="@FormatUrl(node)" data-toggle="dropdown"
 									aria-haspopup="true" aria-expanded="false"
-									class="nav-link dropdown-toggle @EpsilonMenuHelper.ForkNodeCssClasses(node)">
+									class="nav-link dropdown-toggle @EpsilonMenuHelper.ForkNodeCssClasses(node)" data-tabid="@EpsilonMenuHelper.FormatTabId(node)">
 								@EpsilonMenuHelper.RenderNodeBadge(node)
 								@node.Text
 							</a>
@@ -78,7 +78,7 @@
 					}
 					else {
 						<div class="nav-item">
-							<a href="@FormatUrl(node)" class="nav-link @EpsilonMenuHelper.LeafNodeCssClasses(node)">
+							<a href="@FormatUrl(node)" class="nav-link @EpsilonMenuHelper.LeafNodeCssClasses(node)" data-tabid="@EpsilonMenuHelper.FormatTabId(node)">
 								@EpsilonMenuHelper.RenderNodeBadge(node)
 								@node.Text
 							</a>
@@ -93,7 +93,7 @@
 @helper RenderDropdownFor(MenuNode parentNode) {
 	<div class="dropdown-menu" aria-labelledby='@Id(parentNode, "btnDropdown")'>
 		@if (parentNode.Enabled) {
-			<a class="h5 dropdown-item skin-chevron-link @EpsilonMenuHelper.LeafNodeCssClasses(parentNode)" href="@FormatUrl(parentNode)"
+			<a class="h5 dropdown-item skin-chevron-link @EpsilonMenuHelper.LeafNodeCssClasses(parentNode)" data-tabid="@EpsilonMenuHelper.FormatTabId(parentNode)" href="@FormatUrl(parentNode)"
 					title='@(EpsilonMenuHelper.GetString("Menu_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
 				@EpsilonMenuHelper.RenderNodeBadge(parentNode)
 				@parentNode.Text
@@ -105,14 +105,14 @@
 				<a role="button" href="@FormatUrl(node)"
 						data-toggle="collapse" data-target='#@Id(node, "collapse")'
 						aria-expanded="false" aria-controls='@Id(node, "collapse")'
-						class="dropdown-item collapse-toggle @EpsilonMenuHelper.ForkNodeCssClasses(node)">
+						class="dropdown-item collapse-toggle @EpsilonMenuHelper.ForkNodeCssClasses(node)" data-tabid="@EpsilonMenuHelper.FormatTabId(node)">
 					@EpsilonMenuHelper.RenderNodeBadge(node)
 					@node.Text
 				</a>
 				@RenderCollapseFor(node)
 			}
 			else {
-				<a class="dropdown-item @EpsilonMenuHelper.LeafNodeCssClasses(node)" href="@FormatUrl(node)">
+				<a class="dropdown-item @EpsilonMenuHelper.LeafNodeCssClasses(node)" href="@FormatUrl(node)" data-tabid="@EpsilonMenuHelper.FormatTabId(node)">
 					@EpsilonMenuHelper.RenderNodeBadge(node)
 					@node.Text
 				</a>
@@ -125,14 +125,14 @@
 	<div id='@Id(parentNode, "collapse")' class="collapse bg-light">
 		<div class="dropdown-divider"></div>
 		@if (parentNode.Enabled) {
-			<a class="h6 dropdown-item skin-chevron-link @EpsilonMenuHelper.ForkNodeCssClasses(parentNode)" href="@FormatUrl(parentNode)"
+			<a class="h6 dropdown-item skin-chevron-link @EpsilonMenuHelper.ForkNodeCssClasses(parentNode)" data-tabid="@EpsilonMenuHelper.FormatTabId(parentNode)" href="@FormatUrl(parentNode)"
 					title='@(EpsilonMenuHelper.GetString("Menu_GoToPage.Text") + "\"" + parentNode.Text + "\"")'>
 				@EpsilonMenuHelper.RenderNodeBadge(parentNode)
 				@parentNode.Text
 			</a>
 		}
 		@foreach (var node in parentNode.Children) {
-			<a class="dropdown-item @EpsilonMenuHelper.LeafNodeCssClasses(node)" href="@FormatUrl(node)">
+			<a class="dropdown-item @EpsilonMenuHelper.LeafNodeCssClasses(node)" data-tabid="@EpsilonMenuHelper.FormatTabId(node)" href="@FormatUrl(node)">
 				@EpsilonMenuHelper.RenderNodeBadge(node)
 				@node.Text
 			</a>

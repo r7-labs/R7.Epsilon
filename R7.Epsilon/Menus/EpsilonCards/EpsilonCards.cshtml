@@ -42,13 +42,13 @@
 						<div class="card-body">
 							<h5>
 								@if (node.Enabled) {
-									<a class="card-title skin-chevron-link @EpsilonMenuHelper.LeafNodeCssClasses(node)" href="@FormatUrl(node)">
+									<a class="card-title skin-chevron-link @EpsilonMenuHelper.LeafNodeCssClasses(node)" data-tabid="@EpsilonMenuHelper.FormatTabId(node)" href="@FormatUrl(node)">
 										@EpsilonMenuHelper.RenderNodeBadge(node)
 										@node.Text
 									</a>
 								}
 								else {
-									<span class="card-title skin-chevron-link @EpsilonMenuHelper.LeafNodeCssClasses(node)">
+									<span class="card-title skin-chevron-link @EpsilonMenuHelper.LeafNodeCssClasses(node)" data-tabid="@EpsilonMenuHelper.FormatTabId(node)">
 										@EpsilonMenuHelper.RenderNodeBadge(node)
 										@node.Text
 									</span>
@@ -76,13 +76,13 @@
 		@foreach (var node in parentNode.Children) {
 			<li>
 				@if (node.Enabled) {
-					<a class="@EpsilonMenuHelper.LeafNodeCssClasses(node)" href="@FormatUrl(node)">
+					<a class="@EpsilonMenuHelper.LeafNodeCssClasses(node)" data-tabid="@EpsilonMenuHelper.FormatTabId(node)" href="@FormatUrl(node)">
 						@EpsilonMenuHelper.RenderNodeBadge(node)
 						@node.Text
 					</a>
 				}
 				else {
-					<span class="@EpsilonMenuHelper.LeafNodeCssClasses(node)">
+					<span class="@EpsilonMenuHelper.LeafNodeCssClasses(node)" data-tabid="@EpsilonMenuHelper.FormatTabId(node)">
 						@EpsilonMenuHelper.RenderNodeBadge(node)
 						@node.Text
 					</span>

@@ -338,6 +338,10 @@ window.skinBrowserAlertButtonClick = function (e) {
         }
     }
 
+    function setActiveMenuItems (activeTabId) {
+        $(".skin-menu [data-tabid='" + activeTabId + "']").addClass ("active");
+    }
+
     $(function () {
         initBootstrapTooltips ();
         initBootstrapPopovers ();
@@ -354,6 +358,7 @@ window.skinBrowserAlertButtonClick = function (e) {
             initClipboard ();
             initTags ();
             initMainMenu ();
+            setActiveMenuItems (epsilon.activeTabId);
             initBreadcrumb ();
             initFeedbackButton ();
             alterLanguage ();
