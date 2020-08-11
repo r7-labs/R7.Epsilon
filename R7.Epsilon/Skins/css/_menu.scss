@@ -135,6 +135,13 @@
 
     .card {
         height: 100%;
+        .card-title {
+            display: block;
+            padding: .25rem .15rem;
+            &.active {
+                background-color: $color-bs-primary-0;
+            }
+        }
     }
 
     .skin-cards-menu-description {
