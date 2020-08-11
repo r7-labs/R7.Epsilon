@@ -2,20 +2,20 @@
   "name": "r7-epsilon",
   "displayName": "R7.Epsilon",
   "devDependencies": {
-    "@babel/core": "^7.7.5",
-    "@babel/preset-env": "^7.7.6",
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
     "babel-loader": "^8.0.6",
-    "bootstrap": "^4.4.1",
+    "bootstrap": "^4.5.2",
     "brand-colors": "^2.1.1",
     "browserslist-useragent-regexp": "^1.3.4-beta",
     "clipboard": "^2.0.4",
     "css-loader": "^2.1.1",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "js-cookie": "^2.2.1",
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.14.1",
     "sass-loader": "^7.3.1",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10"
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
   },
   "scripts": {
     "build": "./node_modules/webpack/bin/webpack.js -p"
