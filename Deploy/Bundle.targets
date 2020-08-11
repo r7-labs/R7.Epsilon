@@ -5,7 +5,7 @@
     <BundleImported>true</BundleImported>
   </PropertyGroup>
   <Target Name="Bundle">
-    <Exec Command="yarn run build" />
+    <Exec Command="npm run build" />
     <RemoveDir Directories="$(MainProjectPath)/Skins/css/.webpack" />
   </Target>
 </Project>

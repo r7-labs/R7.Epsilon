@@ -9,7 +9,6 @@ bin/
 obj/
 /Deploy/output/
 .webpack
-yarn-error.log
 
 # Less/UglifyJS build output
 
