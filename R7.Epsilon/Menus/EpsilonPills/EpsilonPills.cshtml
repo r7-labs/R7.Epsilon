@@ -36,7 +36,7 @@
 					<li class='nav-item @(GetDirection() == "Horizontal" ? "dropdown" : "dropright")'>
 						<a id='@mh.Id(node, "btnDropdown")' role="button" href="@FormatUrl(node, mh)" data-toggle="dropdown"
 							aria-haspopup="true" aria-expanded="false"
-							class="nav-link dropdown-toggle @mh.ForkNodeCssClasses(node)">@node.Text</a>
+							class="nav-link dropdown-toggle @mh.ForkNodeCssClasses(node)" data-tabid="@mh.FormatTabId(node)">@node.Text</a>
 						@RenderDropdownFor(node, mh)
 					</li>
 				} else {
