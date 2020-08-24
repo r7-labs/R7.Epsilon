@@ -189,7 +189,7 @@
 	</data>
 	<data name="Permalinks_Help.Text" xml:space="preserve">
 		<value>Please use one of the permalinks provided below to share our website content.
-		Do not use the URL copied from your browser address line for that - it could easily change and so the copied link will get broken soon! </value>
+		Never use links copied directly from the address bar of the browser for this - the long-term availability of website content via such links cannot be guaranteed!</value>
 	</data>
 	<data name="CopyPermalink.Text" xml:space="preserve">
 		<value>copy</value>
