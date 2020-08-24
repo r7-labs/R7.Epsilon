@@ -61,7 +61,7 @@ namespace R7.Epsilon.Menus
         public string FormatUrl (MenuNode node, string urlFormat)
         {
             if (!node.Enabled) {
-                return "#";
+                return "/";
             }
             if (node.TabId <= 0 || string.IsNullOrEmpty (UrlFormat)) {
                 return node.Url;
