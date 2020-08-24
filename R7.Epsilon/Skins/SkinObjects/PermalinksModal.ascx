@@ -19,7 +19,7 @@
 						<ul class="list-unstyled mb-0">
 							<li class="mb-2 skin-permalink" id="skinPermalink<%: permalinkIndex %>"><%: permalink %></li>
 							<li>
-								<button type="button" class="btn btn-sm btn-clipboard btn-outline-primary"
+								<button type="button" class="btn btn-sm btn-clipboard btn-primary"
 										title='<%: T.GetString ("CopyPermalink_Tooltip.Text") %>'
 										data-clipboard-target="#skinPermalink<%: permalinkIndex %>">
 									<i class="fas fa-copy"></i> <%: T.GetString ("CopyPermalink.Text") %>
