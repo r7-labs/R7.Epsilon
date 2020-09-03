@@ -189,8 +189,7 @@ a.btn-primary:visited {
 
 .skin-page-header
 {
-    margin-top:5px;
-    padding-bottom:5px;
+    margin-bottom: 1rem;
 
     &h1, &h2
     {
@@ -234,6 +233,7 @@ a.btn-primary:visited {
     border-bottom-left-radius: .25rem;
     border-bottom-right-radius: .25rem;
     padding: .75rem 1rem;
+    margin-bottom: 1rem;
 }
 
 .skin-subheader-top .skin-breadcrumb-menu .breadcrumb {
