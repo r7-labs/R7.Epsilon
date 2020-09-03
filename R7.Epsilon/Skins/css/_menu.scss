@@ -125,6 +125,11 @@
     color: $bs-color-muted !important;
 }
 
+// avoid long unwrapped links
+.skin-breadcrumb-menu .breadcrumb-item > .dropdown > .dropdown-toggle {
+    white-space: normal;
+}
+
 .skin-cards-menu {
     display: flex;
     flex-wrap: wrap;
