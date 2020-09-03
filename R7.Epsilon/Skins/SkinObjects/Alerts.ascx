@@ -20,6 +20,11 @@ if (moduleId != null && string.IsNullOrEmpty (Request.QueryString ["ctl"])) {
 				<h4 class="alert-heading"><i class="fas fa-info-circle"></i> <%: T.GetString ("PartialContentAlert_Title.Text") %></h4>
 				<%= content %>
 			</div>
+			<%
+			var module = DotNetNuke.Entities.Modules.ModuleController.Instance.GetModule (moduleId.Value, ActiveTab.TabID, false);
+			if (module != null) { %>
+				<h2><%= module.ModuleTitle %></h2>
+			<% } %>
 		</div>
 	</div>
 </div>
