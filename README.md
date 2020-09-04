@@ -8,22 +8,25 @@ See it in action at http://www.volgau.com!
 
 # Features
 
-- Admins can define website-specific configuration options via <del>XML</del> YAML file.
-- Users can switch between a11y and normal theme. In the a11y mode DNN modal popups are blocked (if they are enabled).
-- Variety of containers, including DNN-style messages, Bootstrap alerts, panels, thumbnails, callouts, etc.
-- Default, Simple, Home, Edit, Inside, Popup and Error skin variants, reusable through all portals.
-- Social group icons (including a11y versions) for Facebook, Twitter, Google+, YouTube, VK.com, Instagram, Linkedin.
+- Website-specific configuration via YAML files.
+- All menus are fully keyboard-accessible!
+- A11y tools like theme and font size changing, disabling DNN popups, "jump to content" link.
+- Many skin variants, reusable through all portals.
+- Block-based skin structure, reusable layouts across different skins.
+- Variety of containers, including DNN-style messages, Bootstrap alerts, cards, callouts, etc.
+- Social group icons for Facebook, Twitter, Google+, YouTube, VK.com, Instagram, Linkedin.
 - Social share buttons for Facebook, Twitter, Google+, VK.com.
 - Completely localizable parts (full Russian translation included).
-- Website and host admins can customize and website-wide and host-wide content using language editor.
-- Devs can define styles using <del>Less</del> SCSS.
-- Devs can use [Paletton.com](http://paletton.com) to create and customize palettes.
+- Website-wide and host-wide static content customization via resource files.
 - Integration with feedback forms including passing user-selected content.
 - Google Adsense adaptive banners support for different screen sizes with automatic loading on window resize.
-- [Blueimp Gallery](https://blueimp.github.io/Gallery/) support.
+- Basic [Blueimp Gallery](https://blueimp.github.io/Gallery/) support.
+- Cookie consent, "cookie disabled" and "browser unsupported" alerts.
+- Improved partial content behaviour (with `?mid=<ModuleID>`).
+- Alerts for admins about unpublished pages.
 - Optional [cnt.sputnik.ru](https://cnt.sputnik.ru/) analytics support.
 
-## Site-specific (portal level) custom skins (WIP)
+## Site-specific (portal level) custom skins
 
 With *R7.Epsilon*, you can create custom skins/layouts based on stock ones, adopted and available for specific website only:
 
@@ -79,6 +82,8 @@ published under the terms of [CC BY-CA](http://creativecommons.org/licenses/by-s
 
 Google translate and A11y icons based on Xaviju's [Inkscape Open Symbols](https://github.com/Xaviju/inkscape-open-symbols),
 the source of which is published under [GPLv2](http://opensource.org/licenses/GPL-2.0) license.
+
+Palettes for color themes created with [Paletton.com](http://paletton.com).
 
 # Customization
 
