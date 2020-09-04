@@ -201,11 +201,12 @@
 		<value>Create short URL with </value>
 	</data>
 	<data name="PartialContentAlert_Title.Text" xml:space="preserve">
-		<value>Partial content</value>
+		<value>Partial content!</value>
 	</data>
 	<data name="PartialContentAlert_Template.Text" xml:space="preserve">
-		<value><![CDATA[<p class="mb-0">Below is shown the one of many blocks of information on the <strong>[TabName]</strong> page.
-			You can <a class="alert-link" href="[TabUrl]#[ModuleId]">navigate to this block</a> on the full page version.</p>]]>
+		<value><![CDATA[<p>Below you can see the one of the content blocks on the page.</p>
+			<p class="mb-0">You can also <a class="alert-link" href="[TabUrl]#[ModuleId]">view this block on the page &quot;[TabName]&quot;</a> in its original context
+			or just <a class="alert-link" href="[TabUrl]">open full version of the &quot;[TabName]&quot; page</a>.</p>]]>
 		</value>
 	</data>
 	<data name="PageNotPublishedAlert_Title.Text" xml:space="preserve">

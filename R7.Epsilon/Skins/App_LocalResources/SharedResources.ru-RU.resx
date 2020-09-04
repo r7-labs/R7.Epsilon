@@ -186,11 +186,12 @@
 		<value>Создать короткую ссылку с использованием </value>
 	</data>
 	<data name="PartialContentAlert_Title.Text" xml:space="preserve">
-		<value>Частичное содержимое</value>
+		<value>Показано частичное содержимое!</value>
 	</data>
 	<data name="PartialContentAlert_Template.Text" xml:space="preserve">
-		<value><![CDATA[<p class="mb-0">Ниже показан только один из блоков информации на странице <strong>[TabName]</strong>.
-			Вы можете <a class="alert-link" href="[TabUrl]#[ModuleId]">перейти к этому блоку</a> на полной версии страницы.</p>]]>
+		<value><![CDATA[<p>Ниже показан один из блоков информации, доступных на странице.</p>
+			<p class="mb-0">Вы также можете <a class="alert-link" href="[TabUrl]#[ModuleId]">просмотреть этот блок на странице &quot;[TabName]&quot;</a> в его оригинальном контексте,
+			или просто <a class="alert-link" href="[TabUrl]">открыть полную версию страницы &quot;[TabName]&quot;</a>.</p>]]>
 		</value>
 	</data>
 	<data name="PageNotPublishedAlert_Title.Text" xml:space="preserve">
