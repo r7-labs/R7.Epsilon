@@ -51,6 +51,20 @@ Please always test updates in non-production environment first!
 Note that though you can use *R7.Epsilon* for Admin/Host pages, we strongly recommend to use one of the pre-installed DNN themes for that -
 just to be sure that you will always have access to Admin/Host pages.
 
+## Disable menu caching
+
+For relatively small sites, it make sense to disable menu caching completely.
+
+To do so, remove the `OutputCache` directives from `PrimaryMenu.ascx`, `SecondaryMenu.ascx` and `BreadcrumbMenu.ascx` files
+in the `~/Portals/_default/Skins/R7.Epsilon/SkinObjects` folder.
+
+## Enable menu caching
+
+For sites with large number of pages it generally make sense to use cached menus.
+
+In order to enable menu caching, extract the `Globals.asax` file from release `.zip` package and place in the the DNN install root folder -
+remember to backup the original version of this file first!
+
 ## Basic blueimp Gallery support
 
 Each static image with `data-gallery=""` attribute on the enclosing `A` tag will be displayed in "each own" lightbox:
