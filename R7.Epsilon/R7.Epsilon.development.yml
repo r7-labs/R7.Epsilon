@@ -48,6 +48,10 @@ social-groups:
     is-primary: true
     share-enabled: false
 
+  - type: Telegram
+    url: https://t.me/your-telegram-channel
+    is-primary: true
+
   - type: VKontakte
     name: VKontakte2
     color: '#458e66'

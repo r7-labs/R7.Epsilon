@@ -41,6 +41,10 @@ namespace R7.Epsilon.Components
                 return "linkedin";
             }
 
+            if (sgType == SocialGroupType.Telegram) {
+                return "telegram";
+            }
+
             return sgType.ToString ().ToLowerInvariant () + "-square";
         }
 

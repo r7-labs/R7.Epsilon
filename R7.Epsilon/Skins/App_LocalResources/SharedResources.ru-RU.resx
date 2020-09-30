@@ -107,6 +107,9 @@
 	<data name="Instagram.Text" xml:space="preserve">
 		<value>Инстаграм</value>
 	</data>
+	<data name="Telegram.Text" xml:space="preserve">
+		<value>Telegram</value>
+	</data>
 	<data name="LinkedIn.Text" xml:space="preserve">
 		<value>LinkedIn</value>
 	</data>

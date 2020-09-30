@@ -37,6 +37,8 @@ namespace R7.Epsilon.Components
 
         Odnoklassniki,
 
-        Reddit
+        Reddit,
+
+        Telegram
     }
 }

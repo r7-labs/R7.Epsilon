@@ -11,6 +11,7 @@
     &.brand-text-linkedin { color: $bc-linkedin }
     &.brand-text-reddit { color: $bc-reddit }
     &.brand-text-instagram { color: $bc-instagram-3 }
+    &.brand-text-telegram { color: $bc-telegram }
 }
 
 .brand-bg {
@@ -22,6 +23,7 @@
     &.brand-bg-linkedin { background-color: $bc-linkedin }
     &.brand-bg-reddit { background-color: $bc-reddit  }
     &.brand-bg-instagram { background-color: $bc-instagram-3 }
+    &.brand-bg-telegram { background-color: $bc-telegram }
 }
 
 .brand-border {
@@ -33,4 +35,5 @@
     &.brand-border-linkedin { border-color: $bc-linkedin }
     &.brand-border-reddit { border-color: $bc-reddit  }
     &.brand-border-instagram { border-color: $bc-instagram-3 }
+    &.brand-border-telegram { border-color: $bc-telegram }
 }
