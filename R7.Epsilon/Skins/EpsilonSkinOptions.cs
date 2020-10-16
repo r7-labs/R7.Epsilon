@@ -11,7 +11,16 @@ namespace R7.Epsilon.Skins
         public bool DisableLogin { get; set; }
 
         [Obsolete]
-        public bool DisablePageInfo { get; set; }
+        public bool DisablePageInfo {
+            get {
+                return DisablePageTags && DisablePageAudit && DisablePermalinks;
+            }
+            set {
+                DisablePageTags = value;
+                DisablePageAudit = value;
+                DisablePermalinks = value;
+            }
+        }
 
         public bool DisablePageTags { get; set; }
 
