@@ -8,7 +8,9 @@
 <%@ Register TagPrefix="skin" TagName="END" Src="~/Portals/_default/Skins/R7.Epsilon/Blocks/End.ascx" %>
 <%
 Options.DisableBreadCrumb = true;
-Options.DisablePageInfo = true;
+Options.DisablePageTags = true;
+Options.DisablePageAudit = true;
+Options.DisablePermalinks = true;
 %>
 <skin:START runat="server" />
 <div class="skin skin-home">

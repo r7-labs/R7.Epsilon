@@ -10,7 +10,9 @@
 Options.DisableSocialShare = true;
 Options.DisableBreadCrumb = true;
 Options.DisableLogin = true;
-Options.DisablePageInfo = true;
+Options.DisablePageTags = true;
+Options.DisablePageAudit = true;
+Options.DisablePermalinks = true;
 %>
 <skin:START runat="server" />
 <div class="skin skin-error">

@@ -129,7 +129,7 @@ search-engines:
 
 permalink-formats:
 
-  - "/tabid/{tabid}{?language}"
+  - "/tabid/{tabid}{?ctl}{?mid}{?entryid}"
   - "/default.aspx?tabid={tabid}{?forumid}{?threadid}{?scope}"
   - "/linkclick.aspx?link={tabid}&portalid={portalid}"
 
