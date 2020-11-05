@@ -162,13 +162,7 @@ a.dnnFormHelp {
     }
 }
 
-div.actionMenu ul.dnn_mact {
-    padding-left: 22px;
-}
 
-.dnnEditState div.actionMenu ul.dnn_mact {
-    padding-left: 0;
-}
 
 // fix .sticky-top then controlbar is visible
 .showControlBar .sticky-top {
@@ -184,6 +178,21 @@ body > form #ControlBar_ControlPanel {
 .dnnModuleSettings {
     margin-top: 0;
     margin-bottom: 0;
+}
+
+/* Actions */
+
+div.actionMenu ul.dnn_mact {
+    padding-left: 22px;
+}
+
+.dnnEditState div.actionMenu ul.dnn_mact {
+    padding-left: 0;
+}
+
+// increase DNN QuickSettings form padding
+div.actionMenu ul.dnn_mact li.actionQuickSettings ul {
+    padding: 0.5rem;
 }
 
 /* Audit control styles */
