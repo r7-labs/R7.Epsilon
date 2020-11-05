@@ -216,8 +216,7 @@ window.skinBrowserAlertButtonClick = function (e) {
     }
 
     function initCustomContent () {
-        // TODO: Also check for superusers and admins
-        if (epsilon.isEditMode) {
+        if (epsilon.isEditMode && (epsilon.isSuperUser || epsilon.isAdmin)) {
             $(".skin-custom-content").each (function () {
                 $(this).prepend ("<div class='actionMenu'><ul class='dnn_mact'>"
                                 + "<li class='actionMenuEdit' title='" + $(this).data ("resource-key") + "'><a><i class='fas fa-info'></i></a></li>"

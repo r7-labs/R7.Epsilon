@@ -1,25 +1,5 @@
-﻿//
-//  File: JsVariables.ascx.cs
-//  Project: R7.Epsilon
-//
-//  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
-//
-//  Copyright (c) 2014-2020 Roman M. Yagodin, R7.Labs
-//
-//  This program is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU Affero General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
-//
-//  This program is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU Affero General Public License for more details.
-//
-//  You should have received a copy of the GNU Affero General Public License
-//  along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-using System.Text;
+﻿using System.Text;
+using DotNetNuke.Entities.Users;
 
 namespace R7.Epsilon.Skins.SkinObjects
 {
@@ -49,6 +29,30 @@ namespace R7.Epsilon.Skins.SkinObjects
                     sb.AppendFormat ("{2}{0}:'{1}'", key, Request.QueryString [key], sb.Length == 0? "" : ",");
                 }
                 return sb.ToString ();
+            }
+        }
+
+        public bool IsSuperUser {
+            get {
+                if (Request.IsAuthenticated) {
+                    var user = UserController.Instance.GetCurrentUserInfo ();
+                    if (user != null && user.IsSuperUser) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+        }
+
+        public bool IsAdmin {
+            get {
+                if (Request.IsAuthenticated) {
+                    var user = UserController.Instance.GetCurrentUserInfo ();
+                    if (user != null && user.IsInRole ("Administrators")) {
+                        return true;
+                    }
+                }
+                return false;
             }
         }
 

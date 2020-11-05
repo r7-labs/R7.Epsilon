@@ -12,7 +12,9 @@ var epsilon = {
 	isEditMode:<%= (PortalSettings.UserMode == PortalSettings.Mode.Edit).ToString().ToLowerInvariant () %>,
 	feedbackUrl: '<%= DotNetNuke.Common.Globals.NavigateURL (Config.Feedback.TabId) %>',
 	feedbackTabId: <%: Config.Feedback.TabId %>,
-	feedbackModuleId: <%: Config.Feedback.ModuleId %>
+	feedbackModuleId: <%: Config.Feedback.ModuleId %>,
+	isAdmin: <%= IsAdmin.ToString ().ToLowerInvariant () %>,
+	isSuperUser: <%= IsSuperUser.ToString ().ToLowerInvariant () %>
 };
 </script>
 
