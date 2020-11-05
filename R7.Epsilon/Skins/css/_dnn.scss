@@ -195,6 +195,14 @@ div.actionMenu ul.dnn_mact li.actionQuickSettings ul {
     padding: 0.5rem;
 }
 
+// fix position of custom content markers
+.skin-custom-content div.actionMenu {
+    margin-right: 0.25rem;
+    ul.dnn_mact li {
+        float: none;
+    }
+}
+
 /* Audit control styles */
 
 .dnnModuleAuditControl {

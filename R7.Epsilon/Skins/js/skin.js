@@ -219,13 +219,9 @@ window.skinBrowserAlertButtonClick = function (e) {
         // TODO: Also check for superusers and admins
         if (epsilon.isEditMode) {
             $(".skin-custom-content").each (function () {
-                $(this).prepend ("<div class='actionMenu'>"
-                                + "<ul class='dnn_mact'>"
-                                // TODO: Localize label
-                                // TODO: Generate actual edit URL
-                                + "<li class='actionMenuEdit'><a href='#' aria-label='edit'><i class='fas fa-pencil-alt'></i></a></li>"
-                                + "</ul>"
-                                + "</div>");
+                $(this).prepend ("<div class='actionMenu'><ul class='dnn_mact'>"
+                                + "<li class='actionMenuEdit' title='" + $(this).data ("resource-key") + "'><a><i class='fas fa-info'></i></a></li>"
+                                + "</ul></div>");
             });
         }
     }
