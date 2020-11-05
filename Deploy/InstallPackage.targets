@@ -59,7 +59,7 @@
     </ItemGroup>
 
     <!-- Generate main manifest file -->
-    <Exec Command="$(Pwsh) GenerateManifest.ps1 &quot;$(MainProjectOutputPath)/$(MainProjectName).dnn.template.xml&quot; $(ReleaseVersion)" />
+    <Exec Command="$(Pwsh) GenerateManifest.ps1 &quot;$(MainProjectOutputPath)/$(MainProjectName).dnn.template&quot; $(ReleaseVersion)" />
 
     <!-- Declare manifest files -->
     <ItemGroup>

@@ -116,7 +116,7 @@
     <None Include="Skins\App_LocalResources\SharedResources.resx" />
     <None Include="Skins\App_LocalResources\SharedResources.ru-RU.resx" />
     <None Include="R7.Epsilon.csproj" />
-    <None Include="R7.Epsilon.dnn.template.xml">
+    <None Include="R7.Epsilon.dnn.template">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Skins\skin.doctype.xml" />
