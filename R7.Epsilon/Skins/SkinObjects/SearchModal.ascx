@@ -28,7 +28,7 @@
 									<i class='fab fa-<%: SearchEngineHelper.GetFAIconName (engine.Type) %>'></i>
 									<%: T.GetString ("SearchWith.Text") %>
 									<% if (!string.IsNullOrEmpty (engine.Name)) { %>
-										<span class="skin-custom-content" data-resource-key='<%: "SearchEngineType_" + engine.Name + ".Text" %>'>
+										<span class="skin-custom-content" data-title='<%: "SearchEngineType_" + engine.Name + ".Text" %>'>
 											<%: T.GetStringOrKey ("SearchEngineType_" + engine.Name + ".Text") %>
 										</span>
 									<% } else { %>

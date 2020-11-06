@@ -219,7 +219,7 @@ window.skinBrowserAlertButtonClick = function (e) {
         if (epsilon.isEditMode && (epsilon.isSuperUser || epsilon.isAdmin)) {
             $(".skin-custom-content").each (function () {
                 $(this).prepend ("<div class='actionMenu'><ul class='dnn_mact'>"
-                                + "<li class='actionMenuEdit' title='" + $(this).data ("resource-key") + "'><a><i class='fas fa-info'></i></a></li>"
+                                + "<li class='actionMenuEdit' title='" + $(this).data ("title") + "'><a><i class='fas fa-info'></i></a></li>"
                                 + "</ul></div>");
             });
         }

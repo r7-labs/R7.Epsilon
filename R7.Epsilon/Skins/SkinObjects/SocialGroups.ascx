@@ -16,7 +16,7 @@
 					style="<%: SocialGroupHelper.GetCustomColorStyle (group.Color) %>">
 				</i>
 				<% if (!string.IsNullOrEmpty (group.Name)) { %>
-					<span class="skin-custom-content" data-resource-key="<%: group.Name %>">
+					<span class="skin-custom-content" data-title="<%: group.Name %>">
 						<%: T.GetStringOrKey (group.Name + ".Text") %>
 					</span>
 				<% } else { %>
