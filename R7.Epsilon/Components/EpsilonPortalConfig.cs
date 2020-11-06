@@ -155,6 +155,9 @@ namespace R7.Epsilon.Components
 
     public class SearchEngineConfig
     {
+        public string Label { get; set; }
+
+        [Obsolete]
         public string Name { get; set; }
 
         public SearchEngineType Type { get; set; }

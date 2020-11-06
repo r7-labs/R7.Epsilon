@@ -117,14 +117,15 @@ websites:
 
 search-engines:
 
-  - name: Google1
-    type: Google
+  - type: Google
     url-format: https://google.com/search?q=site:{website}%20{searchText}
 
-  - type: Yandex
+  - label: Яндекс
+    type: Yandex
     url-format: https://yandex.ru/search?site={website}&text={searchText}
 
-  - type: DuckDuckGo
+  - label: resx:DuckDuckGo.Text
+    type: DuckDuckGo
     url-format: https://duckduckgo.com/?q=site:{website}%20{searchText}
 
 permalink-formats:

@@ -27,12 +27,14 @@
 								<a href="#" target="_blank" data-url-format="<%: engine.UrlFormat %>" onclick="skinSearchExternalClick(event,this)">
 									<i class='fab fa-<%: SearchEngineHelper.GetFAIconName (engine.Type) %>'></i>
 									<%: T.GetString ("SearchWith.Text") %>
-									<% if (!string.IsNullOrEmpty (engine.Name)) { %>
-										<span class="skin-custom-content" data-title='<%: "SearchEngineType_" + engine.Name + ".Text" %>'>
-											<%: T.GetStringOrKey ("SearchEngineType_" + engine.Name + ".Text") %>
+									<% if (!string.IsNullOrEmpty (engine.Label)) { %>
+										<span class="skin-custom-content" data-title='<%: engine.Label %>'>
+											<%: T.GetStringIfKey (engine.Label) %>
 										</span>
 									<% } else { %>
-										<%: T.GetString ("SearchEngineType_" + engine.Type + ".Text") %>
+										<span class="skin-custom-content" data-title='<%: "SearchEngineType_" + engine.Type + ".Text" %>'>
+											<%: T.GetString ("SearchEngineType_" + engine.Type + ".Text") %>
+										</span>
 									<% } %>
 								</a>
 							</li>
