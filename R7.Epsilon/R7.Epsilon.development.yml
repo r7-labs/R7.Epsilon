@@ -42,7 +42,7 @@ breadcrumb-menu:
 social-groups:
 
   - type: VKontakte
-    label: resx:VKontakte1.Text
+    label: resx:VKontakte1
     url: https://vk.com/your-vk-group
     api-id: 0000000
     is-primary: true
@@ -106,7 +106,7 @@ feedback:
 
 websites:
 
-  - label: resx:Website1.Text
+  - label: resx:Website1
     url: https://somesite.com
     hreflang: ru
 
@@ -124,7 +124,7 @@ search-engines:
     type: Yandex
     url-format: https://yandex.ru/search?site={website}&text={searchText}
 
-  - label: resx:DuckDuckGo.Text
+  - label: resx:DuckDuckGo
     type: DuckDuckGo
     url-format: https://duckduckgo.com/?q=site:{website}%20{searchText}
 
