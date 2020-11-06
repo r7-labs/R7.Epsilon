@@ -106,12 +106,12 @@ feedback:
 
 websites:
 
-  - name: site1
-    url: http://consulting.volgau.com
+  - label: resx:Website1.Text
+    url: https://somesite.com
     hreflang: ru
 
-  - name: altsite1
-    url: http://consulting.volgau.com
+  - label: Alternate Site
+    url: https://en.somesite.com
     hreflang: en-US
     is-alt-website: true
 

@@ -17,9 +17,9 @@
 		<% if (altWebsites.Count > 0) { %>
 			<% foreach (var site in altWebsites) { %>
 				<a class="dropdown-item" href="<%: site.Url %>" hreflang="<%: site.Hreflang %>"	target="_blank">
-					<span class="skin-custom-content" data-resource-key="<%: site.Name %>">
+					<span class="skin-custom-content" data-resource-key="<%: site.Label %>">
 						<strong><%: site.Hreflang %></strong>
-						<%: T.GetStringOrKey (site.Name) %>
+						<%: T.GetStringIfKey (site.Label) %>
 					</span>
 				</a>
 			<% } %>

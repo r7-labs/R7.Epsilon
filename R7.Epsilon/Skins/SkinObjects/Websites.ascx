@@ -7,9 +7,10 @@
 	<div class="dropdown-menu">
 		<% foreach (var site in Config.Websites) { %>
 			<a class="dropdown-item" href="<%: site.Url %>" hreflang="<%: site.Hreflang %>" target="_blank">
-				<span class="skin-custom-content" data-resource-key="<%: site.Name %>">
+				<!-- TODO: Rename to data-tooltip or data-title -->
+				<span class="skin-custom-content" data-resource-key="<%: site.Label %>">
 					<i class="fas fa-globe"></i>
-					<%: T.GetStringOrKey (site.Name + ".Text") %>
+					<%: T.GetStringIfKey (site.Label) %>
 				</span>
 			</a>
 		<% } %>
