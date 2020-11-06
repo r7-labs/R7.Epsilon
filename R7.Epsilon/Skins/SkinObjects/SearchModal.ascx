@@ -32,9 +32,7 @@
 											<%: T.GetStringIfKey (engine.Label) %>
 										</span>
 									<% } else { %>
-										<span class="skin-custom-content" data-title='<%: "SearchEngineType_" + engine.Type + ".Text" %>'>
-											<%: T.GetString ("SearchEngineType_" + engine.Type + ".Text") %>
-										</span>
+										<%: T.GetString ("SearchEngineType_" + engine.Type + ".Text") %>
 									<% } %>
 								</a>
 							</li>
