@@ -15,9 +15,9 @@
 				<i class="fab fa-<%: SocialGroupHelper.GetFAIconName (group.Type) %> brand-text brand-text-<%: group.Type.ToString ().ToLowerInvariant () %> skin-social-group-icon"
 					style="<%: SocialGroupHelper.GetCustomColorStyle (group.Color) %>">
 				</i>
-				<% if (!string.IsNullOrEmpty (group.Name)) { %>
-					<span class="skin-custom-content" data-title="<%: group.Name %>">
-						<%: T.GetStringOrKey (group.Name + ".Text") %>
+				<% if (!string.IsNullOrEmpty (group.Label)) { %>
+					<span class="skin-custom-content" data-title="<%: group.Label %>">
+						<%: T.GetStringIfKey (group.Label) %>
 					</span>
 				<% } else { %>
 					<%: T.GetString (group.Type + ".Text") %>

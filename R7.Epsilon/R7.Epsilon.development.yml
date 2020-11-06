@@ -42,7 +42,7 @@ breadcrumb-menu:
 social-groups:
 
   - type: VKontakte
-    name: VKontakte1
+    label: resx:VKontakte1.Text
     url: https://vk.com/your-vk-group
     api-id: 0000000
     is-primary: true
@@ -53,7 +53,7 @@ social-groups:
     is-primary: true
 
   - type: VKontakte
-    name: VKontakte2
+    label: Second VK Group
     color: '#458e66'
     url: https://vk.com/your-vk-group
     api-id: 0000000

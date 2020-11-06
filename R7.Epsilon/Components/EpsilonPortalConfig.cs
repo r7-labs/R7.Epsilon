@@ -95,6 +95,9 @@ namespace R7.Epsilon.Components
     {
         public SocialGroupType Type { get; set; }
 
+        [Obsolete]
+        public string Label { get; set; }
+
         public string Name { get; set; }
 
         public string Color { get; set; }
