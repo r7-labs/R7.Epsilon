@@ -36,21 +36,21 @@ namespace R7.Epsilon.Components
         public static void SetThemeCookie (HttpResponse response, string value)
         {
             response.Cookies [Const.COOKIE_PREFIX + "Theme"].Value = value;
-            response.Cookies [Const.COOKIE_PREFIX + "Theme"].Expires = DateTime.Now.AddDays (1d);
+            response.Cookies [Const.COOKIE_PREFIX + "Theme"].Expires = DateTime.Now.AddDays (7);
         }
 
         public static void SetFontSizeCookie (HttpResponse response, int value)
         {
             response.Cookies [Const.COOKIE_PREFIX + "FontSize"].Value = value.ToString ();
             response.Cookies [Const.COOKIE_PREFIX + "FontSize"].HttpOnly = false;
-            response.Cookies [Const.COOKIE_PREFIX + "FontSize"].Expires = DateTime.Now.AddDays (1d);
+            response.Cookies [Const.COOKIE_PREFIX + "FontSize"].Expires = DateTime.Now.AddDays (7);
         }
 
         public static void SetDisablePopupsCookie (HttpResponse response, bool value)
         {
             response.Cookies [Const.COOKIE_PREFIX + "DisablePopups"].Value = value.ToString ().ToLowerInvariant ();
             response.Cookies [Const.COOKIE_PREFIX + "DisablePopups"].HttpOnly = false;
-            response.Cookies [Const.COOKIE_PREFIX + "DisablePopups"].Expires = DateTime.Now.AddDays (1d);
+            response.Cookies [Const.COOKIE_PREFIX + "DisablePopups"].Expires = DateTime.Now.AddDays (7);
         }
 
         public static void SetA11yCookies (HttpResponse response, IEnumerable<ThemeConfig> themes)
