@@ -23,34 +23,43 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using DotNetNuke.Entities.Portals;
 
 namespace R7.Epsilon.Components
 {
     public static class A11yHelper
     {
-        public static string GetThemeCookie (HttpRequest request)
+        public static string GetThemeCookie (HttpResponse response)
         {
-            return request.Cookies [Const.COOKIE_PREFIX + "Theme"]?.Value;
+            return response.Cookies [Const.COOKIE_PREFIX + "Theme"]?.Value;
         }
 
         public static void SetThemeCookie (HttpResponse response, string value)
         {
-            response.Cookies [Const.COOKIE_PREFIX + "Theme"].Value = value;
-            response.Cookies [Const.COOKIE_PREFIX + "Theme"].Expires = DateTime.Now.AddDays (1d);
+            var cookie = response.Cookies [Const.COOKIE_PREFIX + "Theme"];
+            cookie.Value = value;
+            SetA11yCookieCommonAttributes (cookie);
         }
 
         public static void SetFontSizeCookie (HttpResponse response, int value)
         {
-            response.Cookies [Const.COOKIE_PREFIX + "FontSize"].Value = value.ToString ();
-            response.Cookies [Const.COOKIE_PREFIX + "FontSize"].HttpOnly = false;
-            response.Cookies [Const.COOKIE_PREFIX + "FontSize"].Expires = DateTime.Now.AddDays (1d);
+            var cookie = response.Cookies [Const.COOKIE_PREFIX + "FontSize"];
+            cookie.Value = value.ToString ();
+            SetA11yCookieCommonAttributes (cookie);
         }
 
         public static void SetDisablePopupsCookie (HttpResponse response, bool value)
         {
-            response.Cookies [Const.COOKIE_PREFIX + "DisablePopups"].Value = value.ToString ().ToLowerInvariant ();
-            response.Cookies [Const.COOKIE_PREFIX + "DisablePopups"].HttpOnly = false;
-            response.Cookies [Const.COOKIE_PREFIX + "DisablePopups"].Expires = DateTime.Now.AddDays (1d);
+            var cookie = response.Cookies [Const.COOKIE_PREFIX + "DisablePopups"];
+            cookie.Value = value.ToString ().ToLowerInvariant ();
+            SetA11yCookieCommonAttributes (cookie);
+        }
+
+        static void SetA11yCookieCommonAttributes (HttpCookie cookie)
+        {
+            cookie.HttpOnly = false;
+            cookie.Expires = DateTime.Now.AddDays (7);
+            cookie.Domain = PortalSettings.Current.PortalAlias.HTTPAlias;
         }
 
         public static void SetA11yCookies (HttpResponse response, IEnumerable<ThemeConfig> themes)

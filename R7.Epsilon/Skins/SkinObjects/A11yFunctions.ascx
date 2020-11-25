@@ -11,7 +11,7 @@
 		<% if (Config.Themes.Count > 1) { %>
 			<% for (var i = 0; i < Config.Themes.Count; i++) {
 				var theme = Config.Themes [i];
-				var isCurrentTheme = (Config.GetTheme (Request) ?? Config.Themes [0]).Name;
+				var isCurrentTheme = (Config.GetTheme (Response) ?? Config.Themes [0]).Name;
 				%>
 				<a class='<%: theme.Name == isCurrentTheme ? "dropdown-item active disabled" : "dropdown-item"  %>'
 					href='<%= DnnGlobals.NavigateURL ("", "theme", theme.Name) %>'>

@@ -1,25 +1,4 @@
-﻿//
-//  File: a11y.js
-//  Project: R7.Epsilon
-//
-//  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
-//
-//  Copyright (c) 2015-2019 Roman M. Yagodin, R7.Labs
-//
-//  This program is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU Affero General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
-//
-//  This program is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU Affero General Public License for more details.
-//
-//  You should have received a copy of the GNU Affero General Public License
-//  along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-import Cookies from "js-cookie";
+﻿import Cookies from "js-cookie";
 
 export default class A11y {
 
@@ -54,7 +33,7 @@ export default class A11y {
 
     setFontSize (fontSize) {
         document.documentElement.style = "font-size:" + fontSize + "px;";
-        Cookies.set (epsilon.cookiePrefix + "FontSize", fontSize, {expires: 7});
+        Cookies.set (epsilon.cookiePrefix + "FontSize", fontSize, {expires: 7, domain: "." + epsilon.portalAlias, hostOnly: false});
     }
 
     increaseFontSize () {
@@ -98,7 +77,7 @@ export default class A11y {
         $("a#lnkDisablePopups").addClass ("d-none");
         $("a#lnkReEnablePopups").removeClass ("d-none");
 
-        Cookies.set (epsilon.cookiePrefix + "DisablePopups", true, {expires: 7});
+        Cookies.set (epsilon.cookiePrefix + "DisablePopups", true, {expires: 7, domain: "." + epsilon.portalAlias, hostOnly: false});
     }
 
     disableTooglePopups () {
