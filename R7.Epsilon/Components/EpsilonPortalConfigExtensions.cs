@@ -24,6 +24,7 @@ using System.Web;
 
 namespace R7.Epsilon.Components
 {
+    /*
     public static class EpsilonPortalConfigExtensions
     {
         public static ThemeConfig GetTheme (this EpsilonPortalConfig config, HttpRequest request)
@@ -36,5 +37,5 @@ namespace R7.Epsilon.Components
 
             return theme;
         }
-    }
+    }*/
 }

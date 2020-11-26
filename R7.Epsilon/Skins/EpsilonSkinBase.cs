@@ -75,10 +75,9 @@ namespace R7.Epsilon.Skins
         {
             base.OnInit (e);
 
-            if (SetCookiesByQueryString ()) {
-                Response.Redirect (Globals.NavigateURL (), false);
-                return;
-            }
+            SetCookiesByQueryString ();
+
+            RegisterThemeStyleSheet ();
 
             if (!string.IsNullOrEmpty (Config.CanonicalUrlFormat)) {
                 var linkCanonicalUrl = new HtmlLink ();
@@ -88,30 +87,33 @@ namespace R7.Epsilon.Skins
             }
         }
 
-        protected bool SetCookiesByQueryString ()
+        protected void RegisterThemeStyleSheet ()
         {
-            var themeArg = Request.QueryString ["theme"];
-            if (themeArg != null) {
-                A11yHelper.SetThemeCookie (Response, themeArg);
-                return true;
-            }
+            var linkTheme = new HtmlLink ();
+            linkTheme.ID = "skinTheme";
+            linkTheme.Attributes.Add ("rel", "stylesheet");
+            linkTheme.Attributes.Add ("type", "text/css");
+            linkTheme.Href = "/Portals/_default/Skins/R7.Epsilon/css/" + Config.Themes [0].Css;
+            Page.Header.Controls.Add (linkTheme);
+        }
 
+        protected void SetCookiesByQueryString ()
+        {
             var a11yArg = Request.QueryString ["a11y"];
             if (a11yArg != null) {
                 if (string.Equals (a11yArg, "true", StringComparison.InvariantCultureIgnoreCase)) {
                     A11yHelper.SetA11yCookies (Response, Config.Themes);
-                    return true;
+                    return;
                 }
+                /*
                 if (string.Equals (a11yArg, "false", StringComparison.InvariantCultureIgnoreCase)) {
                     A11yHelper.ResetA11yCookies (Response, Config.Themes);
-                    return true;
-                }
+                    return;
+                }*/
             }
-
-            return false;
         }
 
-        protected void SetBodyCssClassForTheme ()
+        /*protected void SetBodyCssClassForTheme ()
         {
             var body = (HtmlGenericControl) this.Page.FindControl ("Body");
             body.Attributes.Add ("class", "theme-" + (Config.GetTheme (Request) ?? Config.Themes [0]).Name + " " + body.Attributes ["class"]);
@@ -122,6 +124,6 @@ namespace R7.Epsilon.Skins
             base.OnLoad (e);
 
             SetBodyCssClassForTheme ();
-        }
+        }*/
     }
 }

@@ -1,24 +1,4 @@
-﻿//
-//  File: a11y.js
-//  Project: R7.Epsilon
-//
-//  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
-//
-//  Copyright (c) 2015-2019 Roman M. Yagodin, R7.Labs
-//
-//  This program is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU Affero General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
-//
-//  This program is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU Affero General Public License for more details.
-//
-//  You should have received a copy of the GNU Affero General Public License
-//  along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
+﻿import { throws } from "assert";
 import Cookies from "js-cookie";
 
 export default class A11y {
@@ -26,6 +6,9 @@ export default class A11y {
     get defaultFontSize () { return 16; }
 
     init () {
+
+        const themeName = this.getTheme ();
+        this.setTheme (themeName, themeName === epsilon.defaultThemeName);
 
         if (epsilon.enablePopups) {
             if (this.getPopupsDisabled ()) {
@@ -41,6 +24,52 @@ export default class A11y {
         return this;
     }
 
+    setA11yCookie (cookieName, cookieValue) {
+        Cookies.set (epsilon.cookiePrefix + cookieName, cookieValue, {expires: 7, hostOnly: false, domain: "." + epsilon.portalAlias});
+    }
+
+    getTheme () {
+        const themeName = Cookies.get (epsilon.cookiePrefix + "Theme");
+        if (typeof themeName !== "undefined") {
+            return themeName;
+        }
+        return epsilon.defaultThemeName;
+    }
+
+    setTheme (themeName, initial = false) {
+        if (initial === false) {
+            $("#skinTheme").attr ("href", "/Portals/_default/Skins/R7.Epsilon/css/" + themeName + "-theme.min.css");
+        }
+        this.updateThemeButtons (themeName);
+        this.updateBodyClass (themeName);
+        this.setA11yCookie ("Theme", themeName);
+    }
+
+    updateBodyClass (themeName) {
+        $("body").removeClass (function (i, className) {
+            if (className.startsWith ("theme-")) {
+                return className;
+            }
+        }).addClass ("theme-" + themeName);
+    }
+
+    btnThemeClick (target) {
+        const themeName = $(target).data ("theme");
+        this.setTheme (themeName);
+    }
+
+    updateThemeButtons (themeName) {
+        $(".skin-btn-theme").each (function (i, btn) {
+            const btnThemeName = $(btn).data ("theme");
+            if (btnThemeName === themeName) {
+                $(btn).addClass ("active", "disabled");
+            }
+            else {
+                $(btn).removeClass ("active", "disabled");
+            }
+        });
+    }
+
     getFontSize () {
         const fontSize = Cookies.get (epsilon.cookiePrefix + "FontSize");
         if (typeof fontSize !== "undefined") {
@@ -54,7 +83,7 @@ export default class A11y {
 
     setFontSize (fontSize) {
         document.documentElement.style = "font-size:" + fontSize + "px;";
-        Cookies.set (epsilon.cookiePrefix + "FontSize", fontSize, {expires: 7});
+        this.setA11yCookie ("FontSize", fontSize);
     }
 
     increaseFontSize () {
@@ -98,7 +127,7 @@ export default class A11y {
         $("a#lnkDisablePopups").addClass ("d-none");
         $("a#lnkReEnablePopups").removeClass ("d-none");
 
-        Cookies.set (epsilon.cookiePrefix + "DisablePopups", true, {expires: 7});
+        this.setA11yCookie ("DisablePopups", true);
     }
 
     disableTooglePopups () {
@@ -107,7 +136,6 @@ export default class A11y {
         $("a#lnkReEnablePopups").addClass ("d-none");
     }
 
-    /** @deprecated Unused */
     reEnablePopups () {
         $("a.popup-href-link").each (function () {
             $(this).attr ("href", $(this).data ("popupHref")).removeData ("popupHref");
@@ -119,12 +147,12 @@ export default class A11y {
         $("a#lnkDisablePopups").removeClass ("d-none");
         $("a#lnkReEnablePopups").addClass ("d-none");
 
-        Cookies.remove (epsilon.cookiePrefix + "DisablePopups");
+        this.setA11yCookie ("DisablePopups", false);
     }
 
-    /** @deprecated Unused */
     restoreDefaults () {
         this.setFontSize (this.defaultFontSize);
+        this.setTheme (epsilon.defaultThemeName);
         this.reEnablePopups ();
     }
 };

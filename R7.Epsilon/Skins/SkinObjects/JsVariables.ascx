@@ -14,7 +14,8 @@ var epsilon = {
 	feedbackTabId: <%: Config.Feedback.TabId %>,
 	feedbackModuleId: <%: Config.Feedback.ModuleId %>,
 	isAdmin: <%= IsAdmin.ToString ().ToLowerInvariant () %>,
-	isSuperUser: <%= IsSuperUser.ToString ().ToLowerInvariant () %>
+	isSuperUser: <%= IsSuperUser.ToString ().ToLowerInvariant () %>,
+	defaultThemeName: '<%= Config.Themes [0].Name %>'
 };
 </script>
 

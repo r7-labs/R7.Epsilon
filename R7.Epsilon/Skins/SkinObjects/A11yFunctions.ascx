@@ -11,10 +11,8 @@
 		<% if (Config.Themes.Count > 1) { %>
 			<% for (var i = 0; i < Config.Themes.Count; i++) {
 				var theme = Config.Themes [i];
-				var isCurrentTheme = (Config.GetTheme (Request) ?? Config.Themes [0]).Name;
 				%>
-				<a class='<%: theme.Name == isCurrentTheme ? "dropdown-item active disabled" : "dropdown-item"  %>'
-					href='<%= DnnGlobals.NavigateURL ("", "theme", theme.Name) %>'>
+				<button type="button" class="skin-btn-theme dropdown-item" data-theme="<%: theme.Name %>" onclick="skinA11y.btnThemeClick(this)">
 					<span style="color: <%: theme.Color %>">
 						<i class='<%: theme.IsA11yTheme ? "fas fa-adjust" : "fas fa-circle" %>'></i>
 					</span>
@@ -22,21 +20,26 @@
 					<% if (i == 0) { %>
 						<%: T.GetString ("DefaultTheme.Text") %>
 					<% } %>
-				</a>
+				</button>
 			<% } %>
 			<div class="dropdown-divider"></div>
 		<% } %>
-		<a class="dropdown-item" href="javascript:skinA11y.increaseFontSize()">
-			<i class="fas fa-font"></i><i class="fas fa-arrow-up"></i> <%: T.GetString("A11yIncreaseFontSize.Text") %></a>
-		<a class="dropdown-item" href="javascript:skinA11y.decreaseFontSize()">
-			<i class="fas fa-font"></i><i class="fas fa-arrow-down"></i> <%: T.GetString("A11yDecreaseFontSize.Text") %></a>
+		<button type="button" class="dropdown-item" onclick="skinA11y.increaseFontSize()">
+			<i class="fas fa-font"></i><i class="fas fa-arrow-up"></i> <%: T.GetString("A11yIncreaseFontSize.Text") %>
+		</button>
+		<button type="button" class="dropdown-item" onclick="skinA11y.decreaseFontSize()">
+			<i class="fas fa-font"></i><i class="fas fa-arrow-down"></i> <%: T.GetString("A11yDecreaseFontSize.Text") %>
+		</button>
 		<div class="dropdown-divider"></div>
-		<a id="lnkDisablePopups" role="checkbox" class="dropdown-item" href="javascript:skinA11y.disablePopups()">
-			<i class="far fa-square"></i> <%: T.GetString("A11yDisablePopups.Text") %></a>
-		<a id="lnkReEnablePopups" role="checkbox" class="dropdown-item d-none" href="javascript:skinA11y.reEnablePopups()">
-			<i class="fas fa-check-square"></i>	<%: T.GetString("A11yDisablePopups.Text") %></a>
+		<button type="button" id="lnkDisablePopups" role="checkbox" class="dropdown-item" onclick="skinA11y.disablePopups()">
+			<i class="far fa-square"></i> <%: T.GetString("A11yDisablePopups.Text") %>
+		</button>
+		<button type="button" id="lnkReEnablePopups" role="checkbox" class="dropdown-item d-none" onclick="skinA11y.reEnablePopups()">
+			<i class="fas fa-check-square"></i>	<%: T.GetString("A11yDisablePopups.Text") %>
+		</button>
 		<div class="dropdown-divider"></div>
-			<a class="dropdown-item" href='<%= DnnGlobals.NavigateURL ("", "a11y", "false") %>'>
-			<i class="fas fa-undo"></i></i> <%: T.GetString("A11yRestoreDefaults.Text") %></a>
+		<button type="button" class="dropdown-item" onclick="skinA11y.restoreDefaults()" >
+			<i class="fas fa-undo"></i></i> <%: T.GetString("A11yRestoreDefaults.Text") %>
+		</button>
 	</div>
 </div>
