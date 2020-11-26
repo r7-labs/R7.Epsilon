@@ -1,25 +1,4 @@
-﻿//
-//  File: EpsilonSkinBase.cs
-//  Project: R7.Epsilon
-//
-//  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
-//
-//  Copyright (c) 2015-2019 Roman M. Yagodin, R7.Labs
-//
-//  This program is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU Affero General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
-//
-//  This program is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU Affero General Public License for more details.
-//
-//  You should have received a copy of the GNU Affero General Public License
-//  along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-using System;
+﻿using System;
 using System.Reflection;
 using System.Web.UI.HtmlControls;
 using DotNetNuke.Common;
@@ -93,6 +72,7 @@ namespace R7.Epsilon.Skins
             linkTheme.ID = "skinTheme";
             linkTheme.Attributes.Add ("rel", "stylesheet");
             linkTheme.Attributes.Add ("type", "text/css");
+            linkTheme.Attributes.Add ("data-theme", Config.Themes [0].Name);
             linkTheme.Href = "/Portals/_default/Skins/R7.Epsilon/css/" + Config.Themes [0].Css;
             Page.Header.Controls.Add (linkTheme);
         }
@@ -103,27 +83,12 @@ namespace R7.Epsilon.Skins
             if (a11yArg != null) {
                 if (string.Equals (a11yArg, "true", StringComparison.InvariantCultureIgnoreCase)) {
                     A11yHelper.SetA11yCookies (Response, Config.Themes);
-                    return;
                 }
-                /*
-                if (string.Equals (a11yArg, "false", StringComparison.InvariantCultureIgnoreCase)) {
+                else {
                     A11yHelper.ResetA11yCookies (Response, Config.Themes);
                     return;
-                }*/
+                }
             }
         }
-
-        /*protected void SetBodyCssClassForTheme ()
-        {
-            var body = (HtmlGenericControl) this.Page.FindControl ("Body");
-            body.Attributes.Add ("class", "theme-" + (Config.GetTheme (Request) ?? Config.Themes [0]).Name + " " + body.Attributes ["class"]);
-        }
-
-        protected override void OnLoad (EventArgs e)
-        {
-            base.OnLoad (e);
-
-            SetBodyCssClassForTheme ();
-        }*/
     }
 }

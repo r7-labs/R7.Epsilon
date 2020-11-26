@@ -8,12 +8,6 @@ namespace R7.Epsilon.Components
 {
     public static class A11yHelper
     {
-        /*
-        public static string GetThemeCookie (HttpRequest request)
-        {
-            return request.Cookies [Const.COOKIE_PREFIX + "Theme"]?.Value;
-        }*/
-
         static void SetCommonCookieOptions (HttpCookie cookie)
         {
             cookie.HttpOnly = false;
@@ -53,7 +47,6 @@ namespace R7.Epsilon.Components
             SetDisablePopupsCookie (response, true);
         }
 
-        /*
         public static void ResetA11yCookies (HttpResponse response, IEnumerable<ThemeConfig> themes)
         {
             var defaultTheme = themes.FirstOrDefault ();
@@ -63,6 +56,6 @@ namespace R7.Epsilon.Components
 
             SetFontSizeCookie (response,16);
             SetDisablePopupsCookie (response, false);
-        }*/
+        }
     }
 }

@@ -1,5 +1,4 @@
-﻿import { throws } from "assert";
-import Cookies from "js-cookie";
+﻿import Cookies from "js-cookie";
 
 export default class A11y {
 
@@ -8,7 +7,7 @@ export default class A11y {
     init () {
 
         const themeName = this.getTheme ();
-        this.setTheme (themeName, themeName === epsilon.defaultThemeName);
+        this.setTheme (themeName);
 
         if (epsilon.enablePopups) {
             if (this.getPopupsDisabled ()) {
@@ -36,13 +35,15 @@ export default class A11y {
         return epsilon.defaultThemeName;
     }
 
-    setTheme (themeName, initial = false) {
-        if (initial === false) {
-            $("#skinTheme").attr ("href", "/Portals/_default/Skins/R7.Epsilon/css/" + themeName + "-theme.min.css");
+    setTheme (themeName) {
+        const currentThemeName = $("#skinTheme").attr ("data-theme");
+        if (currentThemeName !== themeName) {
+            $("#skinTheme").attr ("data-theme", themeName)
+                .attr ("href", "/Portals/_default/Skins/R7.Epsilon/css/" + themeName + "-theme.min.css");
+            this.updateThemeButtons (themeName);
+            this.updateBodyClass (themeName);
+            this.setA11yCookie ("Theme", themeName);
         }
-        this.updateThemeButtons (themeName);
-        this.updateBodyClass (themeName);
-        this.setA11yCookie ("Theme", themeName);
     }
 
     updateBodyClass (themeName) {
@@ -53,21 +54,21 @@ export default class A11y {
         }).addClass ("theme-" + themeName);
     }
 
-    btnThemeClick (target) {
-        const themeName = $(target).data ("theme");
-        this.setTheme (themeName);
-    }
-
     updateThemeButtons (themeName) {
         $(".skin-btn-theme").each (function (i, btn) {
             const btnThemeName = $(btn).data ("theme");
             if (btnThemeName === themeName) {
-                $(btn).addClass ("active", "disabled");
+                $(btn).addClass ("active disabled");
             }
             else {
-                $(btn).removeClass ("active", "disabled");
+                $(btn).removeClass ("active disabled");
             }
         });
+    }
+
+    btnThemeClick (target) {
+        const themeName = $(target).data ("theme");
+        this.setTheme (themeName);
     }
 
     getFontSize () {
@@ -124,16 +125,16 @@ export default class A11y {
             }
         });
 
-        $("a#lnkDisablePopups").addClass ("d-none");
-        $("a#lnkReEnablePopups").removeClass ("d-none");
+        $("#lnkDisablePopups").addClass ("d-none");
+        $("#lnkReEnablePopups").removeClass ("d-none");
 
         this.setA11yCookie ("DisablePopups", true);
     }
 
     disableTooglePopups () {
-        $("a#lnkDisablePopups").addClass ("d-none")
+        $("#lnkDisablePopups").addClass ("d-none")
             .prev ("div.dropdown-divider").addClass ("d-none");
-        $("a#lnkReEnablePopups").addClass ("d-none");
+        $("#lnkReEnablePopups").addClass ("d-none");
     }
 
     reEnablePopups () {
@@ -144,8 +145,8 @@ export default class A11y {
             $(this).attr ("onclick", $(this).data ("popupOnClick")).removeData ("popupOnClick");
         });
 
-        $("a#lnkDisablePopups").removeClass ("d-none");
-        $("a#lnkReEnablePopups").addClass ("d-none");
+        $("#lnkDisablePopups").removeClass ("d-none");
+        $("#lnkReEnablePopups").addClass ("d-none");
 
         this.setA11yCookie ("DisablePopups", false);
     }
