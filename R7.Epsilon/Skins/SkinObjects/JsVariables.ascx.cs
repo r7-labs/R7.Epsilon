@@ -31,9 +31,8 @@ namespace R7.Epsilon.Skins.SkinObjects
             FeedbackModuleId = Config.Feedback.ModuleId,
             IsSuperUser = GetIsSuperUser (),
             IsAdmin = GetIsAdmin (),
-            DefaultThemeName = Config.Themes [0].Name,
             QueryParams = GetQueryParams (),
-            Themes = Config.Themes,
+            Themes = GetThemes (),
             Resources = GetResources ()
         }, _jsonSerializerSettings);
 
@@ -43,6 +42,15 @@ namespace R7.Epsilon.Skins.SkinObjects
                 {"feedbackMessageTemplate", T.GetString ("Feedback_MessageTemplate.Text")},
                 {"notSpecified", T.GetString ("NotSpecified.Text")}
             };
+        }
+
+        IDictionary<string, object> GetThemes ()
+        {
+            var themesDict = new Dictionary<string, object> ();
+            foreach (var theme in Config.Themes) {
+                themesDict.Add (theme.Name, new { Css = theme.Css });
+            }
+            return themesDict;
         }
 
         IDictionary<string, string> GetQueryParams ()
