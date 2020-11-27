@@ -127,6 +127,7 @@
     <None Include="Skins\koi.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\ClientVars.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Components\ControlLocalizer.cs" />
     <Compile Include="Components\EpsilonPortalConfig.cs" />

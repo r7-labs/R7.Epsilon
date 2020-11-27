@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Web;
+using Newtonsoft.Json;
 
 namespace R7.Epsilon.Components
 {
@@ -134,6 +135,7 @@ namespace R7.Epsilon.Components
 
         public string Css { get; set; }
 
+        [JsonIgnore]
         public string Color { get; set; }
 
         public bool IsA11yTheme { get; set; }

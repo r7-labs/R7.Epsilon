@@ -1,61 +1,79 @@
-﻿using System.Text;
+﻿using System.Collections.Generic;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using DotNetNuke.Common;
+using DotNetNuke.Common.Utilities;
 using DotNetNuke.Entities.Users;
+using DotNetNuke.Entities.Portals;
+using R7.Epsilon.Components;
+using R7.Epsilon.Models;
 
 namespace R7.Epsilon.Skins.SkinObjects
 {
-    // TODO: Introduce ClientConfig class, serialize it to JSON
     public class JsVariables: EpsilonSkinObjectBase
     {
-        #region Bindable properties
+        private readonly JsonSerializerSettings _jsonSerializerSettings = new JsonSerializerSettings {
+            ContractResolver = new CamelCasePropertyNamesContractResolver ()
+            #if DEBUG
+            , Formatting = Formatting.Indented
+            #endif
+        };
 
-        public string LocalizationResources
+        protected string ClientVars => JsonConvert.SerializeObject (new ClientVars {
+            ActiveTabId = ActiveTab.TabID,
+            PortalAlias = PortalSettings.Current.PortalAlias.HTTPAlias,
+            EnablePopups = PortalSettings.EnablePopUps,
+            InPopup = UrlUtils.InPopUp (),
+            CookiePrefix = Const.COOKIE_PREFIX,
+            IsEditMode = PortalSettings.UserMode == PortalSettings.Mode.Edit,
+            FeedbackUrl = Globals.NavigateURL (Config.Feedback.TabId),
+            FeedbackTabId = Config.Feedback.TabId,
+            FeedbackModuleId = Config.Feedback.ModuleId,
+            IsSuperUser = GetIsSuperUser (),
+            IsAdmin = GetIsAdmin (),
+            DefaultThemeName = Config.Themes [0].Name,
+            QueryParams = GetQueryParams (),
+            Themes = Config.Themes,
+            Resources = GetResources ()
+        }, _jsonSerializerSettings);
+
+        IDictionary<string, string> GetResources ()
         {
-            get {
-                var sb = new StringBuilder ();
-
-                sb.AppendFormat ("feedbackMessageTemplate:'{0}'", T.GetString ("Feedback_MessageTemplate.Text"));
-                sb.Append (",");
-                sb.AppendFormat ("notSpecified:'{0}'", T.GetString ("NotSpecified.Text"));
-
-                return sb.ToString ();
-            }
+            return new Dictionary<string, string> {
+                {"feedbackMessageTemplate", T.GetString ("Feedback_MessageTemplate.Text")},
+                {"notSpecified", T.GetString ("NotSpecified.Text")}
+            };
         }
 
-        public string QueryParams
+        IDictionary<string, string> GetQueryParams ()
         {
-            get {
-                var sb = new StringBuilder (Request.RawUrl.Length);
-                foreach (string key in Request.QueryString.Keys) {
-                    sb.AppendFormat ("{2}{0}:'{1}'", key, Request.QueryString [key], sb.Length == 0? "" : ",");
-                }
-                return sb.ToString ();
+            var queryStringDict = new Dictionary<string, string> ();
+            foreach (string key in Request.QueryString.Keys) {
+                queryStringDict.Add (key, Request.QueryString [key]);
             }
+            return queryStringDict;
         }
 
-        public bool IsSuperUser {
-            get {
-                if (Request.IsAuthenticated) {
-                    var user = UserController.Instance.GetCurrentUserInfo ();
-                    if (user != null && user.IsSuperUser) {
-                        return true;
-                    }
+        bool GetIsSuperUser ()
+        {
+            if (Request.IsAuthenticated) {
+                var user = UserController.Instance.GetCurrentUserInfo ();
+                if (user != null && user.IsSuperUser) {
+                    return true;
                 }
-                return false;
             }
+            return false;
         }
 
-        public bool IsAdmin {
-            get {
-                if (Request.IsAuthenticated) {
-                    var user = UserController.Instance.GetCurrentUserInfo ();
-                    if (user != null && user.IsInRole ("Administrators")) {
-                        return true;
-                    }
+        bool GetIsAdmin ()
+        {
+            if (Request.IsAuthenticated) {
+                var user = UserController.Instance.GetCurrentUserInfo ();
+                if (user != null && user.IsInRole ("Administrators")) {
+                    return true;
                 }
-                return false;
             }
+            return false;
         }
-
-        #endregion
     }
 }
