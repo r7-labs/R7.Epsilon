@@ -32,18 +32,18 @@ export default class A11y {
         if (typeof themeName !== "undefined") {
             return themeName;
         }
-        return epsilon.themes [0];
+        return epsilon.defaultThemeName;
     }
 
     setTheme (themeName) {
         const currentThemeName = $("#skinTheme").attr ("data-theme");
         if (currentThemeName !== themeName) {
-            $("#skinTheme").attr ("data-theme", themeName)
-                .attr ("href", "/Portals/_default/Skins/R7.Epsilon/css/" + epsilon.themes [themeName].css);
-            this.updateThemeButtons (themeName);
-            this.updateBodyClass (themeName);
-            this.setA11yCookie ("Theme", themeName);
+            $("#skinTheme").attr("data-theme", themeName)
+                .attr("href", "/Portals/_default/Skins/R7.Epsilon/css/" + epsilon.themes [themeName].css);
         }
+        this.updateThemeButtons (themeName);
+        this.updateBodyClass (themeName);
+        this.setA11yCookie ("Theme", themeName);
     }
 
     updateBodyClass (themeName) {
@@ -153,7 +153,7 @@ export default class A11y {
 
     restoreDefaults () {
         this.setFontSize (this.defaultFontSize);
-        this.setTheme (epsilon.themes [0]);
+        this.setTheme (epsilon.defaultThemeName);
         this.reEnablePopups ();
     }
 };

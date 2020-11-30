@@ -32,6 +32,7 @@ namespace R7.Epsilon.Skins.SkinObjects
             IsSuperUser = GetIsSuperUser (),
             IsAdmin = GetIsAdmin (),
             QueryParams = GetQueryParams (),
+            DefaultThemeName = Config.Themes [0].Name,
             Themes = GetThemes (),
             Resources = GetResources ()
         }, _jsonSerializerSettings);
