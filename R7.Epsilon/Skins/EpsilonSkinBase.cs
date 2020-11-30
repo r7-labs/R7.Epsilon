@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Reflection;
 using System.Web.UI.HtmlControls;
-using DotNetNuke.Common;
 using DotNetNuke.Entities.Tabs;
 using DotNetNuke.UI.Skins;
 using R7.Epsilon.Components;
@@ -54,8 +53,6 @@ namespace R7.Epsilon.Skins
         {
             base.OnInit (e);
 
-            SetCookiesByQueryString ();
-
             RegisterThemeStyleSheet ();
 
             if (!string.IsNullOrEmpty (Config.CanonicalUrlFormat)) {
@@ -75,20 +72,6 @@ namespace R7.Epsilon.Skins
             linkTheme.Attributes.Add ("data-theme", Config.Themes [0].Name);
             linkTheme.Href = "/Portals/_default/Skins/R7.Epsilon/css/" + Config.Themes [0].Css;
             Page.Header.Controls.Add (linkTheme);
-        }
-
-        protected void SetCookiesByQueryString ()
-        {
-            var a11yArg = Request.QueryString ["a11y"];
-            if (a11yArg != null) {
-                if (string.Equals (a11yArg, "true", StringComparison.InvariantCultureIgnoreCase)) {
-                    A11yHelper.SetA11yCookies (Response, Config.Themes);
-                }
-                else {
-                    A11yHelper.ResetA11yCookies (Response, Config.Themes);
-                    return;
-                }
-            }
         }
     }
 }

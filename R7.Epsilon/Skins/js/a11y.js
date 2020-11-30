@@ -5,26 +5,60 @@ export default class A11y {
     get defaultFontSize () { return 16; }
 
     init () {
-
-        const themeName = this.getTheme ();
-        this.setTheme (themeName);
-
-        if (epsilon.enablePopups) {
-            if (this.getPopupsDisabled ()) {
-                this.disablePopups ();
-            }
+        if (!this.setA11yModeByQueryString ()) {
+            this.restoreState ();
         }
-        else {
-            this.disableTooglePopups ();
-        }
-
-        this.setFontSize (this.getFontSize ());
-
         return this;
     }
 
+    setA11yModeByQueryString () {
+        if (epsilon.queryParams ["a11y"] === "true") {
+            const themeName = this.getA11yTheme ();
+            if (themeName !== null) {
+                this.setTheme(themeName);
+            }
+            else {
+                console.log ("No accessible theme found!");
+            }
+            this.setFontSize (24);
+            this.setPopupsDisabled (true);
+            return true;
+        }
+        return false;
+    }
+
+    restoreState () {
+        const themeName = this.getTheme();
+        this.setTheme(themeName);
+        this.setPopupsDisabled (this.getPopupsDisabled());
+        this.setFontSize(this.getFontSize());
+    }
+
+    setPopupsDisabled (disablePopups) {
+        if (!epsilon.enablePopups) {
+            this.disableTogglePopups();
+        }
+        else {
+            if (disablePopups) {
+                this.disablePopups();
+            }
+            else {
+                this.reEnablePopups();
+            }
+        }
+    }
+
     setA11yCookie (cookieName, cookieValue) {
-        Cookies.set (epsilon.cookiePrefix + cookieName, cookieValue, {expires: 7, hostOnly: false, domain: "." + epsilon.portalAlias});
+        Cookies.set (epsilon.cookiePrefix + cookieName, cookieValue, {expires: 7});
+    }
+
+    getA11yTheme () {
+        for (let themeProp in epsilon.themes) {
+            if (epsilon.themes [themeProp].isA11yTheme === true) {
+                return epsilon.themes [themeProp].name;
+            }
+        }
+        return null;
     }
 
     getTheme () {
@@ -131,7 +165,7 @@ export default class A11y {
         this.setA11yCookie ("DisablePopups", true);
     }
 
-    disableTooglePopups () {
+    disableTogglePopups () {
         $("#lnkDisablePopups").addClass ("d-none")
             .prev ("div.dropdown-divider").addClass ("d-none");
         $("#lnkReEnablePopups").addClass ("d-none");
@@ -154,6 +188,6 @@ export default class A11y {
     restoreDefaults () {
         this.setFontSize (this.defaultFontSize);
         this.setTheme (epsilon.defaultThemeName);
-        this.reEnablePopups ();
+        this.setPopupsDisabled (!epsilon.enablePopups);
     }
 };

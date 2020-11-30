@@ -162,7 +162,6 @@
     </Compile>
     <Compile Include="Skins\SkinObjects\EpsilonSkinObjectBase.cs" />
     <Compile Include="Skins\SkinObjects\EpsilonMenuBase.cs" />
-    <Compile Include="Components\A11yHelper.cs" />
     <Compile Include="Components\EpsilonUrlHelper.cs" />
     <Compile Include="Skins\SkinObjects\Includes.ascx.cs">
       <DependentUpon>Includes.ascx</DependentUpon>

@@ -49,7 +49,7 @@ namespace R7.Epsilon.Skins.SkinObjects
         {
             var themesDict = new Dictionary<string, object> ();
             foreach (var theme in Config.Themes) {
-                themesDict.Add (theme.Name, new { Css = theme.Css });
+                themesDict.Add (theme.Name, theme);
             }
             return themesDict;
         }
