@@ -58,7 +58,9 @@ namespace R7.Epsilon.Skins.SkinObjects
         {
             var queryStringDict = new Dictionary<string, string> ();
             foreach (string key in Request.QueryString.Keys) {
-                queryStringDict.Add (key, Request.QueryString [key]);
+                if (!string.IsNullOrWhiteSpace (key)) {
+                    queryStringDict.Add (key, Request.QueryString [key]);
+                }
             }
             return queryStringDict;
         }
