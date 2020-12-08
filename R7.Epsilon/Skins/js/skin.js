@@ -123,15 +123,6 @@ window.skinBrowserAlertButtonClick = function (e) {
         });
     }
 
-    function emptyLayoutRows () {
-        $('.row').each (function () {
-            if ($(this).children ().length ===
-                $(this).children ('.DNNEmptyPane').not ('.dnnSortable').length) {
-                $(this).addClass ('d-none');
-            }
-        });
-    }
-
     function emptySpecificTags () {
         $(".language-object").each (function () {
             if ($(this).children ().length === 0) {
@@ -337,6 +328,27 @@ window.skinBrowserAlertButtonClick = function (e) {
         $(".skin-menu [data-tabid='" + activeTabId + "']").addClass ("active");
     }
 
+    function emptyLayoutRows () {
+        $(".row").each (function () {
+            if ($(this).children ().length ===
+                $(this).children (".DNNEmptyPane").not (".dnnSortable").length) {
+                $(this).addClass ("d-none");
+            }
+        });
+    }
+
+    // TODO: Combine with emptyLayoutRows to improve performance
+    function autoexpandPanes () {
+        $(".row").each (function () {
+            if ($(this).children (".DNNEmptyPane").not (".dnnSortable").length === 1) {
+                $(this).children (".skin-autoexpand-pane").removeClass (function (idx, className) {
+                    if (className.startsWith ("col-")) {
+                        return className;
+                    }}).addClass ("col");
+            }
+        });
+    }
+
     $(function () {
         initBootstrapTooltips ();
         initBootstrapPopovers ();
@@ -346,6 +358,7 @@ window.skinBrowserAlertButtonClick = function (e) {
         if (! epsilon.inPopup) {
             initBootstrapToasts ();
             emptyLayoutRows ();
+            autoexpandPanes ();
             emptySpecificTags ();
             initUpButton (320, 500);
             initCustomContent ();
