@@ -1,5 +1,3 @@
-# From EditorConfig file template for DNN projects: https://github.com/roman-yagodin/editorconfig/blob/master/dnn.editorconfig
-
 root = true
 
 [*]
@@ -7,6 +5,10 @@ charset = utf-8
 end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
+
+[*.{cs,jsx}]
+indent_style = space
+indent_size = 4
 
 [*.{xml,resx,dnn,ascx,aspx,htm,html,cshtml}]
 indent_style = tab
