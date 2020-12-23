@@ -22,6 +22,12 @@
 				<dependency type="package">jQuery-BlueimpGallery</dependency>
 			</dependencies>
 			<components>
+				<component type="Cleanup" version="02.03.00">
+					<files>
+						<basePath>Portals\_default\Containers\R7.Epsilon</basePath>
+						<file><name>BlankBlank.ascx</name></file>
+					</files>
+				</component>
 				<component type="Cleanup" version="02.00.00">
 					<files>
 						<basePath>Portals\_default\Skins\R7.Epsilon\Skins\SkinObjects</basePath>

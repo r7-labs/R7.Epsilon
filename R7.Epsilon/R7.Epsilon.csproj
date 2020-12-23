@@ -255,7 +255,6 @@
     <Content Include="Skins\SkinObjects\PermalinksModal.ascx" />
     <Content Include="Skins\SkinObjects\Alerts.ascx" />
     <Content Include="Skins\Default.ascx" />
-    <Content Include="Containers\BlankBlank.ascx" />
     <Content Include="Skins\ContentList.ascx" />
     <Content Include="Skins\Layouts\_content-list.ascx" />
     <Content Include="Skins\Layouts\_main.ascx" />
