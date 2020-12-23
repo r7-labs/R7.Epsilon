@@ -48,6 +48,8 @@ namespace R7.Epsilon.Components
 
         public bool ShowPrivacy { get; set; }
 
+        public bool DisablePageAudit { get; set; }
+
         public bool UseObrnadzorMicrodata { get; set; }
 
         public List<SocialGroupConfig> SocialGroups { get; set; } = new List<SocialGroupConfig> ();

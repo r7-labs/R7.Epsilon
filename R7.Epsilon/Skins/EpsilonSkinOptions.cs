@@ -1,4 +1,5 @@
 using System;
+using R7.Epsilon.Components;
 
 namespace R7.Epsilon.Skins
 {
@@ -24,7 +25,16 @@ namespace R7.Epsilon.Skins
 
         public bool DisablePageTags { get; set; }
 
-        public bool DisablePageAudit { get; set; }
+        private bool? _disablePageAudit;
+
+        public bool DisablePageAudit {
+            get {
+                return (_disablePageAudit ?? (_disablePageAudit = EpsilonConfig.Instance.DisablePageAudit)).Value;
+            }
+            set {
+                _disablePageAudit = value;
+            }
+        }
 
         public bool DisablePermalinks { get; set; }
 
