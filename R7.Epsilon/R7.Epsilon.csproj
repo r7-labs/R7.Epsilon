@@ -263,8 +263,8 @@
     <Content Include="Skins\Layouts\_bottom.ascx" />
     <Content Include="Skins\Layouts\_top-grid-2cols.ascx" />
     <Content Include="Skins\Layouts\_top-grid-3cols.ascx" />
-    <Content Include="Skins\Layouts\_top-fluid.ascx" />
-    <Content Include="Skins\Layouts\_bottom-fluid.ascx" />
+    <Content Include="Skins\Layouts\_subheader-fluid.ascx" />
+    <Content Include="Skins\Layouts\_supfooter-fluid.ascx" />
     <Content Include="Skins\Layouts\_top-content-fluid.ascx" />
     <Content Include="Skins\Layouts\_bottom-content-fluid.ascx" />
     <Content Include="Skins\Fluid.ascx" />

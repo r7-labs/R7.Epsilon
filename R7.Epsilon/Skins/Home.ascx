@@ -19,12 +19,13 @@ Options.DisablePermalinks = true;
 		<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_header.ascx"-->
 		<skin:SECONDARYHEADER runat="server" />
 	</header>
+	<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_subheader-fluid.ascx"-->
 	<skin:SUBHEADER runat="server" />
 	<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_top.ascx"-->
 	<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_main.ascx"-->
 	<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_bottom-grid-3cols.ascx"-->
-	<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_bottom-fluid.ascx"-->
 	<skin:SUPFOOTER runat="server" />
+	<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_supfooter-fluid.ascx"-->
 	<footer class="skin-footer">
 		<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_footer.ascx"-->
 		<skin:FOOTER runat="server" />
