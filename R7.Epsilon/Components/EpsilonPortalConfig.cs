@@ -105,6 +105,8 @@ namespace R7.Epsilon.Components
 
         public string Color { get; set; }
 
+        public string IconCssClass { get; set; }
+
         public string Url { get; set; }
 
         public bool ShareEnabled { get; set; } = false;

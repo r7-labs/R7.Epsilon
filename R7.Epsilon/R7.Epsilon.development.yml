@@ -61,12 +61,14 @@ social-groups:
     share-enabled: false
 
   - type: Facebook
+    icon-css-class: "fab fa-facebook-square"
     url: https://www.facebook.com/your-facebook-group
     # specify Facebook App ID for the "like" button, or leave empty (will produce messages in JS console)
     api-id:
     share-enabled: true
 
   - type: Twitter
+    icon-css-class: "fab fa-twitter-square"
     url: https://twitter.com/your-twitter-group
     share-enabled: true
     params: ['your-twitter-via']

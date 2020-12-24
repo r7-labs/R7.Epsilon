@@ -3,7 +3,7 @@
 <div class="dropdown d-inline-block skin-social-groups">
 	<button type="button" class="btn btn-lg skin-btn-unstyled dropdown-toggle" data-toggle="dropdown" title='<%: T.GetString ("SocialGroups.Text") %>'>
 		<% var primaryGroup = Config.SocialGroups.FirstOrDefault (g => g.IsPrimary) ?? Config.SocialGroups.First (); %>
-		<i class="fab fa-<%: SocialGroupHelper.GetFAIconName (primaryGroup.Type) %>"></i><sup>+</sup>
+		<i class="<%: SocialGroupHelper.GetIconCssClass (primaryGroup) %>"></i><sup>+</sup>
 	</button>
 	<div class="dropdown-menu">
 		<% var prevGroup = default (SocialGroupConfig); %>
@@ -12,7 +12,7 @@
 				<div class="dropdown-divider"></div>
 			<% } %>
 			<a class="dropdown-item" href="<%: group.Url %>" target="_blank">
-				<i class="fab fa-<%: SocialGroupHelper.GetFAIconName (group.Type) %> brand-text brand-text-<%: group.Type.ToString ().ToLowerInvariant () %> skin-social-group-icon"
+				<i class="<%: SocialGroupHelper.GetIconCssClass (group) %> brand-text brand-text-<%: group.Type.ToString ().ToLowerInvariant () %> skin-social-group-icon"
 					style="<%: SocialGroupHelper.GetCustomColorStyle (group.Color) %>">
 				</i>
 				<% if (!string.IsNullOrEmpty (group.Label)) { %>
