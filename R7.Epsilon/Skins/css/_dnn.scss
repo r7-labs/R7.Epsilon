@@ -162,7 +162,12 @@ a.dnnFormHelp {
     }
 }
 
-
+// cool diagonal stripes for module drag handles
+.dnnDragHint {
+    outline: none;
+    background-image: url('/Portals/_default/Skins/R7.Epsilon/assets/images/drag-handle.png');
+    background-repeat: repeat;
+}
 
 // fix .sticky-top then controlbar is visible
 .showControlBar .sticky-top {

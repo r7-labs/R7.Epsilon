@@ -282,6 +282,8 @@
     <Folder Include="Components\" />
     <Folder Include="Skins\Layouts\" />
     <Folder Include="Skins\SkinObjects\" />
+    <Folder Include="Skins\assets\" />
+    <Folder Include="Skins\assets\images" />
     <Folder Include="Menus\" />
     <Folder Include="Menus\MegaDrop\" />
     <Folder Include="Menus\EpsilonPills\" />
@@ -344,6 +346,8 @@
     <Content Include="Containers\DnnAlert_Info.ascx" />
     <Content Include="Containers\DnnAlert_Danger.ascx" />
     <Content Include="Skins\css\_mixins.scss" />
+    <Content Include="Skins\assets\images\drag-handle.png" />
+    <Content Include="Skins\assets\images\drag-handle.svg" />
     <Content Include="Skins\SkinObjects\BlueimpGallery.ascx" />
     <Content Include="R7.Epsilon.development.yml" />
   </ItemGroup>
