@@ -2,13 +2,13 @@ namespace R7.Epsilon.Components
 {
     public static class SocialGroupHelper
     {
-        static string GetFAIconName (SocialGroupType sgType)
+        static string GetDefaultIconCssClass (SocialGroupType sgType)
         {
             if (sgType == SocialGroupType.VKontakte) {
-                return "vk";
+                return "fab fa-vk";
             }
 
-            return sgType.ToString ().ToLowerInvariant ();
+            return "fab fa-" + sgType.ToString ().ToLowerInvariant ();
         }
 
         public static string GetIconCssClass (SocialGroupConfig group)
@@ -17,7 +17,7 @@ namespace R7.Epsilon.Components
                 return group.IconCssClass;
             }
 
-            return "fab fa-" + GetFAIconName (group.Type);
+            return GetDefaultIconCssClass (group.Type);
         }
 
         public static string GetCustomColorStyle (string color)
