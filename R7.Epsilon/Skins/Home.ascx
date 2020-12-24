@@ -16,6 +16,7 @@ Options.DisablePermalinks = true;
 <div class="skin skin-home">
 	<header class="skin-header">
 		<skin:HEADER runat="server" />
+		<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_sidebanners.ascx"-->
 		<!--#include file="~/Portals/_default/Skins/R7.Epsilon/Layouts/_header.ascx"-->
 		<skin:SECONDARYHEADER runat="server" />
 	</header>

@@ -227,6 +227,32 @@ a.btn-primary:visited {
     }
 }
 
+.skin-sidebanner-panes {
+    position: relative;
+}
+
+.skin-sidebanner-pane-box {
+    width: 200px;
+    z-index: 5;
+    display: none;
+    position: absolute;
+}
+
+.skin-sidebanner-pane-box.skin-sidebanner-pane-box-left {
+    left: 0;
+}
+
+.skin-sidebanner-pane-box.skin-sidebanner-pane-box-right {
+    right: 0;
+}
+
+// 1140 (BS4 xl max. container width) - 15*2 (BS4 container x-padding) + 200*2 = 1510 */
+@media only screen and (min-width: 1510px) {
+	.skin-sidebanner-pane-box {
+		display: block;
+	}
+}
+
 // style it like the breadbrumb
 .skin-subheader-top {
     background-color: #e9ecef;

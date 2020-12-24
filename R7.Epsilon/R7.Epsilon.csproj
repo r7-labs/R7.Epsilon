@@ -327,6 +327,7 @@
     <Content Include="Skins\Grid_3Cols.ascx" />
     <Content Include="Skins\Layouts\_footer.ascx" />
     <Content Include="Skins\Layouts\_header.ascx" />
+    <Content Include="Skins\Layouts\_sidebanners.ascx" />
     <Content Include="Skins\Layouts\_main-only.ascx" />
     <Content Include="Skins\Layouts\_bottom-grid-2cols.ascx" />
     <Content Include="Skins\Layouts\_bottom-grid-3cols.ascx" />
