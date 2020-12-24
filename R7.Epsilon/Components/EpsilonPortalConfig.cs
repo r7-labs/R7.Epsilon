@@ -168,6 +168,8 @@ namespace R7.Epsilon.Components
 
         public SearchEngineType Type { get; set; }
 
+        public string IconCssClass { get; set; }
+
         public string UrlFormat { get; set; }
 
         public string GetUrl (string website, string searchText)

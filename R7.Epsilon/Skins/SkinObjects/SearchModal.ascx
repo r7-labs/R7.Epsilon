@@ -25,7 +25,7 @@
 						<% foreach (var engine in Config.SearchEngines) { %>
 							<li class="list-inline-item mb-2">
 								<a href="#" target="_blank" data-url-format="<%: engine.UrlFormat %>" onclick="skinSearchExternalClick(event,this)">
-									<i class='fab fa-<%: SearchEngineHelper.GetFAIconName (engine.Type) %>'></i>
+									<i class='<%: SearchEngineHelper.GetIconCssClass (engine) %>'></i>
 									<%: T.GetString ("SearchWith.Text") %>
 									<% if (!string.IsNullOrEmpty (engine.Label)) { %>
 										<span class="skin-custom-content" data-title='<%: engine.Label %>'>
