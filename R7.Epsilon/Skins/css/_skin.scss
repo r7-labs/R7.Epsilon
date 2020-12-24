@@ -211,20 +211,18 @@ a.btn-primary:visited {
     margin-left:0;
 }
 
+.skin-header-panes {
+    font-size: $bs-font-size-small;
+    background-color: #e9ecef;
+    .cnt {
+        margin-top: 0.75rem;
+    }
+}
+
 .skin-header-panes > .container,
 .skin-header-panes.container {
     padding-top: 0;
     padding-bottom: 0;
-    & > .row {
-        background-color: #e9ecef;
-    }
-}
-
-.skin-header-panes {
-    font-size: $bs-font-size-small;
-    .cnt {
-        margin-top: 0.75rem;
-    }
 }
 
 .skin-sidebanner-panes {
