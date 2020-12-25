@@ -1,6 +1,8 @@
-namespace R7.Epsilon.Components
+using R7.Epsilon.Components;
+
+namespace R7.Epsilon.Models
 {
-    public static class SocialGroupHelper
+    public static class SocialGroupConfigExtensions
     {
         static string GetDefaultIconCssClass (SocialGroupType sgType)
         {
@@ -11,7 +13,7 @@ namespace R7.Epsilon.Components
             return "fab fa-" + sgType.ToString ().ToLowerInvariant ();
         }
 
-        public static string GetIconCssClass (SocialGroupConfig group)
+        public static string GetIconCssClass (this SocialGroupConfig group)
         {
             if (!string.IsNullOrEmpty (group.IconCssClass)) {
                 return group.IconCssClass;
@@ -20,10 +22,10 @@ namespace R7.Epsilon.Components
             return GetDefaultIconCssClass (group.Type);
         }
 
-        public static string GetCustomColorStyle (string color)
+        public static string GetCustomColorStyle (this SocialGroupConfig group)
         {
-            if (!string.IsNullOrEmpty (color)) {
-                return $"color:{color};";
+            if (!string.IsNullOrEmpty (group.Color)) {
+                return $"color:{group.Color};";
             }
 
             return string.Empty;

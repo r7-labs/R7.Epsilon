@@ -1,9 +1,10 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.Skins.SkinObjects.EpsilonSkinObjectBase" %>
 <%@ Import Namespace="R7.Epsilon.Components" %>
+<%@ Import Namespace="R7.Epsilon.Models" %>
 <div class="dropdown d-inline-block skin-social-groups">
 	<button type="button" class="btn btn-lg skin-btn-unstyled dropdown-toggle" data-toggle="dropdown" title='<%: T.GetString ("SocialGroups.Text") %>'>
 		<% var primaryGroup = Config.SocialGroups.FirstOrDefault (g => g.IsPrimary) ?? Config.SocialGroups.First (); %>
-		<i class="<%: SocialGroupHelper.GetIconCssClass (primaryGroup) %>"></i><sup>+</sup>
+		<i class="<%: primaryGroup.GetIconCssClass () %>"></i><sup>+</sup>
 	</button>
 	<div class="dropdown-menu">
 		<% var prevGroup = default (SocialGroupConfig); %>
@@ -12,8 +13,8 @@
 				<div class="dropdown-divider"></div>
 			<% } %>
 			<a class="dropdown-item" href="<%: group.Url %>" target="_blank">
-				<i class="<%: SocialGroupHelper.GetIconCssClass (group) %> brand-text brand-text-<%: group.Type.ToString ().ToLowerInvariant () %> skin-social-group-icon"
-					style="<%: SocialGroupHelper.GetCustomColorStyle (group.Color) %>">
+				<i class="<%: group.GetIconCssClass () %> brand-text brand-text-<%: group.Type.ToString ().ToLowerInvariant () %> skin-social-group-icon"
+					style="<%: group.GetCustomColorStyle () %>">
 				</i>
 				<% if (!string.IsNullOrEmpty (group.Label)) { %>
 					<span class="skin-custom-content" data-title="<%: group.Label %>">

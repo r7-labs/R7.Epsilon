@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.Skins.SkinObjects.EpsilonSkinObjectBase" %>
 <%@ Register TagPrefix="dnn" TagName="SEARCH" Src="~/Admin/Skins/Search.ascx" %>
-<%@ Import Namespace="R7.Epsilon.Components" %>
+<%@ Import Namespace="R7.Epsilon.Models" %>
 <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -25,7 +25,7 @@
 						<% foreach (var engine in Config.SearchEngines) { %>
 							<li class="list-inline-item mb-2">
 								<a href="#" target="_blank" data-url-format="<%: engine.UrlFormat %>" onclick="skinSearchExternalClick(event,this)">
-									<i class='<%: SearchEngineHelper.GetIconCssClass (engine) %>'></i>
+									<i class='<%: engine.GetIconCssClass () %>'></i>
 									<%: T.GetString ("SearchWith.Text") %>
 									<% if (!string.IsNullOrEmpty (engine.Label)) { %>
 										<span class="skin-custom-content" data-title='<%: engine.Label %>'>

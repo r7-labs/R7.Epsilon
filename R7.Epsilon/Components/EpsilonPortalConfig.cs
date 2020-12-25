@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Web;
 using Newtonsoft.Json;
+using R7.Epsilon.Models;
 
 namespace R7.Epsilon.Components
 {

@@ -1,6 +1,8 @@
-namespace R7.Epsilon.Components
+using R7.Epsilon.Components;
+
+namespace R7.Epsilon.Models
 {
-    public static class SearchEngineHelper
+    public static class SearchEngineConfigExtensions
     {
         static string GetDefaultIconCssClass (SearchEngineType seType)
         {
@@ -15,7 +17,7 @@ namespace R7.Epsilon.Components
             return "fas fa-search";
         }
 
-        public static string GetIconCssClass (SearchEngineConfig searchEngine)
+        public static string GetIconCssClass (this SearchEngineConfig searchEngine)
         {
             if (!string.IsNullOrEmpty (searchEngine.IconCssClass)) {
                 return searchEngine.IconCssClass;

@@ -134,10 +134,10 @@
     <Compile Include="Components\ControlLocalizer.cs" />
     <Compile Include="Components\EpsilonPortalConfig.cs" />
     <Compile Include="Components\EpsilonConfig.cs" />
-    <Compile Include="Components\SocialGroupType.cs" />
-    <Compile Include="Components\SocialGroupHelper.cs" />
-    <Compile Include="Components\SearchEngineType.cs" />
-    <Compile Include="Components\SearchEngineHelper.cs" />
+    <Compile Include="Models\SocialGroupType.cs" />
+    <Compile Include="Models\SocialGroupConfigExtensions.cs" />
+    <Compile Include="Models\SearchEngineType.cs" />
+    <Compile Include="Models\SearchEngineConfigExtensions.cs" />
     <Compile Include="Components\Const.cs" />
     <Compile Include="Skins\EpsilonSkinBase.cs" />
     <Compile Include="Containers\EpsilonContainerBase.cs" />

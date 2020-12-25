@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.Skins.SkinObjects.EpsilonSkinObjectBase" %>
-<%@ Import Namespace="R7.Epsilon.Components" %>
+<%@ Import Namespace="R7.Epsilon.Models" %>
 <div class="skin-social-share-buttons">
 	<% var vk = Config.SocialGroups.FirstOrDefault (g => g.Type == SocialGroupType.VKontakte && g.ShareEnabled);
 	if (vk != null) { %>
