@@ -128,6 +128,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\ClientVars.cs" />
+    <Compile Include="Models\WebsiteConfigExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\SolutionInfo.cs" />
     <Compile Include="Components\ControlLocalizer.cs" />

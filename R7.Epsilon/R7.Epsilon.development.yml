@@ -110,6 +110,7 @@ websites:
 
   - label: resx:Website1
     url: https://somesite.com
+    icon-css-class: "fas fa-globe-europe"
     hreflang: ru
 
   - label: Alternate Site

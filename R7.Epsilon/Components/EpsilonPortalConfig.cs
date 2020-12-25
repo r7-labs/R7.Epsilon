@@ -152,6 +152,8 @@ namespace R7.Epsilon.Components
         [Obsolete]
         public string Name { get; set; }
 
+        public string IconCssClass { get; set; }
+
         public string Url { get; set; }
 
         public string Hreflang { get; set; }
