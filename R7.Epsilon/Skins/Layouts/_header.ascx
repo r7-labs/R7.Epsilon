@@ -4,4 +4,4 @@
 			<div id="HeaderPane" runat="server" class="col" containertype="G" containername="R7.Epsilon" containersrc="Blank.ascx" />
 		</div>
 	</div>
-<div>
+</div>
