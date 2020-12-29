@@ -39,7 +39,7 @@
 		</button>
 		<div class="dropdown-divider"></div>
 		<button type="button" class="dropdown-item" onclick="skinA11y.restoreDefaults()" >
-			<i class="fas fa-undo"></i></i> <%: T.GetString("A11yRestoreDefaults.Text") %>
+			<i class="fas fa-undo"></i> <%: T.GetString("A11yRestoreDefaults.Text") %>
 		</button>
 	</div>
 </div>
