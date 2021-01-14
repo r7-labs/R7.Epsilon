@@ -61,10 +61,21 @@ export default class A11y {
         return null;
     }
 
+    isThemeExists (themeName) {
+        for (let themeProp in epsilon.themes) {
+            if (epsilon.themes [themeProp].themeName === themeName) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     getTheme () {
         const themeName = Cookies.get (epsilon.cookiePrefix + "Theme");
         if (typeof themeName !== "undefined") {
-            return themeName;
+            if (this.isThemeExists (themeName)) {
+                return themeName;
+            }
         }
         return epsilon.defaultThemeName;
     }
