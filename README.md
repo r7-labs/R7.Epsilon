@@ -44,9 +44,15 @@ Please always test updates in non-production environment first!
 
 # Install
 
-- Install [LazyAds javascript library](https://github.com/roman-yagodin/R7.Dnn.JavaScriptLibraries/releases/tag/lazyads-v1.1.10) dependency.
-- Install [Rangy javascript library](https://github.com/roman-yagodin/R7.Dnn.JavaScriptLibraries/releases/tag/rangy-v1.3.0) dependency.
-- Install latest *R7.Epsilon* version from [releases](https://github.com/roman-yagodin/R7.Epsilon/releases).
+Install dependencies first:
+
+- [LazyAds javascript library](https://github.com/roman-yagodin/R7.Dnn.JavaScriptLibraries/releases/tag/lazyads-v1.1.10) package.
+- [Rangy javascript library](https://github.com/roman-yagodin/R7.Dnn.JavaScriptLibraries/releases/tag/rangy-v1.3.0) package.
+- [Font Awesome](https://github.com/roman-yagodin/R7.Dnn.JavaScriptLibraries/releases/tag/font-awesome-v5.12.0) package.
+- [blueimp Gallery](https://github.com/roman-yagodin/R7.Dnn.JavaScriptLibraries/releases/tag/blueimp-v3.3.0) package.
+- [R7.Dnn.Extensions](https://github.com/roman-yagodin/R7.Dnn.Extensions/releases/tag/v0.14.2) package.
+
+After that, install latest *R7.Epsilon* version from [releases](https://github.com/roman-yagodin/R7.Epsilon/releases).
 
 Note that though you can use *R7.Epsilon* for Admin/Host pages, we strongly recommend to use one of the pre-installed DNN themes for that -
 just to be sure that you will always have access to Admin/Host pages.
