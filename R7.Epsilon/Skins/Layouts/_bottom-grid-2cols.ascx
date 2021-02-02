@@ -13,4 +13,7 @@
 		<div id="BottomPane11" runat="server" class="col-md-6" />
 		<div id="BottomPane12" runat="server" class="col-md-6" />
 	</div>
+	<div class="row">
+		<div id="BottomPane" runat="server" class="col" />
+	</div>
 </div>
