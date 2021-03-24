@@ -31,7 +31,7 @@ window.skinGoogleTranslatePage = function (fromLang) {
 };
 
 window.skinGetBaseFeedbackUrl = function () {
-    const feedbackParams = "returntabid=" + epsilon.queryParams ["TabId"] + "&feedbackmid=" + epsilon.feedbackModuleId;
+    const feedbackParams = "returntabid=" + epsilon.activeTabId + "&feedbackmid=" + epsilon.feedbackModuleId;
     return epsilon.feedbackUrl + "?" + feedbackParams;
 }
 
