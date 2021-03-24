@@ -9,8 +9,8 @@
     <MainProjectName>R7.Epsilon</MainProjectName>
     <MainProjectPath>../$(MainProjectName)</MainProjectPath>
     <NodeModulesPath>../node_modules</NodeModulesPath>
-    <DnnLocalDeployPath Condition=" '$(OS)' == 'Unix' ">/mnt/hdd/$(HOME)/mnt/dnn804</DnnLocalDeployPath>
-    <DnnLocalDeployPath Condition=" '$(OS)' != 'Unix' ">C:\Dotnetnuke804</DnnLocalDeployPath>
+    <DnnLocalDeployPath Condition=" '$(OS)' == 'Unix' ">$(HOME)/mnt/dnn990</DnnLocalDeployPath>
+    <DnnLocalDeployPath Condition=" '$(OS)' != 'Unix' ">C:\Dotnetnuke990</DnnLocalDeployPath>
     <!-- Empty - place module folders directly in DesktopModules -->
     <!-- /MVC - place module folders directly in DesktopModules/MVC -->
     <!-- /$(MainProjectName) - place module folders in DesktopModules/$(MainProjectName) -->
