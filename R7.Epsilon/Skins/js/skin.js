@@ -75,7 +75,7 @@ window.skinBrowserAlertButtonClick = function (e) {
             $("#btnSkinOpenFeedback")
                 .attr ("href", skinGetBaseFeedbackUrl ())
                 .attr ("target", "_blank")
-                .click (function (e) {
+                .on ("click", function (e) {
                     e.preventDefault ();
                     skinOpenFeedback ();
                 });
