@@ -1,0 +1,14 @@
+$personabar-width: 80px;
+$editbar-height: 80px;
+
+body.personabar-visible.dnnEditState .skin-float-btns {
+    margin-bottom: $editbar-height;
+}
+
+body.personabar-visible .skin-toasts {
+    margin-left: $personabar-width;
+}
+
+body.dnnEditState .skin-toasts {
+    margin-bottom: $editbar-height;
+}

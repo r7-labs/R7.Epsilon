@@ -307,6 +307,7 @@
     <Content Include="Skins\Blocks\End.ascx" />
     <Content Include="Skins\Blocks\PopupEnd.ascx" />
     <Content Include="Skins\css\_dnn.scss" />
+    <Content Include="Skins\css\_dnn9.scss" />
     <Content Include="Skins\css\_menu.scss" />
     <Content Include="Skins\css\_skin.scss" />
     <Content Include="Skins\css\brown-theme.scss" />
