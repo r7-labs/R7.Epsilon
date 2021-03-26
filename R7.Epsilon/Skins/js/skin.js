@@ -70,15 +70,33 @@ window.skinBrowserAlertButtonClick = function (e) {
             : location.protocol + "//" + location.hostname + (location.port ? ":" + location.port: "");
     }
 
-    function initFeedbackButton () {
+    function hidePopoversForOtherFloatButtons (thisBtn) {
+        $(".skin-float-btns > [data-toggle='popover']").each (function (i, btn) {
+            if ($(btn).attr ("id") !== $(thisBtn).attr ("id")) {
+                $(btn).popover ("hide");
+            }
+        });
+    }
+
+    function initFloatButtons () {
         $("#btnSkinFeedback").on ("inserted.bs.popover", function () {
+            const thisBtn = this;
+            hidePopoversForOtherFloatButtons (thisBtn);
             $("#btnSkinOpenFeedback")
                 .attr ("href", skinGetBaseFeedbackUrl ())
                 .attr ("target", "_blank")
                 .on ("click", function (e) {
                     e.preventDefault ();
                     skinOpenFeedback ();
+                    $(thisBtn).popover ("hide");
                 });
+        });
+        $("#btnSkinAgeRating").on ("inserted.bs.popover", function () {
+            const thisBtn = this;
+            hidePopoversForOtherFloatButtons (thisBtn);
+            $("#btnSkinOpenAgeRating").on ("click", function () {
+                $(thisBtn).popover ("hide");
+            });
         });
     }
 
@@ -363,7 +381,7 @@ window.skinBrowserAlertButtonClick = function (e) {
             initMainMenu ();
             setActiveMenuItems (epsilon.activeTabId);
             initBreadcrumb ();
-            initFeedbackButton ();
+            initFloatButtons ();
             alterLanguage ();
             alterLogin ();
             showToasts ();

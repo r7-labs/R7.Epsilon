@@ -10,7 +10,7 @@
 			data-html="true" data-toggle="popover" data-placement="left" data-container="body">
 		<i class="fas fa-comment-dots"></i>
 	</a>
-	<a role="button" class="skin-float-btn skin-float-btn-age-rating"
+	<a id="btnSkinAgeRating" role="button" class="skin-float-btn skin-float-btn-age-rating"
 			title='<%: T.GetString ("AgeRating_Title.Text") %>' data-content='<%= T.GetString ("AgeRating_Content.Text") %>'
 			data-html="true" data-toggle="popover" data-placement="left" data-container="body">
 		<%: T.GetString ("AgeRating_Label.Text") %>

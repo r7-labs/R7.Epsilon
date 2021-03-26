@@ -154,7 +154,7 @@
 	</data>
 	<data name="AgeRating_Content.Text" xml:space="preserve">
 		<value><![CDATA[<p>Information product for <strong>children since the age of twelve years - PEGI 12</strong> (unless otherwise specified).</p>
-		<p class="mb-1"><a class="btn btn-sm btn-info" href="https://pegi.info/" target="_blank">More info</a></p>]]></value>
+		<p class="mb-1"><a id="btnSkinOpenAgeRating" class="btn btn-sm btn-info" href="https://pegi.info/" target="_blank">More info</a></p>]]></value>
 	</data>
 	<data name="Feedback_Title.Text" xml:space="preserve">
 		<value>Feedback</value>
