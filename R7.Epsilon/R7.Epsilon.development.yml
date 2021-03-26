@@ -5,6 +5,11 @@ themes:
     color: blue
     is-a11y-theme: false
 
+  - name: brown
+    css: brown-theme.min.css
+    color: brown
+    is-a11y-theme: false
+
   - name: contrast
     css: contrast-theme.min.css
     color: black

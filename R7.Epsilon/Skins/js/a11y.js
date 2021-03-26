@@ -63,7 +63,7 @@ export default class A11y {
 
     isThemeExists (themeName) {
         for (let themeProp in epsilon.themes) {
-            if (epsilon.themes [themeProp].themeName === themeName) {
+            if (epsilon.themes [themeProp].name === themeName) {
                 return true;
             }
         }
