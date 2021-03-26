@@ -154,7 +154,7 @@
 	</data>
 	<data name="AgeRating_Content.Text" xml:space="preserve">
 		<value><![CDATA[<p>Information product for <strong>children since the age of twelve years - PEGI 12</strong> (unless otherwise specified).</p>
-		<p class="mb-1"><a id="btnSkinOpenAgeRating" class="btn btn-sm btn-info" href="https://pegi.info/" target="_blank">More info</a></p>]]></value>
+		<p class="mb-1"><a id="btnSkinOpenAgeRating" class="btn btn-sm btn-block btn-info" href="https://pegi.info/" target="_blank">More info</a></p>]]></value>
 	</data>
 	<data name="Feedback_Title.Text" xml:space="preserve">
 		<value>Feedback</value>
@@ -163,8 +163,8 @@
 		<value>\n\n---\nLink to Page: {page}\nSelection: \&quot;{selection}\&quot;</value>
 	</data>
 	<data name="Feedback_Content.Text" xml:space="preserve">
-		<value><![CDATA[<p>In order to provide a feedback, click the button below. You can <strong>preliminarily select a portion of text</strong> on the page to pass it to the form.</p>
-		<p class="mb-1"><a id="btnSkinOpenFeedback" class="btn btn-sm btn-primary">Open feedback form</a></p>]]></value>
+		<value><![CDATA[<p>In order to provide a feedback, use the feedback form. <strong>Select a portion of text</strong> on the page to pass it to the form.</p>
+		<p class="mb-1"><a id="btnSkinOpenFeedback" class="btn btn-sm btn-block btn-primary">Open feedback form</a></p>]]></value>
 	</data>
 	<data name="PublishedDate.Text" xml:space="preserve">
 		<value>Published:</value>

@@ -139,7 +139,7 @@
 	</data>
 	<data name="AgeRating_Content.Text" xml:space="preserve">
 		<value><![CDATA[<p>Информационная продукция <strong>для детей старше 12 лет</strong> (если иное не указано дополнительно).</p>
-		<p class="mb-1"><a id="btnSkinOpenAgeRating" class="btn btn-sm btn-info" href="https://base.garant.ru/77680092/948c9c0734b6e944a4727660f2d5a027/" target="_blank">Подробнее</a></p>]]></value>
+		<p class="mb-1"><a id="btnSkinOpenAgeRating" class="btn btn-sm btn-block btn-info" href="https://base.garant.ru/77680092/948c9c0734b6e944a4727660f2d5a027/" target="_blank">Узнать больше</a></p>]]></value>
 	</data>
 	<data name="Feedback_Title.Text" xml:space="preserve">
 		<value>Обратная связь</value>
@@ -148,8 +148,8 @@
 		<value>\n\n---\nСсылка на страницу: {page}\nВыделенный фрагмент: \&quot;{selection}\&quot;</value>
 	</data>
 	<data name="Feedback_Content.Text" xml:space="preserve">
-		<value><![CDATA[<p>Чтобы отправить нам сообщение, нажмите на расположенную ниже кнопку. Вы можете <strong>предварительно выделить фрагмент текста</strong> на странице, чтобы передать его в форму.</p>
-		<p class="mb-1"><a id="btnSkinOpenFeedback" class="btn btn-sm btn-primary">Открыть форму обратной связи</a></p>]]></value>
+		<value><![CDATA[<p>Чтобы отправить нам сообщение, воспользуйтесь формой обратной связи. <strong>Выделите фрагмент текста</strong> на странице, чтобы передать его в форму.</p>
+		<p class="mb-1"><a id="btnSkinOpenFeedback" class="btn btn-sm btn-block btn-primary">Открыть форму обратной связи</a></p>]]></value>
 	</data>
 	<data name="PublishedDate.Text" xml:space="preserve">
 		<value>Опубликовано:</value>
