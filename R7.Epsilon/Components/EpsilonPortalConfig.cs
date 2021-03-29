@@ -51,6 +51,7 @@ namespace R7.Epsilon.Components
 
         public bool DisablePageAudit { get; set; }
 
+        [Obsolete]
         public bool UseObrnadzorMicrodata { get; set; }
 
         public List<SocialGroupConfig> SocialGroups { get; set; } = new List<SocialGroupConfig> ();

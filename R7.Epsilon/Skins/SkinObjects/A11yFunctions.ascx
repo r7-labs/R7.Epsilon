@@ -1,6 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.Skins.SkinObjects.EpsilonSkinObjectBase" %>
 <%@ Import Namespace="R7.Epsilon.Components" %>
-<%@ Import Namespace="DnnGlobals=DotNetNuke.Common.Globals" %>
 <div class="dropdown d-inline-block">
 	<button type="button" class="btn btn-lg skin-btn-unstyled dropdown-toggle skin-a11y-btn"
 		data-toggle="dropdown"

@@ -1,5 +1,4 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="false" EnableViewState="false" Inherits="R7.Epsilon.Skins.SkinObjects.EpsilonSkinObjectBase" %>
-<%@ Import Namespace="DnnGlobals=DotNetNuke.Common.Globals" %>
 <%@ Register TagPrefix="dnn" TagName="LOGO" Src="~/Admin/Skins/Logo.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="USER" Src="~/Admin/Skins/User.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="LOGIN" Src="~/Admin/Skins/Login.ascx" %>
@@ -13,7 +12,7 @@
 <%@ Register TagPrefix="skin" TagName="CUSTOMCONTENT" Src="~/Portals/_default/Skins/R7.Epsilon/SkinObjects/CustomContent.ascx" %>
 <div class="container">
 	<div class="row">
-		<a href='<%= DnnGlobals.NavigateURL ("", "a11y", "true") %>' class="sr-only sr-only-focusable" itemprop="copy"><%: T.GetString ("A11yWebsiteVersion.Text") %></a>
+		<a href='<%= DotNetNuke.Common.Globals.NavigateURL ("", "a11y", "true") %>' class="sr-only sr-only-focusable"><%: T.GetString ("A11yWebsiteVersion.Text") %></a>
 		<a href="#content" class="sr-only sr-only-focusable"><%: T.GetString ("SkipToContent.Text") %></a>
     </div>
     <div class="row">
