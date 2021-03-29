@@ -8,6 +8,10 @@
 		<%= T.GetString ("A11y_Icon.Text") %>
 	</button>
 	<div class="dropdown-menu">
+		<a href='<%= DotNetNuke.Common.Globals.NavigateURL ("", "a11y", "true") %>' class="dropdown-item" itemprop="copy">
+			<i class="fas fa-eye"></i> <%: T.GetString ("A11yWebsiteVersion.Text") %>
+		</a>
+		<div class="dropdown-divider"></div>
 		<% if (Config.Themes.Count > 1) { %>
 			<% for (var i = 0; i < Config.Themes.Count; i++) {
 				var theme = Config.Themes [i];
