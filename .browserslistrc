@@ -1,5 +1,5 @@
 # https://github.com/browserslist/browserslist#readme
-# From https://github.com/twbs/bootstrap/blob/v4.4.1/.browserslistrc
+# From https://github.com/twbs/bootstrap/blob/v4.6.0/.browserslistrc
 
 >= 1%
 last 1 major version
