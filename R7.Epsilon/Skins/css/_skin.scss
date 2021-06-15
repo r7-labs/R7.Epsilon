@@ -651,3 +651,20 @@ a.dnnSecondaryAction:active, a.dnnSecondaryAction.active {
     border-color: $btn-secondary-active-border-color;
 }
 
+/* Custom typography */
+
+.centerline {
+    border-bottom: 1px solid #212529;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.centerline > .centerline-header {
+    position: relative;
+    top: 0.55em;
+    display: inline-block;
+    margin: 0px auto;
+    padding-right: 3rem;
+    padding-left: 3rem;
+    background-color: #fff;
+}
