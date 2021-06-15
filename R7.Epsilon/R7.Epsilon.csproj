@@ -310,6 +310,7 @@
     <Content Include="Skins\css\_dnn9.scss" />
     <Content Include="Skins\css\_menu.scss" />
     <Content Include="Skins\css\_skin.scss" />
+    <Content Include="Skins\css\_typography.scss" />
     <Content Include="Skins\css\brown-theme.scss" />
     <Content Include="Skins\css\palettes\_brown-palette.scss" />
     <Content Include="Skins\css\palettes\_green-palette.scss" />
