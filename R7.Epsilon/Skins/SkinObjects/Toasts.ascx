@@ -9,7 +9,7 @@
 		</div>
 		<div class="toast-body">
 			<p><%= T.GetString ("BrowserAlert_Body.Text") %></p>
-			<button type="button" class="btn btn-sm btn-warning" onclick="skinBrowserAlertButtonClick(event)">
+			<button type="button" class="btn btn-sm btn-block btn-warning" onclick="skinBrowserAlertButtonClick(event)">
 				<%= T.GetString ("BrowserAlert_Button_Label.Text") %>
 			</button>
 		</div>
@@ -23,7 +23,7 @@
 		</div>
 		<div class="toast-body">
 			<%= T.GetString ("CookiesAlert_Body.Text") %>
-			<button type="button" class="btn btn-sm btn-info" onclick="skinCookiesAlertButtonClick(event)">
+			<button type="button" class="btn btn-sm btn-block btn-info" onclick="skinCookiesAlertButtonClick(event)">
 				<%= T.GetString ("CookiesAlert_Button_Label.Text") %>
 			</button>
 		</div>
@@ -37,7 +37,7 @@
 		</div>
 		<div class="toast-body">
 			<%= T.GetString ("CookiesDisabledAlert_Body.Text") %>
-			<button type="button" class="btn btn-sm btn-warning" onclick="skinCookiesDisabledAlertButtonClick(event)">
+			<button type="button" class="btn btn-sm btn-block btn-warning" onclick="skinCookiesDisabledAlertButtonClick(event)">
 				<%= T.GetString ("CookiesDisabledAlert_Button_Label.Text") %>
 			</button>
 		</div>
