@@ -314,13 +314,13 @@ window.skinBrowserAlertButtonClick = function (e) {
         });
     }
 
-    function isCookiesEnabled () {
+    function cookiesAreEnabled () {
         // borrowed from https://github.com/Modernizr/Modernizr/blob/master/feature-detects/cookies.js
         try {
             document.cookie = epsilon.cookiePrefix + "CookieTest=1;"
-            var isCookiesEnabled = document.cookie.indexOf (epsilon.cookiePrefix + "CookieTest=") !== -1;
+            var cookiesAreEnabled = document.cookie.indexOf (epsilon.cookiePrefix + "CookieTest=") !== -1;
             document.cookie = epsilon.cookiePrefix + "CookieTest=1; expires=Thu, 01-Jan-1970 00:00:01 GMT";
-            return isCookiesEnabled;
+            return cookiesAreEnabled;
           }
           catch (e) {
             return false;
@@ -336,7 +336,7 @@ window.skinBrowserAlertButtonClick = function (e) {
             }
         }
 
-        if (!isCookiesEnabled ()) {
+        if (!cookiesAreEnabled ()) {
             $("#skin_toastCookiesDisabledAlert").toast ("show");
         }
         else if (typeof Cookies.get (epsilon.cookiePrefix + "CookiesAlert") === "undefined") {
