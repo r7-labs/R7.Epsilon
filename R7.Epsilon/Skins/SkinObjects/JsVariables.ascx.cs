@@ -29,6 +29,7 @@ namespace R7.Epsilon.Skins.SkinObjects
             FeedbackUrl = Globals.NavigateURL (Config.Feedback.TabId),
             FeedbackTabId = Config.Feedback.TabId,
             FeedbackModuleId = Config.Feedback.ModuleId,
+            DisableBrowserAlert = Config.DisableBrowserAlert,
             IsSuperUser = GetIsSuperUser (),
             IsAdmin = GetIsAdmin (),
             QueryParams = GetQueryParams (),

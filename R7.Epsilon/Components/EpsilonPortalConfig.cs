@@ -51,6 +51,8 @@ namespace R7.Epsilon.Components
 
         public bool DisablePageAudit { get; set; }
 
+        public bool DisableBrowserAlert { get; set; }
+
         [Obsolete]
         public bool UseObrnadzorMicrodata { get; set; }
 

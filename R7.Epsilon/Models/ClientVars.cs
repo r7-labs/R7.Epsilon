@@ -29,9 +29,12 @@ namespace R7.Epsilon.Models
 
         public string DefaultThemeName { get; set; }
 
+        public bool DisableBrowserAlert { get; set; }
+
         public IDictionary<string, object> Themes { get; set; }
 
-        [JsonProperty ("localization")] public IDictionary<string, string> Resources { get; set; }
+        [JsonProperty ("localization")]
+        public IDictionary<string, string> Resources { get; set; }
 
         public IDictionary<string, string> QueryParams { get; set; }
     }

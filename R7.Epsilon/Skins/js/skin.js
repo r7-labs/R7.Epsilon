@@ -328,9 +328,11 @@ window.skinBrowserAlertButtonClick = function (e) {
     }
 
     function showToasts () {
-        if (typeof Cookies.get (epsilon.cookiePrefix + "BrowserAlert") === "undefined") {
-            if (! supportedBrowsers.test (navigator.userAgent)) {
-                $("#skin_toastBrowserAlert").toast ("show");
+        if (epsilon.disableBrowserAlert === false) {
+            if (typeof Cookies.get (epsilon.cookiePrefix + "BrowserAlert") === "undefined") {
+                if (! supportedBrowsers.test (navigator.userAgent)) {
+                    $("#skin_toastBrowserAlert").toast ("show");
+                }
             }
         }
 
