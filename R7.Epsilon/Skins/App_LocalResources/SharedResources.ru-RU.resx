@@ -145,7 +145,11 @@
 		<value>Обратная связь</value>
 	</data>
 	<data name="Feedback_MessageTemplate.Text" xml:space="preserve">
-		<value>\n\n---\nСсылка на страницу: {page}\nВыделенный фрагмент: \&quot;{selection}\&quot;</value>
+		<value>
+
+---
+Ссылка на страницу: {page}
+Выделенный фрагмент: &quot;{selection}&quot;</value>
 	</data>
 	<data name="Feedback_Content.Text" xml:space="preserve">
 		<value><![CDATA[<p>Чтобы отправить нам сообщение, воспользуйтесь формой обратной связи. <strong>Выделите фрагмент текста</strong> на странице, чтобы передать его в форму.</p>

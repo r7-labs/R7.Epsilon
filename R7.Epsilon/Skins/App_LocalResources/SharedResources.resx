@@ -160,7 +160,11 @@
 		<value>Feedback</value>
 	</data>
 	<data name="Feedback_MessageTemplate.Text" xml:space="preserve">
-		<value>\n\n---\nLink to Page: {page}\nSelection: \&quot;{selection}\&quot;</value>
+		<value>
+
+---
+Link to Page: {page}
+Selection: &quot;{selection}&quot;</value>
 	</data>
 	<data name="Feedback_Content.Text" xml:space="preserve">
 		<value><![CDATA[<p>In order to provide a feedback, use the feedback form. <strong>Select a portion of text</strong> on the page to pass it to the form.</p>
