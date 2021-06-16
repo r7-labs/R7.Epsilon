@@ -331,7 +331,9 @@ window.skinBrowserAlertButtonClick = function (e) {
         if (epsilon.disableBrowserAlert === false) {
             if (typeof Cookies.get (epsilon.cookiePrefix + "BrowserAlert") === "undefined") {
                 if (! supportedBrowsers.test (navigator.userAgent)) {
-                    $("#skin_toastBrowserAlert").toast ("show");
+                    $("#skin_toastBrowserAlert").toast ("show").on ("hidden.bs.toast", function () {
+                        Cookies.set (epsilon.cookiePrefix + "BrowserAlert", true, {expires: 7});
+                    });
                 }
             }
         }
@@ -340,7 +342,9 @@ window.skinBrowserAlertButtonClick = function (e) {
             $("#skin_toastCookiesDisabledAlert").toast ("show");
         }
         else if (typeof Cookies.get (epsilon.cookiePrefix + "CookiesAlert") === "undefined") {
-            $("#skin_toastCookiesAlert").toast ("show");
+            $("#skin_toastCookiesAlert").toast ("show").on ("hidden.bs.toast", function () {
+                Cookies.set (epsilon.cookiePrefix + "CookiesAlert", true, {expires: 14});
+            });
         }
     }
 
