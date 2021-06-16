@@ -1,25 +1,4 @@
-﻿//
-//  File: skin.js
-//  Project: R7.Epsilon
-//
-//  Author: Roman M. Yagodin <roman.yagodin@gmail.com>
-//
-//  Copyright (c) 2015-2019 Roman M. Yagodin, R7.Labs
-//
-//  This program is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU Affero General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
-//
-//  This program is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU Affero General Public License for more details.
-//
-//  You should have received a copy of the GNU Affero General Public License
-//  along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-import A11y from "./a11y";
+﻿import A11y from "./a11y";
 import Cookies from "js-cookie";
 
 const supportedBrowsers = require ("./supportedBrowsers");
@@ -58,7 +37,7 @@ window.skinCookiesDisabledAlertButtonClick = function (e) {
 };
 
 window.skinBrowserAlertButtonClick = function (e) {
-    Cookies.set (epsilon.cookiePrefix + "BrowserAlert", true, {expires: 14});
+    Cookies.set (epsilon.cookiePrefix + "BrowserAlert", true, {expires: 31});
     $(e.target).closest (".toast").toast ("hide");
 };
 
@@ -332,7 +311,7 @@ window.skinBrowserAlertButtonClick = function (e) {
             if (typeof Cookies.get (epsilon.cookiePrefix + "BrowserAlert") === "undefined") {
                 if (! supportedBrowsers.test (navigator.userAgent)) {
                     $("#skin_toastBrowserAlert").toast ("show").on ("hidden.bs.toast", function () {
-                        Cookies.set (epsilon.cookiePrefix + "BrowserAlert", true, {expires: 7});
+                        Cookies.set (epsilon.cookiePrefix + "BrowserAlert", true, {expires: 15});
                     });
                 }
             }
@@ -343,7 +322,7 @@ window.skinBrowserAlertButtonClick = function (e) {
         }
         else if (typeof Cookies.get (epsilon.cookiePrefix + "CookiesAlert") === "undefined") {
             $("#skin_toastCookiesAlert").toast ("show").on ("hidden.bs.toast", function () {
-                Cookies.set (epsilon.cookiePrefix + "CookiesAlert", true, {expires: 14});
+                Cookies.set (epsilon.cookiePrefix + "CookiesAlert", true, {expires: 15});
             });
         }
     }
