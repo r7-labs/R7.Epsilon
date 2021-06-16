@@ -70,10 +70,10 @@
 		<value>Warning!</value>
 	</data>
 	<data name="CookiesAlert_Body.Text" xml:space="preserve">
-		<value><![CDATA[<p>Like many other websites, we use <strong><a href="https://en.wikipedia.org/wiki/HTTP_cookie" target="_blank">cookies</a></strong> to ensure that we provide you with the best experience.</p>]]></value>
+		<value><![CDATA[<p>Like many other websites, <strong><a href="https://en.wikipedia.org/wiki/HTTP_cookie" target="_blank">we use cookies</a></strong> to ensure that we provide you with the best experience.</p>]]></value>
 	</data>
 	<data name="CookiesDisabledAlert_Body.Text" xml:space="preserve">
-		<value><![CDATA[<p>Like many other websites, we use <strong><a href="https://en.wikipedia.org/wiki/HTTP_cookie" target="_blank">cookies</a></strong> to ensure that we provide you with the best experience.</p>
+		<value><![CDATA[<p>Like many other websites, <strong><a href="https://en.wikipedia.org/wiki/HTTP_cookie" target="_blank">we use cookies</a></strong> to ensure that we provide you with the best experience.</p>
 		<p>We have determined that cookies are disabled in your browser, so some features of our website will not be available or may not work properly.
 		<p><strong>Please enable cookies in your browser and reload the page!</strong></p>]]></value>
 	</data>
