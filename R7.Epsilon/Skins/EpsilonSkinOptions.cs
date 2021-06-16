@@ -40,6 +40,7 @@ namespace R7.Epsilon.Skins
 
         public bool DisableLazyAds { get; set; }
 
+        [Obsolete]
         public bool DisableRangy { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿import A11y from "./a11y";
 import Cookies from "js-cookie";
+import rangy from "rangy";
 
 const supportedBrowsers = require ("./supportedBrowsers");
 

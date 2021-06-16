@@ -20,5 +20,7 @@
   "scripts": {
     "build": "./node_modules/webpack/bin/webpack.js -p"
   },
-  "dependencies": {}
+  "dependencies": {
+    "rangy": "^1.3.0"
+  }
 }

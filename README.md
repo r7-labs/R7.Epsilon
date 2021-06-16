@@ -47,7 +47,6 @@ Please always test updates in non-production environment first!
 Install dependencies first:
 
 - [LazyAds javascript library](https://github.com/roman-yagodin/R7.Dnn.JavaScriptLibraries/releases/tag/lazyads-v1.1.10) package.
-- [Rangy javascript library](https://github.com/roman-yagodin/R7.Dnn.JavaScriptLibraries/releases/tag/rangy-v1.3.0) package.
 - [Font Awesome](https://github.com/roman-yagodin/R7.Dnn.JavaScriptLibraries/releases/tag/font-awesome-v5.12.0) package.
 - [blueimp Gallery](https://github.com/roman-yagodin/R7.Dnn.JavaScriptLibraries/releases/tag/blueimp-v3.3.0) package.
 - [R7.Dnn.Extensions](https://github.com/roman-yagodin/R7.Dnn.Extensions/releases/tag/v0.14.2) package.

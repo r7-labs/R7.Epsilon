@@ -18,7 +18,6 @@
 				<dependency type="managedPackage" version="0.14.0">R7.Dnn.Extensions</dependency>
 				<dependency type="package">FontAwesome</dependency>
 				<dependency type="package">LazyAds</dependency>
-				<dependency type="package">Rangy</dependency>
 				<dependency type="package">jQuery-BlueimpGallery</dependency>
 			</dependencies>
 			<components>

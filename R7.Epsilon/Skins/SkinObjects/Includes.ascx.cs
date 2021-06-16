@@ -36,10 +36,6 @@ namespace R7.Epsilon.Skins.SkinObjects
             if (!Skin.Options.DisableLazyAds) {
                 JavaScript.RequestRegistration ("LazyAds");
             }
-
-            if (!Skin.Options.DisableRangy) {
-                JavaScript.RequestRegistration ("Rangy");
-            }
         }
     }
 }
