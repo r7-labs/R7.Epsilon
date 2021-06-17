@@ -4,5 +4,5 @@
 [assembly: AssemblyProduct ("R7.Epsilon")]
 [assembly: AssemblyCopyright ("Roman M. Yagodin")]
 [assembly: AssemblyTrademark ("")]
-[assembly: AssemblyVersion ("2.3.2")]
-[assembly: AssemblyInformationalVersion ("2.3.2")]
+[assembly: AssemblyVersion ("2.4.0")]
+[assembly: AssemblyInformationalVersion ("2.4.0")]
