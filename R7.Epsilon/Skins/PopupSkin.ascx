@@ -4,7 +4,6 @@
 <%
 Options.DisableSocialShare = true;
 Options.DisableLazyAds = true;
-Options.DisableRangy = true;
 %>
 <skin:START runat="server" />
 <div class="skin skin-popup">
