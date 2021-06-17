@@ -285,4 +285,7 @@ Selection: &quot;{selection}&quot;</value>
 	<data name="CustomMarkup_End.Text" xml:space="preserve">
 		<value></value>
 	</data>
+	<data name="FollowUs.Text" xml:space="preserve">
+		<value>Follow Us:</value>
+	</data>
 </root>

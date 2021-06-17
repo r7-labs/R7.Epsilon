@@ -38,7 +38,7 @@ breadcrumb-menu:
 social-groups:
 
   - type: VKontakte
-    label: resx:VKontakte1
+#    label: resx:VKontakte1
     url: https://vk.com/your-vk-group
     api-id: 0000000
     is-primary: true

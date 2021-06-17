@@ -215,6 +215,7 @@
     <Content Include="Skins\SkinObjects\SecondaryMenu.ascx" />
     <Content Include="Skins\SkinObjects\BreadcrumbMenu.ascx" />
     <Content Include="Skins\SkinObjects\SocialGroups.ascx" />
+    <Content Include="Skins\SkinObjects\FollowUs.ascx" />
     <Content Include="Skins\SkinObjects\SocialShareButtons.ascx" />
     <Content Include="Skins\SkinObjects\SharedScripts.ascx" />
     <Content Include="Skins\SkinObjects\YCycounter.ascx" />

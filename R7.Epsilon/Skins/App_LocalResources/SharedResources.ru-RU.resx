@@ -261,4 +261,7 @@
 	<data name="Menu_DateFormat.Text" xml:space="preserve">
 		<value>dd MMM</value>
 	</data>
+	<data name="FollowUs.Text" xml:space="preserve">
+		<value>Мы в соцсетях:</value>
+	</data>
 </root>
