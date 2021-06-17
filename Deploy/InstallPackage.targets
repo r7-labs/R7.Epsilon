@@ -11,9 +11,14 @@
 
   <Target Name="InstallPackage" Condition=" '$(EnableInstallPackage)' == 'true' " DependsOnTargets="Bundle;Tests">
 
+    <!-- Get version -->
+    <Exec Command="$(PowerShell) GetVersion.ps1 $(MainProjectName)" ConsoleToMsBuild="true">
+      <Output TaskParameter="ConsoleOutput" PropertyName="PackageVersion" />
+    </Exec>
+
     <!-- Package file name -->
     <PropertyGroup>
-      <PackageFileName>$(PackageName)-$(ReleaseVersion)-Install-$(Configuration).zip</PackageFileName>
+      <PackageFileName>$(PackageName)-$(PackageVersion)-Install-$(Configuration).zip</PackageFileName>
     </PropertyGroup>
 
     <!-- Declare skin files -->
@@ -59,7 +64,7 @@
     </ItemGroup>
 
     <!-- Generate main manifest file -->
-    <Exec Command="$(Pwsh) GenerateManifest.ps1 &quot;$(MainProjectOutputPath)/$(MainProjectName).dnn.template&quot; $(ReleaseVersion)" />
+    <Exec Command="$(PowerShell) GenerateManifest.ps1 &quot;$(MainProjectOutputPath)/$(MainProjectName).dnn.template&quot; $(PackageVersion)" />
 
     <!-- Declare manifest files -->
     <ItemGroup>

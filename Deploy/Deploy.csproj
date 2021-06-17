@@ -8,7 +8,6 @@
     <RootNamespace>Deploy</RootNamespace>
     <AssemblyName>Deploy</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <ReleaseVersion>2.3.2</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -70,6 +69,7 @@
     <None Include="Tests.targets" />
     <None Include="packages.config" />
     <None Include="GenerateManifest.ps1" />
+    <None Include="GetVersion.ps1" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="__Settings.targets" />
