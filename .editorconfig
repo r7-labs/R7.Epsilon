@@ -6,11 +6,11 @@ end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-[*.{cs,jsx}]
+[*.{cs,js,jsx}]
 indent_style = space
 indent_size = 4
 
-[*.{xml,resx,dnn,ascx,aspx,htm,html,cshtml}]
+[*.{xml,resx,dnn,dnn.template,ascx,aspx,htm,html,cshtml}]
 indent_style = tab
 
 [*.resx]
