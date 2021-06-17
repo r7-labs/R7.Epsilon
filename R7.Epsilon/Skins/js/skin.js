@@ -349,6 +349,11 @@ window.skinBrowserAlertButtonClick = function (e) {
         });
     }
 
+    function initShortLists () {
+        $(".short-list").shortList();
+    }
+
+
     $(function () {
         initBootstrapTooltips ();
         initBootstrapPopovers ();
@@ -371,6 +376,7 @@ window.skinBrowserAlertButtonClick = function (e) {
             alterLanguage ();
             alterLogin ();
             showToasts ();
+            initShortLists ();
             window.skinA11y = new A11y ().init ();
         }
     });

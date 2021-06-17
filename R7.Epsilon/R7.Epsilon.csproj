@@ -182,6 +182,7 @@
     <Content Include="Skins\PopupSkin.ascx" />
     <Content Include="Containers\Default_H3.ascx" />
     <Content Include="Skins\js\skin.js" />
+    <Content Include="Skins\js\shortList.js" />
     <Content Include="Skins\js\supportedBrowsers.js" />
     <Content Include="Skins\js\a11y.js" />
     <Content Include="Containers\Default_H4.ascx" />

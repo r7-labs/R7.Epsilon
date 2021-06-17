@@ -33,6 +33,8 @@ namespace R7.Epsilon.Skins.SkinObjects
 
             ClientResourceManager.RegisterScript (Page, Const.SKIN_PATH + "js/clipboard.min.js", (int) FileOrder.Js.DefaultPriority, "DnnFormBottomProvider", "clipboard", "2.0.4");
 
+            ClientResourceManager.RegisterScript (Page, Const.SKIN_PATH + "js/shortList.min.js", (int) FileOrder.Js.DefaultPriority, "DnnFormBottomProvider", "shortList", "0.0.0");
+
             if (!Skin.Options.DisableLazyAds) {
                 JavaScript.RequestRegistration ("LazyAds");
             }

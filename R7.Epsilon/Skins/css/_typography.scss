@@ -30,3 +30,12 @@
     background-color: #fff;
 }
 
+/* Short lists */
+
+.sl-collapsed > a {
+    color: $bs-color-muted;
+}
+
+li.sl-collapsed {
+    list-style: none;
+}
