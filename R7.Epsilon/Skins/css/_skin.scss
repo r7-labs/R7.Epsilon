@@ -423,18 +423,17 @@ a.btn-primary:visited {
     display: inline-block;
 }
 
-.skin-social-groups,
-.skin-follow-us {
-    .skin-social-group-icon {
-        font-size: 2rem;
-        line-height: 2rem;
-        vertical-align: middle;
-        margin-right: 0.25rem;
+.skin-social-groups-item {
+    display: flex;
+    align-items: center;
+}
 
-        &.fa-vk, &.fa-youtube {
-            font-size: 1.55rem;
-        }
-    }
+.skin-social-group-icon {
+    display: inline-block;
+    font-size: 1.5rem;
+    width: 2rem;
+    text-align: center;
+    margin-right: 0.25rem;
 }
 
 .skin-toasts {

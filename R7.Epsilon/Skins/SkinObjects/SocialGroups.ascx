@@ -12,7 +12,7 @@
 			if (prevGroup != null && !group.IsPrimary && prevGroup.IsPrimary) { %>
 				<div class="dropdown-divider"></div>
 			<% } %>
-			<a class="dropdown-item" href="<%: group.Url %>" target="_blank">
+			<a class="dropdown-item skin-social-groups-item" href="<%: group.Url %>" target="_blank">
 				<i class="<%: group.GetIconCssClass () %> brand-text brand-text-<%: group.Type.ToString ().ToLowerInvariant () %> skin-social-group-icon"
 					style="<%: group.GetCustomColorStyle () %>">
 				</i>
@@ -21,7 +21,7 @@
 						<%: T.GetStringIfKey (group.Label) %>
 					</span>
 				<% } else { %>
-					<%: T.GetString (group.Type + ".Text") %>
+					<span><%: T.GetString (group.Type + ".Text") %></span>
 				<% } %>
 				<% prevGroup = group; %>
 			</a>

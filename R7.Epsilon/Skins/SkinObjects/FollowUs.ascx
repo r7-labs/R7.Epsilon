@@ -6,15 +6,19 @@
 	<ul class="list-inline">
 		<% foreach (var group in Config.SocialGroups.Where (g => g.IsPrimary)) { %>
 			<li class="list-inline-item">
-				<a class="" href="<%: group.Url %>" target="_blank">
-					<i class="<%: group.GetIconCssClass () %> skin-social-group-icon"></i>
-					<% if (!string.IsNullOrEmpty (group.Label)) { %>
-						<span class="skin-custom-content" data-title="<%: group.Label %>">
-							<%: T.GetStringIfKey (group.Label) %>
-						</span>
-					<% } else { %>
-						<%: T.GetString (group.Type + ".Text") %>
-					<% } %>
+				<a href="<%: group.Url %>" target="_blank" class="skin-social-groups-item">
+					<span class="skin-social-group-icon">
+						<i class="<%: group.GetIconCssClass () %>"></i>
+					</span>
+					<span>
+						<% if (!string.IsNullOrEmpty (group.Label)) { %>
+							<span class="skin-custom-content" data-title="<%: group.Label %>">
+								<%: T.GetStringIfKey (group.Label) %>
+							</span>
+						<% } else { %>
+							<span><%: T.GetString (group.Type + ".Text") %></span>
+						<% } %>
+					</span>
 				</a>
 			</li>
 		<% } %>
