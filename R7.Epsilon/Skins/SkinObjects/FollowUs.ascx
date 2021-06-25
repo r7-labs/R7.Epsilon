@@ -2,7 +2,7 @@
 <%@ Import Namespace="R7.Epsilon.Components" %>
 <%@ Import Namespace="R7.Epsilon.Models" %>
 <div class="skin-follow-us">
-	<h6><%: T.GetString ("FollowUs.Text") %></h6>
+	<h6 class="font-weight-bold"><%: T.GetString ("FollowUs.Text") %></h6>
 	<ul class="list-inline">
 		<% foreach (var group in Config.SocialGroups.Where (g => g.IsPrimary)) { %>
 			<li class="list-inline-item">
@@ -12,11 +12,11 @@
 					</span>
 					<span>
 						<% if (!string.IsNullOrEmpty (group.Label)) { %>
-							<span class="skin-custom-content" data-title="<%: group.Label %>">
+							<span class="skin-custom-content small" data-title="<%: group.Label %>">
 								<%: T.GetStringIfKey (group.Label) %>
 							</span>
 						<% } else { %>
-							<span><%: T.GetString (group.Type + ".Text") %></span>
+							<span class="small"><%: T.GetString (group.Type + ".Text") %></span>
 						<% } %>
 					</span>
 				</a>
