@@ -49,7 +49,7 @@ a.btn-primary:visited {
 
 .skin-float-btns {
     position: fixed;
-    bottom: 3rem;
+    bottom: 1.5rem;
     right: 2rem;
     width: 4.5rem;
     z-index: 10;
@@ -76,9 +76,23 @@ a.btn-primary:visited {
     &:hover { text-decoration: none; }
 }
 
-.skin-float-btn-age-rating {
-    font-weight: bolder;
-    background-color: $float-btn-age-rating-bg-color;
+
+.skin-age-rating {
+    border: 2px solid #fff;
+    display: inline-block;
+    padding: 0.25rem;
+}
+
+.skin-age-rating-rounded {
+    border-radius: .2rem;
+}
+
+.skin-age-rating-rounded-circle {
+    border-radius: 50%;
+    padding: 0.25rem;
+    line-height: 1.75rem;
+    width: 2.5rem;
+    height: 2.5rem;
 }
 
 .skin-float-btn-up {

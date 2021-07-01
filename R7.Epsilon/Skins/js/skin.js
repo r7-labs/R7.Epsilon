@@ -71,13 +71,6 @@ window.skinBrowserAlertButtonClick = function (e) {
                     $(thisBtn).popover ("hide");
                 });
         });
-        $("#btnSkinAgeRating").on ("inserted.bs.popover", function () {
-            const thisBtn = this;
-            hidePopoversForOtherFloatButtons (thisBtn);
-            $("#btnSkinOpenAgeRating").on ("click", function () {
-                $(thisBtn).popover ("hide");
-            });
-        });
     }
 
     function setupFeedbackModule () {

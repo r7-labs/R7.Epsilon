@@ -17,6 +17,7 @@
 		</div>
 		<div class="col-md-2">
 			<skin:FOLLOWUS runat="server" />
+			<skin:CUSTOMCONTENT runat="server" CssClass="skin-footer-content" ResourceKey="FooterPane5_Content.Text" />
 		</div>
 	</div>
 </div>
