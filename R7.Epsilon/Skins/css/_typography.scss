@@ -12,7 +12,7 @@
     line-height: 1.2;
 }
 
-/* Styles for centered headers */
+/* Centered headers */
 
 .centerline {
     border-bottom: 1px solid $bs-color-text-body;
@@ -38,4 +38,15 @@
 
 li.sl-collapsed {
     list-style: none;
+}
+
+/* News article */
+
+.news-article blockquote:not(.blockquote) {
+    border-left: 4px solid #ccc;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 1.15rem; // slightly less that 1.25rem as for BS ".blockquote"
+    background-image: linear-gradient(to right, rgba(238,238,238,1.0) 0%, rgba(238,238,238,0.0) 100%);
 }
