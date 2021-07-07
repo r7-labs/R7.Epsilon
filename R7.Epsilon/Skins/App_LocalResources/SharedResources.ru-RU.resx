@@ -131,19 +131,6 @@
 	<data name="GoogleTranslate.Text" xml:space="preserve">
 		<value>Перевести с помощью Google</value>
 	</data>
-	<data name="AgeRating_Label.Text" xml:space="preserve">
-		<value>12+</value>
-	</data>
-	<data name="AgeRating_Title.Text" xml:space="preserve">
-		<value>Знак информационной продукции (12+)</value>
-	</data>
-	<data name="AgeRating_Content.Text" xml:space="preserve">
-		<value><![CDATA[<p>Информационная продукция <strong>для детей старше 12 лет</strong> (если иное не указано дополнительно).</p>
-		<p class="mb-1"><a id="btnSkinOpenAgeRating" class="btn btn-sm btn-block btn-info" href="https://base.garant.ru/77680092/948c9c0734b6e944a4727660f2d5a027/" target="_blank">Узнать больше</a></p>]]></value>
-	</data>
-	<data name="FooterPane5_Content.Text" xml:space="preserve">
-		<value><![CDATA[<h6><a href="https://base.garant.ru/77680092/948c9c0734b6e944a4727660f2d5a027/" target="_blank" class="skin-age-rating skin-age-rating-rounded-circle">12+</a></h6><p class="small">Информационная продукция для детей старше 12 лет (если иное не указано дополнительно).</p>]]></value>
-	</data>
 	<data name="Feedback_Title.Text" xml:space="preserve">
 		<value>Обратная связь</value>
 	</data>

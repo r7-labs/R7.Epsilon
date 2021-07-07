@@ -134,6 +134,9 @@
 	<data name="FooterPane4_Content.Text" xml:space="preserve">
 		<value>[FooterPane4_Content]</value>
 	</data>
+	<data name="FooterPane5_Content.Text" xml:space="preserve">
+		<value>[FooterPane5_Content]</value>
+	</data>
 	<data name="Languages.Text" xml:space="preserve">
 		<value>Languages</value>
 	</data>
@@ -145,19 +148,6 @@
 	</data>
 	<data name="GoogleTranslate.Text" xml:space="preserve">
 		<value>Translate with Google</value>
-	</data>
-	<data name="AgeRating_Label.Text" xml:space="preserve">
-		<value>12</value>
-	</data>
-	<data name="AgeRating_Title.Text" xml:space="preserve">
-		<value>Age Rating PEGI 12</value>
-	</data>
-	<data name="AgeRating_Content.Text" xml:space="preserve">
-		<value><![CDATA[<p>Information product for <strong>children since the age of twelve years - PEGI 12</strong> (unless otherwise specified).</p>
-		<p class="mb-1"><a id="btnSkinOpenAgeRating" class="btn btn-sm btn-block btn-info" href="https://pegi.info/" target="_blank">More info</a></p>]]></value>
-	</data>
-	<data name="FooterPane5_Content.Text" xml:space="preserve">
-		<value><![CDATA[<h6><a href="https://pegi.info/" target="_blank" class="skin-age-rating skin-age-rating-rounded">PEGI 12</a></h6><p class="small">Information product for children since the age of twelve years (unless otherwise specified).</p>]]></value>
 	</data>
 	<data name="Feedback_Title.Text" xml:space="preserve">
 		<value>Feedback</value>
