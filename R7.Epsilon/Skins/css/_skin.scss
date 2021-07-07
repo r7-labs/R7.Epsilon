@@ -45,6 +45,26 @@ a.btn-primary:visited {
     user-select:none;
 }
 
+/* Age rating badges */
+
+.skin-age-rating {
+    border: 2px solid #fff;
+    display: inline-block;
+    padding: 0.25rem;
+}
+
+.skin-age-rating-rounded {
+    border-radius: .2rem;
+}
+
+.skin-age-rating-rounded-circle {
+    border-radius: 50%;
+    padding: 0.25rem;
+    line-height: 1.75rem;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
 /* Float Buttons */
 
 .skin-float-btns {
@@ -74,25 +94,6 @@ a.btn-primary:visited {
     & > i { color: #fff; }
     &:link, &:hover, &:visited { color: #fff; }
     &:hover { text-decoration: none; }
-}
-
-
-.skin-age-rating {
-    border: 2px solid #fff;
-    display: inline-block;
-    padding: 0.25rem;
-}
-
-.skin-age-rating-rounded {
-    border-radius: .2rem;
-}
-
-.skin-age-rating-rounded-circle {
-    border-radius: 50%;
-    padding: 0.25rem;
-    line-height: 1.75rem;
-    width: 2.5rem;
-    height: 2.5rem;
 }
 
 .skin-float-btn-up {
