@@ -241,3 +241,13 @@ div.actionMenu ul.dnn_mact li.actionQuickSettings ul {
         max-width: 445px;
     }
 }
+
+/* Utility styles */
+
+body:not(.dnnEditState) .d-dnn-non-editor-none {
+    display: none;
+}
+
+.d-dnn-non-editor-none {
+    outline: 1px dashed red;
+}
