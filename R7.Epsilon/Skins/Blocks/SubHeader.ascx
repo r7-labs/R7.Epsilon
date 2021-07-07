@@ -9,9 +9,7 @@
 			<div class="row">
 				<div class="col">
 					<div class="skin-subheader-top">
-						<% if (!Skin.Options.DisableBreadCrumb) { %>
-							<skin:BREADCRUMBMENU runat="server" />
-						<% } %>
+						<skin:BREADCRUMBMENU runat="server" />
 					</div>
 				</div>
 			</div>
