@@ -266,19 +266,6 @@ a.btn-primary:visited {
     }
 }
 
-.skin-social-share-buttons {
-    .skin-social-share-btn {
-        display:inline-block;
-        & > * {
-            margin-top: 0 !important; // overriding inline style!
-            margin-right: 1rem;
-        }
-        .fb-like {
-            top: 2px;
-        }
-    }
-}
-
 .skin-home {
     // hide (but not remove) page header for the home page
     .skin-page-header {
@@ -286,12 +273,33 @@ a.btn-primary:visited {
     }
 }
 
-// style it like the breadbrumb
-.skin-page-info {
-    padding: .75rem 1rem;
+.skin-supfooter {
+    // style it like the breadbrumb
     background-color: #e9ecef;
     border-top-left-radius: .25rem;
     border-top-right-radius: .25rem;
+    padding: .75rem 1rem;
+}
+
+.skin-supfooter .col {
+    display: flex;
+    align-items: center;
+}
+
+.skin-social-share-buttons {
+    display:flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 4px;
+    .skin-social-share-btn {
+        margin-right: 1rem;
+        & > * {
+            margin-top: 0 !important; // overriding inline style!
+        }
+    }
+}
+
+.skin-page-info {
     & > ul {
         font-size: $bs-font-size-small;
         margin-bottom: 0;
